@@ -1,0 +1,95 @@
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+ 
+" Set tabstop, softtabstop and shiftwidth to the same value
+command! -nargs=* Stab call Stab()
+function! Stab()
+  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+  if l:tabstop > 0
+    let &l:sts = l:tabstop
+    let &l:ts = l:tabstop
+    let &l:sw = l:tabstop
+  endif
+  call SummarizeTabs()
+endfunction
+  
+function! SummarizeTabs()
+  try
+    echohl ModeMsg
+    echon 'tabstop='.&l:ts
+    echon ' shiftwidth='.&l:sw
+    echon ' softtabstop='.&l:sts
+    if &l:et
+      echon ' expandtab'
+    else
+      echon ' noexpandtab'
+    endif
+  finally
+    echohl None
+  endtry
+endfunction
+
+" Set tabs to spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Map diff undo to du
+nmap du :wincmd w<cr>:normal u<cr>:wincmd w<cr>
+
+" Set $ at end of changed object"
+set cpoptions+=$
+
+" Make Vim OK with hiding a buffer with modified changes"
+set hidden
+
+" Use systemwide clipboard when yanking and putting"
+set clipboard=unnamed
+
+" Set soft wrap
+set wrap
+
+" Maps to add newlines without entering insert mode
+map <S-Enter> O<Esc>
+map <CR> o<Esc>
+
+" Set vim to display 256 colors
+set t_Co=256
+
+" Set colorscheme
+colorscheme ir_black
+
+" Turn on spellchecking
+set spell
+
+" Hide the mouse while typing
+set mousehide
+
+" Add jQuery syntax highlighting
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+" Set personal SnipMate author
+let g:snips_author = 'Chris DeLuca <christopher.j.deluca@gmail.com>'
+
+" Make Vim source .bashrc
+set shell=bash\ --login
+
+" Make Vim wrap text
+set wrap
+
+" Warn if going over 80 columns
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
+" Make gvim start full screen
+if has("gui_running")
+  set fuoptions=maxvert,maxhorz
+  au GUIEnter * set fullscreen
+endif
+
+" Remove scrollbars from gvim
+set guioptions-=r
+set go-=L
+
+" Set guifont
+set guifont=Inconsolata:h18

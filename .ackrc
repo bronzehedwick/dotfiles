@@ -1,0 +1,19 @@
+# If you're still using grep, check out http://betterthangrep.com/
+#
+# (Andy Lester is my hero.)
+
+# Colors
+--color-filename=bold yellow
+--color-match=bold red
+
+# Flush output immediately, even when piped
+--flush
+
+# Force color and header, even in less -R.
+--color
+--group
+
+# Custom types and abbreviatinos.
+--type-set=py=.py
+--type-set=sass=.sass
+--type-set=coffee=.coffee

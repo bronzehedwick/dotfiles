@@ -1,0 +1,26 @@
+[user]
+	name = Chris DeLuca
+	email = bronzehedwick@gmail.com
+[core]
+	autocrlf = input
+	safecrlf = true
+	editor = vim
+[alias]
+    co = checkout
+    cm = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+[diff]
+    external = git_diff_wrapper
+[pager]
+    diff =
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[github]
+	token = 5fd4fba4f29e038aba032308ab8f5a39
+[color]
+	ui = auto
