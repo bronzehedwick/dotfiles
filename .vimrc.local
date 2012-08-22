@@ -77,5 +77,9 @@ set shell=bash\ --login
 " Make Vim wrap text
 set wrap
 
+" Disable cursor line hightlighting; vim has trouble redrawing the
+" page, and make bigger files slow
+set nocursorline
+
 " Disable unused spf-13 groups
 let g:spf13_bundle_groups=['general', 'programming', 'php', 'html', 'javascript', 'misc']
