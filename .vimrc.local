@@ -77,9 +77,5 @@ set shell=bash\ --login
 " Make Vim wrap text
 set wrap
 
-" Warn if going over 80 columns
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
-
 " Disable unused spf-13 groups
 let g:spf13_bundle_groups=['general', 'programming', 'php', 'html', 'javascript', 'misc']

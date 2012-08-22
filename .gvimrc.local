@@ -77,9 +77,9 @@ set shell=bash\ --login
 " Make Vim wrap text
 set wrap
 
-" Warn if going over 80 columns
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+" Disable cursor line hightlighting; vim has trouble redrawing the
+" page, and make bigger files slow
+set nocursorline
 
 " Make gvim start full screen
 if has("gui_running")
