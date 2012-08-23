@@ -82,4 +82,4 @@ set wrap
 set nocursorline
 
 " Disable unused spf-13 groups
-let g:spf13_bundle_groups=['general', 'programming', 'php', 'html', 'javascript', 'misc']
+let g:spf13_bundle_groups=['programming', 'php', 'html', 'javascript', 'misc']
