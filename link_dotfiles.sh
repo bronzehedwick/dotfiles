@@ -10,4 +10,6 @@ do
     ln -s $DIR/$f $TARGET/$f
   fi
 done
+echo "Deleting .gitignore"
+rm $TARGET/.gitignore
 echo "Done"
