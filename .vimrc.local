@@ -83,3 +83,6 @@ set nocursorline
 
 " Disable unused spf-13 groups
 let g:spf13_bundle_groups=['programming', 'php', 'html', 'javascript', 'misc']
+
+" Disable auto folding
+let g:DisableAutoPHPFolding = 1

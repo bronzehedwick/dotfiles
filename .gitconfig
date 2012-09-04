@@ -24,3 +24,5 @@
 	token = 5fd4fba4f29e038aba032308ab8f5a39
 [color]
 	ui = auto
+[commit]
+	template = /Users/cdeluca/.gitmessage.vim
