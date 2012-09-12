@@ -7,7 +7,7 @@ Bundle 'walm/jshint.vim'
 Bundle 'nono/jquery.vim'
 Bundle 'theunraveler/Drupal-Snippets-for-Vim'
 Bundle 'benjifisher/Vim-Plugin-for-Drupal'
-Bundle 'altercation/vim-colors-solarized'
+"Bundle 'altercation/vim-colors-solarized'
 
 "Specific bundles from spf13 General
 "Bundle 'scrooloose/nerdtree'

@@ -17,3 +17,6 @@
 --type-set=py=.py
 --type-set=sass=.sass
 --type-set=coffee=.coffee
+--type-set=module=.module
+--type-set=info=.info
+--type-set=inc=.inc

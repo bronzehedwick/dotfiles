@@ -29,11 +29,6 @@ function! SummarizeTabs()
   endtry
 endfunction
 
-" Set tabs to spaces
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
 " Map diff undo to du
 nmap du :wincmd w<cr>:normal u<cr>:wincmd w<cr>
 
@@ -48,13 +43,6 @@ set clipboard=unnamed
 
 " Set soft wrap
 set wrap
-
-" Maps to add newlines without entering insert mode
-map <S-Enter> O<Esc>
-map <CR> o<Esc>
-
-" Set vim to display 256 colors
-set t_Co=256
 
 " Set colorscheme
 colorscheme ir_black
