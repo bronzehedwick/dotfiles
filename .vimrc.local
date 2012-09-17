@@ -1,9 +1,6 @@
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
-" Fix my fucking control u
-nmap <silent>
- 
 " Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
 function! Stab()

@@ -82,6 +82,9 @@ set go-=L
 " Set guifont
 set guifont=Inconsolata:h18
 
-" Supress nerdtree on startup
+" Suppress nerdtree on startup
 let g:nerdtree_tabs_open_on_gui_startup=0
 set transparency=0
+
+" Suppress auto folding
+let g:DisableAutoPHPFolding=1
