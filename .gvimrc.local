@@ -80,12 +80,18 @@ endif
 set guioptions-=r
 set go-=L
 
-" Set guifont
-set guifont=Inconsolata:h18
-
 " Suppress nerdtree on startup
 let g:nerdtree_tabs_open_on_gui_startup=0
-set transparency=0
 
 " Suppress auto folding
 let g:DisableAutoPHPFolding=1
+
+" GUI Settings {
+    " GVIM- (here instead of .gvimrc)
+    if has('gui_running')
+        if has('gui_macvim')
+            set transparency=0          " Make the window slightly transparent
+            set guifont=Inconsolata:h18
+        endif
+    endif
+" }
