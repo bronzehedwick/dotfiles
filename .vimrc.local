@@ -43,9 +43,6 @@ set cpoptions+=$
 " Make Vim OK with hiding a buffer with modified changes"
 set hidden
 
-" Use systemwide clipboard when yanking and putting"
-set clipboard=unnamed
-
 " Set soft wrap
 set wrap
 
