@@ -76,3 +76,6 @@ set nocursorline
 
 " Disable unused spf-13 groups
 let g:spf13_bundle_groups=['programming', 'php', 'html', 'javascript', 'misc']
+
+" Disable spell checking by default
+set nospell

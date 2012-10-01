@@ -1,26 +1,47 @@
-# ~/.bash_aliases: executed by bash(1) for non-login shells.
-# for examples
+#########################
+# Command modifications #
+#########################
+
+# some ls aliases
+alias ll='ls -lhcF'
+alias la='ls -AF'
+alias l='ls -CF'
+alias lla='ls -AFchl'
+
+# grep aliases
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# color grep alias for piping to less
+alias cgrep='grep --color=always'
+alias less='less -R'
+
+# Set Vim to the EDITOR environment variable
+export EDITOR='vim'
+
+export TERM=xterm-256color
+
+# git prompt
+function parse_git_branch {
+  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")"
+}
+
+#Git diff & vim
+function git_diff() {
+  git diff --no-ext-diff -w "$@" | vim -R -
+}
+
+# Personal prompt
+export PS1="\u@\h:\W\$(parse_git_branch)$ "
 
 #############
 # Shortcuts #
-############# 
+#############
 
 #Clear the terminal
 alias c="clear"
-
-#Edit .bashrc
-alias ebrc="vim ~/.bashrc"
-
-#Edit this file
-alias eba="vim ~/.bash_aliases"
-
-#Source .bashrc and .bash_aliases
-alias sb="source ~/.bashrc && source ~/.bash_aliases"
-
-#cd Shortcuts
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
 
 ###############
 # Replacement #

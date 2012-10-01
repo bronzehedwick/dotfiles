@@ -48,6 +48,7 @@ set wrap
 colorscheme ir_black
 
 " Turn on spellchecking
+" ir_black's spell highlighting looks poor in terminal, but fine in GUI
 set spell
 
 " Hide the mouse while typing
