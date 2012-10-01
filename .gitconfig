@@ -2,8 +2,6 @@
 	name = Chris DeLuca
 	email = bronzehedwick@gmail.com
 [core]
-	autocrlf = input
-	safecrlf = true
 	editor = mvim
 [alias]
     co = checkout
