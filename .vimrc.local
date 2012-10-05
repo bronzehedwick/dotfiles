@@ -79,3 +79,6 @@ set nospell
 unmap <c-u>
 nnoremap <c-h> :UndotreeToggle<CR>
 
+" Display date and time
+map <F2> :echo 'It is ' . strftime('%a %b%e %I:%M %p')<CR>
+
