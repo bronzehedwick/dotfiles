@@ -1,81 +1,3 @@
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
- 
-" Set tabstop, softtabstop and shiftwidth to the same value
-command! -nargs=* Stab call Stab()
-function! Stab()
-  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
-  if l:tabstop > 0
-    let &l:sts = l:tabstop
-    let &l:ts = l:tabstop
-    let &l:sw = l:tabstop
-  endif
-  call SummarizeTabs()
-endfunction
-  
-function! SummarizeTabs()
-  try
-    echohl ModeMsg
-    echon 'tabstop='.&l:ts
-    echon ' shiftwidth='.&l:sw
-    echon ' softtabstop='.&l:sts
-    if &l:et
-      echon ' expandtab'
-    else
-      echon ' noexpandtab'
-    endif
-  finally
-    echohl None
-  endtry
-endfunction
-
-" Map diff undo to du
-nmap du :wincmd w<cr>:normal u<cr>:wincmd w<cr>
-
-" Set $ at end of changed object"
-set cpoptions+=$
-
-" Make Vim OK with hiding a buffer with modified changes"
-set hidden
-
-" Use systemwide clipboard when yanking and putting"
-set clipboard=unnamed
-
-" Set soft wrap
-set wrap
-
-" Set colorscheme
-colorscheme ir_black
-
-" Turn on spellchecking
-" ir_black's spell highlighting looks poor in terminal, but fine in GUI
-set spell
-
-" Hide the mouse while typing
-set mousehide
-
-" Add jQuery syntax highlighting
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-
-" Set personal SnipMate author
-let g:snips_author = 'Chris DeLuca <christopher.j.deluca@gmail.com>'
-
-" Make Vim source .bashrc
-set shell=bash\ --login
-
-" Make Vim wrap text
-set wrap
-
-" Disable cursor line hightlighting; vim has trouble redrawing the
-" page, and make bigger files slow
-set nocursorline
-
-" Make gvim start full screen
-if has("gui_running")
-  set fuoptions=maxvert,maxhorz
-  au GUIEnter * set fullscreen
-endif
-
 " Remove scrollbars from gvim
 set guioptions-=r
 set go-=L
@@ -89,9 +11,13 @@ let g:DisableAutoPHPFolding=1
 " GUI Settings {
     " GVIM- (here instead of .gvimrc)
     if has('gui_running')
+        set fuoptions=maxvert,maxhorz
+        au GUIEnter * set fullscreen
+
         if has('gui_macvim')
-            set transparency=0          " Make the window slightly transparent
+            set transparency=0
             set guifont=Inconsolata:h18
         endif
     endif
 " }
+

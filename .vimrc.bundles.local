@@ -1,4 +1,6 @@
 filetype off
+" Disable Vim views
+"g:spf13_no_views = 1
 
 "Custom Bundles
 Bundle 'mattn/zencoding-vim'
@@ -24,3 +26,4 @@ Bundle 'Lokaltog/vim-powerline'
 "Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'corntrace/bufexplorer'
+

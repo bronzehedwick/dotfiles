@@ -64,15 +64,18 @@ let g:snips_author = 'Chris DeLuca <christopher.j.deluca@gmail.com>'
 " Make Vim source .bashrc
 set shell=bash\ --login
 
-" Make Vim wrap text
-set wrap
-
 " Disable cursor line hightlighting; vim has trouble redrawing the
 " page, and make bigger files slow
 set nocursorline
 
-" Disable unused spf-13 groups
+" Only enable used spf13 plugin groups
 let g:spf13_bundle_groups=['programming', 'php', 'html', 'javascript', 'misc']
 
 " Disable spell checking by default
 set nospell
+
+" UndoTree Remapping to control h
+" so it won't erase the control u mapping to page up
+unmap <c-u>
+nnoremap <c-h> :UndotreeToggle<CR>
+
