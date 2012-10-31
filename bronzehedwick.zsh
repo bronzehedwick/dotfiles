@@ -23,25 +23,35 @@ export EDITOR='vim'
 export TERM=xterm-256color
 
 # git prompt
-function parse_git_branch {
-  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
-  echo "("${ref#refs/heads/}")"
-}
+#function parse_git_branch {
+  #ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+  #echo "("${ref#refs/heads/}")"
+#}
 
 #Git diff & vim
-function git_diff() {
-  git diff --no-ext-diff -w "$@" | vim -R -
-}
+#function git_diff() {
+  #git diff --no-ext-diff -w "$@" | vim -R -
+#}
 
 # Personal prompt
-export PS1="\u@\h:\W\$(parse_git_branch)$ "
+#export PS1="\u@\h:\W\$(parse_git_branch)$ "
 
 #############
 # Shortcuts #
 #############
 
-#Clear the terminal
+#cd Shortcuts
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# Clear the terminal
 alias c="clear"
+
+# Drush aliases
+alias cct='drush cache-clear theme-registry'
+alias cca='drush cache-clear all'
+
 
 ###############
 # Replacement #
@@ -59,21 +69,10 @@ alias du="du -h"
 #More useful date
 alias date="date '+%a, %b %d %l:%M:%S %p'"
 
-###############
-# SVN         #
-############### 
-
-#See the ignore list
-alias svnignorelist="svn pg -R svn:ignore ."
-
-#Preview what an update will contain
-alias svnupdry="svn merge --dry-run -r BASE:HEAD ."
-
 #######
 # Git #
 #######
 
-#Yes
 alias shit="git"
 alias gs="git status"
 alias gb="git branch"
@@ -82,6 +81,12 @@ alias gd="git diff"
 alias go="git checkout"
 alias ga="git add"
 alias gti="git"
+
+egi()
+{
+    TOP_LEVEL=$(git rev-parse --show-toplevel)
+    vim $TOP_LEVEL/.gitignore
+}
 
 ##################
 # Other Programs #
@@ -100,5 +105,3 @@ alias starwars="telnet towel.blinkenlights.nl"
 #Identica
 alias dent="identica"
 
-#Map epseak to say for TTS
-#alias say="echo \"$1\" | espeak -s 120 2>/dev/null"
