@@ -1,4 +1,7 @@
 #! bin/bash
+# Installs dotfiles to home directory
+# @author Chris DeLuca (bronzehedwick)
+
 FILES=.*
 TARGET=~
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
