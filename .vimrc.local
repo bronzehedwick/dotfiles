@@ -1,5 +1,3 @@
-syntax on
-set nu
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
@@ -32,9 +30,9 @@ function! SummarizeTabs()
 endfunction
 
 " Set tabs to spaces
-" set tabstop=2
-" set shiftwidth=2
-" set expandtab
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 " Map diff undo to du
 nmap du :wincmd w<cr>:normal u<cr>:wincmd w<cr>
@@ -48,9 +46,6 @@ set hidden
 " Set soft wrap
 set wrap
 
-" Set vim to display 256 colors
-set t_Co=256
-
 " Set colorscheme
 colorscheme ir_black
 
@@ -60,22 +55,22 @@ set mousehide
 " Add jQuery syntax highlighting
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-" Set personal SnipMate author
-let g:snips_author = 'Chris DeLuca <christopher.j.deluca@gmail.com>'
-
 " Make Vim source .bashrc
 set shell=bash\ --login
 
 " Disable cursor line hightlighting; vim has trouble redrawing the
 " page, and make bigger files slow
-set nocursorline
+"set nocursorline
 
 " Only enable used spf13 plugin groups
-let g:spf13_bundle_groups=['programming', 'php', 'html', 'javascript', 'misc']
+let g:spf13_bundle_groups=['programming', 'general', 'php', 'html', 'javascript', 'misc']
 
 " Disable spell checking by default
 set nospell
 
 " Display date and time
 map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
+
+set exrc            " enable per-directory .vimrc files
+set secure          " disable unsafe commands in local .vimrc files
 

@@ -36,7 +36,7 @@ alias df='df -h'
 alias du="du -h"
 
 #More useful date
-alias date="date '+%a, %b %d %l:%M:%S %p'"
+#alias date="date '+%a, %b %d %l:%M:%S %p'"
 
 ###############
 # SVN         #

@@ -1,29 +1,9 @@
-filetype off
-" Disable Vim views
-"g:spf13_no_views = 1
-
 "Custom Bundles
 Bundle 'mattn/zencoding-vim'
-Bundle 'gregsexton/MatchTag'
+"Bundle 'gregsexton/MatchTag'
 Bundle 'walm/jshint.vim'
 Bundle 'nono/jquery.vim'
-Bundle 'theunraveler/Drupal-Snippets-for-Vim'
-Bundle 'benjifisher/Vim-Plugin-for-Drupal'
-"Bundle 'altercation/vim-colors-solarized'
-
-"Specific bundles from spf13 General
-"Bundle 'scrooloose/nerdtree'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'spf13/vim-colors'
-Bundle 'tpope/vim-surround'
-Bundle 'AutoClose'
-Bundle 'kien/ctrlp.vim'
-"Bundle 'vim-scripts/sessionman.vim'
-Bundle 'matchit.zip'
-Bundle 'Lokaltog/vim-powerline'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'godlygeek/csapprox'
-"Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'corntrace/bufexplorer'
+"Bundle 'theunraveler/Drupal-Snippets-for-Vim'
+"Bundle 'benjifisher/Vim-Plugin-for-Drupal'
+"Bundle 'kloppster/Wordpress-Vim-Syntax'
 

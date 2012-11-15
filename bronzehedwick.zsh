@@ -22,20 +22,6 @@ export EDITOR='vim'
 
 export TERM=xterm-256color
 
-# git prompt
-#function parse_git_branch {
-  #ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
-  #echo "("${ref#refs/heads/}")"
-#}
-
-#Git diff & vim
-#function git_diff() {
-  #git diff --no-ext-diff -w "$@" | vim -R -
-#}
-
-# Personal prompt
-#export PS1="\u@\h:\W\$(parse_git_branch)$ "
-
 #############
 # Shortcuts #
 #############
@@ -67,7 +53,6 @@ alias df='df -h'
 alias du="du -h"
 
 #More useful date
-alias date="date '+%a, %b %d %l:%M:%S %p'"
 
 #######
 # Git #
