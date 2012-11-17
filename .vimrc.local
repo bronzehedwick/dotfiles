@@ -40,17 +40,11 @@ nmap du :wincmd w<cr>:normal u<cr>:wincmd w<cr>
 " Set $ at end of changed object"
 set cpoptions+=$
 
-" Make Vim OK with hiding a buffer with modified changes"
-set hidden
-
 " Set soft wrap
 set wrap
 
 " Set colorscheme
 colorscheme ir_black
-
-" Hide the mouse while typing
-set mousehide
 
 " Add jQuery syntax highlighting
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
