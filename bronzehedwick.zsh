@@ -67,11 +67,7 @@ alias go="git checkout"
 alias ga="git add"
 alias gti="git"
 
-egi()
-{
-    TOP_LEVEL=$(git rev-parse --show-toplevel)
-    vim $TOP_LEVEL/.gitignore
-}
+alias egi="vim $(git rev-parse --show-toplevel)/.gitignore"
 
 ##################
 # Other Programs #
