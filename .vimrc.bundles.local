@@ -1,6 +1,6 @@
 "Custom Bundles
 Bundle 'mattn/zencoding-vim'
-"Bundle 'gregsexton/MatchTag'
+Bundle 'gregsexton/MatchTag'
 Bundle 'walm/jshint.vim'
 Bundle 'nono/jquery.vim'
 "Bundle 'theunraveler/Drupal-Snippets-for-Vim'
