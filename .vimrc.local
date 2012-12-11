@@ -48,6 +48,7 @@ colorscheme ir_black
 
 " Add jQuery syntax highlighting
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+autocmd BufNewFile,BufRead *.json set ft=javascript
 
 " Make Vim source .bashrc
 set shell=bash\ --login

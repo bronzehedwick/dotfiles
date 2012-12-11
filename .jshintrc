@@ -1,15 +1,11 @@
 {
-    "globals": {
-        "Kinetic": true,
-    },
-
     "node" : true,
     "es5" : true,
     "browser" : true,
     "jquery"  : true,
     "curly": true,
-    "debug": true,
-    "devel": true,
+    "debug": false,
+    "devel": false,
     "eqeqeq": true,
     "eqnull": true,
     "evil": false,
@@ -25,5 +21,11 @@
     "regexp": false,
     "undef": true,
     "sub": false,
-    "strict": true
+    "strict": true,
+    "predef": [
+      "FB",
+      "Modernizer",
+      "Kinetic",
+      "Drupal"
+    ]
 }
