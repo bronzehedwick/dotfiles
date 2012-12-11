@@ -1,11 +1,15 @@
 {
+    "globals": {
+        "Kinetic": true,
+    },
+
     "node" : true,
     "es5" : true,
     "browser" : true,
     "jquery"  : true,
     "curly": true,
     "debug": true,
-    "devel": false,
+    "devel": true,
     "eqeqeq": true,
     "eqnull": true,
     "evil": false,
