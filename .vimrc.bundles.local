@@ -1,8 +1,14 @@
-"Custom Bundles
+" Custom Bundles
+
+" HTML
 Bundle 'mattn/zencoding-vim'
 Bundle 'gregsexton/MatchTag'
+
+" JavaScript
 Bundle 'walm/jshint.vim'
 Bundle 'nono/jquery.vim'
+Bundle 'guileen/vim-node'
+
+" Drupal
 Bundle 'theunraveler/Drupal-Snippets-for-Vim'
 Bundle 'benjifisher/Vim-Plugin-for-Drupal'
-Bundle 'guileen/vim-node'

@@ -44,7 +44,7 @@ set cpoptions+=$
 set wrap
 
 " Set colorscheme
-colorscheme ir_black
+colorscheme molokai
 
 " Add jQuery syntax highlighting
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
@@ -55,10 +55,6 @@ au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 
 " Make Vim source .bashrc
 set shell=bash\ --login
-
-" Disable cursor line hightlighting; vim has trouble redrawing the
-" page, and make bigger files slow
-"set nocursorline
 
 " Only enable used spf13 plugin groups
 let g:spf13_bundle_groups=['programming', 'general', 'php', 'html', 'javascript', 'misc']
@@ -72,6 +68,3 @@ map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 " Enable per-directory .vimrc files
 set exrc
 set secure
-
-" Set snipmate author
-let g:snips_author = 'Chris DeLuca <brozehedwick@gmail.com>'
