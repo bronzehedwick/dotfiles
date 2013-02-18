@@ -50,6 +50,9 @@ colorscheme ir_black
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
+" Add node auto completion
+au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
+
 " Make Vim source .bashrc
 set shell=bash\ --login
 
@@ -66,6 +69,9 @@ set nospell
 " Display date and time
 map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 
-set exrc            " enable per-directory .vimrc files
-set secure          " disable unsafe commands in local .vimrc files
+" Enable per-directory .vimrc files
+set exrc
+set secure
 
+" Set snipmate author
+let g:snips_author = 'Chris DeLuca <brozehedwick@gmail.com>'
