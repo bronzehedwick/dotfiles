@@ -15,4 +15,9 @@ do
 done
 echo "Deleting .gitignore"
 rm $TARGET/.gitignore
+if [[ -d ~/.oh-my-zsh ]]
+then
+    echo "Linking bronzehedwick.zsh to .oh-my-zsh/custom/"
+    ln -s bronzehedwick.zsh ~/.oh-my-zsh/custom
+fi
 echo "Done"
