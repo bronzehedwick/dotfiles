@@ -3,22 +3,22 @@
 #########################
 
 # some ls aliases
-alias ll='ls -lhcF'
-alias la='ls -AF'
-alias l='ls -CF'
-alias lla='ls -AFchl'
+alias ll="ls -lhcF"
+alias la="ls -AF"
+alias l="ls -CF"
+alias lla="ls -AFchl"
 
 # grep aliases
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
 
 # color grep alias for piping to less
-alias cgrep='grep --color=always'
-alias less='less -R'
+alias cgrep="grep --color=always"
+alias less="less -R"
 
 # Set Vim to the EDITOR environment variable
-export EDITOR='vim'
+export EDITOR="vim"
 
 export TERM=xterm-256color
 
@@ -35,8 +35,8 @@ alias ....="cd ../../.."
 alias c="clear"
 
 # Drush aliases
-alias cct='drush cache-clear theme-registry'
-alias cca='drush cache-clear all'
+alias cct="drush cache-clear theme-registry"
+alias cca="drush cache-clear all"
 
 
 ###############
@@ -47,12 +47,13 @@ alias cca='drush cache-clear all'
 ###############
 
 #Disk usage for humans
-alias df='df -h'
+alias df="df -h"
 
 #Directory usage for humans
 alias du="du -h"
 
 #More useful date
+alias date="date '+%a %b %e %I:%M %p'"
 
 #######
 # Git #
