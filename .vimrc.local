@@ -44,7 +44,7 @@ set cpoptions+=$
 set wrap
 
 " Set colorscheme
-colorscheme molokai
+colorscheme ir_black
 
 " Add jQuery syntax highlighting
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery

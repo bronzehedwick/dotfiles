@@ -19,7 +19,6 @@ alias less="less -R"
 
 # Set Vim to the EDITOR environment variable
 export EDITOR="vim"
-
 export TERM=xterm-256color
 
 #############
