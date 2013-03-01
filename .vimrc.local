@@ -29,6 +29,9 @@ function! SummarizeTabs()
   endtry
 endfunction
 
+" Toggle set wrap
+nmap <silent><leader>w :set wrap!<CR>
+
 " Set tabs to spaces
 set tabstop=2
 set shiftwidth=2
