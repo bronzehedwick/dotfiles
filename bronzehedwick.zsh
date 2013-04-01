@@ -34,9 +34,13 @@ alias ....="cd ../../.."
 alias c="clear"
 
 # Drush aliases
-alias cct="drush cache-clear theme-registry"
-alias cca="drush cache-clear all"
-
+if hash growlnotify 2>/dev/null; then
+  alias cct="drush cache-clear theme-registry && growlnotify -t 'Drush' -m 'Theme cache cleared'"
+  alias cca="drush cache-clear all && growlnotify -t 'Drush' -m 'All caches cleared'"
+else
+  alias cct="drush cache-clear theme-registry"
+  alias cca="drush cache-clear all"
+fi
 
 ###############
 # Replacement #
@@ -84,5 +88,8 @@ alias yui="java -jar /usr/bin/yuicompressor/build/yuicompressor*"
 alias starwars="telnet towel.blinkenlights.nl"
 
 #Identica
+identica() {
+    curl --basic --user bronzehedwick --data-ascii "status=$1" http://identi.ca/api/statuses/update.xml
+}
 alias dent="identica"
 

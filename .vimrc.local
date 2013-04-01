@@ -62,9 +62,6 @@ set shell=bash\ --login
 " Only enable used spf13 plugin groups
 let g:spf13_bundle_groups=['programming', 'general', 'php', 'html', 'javascript', 'misc']
 
-" Disable spell checking by default
-set nospell
-
 " Display date and time
 map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 
