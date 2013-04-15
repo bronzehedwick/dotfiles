@@ -49,22 +49,18 @@ set wrap
 " Set colorscheme
 colorscheme ir_black
 
-" Add jQuery syntax highlighting
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-autocmd BufNewFile,BufRead *.json set ft=javascript
-
 " Add node auto completion
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 
 " Make Vim source .bashrc
 set shell=bash\ --login
 
-" Only enable used spf13 plugin groups
-let g:spf13_bundle_groups=['programming', 'general', 'php', 'html', 'javascript', 'misc']
-
 " Display date and time
 map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 
-" Enable per-directory .vimrc files
-set exrc
-set secure
+" GVIM- (here instead of .gvimrc)
+if has('gui_running')
+  if has("gui_mac")
+    set guifont=Inconsolata\ for\ Powerline:h18
+  endif
+endif
