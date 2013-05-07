@@ -60,7 +60,5 @@ map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 
 " GVIM- (here instead of .gvimrc)
 if has('gui_running')
-  if has("gui_mac")
-    set guifont=Inconsolata\ for\ Powerline:h18
-  endif
+  set guifont=Inconsolata\ for\ Powerline:h18
 endif
