@@ -75,6 +75,12 @@ alias gti="git"
 
 alias egi="vim $(git rev-parse --show-toplevel)/.gitignore"
 
+##############
+# IP Address #
+##############
+function ext-ip () { curl http://ipecho.net/plain; echo }
+function int-ip { /sbin/ifconfig $1 | grep "inet addr" | grep -v "127.0.0.1" | awk -F: '{print $2}' | awk '{print $1}' }
+
 ##################
 # Other Programs #
 ##################
@@ -95,3 +101,4 @@ identica() {
 }
 alias dent="identica"
 
+alias colortest="( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done; )"

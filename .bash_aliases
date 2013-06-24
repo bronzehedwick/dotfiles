@@ -81,3 +81,4 @@ alias dent="identica"
 
 #Map epseak to say for TTS
 #alias say="echo \"$1\" | espeak -s 120 2>/dev/null"
+alias lampp='sudo /opt/lampp/lampp'
