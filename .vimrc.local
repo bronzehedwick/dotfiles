@@ -59,11 +59,15 @@ set shell=bash\ --login
 map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 
 " GVIM- (here instead of .gvimrc)
-if has('gui_mac')
-  set guifont=Inconsolata\ for\ Powerline:h18
-elseif has('gui_gtk')
-  set guifont=Inconsolata\ for\ Powerline\ 16
+if has('gui_running')
+  set guioptions-=m
+  if has('gui_mac')
+    set guifont=Inconsolata\ for\ Powerline:h18
+  elseif has('gui_gtk')
+    set guifont=Inconsolata\ for\ Powerline\ 16
+  endif
 else
-  set nospell
   colorscheme ir_black
+  set nospell
 endif
+
