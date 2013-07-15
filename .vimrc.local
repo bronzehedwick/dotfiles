@@ -60,7 +60,13 @@ map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 
 " GVIM- (here instead of .gvimrc)
 if has('gui_running')
-  set guioptions-=m
+  set guioptions-=m " Remove toolbar
+  set guioptions-=l " Remove left scrollbar
+  set guioptions-=L " Remove left scrollbar in split
+  set guioptions-=r " Remove right scrollbar
+  set guioptions-=R " Remove right scrollbar in split
+  set guioptions-=b " Remove bottom scrollbar
+  set guioptions+=c " Use command line for simple choices, instead of popup
   if has('gui_mac')
     set guifont=Inconsolata\ for\ Powerline:h18
   elseif has('gui_gtk')
