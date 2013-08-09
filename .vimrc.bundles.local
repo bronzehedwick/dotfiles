@@ -5,7 +5,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'gregsexton/MatchTag'
 
 " JavaScript
-Bundle 'walm/jshint.vim'
+Bundle 'Shutnik/jshint2.vim'
 Bundle 'nono/jquery.vim'
 Bundle 'guileen/vim-node'
 

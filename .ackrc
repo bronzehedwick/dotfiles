@@ -2,13 +2,6 @@
 #
 # (Andy Lester is my hero.)
 
-# Colors
---color-filename=bold yellow
---color-match=bold red
-
-# Flush output immediately, even when piped
---flush
-
 # Force color and header, even in less -R.
 --color
 --group
