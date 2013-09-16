@@ -1,7 +1,7 @@
 " Custom Bundles
 
 " HTML
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'gregsexton/MatchTag'
 
 " JavaScript
@@ -12,6 +12,9 @@ Bundle 'guileen/vim-node'
 " Drupal
 Bundle 'theunraveler/Drupal-Snippets-for-Vim'
 Bundle 'benjifisher/Vim-Plugin-for-Drupal'
+
+" Debugger
+Bundle 'joonty/vdebug.git'
 
 " Misc
 Bundle 'vim-scripts/hexHighlight.vim'
