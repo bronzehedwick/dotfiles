@@ -101,4 +101,16 @@ identica() {
 }
 alias dent="identica"
 
+#Color test
 alias colortest="( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done; )"
+
+#List all available commands
+function ListAllCommands
+{
+    echo -n $PATH | xargs -d : -I {} find {} -maxdepth 1 \
+        -executable -type f -printf '%P\n' | sort -u
+}
+alias gmc='git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -100 | less'
+alias gfo='git fetch origin'
+alias gpu='git push origin $(current_branch)'
+alias glu='git pull origin $(current_branch)'
