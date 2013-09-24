@@ -114,3 +114,4 @@ alias gmc='git log --pretty=format: --name-only | sort | uniq -c | sort -rg | he
 alias gfo='git fetch origin'
 alias gpu='git push origin $(current_branch)'
 alias glu='git pull origin $(current_branch)'
+alias mergeclean='find -name \*.orig | xargs rm'
