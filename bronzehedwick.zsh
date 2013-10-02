@@ -63,7 +63,6 @@ alias ftdate="\date '+%Y-%m-%e-%I-%M'"
 #######
 # Git #
 #######
-
 alias shit="git"
 alias gs="git status"
 alias gb="git branch"
@@ -72,8 +71,16 @@ alias gd="git diff"
 alias go="git checkout"
 alias ga="git add"
 alias gti="git"
-
+alias gmc='git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -100 | less'
+alias gfo='git fetch origin'
+alias gpu='git push origin $(current_branch)'
+alias glu='git pull origin $(current_branch)'
 alias egi="vim $(git rev-parse --show-toplevel)/.gitignore"
+
+#######
+# Vim #
+#######
+alias vi="vim -u ~/.vimrc.sparse"
 
 ##############
 # IP Address #
@@ -87,6 +94,7 @@ function int-ip { /sbin/ifconfig $1 | grep "inet addr" | grep -v "127.0.0.1" | a
 
 alias dir2unix="find . -type f -exec dos2unix {} {} \;"
 alias yui="java -jar /usr/bin/yuicompressor/build/yuicompressor*" 
+alias mergeclean='find -name \*.orig | xargs rm'
 
 #############
 # Fun Stuff #
@@ -110,8 +118,3 @@ function ListAllCommands
     echo -n $PATH | xargs -d : -I {} find {} -maxdepth 1 \
         -executable -type f -printf '%P\n' | sort -u
 }
-alias gmc='git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -100 | less'
-alias gfo='git fetch origin'
-alias gpu='git push origin $(current_branch)'
-alias glu='git pull origin $(current_branch)'
-alias mergeclean='find -name \*.orig | xargs rm'
