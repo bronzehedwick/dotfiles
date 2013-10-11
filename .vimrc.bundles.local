@@ -18,3 +18,4 @@ Bundle 'joonty/vdebug.git'
 
 " Misc
 Bundle 'vim-scripts/hexHighlight.vim'
+Bundle 'tpope/vim-unimpaired'

@@ -20,4 +20,6 @@ then
     echo "Linking bronzehedwick.zsh to .oh-my-zsh/custom/"
     ln -s bronzehedwick.zsh ~/.oh-my-zsh/custom
 fi
+echo "Linking git templates"
+ln -s .git_template ~/.git_template
 echo "Done"

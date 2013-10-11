@@ -76,6 +76,7 @@ alias gfo='git fetch origin'
 alias gpu='git push origin $(current_branch)'
 alias glu='git pull origin $(current_branch)'
 alias egi="vim $(git rev-parse --show-toplevel)/.gitignore"
+alias standup=$HOME/.git-standup.sh
 
 #######
 # Vim #
@@ -93,7 +94,7 @@ function int-ip { /sbin/ifconfig $1 | grep "inet addr" | grep -v "127.0.0.1" | a
 ##################
 
 alias dir2unix="find . -type f -exec dos2unix {} {} \;"
-alias yui="java -jar /usr/bin/yuicompressor/build/yuicompressor*" 
+alias yui="java -jar /usr/bin/yuicompressor/build/yuicompressor*"
 alias mergeclean='find -name \*.orig | xargs rm'
 
 #############
