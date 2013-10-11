@@ -1,0 +1,54 @@
+[user]
+	name = Chris DeLuca
+	email = bronzehedwick@gmail.com
+[core]
+	editor = vi
+	excludesfile = /Users/cdeluca/.gitignore
+[alias]
+	co = checkout
+	cm = commit
+	st = status
+	br = branch
+	cl = clone
+	cp = cherry-pick
+	hist = log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%ad | %s%d %Cblue[%an]\" --graph --date=short
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	le = log --oneline --decorate
+	filelog = log -u
+	dl = "!git ll -1"
+	dlc = diff --cached HEAD^
+	fl = log -u
+	dr  = "!f() { git diff "$1"^.."$1"; }; f"
+	lc  = "!f() { git ll "$1"^.."$1"; }; f"
+	diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+	la = "!git config -l | grep alias | cut -c 7-"
+	ours = "!f() { git co --ours $@ && git add $@; }; f"
+	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
+	type = cat-file -t
+	dump = cat-file -p
+	grep = grep --break --heading --line-number
+	g = grep --break --heading --line-number
+[merge]
+	conflictstyle = diff3
+	tool = diffmerge
+[color]
+	ui = auto
+[credential]
+	helper = cache
+[push]
+	default = matching
+[grep]
+	lineNumber = true
+[mergetool]
+	keepBackup = false
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = true
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = diffmerge $LOCAL $REMOTE
