@@ -59,6 +59,7 @@ alias du="du -h"
 alias date="date '+%a %b %e %I:%M %p'"
 alias fdate="\date '+%Y-%m-%d'"
 alias ftdate="\date '+%Y-%m-%e-%I-%M'"
+alias rdate="\date '+%Y%m%d'"
 
 #######
 # Git #
