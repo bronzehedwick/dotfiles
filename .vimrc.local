@@ -68,7 +68,6 @@ if has('gui_running')
   set guioptions-=R " Remove right scrollbar in split
   set guioptions-=b " Remove bottom scrollbar
   set guioptions+=c " Use command line for simple choices, instead of popup
-  let g:airline_powerline_fonts = 1
   if has('gui_mac')
     set guifont=Inconsolata\ for\ Powerline:h18
   elseif has('gui_gtk')
@@ -83,3 +82,5 @@ else
   set nospell
 endif
 
+" Add CSSLint file support
+let g:CSSLint_FileTypeList = ['css', 'less', 'sess', 'sass', 'scss']

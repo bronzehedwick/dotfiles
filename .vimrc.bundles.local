@@ -1,8 +1,9 @@
 " Custom Bundles
 
-" HTML
+" HTML / CSS
 Bundle 'mattn/emmet-vim'
 Bundle 'gregsexton/MatchTag'
+Bundle 'vim-scripts/csslint.vim'
 
 " JavaScript
 Bundle 'Shutnik/jshint2.vim'
@@ -19,3 +20,4 @@ Bundle 'joonty/vdebug.git'
 " Misc
 Bundle 'vim-scripts/hexHighlight.vim'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'duff/vim-bufonly'
