@@ -20,3 +20,6 @@
 --type-set=module=.module
 --type-set=info=.info
 --type-set=inc=.inc
+
+# Use a pager
+--pager=less -FRSX
