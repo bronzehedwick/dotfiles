@@ -1,23 +1,31 @@
-" Custom Bundles
+" bronzehedwick's spf13 bundles {
 
-" HTML / CSS
-Bundle 'mattn/emmet-vim'
-Bundle 'gregsexton/MatchTag'
-Bundle 'vim-scripts/csslint.vim'
+  let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'javascript', 'html', 'misc']
 
-" JavaScript
-Bundle 'Shutnik/jshint2.vim'
-Bundle 'nono/jquery.vim'
-Bundle 'guileen/vim-node'
+" }
 
-" Drupal
-Bundle 'theunraveler/Drupal-Snippets-for-Vim'
-Bundle 'benjifisher/Vim-Plugin-for-Drupal'
+" Custom Bundles {
 
-" Debugger
-Bundle 'joonty/vdebug.git'
+  " HTML / CSS
+  Bundle 'mattn/emmet-vim'
+  Bundle 'gregsexton/MatchTag'
+  Bundle 'vim-scripts/csslint.vim'
 
-" Misc
-Bundle 'vim-scripts/hexHighlight.vim'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'duff/vim-bufonly'
+  " JavaScript
+  Bundle 'Shutnik/jshint2.vim'
+  Bundle 'nono/jquery.vim'
+  Bundle 'guileen/vim-node'
+
+  " Drupal
+  Bundle 'theunraveler/Drupal-Snippets-for-Vim'
+  Bundle 'benjifisher/Vim-Plugin-for-Drupal'
+
+  " Debugger
+  Bundle 'joonty/vdebug.git'
+
+  " Misc
+  Bundle 'vim-scripts/hexHighlight.vim'
+  Bundle 'tpope/vim-unimpaired'
+  Bundle 'duff/vim-bufonly'
+
+" }
