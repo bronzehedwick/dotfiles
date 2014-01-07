@@ -24,7 +24,7 @@
   "Bundle 'joonty/vdebug.git'
 
   " Misc
-  Bundle 'vim-scripts/hexHighlight.vim'
+  Bundle 'gorodinskiy/vim-coloresque'
   "Bundle 'tpope/vim-unimpaired'
   Bundle 'duff/vim-bufonly'
   Bundle 'myusuf3/numbers.vim'
