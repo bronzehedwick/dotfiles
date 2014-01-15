@@ -37,9 +37,12 @@ alias c="clear"
 if hash growlnotify 2>/dev/null; then
   alias cct="drush cache-clear theme-registry && growlnotify -t 'Drush' -m 'Theme cache cleared'"
   alias cca="drush cache-clear all && growlnotify -t 'Drush' -m 'All caches cleared'"
+elif hash kdialog 2>/dev/null; then
+  alias cct="drush cache-clear theme-registry && kdialog --title 'Drush' --passivepopup 'Theme cache cleared' 3"
+  alias cca="drush cache-clear all && kdialog --title 'Drush' --passivepopup 'All caches cleared' 5"
 else
-  alias cct="drush cache-clear theme-registry"
-  alias cca="drush cache-clear all"
+  alias cct="drush cache-clear theme-registry && tput bel"
+  alias cca="drush cache-clear all && tput bel"
 fi
 
 ###############
