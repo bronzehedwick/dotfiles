@@ -118,8 +118,8 @@ alias dent="identica"
 alias colortest="( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done; )"
 
 #List all available commands
-function ListAllCommands
-{
+function ListAllCommands {
     echo -n $PATH | xargs -d : -I {} find {} -maxdepth 1 \
         -executable -type f -printf '%P\n' | sort -u
 }
+
