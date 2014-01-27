@@ -1,9 +1,3 @@
-" bronzehedwick's spf13 bundles {
-
-  let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'javascript', 'html', 'misc']
-
-" }
-
 " Custom Bundles {
 
   " HTML / CSS
