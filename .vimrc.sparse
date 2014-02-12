@@ -19,3 +19,4 @@ set tabstop=2
 set expandtab
 set autochdir
 set relativenumber
+set hlsearch
