@@ -68,7 +68,7 @@ if has('gui_running')
   set guioptions-=R " Remove right scrollbar in split
   set guioptions-=b " Remove bottom scrollbar
   set guioptions+=c " Use command line for simple choices, instead of popup
-  if has('gui_mac')
+  if has('macunix')
     set guifont=Inconsolata\ for\ Powerline:h18
   elseif has('gui_gtk')
     set guifont=Inconsolata\ for\ Powerline\ 16
