@@ -1,12 +1,13 @@
 " bronzehedwick's spf13 bundles {
 
-  if has('python') && version >= 73584
-    let g:spf13_bundle_groups=['general', 'youcompleteme', 'programming', 'php', 'javascript', 'html', 'snipmate', 'misc']
-  else
-    let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'javascript', 'html', 'misc']
+  if has('python')
+    if version > 703
+      let g:spf13_bundle_groups=['general', 'youcompleteme', 'programming', 'php', 'javascript', 'html', 'snipmate', 'misc']
+    else
+      let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'javascript', 'html', 'misc']
+    endif
   endif
 
 " }
 
 let g:airline_powerline_fonts=1
-"let g:spf13_noninvasive_completion=1
