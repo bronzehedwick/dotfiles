@@ -47,7 +47,7 @@ set cpoptions+=$
 set wrap
 
 " Set colorscheme
-colorscheme xoria256
+"colorscheme xoria256
 
 " Add node auto completion
 "au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
