@@ -105,3 +105,5 @@ function git_diff() {
 # Personal prompt
 export PS1="\u@\h:\W\$(parse_git_branch)$ "
 
+
+export PATH=$PATH:/Applications/acquia-drupal/drush
