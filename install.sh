@@ -2,6 +2,7 @@
 # Installs dotfiles to home directory
 # @author Chris DeLuca (bronzehedwick)
 
+# Add dotfiles
 OS="$(uname)"
 FILES=.*
 TARGET=~
@@ -17,6 +18,7 @@ done
 echo "Deleting .gitignore"
 rm $TARGET/.gitignore
 
+# Add tmux conf - based on OS
 if [[ $OS == 'Darwin' ]]; then
   echo "Linking to osx version of .tmux.conf"
   ln -s $DIR/tmux.conf.osx $TARGET/.tmux.conf
@@ -25,6 +27,7 @@ else
   ln -s $DIR/tmux.conf $TARGET/.tmux.conf
 fi
 
+# If oh my zsh is install, add config
 if [[ -d ~/.oh-my-zsh ]]; then
     echo "Linking bronzehedwick.zsh to .oh-my-zsh/custom/"
     ln -s bronzehedwick.zsh ~/.oh-my-zsh/custom
