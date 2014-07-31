@@ -11,8 +11,8 @@
   Bundle 'guileen/vim-node'
 
   " Drupal
-  Bundle 'theunraveler/Drupal-Snippets-for-Vim'
-  Bundle 'benjifisher/Vim-Plugin-for-Drupal'
+  "Bundle 'theunraveler/Drupal-Snippets-for-Vim'
+  "Bundle 'benjifisher/Vim-Plugin-for-Drupal'
 
   " Debugger
   "Bundle 'joonty/vdebug.git'
