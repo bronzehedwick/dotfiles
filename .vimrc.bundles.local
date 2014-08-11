@@ -7,11 +7,12 @@
 
   " JavaScript
   Bundle 'Shutnik/jshint2.vim'
-  Bundle 'nono/jquery.vim'
+  "Bundle 'nono/jquery.vim'
   Bundle 'guileen/vim-node'
+  Bundle 'othree/javascript-libraries-syntax.vim'
 
   " Drupal
-  "Bundle 'theunraveler/Drupal-Snippets-for-Vim'
+  Bundle 'theunraveler/Drupal-Snippets-for-Vim'
   "Bundle 'benjifisher/Vim-Plugin-for-Drupal'
 
   " Debugger
@@ -19,13 +20,15 @@
 
   " Misc
   Bundle 'gorodinskiy/vim-coloresque'
-  Bundle 'tpope/vim-unimpaired'
   Bundle 'duff/vim-bufonly'
   Bundle 'myusuf3/numbers.vim'
+  Bundle 'editorconfig/editorconfig-vim'
 
   if has('python')
     if version > 703
       Bundle 'Valloric/YouCompleteMe'
+      "Bundle 'SirVer/ultisnips'
+      "Bundle 'honza/vim-snippets'
     endif
   endif
 
