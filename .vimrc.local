@@ -68,22 +68,14 @@ if has('gui_running')
   set guioptions-=R " Remove right scrollbar in split
   set guioptions-=b " Remove bottom scrollbar
   set guioptions+=c " Use command line for simple choices, instead of popup
-  if has('macunix')
-    set guifont=Inconsolata\ for\ Powerline:h18
-  elseif has('gui_gtk')
-    set guifont=Inconsolata\ for\ Powerline\ 16
-    set clipboard=unnamedplus
-  elseif has('gui_qt')
-    set guifont=Inconsolata\ for\ Powerline\ 18
-    set clipboard=unnamedplus
-  endif
 else
   colorscheme ir_black
   set nospell
 endif
 
 " Add CSSLint file support
-let g:CSSLint_FileTypeList = ['css', 'less', 'sess', 'sass', 'scss']
+"let g:CSSLint_FileTypeList = ['css', 'less', 'sess', 'sass', 'scss']
+let g:CSSLint_HighlightErrorLine = 0
 
 " Disable PIV's folding
 let g:DisableAutoPHPFolding = 1

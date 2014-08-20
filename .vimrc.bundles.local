@@ -3,7 +3,7 @@
   " HTML / CSS
   Bundle 'mattn/emmet-vim'
   Bundle 'gregsexton/MatchTag'
-  Bundle 'vim-scripts/csslint.vim'
+  "Bundle 'vim-scripts/csslint.vim'
 
   " JavaScript
   Bundle 'Shutnik/jshint2.vim'
