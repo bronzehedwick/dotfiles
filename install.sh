@@ -27,10 +27,16 @@ else
   ln -s $DIR/tmux.conf $TARGET/.tmux.conf
 fi
 
-# If oh my zsh is install, add config
+# If oh my zsh is installed, add config
 if [[ -d ~/.oh-my-zsh ]]; then
     echo "Linking bronzehedwick.zsh to .oh-my-zsh/custom/"
     ln -s bronzehedwick.zsh ~/.oh-my-zsh/custom
+fi
+
+# If oh my fish is installed, add config
+if [[ -d ~/.oh-my-fish ]]; then
+    echo "Linking bronzehedwick.load to .oh-my-fish/custom/"
+    ln -s bronzehedwick.load ~/.oh-my-fish/custom
 fi
 
 echo "Done"
