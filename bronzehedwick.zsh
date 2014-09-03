@@ -61,8 +61,7 @@ alias df="df -h"
 #Directory usage for humans
 alias du="du -h"
 
-#More useful date
-alias date="date '+%a %b %e %I:%M %p'"
+#Date aliases
 alias fdate="\date '+%Y-%m-%d'"
 alias ftdate="\date '+%Y-%m-%e-%I-%M'"
 alias rdate="\date '+%Y%m%d'"
