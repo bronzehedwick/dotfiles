@@ -1,6 +1,15 @@
+###################
+# Custom bindings #
+###################
+bind \cw 'beginning-of-line'
+
 #########################
 # Command modifications #
 #########################
+
+# set ls colors globally
+# use solarized colorscheme
+set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
 
 # some ls aliases
 alias ll "ls -lhcF"
@@ -86,6 +95,8 @@ alias egi="vim (git rev-parse --show-toplevel)/.gitignore"
 alias standup=$HOME/.git-standup.sh
 alias gfu='git fetch upstream'
 alias gmu='git merge upstream/master'
+alias gl 'git pull'
+alias grt 'cd (git rev-parse --show-toplevel;or echo ".")'
 
 #######
 # Vim #
@@ -106,6 +117,7 @@ alias dir2unix="find . -type f -exec dos2unix {} {} \;"
 alias yui="java -jar /usr/bin/yuicompressor/build/yuicompressor*"
 alias mergeclean='find -name \*.orig | xargs rm'
 alias bower='noglob bower'
+alias bubu 'brew update; and brew upgrade; and brew cleanup'
 
 #############
 # Fun Stuff #
@@ -113,6 +125,16 @@ alias bower='noglob bower'
 
 #Start text-based star wars
 alias starwars="telnet towel.blinkenlights.nl"
+
+# Facts for today
+function today
+  set -l now (date +"%m/%d")
+  cat /usr/share/calendar/calendar.birthday | grep $now
+  cat /usr/share/calendar/calendar.computer | grep $now
+  cat /usr/share/calendar/calendar.history | grep $now
+  cat /usr/share/calendar/calendar.music | grep $now
+  cat /usr/share/calendar/calendar.lotr | grep $now
+end
 
 #######################
 # Directory shortcuts #
