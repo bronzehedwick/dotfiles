@@ -97,6 +97,15 @@ alias gfu='git fetch upstream'
 alias gmu='git merge upstream/master'
 alias gl 'git pull'
 alias grt 'cd (git rev-parse --show-toplevel;or echo ".")'
+alias gm 'git merge'
+
+function gfb -d 'Create an IIN-style feature branch'
+  command git checkout -b feature/MKT-$argv
+end
+
+function gcf -d 'Checkout an IIN-style feature branch'
+  command git checkout feature/MKT-$argv
+end
 
 #######
 # Vim #
@@ -116,7 +125,6 @@ alias vi="vim -u ~/.vimrc.sparse"
 alias dir2unix="find . -type f -exec dos2unix {} {} \;"
 alias yui="java -jar /usr/bin/yuicompressor/build/yuicompressor*"
 alias mergeclean='find -name \*.orig | xargs rm'
-alias bower='noglob bower'
 alias bubu 'brew update; and brew upgrade; and brew cleanup'
 
 #############
@@ -143,3 +151,4 @@ alias dw 'cd ~/Downloads'
 alias sites 'cd ~/Sites'
 alias docs 'cd ~/Documents'
 alias pics 'cd ~/Pictures'
+alias myip 'curl wtfismyip.com/text'
