@@ -75,11 +75,13 @@ endif
 
 " Add CSSLint file support
 "let g:CSSLint_FileTypeList = ['css', 'less', 'sess', 'sass', 'scss']
-let g:CSSLint_HighlightErrorLine = 0
+"let g:CSSLint_HighlightErrorLine = 0
 
 " Disable PIV's folding
 let g:DisableAutoPHPFolding = 1
 
 " JS libraries syntax used
-let g:used_javascript_libs = 'jquery,angular'
+"let g:used_javascript_libs = 'jquery,angular'
 
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_css_checkers = ['csslint']

@@ -6,10 +6,10 @@
   "Bundle 'vim-scripts/csslint.vim'
 
   " JavaScript
-  Bundle 'Shutnik/jshint2.vim'
+  "Bundle 'Shutnik/jshint2.vim'
   "Bundle 'nono/jquery.vim'
   Bundle 'guileen/vim-node'
-  Bundle 'othree/javascript-libraries-syntax.vim'
+  "Bundle 'othree/javascript-libraries-syntax.vim'
 
   " Drupal
   Bundle 'theunraveler/Drupal-Snippets-for-Vim'
