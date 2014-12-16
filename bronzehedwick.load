@@ -136,12 +136,11 @@ alias starwars="telnet towel.blinkenlights.nl"
 
 # Facts for today
 function today
-  set -l now (date +"%m/%d")
-  cat /usr/share/calendar/calendar.birthday | grep $now
-  cat /usr/share/calendar/calendar.computer | grep $now
-  cat /usr/share/calendar/calendar.history | grep $now
-  cat /usr/share/calendar/calendar.music | grep $now
-  cat /usr/share/calendar/calendar.lotr | grep $now
+  calendar -f /usr/share/calendar/calendar.birthday
+  calendar -f /usr/share/calendar/calendar.computer
+  calendar -f /usr/share/calendar/calendar.history
+  calendar -f /usr/share/calendar/calendar.music
+  calendar -f /usr/share/calendar/calendar.lotr
 end
 
 #######################
