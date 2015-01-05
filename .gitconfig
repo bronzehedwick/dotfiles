@@ -3,7 +3,7 @@
 	email = bronzehedwick@gmail.com
 [core]
 	editor = vi
-	excludesfile = /Users/cdeluca/.gitignore
+	excludesfile = /Users/chris/.gitignore_global
 [alias]
 	co = checkout
 	cm = commit
