@@ -5,7 +5,6 @@
   Bundle 'gregsexton/MatchTag'
 
   " JavaScript
-  "Bundle 'Shutnik/jshint2.vim'
   Bundle 'guileen/vim-node'
 
   " Drupal
