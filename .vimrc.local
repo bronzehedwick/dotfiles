@@ -46,9 +46,6 @@ set cpoptions+=$
 " Set soft wrap
 set wrap
 
-" Add node auto completion
-"au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
-
 " Make Vim source .bashrc
 set shell=bash\ --login
 
@@ -70,15 +67,13 @@ else
   set nospell
 endif
 
-" Add CSSLint file support
-"let g:CSSLint_FileTypeList = ['css', 'less', 'sess', 'sass', 'scss']
-"let g:CSSLint_HighlightErrorLine = 0
-
 " Disable PIV's folding
 let g:DisableAutoPHPFolding = 1
 
-" JS libraries syntax used
-"let g:used_javascript_libs = 'jquery,angular'
-
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_css_checkers = ['csslint']
+
+augroup filetypedetect
+    autocmd BufNew,BufNewFile,BufRead *.fountain :setfiletype fountain
+augroup END
+
