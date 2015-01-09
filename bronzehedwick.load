@@ -103,7 +103,7 @@ function gfb -d 'Create an IIN-style feature branch'
   command git checkout -b feature/MKT-$argv
 end
 
-function gcf -d 'Checkout an IIN-style feature branch'
+function gfc -d 'Checkout an IIN-style feature branch'
   command git checkout feature/MKT-$argv
 end
 
@@ -136,11 +136,11 @@ alias starwars="telnet towel.blinkenlights.nl"
 
 # Facts for today
 function today
-  calendar -f /usr/share/calendar/calendar.birthday
-  calendar -f /usr/share/calendar/calendar.computer
-  calendar -f /usr/share/calendar/calendar.history
-  calendar -f /usr/share/calendar/calendar.music
-  calendar -f /usr/share/calendar/calendar.lotr
+  calendar -A 0 -f /usr/share/calendar/calendar.birthday
+  calendar -A 0 -f /usr/share/calendar/calendar.computer
+  calendar -A 0 -f /usr/share/calendar/calendar.history
+  calendar -A 0 -f /usr/share/calendar/calendar.music
+  calendar -A 0 -f /usr/share/calendar/calendar.lotr
 end
 
 #######################
