@@ -11,8 +11,8 @@
 	br = branch
 	cl = clone
 	cp = cherry-pick
-	hist = log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%ad | %s%d %Cblue[%an]\" --graph --date=short
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  hist = log --all --graph --pretty=format:\"%Cred%h%Creset\\ -%C(auto)%d%Creset\\ %s\\ %Cgreen(%cr)\\ %C(bold blue)<%an>%Creset\" --abbrev-commit --date=relative
+  ls = log --all --pretty=format:\"%Cred%h%Creset\\ -%C(auto)%d%Creset\\ %s\\ %Cgreen(%cr)\\ %C(bold blue)<%an>%Creset\" --abbrev-commit --date=relative
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
 	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
@@ -57,3 +57,9 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
