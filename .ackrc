@@ -16,6 +16,8 @@
 # Custom types and abbreviatinos.
 --type-set=py=.py
 --type-set=sass=.sass
+--type-set=scss=.scss
+--type-set=less=.less
 --type-set=coffee=.coffee
 --type-set=module=.module
 --type-set=info=.info
