@@ -1,9 +1,29 @@
 # ~/.bash_aliases: executed by bash(1) for non-login shells.
 # for examples
 
+######
+# LS #
+######
+
+alias ll='ls -lhcF'
+alias la='ls -AF'
+alias l='ls -CF'
+alias lla='ls -AFchl'
+
+########
+# grep #
+########
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# color grep alias for piping to less
+alias cgrep='grep --color=always'
+alias less='less -R'
+
 #############
 # Shortcuts #
-############# 
+#############
 
 #Clear the terminal
 alias c="clear"
@@ -120,21 +140,3 @@ gup='git pull --rebase'
 gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 gwip='git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m "wip"'
 mergeclean='find -name \*.orig | xargs rm'
-
-#########
-# Sites #
-#########
-alias tdm_qa='cd ~/tdm_qa'
-alias tdm_qa2='cd ~/tdm_qa2'
-alias tdm_qa3='cd ~/tdm_qa3'
-alias tdm_qa4='cd ~/tdm_qa4'
-alias tdm_qa5='cd ~/tdm_qa5'
-alias tdm_qa6='cd ~/tdm_qa6'
-alias tat_qa='cd ~/tat_qa'
-alias tat_qa2='cd ~/tat_qa2'
-
-# Release
-alias release_date='\date '\''+%Y%m%d'\'
-alias rdate='\date '\''+%Y%m%d'\'
-alias rd='\date '\''+%Y%m%d'\'
-alias nighthawk='cd /home/cdeluca/nighthawk'
