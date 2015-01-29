@@ -114,13 +114,20 @@ end
 #######
 # Vim #
 #######
+
 alias vi="vim -u ~/.vimrc.sparse"
 
 ##############
 # IP Address #
 ##############
-#function ext-ip () { curl http://ipecho.net/plain; echo }
-#function int-ip { /sbin/ifconfig $1 | grep "inet addr" | grep -v "127.0.0.1" | awk -F: '{print $2}' | awk '{print $1}' }
+
+function ext-ip
+  curl http://wtfismyip.com/text; echo
+end
+
+function int-ip
+  /sbin/ifconfig $1 | grep "inet" | grep "192.168" | awk '{print $2}'
+end
 
 ##################
 # Other Programs #
