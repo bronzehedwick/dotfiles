@@ -12,7 +12,6 @@
   "Bundle 'benjifisher/Vim-Plugin-for-Drupal'
 
   " Misc
-  Bundle 'gorodinskiy/vim-coloresque'
   Bundle 'duff/vim-bufonly'
   Bundle 'myusuf3/numbers.vim'
   Bundle 'editorconfig/editorconfig-vim'
