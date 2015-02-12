@@ -19,6 +19,8 @@ set autochdir " Automatically change to directory of file
 set relativenumber " Relative line numbers
 set hlsearch " Highlighted search
 
+let mapleader = ',' " Reassign map leader to ','
+
 " From vim sensible
 set autoindent
 set backspace=indent,eol,start
