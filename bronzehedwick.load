@@ -84,7 +84,6 @@ alias gs="git status"
 alias gb="git branch"
 alias gc="git commit"
 alias gd="git diff"
-alias go="git checkout"
 alias ga="git add"
 alias gti="git"
 alias gmc='git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -100 | less'
