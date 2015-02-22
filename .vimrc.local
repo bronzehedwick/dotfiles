@@ -77,3 +77,10 @@ augroup filetypedetect
     autocmd BufNew,BufNewFile,BufRead *.fountain :setfiletype fountain
 augroup END
 
+" Tern mappings
+noremap <leader>jb :TernDocBrowse<CR>
+noremap <leader>jd :TernDef<CR>
+noremap <leader>js :TernDefSplit<CR>
+noremap <leader>jr :TernRefs<CR>
+noremap <leader>jn :TernRename<CR>
+noremap <leader>jt :TernType<CR>
