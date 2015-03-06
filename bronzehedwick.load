@@ -136,6 +136,7 @@ alias dir2unix="find . -type f -exec dos2unix {} {} \;"
 alias yui="java -jar /usr/bin/yuicompressor/build/yuicompressor*"
 alias mergeclean='find -name \*.orig | xargs rm'
 alias bubu 'brew update; and brew upgrade; and brew cleanup'
+alias irc 'irssi'
 
 #############
 # Fun Stuff #
