@@ -80,7 +80,7 @@ augroup filetypedetect
 augroup END
 
 " Tern mappings
-noremap <leader>jb :TernDocBrowse<CR>
+noremap <leader>ju :TernDocBrowse<CR>
 noremap <leader>jd :TernDef<CR>
 noremap <leader>js :TernDefSplit<CR>
 noremap <leader>jr :TernRefs<CR>
