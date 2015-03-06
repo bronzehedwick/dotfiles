@@ -8,6 +8,7 @@
   Bundle 'guileen/vim-node'
   Bundle 'marijnh/tern_for_vim'
   Bundle 'mxw/vim-jsx'
+  Bundle 'wavded/vim-stylus'
 
   " Drupal
   Bundle 'theunraveler/Drupal-Snippets-for-Vim'
