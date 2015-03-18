@@ -3,6 +3,7 @@
   " HTML / CSS
   Bundle 'mattn/emmet-vim'
   Bundle 'gregsexton/MatchTag'
+  Bundle 'othree/html5.vim'
 
   " JavaScript
   Bundle 'guileen/vim-node'
