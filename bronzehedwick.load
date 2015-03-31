@@ -107,7 +107,11 @@ function gfb -d 'Create an IIN-style feature branch'
 end
 
 function gfc -d 'Checkout an IIN-style feature branch'
-  command git checkout feature/MKT-$argv
+  if test (pwd | ack -o 'marketing') = 'marketing'
+    command git checkout feature/MKT-$argv
+  else if test (pwd | ack -o 'shareiin') = 'shareiin'
+    command git checkout feature/REF-$argv
+  end
 end
 
 #######
