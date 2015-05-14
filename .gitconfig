@@ -2,8 +2,7 @@
 	name = Chris DeLuca
 	email = bronzehedwick@gmail.com
 [core]
-	editor = vi
-	excludesfile = /Users/chris/.gitignore_global
+	editor = nvim
 [alias]
 	co = checkout
 	cm = commit
