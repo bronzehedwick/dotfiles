@@ -98,22 +98,6 @@ alias gl 'git pull'
 alias grt 'cd (git rev-parse --show-toplevel;or echo ".")'
 alias gm 'git merge'
 
-function gfb -d 'Create an IIN-style feature branch'
-  if test (pwd | ack -o 'marketing') = 'marketing'
-    command git checkout -b feature/MKT-$argv
-  else if test (pwd | ack -o 'shareiin') = 'shareiin'
-    command git checkout -b feature/REF-$argv
-  end
-end
-
-function gfc -d 'Checkout an IIN-style feature branch'
-  if test (pwd | ack -o 'marketing') = 'marketing'
-    command git checkout feature/MKT-$argv
-  else if test (pwd | ack -o 'shareiin') = 'shareiin'
-    command git checkout feature/REF-$argv
-  end
-end
-
 #######
 # Vim #
 #######

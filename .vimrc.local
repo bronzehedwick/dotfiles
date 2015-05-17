@@ -63,7 +63,7 @@ if has('gui_running')
   set guioptions-=b " Remove bottom scrollbar
   set guioptions+=c " Use command line for simple choices, instead of popup
 else
-  colorscheme ir_black
+  colorscheme molokai
   set nospell
 endif
 
@@ -87,3 +87,6 @@ noremap <leader>js :TernDefSplit<CR>
 noremap <leader>jr :TernRefs<CR>
 noremap <leader>jn :TernRename<CR>
 noremap <leader>jt :TernType<CR>
+
+" Add new mapping for Esc
+:imap jj <Esc>
