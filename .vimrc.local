@@ -89,4 +89,4 @@ noremap <leader>jn :TernRename<CR>
 noremap <leader>jt :TernType<CR>
 
 " Add new mapping for Esc
-:imap jj <Esc>
+:imap jh <Esc>
