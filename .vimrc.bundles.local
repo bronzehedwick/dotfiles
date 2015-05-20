@@ -8,11 +8,11 @@
   " JavaScript
   Bundle 'guileen/vim-node'
   Bundle 'marijnh/tern_for_vim'
-  Bundle 'mxw/vim-jsx'
-  Bundle 'wavded/vim-stylus'
+  "Bundle 'mxw/vim-jsx'
+  "Bundle 'wavded/vim-stylus'
 
   " Drupal
-  Bundle 'theunraveler/Drupal-Snippets-for-Vim'
+  "Bundle 'theunraveler/Drupal-Snippets-for-Vim'
   "Bundle 'benjifisher/Vim-Plugin-for-Drupal'
 
   " Misc
@@ -20,5 +20,6 @@
   Bundle 'editorconfig/editorconfig-vim'
   Bundle 'fountain.vim'
   Bundle 'dag/vim-fish'
+  Bundle 'jimmyhchan/dustjs.vim'
 
 " }
