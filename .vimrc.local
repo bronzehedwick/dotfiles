@@ -88,5 +88,12 @@ noremap <leader>jr :TernRefs<CR>
 noremap <leader>jn :TernRename<CR>
 noremap <leader>jt :TernType<CR>
 
+" Airline theme
+if isdirectory(expand("~/.vim/bundle/vim-airline/"))
+  if !exists('g:airline_theme')
+    let g:airline_theme = 'molokai'
+  endif
+endif
+
 " Add new mapping for Esc
 :imap jh <Esc>
