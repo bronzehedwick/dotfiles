@@ -46,11 +46,16 @@ set cpoptions+=$
 " Set soft wrap
 set wrap
 
-" Make Vim source .bashrc
-set shell=bash\ --login
+" Make Neovim use fish shell for terminal emulator
+if has('nvim')
+  set shell=fish
+endif
 
 " Display date and time
 map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
+
+" Set a colorscheme
+colorscheme molokai
 
 " GVIM- (here instead of .gvimrc)
 if has('gui_running')
@@ -63,7 +68,6 @@ if has('gui_running')
   set guioptions-=b " Remove bottom scrollbar
   set guioptions+=c " Use command line for simple choices, instead of popup
 else
-  colorscheme molokai
   set nospell
 endif
 
