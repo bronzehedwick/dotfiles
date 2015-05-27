@@ -46,10 +46,10 @@ set cpoptions+=$
 " Set soft wrap
 set wrap
 
-" Make Neovim use fish shell for terminal emulator
-"if has('nvim')
-  "set shell=fish
-"endif
+" Make Neovim use the default shell for terminal emulator
+if has('nvim')
+  set shell=$SHELL
+endif
 
 " Display date and time
 map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
