@@ -1,3 +1,16 @@
+" Removed Bundles {
+
+  UnBundle 'scrooloose/syntastic'
+  UnBundle 'kristijanhusak/vim-multiple-cursors'
+  UnBundle 'Lokaltog/vim-easymotion'
+  UnBundle 'osyo-manga/vim-over'
+  UnBundle 'SirVer/ultisnips'
+  UnBundle 'honza/vim-snippets'
+  UnBundle 'briancollins/vim-jst'
+  UnBundle 'kchmck/vim-coffee-script'
+
+" }
+
 " Custom Bundles {
 
   " HTML / CSS
@@ -7,15 +20,10 @@
 
   " JavaScript
   Bundle 'guileen/vim-node'
-  Bundle 'marijnh/tern_for_vim'
-  "Bundle 'mxw/vim-jsx'
-  "Bundle 'wavded/vim-stylus'
-
-  " Drupal
-  "Bundle 'theunraveler/Drupal-Snippets-for-Vim'
-  "Bundle 'benjifisher/Vim-Plugin-for-Drupal'
+  "Bundle 'marijnh/tern_for_vim'
 
   " Misc
+  Bundle 'tpope/vim-markdown'
   Bundle 'myusuf3/numbers.vim'
   Bundle 'editorconfig/editorconfig-vim'
   Bundle 'fountain.vim'

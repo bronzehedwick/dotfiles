@@ -8,7 +8,7 @@
 
 " bronzehedwick's spf13 bundles {
 
-  let g:spf13_bundle_groups=['general', 'youcompleteme', 'programming', 'php', 'javascript', 'html', 'misc']
+  let g:spf13_bundle_groups=['general', 'youcompleteme', 'programming', 'php', 'javascript', 'html']
 
 " }
 
