@@ -99,3 +99,6 @@ endif
 
 " Add new mapping for Esc
 :imap jh <Esc>
+
+" Add Neomake linting
+autocmd! BufWritePost * Neomake
