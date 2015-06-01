@@ -21,7 +21,8 @@
   " JavaScript
   Bundle 'guileen/vim-node'
   Bundle 'benekastah/neomake'
-  "Bundle 'marijnh/tern_for_vim'
+  Bundle 'marijnh/tern_for_vim'
+  Bundle 'jimmyhchan/dustjs.vim'
 
   " Misc
   Bundle 'tpope/vim-markdown'
@@ -29,6 +30,5 @@
   Bundle 'editorconfig/editorconfig-vim'
   Bundle 'fountain.vim'
   Bundle 'dag/vim-fish'
-  Bundle 'jimmyhchan/dustjs.vim'
 
 " }

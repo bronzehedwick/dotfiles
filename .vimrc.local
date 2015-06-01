@@ -74,10 +74,6 @@ endif
 " Disable PIV's folding
 let g:DisableAutoPHPFolding = 1
 
-" Enable JS/CSS linting
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_css_checkers = ['csslint']
-
 " Autodetect extra file types
 augroup filetypedetect
     autocmd BufNew,BufNewFile,BufRead *.fountain :setfiletype fountain
