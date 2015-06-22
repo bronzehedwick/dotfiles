@@ -49,6 +49,7 @@ set wrap
 " Make Neovim use the default shell for terminal emulator
 if has('nvim')
   set shell=$SHELL
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
 " Display date and time
