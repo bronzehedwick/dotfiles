@@ -7,7 +7,6 @@
   UnBundle 'SirVer/ultisnips'
   UnBundle 'honza/vim-snippets'
   UnBundle 'briancollins/vim-jst'
-  UnBundle 'kchmck/vim-coffee-script'
 
 " }
 
@@ -30,5 +29,6 @@
   Bundle 'editorconfig/editorconfig-vim'
   Bundle 'fountain.vim'
   Bundle 'dag/vim-fish'
+  "Bundle 'file:///Users/delucac/Documents/sweep'
 
 " }
