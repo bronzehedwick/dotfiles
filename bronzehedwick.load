@@ -148,7 +148,6 @@ alias dw 'cd ~/Downloads'
 alias sites 'cd ~/Sites'
 alias docs 'cd ~/Documents'
 alias pics 'cd ~/Pictures'
-alias myip 'curl wtfismyip.com/text'
 
 ############
 # The Fuck #
@@ -164,3 +163,5 @@ function fuck -d 'Correct your previous console command'
         history --delete $fucked_up_command
     end
 end
+
+alias logo 'fish ~/Dropbox/fish.sh'
