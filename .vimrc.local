@@ -49,14 +49,14 @@ set wrap
 " Make Neovim use the default shell for terminal emulator
 if has('nvim')
   "set shell=/usr/local/bin/fish
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 endif
 
 " Display date and time
 map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 
 " Set a colorscheme
-colorscheme molokai
+colorscheme OceanicNext
 
 " GVIM- (here instead of .gvimrc)
 if has('gui_running')
@@ -90,9 +90,9 @@ noremap <leader>jn :TernRename<CR>
 noremap <leader>jt :TernType<CR>
 
 " Airline theme
-if isdirectory(expand("~/.vim/bundle/vim-airline/"))
-  let g:airline_theme = 'molokai'
-endif
+"if isdirectory(expand("~/.vim/bundle/vim-airline/"))
+  "let g:airline_theme = 'molokai'
+"endif
 
 " Add new mapping for Esc
 :imap jh <Esc>

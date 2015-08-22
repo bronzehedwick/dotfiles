@@ -23,12 +23,14 @@
   Bundle 'marijnh/tern_for_vim'
   Bundle 'jimmyhchan/dustjs.vim'
 
+  " Themes
+  Bundle 'mhartington/oceanic-next'
+
   " Misc
   Bundle 'tpope/vim-markdown'
   Bundle 'myusuf3/numbers.vim'
   Bundle 'editorconfig/editorconfig-vim'
   Bundle 'fountain.vim'
   Bundle 'dag/vim-fish'
-  "Bundle 'file:///Users/delucac/Documents/sweep'
 
 " }

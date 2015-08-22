@@ -148,7 +148,6 @@ alias dw 'cd ~/Downloads'
 alias sites 'cd ~/Sites'
 alias docs 'cd ~/Documents'
 alias pics 'cd ~/Pictures'
-alias myip 'curl wtfismyip.com/text'
 
 ############
 # The Fuck #
@@ -165,5 +164,4 @@ function fuck -d 'Correct your previous console command'
     end
 end
 
-# Base16 Shell
-eval sh $HOME/.config/oceanic-next-shell/oceanic-next.dark.sh 
+alias logo 'fish ~/Dropbox/fish.sh'
