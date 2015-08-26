@@ -16,6 +16,7 @@
   Bundle 'mattn/emmet-vim'
   Bundle 'gregsexton/MatchTag'
   Bundle 'othree/html5.vim'
+  Bundle 'mustache/vim-mustache-handlebars'
 
   " JavaScript
   Bundle 'guileen/vim-node'
