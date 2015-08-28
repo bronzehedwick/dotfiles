@@ -29,6 +29,11 @@ function! SummarizeTabs()
   endtry
 endfunction
 
+command! -nargs=* Timestamp call Timestamp()
+function! Timestamp()
+  :r !date "+\%h \%d, \%Y, \%l:\%M:\%S \%p"
+endfunction
+
 " Toggle set wrap
 nmap <silent><leader>w :set wrap!<CR>
 
