@@ -73,8 +73,6 @@ if has('gui_running')
   set guioptions-=R " Remove right scrollbar in split
   set guioptions-=b " Remove bottom scrollbar
   set guioptions+=c " Use command line for simple choices, instead of popup
-else
-  set nospell
 endif
 
 " Disable PIV's folding
