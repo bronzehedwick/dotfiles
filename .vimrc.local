@@ -102,3 +102,6 @@ endif
 
 " Add Neomake linting
 autocmd! BufWritePost * Neomake
+
+" Fix syntax highlighting for sass files
+au BufRead,BufNewFile *.scss set filetype=sass
