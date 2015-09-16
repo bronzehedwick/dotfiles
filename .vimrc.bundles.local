@@ -23,6 +23,8 @@
   Bundle 'benekastah/neomake'
   Bundle 'marijnh/tern_for_vim'
   Bundle 'jimmyhchan/dustjs.vim'
+  Bundle 'mxw/vim-jsx'
+  Bundle 'digitaltoad/vim-jade'
 
   " Themes
   Bundle 'mhartington/oceanic-next'
