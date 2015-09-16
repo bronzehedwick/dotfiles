@@ -169,6 +169,10 @@ function init -a path --on-event init_bronzehedwick
   end
 
   alias logo 'fish ~/Dropbox/fish.sh'
+
+  function server -d 'Serve the current directory using python'
+    open http://localhost:$argv; and python -m SimpleHTTPServer $argv
+  end
 end
 
 function bronzehedwick -d "My package"
