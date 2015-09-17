@@ -102,6 +102,7 @@ endif
 
 " Add Neomake linting
 autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 " Fix syntax highlighting for sass files
 au BufRead,BufNewFile *.scss set filetype=sass
