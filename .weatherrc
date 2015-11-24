@@ -1,6 +1,0 @@
-[default]
-Forecast = True
-City = New York
-ID = KNYC
-St = NY
-Zones = NYZ073
