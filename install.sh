@@ -5,7 +5,7 @@
 # Add dotfiles
 OS="$(uname)"
 FILES=.*
-TARGET=~
+TARGET=$HOME
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 for f in $FILES
 do
@@ -35,20 +35,12 @@ if [[ ! -f $TARGET/.tmux.conf ]]; then
   fi
 fi
 
-# If oh my zsh is installed, add config
-if [[ ! -f ~/.oh-my-zsh/custom/bronzehedwick.zsh ]]; then
-  if [[ -d ~/.oh-my-zsh ]]; then
-    echo "Linking bronzehedwick.zsh to .oh-my-zsh/custom/"
-    ln -s bronzehedwick.zsh ~/.oh-my-zsh/custom
-  fi
-fi
-
 # If oh my fish is installed, add config
-if [[ ! -f ~/.oh-my-fish/custom/bronzehedwick.load ]]; then
-  if [[ -d ~/.oh-my-fish ]]; then
-    echo "Linking bronzehedwick.load to .oh-my-fish/custom/"
-    ln -s bronzehedwick.load ~/.oh-my-fish/custom
-  fi
+if [[ -d ~/.local/share/omf ]]; then
+  echo "Removing empty custom omf scaffolding directory"
+  rm -rf $TARGET/.config/omf
+  echo "Linking omf to ~/.config/omf"
+  ln -s $DIR/omf $TARGET/.config/omf
 fi
 
 echo "Done"
