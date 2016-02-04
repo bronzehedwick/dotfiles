@@ -73,6 +73,13 @@ alias sites 'cd ~/Sites'
 alias docs 'cd ~/Documents'
 alias pics 'cd ~/Pictures'
 
+##################
+# User functions #
+##################
 function server -d 'Serve the current directory using python'
   open http://localhost:$argv; and python -m SimpleHTTPServer $argv
+end
+
+function mp -d 'Create a morning page file'
+  nvim ~/Dropbox/Writing/Morning\ Pages/(date "+%m-%d-%Y").txt
 end

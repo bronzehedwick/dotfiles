@@ -43,4 +43,21 @@ if [[ -d ~/.local/share/omf ]]; then
   ln -s $DIR/omf $TARGET/.config/omf
 fi
 
+# Install VimPlug
+if [[ ! -d ~/.config/nvim/autoload ]]; then
+  echo "Installing VimPlug"
+  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+
+# Add NeoVim config
+if [[ ! -f $TARGET/.config/nvim/init.vim ]]; then
+	echo "Linking NeoVim config"
+	ln -s $DIR/nvim/init.vim $TARGET/.config/nvim/init.vim
+fi
+
+# Install NeoVim plugins
+echo "Installing NeoVim plugins..."
+nvim +PlugInstall +qa
+
 echo "Done"
