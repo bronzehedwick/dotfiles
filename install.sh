@@ -24,23 +24,20 @@ do
   fi
 done
 
-# Add tmux conf - based on OS
-if [[ ! -f $TARGET/.tmux.conf ]]; then
-  if [[ $OS == 'Darwin' ]]; then
-    echo "Linking to osx version of .tmux.conf"
-    ln -s $DIR/tmux.conf.osx $TARGET/.tmux.conf
-  else
-    echo "Linking to standard *nix version of .tmux.conf"
-    ln -s $DIR/tmux.conf $TARGET/.tmux.conf
-  fi
-fi
-
-# If oh my fish is installed, add config
+# Add oh my fish config
 if [[ -d ~/.local/share/omf ]]; then
   echo "Removing empty custom omf scaffolding directory"
   rm -rf $TARGET/.config/omf
   echo "Linking omf to ~/.config/omf"
   ln -s $DIR/omf $TARGET/.config/omf
+fi
+
+# Add irssi (irc) config
+if [[ -d ~/.irssi ]]; then
+  echo "Removing default irssi scaffolding directory"
+  rm -rf $TARGET/.irssi
+  echo "Linking irssi config"
+  ln -s $DIR/irssi $TARGET/.irssi
 fi
 
 # Install VimPlug
@@ -52,8 +49,8 @@ fi
 
 # Add NeoVim config
 if [[ ! -f $TARGET/.config/nvim/init.vim ]]; then
-	echo "Linking NeoVim config"
-	ln -s $DIR/nvim/init.vim $TARGET/.config/nvim/init.vim
+  echo "Linking NeoVim config"
+  ln -s $DIR/nvim/init.vim $TARGET/.config/nvim/init.vim
 fi
 
 # Install NeoVim plugins
