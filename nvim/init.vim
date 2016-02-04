@@ -80,6 +80,10 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
+" Working with the file system
+Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
+
 " Misc
 Plug 'vim-scripts/fountain.vim'
 
