@@ -1,3 +1,8 @@
+########
+# Path #
+########
+set PATH /usr/local/sbin $PATH
+
 ###################
 # Custom bindings #
 ###################
