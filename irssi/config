@@ -326,7 +326,6 @@ statusbar = {
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
-        act = { priority = "10"; };
         more = { priority = "-1"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
       };
@@ -376,6 +375,13 @@ statusbar = {
         topicbarend = { priority = "100"; alignment = "right"; };
       };
     };
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
   };
 };
 settings = {
@@ -385,4 +391,10 @@ settings = {
     nick = "bronzehedwick";
   };
   "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = { theme = "xchat2.theme"; };
+  "perl/core/scripts" = {
+    awl_shared_sbar = "OFF";
+    awl_block = "-14";
+    awl_viewer = "no";
+  };
 };
