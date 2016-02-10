@@ -391,7 +391,7 @@ settings = {
     nick = "bronzehedwick";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { theme = "xchat2.theme"; };
+  "fe-common/core" = { theme = "solarized-universal.theme"; };
   "perl/core/scripts" = {
     awl_shared_sbar = "OFF";
     awl_block = "-14";
