@@ -53,7 +53,7 @@ set wrap
 
 " Make Neovim use the default shell for terminal emulator
 if has('nvim')
-  "set shell=/usr/local/bin/fish
+  set shell=$SHELL
   let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 endif
 
@@ -94,7 +94,7 @@ noremap <leader>jt :TernType<CR>
 
 " Airline theme
 if isdirectory(expand("~/.vim/bundle/vim-airline/"))
-  let g:airline_theme = 'base16'
+  let g:airline_theme = 'oceanicnext'
 endif
 
 " Add new mapping for Esc
@@ -102,7 +102,9 @@ endif
 
 " Add Neomake linting
 autocmd! BufWritePost * Neomake
-let g:neomake_javascript_enabled_makers = ['eslint']
 
-" Fix syntax highlighting for sass files
-au BufRead,BufNewFile *.scss set filetype=sass
+" Set visual line at 80 columns
+set colorcolumn=80
+
+" Fugitive Ggrep open in quickfix window
+autocmd QuickFixCmdPost *grep* cwindow
