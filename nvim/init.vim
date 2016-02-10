@@ -1,3 +1,7 @@
+""""""""""""""""""
+" Configurations "
+""""""""""""""""""
+
 " Use soft tabs
 set expandtab
 
@@ -64,6 +68,10 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 " Toggle set wrap
 nmap <silent><leader>w :set wrap!<CR>
 
+"""""""""""""
+" Functions "
+"""""""""""""
+
 " Display date and time
 map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 
@@ -73,7 +81,10 @@ function! Timestamp()
   :r !date "+\%h \%d, \%Y, \%l:\%M:\%S \%p"
 endfunction
 
-" Plugins
+"""""""""""
+" Plugins "
+"""""""""""
+
 call plug#begin('~/.config/nvim/plugged')
 
 " Working with text
@@ -101,6 +112,10 @@ Plug 'vim-scripts/fountain.vim'
 Plug 'mhartington/oceanic-next'
 
 call plug#end()
+
+"""""""""""""""""""""""""
+" Plugin configurations "
+"""""""""""""""""""""""""
 
 " Autodetect extra file types
 augroup filetypedetect
