@@ -65,6 +65,9 @@ command! -bang Qa qa<bang>
 " True color!
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
+" Cursor is line in insert mode, block in normal mode
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
 " Toggle set wrap
 nmap <silent><leader>w :set wrap!<CR>
 
