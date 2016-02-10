@@ -81,8 +81,18 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
 " Working with the file system
-Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" Javascript
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+
+" HTML
+Plug 'mattn/emmet-vim', { 'for': 'html' }
+Plug 'othree/html5.vim', { 'for': 'html' }
 
 " Misc
 Plug 'vim-scripts/fountain.vim'
@@ -96,6 +106,17 @@ call plug#end()
 augroup filetypedetect
   autocmd BufNew,BufNewFile,BufRead *.fountain :setfiletype fountain
 augroup END
+
+" Fugitive
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gl :Glog<CR>
+nnoremap <silent> <leader>gp :Git push<CR>
+nnoremap <silent> <leader>gr :Gread<CR>
+nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>ge :Gedit<CR>
 
 " Set a colorscheme
 colorscheme OceanicNext
