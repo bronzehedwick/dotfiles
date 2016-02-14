@@ -97,6 +97,9 @@ Plug 'tpope/vim-surround'
 " Working with the file system
 Plug 'ctrlpvim/ctrlp.vim'
 
+" Programming
+Plug 'benekastah/neomake'
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -135,6 +138,12 @@ nnoremap <silent> <leader>gp :Git push<CR>
 nnoremap <silent> <leader>gr :Gread<CR>
 nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
+
+" Neomake
+let g:neomake_open_list=0
+let g:neomake_javascript_enabled_makers = ['eslint']
+
+autocmd! BufWritePost * Neomake
 
 " Set a colorscheme
 colorscheme OceanicNext
