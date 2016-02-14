@@ -53,6 +53,7 @@ alias grt 'cd (git rev-parse --show-toplevel;or echo ".")'
 
 alias bubu 'brew update; and brew upgrade --all; and brew cleanup'
 alias irc 'irssi'
+alias btcer 'wget -qO- "https://www.google.com/finance/converter?a=1&from=BTC&to=USD" |  sed "/res/!d;s/<[^>]*>//g"'
 
 #############
 # Fun Stuff #
