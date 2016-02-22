@@ -18,7 +18,7 @@ alias la "ls -AF"
 alias l "ls -CF"
 alias lla "ls -AFchl"
 
-# Set Vim to the EDITOR environment variable
+# Set NeoVim to the EDITOR environment variable
 set -x EDITOR "nvim"
 
 #############
@@ -47,33 +47,10 @@ alias gfu='git fetch upstream'
 alias gmu='git merge upstream/master'
 alias grt 'cd (git rev-parse --show-toplevel;or echo ".")'
 
-##################
-# Other Programs #
-##################
-
-alias bubu 'brew update; and brew upgrade --all; and brew cleanup'
-alias irc 'irssi'
-alias btcer 'wget -qO- "https://www.google.com/finance/converter?a=1&from=BTC&to=USD" |  sed "/res/!d;s/<[^>]*>//g"'
-
-#############
-# Fun Stuff #
-#############
-
-#Start text-based star wars
-alias starwars="telnet towel.blinkenlights.nl"
-
-# Facts for today
-function today
-  calendar -A 0 -f /usr/share/calendar/calendar.birthday
-  calendar -A 0 -f /usr/share/calendar/calendar.computer
-  calendar -A 0 -f /usr/share/calendar/calendar.history
-  calendar -A 0 -f /usr/share/calendar/calendar.music
-  calendar -A 0 -f /usr/share/calendar/calendar.lotr
-end
-
 #######################
 # Directory shortcuts #
 #######################
+
 alias dw 'cd ~/Downloads'
 alias sites 'cd ~/Sites'
 alias docs 'cd ~/Documents'
@@ -82,10 +59,42 @@ alias pics 'cd ~/Pictures'
 ##################
 # User functions #
 ##################
-function server -d 'Serve the current directory using python'
-  open http://localhost:$argv; and python -m SimpleHTTPServer $argv
+
+# Update and prune homebrew packages
+alias bubu 'brew update; and brew upgrade --all; and brew cleanup'
+
+# alias for irssi
+alias irc 'irssi'
+
+# Bitcoin
+function btcer -d 'Get current bitcoin exchange rate'
+  if test -z $argv
+    set AMOUNT 1
+  else
+    set AMOUNT $argv
+  end
+
+  wget -qO- "https://www.google.com/finance/converter?a=$AMOUNT&from=BTC&to=USD" |  sed "/res/!d;s/<[^>]*>//g"
 end
 
+#Start text-based star wars
+alias starwars="telnet towel.blinkenlights.nl"
+
+# Facts for today
+function today -d 'Display historical events that happened on this date'
+  calendar -A 0 -f /usr/share/calendar/calendar.birthday
+  calendar -A 0 -f /usr/share/calendar/calendar.computer
+  calendar -A 0 -f /usr/share/calendar/calendar.history
+  calendar -A 0 -f /usr/share/calendar/calendar.music
+  calendar -A 0 -f /usr/share/calendar/calendar.lotr
+end
+
+# Helper function for simple python server
+function server -d 'Serve the current directory using python'
+   python -m SimpleHTTPServer $argv; and open http://localhost:$argv;
+end
+
+# Create morning pages file
 function mp -d 'Create a morning page file'
-  nvim ~/Dropbox/Writing/Morning\ Pages/(date "+%m-%d-%Y").txt
+  nvim ~/Dropbox/Writing/Morning\ Pages/(date "+%m-%d-%Y").txt +Timestamp
 end
