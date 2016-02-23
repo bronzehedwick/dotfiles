@@ -122,6 +122,8 @@ Plug 'othree/html5.vim', { 'for': 'html' }
 
 " Misc
 Plug 'vim-scripts/fountain.vim'
+Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
 
 " Themes
 Plug 'mhartington/oceanic-next'
