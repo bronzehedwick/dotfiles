@@ -51,6 +51,9 @@ set ignorecase
 " Highlight invisible whitespace
 set list
 
+" Esc exits insert mode in Neovim terminal
+tnoremap <Esc> <C-\><C-n>
+
 " Remap mapleader
 let mapleader = ','
 
