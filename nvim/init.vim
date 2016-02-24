@@ -139,6 +139,11 @@ augroup filetypedetect
   autocmd BufNew,BufNewFile,BufRead *.fountain :setfiletype fountain
 augroup END
 
+" CtrlP
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\.git$'
+let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard --others'
+
 " Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
@@ -152,7 +157,8 @@ nnoremap <silent> <leader>ge :Gedit<CR>
 
 " Neomake
 let g:neomake_open_list=0
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['jshint']
+let g:neomake_json_enabled_makers = ['jsonlint']
 
 autocmd! BufWritePost * Neomake
 
