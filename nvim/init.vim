@@ -48,6 +48,9 @@ set ignorecase
 " Highlight invisible whitespace
 set list
 
+" Set hard wrapping guide to 80 columns
+set colorcolumn=80
+
 " Esc exits insert mode in Neovim terminal
 tnoremap <Esc> <C-\><C-n>
 
