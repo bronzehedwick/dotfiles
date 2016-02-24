@@ -11,9 +11,6 @@ set shiftwidth=2
 " Real tabs equal to spaces
 set tabstop=2
 
-" Show list instead of just completing in :edit menu
-set wildmenu
-
 " Command <Tab> completion, list matches, then longest common part, then all.
 set wildmode=list:longest,full
 
