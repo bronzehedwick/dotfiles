@@ -443,7 +443,6 @@ windows = {
       }
     );
   };
-  6 = { name = "hilight"; sticky = "yes"; };
 };
 mainwindows = {
   5 = { first_line = "8"; lines = "39"; };
