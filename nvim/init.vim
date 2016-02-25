@@ -51,6 +51,12 @@ set list
 " Set hard wrapping guide to 80 columns
 set colorcolumn=80
 
+" Status line
+if isdirectory(expand("~/.config/nvim/plugged/vim-fugitive/"))
+  set statusline=%{fugitive#statusline()}
+endif
+set statusline+=%<\ %f
+
 " Esc exits insert mode in Neovim terminal
 tnoremap <Esc> <C-\><C-n>
 
