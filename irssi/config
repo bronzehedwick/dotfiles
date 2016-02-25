@@ -59,7 +59,7 @@ chatnets = {
   };
   Freenode = {
     type = "IRC";
-    autosendcmd = "^nick bronzehedwick"
+    autosendcmd = "^nick bronzehedwick";
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
@@ -449,3 +449,4 @@ mainwindows = {
   5 = { first_line = "8"; lines = "39"; };
   6 = { first_line = "1"; lines = "7"; };
 };
+hilights = ( );
