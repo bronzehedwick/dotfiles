@@ -59,7 +59,7 @@ chatnets = {
   };
   Freenode = {
     type = "IRC";
-    autosendcmd = "^nick bronzehedwick;/^msg nickserv identify Dwarves7minE!";
+    autosendcmd = "^nick bronzehedwick"
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
@@ -378,6 +378,7 @@ statusbar = {
     awl_0 = {
       items = {
         barstart = { priority = "100"; };
+        usercount = { };
         awl_0 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
@@ -391,11 +392,13 @@ settings = {
     nick = "bronzehedwick";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { theme = "solarized-universal.theme"; };
+  "fe-common/core" = { theme = "weed.theme"; };
   "perl/core/scripts" = {
     awl_shared_sbar = "OFF";
     awl_block = "-14";
     awl_viewer = "no";
+    trackbar_string = "_";
+    trackbar_style = "%r";
   };
 };
 windows = {
