@@ -168,5 +168,8 @@ let g:neomake_json_enabled_makers = ['jsonlint']
 
 autocmd! BufWritePost * Neomake
 
-" Set a colorscheme
+"""""""""""""""
+" Colorscheme "
+"""""""""""""""
+
 colorscheme OceanicNext
