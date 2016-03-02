@@ -378,7 +378,6 @@ statusbar = {
     awl_0 = {
       items = {
         barstart = { priority = "100"; };
-        usercount = { };
         awl_0 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
