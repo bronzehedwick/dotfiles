@@ -57,14 +57,14 @@ if isdirectory(expand("~/.config/nvim/plugged/vim-fugitive/"))
 endif
 set statusline+=%<\ %f
 
-" Esc exits insert mode in Neovim terminal
-tnoremap <Esc> <C-\><C-n>
-
 " Remap mapleader
 let mapleader = ','
 
-" Add new mapping for Esc
+" Add new insert mode mapping for Esc
 :imap jh <Esc>
+
+" Esc exits insert mode in Neovim terminal
+tnoremap <Esc> <C-\><C-n>
 
 " Stupid shift key fixes, lifted from spf13
 command! -bang -nargs=* -complete=file E e<bang> <args>
@@ -108,6 +108,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Working with text
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 
 " Working with the file system
 Plug 'ctrlpvim/ctrlp.vim'
@@ -119,14 +120,12 @@ Plug 'benekastah/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" Javascript
+" Syntaxes
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-
-" HTML
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'othree/html5.vim', { 'for': 'html' }
-
-" Misc
+Plug 'mustache/vim-mustache-handlebars', { 'for': ['handlebars', 'mustache'] }
+Plug 'JulesWang/css.vim'
 Plug 'vim-scripts/fountain.vim'
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
