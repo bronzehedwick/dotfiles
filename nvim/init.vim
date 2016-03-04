@@ -154,6 +154,21 @@ function! IsGitRepo()
   return 1
 endfunction
 
+" fzf: use git when possible, otherwise ag for file search.
+function! SearchForFiles()
+  if IsGitRepo()
+    :GitFiles
+  else
+    :Files
+  endif
+endfunction
+
+" fzf: TODO use git grep when possible, otherwise ag for file search.
+" Currently just uses ag.
+function! SearchInsideFiles()
+  :Ag
+endfunction
+
 """""""""""""""""""""""""
 " Plugin configurations "
 """""""""""""""""""""""""
@@ -164,8 +179,8 @@ augroup filetypedetect
 augroup END
 
 " fzf
-nmap <C-P> :GitFiles<cr>
-nmap <C-S> :Ag<cr>
+nmap <C-P> :call SearchForFiles()<cr>
+nmap <C-S> :call SearchInsideFiles()<cr>
 
 " Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
