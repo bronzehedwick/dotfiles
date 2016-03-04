@@ -60,6 +60,9 @@ set statusline+=%<\ %f
 " Remap mapleader
 let mapleader = ','
 
+" Yank from the cursor to the end of the line, to be consistent with C and D.
+nnoremap Y y$
+
 " Add new insert mode mapping for Esc
 :imap jh <Esc>
 
@@ -111,10 +114,13 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 
 " Working with the file system
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Programming
 Plug 'benekastah/neomake'
+Plug 'Shougo/deoplete.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -135,6 +141,19 @@ Plug 'mhartington/oceanic-next'
 
 call plug#end()
 
+""""""""""""""""""""
+" Custom functions "
+""""""""""""""""""""
+
+" Check if the working directory is managed in git
+function! IsGitRepo()
+  let root = systemlist('git rev-parse --show-toplevel')[0]
+  if v:shell_error
+    return 0
+  endif
+  return 1
+endfunction
+
 """""""""""""""""""""""""
 " Plugin configurations "
 """""""""""""""""""""""""
@@ -144,10 +163,9 @@ augroup filetypedetect
   autocmd BufNew,BufNewFile,BufRead *.fountain :setfiletype fountain
 augroup END
 
-" CtrlP
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = '\.git$'
-let g:ctrlp_user_command = 'cd %s && git ls-files . --cached --exclude-standard --others'
+" fzf
+nmap <C-P> :GitFiles<cr>
+nmap <C-S> :Ag<cr>
 
 " Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
