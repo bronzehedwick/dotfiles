@@ -1,3 +1,42 @@
+"""""""""""
+" Plugins "
+"""""""""""
+
+call plug#begin('~/.config/nvim/plugged')
+
+" Working with text
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+
+" Working with the file system
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Programming
+Plug 'benekastah/neomake'
+Plug 'Shougo/deoplete.nvim'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" Syntaxes
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'mattn/emmet-vim', { 'for': 'html' }
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'mustache/vim-mustache-handlebars', { 'for': ['handlebars', 'mustache'] }
+Plug 'JulesWang/css.vim'
+Plug 'vim-scripts/fountain.vim'
+Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
+
+" Themes
+Plug 'mhartington/oceanic-next'
+
+call plug#end()
+
 """"""""""""""""""
 " Configurations "
 """"""""""""""""""
@@ -52,9 +91,7 @@ set list
 set colorcolumn=80
 
 " Status line
-if isdirectory(expand("~/.config/nvim/plugged/vim-fugitive/"))
-  set statusline=%{fugitive#statusline()}
-endif
+set statusline=%{fugitive#statusline()}
 set statusline+=%<\ %f
 
 " Remap mapleader
@@ -89,6 +126,13 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " Toggle set wrap
 nmap <silent><leader>w :set wrap!<CR>
 
+""""""""""""""""
+" Autocommands "
+""""""""""""""""
+
+autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
+autocmd BufNewFile,BufRead *.theme,*.module set filetype=php
+
 """""""""""""
 " Functions "
 """""""""""""
@@ -101,49 +145,6 @@ command! -nargs=* Timestamp call Timestamp()
 function! Timestamp()
   :r !date "+\%h \%d, \%Y, \%l:\%M:\%S \%p"
 endfunction
-
-"""""""""""
-" Plugins "
-"""""""""""
-
-call plug#begin('~/.config/nvim/plugged')
-
-" Working with text
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
-
-" Working with the file system
-" Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
-" Programming
-Plug 'benekastah/neomake'
-Plug 'Shougo/deoplete.nvim'
-
-" Git
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-
-" Syntaxes
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'mattn/emmet-vim', { 'for': 'html' }
-Plug 'othree/html5.vim', { 'for': 'html' }
-Plug 'mustache/vim-mustache-handlebars', { 'for': ['handlebars', 'mustache'] }
-Plug 'JulesWang/css.vim'
-Plug 'vim-scripts/fountain.vim'
-Plug 'dag/vim-fish', { 'for': 'fish' }
-Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
-
-" Themes
-Plug 'mhartington/oceanic-next'
-
-call plug#end()
-
-""""""""""""""""""""
-" Custom functions "
-""""""""""""""""""""
 
 " Check if the working directory is managed in git
 function! IsGitRepo()
@@ -167,6 +168,9 @@ endfunction
 " Currently just uses ag.
 function! SearchInsideFiles()
   :Ag
+endfunction
+
+function! Drush()
 endfunction
 
 """""""""""""""""""""""""
