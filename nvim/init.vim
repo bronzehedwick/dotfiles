@@ -164,10 +164,22 @@ function! SearchForFiles()
   endif
 endfunction
 
+function! s:ag_with_git_root()
+  let root = systemlist('git rev-parse --show-toplevel')[0]
+  return v:shell_error ? {} : { 'dir': root }
+endfunction
+
+command! -nargs=* Rag
+  \ call fzf#vim#ag(<q-args>, extend(s:ag_with_git_root(), g:fzf#vim#default_layout))
+
 " fzf: TODO use git grep when possible, otherwise ag for file search.
 " Currently just uses ag.
 function! SearchInsideFiles()
-  :Ag
+  if IsGitRepo()
+    :Rag
+  else
+    :Ag
+  endif
 endfunction
 
 function! Drush()
