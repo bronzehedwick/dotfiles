@@ -400,6 +400,7 @@ settings = {
     trackbar_style = "%r";
   };
 };
+hilights = ( );
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
   2 = {
@@ -422,29 +423,5 @@ windows = {
       }
     );
   };
-  4 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#css";
-        tag = "Freenode";
-      }
-    );
-  };
-  5 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#bitcoin";
-        tag = "Freenode";
-      }
-    );
-  };
 };
-mainwindows = {
-  5 = { first_line = "8"; lines = "39"; };
-  6 = { first_line = "1"; lines = "7"; };
-};
-hilights = ( );
+mainwindows = { 2 = { first_line = "1"; lines = "68"; }; };
