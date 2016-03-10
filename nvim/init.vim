@@ -117,6 +117,15 @@ command! -bang Q q<bang>
 command! -bang QA qa<bang>
 command! -bang Qa qa<bang>
 
+" File explorer format - tree view
+let g:netrw_liststyle=3
+
+" Hide file explorer banner
+" let g:netrw_banner=0
+
+" Shortcut to open file explorer
+nmap <C-e> :Lexplore<cr>
+
 " True color!
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
