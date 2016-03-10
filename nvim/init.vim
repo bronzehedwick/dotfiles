@@ -172,8 +172,8 @@ endfunction
 command! -nargs=* Rag
   \ call fzf#vim#ag(<q-args>, extend(s:ag_with_git_root(), g:fzf#vim#default_layout))
 
-" fzf: TODO use git grep when possible, otherwise ag for file search.
-" Currently just uses ag.
+" fzf: File search; from git root if available.
+" TODO use git grep inside git directories.
 function! SearchInsideFiles()
   if IsGitRepo()
     :Rag
