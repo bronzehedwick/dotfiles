@@ -173,6 +173,7 @@ function! SearchForFiles()
   endif
 endfunction
 
+" fzf: search files with ag from system root.
 function! s:ag_with_git_root()
   let root = systemlist('git rev-parse --show-toplevel')[0]
   return v:shell_error ? {} : { 'dir': root }
