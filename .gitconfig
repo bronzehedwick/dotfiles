@@ -1,3 +1,4 @@
+# vim: set noexpandtab
 [user]
 	name = Chris DeLuca
 	email = bronzehedwick@gmail.com
@@ -32,6 +33,7 @@
 	grep = grep --break --heading --line-number
 	g = grep --break --heading --line-number
 	fp = "!git fetch origin "$1" && git pull origin "$1""
+	po = "!git push origin $(git rev-parse --show-toplevel || echo '.')"
 [merge]
 	conflictstyle = diff3
 	tool = diffmerge
@@ -52,8 +54,6 @@
 	tool = diffmerge
 [difftool "diffmerge"]
 	cmd = diffmerge $LOCAL $REMOTE
-[init]
-	templatedir = ~/.git_template
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f

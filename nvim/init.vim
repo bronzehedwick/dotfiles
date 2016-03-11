@@ -87,6 +87,9 @@ set ignorecase
 " Highlight invisible whitespace
 set list
 
+" Allow switching buffers without saving
+set hidden
+
 " Set hard wrapping guide to 80 columns
 set colorcolumn=80
 
@@ -192,8 +195,23 @@ function! SearchInsideFiles()
   endif
 endfunction
 
-function! Drush()
-endfunction
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" Syntaxes
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'mattn/emmet-vim', { 'for': 'html' }
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'mustache/vim-mustache-handlebars', { 'for': ['handlebars', 'mustache'] }
+Plug 'JulesWang/css.vim'
+Plug 'vim-scripts/fountain.vim'
+Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
+
+" Themes
+Plug 'mhartington/oceanic-next'
+
 
 """""""""""""""""""""""""
 " Plugin configurations "
@@ -221,7 +239,7 @@ nnoremap <silent> <leader>ge :Gedit<CR>
 
 " Neomake
 let g:neomake_open_list=0
-let g:neomake_javascript_enabled_makers = ['jshint']
+let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_json_enabled_makers = ['jsonlint']
 
 autocmd! BufWritePost * Neomake
