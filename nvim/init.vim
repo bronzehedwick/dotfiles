@@ -16,7 +16,7 @@ Plug 'junegunn/fzf.vim'
 
 " Programming
 Plug 'benekastah/neomake'
-Plug 'Shougo/deoplete.nvim'
+Plug 'editorconfig/editorconfig-vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -26,7 +26,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'othree/html5.vim', { 'for': 'html' }
-Plug 'mustache/vim-mustache-handlebars', { 'for': ['handlebars', 'mustache'] }
 Plug 'JulesWang/css.vim'
 Plug 'vim-scripts/fountain.vim'
 Plug 'dag/vim-fish', { 'for': 'fish' }
@@ -239,10 +238,13 @@ nnoremap <silent> <leader>ge :Gedit<CR>
 
 " Neomake
 let g:neomake_open_list=0
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['jshint', 'eslint']
 let g:neomake_json_enabled_makers = ['jsonlint']
 
 autocmd! BufWritePost * Neomake
+
+" Disable editorconfig on fugitive and remote buffers.
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 """""""""""""""
 " Colorscheme "
