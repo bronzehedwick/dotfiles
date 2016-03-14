@@ -25,7 +25,7 @@ Plug 'airblade/vim-gitgutter'
 " Syntaxes
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'mattn/emmet-vim', { 'for': 'html' }
-Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'othree/html5.vim', { 'for': [ 'html', 'htmldjango' ] }
 Plug 'JulesWang/css.vim'
 Plug 'vim-scripts/fountain.vim'
 Plug 'dag/vim-fish', { 'for': 'fish' }
