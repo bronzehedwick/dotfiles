@@ -24,11 +24,12 @@ Plug 'airblade/vim-gitgutter'
 
 " Syntaxes
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'mattn/emmet-vim', { 'for': 'html' }
+Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango' ] }
 Plug 'othree/html5.vim', { 'for': [ 'html', 'htmldjango' ] }
-Plug 'JulesWang/css.vim'
-Plug 'vim-scripts/fountain.vim'
+Plug 'JulesWang/css.vim', { 'for': [ 'css', 'scss', 'sass', 'less' ] }
+Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'mustache/vim-mustache-handlebars', { 'for': [ 'mustache', 'handlebars', 'html.mustache', 'html.handlebars' ] }
 Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
 
 " Themes
