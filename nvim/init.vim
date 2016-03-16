@@ -142,7 +142,9 @@ nmap <silent><leader>w :set wrap!<CR>
 " Autocommands "
 """"""""""""""""
 
-autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
+" django templates (syntax is built in to vim) are very similar to twig.
+autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
+" Support Drupal .module and .theme files.
 autocmd BufNewFile,BufRead *.theme,*.module set filetype=php
 
 """""""""""""
