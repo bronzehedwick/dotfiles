@@ -391,7 +391,10 @@ settings = {
     nick = "bronzehedwick";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { theme = "weed.theme"; };
+  "fe-common/core" = { 
+    theme = "weed.theme";
+    hilight_nick_matches = "no";
+  };
   "perl/core/scripts" = {
     awl_shared_sbar = "OFF";
     awl_block = "-14";
