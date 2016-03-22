@@ -30,6 +30,7 @@ Plug 'JulesWang/css.vim', { 'for': [ 'css', 'scss', 'sass', 'less' ] }
 Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'mustache/vim-mustache-handlebars', { 'for': [ 'mustache', 'handlebars', 'html.mustache', 'html.handlebars' ] }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
 
 " Themes
