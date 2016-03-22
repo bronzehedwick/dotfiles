@@ -91,3 +91,5 @@ function git_diff() {
 export PS1="\u@\h:\W\$(parse_git_branch)$ "
 
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
