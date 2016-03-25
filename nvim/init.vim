@@ -10,12 +10,12 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 
 " Working with the file system
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Programming
 Plug 'benekastah/neomake'
+Plug 'kassio/neoterm'
 Plug 'editorconfig/editorconfig-vim'
 
 " Git
@@ -143,10 +143,15 @@ nmap <silent><leader>w :set wrap!<CR>
 " Autocommands "
 """"""""""""""""
 
-" django templates (syntax is built in to vim) are very similar to twig.
-autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
-" Support Drupal .module and .theme files.
-autocmd BufNewFile,BufRead *.theme,*.module set filetype=php
+" Autodetect extra file types
+augroup filetypedetect
+  " django templates (syntax is built in to vim) are very similar to twig.
+  autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
+  " Support Drupal .module and .theme files.
+  autocmd BufNewFile,BufRead *.theme,*.module set filetype=php
+  " Support fountain files
+  autocmd BufNew,BufNewFile,BufRead *.fountain :setfiletype fountain
+augroup END
 
 """""""""""""
 " Functions "
@@ -186,7 +191,7 @@ function! s:ag_with_git_root()
 endfunction
 
 command! -nargs=* Rag
-  \ call fzf#vim#ag(<q-args>, extend(s:ag_with_git_root(), g:fzf#vim#default_layout))
+      \ call fzf#vim#ag(<q-args>, extend(s:ag_with_git_root(), g:fzf#vim#default_layout))
 
 " fzf: File search; from git root if available.
 " TODO use git grep inside git directories.
@@ -201,11 +206,6 @@ endfunction
 """""""""""""""""""""""""
 " Plugin configurations "
 """""""""""""""""""""""""
-
-" Autodetect extra file types
-augroup filetypedetect
-  autocmd BufNew,BufNewFile,BufRead *.fountain :setfiletype fountain
-augroup END
 
 " fzf
 nmap <C-P> :call SearchForFiles()<cr>
@@ -234,6 +234,14 @@ endif
 let g:neomake_json_enabled_makers = ['jsonlint']
 
 autocmd! BufWritePost * Neomake
+
+" Neoterm
+let g:neoterm_position = 'vertical'
+let g:neoterm_automap_keys = ',tt'
+
+nnoremap <silent> <leader>th :call neoterm#close()<cr>
+nnoremap <silent> <leader>tl :call neoterm#clear()<cr>
+nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
 
 " Disable editorconfig on fugitive and remote buffers.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
