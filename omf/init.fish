@@ -51,10 +51,8 @@ alias grt 'cd (git rev-parse --show-toplevel;or echo ".")'
 # Directory shortcuts #
 #######################
 
-alias dw 'cd ~/Downloads'
-alias sites 'cd ~/Sites'
-alias docs 'cd ~/Documents'
-alias pics 'cd ~/Pictures'
+# Load fishmarks (http://github.com/techwizrd/fishmarks)
+. ~/.fishmarks/marks.fish
 
 ##################
 # User functions #
