@@ -7,6 +7,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Working with text
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 
 " Working with the file system
