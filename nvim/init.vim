@@ -18,6 +18,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'benekastah/neomake'
 Plug 'kassio/neoterm'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars' ] }
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -25,7 +26,6 @@ Plug 'airblade/vim-gitgutter'
 
 " Syntaxes
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango' ] }
 Plug 'othree/html5.vim', { 'for': [ 'html', 'htmldjango' ] }
 Plug 'JulesWang/css.vim', { 'for': [ 'css', 'scss', 'sass', 'less' ] }
 Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
