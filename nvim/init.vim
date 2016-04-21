@@ -17,6 +17,8 @@ Plug 'junegunn/fzf.vim'
 " Programming
 Plug 'benekastah/neomake'
 Plug 'kassio/neoterm'
+Plug 'Shougo/deoplete.nvim'
+Plug 'carlitux/deoplete-ternjs'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars' ] }
 
@@ -246,6 +248,13 @@ nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
 
 " Disable editorconfig on fugitive and remote buffers.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" Deoplete
+" Use deoplete
+let g:deoplete#enable_at_startup = 1
+let g:tern_request_timeout = 1
+" This do disable full signature type on autocomplete
+let g:tern_show_signature_in_pum = 0
 
 """""""""""""""
 " Colorscheme "
