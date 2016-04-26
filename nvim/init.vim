@@ -13,10 +13,10 @@ Plug 'jiangmiao/auto-pairs'
 " Working with the file system
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'kassio/neoterm'
 
 " Programming
 Plug 'benekastah/neomake'
-Plug 'kassio/neoterm'
 Plug 'Shougo/deoplete.nvim'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'editorconfig/editorconfig-vim'
@@ -132,6 +132,7 @@ let g:netrw_liststyle=3
 
 " Shortcut to open file explorer
 nmap <C-e> :Lexplore<cr>
+" nmap <C-e> :Dirvish<cr>
 
 " True color!
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
@@ -239,11 +240,14 @@ let g:neomake_json_enabled_makers = ['jsonlint']
 autocmd! BufWritePost * Neomake
 
 " Neoterm
-let g:neoterm_position = 'vertical'
+let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
 
+" hide/close terminal
 nnoremap <silent> <leader>th :call neoterm#close()<cr>
+" clear terminal
 nnoremap <silent> <leader>tl :call neoterm#clear()<cr>
+" kills current job (send a <c-c>)
 nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
 
 " Disable editorconfig on fugitive and remote buffers.
