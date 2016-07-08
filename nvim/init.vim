@@ -14,6 +14,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kassio/neoterm'
+Plug 'tpope/vim-eunuch'
+Plug 'fntlnz/atags.vim'
 
 " Programming
 Plug 'benekastah/neomake'
