@@ -74,7 +74,6 @@ alias gs="git status"
 alias gb="git branch"
 alias gc="git commit"
 alias gd="git diff"
-alias go="git checkout"
 alias ga="git add"
 alias gti="git"
 gba='git branch -a'
