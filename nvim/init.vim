@@ -9,6 +9,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
+Plug 'vim-scripts/loremipsum'
 
 " Working with the file system
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -242,7 +243,8 @@ let g:neomake_json_enabled_makers = ['jsonlint']
 autocmd! BufWritePost * Neomake
 
 " Neoterm
-let g:neoterm_position = 'horizontal'
+let g:neoterm_shell = "bash"
+let g:neoterm_position = 'vertical'
 let g:neoterm_automap_keys = ',tt'
 
 " hide/close terminal
@@ -251,6 +253,11 @@ nnoremap <silent> <leader>th :call neoterm#close()<cr>
 nnoremap <silent> <leader>tl :call neoterm#clear()<cr>
 " kills current job (send a <c-c>)
 nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
+
+" REPL
+nnoremap <silent> <f10> :TREPLSendFile<cr>
+nnoremap <silent> <f9> :TREPLSend<cr>
+vnoremap <silent> <f9> :TREPLSend<cr>
 
 " Disable editorconfig on fugitive and remote buffers.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
@@ -261,6 +268,14 @@ let g:deoplete#enable_at_startup = 1
 let g:tern_request_timeout = 1
 " This do disable full signature type on autocomplete
 let g:tern_show_signature_in_pum = 0
+
+" Tags
+let g:atags_build_commands_list = [
+    \ 'ack --php --drupal -g "" | ctags -L - --fields=+l -f tags.tmp',
+    \ 'awk "length($0) < 400" tags.tmp > $(git rev-parse --show-toplevel || echo '.')/.git/tags',
+    \ 'rm tags.tmp'
+    \ ]
+map <Leader>t :call atags#generate()<cr>
 
 """""""""""""""
 " Colorscheme "
