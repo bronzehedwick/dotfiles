@@ -138,7 +138,7 @@ nmap <C-e> :Lexplore<cr>
 " nmap <C-e> :Dirvish<cr>
 
 " True color!
-let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Cursor is line in insert mode, block in normal mode
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
