@@ -32,12 +32,12 @@ if [[ -d ~/.local/share/omf ]]; then
   ln -s $DIR/omf $TARGET/.config/omf
 fi
 
-# Add irssi (irc) config
-if [[ -d ~/.irssi ]]; then
-  echo "Removing default irssi scaffolding directory"
-  rm -rf $TARGET/.irssi
-  echo "Linking irssi config"
-  ln -s $DIR/irssi $TARGET/.irssi
+# Add weechat (irc) config
+if [[ -d ~/.weechat ]]; then
+  echo "Removing default weechat scaffolding directory"
+  rm -rf $TARGET/.weechat
+  echo "Linking weechat config"
+  ln -s $DIR/weechat $TARGET/.weechat
 fi
 
 # Install VimPlug

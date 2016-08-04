@@ -1,2 +1,2 @@
-irssi/sasl.auth
-irssi/config.autosave
+*.log
+weechat/logs
