@@ -33,12 +33,8 @@ if [[ -d ~/.local/share/omf ]]; then
 fi
 
 # Add weechat (irc) config
-if [[ -d ~/.weechat ]]; then
-  echo "Removing default weechat scaffolding directory"
-  rm -rf $TARGET/.weechat
-  echo "Linking weechat config"
-  ln -s $DIR/weechat $TARGET/.weechat
-fi
+echo "Linking weechat config"
+ln -s $DIR/weechat $TARGET/.weechat
 
 # Install VimPlug
 if [[ ! -d ~/.config/nvim/autoload ]]; then
