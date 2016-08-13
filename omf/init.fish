@@ -47,6 +47,22 @@ alias gfu='git fetch upstream'
 alias gmu='git merge upstream/master'
 alias grt 'cd (git rev-parse --show-toplevel;or echo ".")'
 
+#######
+# GPG #
+#######
+if not begin
+  # Is the agent running already? Does the agent-info file exist, and if so,
+  # is there a process with the pid given in the file?
+  [ -f ~/.gpg-agent-info ]
+  and kill -0 (cut -d : -f 2 ~/.gpg-agent-info) ^/dev/null
+end
+# no, it is not running. Start it!
+gpg-agent --daemon --no-grab --write-env-file ~/.gpg-agent-info >/dev/null ^&1
+end
+# get the agent info from the info file, and export it so GPG can see it.
+set -gx GPG_AGENT_INFO (cut -c 16- ~/.gpg-agent-info)
+set -gx GPG_TTY (tty)
+
 #######################
 # Directory shortcuts #
 #######################
@@ -60,9 +76,6 @@ alias grt 'cd (git rev-parse --show-toplevel;or echo ".")'
 
 # Update and prune homebrew packages
 alias bubu 'brew update; and brew upgrade --all; and brew cleanup'
-
-# alias for irssi
-alias irc 'irssi'
 
 # Bitcoin
 function btcer -d 'Get current bitcoin exchange rate'
@@ -89,7 +102,7 @@ end
 
 # Helper function for simple python server
 function server -d 'Serve the current directory using python'
-   python -m SimpleHTTPServer $argv; and open http://localhost:$argv;
+  python -m SimpleHTTPServer $argv; and open http://localhost:$argv;
 end
 
 # Create morning pages file

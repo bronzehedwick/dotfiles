@@ -2,6 +2,7 @@
 [user]
 	name = Chris DeLuca
 	email = bronzehedwick@gmail.com
+	signingkey = 461C015E032EF9CB
 [core]
 	editor = nvim
 [alias]
@@ -34,6 +35,7 @@
 	g = grep --break --heading --line-number
 	fp = "!git fetch origin "$1" && git pull origin "$1""
 	po = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+	stash = "!git -c commit.gpgsign=false stash"
 [merge]
 	conflictstyle = diff3
 	tool = diffmerge
