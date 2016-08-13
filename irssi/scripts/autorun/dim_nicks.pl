@@ -1,1 +1,0 @@
-../dim_nicks.pl
