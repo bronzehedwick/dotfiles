@@ -10,13 +10,16 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/loremipsum'
+Plug 'tpope/vim-unimpaired'
 
 " Working with the file system
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kassio/neoterm'
 Plug 'tpope/vim-eunuch'
-Plug 'fntlnz/atags.vim'
+" Plug 'fntlnz/atags.vim'
+" Plug 'still-dreaming-1/vim-project-tags'
+" Plug 'justinmk/vim-dirvish'
 
 " Programming
 Plug 'benekastah/neomake'
@@ -40,6 +43,7 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
 
 " Themes
+Plug 'justinmk/molokai'
 Plug 'mhartington/oceanic-next'
 
 call plug#end()
@@ -128,17 +132,19 @@ command! -bang QA qa<bang>
 command! -bang Qa qa<bang>
 
 " File explorer format - tree view
-let g:netrw_liststyle=3
+" let g:netrw_liststyle=3
 
 " Hide file explorer banner
 " let g:netrw_banner=0
 
 " Shortcut to open file explorer
-nmap <C-e> :Lexplore<cr>
+" nmap <C-e> :Lexplore<cr>
 " nmap <C-e> :Dirvish<cr>
 
+" autocmd FileType dirvish call fugitive#detect(@%)
+
 " True color!
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 
 " Cursor is line in insert mode, block in normal mode
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
@@ -270,12 +276,12 @@ let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 0
 
 " Tags
-let g:atags_build_commands_list = [
-    \ 'ack --php --drupal -g "" | ctags -L - --fields=+l -f tags.tmp',
-    \ 'awk "length($0) < 400" tags.tmp > $(git rev-parse --show-toplevel || echo '.')/.git/tags',
-    \ 'rm tags.tmp'
-    \ ]
-map <Leader>t :call atags#generate()<cr>
+" let g:atags_build_commands_list = [
+"     \ 'ack --php --drupal -g "" | ctags -L - --fields=+l -f tags.tmp',
+"     \ 'awk "length($0) < 400" tags.tmp > $(git rev-parse --show-toplevel || echo '.')/.git/tags',
+"     \ 'rm tags.tmp'
+"     \ ]
+" map <Leader>t :call atags#generate()<cr>
 
 """""""""""""""
 " Colorscheme "
