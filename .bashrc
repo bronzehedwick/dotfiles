@@ -72,7 +72,8 @@ fi
 #fi
 
 # Set Vim to the EDITOR environment variable
-export EDITOR='vim'
+export EDITOR=vi
+export PAGER=less
 
 export TERM=xterm-256color
 
