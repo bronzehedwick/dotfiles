@@ -32,10 +32,6 @@ if [[ -d ~/.local/share/omf ]]; then
   ln -s $DIR/omf $TARGET/.config/omf
 fi
 
-# Add weechat (irc) config
-echo "Linking weechat config"
-ln -s $DIR/weechat $TARGET/.weechat
-
 # Install VimPlug
 if [[ ! -d ~/.config/nvim/autoload ]]; then
   echo "Installing VimPlug"
@@ -47,10 +43,10 @@ fi
 if [[ ! -f $TARGET/.config/nvim/init.vim ]]; then
   echo "Linking NeoVim config"
   ln -s $DIR/nvim/init.vim $TARGET/.config/nvim/init.vim
-fi
 
-# Install NeoVim plugins
-echo "Installing NeoVim plugins..."
-nvim +PlugInstall +qa
+  # Install NeoVim plugins
+  echo "Installing NeoVim plugins..."
+  nvim +PlugInstall +qa
+fi
 
 echo "Done"

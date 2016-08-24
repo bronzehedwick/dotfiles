@@ -1,0 +1,1571 @@
+2016-08-03 09:18:01	-->	delucac (delucac@localhost) has joined &bitlbee
+2016-08-03 09:18:01	--	Topic for &bitlbee is "Welcome to the control channel. Type help for help information."
+2016-08-03 09:18:01	--	Topic set by root (root@localhost) on Wed, 03 Aug 2016 09:18:01
+2016-08-03 09:18:01	--	Channel &bitlbee: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2016-08-03 09:18:01	@root	Welcome to the BitlBee gateway!
+2016-08-03 09:18:01	@root	 
+2016-08-03 09:18:01	@root	Running BitlBee 3.4.2
+2016-08-03 09:18:01	@root	 
+2016-08-03 09:18:01	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2016-08-03 09:18:01	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2016-08-03 09:18:59	@delucac	identify Dwarves7minE!
+2016-08-03 09:18:59	@root	The nick is (probably) not registered
+2016-08-03 09:19:10	@delucac	account
+2016-08-03 09:19:10	@root	Not enough parameters given (need 1).
+2016-08-03 09:23:26	--	irc: disconnected from server
+2016-08-03 09:23:32	-->	delucac (delucac@localhost) has joined &bitlbee
+2016-08-03 09:23:32	--	Topic for &bitlbee is "Welcome to the control channel. Type help for help information."
+2016-08-03 09:23:32	--	Topic set by root (root@localhost) on Wed, 03 Aug 2016 09:23:32
+2016-08-03 09:23:32	--	Channel &bitlbee: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2016-08-03 09:23:32	@root	Welcome to the BitlBee gateway!
+2016-08-03 09:23:32	@root	 
+2016-08-03 09:23:32	@root	Running BitlBee 3.4.2
+2016-08-03 09:23:32	@root	 
+2016-08-03 09:23:32	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2016-08-03 09:23:32	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2016-08-03 09:24:02	@delucac	help
+2016-08-03 09:24:02	@root	These are the available help subjects:
+2016-08-03 09:24:02	@root	 
+2016-08-03 09:24:02	@root	 quickstart - A short introduction into BitlBee
+2016-08-03 09:24:02	@root	 commands - All available commands and settings
+2016-08-03 09:24:02	@root	 channels - About creating and customizing channels
+2016-08-03 09:24:02	@root	 away - About setting away states
+2016-08-03 09:24:02	@root	 groupchats - How to work with groupchats on BitlBee
+2016-08-03 09:24:02	@root	 nick_changes - Changing your nickname without losing any settings
+2016-08-03 09:24:02	@root	 smileys - A summary of some non-standard smileys you might find and fail to understand
+2016-08-03 09:24:02	@root	 
+2016-08-03 09:24:02	@root	You can read more about them with help <subject>
+2016-08-03 09:24:02	@root	 
+2016-08-03 09:24:02	@root	Some more help can be found on http://wiki.bitlbee.org/. Bugs can be reported at http://bugs.bitlbee.org/.
+2016-08-03 09:24:02	@root	 
+2016-08-03 09:24:02	@root	For other things than bug reports, you can join #BitlBee on OFTC (irc.oftc.net) (OFTC, *not* FreeNode!) and flame us right in the face. :-)
+2016-08-03 09:24:14	@delucac	nick_changes
+2016-08-03 09:24:14	@root	Unknown command: nick_changes. Please use help commands to get a list of available commands.
+2016-08-03 09:24:22	@delucac	help nick_changes
+2016-08-03 09:24:22	@root	BitlBee now allows you to change your nickname. So far this was not possible because it made managing saved accounts more complicated.
+2016-08-03 09:24:22	@root	 
+2016-08-03 09:24:22	@root	The restriction no longer exists now though. When you change your nick (just using the /nick command), your logged-in status will be reset, which means any changes made to your settings/accounts will not be saved.
+2016-08-03 09:24:22	@root	 
+2016-08-03 09:24:22	@root	To restore your logged-in status, you need to either use the register command to create an account under the new nickname, or use identify -noload to re-identify yourself under the new nickname. The -noload flag tells the command to verify your password and log you in, but not load any new settings. See help identify for more information.
+2016-08-03 09:24:34	--	You are now known as bronzehedwick
+2016-08-03 09:24:55	@bronzehedwick	identify Dwarves7minE!
+2016-08-03 09:24:55	@root	Password accepted, settings and accounts loaded
+2016-08-03 09:24:55	@root	Trying to get all accounts connected...
+2016-08-03 09:24:55	@root	twitter - Logging in: Connecting
+2016-08-03 09:24:55	-->	twitter_chrisjohndeluca (twitter_chrisjohndeluca@twitter) has joined &bitlbee
+2016-08-03 09:24:55	--	Mode &bitlbee [+v twitter_chrisjohndeluca] by localhost
+2016-08-03 09:24:55	@root	twitter - Logging in: Getting contact list
+2016-08-03 09:24:55	@root	twitter2 - Logging in: Connecting
+2016-08-03 09:24:55	-->	twitter_cymnyc (twitter_cymnyc@twitter2) has joined &bitlbee
+2016-08-03 09:24:55	--	Mode &bitlbee [+v twitter_cymnyc] by localhost
+2016-08-03 09:24:55	@root	twitter2 - Logging in: Getting contact list
+2016-08-03 09:24:56	@root	jabber - Logging in: Connecting
+2016-08-03 09:24:56	@root	jabber - Logging in: Connected to server, logging in
+2016-08-03 09:24:56	@root	jabber - Logging in: Converting stream to TLS
+2016-08-03 09:24:56	@root	jabber - Logging in: Connected to server, logging in
+2016-08-03 09:24:56	@root	jabber - Logging in: Authentication finished
+2016-08-03 09:24:57	@root	jabber - Logging in: Server changed session resource string to `BitlBeeC67F3D0E'
+2016-08-03 09:24:57	@root	jabber - Logging in: Authenticated, requesting buddy list
+2016-08-03 09:24:57	@root	jabber - Logging in: Logged in
+2016-08-03 09:24:57	-->	JeffPekkala (lepekkala@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	JasonDePeaux (3jzh7kf2pwby722jcf7cbl8xe9@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 09:24:57	-->	Nimajus (nimajus@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-03 09:24:57	-->	IntegralYoga (integralyoga@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	TimGilam (gillti01@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	ZachDonovan_ (zach.donovan@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	ManiNilchiani (3vqw2zs9la23f101jl5qlgfazy@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	NicholasMoore (nolivermoore@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	JuliaMayersohn (juliainisrael@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	hkorik (hkorik@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	ShannonWebb (06blocdbhnajm33edkjcfpubv4@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	EmersonHarperDaly (demoteus@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	BethHintze (elizabeth.hintze@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	RichardJKrysztoforski (0382skchp0tor19k6yi374qg7c@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	--	Mode &bitlbee [+v RichardJKrysztoforski] by localhost
+2016-08-03 09:24:57	-->	MichaelBjorkegren (michael.bjorkegren@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	DaveBeede (dbeede1@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	LaurieBerenhaus_ (laurieberenhaus@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	CaseyCohen (2b1eqe6eif8n108f9vqejreg6b@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	MikeJeanette (23clxlonv20jr3ha3rclyh6yne@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	SarahBerkowitz_ (2762w5eb1ws883htbry36tierr@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	MatthewChen_ (matcchen@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	ClayCless (06ds44cdxzqh22qzb0kmwb9f6m@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	BryanRidgell (bryanridgell@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	KareemHamdy_ (kareemhamdy@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	EtanBenarsh (ebednarsh@gmail.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	KhalimHarris (19kq29pyoizzh0zoixf2b7vd3u@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	KelseyAdams (2olvcsaxgozdg399vl9cf70v99@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	ClaireBurns (0iq89o6s23if02wn1fe2bs931q@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	ThomasSheehan (1qe39njjfdlp11cijjcrm6ktrv@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	JasonD (1lbol8dhyz3xg2iewmk785apah@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	DavidDeLosSantos (0v845xtmaj5p21moz7eca685sm@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	--	Mode &bitlbee [+v DavidDeLosSantos] by localhost
+2016-08-03 09:24:57	-->	BradWade (19ar9vc24ix7n0lovnhpt4wuqf@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	HaleyWillard (0z4bhfjvweplz1v3e9yqziebna@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:57	-->	AlexSpruch (376wbqzaoasu62xqyfenga3i7k@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:58	-->	JohnWetsell (3cwg8y45p87lx1zssnn2nwx39t@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:58	-->	JeffBauer (24xotqd8l4bfi0g9i9qexcwz4f@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:58	-->	TerraThompson (2tbb9besg2ug835xtvrxil08dj@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:58	-->	JosephSkelley (0mtnyokrj1umd2ruiqq4krafpd@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:58	-->	GlorilisTavarez (293vi1755zoag2s4om8q75iuxn@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:58	-->	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:58	--	Mode &bitlbee [+v ErnestMyers_] by localhost
+2016-08-03 09:24:58	-->	FrancisF (3e59suypwjun92bhly1unzqmyp@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:58	-->	MeghanDunleavy (01ql1mqqqxrn82hx503xprtx1t@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:24:58	@root	twitter - Logging in: Getting initial statuses
+2016-08-03 09:24:59	@root	twitter - Logging in: Logged in
+2016-08-03 09:24:59	@root	twitter2 - Logging in: Getting initial statuses
+2016-08-03 09:25:00	@root	twitter2 - Logging in: Logged in
+2016-08-03 09:25:14	@bronzehedwick	account 2 off
+2016-08-03 09:25:14	@root	jabber - Signing off..
+2016-08-03 09:25:14	<--	FrancisF (3e59suypwjun92bhly1unzqmyp@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	JohnWetsell (3cwg8y45p87lx1zssnn2nwx39t@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	AlexSpruch (376wbqzaoasu62xqyfenga3i7k@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	TerraThompson (2tbb9besg2ug835xtvrxil08dj@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	KelseyAdams (2olvcsaxgozdg399vl9cf70v99@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	GlorilisTavarez (293vi1755zoag2s4om8q75iuxn@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	JeffBauer (24xotqd8l4bfi0g9i9qexcwz4f@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	ThomasSheehan (1qe39njjfdlp11cijjcrm6ktrv@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	JasonD (1lbol8dhyz3xg2iewmk785apah@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	KhalimHarris (19kq29pyoizzh0zoixf2b7vd3u@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	BradWade (19ar9vc24ix7n0lovnhpt4wuqf@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	HaleyWillard (0z4bhfjvweplz1v3e9yqziebna@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	DavidDeLosSantos (0v845xtmaj5p21moz7eca685sm@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	JosephSkelley (0mtnyokrj1umd2ruiqq4krafpd@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	ClaireBurns (0iq89o6s23if02wn1fe2bs931q@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	ClayCless (06ds44cdxzqh22qzb0kmwb9f6m@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	ShannonWebb (06blocdbhnajm33edkjcfpubv4@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	MeghanDunleavy (01ql1mqqqxrn82hx503xprtx1t@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	Nimajus (nimajus@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	MichaelBjorkegren (michael.bjorkegren@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	MatthewChen_ (matcchen@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	JeffPekkala (lepekkala@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	IntegralYoga (integralyoga@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	hkorik (hkorik@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	EtanBenarsh (ebednarsh@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	JasonDePeaux (3jzh7kf2pwby722jcf7cbl8xe9@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	SarahBerkowitz_ (2762w5eb1ws883htbry36tierr@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	MikeJeanette (23clxlonv20jr3ha3rclyh6yne@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	ZachDonovan_ (zach.donovan@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	KareemHamdy_ (kareemhamdy@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	JuliaMayersohn (juliainisrael@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	TimGilam (gillti01@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	EmersonHarperDaly (demoteus@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	BryanRidgell (bryanridgell@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	RoussinaValkova (roussina@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	JonathanFoox (jonfoox@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	DaveBeede (dbeede1@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	ManiNilchiani (3vqw2zs9la23f101jl5qlgfazy@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	LaurieBerenhaus_ (laurieberenhaus@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	BethHintze (elizabeth.hintze@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	RichardJKrysztoforski (0382skchp0tor19k6yi374qg7c@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	CaseyCohen (2b1eqe6eif8n108f9vqejreg6b@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:14	<--	NicholasMoore (nolivermoore@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 09:25:51	@bronzehedwick	blist
+2016-08-03 09:25:51	@root	Nick              Handle/Account                            Status
+2016-08-03 09:25:51	@root	twitter_chrisjoh  twitter_chrisjohndeluca twitter           Online
+2016-08-03 09:25:51	@root	twitter_cymnyc    twitter_cymnyc twitter2                   Online
+2016-08-03 09:25:51	@root	430 buddies (2 available, 0 away, 428 offline)
+2016-08-03 09:27:36	@bronzehedwick	blist
+2016-08-03 09:27:36	@root	Nick              Handle/Account                            Status
+2016-08-03 09:27:36	@root	twitter_chrisjoh  twitter_chrisjohndeluca twitter           Online
+2016-08-03 09:27:36	@root	twitter_cymnyc    twitter_cymnyc twitter2                   Online
+2016-08-03 09:27:36	@root	430 buddies (2 available, 0 away, 428 offline)
+2016-08-03 09:27:41	@bronzehedwick	account list
+2016-08-03 09:27:41	@root	 0 (twitter): twitter, chrisjohndeluca (connected)
+2016-08-03 09:27:41	@root	 1 (twitter2): twitter, cymnyc (connected)
+2016-08-03 09:27:41	@root	 2 (gtalk): jabber, bronzehedwick@gmail.com
+2016-08-03 09:27:41	@root	End of account list
+2016-08-03 09:28:02	@bronzehedwick	account 1 off
+2016-08-03 09:28:02	@root	twitter2 - Signing off..
+2016-08-03 09:28:02	<--	twitter_cymnyc (twitter_cymnyc@twitter2) has quit (bitlbee.localhost twitter.localhost)
+2016-08-03 09:28:12	@bronzehedwick	account 2 on
+2016-08-03 09:28:13	@root	jabber - Logging in: Connecting
+2016-08-03 09:28:13	@root	jabber - Logging in: Connected to server, logging in
+2016-08-03 09:28:13	@root	jabber - Logging in: Converting stream to TLS
+2016-08-03 09:28:13	@root	jabber - Logging in: Connected to server, logging in
+2016-08-03 09:28:14	@root	jabber - Logging in: Authentication finished
+2016-08-03 09:28:14	@root	jabber - Logging in: Server changed session resource string to `BitlBeeA7A790D8'
+2016-08-03 09:28:14	@root	jabber - Logging in: Authenticated, requesting buddy list
+2016-08-03 09:28:14	@root	jabber - Logging in: Logged in
+2016-08-03 09:28:14	-->	JeffPekkala (lepekkala@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	JasonDePeaux (3jzh7kf2pwby722jcf7cbl8xe9@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	ZachDonovan_ (zach.donovan@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	Nimajus (nimajus@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	ManiNilchiani (3vqw2zs9la23f101jl5qlgfazy@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	MikeJeanette (23clxlonv20jr3ha3rclyh6yne@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 09:28:14	-->	NicholasMoore (nolivermoore@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	hkorik (hkorik@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	JuliaMayersohn (juliainisrael@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	MeghanDunleavy (01ql1mqqqxrn82hx503xprtx1t@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	TimGilam (gillti01@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-03 09:28:14	-->	EmersonHarperDaly (demoteus@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	BethHintze (elizabeth.hintze@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	RichardJKrysztoforski (0382skchp0tor19k6yi374qg7c@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	--	Mode &bitlbee [+v RichardJKrysztoforski] by localhost
+2016-08-03 09:28:14	-->	ShannonWebb (06blocdbhnajm33edkjcfpubv4@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	MichaelBjorkegren (michael.bjorkegren@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	DaveBeede (dbeede1@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	SarahBerkowitz_ (2762w5eb1ws883htbry36tierr@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	ClayCless (06ds44cdxzqh22qzb0kmwb9f6m@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	LaurieBerenhaus_ (laurieberenhaus@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	CaseyCohen (2b1eqe6eif8n108f9vqejreg6b@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	EtanBenarsh (ebednarsh@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	BryanRidgell (bryanridgell@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	--	Mode &bitlbee [+v BryanRidgell] by localhost
+2016-08-03 09:28:14	-->	KareemHamdy_ (kareemhamdy@gmail.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	KhalimHarris (19kq29pyoizzh0zoixf2b7vd3u@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	KelseyAdams (2olvcsaxgozdg399vl9cf70v99@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	ClaireBurns (0iq89o6s23if02wn1fe2bs931q@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	DavidDeLosSantos (0v845xtmaj5p21moz7eca685sm@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	--	Mode &bitlbee [+v DavidDeLosSantos] by localhost
+2016-08-03 09:28:14	-->	ThomasSheehan (1qe39njjfdlp11cijjcrm6ktrv@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	JosephSkelley (0mtnyokrj1umd2ruiqq4krafpd@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	JohnWetsell (3cwg8y45p87lx1zssnn2nwx39t@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	JasonD (1lbol8dhyz3xg2iewmk785apah@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:14	-->	BradWade (19ar9vc24ix7n0lovnhpt4wuqf@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:15	-->	JeffBauer (24xotqd8l4bfi0g9i9qexcwz4f@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:15	-->	HaleyWillard (0z4bhfjvweplz1v3e9yqziebna@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:15	-->	TerraThompson (2tbb9besg2ug835xtvrxil08dj@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:15	-->	GlorilisTavarez (293vi1755zoag2s4om8q75iuxn@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:15	-->	AlexSpruch (376wbqzaoasu62xqyfenga3i7k@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:15	-->	FrancisF (3e59suypwjun92bhly1unzqmyp@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:15	-->	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:28:15	--	Mode &bitlbee [+v ErnestMyers_] by localhost
+2016-08-03 09:28:20	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-03 09:28:22	@bronzehedwick	blist
+2016-08-03 09:28:22	@root	Nick              Handle/Account                            Status
+2016-08-03 09:28:22	@root	AlexSpruch        376wbqzaoasu62xqyfenga3i7k@public.talk.g  Online
+2016-08-03 09:28:22	@root	BethHintze        elizabeth.hintze@gmail.com gtalk          Away
+2016-08-03 09:28:22	@root	BradWade          19ar9vc24ix7n0lovnhpt4wuqf@public.talk.g  Away
+2016-08-03 09:28:22	@root	BrendanOReilly    brendan.j.oreilly@gmail.com gtalk         Away
+2016-08-03 09:28:22	@root	BryanRidgell      bryanridgell@gmail.com gtalk              Online
+2016-08-03 09:28:22	@root	CaseyCohen        2b1eqe6eif8n108f9vqejreg6b@public.talk.g  Away
+2016-08-03 09:28:22	@root	ChristinaYoungSu  2r1dxfpkpdr912tv4ztkswd85k@public.talk.g  Away
+2016-08-03 09:28:22	@root	ClaireBurns       0iq89o6s23if02wn1fe2bs931q@public.talk.g  Away
+2016-08-03 09:28:22	@root	ClayCless         06ds44cdxzqh22qzb0kmwb9f6m@public.talk.g  Away
+2016-08-03 09:28:22	@root	DaveBeede         dbeede1@gmail.com gtalk                   Away
+2016-08-03 09:28:22	@root	DavidDeLosSantos  0v845xtmaj5p21moz7eca685sm@public.talk.g  Online
+2016-08-03 09:28:22	@root	EmersonHarperDal  demoteus@gmail.com gtalk                  Away
+2016-08-03 09:28:22	@root	ErnestMyers_      0rejp8u4llnz1062shweyxg04f@public.talk.g  Online
+2016-08-03 09:28:22	@root	EtanBenarsh       ebednarsh@gmail.com gtalk                 Away
+2016-08-03 09:28:22	@root	FrancisF          3e59suypwjun92bhly1unzqmyp@public.talk.g  Away
+2016-08-03 09:28:22	@root	GlorilisTavarez   293vi1755zoag2s4om8q75iuxn@public.talk.g  Away
+2016-08-03 09:28:22	@root	HaleyWillard      0z4bhfjvweplz1v3e9yqziebna@public.talk.g  Away
+2016-08-03 09:28:22	@root	hkorik            hkorik@gmail.com gtalk                    Away
+2016-08-03 09:28:22	@root	JasonD            1lbol8dhyz3xg2iewmk785apah@public.talk.g  Away
+2016-08-03 09:28:22	@root	JasonDePeaux      3jzh7kf2pwby722jcf7cbl8xe9@public.talk.g  Away
+2016-08-03 09:28:22	@root	JeffBauer         24xotqd8l4bfi0g9i9qexcwz4f@public.talk.g  Away
+2016-08-03 09:28:22	@root	JeffPekkala       lepekkala@gmail.com gtalk                 Away
+2016-08-03 09:28:22	@root	JohnWetsell       3cwg8y45p87lx1zssnn2nwx39t@public.talk.g  Away
+2016-08-03 09:28:22	@root	JonathanFoox      jonfoox@gmail.com gtalk                   Online
+2016-08-03 09:28:22	@root	JosephSkelley     0mtnyokrj1umd2ruiqq4krafpd@public.talk.g  Away
+2016-08-03 09:28:22	@root	JuliaMayersohn    juliainisrael@gmail.com gtalk             Away
+2016-08-03 09:28:22	@root	KareemHamdy_      kareemhamdy@gmail.com gtalk               Away
+2016-08-03 09:28:22	@root	KelseyAdams       2olvcsaxgozdg399vl9cf70v99@public.talk.g  Away
+2016-08-03 09:28:22	@root	KhalimHarris      19kq29pyoizzh0zoixf2b7vd3u@public.talk.g  Away
+2016-08-03 09:28:22	@root	LaurieBerenhaus_  laurieberenhaus@gmail.com gtalk           Away
+2016-08-03 09:28:22	@root	ManiNilchiani     3vqw2zs9la23f101jl5qlgfazy@public.talk.g  Away
+2016-08-03 09:28:22	@root	MeghanDunleavy    01ql1mqqqxrn82hx503xprtx1t@public.talk.g  Away
+2016-08-03 09:28:22	@root	MichaelBjorkegre  michael.bjorkegren@gmail.com gtalk        Away
+2016-08-03 09:28:22	@root	MikeJeanette      23clxlonv20jr3ha3rclyh6yne@public.talk.g  Away
+2016-08-03 09:28:22	@root	NicholasMoore     nolivermoore@gmail.com gtalk              Away
+2016-08-03 09:28:22	@root	Nimajus           nimajus@gmail.com gtalk                   Away
+2016-08-03 09:28:22	@root	RichardJKrysztof  0382skchp0tor19k6yi374qg7c@public.talk.g  Online
+2016-08-03 09:28:22	@root	RoussinaValkova   roussina@gmail.com gtalk                  Online (mnmlstcwby http://goo.gl/KHB9tW)
+2016-08-03 09:28:22	@root	SarahBerkowitz_   2762w5eb1ws883htbry36tierr@public.talk.g  Away
+2016-08-03 09:28:22	@root	ShannonWebb       06blocdbhnajm33edkjcfpubv4@public.talk.g  Away
+2016-08-03 09:28:22	@root	TerraThompson     2tbb9besg2ug835xtvrxil08dj@public.talk.g  Away
+2016-08-03 09:28:22	@root	ThomasSheehan     1qe39njjfdlp11cijjcrm6ktrv@public.talk.g  Away
+2016-08-03 09:28:22	@root	TimGilam          gillti01@gmail.com gtalk                  Away
+2016-08-03 09:28:22	@root	twitter_chrisjoh  twitter_chrisjohndeluca twitter           Online
+2016-08-03 09:28:22	@root	ZachDonovan_      zach.donovan@gmail.com gtalk              Away
+2016-08-03 09:28:22	@root	313 buddies (8 available, 37 away, 268 offline)
+2016-08-03 09:28:32	@bronzehedwick	RichardJKrysztoforski: hey dude
+2016-08-03 09:28:36	@bronzehedwick	BethHintze: hey
+2016-08-03 09:28:43	@bronzehedwick	CaseyCohen: yo yo
+2016-08-03 09:28:46	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-03 09:28:46	@bronzehedwick	NicholasMoore: hey dude
+2016-08-03 09:29:06	@bronzehedwick	JonathanFoox: hey dude
+2016-08-03 09:39:34	-->	SarahLivant (sarah.livant@gmail.com) has joined &bitlbee
+2016-08-03 09:39:34	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 09:39:35	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-03 09:39:45	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 09:43:52	CaseyCohen	bronzehedwick: hi
+2016-08-03 09:44:06	@bronzehedwick	CaseyCohen: what's going on?
+2016-08-03 09:44:29	--	Mode &bitlbee [-v JonathanFoox] by localhost
+2016-08-03 09:44:35	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 09:46:42	-->	AlexMoore (alexannmoore@gmail.com) has joined &bitlbee
+2016-08-03 09:46:46	CaseyCohen	bronzehedwick: got to work late  :-(
+2016-08-03 09:46:51	CaseyCohen	bronzehedwick: trains were too full to get on
+2016-08-03 09:47:27	@bronzehedwick	CaseyCohen: laaame
+2016-08-03 09:47:47	--	Mode &bitlbee [+v NicholasMoore] by localhost
+2016-08-03 09:47:54	+NicholasMoore	bronzehedwick: hey man 
+2016-08-03 09:49:02	-->	KevinSkelley (0kwnfz1iiudkf38gvrf2l7ekwi@public.talk.google.com) has joined &bitlbee
+2016-08-03 09:49:02	--	Mode &bitlbee [+v KevinSkelley] by localhost
+2016-08-03 09:49:12	@bronzehedwick	NicholasMoore: how's it goin?
+2016-08-03 09:49:20	+NicholasMoore	bronzehedwick: alright 
+2016-08-03 09:49:22	+NicholasMoore	bronzehedwick: feelin
+2016-08-03 09:49:26	+NicholasMoore	bronzehedwick: kinda sick again
+2016-08-03 09:49:36	@bronzehedwick	NicholasMoore: oh no!
+2016-08-03 09:50:40	--	Mode &bitlbee [-v ErnestMyers_] by localhost
+2016-08-03 09:52:03	-->	JackieHlavenka (jhlave1@gmail.com) has joined &bitlbee
+2016-08-03 09:53:10	@bronzehedwick	NicholasMoore: sorry you're not feeling well dude
+2016-08-03 09:53:16	+NicholasMoore	bronzehedwick: yeah me too 
+2016-08-03 09:53:19	+NicholasMoore	bronzehedwick: but se le vie 
+2016-08-03 09:53:22	@bronzehedwick	NicholasMoore: yeah
+2016-08-03 09:53:38	-->	JoshHowell (joshhowellart@gmail.com) has joined &bitlbee
+2016-08-03 09:53:40	--	Mode &bitlbee [-v BryanRidgell] by localhost
+2016-08-03 09:54:03	+NicholasMoore	bronzehedwick: dude do you read fivethirtyeight?
+2016-08-03 09:54:44	@bronzehedwick	NicholasMoore: every once in a while
+2016-08-03 09:54:48	@bronzehedwick	NicholasMoore: something good?
+2016-08-03 09:54:49	<--	JoshHowell (joshhowellart@gmail.com) has quit (Leaving...)
+2016-08-03 09:55:24	+NicholasMoore	bronzehedwick: I mean 
+2016-08-03 09:55:26	+NicholasMoore	bronzehedwick: all of it lol 
+2016-08-03 09:55:32	@bronzehedwick	NicholasMoore: lol yeah fair
+2016-08-03 09:55:40	+NicholasMoore	bronzehedwick: I've been reading it with some consistency for about a week 
+2016-08-03 09:55:44	@bronzehedwick	NicholasMoore:  nice!
+2016-08-03 09:55:46	+NicholasMoore	bronzehedwick: and I've been digging it 
+2016-08-03 09:55:47	+NicholasMoore	bronzehedwick: I mean 
+2016-08-03 09:55:49	+NicholasMoore	bronzehedwick: they're smart 
+2016-08-03 09:55:53	@bronzehedwick	NicholasMoore: yeah
+2016-08-03 09:55:56	+NicholasMoore	bronzehedwick: and have (historically) been very accurate 
+2016-08-03 09:56:01	@bronzehedwick	NicholasMoore: yeah
+2016-08-03 09:56:11	+NicholasMoore	bronzehedwick: although nate silver didn't call trump (And in fact called the opposite) 
+2016-08-03 09:56:21	@bronzehedwick	NicholasMoore: hm yeah
+2016-08-03 09:56:31	+NicholasMoore	bronzehedwick: but what I particularily like, aside from the general intelligent, qualified discussions 
+2016-08-03 09:56:56	+NicholasMoore	bronzehedwick: is that they get their predictions from looking at multiple polls 
+2016-08-03 09:57:10	+NicholasMoore	bronzehedwick: and often list the polls they're looking at 
+2016-08-03 09:57:11	+NicholasMoore	bronzehedwick: so like 
+2016-08-03 09:57:32	+NicholasMoore	bronzehedwick: I never feel like I'm misinformed with a "hilary trouncing trump in the polls" or anything like that 
+2016-08-03 09:58:42	--	Mode &bitlbee [+v BryanRidgell] by localhost
+2016-08-03 09:58:42	@bronzehedwick	NicholasMoore: right right
+2016-08-03 09:58:45	@bronzehedwick	NicholasMoore: that's good
+2016-08-03 10:01:09	<--	SarahLivant (sarah.livant@gmail.com) has quit (Leaving...)
+2016-08-03 10:01:11	-->	SarahLivant (sarah.livant@gmail.com) has joined &bitlbee
+2016-08-03 10:01:11	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 10:04:21	--	Mode &bitlbee [+v ErnestMyers_] by localhost
+2016-08-03 10:05:37	-->	BridgetMatthews (bmatth3@gmail.com) has joined &bitlbee
+2016-08-03 10:08:52	<--	JonathanFoox (jonfoox@gmail.com) has quit (Leaving...)
+2016-08-03 10:12:24	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-03 10:19:12	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-03 10:19:23	<--	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (Leaving...)
+2016-08-03 10:21:13	-->	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-03 10:21:14	--	Mode &bitlbee [+v ErnestMyers_] by localhost
+2016-08-03 10:22:20	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-03 10:23:48	--	Mode &bitlbee [-v ErnestMyers_] by localhost
+2016-08-03 10:24:10	-->	XaqRzetelny (xaqimorp209@gmail.com) has joined &bitlbee
+2016-08-03 10:26:10	<--	XaqRzetelny (xaqimorp209@gmail.com) has quit (Leaving...)
+2016-08-03 10:28:02	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-03 10:28:21	<--	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (Leaving...)
+2016-08-03 10:28:31	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 10:28:58	--	Mode &bitlbee [-v RoussinaValkova] by localhost
+2016-08-03 10:30:45	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-03 10:30:59	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-03 10:32:14	--	Mode &bitlbee [-v NicholasMoore] by localhost
+2016-08-03 10:33:29	-->	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-03 10:34:49	@bronzehedwick	CaseyCohen: you do anything cool this past weekend?
+2016-08-03 10:37:29	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-03 10:37:34	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 10:38:34	--	Mode &bitlbee [-v JonathanFoox] by localhost
+2016-08-03 10:38:40	<--	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (Leaving...)
+2016-08-03 10:38:55	-->	SophieKurtze (004nx5freyrtp2pobexoadbqoo@public.talk.google.com) has joined &bitlbee
+2016-08-03 10:39:15	--	Mode &bitlbee [-v BryanRidgell] by localhost
+2016-08-03 10:39:24	--	Mode &bitlbee [+v NicholasMoore] by localhost
+2016-08-03 10:40:04	-->	DanielPhillips (chedukesiii@gmail.com) has joined &bitlbee
+2016-08-03 10:40:04	--	Mode &bitlbee [+v DanielPhillips] by localhost
+2016-08-03 10:40:46	<--	JonathanFoox (jonfoox@gmail.com) has quit (Leaving...)
+2016-08-03 10:42:00	-->	RachelGitlevich (rachelgitlevich@gmail.com) has joined &bitlbee
+2016-08-03 10:44:44	<--	SarahLivant (sarah.livant@gmail.com) has quit (Leaving...)
+2016-08-03 10:44:46	-->	SarahLivant (sarah.livant@gmail.com) has joined &bitlbee
+2016-08-03 10:44:46	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 10:45:36	+NicholasMoore	bronzehedwick: hey man 
+2016-08-03 10:45:37	CaseyCohen	bronzehedwick: nothing too exciting
+2016-08-03 10:45:38	CaseyCohen	bronzehedwick: lots of rest
+2016-08-03 10:45:42	+NicholasMoore	bronzehedwick: what's your weekend looking like?
+2016-08-03 10:45:45	CaseyCohen	bronzehedwick: saw tobin on sat
+2016-08-03 10:45:51	CaseyCohen	bronzehedwick: then hung out with my friend ali
+2016-08-03 10:45:52	CaseyCohen	bronzehedwick: you?
+2016-08-03 10:46:49	@bronzehedwick	CaseyCohen: nice nice
+2016-08-03 10:46:57	-->	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-03 10:47:05	@bronzehedwick	CaseyCohen: laurie's sister molly is in town, so spent time with her and the in-law fam
+2016-08-03 10:47:45	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-03 10:48:20	@bronzehedwick	NicholasMoore: my weekend is a bit up in the air? i think saturday we are seeing molly, but sunday is still a bit in flux, although we are finally seeing the cult lady
+2016-08-03 10:48:25	@bronzehedwick	NicholasMoore: did you wanna hang?
+2016-08-03 10:48:57	<--	RoussinaValkova (roussina@gmail.com) has quit (Leaving...)
+2016-08-03 10:49:04	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-03 10:49:04	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-03 10:49:28	+NicholasMoore	bronzehedwick: the cult lady that want to bone you and laurie?
+2016-08-03 10:49:54	@bronzehedwick	NicholasMoore: the very same
+2016-08-03 10:50:00	CaseyCohen	bronzehedwick: nice
+2016-08-03 10:50:25	+NicholasMoore	bronzehedwick: niiiice
+2016-08-03 10:51:09	--	Mode &bitlbee [-v RichardJKrysztoforski] by localhost
+2016-08-03 10:52:05	@bronzehedwick	CaseyCohen: yeah it was fun
+2016-08-03 10:52:30	@bronzehedwick	NicholasMoore: :p
+2016-08-03 10:52:41	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-03 10:52:58	--	Mode &bitlbee [+v RichardJKrysztoforski] by localhost
+2016-08-03 10:54:39	--	Mode &bitlbee [-v DavidDeLosSantos] by localhost
+2016-08-03 10:55:42	--	Mode &bitlbee [-v DanielPhillips] by localhost
+2016-08-03 10:56:11	@bronzehedwick	NicholasMoore: i also think i'm finally going to prime my models this evening
+2016-08-03 10:56:45	<--	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (Leaving...)
+2016-08-03 10:56:55	<--	SophieKurtze (004nx5freyrtp2pobexoadbqoo@public.talk.google.com) has quit (Leaving...)
+2016-08-03 10:57:01	+NicholasMoore	bronzehedwick: niiiice 
+2016-08-03 10:57:04	<--	RoussinaValkova (roussina@gmail.com) has quit (Leaving...)
+2016-08-03 10:57:08	@bronzehedwick	NicholasMoore: :)
+2016-08-03 10:57:15	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-03 10:57:15	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-03 10:57:37	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-03 10:58:56	-->	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-03 11:01:14	<--	RoussinaValkova (roussina@gmail.com) has quit (Leaving...)
+2016-08-03 11:01:28	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-03 11:01:28	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-03 11:02:16	@bronzehedwick	NicholasMoore: hey do you see this emoji? 🎱 
+2016-08-03 11:03:31	+NicholasMoore	bronzehedwick: the 8-ball?
+2016-08-03 11:04:21	@bronzehedwick	NicholasMoore: yeah cool
+2016-08-03 11:04:49	@bronzehedwick	NicholasMoore: i'm using a client to connect to gchat and wanted to see if it would convert them
+2016-08-03 11:05:17	<--	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (Leaving...)
+2016-08-03 11:05:55	+NicholasMoore	bronzehedwick: nice 
+2016-08-03 11:06:48	-->	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-03 11:07:40	@bronzehedwick	NicholasMoore: but yeah man, you doing anything this weekend?
+2016-08-03 11:07:43	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-03 11:08:39	+NicholasMoore	bronzehedwick: well I got stuff in the eveninings 
+2016-08-03 11:08:43	+NicholasMoore	bronzehedwick: but not during the days!
+2016-08-03 11:09:16	@bronzehedwick	NicholasMoore: ok sweeeet
+2016-08-03 11:09:30	--	Mode &bitlbee [+v DavidDeLosSantos] by localhost
+2016-08-03 11:09:36	+NicholasMoore	bronzehedwick: actually, would you be into a brunch?
+2016-08-03 11:10:05	@bronzehedwick	NicholasMoore: that sounds sweet, but our day potentially free is sunday, and we are meeting cult lady at 2pm
+2016-08-03 11:10:12	@bronzehedwick	NicholasMoore: which is kinda brunch central
+2016-08-03 11:10:28	+NicholasMoore	bronzehedwick: sure, that's fair 
+2016-08-03 11:10:29	+NicholasMoore	bronzehedwick: I mean 
+2016-08-03 11:10:35	+NicholasMoore	bronzehedwick: I'd do like an 11:00 
+2016-08-03 11:10:39	@bronzehedwick	NicholasMoore: fair!
+2016-08-03 11:10:42	+NicholasMoore	bronzehedwick: but maybe you're eating w/ her?
+2016-08-03 11:10:47	@bronzehedwick	NicholasMoore: well let me talk to laurie
+2016-08-03 11:10:49	@bronzehedwick	NicholasMoore: idk
+2016-08-03 11:10:53	@bronzehedwick	NicholasMoore: this is all culty
+2016-08-03 11:12:45	+NicholasMoore	bronzehedwick: lol yeah 
+2016-08-03 11:12:47	+NicholasMoore	bronzehedwick: and hey 
+2016-08-03 11:12:55	+NicholasMoore	bronzehedwick: no worries if you're too busy or want some down time 
+2016-08-03 11:13:01	@bronzehedwick	NicholasMoore: cool cool
+2016-08-03 11:13:02	+NicholasMoore	bronzehedwick: just thought I'd ask 😉 
+2016-08-03 11:13:07	@bronzehedwick	NicholasMoore: yeah totally!
+2016-08-03 11:13:18	@bronzehedwick	NicholasMoore: i just gotta see how timing is
+2016-08-03 11:13:36	@bronzehedwick	NicholasMoore: but maybe at least an online wm game?
+2016-08-03 11:14:08	+NicholasMoore	bronzehedwick: yeah!
+2016-08-03 11:14:13	+NicholasMoore	bronzehedwick: I could def at least do that 
+2016-08-03 11:14:24	@bronzehedwick	NicholasMoore: siiiiiiick
+2016-08-03 11:21:43	<--	AlexMoore (alexannmoore@gmail.com) has quit (Leaving...)
+2016-08-03 11:24:11	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-03 11:24:50	--	Mode &bitlbee [-v RichardJKrysztoforski] by localhost
+2016-08-03 11:25:56	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 11:27:02	-->	AlexMoore (alexannmoore@gmail.com) has joined &bitlbee
+2016-08-03 11:27:28	--	Mode &bitlbee [+v BridgetMatthews] by localhost
+2016-08-03 11:28:07	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-03 11:28:59	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 11:29:25	--	Mode &bitlbee [-v RoussinaValkova] by localhost
+2016-08-03 11:30:09	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-03 11:30:50	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 11:31:14	--	Mode &bitlbee [+v AlexMoore] by localhost
+2016-08-03 11:31:46	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-03 11:33:08	--	Mode &bitlbee [-v NicholasMoore] by localhost
+2016-08-03 11:33:40	-->	MarjorieGreenman-Crisson (talkingwolfen@gmail.com) has joined &bitlbee
+2016-08-03 11:33:57	<--	RoussinaValkova (roussina@gmail.com) has quit (Leaving...)
+2016-08-03 11:35:08	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 11:35:59	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-03 11:37:23	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-03 11:38:21	--	Mode &bitlbee [-v JonathanFoox] by localhost
+2016-08-03 11:40:52	-->	JaiRajagopalan (3lzfzvht3wlhv37s1qo14mtzel@public.talk.google.com) has joined &bitlbee
+2016-08-03 11:41:01	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-03 11:41:30	--	Mode &bitlbee [+v NicholasMoore] by localhost
+2016-08-03 11:42:31	--	Mode &bitlbee [-v BridgetMatthews] by localhost
+2016-08-03 11:44:38	--	Mode &bitlbee [-v KevinSkelley] by localhost
+2016-08-03 11:46:06	--	Mode &bitlbee [+v BridgetMatthews] by localhost
+2016-08-03 11:46:16	--	Mode &bitlbee [-v AlexMoore] by localhost
+2016-08-03 11:50:36	@bronzehedwick	CaseyCohen: my friend wants to jump off an abandoned bridge in pennsylvania (not a suicide thing, to be clear)
+2016-08-03 11:52:09	CaseyCohen	bronzehedwick: um, ok
+2016-08-03 11:52:31	CaseyCohen	bronzehedwick: why though?
+2016-08-03 11:52:53	@bronzehedwick	CaseyCohen: it's fun
+2016-08-03 11:53:00	@bronzehedwick	CaseyCohen: it's a thing
+2016-08-03 11:53:14	--	Mode &bitlbee [-v DavidDeLosSantos] by localhost
+2016-08-03 11:54:35	<--	RoussinaValkova (roussina@gmail.com) has quit (Leaving...)
+2016-08-03 11:54:41	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-03 11:54:41	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-03 11:54:42	<--	JaiRajagopalan (3lzfzvht3wlhv37s1qo14mtzel@public.talk.google.com) has quit (Leaving...)
+2016-08-03 11:56:46	--	Mode &bitlbee [+v KevinSkelley] by localhost
+2016-08-03 13:15:07	@root	jabber - Error: Error while reading from server
+2016-08-03 13:15:07	@root	jabber - Signing off..
+2016-08-03 13:15:07	<--	FrancisF (3e59suypwjun92bhly1unzqmyp@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	JohnWetsell (3cwg8y45p87lx1zssnn2nwx39t@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	AlexSpruch (376wbqzaoasu62xqyfenga3i7k@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	TerraThompson (2tbb9besg2ug835xtvrxil08dj@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	KelseyAdams (2olvcsaxgozdg399vl9cf70v99@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	GlorilisTavarez (293vi1755zoag2s4om8q75iuxn@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	JeffBauer (24xotqd8l4bfi0g9i9qexcwz4f@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	ThomasSheehan (1qe39njjfdlp11cijjcrm6ktrv@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	JasonD (1lbol8dhyz3xg2iewmk785apah@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	KhalimHarris (19kq29pyoizzh0zoixf2b7vd3u@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	BradWade (19ar9vc24ix7n0lovnhpt4wuqf@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	HaleyWillard (0z4bhfjvweplz1v3e9yqziebna@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	DavidDeLosSantos (0v845xtmaj5p21moz7eca685sm@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	JosephSkelley (0mtnyokrj1umd2ruiqq4krafpd@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	KevinSkelley (0kwnfz1iiudkf38gvrf2l7ekwi@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	ClaireBurns (0iq89o6s23if02wn1fe2bs931q@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	ClayCless (06ds44cdxzqh22qzb0kmwb9f6m@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	ShannonWebb (06blocdbhnajm33edkjcfpubv4@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	MeghanDunleavy (01ql1mqqqxrn82hx503xprtx1t@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	MarjorieGreenman-Crisson (talkingwolfen@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	SarahLivant (sarah.livant@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	Nimajus (nimajus@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	MichaelBjorkegren (michael.bjorkegren@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	JeffPekkala (lepekkala@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	hkorik (hkorik@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	EtanBenarsh (ebednarsh@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	AlexMoore (alexannmoore@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	JasonDePeaux (3jzh7kf2pwby722jcf7cbl8xe9@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	SarahBerkowitz_ (2762w5eb1ws883htbry36tierr@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	MikeJeanette (23clxlonv20jr3ha3rclyh6yne@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	ZachDonovan_ (zach.donovan@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	RachelGitlevich (rachelgitlevich@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	KareemHamdy_ (kareemhamdy@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	JuliaMayersohn (juliainisrael@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	JackieHlavenka (jhlave1@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	TimGilam (gillti01@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	EmersonHarperDaly (demoteus@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	DanielPhillips (chedukesiii@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	BryanRidgell (bryanridgell@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	BridgetMatthews (bmatth3@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	RoussinaValkova (roussina@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	JonathanFoox (jonfoox@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	DaveBeede (dbeede1@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	ManiNilchiani (3vqw2zs9la23f101jl5qlgfazy@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	LaurieBerenhaus_ (laurieberenhaus@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	BethHintze (elizabeth.hintze@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	RichardJKrysztoforski (0382skchp0tor19k6yi374qg7c@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	CaseyCohen (2b1eqe6eif8n108f9vqejreg6b@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	<--	NicholasMoore (nolivermoore@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 13:15:07	@root	jabber - Reconnecting in 5 seconds..
+2016-08-03 13:15:12	@root	jabber - Logging in: Connecting
+2016-08-03 13:15:12	@root	twitter - Error: Connection timeout
+2016-08-03 13:15:12	@root	twitter - Signing off..
+2016-08-03 13:15:12	<--	twitter_chrisjohndeluca (twitter_chrisjohndeluca@twitter) has quit (bitlbee.localhost twitter.localhost)
+2016-08-03 13:15:12	@root	twitter - Logging in: Reconnecting in 5 seconds..
+2016-08-03 13:15:12	@root	jabber - Logging in: Connected to server, logging in
+2016-08-03 13:15:12	@root	jabber - Logging in: Converting stream to TLS
+2016-08-03 13:15:12	@root	jabber - Logging in: Connected to server, logging in
+2016-08-03 13:15:13	@root	jabber - Logging in: Authentication finished
+2016-08-03 13:15:13	@root	jabber - Logging in: Server changed session resource string to `BitlBeeBB9B6563'
+2016-08-03 13:15:13	@root	jabber - Logging in: Authenticated, requesting buddy list
+2016-08-03 13:15:13	@root	jabber - Logging in: Logged in
+2016-08-03 13:15:13	-->	BridgetMatthews (bmatth3@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	--	Mode &bitlbee [+v BridgetMatthews] by localhost
+2016-08-03 13:15:13	-->	TimGilam (gillti01@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	EtanBenarsh (ebednarsh@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	ZachDonovan (zach.donovan@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	Nimajus (nimajus@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	ManiNilchiani (3vqw2zs9la23f101jl5qlgfazy@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	BryanRidgell (bryanridgell@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	--	Mode &bitlbee [+v BryanRidgell] by localhost
+2016-08-03 13:15:13	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 13:15:13	-->	MikeJeanette (23clxlonv20jr3ha3rclyh6yne@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	JuliaMayersohn (juliainisrael@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	NicholasMoore (nolivermoore@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	KareemHamdy (kareemhamdy@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	hkorik (hkorik@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	DrewAldridge (drew.aldridge83@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	MichaelBjorkegren (michael.bjorkegren@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	AlexMoore (alexannmoore@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	--	Mode &bitlbee [+v AlexMoore] by localhost
+2016-08-03 13:15:13	-->	LaurieBerenhaus (laurieberenhaus@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	SarahLivant (sarah.livant@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 13:15:13	-->	CaseyCohen (2b1eqe6eif8n108f9vqejreg6b@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	BethHintze (elizabeth.hintze@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	JeffPekkala (lepekkala@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	DaveBeede (dbeede1@gmail.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	RichardJKrysztoforski (0382skchp0tor19k6yi374qg7c@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	ShannonWebb (06blocdbhnajm33edkjcfpubv4@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	JasonDePeaux (3jzh7kf2pwby722jcf7cbl8xe9@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	SarahBerkowitz (2762w5eb1ws883htbry36tierr@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	ClayCless (06ds44cdxzqh22qzb0kmwb9f6m@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	MeghanDunleavy (01ql1mqqqxrn82hx503xprtx1t@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	JohnWetsell (3cwg8y45p87lx1zssnn2nwx39t@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	ThomasSheehan (1qe39njjfdlp11cijjcrm6ktrv@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	KhalimHarris (19kq29pyoizzh0zoixf2b7vd3u@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	BradWade (19ar9vc24ix7n0lovnhpt4wuqf@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	JasonD (1lbol8dhyz3xg2iewmk785apah@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	JosephSkelley (0mtnyokrj1umd2ruiqq4krafpd@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	KelseyAdams (2olvcsaxgozdg399vl9cf70v99@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	ClaireBurns (0iq89o6s23if02wn1fe2bs931q@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	DavidDeLosSantos (0v845xtmaj5p21moz7eca685sm@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	AlexSpruch (376wbqzaoasu62xqyfenga3i7k@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-03 13:15:13	-->	FrancisF (3e59suypwjun92bhly1unzqmyp@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	JaiRajagopalan (3lzfzvht3wlhv37s1qo14mtzel@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	JeffBauer (24xotqd8l4bfi0g9i9qexcwz4f@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	TerraThompson (2tbb9besg2ug835xtvrxil08dj@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	GlorilisTavarez (293vi1755zoag2s4om8q75iuxn@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	HaleyWillard (0z4bhfjvweplz1v3e9yqziebna@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	-->	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:15:13	--	Mode &bitlbee [+v ChristinaYoungSunLee] by localhost
+2016-08-03 13:15:13	-->	EmersonHarperDaly (demoteus@gmail.com) has joined &bitlbee
+2016-08-03 13:15:17	@root	twitter - Logging in: Connecting
+2016-08-03 13:15:17	-->	twitter_chrisjohndeluca (twitter_chrisjohndeluca@twitter) has joined &bitlbee
+2016-08-03 13:15:17	--	Mode &bitlbee [+v twitter_chrisjohndeluca] by localhost
+2016-08-03 13:15:17	@root	twitter - Logging in: Getting contact list
+2016-08-03 13:15:19	@root	twitter - Logging in: Getting initial statuses
+2016-08-03 13:15:19	@root	twitter - Logging in: Logged in
+2016-08-03 13:15:38	--	irc: disconnected from server
+2016-08-03 13:15:48	-->	bronzehedwick (bronzehedwick@localhost) has joined &bitlbee
+2016-08-03 13:15:48	--	Topic for &bitlbee is "Welcome to the control channel. Type help for help information."
+2016-08-03 13:15:48	--	Topic set by root (root@localhost) on Wed, 03 Aug 2016 13:15:48
+2016-08-03 13:15:48	--	Channel &bitlbee: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2016-08-03 13:15:48	@root	Welcome to the BitlBee gateway!
+2016-08-03 13:15:48	@root	 
+2016-08-03 13:15:48	@root	Running BitlBee 3.4.2
+2016-08-03 13:15:48	@root	 
+2016-08-03 13:15:48	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2016-08-03 13:15:48	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2016-08-03 13:17:32	@bronzehedwick	identify ${sec.data.bncpass}
+2016-08-03 13:17:32	@root	Incorrect password
+2016-08-03 13:17:39	@bronzehedwick	identify Dwarves7minE!
+2016-08-03 13:17:39	@root	Password accepted, settings and accounts loaded
+2016-08-03 13:17:39	@root	Trying to get all accounts connected...
+2016-08-03 13:17:39	@root	twitter - Logging in: Connecting
+2016-08-03 13:17:39	-->	twitter_chrisjohndeluca (twitter_chrisjohndeluca@twitter) has joined &bitlbee
+2016-08-03 13:17:39	--	Mode &bitlbee [+v twitter_chrisjohndeluca] by localhost
+2016-08-03 13:17:39	@root	twitter - Logging in: Getting contact list
+2016-08-03 13:17:39	@root	twitter2 - Logging in: Connecting
+2016-08-03 13:17:39	-->	twitter_cymnyc (twitter_cymnyc@twitter2) has joined &bitlbee
+2016-08-03 13:17:39	--	Mode &bitlbee [+v twitter_cymnyc] by localhost
+2016-08-03 13:17:39	@root	twitter2 - Logging in: Getting contact list
+2016-08-03 13:17:39	@root	jabber - Logging in: Connecting
+2016-08-03 13:17:39	@root	jabber - Logging in: Connected to server, logging in
+2016-08-03 13:17:39	@root	jabber - Logging in: Converting stream to TLS
+2016-08-03 13:17:39	@root	jabber - Logging in: Connected to server, logging in
+2016-08-03 13:17:39	@root	jabber - Logging in: Authentication finished
+2016-08-03 13:17:39	@root	jabber - Logging in: Server changed session resource string to `BitlBeeD01FE4C1'
+2016-08-03 13:17:39	@root	jabber - Logging in: Authenticated, requesting buddy list
+2016-08-03 13:17:40	@root	jabber - Logging in: Logged in
+2016-08-03 13:17:40	-->	EtanBenarsh (ebednarsh@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	ZachDonovan (zach.donovan@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	Nimajus (nimajus@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	MikeJeanette (23clxlonv20jr3ha3rclyh6yne@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	ManiNilchiani (3vqw2zs9la23f101jl5qlgfazy@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	--	Mode &bitlbee [+v ManiNilchiani] by localhost
+2016-08-03 13:17:40	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 13:17:40	-->	BridgetMatthews (bmatth3@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	--	Mode &bitlbee [+v BridgetMatthews] by localhost
+2016-08-03 13:17:40	-->	MatthewChen_ (matcchen@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	TimGilam (gillti01@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	MeghanDunleavy (01ql1mqqqxrn82hx503xprtx1t@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	BryanRidgell (bryanridgell@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	--	Mode &bitlbee [+v BryanRidgell] by localhost
+2016-08-03 13:17:40	-->	DaveBeede (dbeede1@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	DrewAldridge (drew.aldridge83@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	MichaelBjorkegren (michael.bjorkegren@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	KareemHamdy (kareemhamdy@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	AlexMoore (alexannmoore@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	ShannonWebb (06blocdbhnajm33edkjcfpubv4@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	NicholasMoore (nolivermoore@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	JuliaMayersohn (juliainisrael@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	SarahBerkowitz (2762w5eb1ws883htbry36tierr@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	ClayCless (06ds44cdxzqh22qzb0kmwb9f6m@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	hkorik (hkorik@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	LaurieBerenhaus (laurieberenhaus@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	CaseyCohen (2b1eqe6eif8n108f9vqejreg6b@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	BethHintze (elizabeth.hintze@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	--	Mode &bitlbee [+v BethHintze] by localhost
+2016-08-03 13:17:40	-->	RichardJKrysztoforski (0382skchp0tor19k6yi374qg7c@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	SarahLivant (sarah.livant@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 13:17:40	-->	JeffPekkala (lepekkala@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	EmersonHarperDaly (demoteus@gmail.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	JasonDePeaux (3jzh7kf2pwby722jcf7cbl8xe9@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	JosephSkelley (0mtnyokrj1umd2ruiqq4krafpd@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	JohnWetsell (3cwg8y45p87lx1zssnn2nwx39t@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	--	Mode &bitlbee [+v ChristinaYoungSunLee] by localhost
+2016-08-03 13:17:40	-->	ThomasSheehan (1qe39njjfdlp11cijjcrm6ktrv@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	BradWade (19ar9vc24ix7n0lovnhpt4wuqf@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	KhalimHarris (19kq29pyoizzh0zoixf2b7vd3u@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	ClaireBurns (0iq89o6s23if02wn1fe2bs931q@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	JasonD (1lbol8dhyz3xg2iewmk785apah@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	JaiRajagopalan (3lzfzvht3wlhv37s1qo14mtzel@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	FrancisF (3e59suypwjun92bhly1unzqmyp@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	DavidDeLosSantos (0v845xtmaj5p21moz7eca685sm@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	TerraThompson (2tbb9besg2ug835xtvrxil08dj@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	JeffBauer (24xotqd8l4bfi0g9i9qexcwz4f@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	HaleyWillard (0z4bhfjvweplz1v3e9yqziebna@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	GlorilisTavarez (293vi1755zoag2s4om8q75iuxn@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	-->	AlexSpruch (376wbqzaoasu62xqyfenga3i7k@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:40	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-03 13:17:40	-->	KelseyAdams (2olvcsaxgozdg399vl9cf70v99@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:17:41	@root	twitter - Logging in: Getting initial statuses
+2016-08-03 13:17:41	@root	twitter2 - Logging in: Getting initial statuses
+2016-08-03 13:17:41	@root	twitter - Logging in: Logged in
+2016-08-03 13:17:41	@root	twitter2 - Logging in: Logged in
+2016-08-03 13:17:51	@bronzehedwick	account list
+2016-08-03 13:17:51	@root	 0 (twitter): twitter, chrisjohndeluca (connected)
+2016-08-03 13:17:51	@root	 1 (twitter2): twitter, cymnyc (connected)
+2016-08-03 13:17:51	@root	 2 (gtalk): jabber, bronzehedwick@gmail.com (connected)
+2016-08-03 13:17:51	@root	End of account list
+2016-08-03 13:17:57	@bronzehedwick	account 1 off
+2016-08-03 13:17:57	@root	twitter2 - Signing off..
+2016-08-03 13:17:57	<--	twitter_cymnyc (twitter_cymnyc@twitter2) has quit (bitlbee.localhost twitter.localhost)
+2016-08-03 13:19:40	--	Mode &bitlbee [-v BridgetMatthews] by localhost
+2016-08-03 13:20:15	--	Mode &bitlbee [-v BethHintze] by localhost
+2016-08-03 13:24:38	-->	RachelGitlevich (rachelgitlevich@gmail.com) has joined &bitlbee
+2016-08-03 13:27:45	--	Mode &bitlbee [+v RachelGitlevich] by localhost
+2016-08-03 13:28:55	-->	ErnestMyers (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:29:28	--	Mode &bitlbee [+v DavidDeLosSantos] by localhost
+2016-08-03 13:30:40	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-03 13:31:28	--	Mode &bitlbee [+v CaseyCohen] by localhost
+2016-08-03 13:33:14	<--	ErnestMyers (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (Leaving...)
+2016-08-03 13:35:47	-->	AndyMcCarthy (andycmac@gmail.com) has joined &bitlbee
+2016-08-03 13:36:34	--	Mode &bitlbee [+v BethHintze] by localhost
+2016-08-03 13:37:52	--	Mode &bitlbee [-v BryanRidgell] by localhost
+2016-08-03 13:38:39	--	Mode &bitlbee [+v DrewAldridge] by localhost
+2016-08-03 13:38:41	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-03 13:42:49	--	Mode &bitlbee [-v RachelGitlevich] by localhost
+2016-08-03 13:44:51	--	Mode &bitlbee [-v JonathanFoox] by localhost
+2016-08-03 13:45:18	-->	IntegralYoga (integralyoga@gmail.com) has joined &bitlbee
+2016-08-03 13:46:23	-->	DanielPhillips (chedukesiii@gmail.com) has joined &bitlbee
+2016-08-03 13:48:17	<--	AndyMcCarthy (andycmac@gmail.com) has quit (Leaving...)
+2016-08-03 13:49:12	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 13:49:43	-->	ErnestMyers (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-03 13:53:43	--	Mode &bitlbee [-v DrewAldridge] by localhost
+2016-08-03 13:53:58	<--	DanielPhillips (chedukesiii@gmail.com) has quit (Leaving...)
+2016-08-03 13:54:01	-->	DanielPhillips (chedukesiii@gmail.com) has joined &bitlbee
+2016-08-03 13:54:01	--	Mode &bitlbee [+v DanielPhillips] by localhost
+2016-08-03 13:54:20	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-03 13:54:48	--	Mode &bitlbee [-v BethHintze] by localhost
+2016-08-03 13:58:23	--	Mode &bitlbee [-v ManiNilchiani] by localhost
+2016-08-03 13:58:31	<--	IntegralYoga (integralyoga@gmail.com) has quit (Leaving...)
+2016-08-03 13:59:57	--	Mode &bitlbee [+v ErnestMyers] by localhost
+2016-08-03 14:00:15	-->	IntegralYoga (integralyoga@gmail.com) has joined &bitlbee
+2016-08-03 14:05:08	--	Mode &bitlbee [+v BryanRidgell] by localhost
+2016-08-03 14:09:32	--	Mode &bitlbee [+v ZachDonovan] by localhost
+2016-08-03 14:12:51	--	Mode &bitlbee [+v BridgetMatthews] by localhost
+2016-08-03 14:14:50	-->	JackieHlavenka (jhlave1@gmail.com) has joined &bitlbee
+2016-08-03 14:14:58	--	Mode &bitlbee [-v ErnestMyers] by localhost
+2016-08-03 14:15:03	--	Mode &bitlbee [-v ChristinaYoungSunLee] by localhost
+2016-08-03 14:15:04	--	Mode &bitlbee [+v ChristinaYoungSunLee] by localhost
+2016-08-03 14:17:35	--	Mode &bitlbee [+v BethHintze] by localhost
+2016-08-03 14:19:18	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-03 14:21:48	--	Mode &bitlbee [-v CaseyCohen] by localhost
+2016-08-03 14:22:25	--	Mode &bitlbee [+v AlexMoore] by localhost
+2016-08-03 14:23:59	--	Mode &bitlbee [+v CaseyCohen] by localhost
+2016-08-03 14:24:32	-->	KevinSkelley (0kwnfz1iiudkf38gvrf2l7ekwi@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:24:32	--	Mode &bitlbee [+v KevinSkelley] by localhost
+2016-08-03 14:24:32	--	Mode &bitlbee [-v KevinSkelley] by localhost
+2016-08-03 14:25:38	--	Mode &bitlbee [-v DanielPhillips] by localhost
+2016-08-03 14:27:54	--	Mode &bitlbee [-v ZachDonovan] by localhost
+2016-08-03 14:27:55	--	Mode &bitlbee [-v BridgetMatthews] by localhost
+2016-08-03 14:31:23	--	Mode &bitlbee [-v BryanRidgell] by localhost
+2016-08-03 14:31:40	--	Mode &bitlbee [+v DrewAldridge] by localhost
+2016-08-03 14:32:59	<--	IntegralYoga (integralyoga@gmail.com) has quit (Leaving...)
+2016-08-03 14:33:52	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 14:34:21	-->	IntegralYoga (integralyoga@gmail.com) has joined &bitlbee
+2016-08-03 14:36:33	--	Mode &bitlbee [+v KevinSkelley] by localhost
+2016-08-03 14:37:29	--	Mode &bitlbee [-v ChristinaYoungSunLee] by localhost
+2016-08-03 14:37:30	--	Mode &bitlbee [-v AlexMoore] by localhost
+2016-08-03 14:53:44	@root	twitter - Error: Connection timeout
+2016-08-03 14:53:44	@root	twitter - Signing off..
+2016-08-03 14:53:44	<--	twitter_chrisjohndeluca (twitter_chrisjohndeluca@twitter) has quit (bitlbee.localhost twitter.localhost)
+2016-08-03 14:53:44	@root	twitter - Logging in: Reconnecting in 5 seconds..
+2016-08-03 14:53:49	@root	twitter - Logging in: Connecting
+2016-08-03 14:53:49	-->	twitter_chrisjohndeluca (twitter_chrisjohndeluca@twitter) has joined &bitlbee
+2016-08-03 14:53:49	--	Mode &bitlbee [+v twitter_chrisjohndeluca] by localhost
+2016-08-03 14:53:49	@root	twitter - Logging in: Getting contact list
+2016-08-03 14:53:50	@root	twitter - Logging in: Getting initial statuses
+2016-08-03 14:53:51	@root	twitter - Logging in: Logged in
+2016-08-03 14:54:00	@root	jabber - Error: Error while reading from server
+2016-08-03 14:54:00	@root	jabber - Signing off..
+2016-08-03 14:54:00	<--	JaiRajagopalan (3lzfzvht3wlhv37s1qo14mtzel@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	FrancisF (3e59suypwjun92bhly1unzqmyp@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	JohnWetsell (3cwg8y45p87lx1zssnn2nwx39t@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	AlexSpruch (376wbqzaoasu62xqyfenga3i7k@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	TerraThompson (2tbb9besg2ug835xtvrxil08dj@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	KelseyAdams (2olvcsaxgozdg399vl9cf70v99@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	GlorilisTavarez (293vi1755zoag2s4om8q75iuxn@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	JeffBauer (24xotqd8l4bfi0g9i9qexcwz4f@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	ThomasSheehan (1qe39njjfdlp11cijjcrm6ktrv@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	JasonD (1lbol8dhyz3xg2iewmk785apah@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	KhalimHarris (19kq29pyoizzh0zoixf2b7vd3u@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	BradWade (19ar9vc24ix7n0lovnhpt4wuqf@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:00	<--	HaleyWillard (0z4bhfjvweplz1v3e9yqziebna@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	DavidDeLosSantos (0v845xtmaj5p21moz7eca685sm@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	ErnestMyers (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	JosephSkelley (0mtnyokrj1umd2ruiqq4krafpd@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	KevinSkelley (0kwnfz1iiudkf38gvrf2l7ekwi@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	ClaireBurns (0iq89o6s23if02wn1fe2bs931q@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	ClayCless (06ds44cdxzqh22qzb0kmwb9f6m@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	ShannonWebb (06blocdbhnajm33edkjcfpubv4@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	MeghanDunleavy (01ql1mqqqxrn82hx503xprtx1t@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	SarahLivant (sarah.livant@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	Nimajus (nimajus@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	MichaelBjorkegren (michael.bjorkegren@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	MatthewChen_ (matcchen@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	JeffPekkala (lepekkala@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	IntegralYoga (integralyoga@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	hkorik (hkorik@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	EtanBenarsh (ebednarsh@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	DrewAldridge (drew.aldridge83@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	AlexMoore (alexannmoore@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	JasonDePeaux (3jzh7kf2pwby722jcf7cbl8xe9@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	SarahBerkowitz (2762w5eb1ws883htbry36tierr@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	MikeJeanette (23clxlonv20jr3ha3rclyh6yne@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	ZachDonovan (zach.donovan@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	RachelGitlevich (rachelgitlevich@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	KareemHamdy (kareemhamdy@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	JuliaMayersohn (juliainisrael@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	JackieHlavenka (jhlave1@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	TimGilam (gillti01@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	EmersonHarperDaly (demoteus@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	DanielPhillips (chedukesiii@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	BryanRidgell (bryanridgell@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	BridgetMatthews (bmatth3@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	JonathanFoox (jonfoox@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	DaveBeede (dbeede1@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	ManiNilchiani (3vqw2zs9la23f101jl5qlgfazy@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	LaurieBerenhaus (laurieberenhaus@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	BethHintze (elizabeth.hintze@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	RichardJKrysztoforski (0382skchp0tor19k6yi374qg7c@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	CaseyCohen (2b1eqe6eif8n108f9vqejreg6b@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	<--	NicholasMoore (nolivermoore@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 14:54:01	@root	jabber - Reconnecting in 5 seconds..
+2016-08-03 14:54:06	@root	jabber - Logging in: Connecting
+2016-08-03 14:54:06	@root	jabber - Logging in: Connected to server, logging in
+2016-08-03 14:54:06	@root	jabber - Logging in: Converting stream to TLS
+2016-08-03 14:54:06	@root	jabber - Logging in: Connected to server, logging in
+2016-08-03 14:54:06	@root	jabber - Logging in: Authentication finished
+2016-08-03 14:54:06	@root	jabber - Logging in: Server changed session resource string to `BitlBee4C6868EC'
+2016-08-03 14:54:06	@root	jabber - Logging in: Authenticated, requesting buddy list
+2016-08-03 14:54:06	@root	jabber - Logging in: Logged in
+2016-08-03 14:54:07	-->	IntegralYoga (integralyoga@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	EtanBenarsh (ebednarsh@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	Nimajus (nimajus@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	ManiNilchiani (3vqw2zs9la23f101jl5qlgfazy@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	--	Mode &bitlbee [+v ManiNilchiani] by localhost
+2016-08-03 14:54:07	-->	ZachDonovan (zach.donovan@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 14:54:07	-->	BryanRidgell (bryanridgell@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	--	Mode &bitlbee [+v BryanRidgell] by localhost
+2016-08-03 14:54:07	-->	BridgetMatthews (bmatth3@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-03 14:54:07	-->	DanielPhillips (chedukesiii@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	--	Mode &bitlbee [+v DanielPhillips] by localhost
+2016-08-03 14:54:07	-->	TimGilam (gillti01@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	MikeJeanette (23clxlonv20jr3ha3rclyh6yne@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	MatthewChen_ (matcchen@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	JuliaMayersohn (juliainisrael@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	hkorik (hkorik@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	NicholasMoore (nolivermoore@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	--	Mode &bitlbee [+v NicholasMoore] by localhost
+2016-08-03 14:54:07	-->	JackieHlavenka (jhlave1@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	KareemHamdy (kareemhamdy@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	DrewAldridge (drew.aldridge83@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	LaurieBerenhaus (laurieberenhaus@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	AlexMoore (alexannmoore@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	MichaelBjorkegren (michael.bjorkegren@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	ShannonWebb (06blocdbhnajm33edkjcfpubv4@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	DaveBeede (dbeede1@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	ClayCless (06ds44cdxzqh22qzb0kmwb9f6m@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	EmersonHarperDaly (demoteus@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	CaseyCohen (2b1eqe6eif8n108f9vqejreg6b@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	RachelGitlevich (rachelgitlevich@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	BethHintze (elizabeth.hintze@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	--	Mode &bitlbee [+v BethHintze] by localhost
+2016-08-03 14:54:07	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	SarahBerkowitz (2762w5eb1ws883htbry36tierr@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	SarahLivant (sarah.livant@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	JeffPekkala (lepekkala@gmail.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	RichardJKrysztoforski (0382skchp0tor19k6yi374qg7c@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	JasonDePeaux (3jzh7kf2pwby722jcf7cbl8xe9@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	BradWade (19ar9vc24ix7n0lovnhpt4wuqf@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	ThomasSheehan (1qe39njjfdlp11cijjcrm6ktrv@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	KelseyAdams (2olvcsaxgozdg399vl9cf70v99@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	JasonD (1lbol8dhyz3xg2iewmk785apah@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	JohnWetsell (3cwg8y45p87lx1zssnn2nwx39t@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	--	Mode &bitlbee [+v JohnWetsell] by localhost
+2016-08-03 14:54:07	-->	KhalimHarris (19kq29pyoizzh0zoixf2b7vd3u@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	--	Mode &bitlbee [+v KhalimHarris] by localhost
+2016-08-03 14:54:07	-->	JosephSkelley (0mtnyokrj1umd2ruiqq4krafpd@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	KevinSkelley (0kwnfz1iiudkf38gvrf2l7ekwi@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	--	Mode &bitlbee [+v KevinSkelley] by localhost
+2016-08-03 14:54:07	-->	FrancisF (3e59suypwjun92bhly1unzqmyp@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	ErnestMyers (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	JeffBauer (24xotqd8l4bfi0g9i9qexcwz4f@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	ClaireBurns (0iq89o6s23if02wn1fe2bs931q@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	AlexSpruch (376wbqzaoasu62xqyfenga3i7k@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	JaiRajagopalan (3lzfzvht3wlhv37s1qo14mtzel@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	DavidDeLosSantos (0v845xtmaj5p21moz7eca685sm@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	--	Mode &bitlbee [+v DavidDeLosSantos] by localhost
+2016-08-03 14:54:07	-->	HaleyWillard (0z4bhfjvweplz1v3e9yqziebna@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	GlorilisTavarez (293vi1755zoag2s4om8q75iuxn@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	TerraThompson (2tbb9besg2ug835xtvrxil08dj@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	MeghanDunleavy (01ql1mqqqxrn82hx503xprtx1t@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:07	-->	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:54:13	--	Mode &bitlbee [+v DrewAldridge] by localhost
+2016-08-03 14:54:35	@bronzehedwick	NicholasMoore: the battle box came
+2016-08-03 14:54:47	--	irc: disconnected from server
+2016-08-03 14:54:57	-->	bronzehedwick (bronzehedwick@localhost) has joined &bitlbee
+2016-08-03 14:54:57	--	Topic for &bitlbee is "Welcome to the control channel. Type help for help information."
+2016-08-03 14:54:57	--	Topic set by root (root@localhost) on Wed, 03 Aug 2016 14:54:57
+2016-08-03 14:54:57	--	Channel &bitlbee: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2016-08-03 14:54:57	@root	Welcome to the BitlBee gateway!
+2016-08-03 14:54:57	@root	 
+2016-08-03 14:54:57	@root	Running BitlBee 3.4.2
+2016-08-03 14:54:57	@root	 
+2016-08-03 14:54:57	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2016-08-03 14:54:57	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2016-08-03 14:55:13	@bronzehedwick	identify Dwarves7minE!
+2016-08-03 14:55:13	@root	Password accepted, settings and accounts loaded
+2016-08-03 14:55:13	@root	Trying to get all accounts connected...
+2016-08-03 14:55:13	@root	twitter - Logging in: Connecting
+2016-08-03 14:55:13	-->	twitter_chrisjohndeluca (twitter_chrisjohndeluca@twitter) has joined &bitlbee
+2016-08-03 14:55:13	--	Mode &bitlbee [+v twitter_chrisjohndeluca] by localhost
+2016-08-03 14:55:13	@root	twitter - Logging in: Getting contact list
+2016-08-03 14:55:13	@root	twitter2 - Logging in: Connecting
+2016-08-03 14:55:13	-->	twitter_cymnyc (twitter_cymnyc@twitter2) has joined &bitlbee
+2016-08-03 14:55:13	--	Mode &bitlbee [+v twitter_cymnyc] by localhost
+2016-08-03 14:55:13	@root	twitter2 - Logging in: Getting contact list
+2016-08-03 14:55:13	@root	jabber - Logging in: Connecting
+2016-08-03 14:55:13	@root	jabber - Logging in: Connected to server, logging in
+2016-08-03 14:55:13	@root	jabber - Logging in: Converting stream to TLS
+2016-08-03 14:55:13	@root	jabber - Logging in: Connected to server, logging in
+2016-08-03 14:55:13	@root	jabber - Logging in: Authentication finished
+2016-08-03 14:55:13	@root	jabber - Logging in: Server changed session resource string to `BitlBeeC914BA7E'
+2016-08-03 14:55:13	@root	jabber - Logging in: Authenticated, requesting buddy list
+2016-08-03 14:55:13	@root	jabber - Logging in: Logged in
+2016-08-03 14:55:14	-->	Nimajus (nimajus@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	ZachDonovan_ (zach.donovan@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	--	Mode &bitlbee [+v ZachDonovan_] by localhost
+2016-08-03 14:55:14	-->	IntegralYoga (integralyoga@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 14:55:14	-->	BryanRidgell (bryanridgell@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	MatthewChen_ (matcchen@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	BridgetMatthews (bmatth3@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	MikeJeanette (23clxlonv20jr3ha3rclyh6yne@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	DanielPhillips (chedukesiii@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	TimGilam (gillti01@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	ManiNilchiani (3vqw2zs9la23f101jl5qlgfazy@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-03 14:55:14	-->	EtanBenarsh (ebednarsh@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	MeghanDunleavy (01ql1mqqqxrn82hx503xprtx1t@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	KareemHamdy_ (kareemhamdy@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	hkorik (hkorik@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	JuliaMayersohn (juliainisrael@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	NicholasMoore (nolivermoore@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	--	Mode &bitlbee [+v NicholasMoore] by localhost
+2016-08-03 14:55:14	-->	JackieHlavenka (jhlave1@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	JeffPekkala (lepekkala@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	RachelGitlevich (rachelgitlevich@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	BethHintze (elizabeth.hintze@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	RichardJKrysztoforski (0382skchp0tor19k6yi374qg7c@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	ShannonWebb (06blocdbhnajm33edkjcfpubv4@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	SarahLivant (sarah.livant@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	EmersonHarperDaly (demoteus@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	MichaelBjorkegren (michael.bjorkegren@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	DrewAldridge (drew.aldridge83@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	--	Mode &bitlbee [+v DrewAldridge] by localhost
+2016-08-03 14:55:14	-->	LaurieBerenhaus_ (laurieberenhaus@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	AlexMoore (alexannmoore@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	DaveBeede (dbeede1@gmail.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	CaseyCohen (2b1eqe6eif8n108f9vqejreg6b@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	--	Mode &bitlbee [+v CaseyCohen] by localhost
+2016-08-03 14:55:14	-->	SarahBerkowitz_ (2762w5eb1ws883htbry36tierr@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	ClayCless (06ds44cdxzqh22qzb0kmwb9f6m@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	JasonDePeaux (3jzh7kf2pwby722jcf7cbl8xe9@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	ThomasSheehan (1qe39njjfdlp11cijjcrm6ktrv@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	JasonD (1lbol8dhyz3xg2iewmk785apah@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	BradWade (19ar9vc24ix7n0lovnhpt4wuqf@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	KelseyAdams (2olvcsaxgozdg399vl9cf70v99@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	JosephSkelley (0mtnyokrj1umd2ruiqq4krafpd@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	JohnWetsell (3cwg8y45p87lx1zssnn2nwx39t@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	--	Mode &bitlbee [+v JohnWetsell] by localhost
+2016-08-03 14:55:14	-->	KhalimHarris (19kq29pyoizzh0zoixf2b7vd3u@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	--	Mode &bitlbee [+v KhalimHarris] by localhost
+2016-08-03 14:55:14	-->	KevinSkelley (0kwnfz1iiudkf38gvrf2l7ekwi@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	--	Mode &bitlbee [+v KevinSkelley] by localhost
+2016-08-03 14:55:14	-->	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	ClaireBurns (0iq89o6s23if02wn1fe2bs931q@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	--	Mode &bitlbee [+v ClaireBurns] by localhost
+2016-08-03 14:55:14	-->	FrancisF (3e59suypwjun92bhly1unzqmyp@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	GlorilisTavarez (293vi1755zoag2s4om8q75iuxn@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	JeffBauer (24xotqd8l4bfi0g9i9qexcwz4f@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	TerraThompson (2tbb9besg2ug835xtvrxil08dj@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	HaleyWillard (0z4bhfjvweplz1v3e9yqziebna@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	AlexSpruch (376wbqzaoasu62xqyfenga3i7k@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	JaiRajagopalan (3lzfzvht3wlhv37s1qo14mtzel@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	-->	DavidDeLosSantos (0v845xtmaj5p21moz7eca685sm@public.talk.google.com) has joined &bitlbee
+2016-08-03 14:55:14	--	Mode &bitlbee [+v DavidDeLosSantos] by localhost
+2016-08-03 14:55:14	@root	twitter - Logging in: Getting initial statuses
+2016-08-03 14:55:15	@root	twitter - Logging in: Logged in
+2016-08-03 14:55:15	@root	twitter2 - Logging in: Getting initial statuses
+2016-08-03 14:55:15	@root	twitter2 - Logging in: Logged in
+2016-08-03 14:55:23	@bronzehedwick	account 1 off
+2016-08-03 14:55:24	@root	twitter2 - Signing off..
+2016-08-03 14:55:24	<--	twitter_cymnyc (twitter_cymnyc@twitter2) has quit (bitlbee.localhost twitter.localhost)
+2016-08-03 14:55:40	@bronzehedwick	NicholasMoore: beth's battle box came
+2016-08-03 14:56:02	+NicholasMoore	bronzehedwick: nice
+2016-08-03 14:58:46	--	Mode &bitlbee [-v KevinSkelley] by localhost
+2016-08-03 14:59:06	--	Mode &bitlbee [+v BryanRidgell] by localhost
+2016-08-03 15:00:18	<--	DanielPhillips (chedukesiii@gmail.com) has quit (Leaving...)
+2016-08-03 15:00:25	-->	DanielPhillips (chedukesiii@gmail.com) has joined &bitlbee
+2016-08-03 15:00:25	--	Mode &bitlbee [+v DanielPhillips] by localhost
+2016-08-03 15:01:14	<--	JackieHlavenka (jhlave1@gmail.com) has quit (Leaving...)
+2016-08-03 15:01:17	-->	JackieHlavenka (jhlave1@gmail.com) has joined &bitlbee
+2016-08-03 15:07:23	<--	SarahLivant (sarah.livant@gmail.com) has quit (Leaving...)
+2016-08-03 15:08:11	--	Mode &bitlbee [-v ZachDonovan_] by localhost
+2016-08-03 15:09:17	--	Mode &bitlbee [-v DrewAldridge] by localhost
+2016-08-03 15:09:42	--	Mode &bitlbee [-v ClaireBurns] by localhost
+2016-08-03 15:12:19	--	Mode &bitlbee [+v ClaireBurns] by localhost
+2016-08-03 15:12:43	-->	XaqRzetelny (xaqimorp209@gmail.com) has joined &bitlbee
+2016-08-03 15:13:54	<--	XaqRzetelny (xaqimorp209@gmail.com) has quit (Leaving...)
+2016-08-03 15:15:09	--	Mode &bitlbee [+v KevinSkelley] by localhost
+2016-08-03 15:15:49	--	Mode &bitlbee [-v KhalimHarris] by localhost
+2016-08-03 15:16:13	--	Mode &bitlbee [+v KhalimHarris] by localhost
+2016-08-03 15:16:18	<--	AlexMoore (alexannmoore@gmail.com) has quit (Leaving...)
+2016-08-03 15:19:47	@bronzehedwick	NicholasMoore: i want there to be a warmachine emoji
+2016-08-03 15:20:02	+NicholasMoore	bronzehedwick: hahaha me toooo
+2016-08-03 15:20:08	@bronzehedwick	NicholasMoore: 😛 
+2016-08-03 15:21:03	--	Mode &bitlbee [-v RoussinaValkova] by localhost
+2016-08-03 15:23:39	<--	RoussinaValkova (roussina@gmail.com) has quit (Leaving...)
+2016-08-03 15:30:14	<--	JonathanFoox (jonfoox@gmail.com) has quit (Leaving...)
+2016-08-03 15:30:40	-->	AlexMoore (alexannmoore@gmail.com) has joined &bitlbee
+2016-08-03 15:30:58	<--	DanielPhillips (chedukesiii@gmail.com) has quit (Leaving...)
+2016-08-03 15:31:01	-->	DanielPhillips (chedukesiii@gmail.com) has joined &bitlbee
+2016-08-03 15:31:01	--	Mode &bitlbee [+v DanielPhillips] by localhost
+2016-08-03 15:34:04	--	Mode &bitlbee [-v KevinSkelley] by localhost
+2016-08-03 15:35:03	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-03 15:35:03	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 15:36:15	<--	AlexMoore (alexannmoore@gmail.com) has quit (Leaving...)
+2016-08-03 15:36:17	<--	IntegralYoga (integralyoga@gmail.com) has quit (Leaving...)
+2016-08-03 15:37:23	-->	SarahLivant (sarah.livant@gmail.com) has joined &bitlbee
+2016-08-03 15:37:23	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 15:37:23	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-03 15:37:26	<--	DanielPhillips (chedukesiii@gmail.com) has quit (Leaving...)
+2016-08-03 15:37:48	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-03 15:37:58	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 15:38:01	-->	DanielPhillips (chedukesiii@gmail.com) has joined &bitlbee
+2016-08-03 15:38:01	--	Mode &bitlbee [+v DanielPhillips] by localhost
+2016-08-03 15:38:01	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-03 15:38:04	--	Mode &bitlbee [+v BridgetMatthews] by localhost
+2016-08-03 15:40:21	--	Mode &bitlbee [-v DanielPhillips] by localhost
+2016-08-03 15:40:38	--	Mode &bitlbee [-v NicholasMoore] by localhost
+2016-08-03 15:41:57	-->	AliceJohnson (3o2yiixlme7ij38wvj1hbdib3d@public.talk.google.com) has joined &bitlbee
+2016-08-03 15:42:40	-->	LeeReubenstein (bearbeatsrock@gmail.com) has joined &bitlbee
+2016-08-03 15:44:12	--	Mode &bitlbee [-v CaseyCohen] by localhost
+2016-08-03 15:44:46	--	Mode &bitlbee [+v KevinSkelley] by localhost
+2016-08-03 15:46:11	--	Mode &bitlbee [+v JaiRajagopalan] by localhost
+2016-08-03 15:51:59	--	Mode &bitlbee [-v ClaireBurns] by localhost
+2016-08-03 15:53:08	--	Mode &bitlbee [-v BridgetMatthews] by localhost
+2016-08-03 15:53:09	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-03 15:53:57	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-03 15:54:07	--	Mode &bitlbee [+v NicholasMoore] by localhost
+2016-08-03 15:55:17	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-03 15:56:57	--	Mode &bitlbee [+v ClaireBurns] by localhost
+2016-08-03 15:58:12	<--	DanielPhillips (chedukesiii@gmail.com) has quit (Leaving...)
+2016-08-03 15:58:17	--	Mode &bitlbee [-v JonathanFoox] by localhost
+2016-08-03 15:58:31	--	Mode &bitlbee [-v BryanRidgell] by localhost
+2016-08-03 15:59:39	<--	JackieHlavenka (jhlave1@gmail.com) has quit (Leaving...)
+2016-08-03 15:59:42	-->	JackieHlavenka (jhlave1@gmail.com) has joined &bitlbee
+2016-08-03 16:00:10	--	Mode &bitlbee [-v KevinSkelley] by localhost
+2016-08-03 16:01:16	--	Mode &bitlbee [-v JaiRajagopalan] by localhost
+2016-08-03 16:02:15	--	Mode &bitlbee [-v ClaireBurns] by localhost
+2016-08-03 16:03:49	--	Mode &bitlbee [+v ClaireBurns] by localhost
+2016-08-03 16:05:49	--	Mode &bitlbee [-v KhalimHarris] by localhost
+2016-08-03 16:07:50	--	Mode &bitlbee [+v KhalimHarris] by localhost
+2016-08-03 16:07:50	--	Mode &bitlbee [-v KhalimHarris] by localhost
+2016-08-03 16:09:43	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-03 16:09:43	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-03 16:10:07	<--	JaiRajagopalan (3lzfzvht3wlhv37s1qo14mtzel@public.talk.google.com) has quit (Leaving...)
+2016-08-03 16:11:16	--	Mode &bitlbee [+v KevinSkelley] by localhost
+2016-08-03 16:13:05	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 16:13:20	--	Mode &bitlbee [-v NicholasMoore] by localhost
+2016-08-03 16:13:42	--	Mode &bitlbee [+v CaseyCohen] by localhost
+2016-08-03 16:14:10	--	Mode &bitlbee [-v ClaireBurns] by localhost
+2016-08-03 16:14:30	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-03 16:16:48	--	Mode &bitlbee [-v DavidDeLosSantos] by localhost
+2016-08-03 16:18:13	--	Mode &bitlbee [+v ClaireBurns] by localhost
+2016-08-03 16:21:14	--	Mode &bitlbee [+v DavidDeLosSantos] by localhost
+2016-08-03 16:21:21	--	Mode &bitlbee [+v BridgetMatthews] by localhost
+2016-08-03 16:23:02	-->	DanielPhillips (chedukesiii@gmail.com) has joined &bitlbee
+2016-08-03 16:26:23	--	Mode &bitlbee [-v KevinSkelley] by localhost
+2016-08-03 16:27:21	-->	JaiRajagopalan (3lzfzvht3wlhv37s1qo14mtzel@public.talk.google.com) has joined &bitlbee
+2016-08-03 16:27:31	<--	JonathanFoox (jonfoox@gmail.com) has quit (Leaving...)
+2016-08-03 16:28:10	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-03 16:28:27	--	Mode &bitlbee [-v RoussinaValkova] by localhost
+2016-08-03 16:28:53	--	Mode &bitlbee [+v JaiRajagopalan] by localhost
+2016-08-03 16:30:02	<--	MatthewChen_ (matcchen@gmail.com) has quit (Leaving...)
+2016-08-03 16:30:28	<--	KevinSkelley (0kwnfz1iiudkf38gvrf2l7ekwi@public.talk.google.com) has quit (Leaving...)
+2016-08-03 16:30:48	<--	RoussinaValkova (roussina@gmail.com) has quit (Leaving...)
+2016-08-03 16:31:32	--	Mode &bitlbee [+v NicholasMoore] by localhost
+2016-08-03 16:31:42	+NicholasMoore	bronzehedwick: dude 
+2016-08-03 16:31:51	+NicholasMoore	bronzehedwick: I made a short phython script 
+2016-08-03 16:32:04	+NicholasMoore	bronzehedwick: that tells you how many tweets a certain string of characters would be 
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: characters = "the red dog ran over the fence, I mean cmon do I have to spell everything out for you seriously this is just a nonsense sentance to count for len why why why" 
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: 
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: tweet_base = len(characters)/144
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: 
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: print tweet_base
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: 
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: remaining = len(characters)%144
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: 
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: print remaining
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: 
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: remaining_percentage = remaining*.01
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: 
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: print remaining_percentage
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: 
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: how_tweets =  tweet_base + remaining_percentage
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: 
+2016-08-03 16:32:22	+NicholasMoore	bronzehedwick: print how_tweets
+2016-08-03 16:32:42	+NicholasMoore	bronzehedwick: (it's probs super crappy code but it's also like, the first actual thing I've made)
+2016-08-03 16:34:41	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-03 16:34:41	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-03 16:34:41	--	Mode &bitlbee [-v JonathanFoox] by localhost
+2016-08-03 16:38:30	--	Mode &bitlbee [+v ZachDonovan_] by localhost
+2016-08-03 16:40:17	@bronzehedwick	NicholasMoore: dude nice!
+2016-08-03 16:40:21	@bronzehedwick	NicholasMoore: congrats man!
+2016-08-03 16:40:27	@bronzehedwick	NicholasMoore: how's it feel?
+2016-08-03 16:40:37	+NicholasMoore	bronzehedwick: feel good 
+2016-08-03 16:40:53	+NicholasMoore	bronzehedwick: now I will never have to not know how many tweets something is 
+2016-08-03 16:41:46	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-03 16:41:58	@bronzehedwick	NicholasMoore: haha
+2016-08-03 16:42:02	@bronzehedwick	NicholasMoore: good good
+2016-08-03 16:42:47	+NicholasMoore	bronzehedwick: your last message 
+2016-08-03 16:42:57	<--	SarahLivant (sarah.livant@gmail.com) has quit (Leaving...)
+2016-08-03 16:42:58	+NicholasMoore	bronzehedwick: was .14 tweets 
+2016-08-03 16:43:04	+NicholasMoore	bronzehedwick: new unit of measurement!
+2016-08-03 16:43:37	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-03 16:43:54	--	Mode &bitlbee [-v JaiRajagopalan] by localhost
+2016-08-03 16:43:58	@bronzehedwick	NicholasMoore: haha
+2016-08-03 16:44:03	@bronzehedwick	NicholasMoore: that's awesome
+2016-08-03 16:44:37	+NicholasMoore	bronzehedwick: yeah I love this 
+2016-08-03 16:44:45	+NicholasMoore	bronzehedwick: I have a tiny machine brain 
+2016-08-03 16:44:46	@bronzehedwick	NicholasMoore: also, the cult lady is at 7pm now; would you and beth want to do brunch sunday?
+2016-08-03 16:44:48	+NicholasMoore	bronzehedwick: I built it 
+2016-08-03 16:44:50	+NicholasMoore	bronzehedwick: and it does my bidding 
+2016-08-03 16:44:52	@bronzehedwick	NicholasMoore: haha yesssss
+2016-08-03 16:44:59	@bronzehedwick	NicholasMoore: it's a very addictive power
+2016-08-03 16:45:08	+NicholasMoore	bronzehedwick: (.78 tweets)
+2016-08-03 16:45:13	@bronzehedwick	NicholasMoore: 😛 
+2016-08-03 16:45:15	+NicholasMoore	bronzehedwick: yeah! let me ask 
+2016-08-03 16:45:19	@bronzehedwick	NicholasMoore: sweet
+2016-08-03 16:45:22	<--	AliceJohnson (3o2yiixlme7ij38wvj1hbdib3d@public.talk.google.com) has quit (Leaving...)
+2016-08-03 16:46:41	-->	SeanOrelli (seanorelli@gmail.com) has joined &bitlbee
+2016-08-03 21:11:36	@root	jabber - Error: Error while reading from server
+2016-08-03 21:11:36	@root	jabber - Signing off..
+2016-08-03 21:11:36	<--	JaiRajagopalan (3lzfzvht3wlhv37s1qo14mtzel@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	FrancisF (3e59suypwjun92bhly1unzqmyp@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	JohnWetsell (3cwg8y45p87lx1zssnn2nwx39t@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	AlexSpruch (376wbqzaoasu62xqyfenga3i7k@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	TerraThompson (2tbb9besg2ug835xtvrxil08dj@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	KelseyAdams (2olvcsaxgozdg399vl9cf70v99@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	GlorilisTavarez (293vi1755zoag2s4om8q75iuxn@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	JeffBauer (24xotqd8l4bfi0g9i9qexcwz4f@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	ThomasSheehan (1qe39njjfdlp11cijjcrm6ktrv@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	JasonD (1lbol8dhyz3xg2iewmk785apah@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	KhalimHarris (19kq29pyoizzh0zoixf2b7vd3u@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	BradWade (19ar9vc24ix7n0lovnhpt4wuqf@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	HaleyWillard (0z4bhfjvweplz1v3e9yqziebna@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	DavidDeLosSantos (0v845xtmaj5p21moz7eca685sm@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	ErnestMyers_ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	JosephSkelley (0mtnyokrj1umd2ruiqq4krafpd@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	ClaireBurns (0iq89o6s23if02wn1fe2bs931q@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	ClayCless (06ds44cdxzqh22qzb0kmwb9f6m@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	ShannonWebb (06blocdbhnajm33edkjcfpubv4@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	MeghanDunleavy (01ql1mqqqxrn82hx503xprtx1t@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	SeanOrelli (seanorelli@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	Nimajus (nimajus@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	MichaelBjorkegren (michael.bjorkegren@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	JeffPekkala (lepekkala@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	hkorik (hkorik@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	EtanBenarsh (ebednarsh@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	DrewAldridge (drew.aldridge83@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	LeeReubenstein (bearbeatsrock@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	JasonDePeaux (3jzh7kf2pwby722jcf7cbl8xe9@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	SarahBerkowitz_ (2762w5eb1ws883htbry36tierr@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	MikeJeanette (23clxlonv20jr3ha3rclyh6yne@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	ZachDonovan_ (zach.donovan@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	RachelGitlevich (rachelgitlevich@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	KareemHamdy_ (kareemhamdy@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	JuliaMayersohn (juliainisrael@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	JackieHlavenka (jhlave1@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	TimGilam (gillti01@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	EmersonHarperDaly (demoteus@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	DanielPhillips (chedukesiii@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	BryanRidgell (bryanridgell@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	BridgetMatthews (bmatth3@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	JonathanFoox (jonfoox@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	DaveBeede (dbeede1@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	ManiNilchiani (3vqw2zs9la23f101jl5qlgfazy@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	LaurieBerenhaus_ (laurieberenhaus@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	BethHintze (elizabeth.hintze@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	RichardJKrysztoforski (0382skchp0tor19k6yi374qg7c@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	CaseyCohen (2b1eqe6eif8n108f9vqejreg6b@public.talk.google.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	<--	NicholasMoore (nolivermoore@gmail.com) has quit (bitlbee.localhost gmail.com)
+2016-08-03 21:11:36	@root	jabber - Reconnecting in 5 seconds..
+2016-08-04 01:35:11	@root	jabber - Logging in: Connecting
+2016-08-04 01:35:11	--	irc: disconnected from server
+2016-08-04 01:35:21	-->	bronzehedwick (bronzehedwick@localhost) has joined &bitlbee
+2016-08-04 01:35:21	--	Topic for &bitlbee is "Welcome to the control channel. Type help for help information."
+2016-08-04 01:35:21	--	Topic set by root (root@localhost) on Thu, 04 Aug 2016 01:35:21
+2016-08-04 01:35:21	--	Channel &bitlbee: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2016-08-04 01:35:21	@root	Welcome to the BitlBee gateway!
+2016-08-04 01:35:21	@root	 
+2016-08-04 01:35:21	@root	Running BitlBee 3.4.2
+2016-08-04 01:35:21	@root	 
+2016-08-04 01:35:21	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2016-08-04 01:35:21	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2016-08-04 09:04:18	--	irc: disconnected from server
+2016-08-04 09:04:28	-->	bronzehedwick (bronzehedwick@localhost) has joined &bitlbee
+2016-08-04 09:04:28	--	Topic for &bitlbee is "Welcome to the control channel. Type help for help information."
+2016-08-04 09:04:28	--	Topic set by root (root@localhost) on Thu, 04 Aug 2016 09:04:28
+2016-08-04 09:04:28	--	Channel &bitlbee: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2016-08-04 09:04:28	@root	Welcome to the BitlBee gateway!
+2016-08-04 09:04:28	@root	 
+2016-08-04 09:04:28	@root	Running BitlBee 3.4.2
+2016-08-04 09:04:28	@root	 
+2016-08-04 09:04:28	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2016-08-04 09:04:28	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2016-08-04 09:08:47	@bronzehedwick	identify Dwarves7minE!
+2016-08-04 09:08:47	@root	Password accepted, settings and accounts loaded
+2016-08-04 09:08:47	@root	Trying to get all accounts connected...
+2016-08-04 09:08:47	@root	twitter - Logging in: Connecting
+2016-08-04 09:08:47	-->	twitter_chrisjohndeluca (twitter_chrisjohndeluca@twitter) has joined &bitlbee
+2016-08-04 09:08:47	--	Mode &bitlbee [+v twitter_chrisjohndeluca] by localhost
+2016-08-04 09:08:47	@root	twitter - Logging in: Getting contact list
+2016-08-04 09:08:47	@root	twitter2 - Logging in: Connecting
+2016-08-04 09:08:47	-->	twitter_cymnyc (twitter_cymnyc@twitter2) has joined &bitlbee
+2016-08-04 09:08:47	--	Mode &bitlbee [+v twitter_cymnyc] by localhost
+2016-08-04 09:08:47	@root	twitter2 - Logging in: Getting contact list
+2016-08-04 09:08:47	@root	jabber - Logging in: Connecting
+2016-08-04 09:08:47	@root	jabber - Logging in: Connected to server, logging in
+2016-08-04 09:08:47	@root	jabber - Logging in: Converting stream to TLS
+2016-08-04 09:08:47	@root	jabber - Logging in: Connected to server, logging in
+2016-08-04 09:08:48	@root	jabber - Logging in: Authentication finished
+2016-08-04 09:08:48	@root	jabber - Logging in: Server changed session resource string to `BitlBee5167E804'
+2016-08-04 09:08:48	@root	jabber - Logging in: Authenticated, requesting buddy list
+2016-08-04 09:08:48	@root	jabber - Logging in: Logged in
+2016-08-04 09:08:48	-->	Nimajus (nimajus@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	EtanBenarsh (ebednarsh@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	ZachDonovan_ (zach.donovan@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-04 09:08:48	-->	TimGilam (gillti01@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	MeghanDunleavy (01ql1mqqqxrn82hx503xprtx1t@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	BryanRidgell (bryanridgell@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	ManiNilchiani (3vqw2zs9la23f101jl5qlgfazy@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-04 09:08:48	-->	NicholasMoore (nolivermoore@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	hkorik (hkorik@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	JonSolari (neojonathan@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	--	Mode &bitlbee [+v JonSolari] by localhost
+2016-08-04 09:08:48	-->	AaronGalbraith (aaron.galbraith@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	JuliaMayersohn (juliainisrael@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	ShannonWebb (06blocdbhnajm33edkjcfpubv4@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	SarahLivant (sarah.livant@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	JeffPekkala (lepekkala@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	MichaelBjorkegren (michael.bjorkegren@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	JasonDePeaux (3jzh7kf2pwby722jcf7cbl8xe9@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	JohnWetsell (3cwg8y45p87lx1zssnn2nwx39t@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	ClayCless (06ds44cdxzqh22qzb0kmwb9f6m@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	JosephSkelley (0mtnyokrj1umd2ruiqq4krafpd@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	KhalimHarris (19kq29pyoizzh0zoixf2b7vd3u@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	KareemHamdy_ (kareemhamdy@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	BethHintze (elizabeth.hintze@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	LaurieBerenhaus__ (laurieberenhaus@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	RichardJKrysztoforski (0382skchp0tor19k6yi374qg7c@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	CaseyCohen (2b1eqe6eif8n108f9vqejreg6b@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	SophieKurtze (004nx5freyrtp2pobexoadbqoo@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	SarahBerkowitz_ (2762w5eb1ws883htbry36tierr@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	ThomasSheehan (1qe39njjfdlp11cijjcrm6ktrv@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	EmersonHarperDaly (demoteus@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	DaveBeede (dbeede1@gmail.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	JasonD (1lbol8dhyz3xg2iewmk785apah@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	KelseyAdams (2olvcsaxgozdg399vl9cf70v99@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	BradWade (19ar9vc24ix7n0lovnhpt4wuqf@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	FrancisF (3e59suypwjun92bhly1unzqmyp@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	ErnestMyers__ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	--	Mode &bitlbee [+v ErnestMyers__] by localhost
+2016-08-04 09:08:48	-->	GlorilisTavarez (293vi1755zoag2s4om8q75iuxn@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	JeffBauer (24xotqd8l4bfi0g9i9qexcwz4f@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	TerraThompson (2tbb9besg2ug835xtvrxil08dj@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	HaleyWillard (0z4bhfjvweplz1v3e9yqziebna@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	AlexSpruch (376wbqzaoasu62xqyfenga3i7k@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	ClaireBurns (0iq89o6s23if02wn1fe2bs931q@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	-->	MikeJeanette (23clxlonv20jr3ha3rclyh6yne@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:08:48	@root	twitter - Logging in: Error: Could not retrieve /1.1/users/lookup.json: Error while writing HTTP request
+2016-08-04 09:08:48	@root	twitter - Logging in: Signing off..
+2016-08-04 09:08:48	<--	twitter_chrisjohndeluca (twitter_chrisjohndeluca@twitter) has quit (bitlbee.localhost twitter.localhost)
+2016-08-04 09:08:48	@root	twitter - Logging in: Reconnecting in 5 seconds..
+2016-08-04 09:08:48	@root	twitter2 - Logging in: Getting initial statuses
+2016-08-04 09:08:49	@root	twitter2 - Logging in: Logged in
+2016-08-04 09:08:53	@root	twitter - Logging in: Connecting
+2016-08-04 09:08:53	-->	twitter_chrisjohndeluca (twitter_chrisjohndeluca@twitter) has joined &bitlbee
+2016-08-04 09:08:53	--	Mode &bitlbee [+v twitter_chrisjohndeluca] by localhost
+2016-08-04 09:08:53	@root	twitter - Logging in: Getting contact list
+2016-08-04 09:08:54	@root	twitter - Logging in: Getting initial statuses
+2016-08-04 09:08:54	@root	twitter - Logging in: Logged in
+2016-08-04 09:08:56	@bronzehedwick	account 1 off
+2016-08-04 09:08:56	@root	twitter2 - Signing off..
+2016-08-04 09:08:56	<--	twitter_cymnyc (twitter_cymnyc@twitter2) has quit (bitlbee.localhost twitter.localhost)
+2016-08-04 09:09:13	<--	SarahLivant (sarah.livant@gmail.com) has quit (Leaving...)
+2016-08-04 09:09:53	-->	MatthewChen_ (matcchen@gmail.com) has joined &bitlbee
+2016-08-04 09:11:29	-->	XaqRzetelny (xaqimorp209@gmail.com) has joined &bitlbee
+2016-08-04 09:11:29	--	Mode &bitlbee [+v JeffPekkala] by localhost
+2016-08-04 09:13:36	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-04 09:13:37	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-04 09:13:53	-->	KevinSkelley (0kwnfz1iiudkf38gvrf2l7ekwi@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:13:53	--	Mode &bitlbee [+v KevinSkelley] by localhost
+2016-08-04 09:14:03	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-04 09:19:30	--	Mode &bitlbee [+v AaronGalbraith] by localhost
+2016-08-04 09:19:52	-->	DavidDeLosSantos (0v845xtmaj5p21moz7eca685sm@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:19:52	--	Mode &bitlbee [+v DavidDeLosSantos] by localhost
+2016-08-04 09:20:28	--	Mode &bitlbee [-v RoussinaValkova] by localhost
+2016-08-04 09:20:43	-->	BridgetMatthews (bmatth3@gmail.com) has joined &bitlbee
+2016-08-04 09:23:25	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-04 09:25:16	--	Mode &bitlbee [-v ErnestMyers__] by localhost
+2016-08-04 09:26:34	--	Mode &bitlbee [-v JeffPekkala] by localhost
+2016-08-04 09:26:34	<--	MatthewChen_ (matcchen@gmail.com) has quit (Leaving...)
+2016-08-04 09:32:23	<--	JonathanFoox (jonfoox@gmail.com) has quit (Leaving...)
+2016-08-04 09:34:35	--	Mode &bitlbee [-v AaronGalbraith] by localhost
+2016-08-04 09:36:36	<--	RoussinaValkova (roussina@gmail.com) has quit (Leaving...)
+2016-08-04 09:36:49	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-04 09:36:49	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-04 09:37:09	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-04 09:38:07	<--	AaronGalbraith (aaron.galbraith@gmail.com) has quit (Leaving...)
+2016-08-04 09:39:49	-->	SarahLivant (sarah.livant@gmail.com) has joined &bitlbee
+2016-08-04 09:39:49	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-04 09:40:04	-->	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has joined &bitlbee
+2016-08-04 09:40:04	--	Mode &bitlbee [+v ChristinaYoungSunLee] by localhost
+2016-08-04 09:40:40	-->	MatthewChen_ (matcchen@gmail.com) has joined &bitlbee
+2016-08-04 09:44:47	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-04 09:51:44	<--	ErnestMyers__ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (Leaving...)
+2016-08-04 09:53:17	-->	ErnestMyers__ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-04 10:02:36	--	Mode &bitlbee [+v ErnestMyers__] by localhost
+2016-08-04 10:04:04	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-04 10:04:12	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-04 10:09:30	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-04 10:09:30	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-04 10:10:05	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-04 10:10:12	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-04 10:11:41	-->	Cat (cat.adlerjosem@gmail.com) has joined &bitlbee
+2016-08-04 10:12:17	-->	JoshHowell (joshhowellart@gmail.com) has joined &bitlbee
+2016-08-04 10:12:30	--	Mode &bitlbee [-v RoussinaValkova] by localhost
+2016-08-04 10:13:49	<--	JoshHowell (joshhowellart@gmail.com) has quit (Leaving...)
+2016-08-04 10:15:12	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-04 10:15:24	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-04 10:17:40	<--	JonathanFoox (jonfoox@gmail.com) has quit (Leaving...)
+2016-08-04 10:18:37	-->	DanielPhillips (chedukesiii@gmail.com) has joined &bitlbee
+2016-08-04 10:18:37	--	Mode &bitlbee [+v DanielPhillips] by localhost
+2016-08-04 10:19:37	-->	AaronGalbraith (aaron.galbraith@gmail.com) has joined &bitlbee
+2016-08-04 10:19:51	--	Mode &bitlbee [-v ChristinaYoungSunLee] by localhost
+2016-08-04 10:20:47	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-04 10:22:10	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-04 10:22:15	<--	AaronGalbraith (aaron.galbraith@gmail.com) has quit (Leaving...)
+2016-08-04 10:23:27	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-04 10:23:35	<--	ErnestMyers__ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (Leaving...)
+2016-08-04 10:24:17	<--	XaqRzetelny (xaqimorp209@gmail.com) has quit (Leaving...)
+2016-08-04 10:28:05	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-04 10:29:18	<--	Cat (cat.adlerjosem@gmail.com) has quit (Leaving...)
+2016-08-04 10:30:11	<--	MatthewChen_ (matcchen@gmail.com) has quit (Leaving...)
+2016-08-04 10:30:28	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-04 10:30:34	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-04 10:30:44	<--	RoussinaValkova (roussina@gmail.com) has quit (Leaving...)
+2016-08-04 10:32:19	--	Mode &bitlbee [+v BrendanOReilly] by localhost
+2016-08-04 10:32:31	-->	MatthewChen_ (matcchen@gmail.com) has joined &bitlbee
+2016-08-04 10:32:40	-->	MatthewChen (mchen@gm.slc.edu) has joined &bitlbee
+2016-08-04 10:32:40	--	Mode &bitlbee [+v MatthewChen] by localhost
+2016-08-04 10:33:20	-->	Cat (cat.adlerjosem@gmail.com) has joined &bitlbee
+2016-08-04 10:35:02	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-04 10:35:29	--	Mode &bitlbee [-v DanielPhillips] by localhost
+2016-08-04 10:36:19	<--	MatthewChen (mchen@gm.slc.edu) has quit (Leaving...)
+2016-08-04 10:36:19	<--	MatthewChen_ (matcchen@gmail.com) has quit (Leaving...)
+2016-08-04 10:38:48	<--	DanielPhillips (chedukesiii@gmail.com) has quit (Leaving...)
+2016-08-04 10:40:43	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-04 10:46:37	-->	DanielPhillips (chedukesiii@gmail.com) has joined &bitlbee
+2016-08-04 10:47:22	--	Mode &bitlbee [-v BrendanOReilly] by localhost
+2016-08-04 10:49:21	--	Mode &bitlbee [+v DanielPhillips] by localhost
+2016-08-04 10:50:35	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-04 10:50:35	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-04 10:51:29	<--	DanielPhillips (chedukesiii@gmail.com) has quit (Leaving...)
+2016-08-04 10:52:07	-->	DanielPhillips (chedukesiii@gmail.com) has joined &bitlbee
+2016-08-04 10:52:07	--	Mode &bitlbee [+v DanielPhillips] by localhost
+2016-08-04 10:56:43	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-04 10:56:43	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-04 10:59:08	<--	DanielPhillips (chedukesiii@gmail.com) has quit (Leaving...)
+2016-08-04 11:02:59	<--	JonathanFoox (jonfoox@gmail.com) has quit (Leaving...)
+2016-08-04 11:04:57	-->	JackieHlavenka (jhlave1@gmail.com) has joined &bitlbee
+2016-08-04 11:06:11	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-04 11:08:39	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-04 11:13:10	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-04 11:13:45	-->	AaronGalbraith (aaron.galbraith@gmail.com) has joined &bitlbee
+2016-08-04 11:13:47	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-04 11:14:17	<--	SophieKurtze (004nx5freyrtp2pobexoadbqoo@public.talk.google.com) has quit (Leaving...)
+2016-08-04 11:14:58	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-04 11:17:03	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-04 11:17:03	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-04 11:17:53	<--	AaronGalbraith (aaron.galbraith@gmail.com) has quit (Leaving...)
+2016-08-04 11:19:27	<--	JonathanFoox (jonfoox@gmail.com) has quit (Leaving...)
+2016-08-04 11:20:55	-->	XaqRzetelny (xaqimorp209@gmail.com) has joined &bitlbee
+2016-08-04 11:21:30	--	Mode &bitlbee [-v JonSolari] by localhost
+2016-08-04 11:23:26	-->	MatthewChen_ (matcchen@gmail.com) has joined &bitlbee
+2016-08-04 11:24:02	<--	XaqRzetelny (xaqimorp209@gmail.com) has quit (Leaving...)
+2016-08-04 11:24:19	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-04 11:24:34	<--	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has quit (Leaving...)
+2016-08-04 11:25:10	--	Mode &bitlbee [+v JonSolari] by localhost
+2016-08-04 11:26:28	-->	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has joined &bitlbee
+2016-08-04 11:26:57	--	Mode &bitlbee [+v ChristinaYoungSunLee] by localhost
+2016-08-04 11:27:54	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-04 11:32:57	--	Mode &bitlbee [+v MatthewChen_] by localhost
+2016-08-04 11:33:48	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-04 11:33:48	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-04 11:39:10	--	Mode &bitlbee [+v BridgetMatthews] by localhost
+2016-08-04 11:41:55	--	Mode &bitlbee [-v RoussinaValkova] by localhost
+2016-08-04 11:47:53	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-04 11:48:14	-->	LeeReubenstein (bearbeatsrock@gmail.com) has joined &bitlbee
+2016-08-04 11:50:48	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-04 11:53:10	-->	RachelGitlevich (rachelgitlevich@gmail.com) has joined &bitlbee
+2016-08-04 11:58:38	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-04 11:59:11	--	Mode &bitlbee [-v MatthewChen_] by localhost
+2016-08-04 12:00:44	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-04 12:03:14	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-04 12:03:14	<--	JackieHlavenka (jhlave1@gmail.com) has quit (Leaving...)
+2016-08-04 12:08:02	-->	AaronGalbraith (aaron.galbraith@gmail.com) has joined &bitlbee
+2016-08-04 12:08:03	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-04 12:08:33	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-04 12:09:37	--	Mode &bitlbee [-v BridgetMatthews] by localhost
+2016-08-04 12:10:28	<--	AaronGalbraith (aaron.galbraith@gmail.com) has quit (Leaving...)
+2016-08-04 12:10:39	<--	KevinSkelley (0kwnfz1iiudkf38gvrf2l7ekwi@public.talk.google.com) has quit (Leaving...)
+2016-08-04 12:11:16	-->	ErnestMyers__ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-04 12:12:00	--	Mode &bitlbee [+v BridgetMatthews] by localhost
+2016-08-04 12:12:35	-->	SophieKurtze (004nx5freyrtp2pobexoadbqoo@public.talk.google.com) has joined &bitlbee
+2016-08-04 12:15:55	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-04 12:16:00	--	Mode &bitlbee [+v BrendanOReilly] by localhost
+2016-08-04 12:17:26	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-04 12:17:46	<--	JonathanFoox (jonfoox@gmail.com) has quit (Leaving...)
+2016-08-04 12:19:01	--	Mode &bitlbee [-v ChristinaYoungSunLee] by localhost
+2016-08-04 12:26:41	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-04 12:27:09	--	Mode &bitlbee [-v DavidDeLosSantos] by localhost
+2016-08-04 12:27:28	--	Mode &bitlbee [-v BridgetMatthews] by localhost
+2016-08-04 12:28:02	-->	AndyMcCarthy (andycmac@gmail.com) has joined &bitlbee
+2016-08-04 12:28:48	--	Mode &bitlbee [-v RoussinaValkova] by localhost
+2016-08-04 12:29:24	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-04 12:30:34	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-04 12:38:04	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-04 12:39:17	<--	LeeReubenstein (bearbeatsrock@gmail.com) has quit (Leaving...)
+2016-08-04 12:43:58	--	Mode &bitlbee [+v JeffBauer] by localhost
+2016-08-04 12:44:14	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-04 12:44:24	<--	ErnestMyers__ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (Leaving...)
+2016-08-04 12:45:33	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-04 12:47:03	--	Mode &bitlbee [+v ChristinaYoungSunLee] by localhost
+2016-08-04 12:48:58	<--	RoussinaValkova (roussina@gmail.com) has quit (Leaving...)
+2016-08-04 12:51:15	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-04 12:58:03	-->	AdamMurray (amurray002@gmail.com) has joined &bitlbee
+2016-08-04 12:59:01	--	Mode &bitlbee [-v JeffBauer] by localhost
+2016-08-04 13:00:12	<--	AdamMurray (amurray002@gmail.com) has quit (Leaving...)
+2016-08-04 13:02:04	-->	AaronGalbraith (aaron.galbraith@gmail.com) has joined &bitlbee
+2016-08-04 13:02:27	--	Mode &bitlbee [+v BridgetMatthews] by localhost
+2016-08-04 13:02:42	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-04 13:02:42	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-04 13:02:49	<--	JonathanFoox (jonfoox@gmail.com) has quit (Leaving...)
+2016-08-04 13:03:27	-->	LeeReubenstein (bearbeatsrock@gmail.com) has joined &bitlbee
+2016-08-04 13:04:40	<--	AaronGalbraith (aaron.galbraith@gmail.com) has quit (Leaving...)
+2016-08-04 13:10:16	-->	ErnestMyers__ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-04 13:12:33	<--	ErnestMyers__ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has quit (Leaving...)
+2016-08-04 13:13:39	-->	JackieHlavenka (jhlave1@gmail.com) has joined &bitlbee
+2016-08-04 13:17:33	--	Mode &bitlbee [-v BridgetMatthews] by localhost
+2016-08-04 13:18:55	-->	SeanOrelli (seanorelli@gmail.com) has joined &bitlbee
+2016-08-04 13:19:26	-->	AlexMoore (alexannmoore@gmail.com) has joined &bitlbee
+2016-08-04 13:20:21	-->	ErnestMyers__ (0rejp8u4llnz1062shweyxg04f@public.talk.google.com) has joined &bitlbee
+2016-08-04 13:25:58	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-04 13:25:58	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-04 13:26:06	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-04 13:29:42	-->	JonathanFoox (jonfoox@gmail.com) has joined &bitlbee
+2016-08-04 13:29:42	--	Mode &bitlbee [+v JonathanFoox] by localhost
+2016-08-04 13:30:41	<--	JonathanFoox (jonfoox@gmail.com) has quit (Leaving...)
+2016-08-04 13:32:32	--	Mode &bitlbee [+v AlexMoore] by localhost
+2016-08-04 13:32:36	--	Mode &bitlbee [+v DavidDeLosSantos] by localhost
+2016-08-04 13:36:05	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-04 13:42:00	--	Mode &bitlbee [+v AlexSpruch] by localhost
+2016-08-04 13:42:20	--	Mode &bitlbee [+v MatthewChen_] by localhost
+2016-08-04 13:43:05	--	Mode &bitlbee [+v BridgetMatthews] by localhost
+2016-08-04 13:47:11	<--	SeanOrelli (seanorelli@gmail.com) has quit (Leaving...)
+2016-08-04 13:47:42	--	Mode &bitlbee [-v AlexMoore] by localhost
+2016-08-04 13:47:52	--	Mode &bitlbee [-v RoussinaValkova] by localhost
+2016-08-04 13:52:01	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-04 13:52:13	<--	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has quit (Leaving...)
+2016-08-04 13:52:28	-->	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has joined &bitlbee
+2016-08-04 13:52:28	--	Mode &bitlbee [+v ChristinaYoungSunLee] by localhost
+2016-08-04 13:56:13	-->	AaronGalbraith (aaron.galbraith@gmail.com) has joined &bitlbee
+2016-08-04 13:56:55	--	Mode &bitlbee [+v AlexMoore] by localhost
+2016-08-04 13:57:51	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-04 13:58:25	--	Mode &bitlbee [-v BridgetMatthews] by localhost
+2016-08-04 13:58:39	<--	AaronGalbraith (aaron.galbraith@gmail.com) has quit (Leaving...)
+2016-08-04 13:59:16	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-04 13:59:39	--	Mode &bitlbee [+v SarahLivant] by localhost
+2016-08-04 13:59:56	<--	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has quit (Leaving...)
+2016-08-04 14:01:24	-->	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has joined &bitlbee
+2016-08-04 14:01:24	--	Mode &bitlbee [+v ChristinaYoungSunLee] by localhost
+2016-08-04 14:03:05	--	Mode &bitlbee [-v MatthewChen_] by localhost
+2016-08-04 14:09:59	<--	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has quit (Leaving...)
+2016-08-04 14:10:27	-->	ChristinaYoungSunLee (2r1dxfpkpdr912tv4ztkswd85k@public.talk.google.com) has joined &bitlbee
+2016-08-04 14:10:27	--	Mode &bitlbee [+v ChristinaYoungSunLee] by localhost
+2016-08-04 14:11:07	--	Mode &bitlbee [-v AlexSpruch] by localhost
+2016-08-04 14:11:17	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-04 14:12:31	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-04 14:13:03	--	Mode &bitlbee [-v AlexMoore] by localhost
+2016-08-04 14:16:42	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-04 14:22:10	-->	AliceJohnson (3o2yiixlme7ij38wvj1hbdib3d@public.talk.google.com) has joined &bitlbee
+2016-08-04 14:22:33	--	Mode &bitlbee [+v AliceJohnson] by localhost
+2016-08-04 14:23:53	--	Mode &bitlbee [-v SarahLivant] by localhost
+2016-08-04 14:26:10	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-04 14:26:18	--	Mode &bitlbee [+v BrendanOReilly] by localhost
+2016-08-04 14:31:08	<--	RoussinaValkova (roussina@gmail.com) has quit (Leaving...)
+2016-08-04 14:31:17	<--	BrendanOReilly (brendan.j.oreilly@gmail.com) has quit (Leaving...)
+2016-08-04 14:34:39	-->	RoussinaValkova (roussina@gmail.com) has joined &bitlbee
+2016-08-04 14:34:39	--	Mode &bitlbee [+v RoussinaValkova] by localhost
+2016-08-04 14:34:47	<--	MatthewChen_ (matcchen@gmail.com) has quit (Leaving...)
+2016-08-04 14:41:41	--	Mode &bitlbee [+v BridgetMatthews] by localhost
+2016-08-04 14:41:59	<--	SarahLivant (sarah.livant@gmail.com) has quit (Leaving...)
+2016-08-04 14:42:21	-->	BrendanOReilly (brendan.j.oreilly@gmail.com) has joined &bitlbee
+2016-08-04 14:42:44	--	Mode &bitlbee [-v ChristinaYoungSunLee] by localhost
+2016-08-04 14:43:16	--	Mode &bitlbee [+v ChristinaYoungSunLee] by localhost
+2016-08-04 14:43:33	--	Mode &bitlbee [+v AlexMoore] by localhost
+2016-08-04 14:46:51	--	Mode &bitlbee [-v JonSolari] by localhost
+2016-08-04 14:49:09	<--	JonSolari (neojonathan@gmail.com) has quit (Leaving...)
+2016-08-04 14:50:17	-->	AaronGalbraith (aaron.galbraith@gmail.com) has joined &bitlbee
