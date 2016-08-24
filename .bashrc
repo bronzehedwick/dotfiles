@@ -75,8 +75,6 @@ fi
 export EDITOR=vi
 export PAGER=less
 
-export TERM=xterm-256color
-
 # git prompt
 function parse_git_branch {
   ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
