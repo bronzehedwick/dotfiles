@@ -1,0 +1,216 @@
+2016-08-03 09:18:01	--	irc: connecting to server localhost/6667...
+2016-08-03 09:18:01	--	irc: connected to localhost/6667 (127.0.0.1)
+2016-08-03 09:18:01	--	localhost: BitlBee-IRCd initialized, please go on
+2016-08-03 09:18:01	--	Welcome to the BitlBee gateway, delucac
+2016-08-03 09:18:01	--	Host localhost is running BitlBee 3.4.2 Darwin/x86_64.
+2016-08-03 09:18:01	--	BitlBee <http://www.bitlbee.org/>
+2016-08-03 09:18:01	--	localhost 3.4.2 abiswRo ntC
+2016-08-03 09:18:01	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2016-08-03 09:18:01	--	- localhost Message Of The Day -
+2016-08-03 09:18:01	--	- Welcome to the BitlBee server at localhost.
+2016-08-03 09:18:01	--	-
+2016-08-03 09:18:01	--	- This server is running BitlBee version 3.4.2.
+2016-08-03 09:18:01	--	- The newest version can be found on http://www.bitlbee.org/
+2016-08-03 09:18:01	--	-
+2016-08-03 09:18:01	--	- You are getting this message because the server administrator has not
+2016-08-03 09:18:01	--	- yet had the time (or need) to change it.
+2016-08-03 09:18:01	--	-
+2016-08-03 09:18:01	--	- For those who don't know it yet, this is not quite a regular Internet
+2016-08-03 09:18:01	--	- Relay Chat server. Please see the site mentioned above for more
+2016-08-03 09:18:01	--	- information.
+2016-08-03 09:18:01	--	-
+2016-08-03 09:18:01	--	- The developers of the Bee hope you have a buzzing time.
+2016-08-03 09:18:01	--	- -- BitlBee development team.
+2016-08-03 09:18:01	--	-
+2016-08-03 09:18:01	--	- ... Buzzing, haha, get it?
+2016-08-03 09:18:01	--	End of MOTD
+2016-08-03 09:18:01	--	User mode [+s] by delucac
+2016-08-03 09:23:26	--	irc: disconnected from server
+2016-08-03 09:23:32	--	irc: connecting to server localhost/6667...
+2016-08-03 09:23:32	--	irc: connected to localhost/6667 (127.0.0.1)
+2016-08-03 09:23:32	--	localhost: BitlBee-IRCd initialized, please go on
+2016-08-03 09:23:32	--	Welcome to the BitlBee gateway, delucac
+2016-08-03 09:23:32	--	Host localhost is running BitlBee 3.4.2 Darwin/x86_64.
+2016-08-03 09:23:32	--	BitlBee <http://www.bitlbee.org/>
+2016-08-03 09:23:32	--	localhost 3.4.2 abiswRo ntC
+2016-08-03 09:23:32	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2016-08-03 09:23:32	--	- localhost Message Of The Day -
+2016-08-03 09:23:32	--	- Welcome to the BitlBee server at localhost.
+2016-08-03 09:23:32	--	-
+2016-08-03 09:23:32	--	- This server is running BitlBee version 3.4.2.
+2016-08-03 09:23:32	--	- The newest version can be found on http://www.bitlbee.org/
+2016-08-03 09:23:32	--	-
+2016-08-03 09:23:32	--	- You are getting this message because the server administrator has not
+2016-08-03 09:23:32	--	- yet had the time (or need) to change it.
+2016-08-03 09:23:32	--	-
+2016-08-03 09:23:32	--	- For those who don't know it yet, this is not quite a regular Internet
+2016-08-03 09:23:32	--	- Relay Chat server. Please see the site mentioned above for more
+2016-08-03 09:23:32	--	- information.
+2016-08-03 09:23:32	--	-
+2016-08-03 09:23:32	--	- The developers of the Bee hope you have a buzzing time.
+2016-08-03 09:23:32	--	- -- BitlBee development team.
+2016-08-03 09:23:32	--	-
+2016-08-03 09:23:32	--	- ... Buzzing, haha, get it?
+2016-08-03 09:23:32	--	End of MOTD
+2016-08-03 09:23:32	--	User mode [+s] by delucac
+2016-08-03 09:24:34	--	You are now known as bronzehedwick
+2016-08-03 09:24:55	--	User mode [+R] by bronzehedwick
+2016-08-03 09:25:35	--	#twitter_cymnyc: Error joining channel (check control channel?)
+2016-08-03 09:28:36	--	[BethHintze] is away: Away
+2016-08-03 09:28:43	--	[CaseyCohen] is away: Away
+2016-08-03 09:28:46	--	[NicholasMoore] is away: Away
+2016-08-03 09:44:06	--	[CaseyCohen] is away: Away
+2016-08-03 10:34:12	--	MSG(CaseyCohen): you do anything cool this past weekend?
+2016-08-03 10:46:49	--	[CaseyCohen] is away: Away
+2016-08-03 10:51:53	--	notify: none is offline
+2016-08-03 11:50:36	--	[CaseyCohen] is away: Away
+2016-08-03 13:15:38	=!=	Closing link: Ping Timeout: 4742 seconds
+2016-08-03 13:15:38	=!=	irc: reading data on socket: error 22 (connection closed by peer)
+2016-08-03 13:15:38	--	irc: disconnecting from server...
+2016-08-03 13:15:38	--	irc: disconnected from server
+2016-08-03 13:15:38	--	irc: reconnecting to server in 10 seconds
+2016-08-03 13:15:48	--	irc: reconnecting to server...
+2016-08-03 13:15:48	--	irc: connecting to server localhost/6667...
+2016-08-03 13:15:48	--	irc: connected to localhost/6667 (127.0.0.1)
+2016-08-03 13:15:48	--	localhost: BitlBee-IRCd initialized, please go on
+2016-08-03 13:15:48	--	Welcome to the BitlBee gateway, bronzehedwick
+2016-08-03 13:15:48	--	MSG(&bitlebee2😊 : identify Dwarves7minE!
+2016-08-03 13:15:48	--	Host localhost is running BitlBee 3.4.2 Darwin/x86_64.
+2016-08-03 13:15:48	--	BitlBee <http://www.bitlbee.org/>
+2016-08-03 13:15:48	--	localhost 3.4.2 abiswRo ntC
+2016-08-03 13:15:48	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2016-08-03 13:15:48	--	- localhost Message Of The Day -
+2016-08-03 13:15:48	--	- Welcome to the BitlBee server at localhost.
+2016-08-03 13:15:48	--	-
+2016-08-03 13:15:48	--	- This server is running BitlBee version 3.4.2.
+2016-08-03 13:15:48	--	- The newest version can be found on http://www.bitlbee.org/
+2016-08-03 13:15:48	--	-
+2016-08-03 13:15:48	--	- You are getting this message because the server administrator has not
+2016-08-03 13:15:48	--	- yet had the time (or need) to change it.
+2016-08-03 13:15:48	--	-
+2016-08-03 13:15:48	--	- For those who don't know it yet, this is not quite a regular Internet
+2016-08-03 13:15:48	--	- Relay Chat server. Please see the site mentioned above for more
+2016-08-03 13:15:48	--	- information.
+2016-08-03 13:15:48	--	-
+2016-08-03 13:15:48	--	- The developers of the Bee hope you have a buzzing time.
+2016-08-03 13:15:48	--	- -- BitlBee development team.
+2016-08-03 13:15:48	--	-
+2016-08-03 13:15:48	--	- ... Buzzing, haha, get it?
+2016-08-03 13:15:48	--	End of MOTD
+2016-08-03 13:15:48	--	User mode [+s] by bronzehedwick
+2016-08-03 13:15:48	--	&bitlebee: No such nick/channel
+2016-08-03 13:17:39	--	User mode [+R] by bronzehedwick
+2016-08-03 14:54:47	=!=	Closing link: Ping Timeout: 1076 seconds
+2016-08-03 14:54:47	=!=	irc: reading data on socket: error 22 (connection closed by peer)
+2016-08-03 14:54:47	--	irc: disconnecting from server...
+2016-08-03 14:54:47	--	irc: disconnected from server
+2016-08-03 14:54:47	--	irc: reconnecting to server in 10 seconds
+2016-08-03 14:54:57	--	irc: reconnecting to server...
+2016-08-03 14:54:57	--	irc: connecting to server localhost/6667...
+2016-08-03 14:54:57	--	irc: connected to localhost/6667 (127.0.0.1)
+2016-08-03 14:54:57	--	localhost: BitlBee-IRCd initialized, please go on
+2016-08-03 14:54:57	--	Welcome to the BitlBee gateway, bronzehedwick
+2016-08-03 14:54:57	--	MSG(&bitlebee2😊 : identify Dwarves7minE!
+2016-08-03 14:54:57	--	Host localhost is running BitlBee 3.4.2 Darwin/x86_64.
+2016-08-03 14:54:57	--	BitlBee <http://www.bitlbee.org/>
+2016-08-03 14:54:57	--	localhost 3.4.2 abiswRo ntC
+2016-08-03 14:54:57	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2016-08-03 14:54:57	--	- localhost Message Of The Day -
+2016-08-03 14:54:57	--	- Welcome to the BitlBee server at localhost.
+2016-08-03 14:54:57	--	-
+2016-08-03 14:54:57	--	- This server is running BitlBee version 3.4.2.
+2016-08-03 14:54:57	--	- The newest version can be found on http://www.bitlbee.org/
+2016-08-03 14:54:57	--	-
+2016-08-03 14:54:57	--	- You are getting this message because the server administrator has not
+2016-08-03 14:54:57	--	- yet had the time (or need) to change it.
+2016-08-03 14:54:57	--	-
+2016-08-03 14:54:57	--	- For those who don't know it yet, this is not quite a regular Internet
+2016-08-03 14:54:57	--	- Relay Chat server. Please see the site mentioned above for more
+2016-08-03 14:54:57	--	- information.
+2016-08-03 14:54:57	--	-
+2016-08-03 14:54:57	--	- The developers of the Bee hope you have a buzzing time.
+2016-08-03 14:54:57	--	- -- BitlBee development team.
+2016-08-03 14:54:57	--	-
+2016-08-03 14:54:57	--	- ... Buzzing, haha, get it?
+2016-08-03 14:54:57	--	End of MOTD
+2016-08-03 14:54:57	--	User mode [+s] by bronzehedwick
+2016-08-03 14:54:57	--	&bitlebee: No such nick/channel
+2016-08-03 14:55:13	--	User mode [+R] by bronzehedwick
+2016-08-04 01:35:11		PONG: localhost
+2016-08-04 01:35:11	=!=	Closing link: Ping Timeout: 31750 seconds
+2016-08-04 01:35:11	=!=	irc: reading data on socket: error 22 (connection closed by peer)
+2016-08-04 01:35:11	--	irc: disconnecting from server...
+2016-08-04 01:35:11	--	irc: disconnected from server
+2016-08-04 01:35:11	--	irc: reconnecting to server in 10 seconds
+2016-08-04 01:35:21	--	irc: reconnecting to server...
+2016-08-04 01:35:21	--	irc: connecting to server localhost/6667...
+2016-08-04 01:35:21	--	irc: connected to localhost/6667 (127.0.0.1)
+2016-08-04 01:35:21	--	localhost: BitlBee-IRCd initialized, please go on
+2016-08-04 01:35:21	--	Welcome to the BitlBee gateway, bronzehedwick
+2016-08-04 01:35:21	--	MSG(&bitlebee2😊 : identify Dwarves7minE!
+2016-08-04 01:35:21	--	Host localhost is running BitlBee 3.4.2 Darwin/x86_64.
+2016-08-04 01:35:21	--	BitlBee <http://www.bitlbee.org/>
+2016-08-04 01:35:21	--	localhost 3.4.2 abiswRo ntC
+2016-08-04 01:35:21	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2016-08-04 01:35:21	--	- localhost Message Of The Day -
+2016-08-04 01:35:21	--	- Welcome to the BitlBee server at localhost.
+2016-08-04 01:35:21	--	-
+2016-08-04 01:35:21	--	- This server is running BitlBee version 3.4.2.
+2016-08-04 01:35:21	--	- The newest version can be found on http://www.bitlbee.org/
+2016-08-04 01:35:21	--	-
+2016-08-04 01:35:21	--	- You are getting this message because the server administrator has not
+2016-08-04 01:35:21	--	- yet had the time (or need) to change it.
+2016-08-04 01:35:21	--	-
+2016-08-04 01:35:21	--	- For those who don't know it yet, this is not quite a regular Internet
+2016-08-04 01:35:21	--	- Relay Chat server. Please see the site mentioned above for more
+2016-08-04 01:35:21	--	- information.
+2016-08-04 01:35:21	--	-
+2016-08-04 01:35:21	--	- The developers of the Bee hope you have a buzzing time.
+2016-08-04 01:35:21	--	- -- BitlBee development team.
+2016-08-04 01:35:21	--	-
+2016-08-04 01:35:21	--	- ... Buzzing, haha, get it?
+2016-08-04 01:35:21	--	End of MOTD
+2016-08-04 01:35:21	--	User mode [+s] by bronzehedwick
+2016-08-04 01:35:21	--	&bitlebee: No such nick/channel
+2016-08-04 09:04:18	=!=	Closing link: Ping Timeout: 26936 seconds
+2016-08-04 09:04:18	=!=	irc: reading data on socket: error 22 (connection closed by peer)
+2016-08-04 09:04:18	--	irc: disconnecting from server...
+2016-08-04 09:04:18	--	irc: disconnected from server
+2016-08-04 09:04:18	--	irc: reconnecting to server in 10 seconds
+2016-08-04 09:04:28	--	irc: reconnecting to server...
+2016-08-04 09:04:28	--	irc: connecting to server localhost/6667...
+2016-08-04 09:04:28	--	irc: connected to localhost/6667 (127.0.0.1)
+2016-08-04 09:04:28	--	localhost: BitlBee-IRCd initialized, please go on
+2016-08-04 09:04:28	--	Welcome to the BitlBee gateway, bronzehedwick
+2016-08-04 09:04:28	--	MSG(&bitlebee2😊 : identify Dwarves7minE!
+2016-08-04 09:04:28	--	Host localhost is running BitlBee 3.4.2 Darwin/x86_64.
+2016-08-04 09:04:28	--	BitlBee <http://www.bitlbee.org/>
+2016-08-04 09:04:28	--	localhost 3.4.2 abiswRo ntC
+2016-08-04 09:04:28	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2016-08-04 09:04:28	--	- localhost Message Of The Day -
+2016-08-04 09:04:28	--	- Welcome to the BitlBee server at localhost.
+2016-08-04 09:04:28	--	-
+2016-08-04 09:04:28	--	- This server is running BitlBee version 3.4.2.
+2016-08-04 09:04:28	--	- The newest version can be found on http://www.bitlbee.org/
+2016-08-04 09:04:28	--	-
+2016-08-04 09:04:28	--	- You are getting this message because the server administrator has not
+2016-08-04 09:04:28	--	- yet had the time (or need) to change it.
+2016-08-04 09:04:28	--	-
+2016-08-04 09:04:28	--	- For those who don't know it yet, this is not quite a regular Internet
+2016-08-04 09:04:28	--	- Relay Chat server. Please see the site mentioned above for more
+2016-08-04 09:04:28	--	- information.
+2016-08-04 09:04:28	--	-
+2016-08-04 09:04:28	--	- The developers of the Bee hope you have a buzzing time.
+2016-08-04 09:04:28	--	- -- BitlBee development team.
+2016-08-04 09:04:28	--	-
+2016-08-04 09:04:28	--	- ... Buzzing, haha, get it?
+2016-08-04 09:04:28	--	End of MOTD
+2016-08-04 09:04:28	--	User mode [+s] by bronzehedwick
+2016-08-04 09:04:28	--	&bitlebee: No such nick/channel
+2016-08-04 09:08:47	--	User mode [+R] by bronzehedwick
+2016-08-04 09:11:14	--	MSG(JonathanFoox2😊 : hey dude
+2016-08-04 10:29:06	--	notify: message is offline
+2016-08-04 10:40:44	--	MSG(CaseyCohen2😊 : hey hey
+2016-08-04 10:40:44	--	[CaseyCohen] is away: Away
+2016-08-04 10:40:47	--	MSG(BethHintze2😊 : yo
+2016-08-04 10:40:47	--	[BethHintze] is away: Away

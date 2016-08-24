@@ -1,0 +1,20 @@
+2016-08-02 15:12:39	-->	bronzehedwick (~bronzehed@mskresolve-8.mskcc.org) has joined #bitcoin
+2016-08-02 15:12:39	--	Topic for #bitcoin is "Current v0.12.1 | DON'T POST ADDRESSES | https://bitcoin.org | Rules: https://goo.gl/SJMlSL | Smart Questions: https://goo.gl/gpQ2Lk | https://en.bitcoin.it/wiki/Faq | Prices @ ##bitcoin | ads,trades @ #bitcoin-otc | NO begging, altcoins (eg ETH) | Webwallets steal money | URLs are often MALWARE | Goog docs = BAN | FAIL TO READ THIS TOPIC AT YOUR PERIL"
+2016-08-02 15:12:39	--	Topic set by tripleslash (~triplesla@unaffiliated/imsaguy) on Thu, 28 Jul 2016 14:42:58
+2016-08-02 15:12:39	--	Channel #bitcoin: 1125 nicks (8 ops, 2 voices, 1115 normals)
+2016-08-02 15:12:41	--	Channel created on Sat, 30 Jan 2010 02:48:24
+2016-08-02 15:12:48	Victorsueca	r0ach: what kind of exchange would do that? one that doesn't know what reputations is?
+2016-08-02 15:13:05	<--	Sanakov (~sanakov@bitfuse.org) has left #bitcoin ("Textual IRC Client: www.textualapp.com")
+2016-08-02 15:13:08	r0ach	finex already did this bullshit just recently pulling the plug in the middle of the halving rally
+2016-08-02 15:13:32	Victorsueca	hah right, back then they said it was a database issue
+2016-08-02 15:14:18	r0ach	they were probably trading on their own exchange then too and ended up on the wrong side of the trade so pulled the plug to try and crash market
+2016-08-02 15:14:53	r0ach	it's WAY fishy if you actually trade BTC and watch this stuff all day and can clearly tell all these huge amounts of shorts are coming from one single guy
+2016-08-02 15:14:59	Victorsueca	;;ticker --last --market bitstamp
+2016-08-02 15:15:02	@gribble	580.72
+2016-08-02 15:15:09	Victorsueca	they definitely crashed it
+2016-08-02 15:15:23	iwilcox	r0ach: If it's so clear it should be easy to provide proper proof.
+2016-08-02 15:15:26	ryan``	https://blockchain.info/address/3HNSiAq7wFDaPsYDcUxNSRMD78qVcYKicw
+2016-08-02 15:15:26	--	Mode #bitcoin [+b ryan``!~root@60.107.211.130.bc.googleusercontent.com] by midnightmagic
+2016-08-02 15:15:26	<--	midnightmagic has kicked ryan`` (address patterns disallowed by policy, error code 47)
+2016-08-02 15:15:27	piqure	^^^ WARNING: any URL may lead directly or indirectly to COIN-STEALING MALWARE! ^^^
+2016-08-02 15:15:37	AlienTrooper	r0ach; so, they mey get back online... they just wanted to drop the price...
