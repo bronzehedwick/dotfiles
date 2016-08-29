@@ -1,4 +1,4 @@
-#! bin/bash
+#!/bin/bash
 # Installs dotfiles to home directory
 # @author Chris DeLuca (bronzehedwick)
 
