@@ -61,3 +61,5 @@
 	smudge = git-media-smudge %f
 [github]
 	user = bronzehedwick
+[commit]
+	template = /Users/chris/.git_commit_msg.txt
