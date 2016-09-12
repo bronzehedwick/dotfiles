@@ -249,6 +249,7 @@ nnoremap <silent> <f10> :TREPLSendFile<cr>
 nnoremap <silent> <f9> :TREPLSend<cr>
 vnoremap <silent> <f9> :TREPLSend<cr>
 
+" EditorConfig
 " Disable editorconfig on fugitive and remote buffers.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
@@ -256,8 +257,8 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
 let g:tern_request_timeout = 1
-" This do disable full signature type on autocomplete
-let g:tern_show_signature_in_pum = 0
+" This does a disable full signature type on autocomplete
+let g:tern_show_signature_in_pum = '0'
 
 """""""""""""""
 " Colorscheme "
