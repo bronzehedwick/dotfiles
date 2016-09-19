@@ -234,7 +234,7 @@ autocmd! BufWritePost * Neomake
 
 " Neoterm
 let g:neoterm_shell = "bash"
-let g:neoterm_position = 'vertical'
+let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
 
 " hide/close terminal
