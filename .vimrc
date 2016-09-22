@@ -15,7 +15,6 @@ set scrolloff=3                 " Minimum lines to keep above and below cursor
 set shiftwidth=2 " 2 space soft tabs
 set tabstop=2 " 2 space tabs
 set expandtab " Soft tabs
-set autochdir " Automatically change to directory of file
 set relativenumber " Relative line numbers
 set hlsearch " Highlighted search
 
