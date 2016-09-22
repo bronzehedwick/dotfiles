@@ -128,7 +128,9 @@ command! -bang QA qa<bang>
 command! -bang Qa qa<bang>
 
 " True color!
-set termguicolors
+if has('termguicolors')
+  set termguicolors
+endif
 
 " Cursor is line in insert mode, block in normal mode
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
