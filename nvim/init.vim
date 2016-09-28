@@ -187,32 +187,12 @@ function! SearchForFiles()
   endif
 endfunction
 
-" fzf: search files with ag from system root.
-function! s:ag_with_git_root()
-  let root = systemlist('git rev-parse --show-toplevel')[0]
-  return v:shell_error ? {} : { 'dir': root }
-endfunction
-
-command! -nargs=* Rag
-      \ call fzf#vim#ag(<q-args>, extend(s:ag_with_git_root(), g:fzf#vim#default_layout))
-
-" fzf: File search; from git root if available.
-" TODO use git grep inside git directories.
-function! SearchInsideFiles()
-  if IsGitRepo()
-    :Rag
-  else
-    :Ag
-  endif
-endfunction
-
 """""""""""""""""""""""""
 " Plugin configurations "
 """""""""""""""""""""""""
 
 " fzf
 nmap <C-P> :call SearchForFiles()<cr>
-nmap <C-S> :call SearchInsideFiles()<cr>
 
 " Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
@@ -243,14 +223,10 @@ let g:neoterm_shell = 'bash'
 let g:neoterm_position = 'vertical'
 let g:neoterm_automap_keys = ',tt'
 
-" hide/close terminal
 nnoremap <silent> <leader>th :call neoterm#close()<cr>
-" clear terminal
 nnoremap <silent> <leader>tl :call neoterm#clear()<cr>
-" kills current job (send a <c-c>)
 nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
 
-" REPL
 nnoremap <silent> <f10> :TREPLSendFile<cr>
 nnoremap <silent> <f9> :TREPLSend<cr>
 vnoremap <silent> <f9> :TREPLSend<cr>
@@ -260,14 +236,20 @@ vnoremap <silent> <f9> :TREPLSend<cr>
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Deoplete
-" Use deoplete
 let g:deoplete#enable_at_startup = 1
 let g:tern_request_timeout = 1
-" This does a disable full signature type on autocomplete
 let g:tern_show_signature_in_pum = '0'
 
 " Dirvish
 autocmd FileType dirvish call fugitive#detect(@%)
+
+" Grepper
+nnoremap <leader>p :Grepper<cr>
+nnoremap <leader>* :Grepper -cword -noprompt<cr>
+
+let g:grepper = {
+  \ 'tools': ['rg', 'git', 'ag', 'ack', 'grep', 'pt', 'findstr']
+  \ }
 
 """""""""""""""
 " Colorscheme "
