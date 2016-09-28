@@ -1,4 +1,3 @@
-"""""""""""
 " Plugins "
 """""""""""
 
@@ -17,6 +16,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kassio/neoterm'
 Plug 'tpope/vim-eunuch'
+Plug 'justinmk/vim-dirvish'
+Plug 'mhinz/vim-grepper'
 
 " Programming
 Plug 'benekastah/neomake'
@@ -30,7 +31,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Syntaxes
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/html5.vim', { 'for': [ 'html', 'htmldjango' ] }
 Plug 'JulesWang/css.vim', { 'for': [ 'css', 'scss', 'sass', 'less' ] }
 Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
@@ -59,9 +60,6 @@ set tabstop=2
 
 " Command <Tab> completion, list matches, then longest common part, then all.
 set wildmode=list:longest,full
-
-" Change to the current buffer's parent directory
-set autochdir
 
 " Use relative line numbers with the current line the absolute line number
 set number
@@ -137,6 +135,12 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " Toggle set wrap
 nmap <silent><leader>w :set wrap!<CR>
+
+" Open directory at current file path.
+map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>t :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 """"""""""""""""
 " Autocommands "
@@ -235,8 +239,8 @@ let g:neomake_json_enabled_makers = ['jsonlint']
 autocmd! BufWritePost * Neomake
 
 " Neoterm
-let g:neoterm_shell = "bash"
-let g:neoterm_position = 'horizontal'
+let g:neoterm_shell = 'bash'
+let g:neoterm_position = 'vertical'
 let g:neoterm_automap_keys = ',tt'
 
 " hide/close terminal
@@ -261,6 +265,9 @@ let g:deoplete#enable_at_startup = 1
 let g:tern_request_timeout = 1
 " This does a disable full signature type on autocomplete
 let g:tern_show_signature_in_pum = '0'
+
+" Dirvish
+autocmd FileType dirvish call fugitive#detect(@%)
 
 """""""""""""""
 " Colorscheme "
