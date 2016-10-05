@@ -21,8 +21,10 @@ Plug 'mhinz/vim-grepper'
 
 " Programming
 Plug 'benekastah/neomake'
-Plug 'Shougo/deoplete.nvim'
-Plug 'carlitux/deoplete-ternjs'
+if has('python3')
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'carlitux/deoplete-ternjs'
+endif
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars' ] }
 
@@ -236,9 +238,11 @@ vnoremap <silent> <f9> :TREPLSend<cr>
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Deoplete
-let g:deoplete#enable_at_startup = 1
-let g:tern_request_timeout = 1
-let g:tern_show_signature_in_pum = '0'
+if has('python3')
+  let g:deoplete#enable_at_startup = 1
+  let g:tern_request_timeout = 1
+  let g:tern_show_signature_in_pum = '0'
+endif
 
 " Dirvish
 autocmd FileType dirvish call fugitive#detect(@%)
