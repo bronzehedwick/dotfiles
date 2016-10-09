@@ -10,6 +10,7 @@ Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-unimpaired'
+Plug 'justinmk/vim-sneak'
 
 " Working with the file system
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
