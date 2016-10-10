@@ -25,22 +25,22 @@ alias less='less -R'
 # Shortcuts #
 #############
 
-#Clear the terminal
-alias c="clear"
-
 #Edit .bashrc
 alias ebrc="vim ~/.bashrc"
 
 #Edit this file
 alias eba="vim ~/.bash_aliases"
 
-#Source .bashrc and .bash_aliases
-alias sb="source ~/.bashrc && source ~/.bash_aliases"
-
 #cd Shortcuts
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+#################
+# Vim/Vi/Neovim #
+#################
+
+alias vi="nvim -u ~/.vimrc.sparse"
 
 ###############
 # Replacement #
@@ -102,7 +102,6 @@ glgg='git log --graph --max-count=10'
 glgga='git log --graph --decorate --all'
 glo='git log --oneline'
 globurl='noglob urlglobber '
-glp=_git_log_prettily
 glu='git pull origin $(current_branch)'
 gm='git merge'
 gmc='git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -100 | less'
