@@ -194,7 +194,7 @@ endfunction
 """""""""""""""""""""""""
 
 " fzf
-nmap <C-P> :call FZF()<cr>
+nmap <C-P> :FZF<cr>
 
 " Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
