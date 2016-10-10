@@ -14,7 +14,6 @@ Plug 'justinmk/vim-sneak'
 
 " Working with the file system
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'kassio/neoterm'
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
@@ -195,7 +194,7 @@ endfunction
 """""""""""""""""""""""""
 
 " fzf
-nmap <C-P> :call SearchForFiles()<cr>
+nmap <C-P> :call FZF()<cr>
 
 " Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
