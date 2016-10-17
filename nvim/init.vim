@@ -250,6 +250,8 @@ autocmd FileType dirvish call fugitive#detect(@%)
 " Grepper
 nnoremap <leader>p :Grepper<cr>
 nnoremap <leader>* :Grepper -cword -noprompt<cr>
+nmap gs  <plug>(GrepperOperator)
+xmap gs  <plug>(GrepperOperator)
 
 let g:grepper = {
   \ 'tools': ['rg', 'git', 'ag', 'ack', 'grep', 'pt', 'findstr']
