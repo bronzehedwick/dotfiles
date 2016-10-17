@@ -18,6 +18,7 @@ Plug 'kassio/neoterm'
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
 Plug 'mhinz/vim-grepper'
+Plug 'tpope/vim-obsession'
 
 " Programming
 Plug 'benekastah/neomake'
