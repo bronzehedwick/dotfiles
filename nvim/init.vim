@@ -210,12 +210,7 @@ nnoremap <silent> <leader>ge :Gedit<CR>
 " Neomake
 let g:neomake_open_list=0
 
-if executable('eslint')
-  let g:neomake_javascript_enabled_makers = ['eslint']
-elseif executable('jshint')
-  let g:neomake_javascript_enabled_makers = ['jshint']
-endif
-
+let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_json_enabled_makers = ['jsonlint']
 
 autocmd! BufWritePost * Neomake
