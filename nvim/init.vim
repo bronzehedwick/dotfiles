@@ -111,9 +111,6 @@ let mapleader = ','
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
-" Add new insert mode mapping for Esc
-:imap jh <Esc>
-
 " Esc exits insert mode in Neovim terminal
 tnoremap <Esc> <C-\><C-n>
 
