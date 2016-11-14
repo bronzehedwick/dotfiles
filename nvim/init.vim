@@ -169,24 +169,6 @@ function! Timestamp()
   :r !date "+\%h \%d, \%Y, \%l:\%M:\%S \%p"
 endfunction
 
-" Check if the working directory is managed in git
-function! IsGitRepo()
-  let root = systemlist('git rev-parse --show-toplevel')[0]
-  if v:shell_error
-    return 0
-  endif
-  return 1
-endfunction
-
-" fzf: use git when possible, otherwise ag for file search.
-function! SearchForFiles()
-  if IsGitRepo()
-    :GitFiles
-  else
-    :Files
-  endif
-endfunction
-
 """""""""""""""""""""""""
 " Plugin configurations "
 """""""""""""""""""""""""
