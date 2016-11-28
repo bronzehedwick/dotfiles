@@ -101,6 +101,9 @@ set hidden
 " Set hard wrapping guide to 80 columns
 set colorcolumn=80
 
+" Show effects of commands incrementally, as you type.
+set inccommand=nosplit
+
 " Status line
 set statusline=%{fugitive#statusline()}
 set statusline+=%<\ %f
@@ -197,7 +200,7 @@ autocmd! BufWritePost * Neomake
 
 " Neoterm
 let g:neoterm_shell = 'bash'
-let g:neoterm_position = 'vertical'
+let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
 
 nnoremap <silent> <leader>th :call neoterm#close()<cr>
