@@ -105,8 +105,15 @@ set colorcolumn=80
 set inccommand=nosplit
 
 " Status line
-set statusline=%{fugitive#statusline()}
-set statusline+=%<\ %f
+set statusline=%{fugitive#statusline()} " Git branch
+set statusline+=%<\ %t " Tail of file (just the name.ext)
+set statusline+=%m " File modified flag
+set statusline+=%<\ %h " Buffer is `help` flag
+set statusline+=%<\ %r " Buffer is `readonly` flag
+set statusline+=%<\ %w " Buffer is `preview` flag
+set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
+set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
+set statusline+=%#NeotermTestFailed#%{neoterm#test#status('failed')}%*
 
 " Remap mapleader
 let mapleader = ','
@@ -197,9 +204,15 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_json_enabled_makers = ['jsonlint']
 
 let g:neomake_twig_twig_lint_makers = {
+  \ 'exe': 'twig-lint.phar',
   \ 'args': ['lint'],
   \ }
 let g:neomake_twig_twig_lint_makers = ['htmldjango']
+
+let g:neomake_grunt_maker = {
+  \ 'exe': 'grunt',
+  \ 'args': ['build'],
+  \ }
 
 autocmd! BufWritePost * Neomake
 
@@ -213,8 +226,8 @@ nnoremap <silent> <leader>tl :call neoterm#clear()<cr>
 nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
 
 nnoremap <silent> <f10> :TREPLSendFile<cr>
-nnoremap <silent> <f9> :TREPLSend<cr>
-vnoremap <silent> <f9> :TREPLSend<cr>
+nnoremap <silent> <f9> :TREPLSendLine<cr>
+vnoremap <silent> <f9> :TREPLSendSelection<cr>
 
 " EditorConfig
 " Disable editorconfig on fugitive and remote buffers.
