@@ -196,6 +196,11 @@ let g:neomake_open_list=0
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_json_enabled_makers = ['jsonlint']
 
+let g:neomake_twig_twig_lint_makers = {
+  \ 'args': ['lint'],
+  \ }
+let g:neomake_twig_twig_lint_makers = ['htmldjango']
+
 autocmd! BufWritePost * Neomake
 
 " Neoterm
@@ -215,12 +220,28 @@ vnoremap <silent> <f9> :TREPLSend<cr>
 " Disable editorconfig on fugitive and remote buffers.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
-" Deoplete
+" Deoplete / Tern
 if has('python3')
   let g:deoplete#enable_at_startup = 1
+
+  if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+  endif
+  " let g:deoplete#disable_auto_complete = 1
+  autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
   let g:tern_request_timeout = 1
-  let g:tern_show_signature_in_pum = '0'
+  let g:tern_show_signature_in_pum = 1
 endif
+
+augroup omnifuncs
+  autocmd!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
 
 " Dirvish
 autocmd FileType dirvish call fugitive#detect(@%)
