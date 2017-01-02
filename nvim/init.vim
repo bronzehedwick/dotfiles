@@ -152,6 +152,23 @@ map <leader>t :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
+"""""""""""""
+" Functions "
+"""""""""""""
+
+" Display date and time
+map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
+
+" Insert time into a document
+command! -nargs=* Timestamp call Timestamp()
+function! Timestamp()
+  :r !date "+\%h \%d, \%Y, \%l:\%M:\%S \%p"
+endfunction
+
+function! WritingConfigs()
+  :set textwidth=80
+endfunction
+
 """"""""""""""""
 " Autocommands "
 """"""""""""""""
@@ -166,18 +183,9 @@ augroup filetypedetect
   autocmd BufNew,BufNewFile,BufRead *.fountain :setfiletype fountain
 augroup END
 
-"""""""""""""
-" Functions "
-"""""""""""""
-
-" Display date and time
-map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
-
-" Insert time into a document
-command! -nargs=* Timestamp call Timestamp()
-function! Timestamp()
-  :r !date "+\%h \%d, \%Y, \%l:\%M:\%S \%p"
-endfunction
+" Special configurations for markdown/fountain files.
+autocmd FileType fountain call WritingConfigs()
+autocmd FileType markdown call WritingConfigs()
 
 """""""""""""""""""""""""
 " Plugin configurations "
