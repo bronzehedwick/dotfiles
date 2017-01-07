@@ -183,8 +183,7 @@ augroup filetypedetect
   autocmd BufNew,BufNewFile,BufRead *.fountain :setfiletype fountain
 augroup END
 
-" Special configurations for markdown/fountain files.
-autocmd FileType fountain call WritingConfigs()
+" Special configurations for markdown files.
 autocmd FileType markdown call WritingConfigs()
 
 """""""""""""""""""""""""
