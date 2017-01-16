@@ -1,8 +1,3 @@
-########
-# Path #
-########
-set PATH /usr/local/sbin $PATH
-
 ###################
 # Custom bindings #
 ###################
@@ -19,7 +14,7 @@ alias l "ls -CF"
 alias lla "ls -AFchl"
 
 # Set NeoVim to the EDITOR environment variable
-set -x EDITOR "nvim"
+set -U EDITOR "nvim"
 
 # Filter FZF results to respect git ignores
 set -x FZF_DEFAULT_COMMAND='ag -g ""'
