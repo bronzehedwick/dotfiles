@@ -24,6 +24,12 @@ do
   fi
 done
 
+# If on macOS, add a .profile file instead of bashrc
+if [ "$OS" == 'Darwin' ]; then
+  unlink "$TARGET/.bashrc"
+  ln -s "$DIR/.bashrc" "$TARGET/.profile"
+fi
+
 # Add oh my fish config
 if [[ -d ~/.local/share/omf ]]; then
   echo "Removing empty custom omf scaffolding directory"
