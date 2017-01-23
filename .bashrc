@@ -30,16 +30,46 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
+# enable bash completion
+if [ "$(uname)" == "Darwin" ]; then
+  # enable bash completion via homebrew.
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
+else
+  # enable programmable completion features (you don't need to enable
+  # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+  # sources /etc/bash.bashrc).
+  if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+      . /etc/bash_completion
+  fi
 fi
 
 # Set Vim to the EDITOR environment variable
 export EDITOR=nvim
 export PAGER=less
+
+# Personal prompt
+export PS1="\W $ "
+
+if [ "$(uname)" == "Darwin" ]; then
+  export PATH="/usr/local/sbin:$PATH"
+fi
+
+# Add rust to path
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# GPG agent
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+  . "${HOME}/.gpg-agent-info"
+  export GPG_AGENT_INFO
+  export SSH_AUTH_SOCK
+fi
+export GPG_TTY=$(tty)
+
+#############
+# Functions #
+#############
 
 # Colorize man pages
 man() {
@@ -54,10 +84,21 @@ man() {
     man "$@"
 }
 
-# Personal prompt
-export PS1="\W $ "
+# Bitcoin
+function btcer {
+  if [ -z "$1" ]; then
+    AMOUNT=1
+  else
+    AMOUNT="$1"
+  fi
+  wget -qO- "https://www.google.com/finance/converter?a=$AMOUNT&from=BTC&to=USD" |  sed "/res/!d;s/<[^>]*>//g"
+}
 
-# Enable fzf
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-export PATH="$HOME/.cargo/bin:$PATH"
+# Facts for today
+function today {
+  calendar -A 0 -f /usr/share/calendar/calendar.birthday
+  calendar -A 0 -f /usr/share/calendar/calendar.computer
+  calendar -A 0 -f /usr/share/calendar/calendar.history
+  calendar -A 0 -f /usr/share/calendar/calendar.music
+  calendar -A 0 -f /usr/share/calendar/calendar.lotr
+}

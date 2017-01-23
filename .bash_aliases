@@ -58,3 +58,13 @@ alias gb="git branch"
 alias gc="git commit"
 alias gd="git diff"
 alias ga="git add"
+
+#########
+# Other #
+#########
+
+#Start text-based star wars
+alias starwars="telnet towel.blinkenlights.nl"
+
+# Update and prune homebrew packages
+alias bubu='brew update && brew upgrade && brew cleanup'
