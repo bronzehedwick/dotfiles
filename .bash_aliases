@@ -7,7 +7,6 @@
 
 alias ll='ls -lhcF'
 alias la='ls -AF'
-alias l='ls -CF'
 alias lla='ls -AFchl'
 
 ########

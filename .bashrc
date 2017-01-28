@@ -102,3 +102,8 @@ function today {
   calendar -A 0 -f /usr/share/calendar/calendar.music
   calendar -A 0 -f /usr/share/calendar/calendar.lotr
 }
+
+# Bashmarks
+if [ -f "${HOME}/.local/bin/bashmarks.sh" ]; then
+  source "${HOME}/.local/bin/bashmarks.sh"
+fi

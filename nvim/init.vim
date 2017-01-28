@@ -162,7 +162,7 @@ map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 " Insert time into a document
 command! -nargs=* Timestamp call Timestamp()
 function! Timestamp()
-  :r !date "+\%h \%d, \%Y, \%l:\%M:\%S \%p"
+  :r !date "+\%Y-\%m-\%dT\%T\%z"
 endfunction
 
 function! WritingConfigs()
