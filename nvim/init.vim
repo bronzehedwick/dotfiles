@@ -13,7 +13,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'justinmk/vim-sneak'
 
 " Working with the file system
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'cloudhead/neovim-fuzzy' " needs fzy and rg or ag installed
 Plug 'kassio/neoterm'
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
@@ -190,8 +190,8 @@ autocmd FileType markdown call WritingConfigs()
 " Plugin configurations "
 """""""""""""""""""""""""
 
-" fzf
-nmap <C-P> :FZF<cr>
+" Fuzzy
+nnoremap <C-p> :FuzzyOpen<CR>
 
 " Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
