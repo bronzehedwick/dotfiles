@@ -111,9 +111,6 @@ set statusline+=%m " File modified flag
 set statusline+=%<\ %h " Buffer is `help` flag
 set statusline+=%<\ %r " Buffer is `readonly` flag
 set statusline+=%<\ %w " Buffer is `preview` flag
-set statusline+=%#NeotermTestRunning#%{neoterm#test#status('running')}%*
-set statusline+=%#NeotermTestSuccess#%{neoterm#test#status('success')}%*
-set statusline+=%#NeotermTestFailed#%{neoterm#test#status('failed')}%*
 
 " Remap mapleader
 let mapleader = ','
