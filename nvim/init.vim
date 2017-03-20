@@ -18,7 +18,8 @@ Plug 'kassio/neoterm'
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
 Plug 'mhinz/vim-grepper'
-Plug 'tpope/vim-obsession'
+Plug 'sjl/gundo.vim'
+" Plug 'tpope/vim-obsession'
 
 " Programming
 Plug 'benekastah/neomake'
@@ -104,6 +105,9 @@ set colorcolumn=80
 " Show effects of commands incrementally, as you type.
 set inccommand=nosplit
 
+" Don't redraw while typing macros
+set lazyredraw
+
 " Status line
 set statusline=%{fugitive#statusline()} " Git branch
 set statusline+=%<\ %t " Tail of file (just the name.ext)
@@ -162,26 +166,22 @@ function! Timestamp()
   :r !date "+\%Y-\%m-\%dT\%T\%z"
 endfunction
 
-function! WritingConfigs()
-  :set textwidth=80
-endfunction
-
 """"""""""""""""
 " Autocommands "
 """"""""""""""""
 
 " Autodetect extra file types
 augroup filetypedetect
+  autocmd!
   " django templates (syntax is built in to vim) are very similar to twig.
-  autocmd BufNewFile,BufRead *.twig set filetype=htmldjango
+  autocmd BufNew,BufNewFile,BufRead *.twig setlocal filetype=htmldjango
   " Support Drupal .module and .theme files.
-  autocmd BufNewFile,BufRead *.theme,*.module set filetype=php
-  " Support fountain files
+  autocmd BufNew,BufNewFile,BufRead *.theme,*.module setlocal filetype=php
+  " Support fountain files.
   autocmd BufNew,BufNewFile,BufRead *.fountain :setfiletype fountain
+  " Hard wrap markdown files.
+  autocmd FileType markdown :setlocal textwidth=80
 augroup END
-
-" Special configurations for markdown files.
-autocmd FileType markdown call WritingConfigs()
 
 """""""""""""""""""""""""
 " Plugin configurations "
@@ -272,6 +272,9 @@ xmap gs  <plug>(GrepperOperator)
 let g:grepper = {
   \ 'tools': ['rg', 'git', 'ag', 'ack', 'grep', 'pt', 'findstr']
   \ }
+
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
 
 """""""""""""""
 " Colorscheme "
