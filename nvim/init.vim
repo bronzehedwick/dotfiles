@@ -172,7 +172,6 @@ endfunction
 
 " Autodetect extra file types
 augroup filetypedetect
-  autocmd!
   " django templates (syntax is built in to vim) are very similar to twig.
   autocmd BufNew,BufNewFile,BufRead *.twig setlocal filetype=htmldjango
   " Support Drupal .module and .theme files.
