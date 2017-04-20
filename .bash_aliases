@@ -67,3 +67,8 @@ alias starwars="telnet towel.blinkenlights.nl"
 
 # Update and prune homebrew packages
 alias bubu='brew update && brew upgrade && brew cleanup'
+
+# Use homebrew emacs if available
+if [ -f /usr/local/bin/emacs ]; then
+  alias emacs="/usr/local/bin/emacs"
+fi

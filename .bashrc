@@ -59,6 +59,9 @@ fi
 # Add rust to path
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Set go path
+export GOPATH="/usr/local/go"
+
 # GPG agent
 if [ -f "${HOME}/.gpg-agent-info" ]; then
   . "${HOME}/.gpg-agent-info"
