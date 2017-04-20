@@ -43,6 +43,7 @@ Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'mustache/vim-mustache-handlebars', { 'for': [ 'mustache', 'handlebars', 'html.mustache', 'html.handlebars' ] }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
+Plug 'kchmck/vim-coffee-script', { 'for': [ 'coffee', 'eruby' ] }
 
 " Themes
 Plug 'mhartington/oceanic-next'
@@ -152,6 +153,12 @@ map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>t :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
+
+" More useful window navigation bindings.
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <C-j> <C-w>j
+nmap <C-h> <C-w>h
 
 """""""""""""
 " Functions "
