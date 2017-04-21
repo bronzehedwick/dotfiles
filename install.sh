@@ -4,55 +4,53 @@
 
 # Add dotfiles
 OS="$(uname)"
-FILES=.*
-TARGET=$HOME
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-for f in $FILES
+TARGET="$HOME"
+DIR="$(dirname "$0")"
+FILES="$DIR/.*"
+
+find "$DIR" -type f -name "\.*" | while read -r file;
 do
-  if [[ -f $f ]]; then
-    # Skip files if they already exist
-    if [[ -f $TARGET/$f ]]; then
-      continue
-    fi
-    # Ignore linking .gitignore
-    if [[ $f == '.gitignore' ]]; then
-      continue
-    fi
+  # Don't link .gitignore
+  if [ "$file" == "$DIR/.gitignore" ]; then
+    continue
+  fi
+
+  if [ ! -f "$TARGET/$(basename "$file")" ]; then
     # Link the files
-    echo "Linking $f to $TARGET"
-    ln -s $DIR/$f $TARGET/$f
+    ln -s "$file $TARGET/$(basename "$file")"
   fi
 done
 
 # If on macOS, add a .profile file instead of bashrc
 if [ "$OS" == 'Darwin' ]; then
-  unlink "$TARGET/.bashrc"
-  ln -s "$DIR/.bashrc" "$TARGET/.profile"
+  if [ ! -f "$TARGET/.profile" ]; then
+    unlink "$TARGET/.bashrc"
+    ln -s "$DIR/.bashrc" "$TARGET/.profile"
+  fi
 fi
 
 # Add oh my fish config
-if [[ -d ~/.local/share/omf ]]; then
-  echo "Removing empty custom omf scaffolding directory"
-  rm -rf $TARGET/.config/omf
-  echo "Linking omf to ~/.config/omf"
-  ln -s $DIR/omf $TARGET/.config/omf
+if [ -d "$TARGET/local/share/omf" ]; then
+  rm -rf "$TARGET/.config/omf"
+  ln -s "$DIR/omf $TARGET/.config/omf"
 fi
 
 # Install VimPlug
-if [[ ! -d ~/.config/nvim/autoload ]]; then
-  echo "Installing VimPlug"
-  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+if [[ ! -d $TARGET/.config/nvim/autoload ]]; then
+  curl -fLo "$TARGET/.config/nvim/autoload/plug.vim" --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 # Add NeoVim config
 if [[ ! -f $TARGET/.config/nvim/init.vim ]]; then
-  echo "Linking NeoVim config"
-  ln -s $DIR/nvim/init.vim $TARGET/.config/nvim/init.vim
+  ln -s "$DIR/nvim/init.vim $TARGET/.config/nvim/init.vim"
 
   # Install NeoVim plugins
-  echo "Installing NeoVim plugins..."
   nvim +PlugInstall +qa
 fi
 
-echo "Done"
+# Add emacs config
+mkdir -p "$TARGET/.emacs.d"
+if [ ! -f "$TARGET/.emacs.d/init.el" ]; then
+  ln -s "$DIR/emacs/init.el" "$TARGET/.emacs.d/init.el"
+fi
