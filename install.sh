@@ -49,6 +49,11 @@ if [[ ! -f $TARGET/.config/nvim/init.vim ]]; then
   nvim +PlugInstall +qa
 fi
 
+# Add NeoVim-at config
+if [[ ! -f $TARGET/.config/nvim/ginit.vim ]]; then
+  ln -s "$DIR/nvim/ginit.vim $TARGET/.config/nvim/ginit.vim"
+fi
+
 # Add emacs config
 mkdir -p "$TARGET/.emacs.d"
 if [ ! -f "$TARGET/.emacs.d/init.el" ]; then
