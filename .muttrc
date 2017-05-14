@@ -1,0 +1,42 @@
+# Server Variables
+set my_server = imap.fastmail.com:993
+set my_smtp_server = smtp.fastmail.com:465
+set my_user = iam@chrisdeluca.me
+set my_pass = "`pass show Email/fastmail_mutt`"
+
+# Account Information
+set from = $my_user
+set realname = "Chris DeLuca"
+
+# IMAP Information
+set record = "imaps://$my_server/INBOX/Sent Items"
+set postponed = "imaps://$my_server/INBOX.Drafts"
+
+# SMTP Information
+set smtp_url = "smtp://$my_user:$my_pass@$my_smtp_server"
+set smtp_pass = $my_pass
+set imap_user = $my_user
+set imap_pass = $my_pass
+
+# Connection Encryption
+set ssl_force_tls = yes
+set ssl_starttls = no
+
+# Default inbox
+set spoolfile = imaps://$my_server/INBOX
+
+# Default mailboxes location
+set folder = imaps://$my_server/INBOX
+
+# Mailboxes
+
+# Auto Complete Addresses
+
+# Cache
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+
+# Options
+
+# Keyboard
