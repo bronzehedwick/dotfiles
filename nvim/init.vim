@@ -44,6 +44,7 @@ Plug 'mustache/vim-mustache-handlebars', { 'for': [ 'mustache', 'handlebars', 'h
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
 Plug 'kchmck/vim-coffee-script', { 'for': [ 'coffee', 'eruby' ] }
+Plug 'galenframework/galen.vim', { 'for': 'gspec' }
 
 " Themes
 Plug 'mhartington/oceanic-next'
@@ -180,11 +181,11 @@ endfunction
 " Autodetect extra file types
 augroup filetypedetect
   " django templates (syntax is built in to vim) are very similar to twig.
-  autocmd BufNew,BufNewFile,BufRead *.twig setfiletype=htmldjango
+  autocmd BufNew,BufNewFile,BufRead *.twig set filetype=htmldjango
   " Support Drupal .module and .theme files.
-  autocmd BufNew,BufNewFile,BufRead *.theme,*.module setfiletype=php
+  autocmd BufNew,BufNewFile,BufRead *.theme,*.module set filetype=php
   " Support fountain files.
-  autocmd BufNew,BufNewFile,BufRead *.fountain :setfiletype fountain
+  autocmd BufNew,BufNewFile,BufRead *.fountain :set filetype=fountain
   " Hard wrap markdown files.
   autocmd FileType markdown :setlocal textwidth=80
 augroup END
