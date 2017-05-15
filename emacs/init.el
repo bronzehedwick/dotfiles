@@ -25,4 +25,18 @@
 ;; Require evil mode
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
+
+;; Require evil leader
+(add-to-list 'load-path "~/.emacs.d/evil-leader")
+(require 'evil-leader)
+
+;; Enable evil leader and evil mode
+(global-evil-leader-mode)
 (evil-mode 1)
+
+;; Remap leader to `,`
+(evil-leader/set-leader ",")
+
+;; Require evil org mode
+(add-to-list 'load-path "~/.emacs.d/evil-org-mode")
+(require 'evil-org)

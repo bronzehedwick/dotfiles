@@ -57,5 +57,16 @@ fi
 # Add emacs config
 mkdir -p "$TARGET/.emacs.d"
 if [ ! -f "$TARGET/.emacs.d/init.el" ]; then
+  # Get evil leader plugin
+  if [ ! -d "$TARGET/.emacs.d/evil-leader" ]; then
+    git clone https://github.com/cofi/evil-leader.git "$TARGET/.emacs.d/evil-leader"
+  fi
+
+  # Get evil org mode plugin
+  if [ ! -d "$TARGET/.emacs.d/evil-org-mode" ]; then
+    git clone git://github.com/edwtjo/evil-org-mode.git "$TARGET/.emacs.d/evil-org-mode"
+  fi
+
+  # Link the config file
   ln -s "$DIR/emacs/init.el" "$TARGET/.emacs.d/init.el"
 fi
