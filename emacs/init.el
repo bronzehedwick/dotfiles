@@ -22,6 +22,8 @@
 
 ;; Set evil mode options
 (setq evil-want-C-u-scroll t)
+(setq evil-want-C-i-jump nil)
+
 ;; Require evil mode
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
