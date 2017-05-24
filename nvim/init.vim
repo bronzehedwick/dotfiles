@@ -8,7 +8,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
-Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-unimpaired'
 Plug 'justinmk/vim-sneak'
 
@@ -24,8 +23,8 @@ Plug 'sjl/gundo.vim'
 " Programming
 Plug 'benekastah/neomake'
 if has('python3')
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'carlitux/deoplete-ternjs'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 endif
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars' ] }
@@ -119,6 +118,9 @@ set statusline+=%m " File modified flag
 set statusline+=%<\ %h " Buffer is `help` flag
 set statusline+=%<\ %r " Buffer is `readonly` flag
 set statusline+=%<\ %w " Buffer is `preview` flag
+
+" Disable mouse, to prevent accidental clicks
+set mouse-=a
 
 " Remap mapleader
 let mapleader = ','
