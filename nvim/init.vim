@@ -18,7 +18,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
 Plug 'mhinz/vim-grepper'
 Plug 'sjl/gundo.vim'
-" Plug 'tpope/vim-obsession'
 
 " Programming
 Plug 'benekastah/neomake'
@@ -38,17 +37,11 @@ Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/html5.vim', { 'for': [ 'html', 'htmldjango' ] }
 Plug 'JulesWang/css.vim', { 'for': [ 'css', 'scss', 'sass', 'less' ] }
 Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
-Plug 'dag/vim-fish', { 'for': 'fish' }
-Plug 'mustache/vim-mustache-handlebars', { 'for': [ 'mustache', 'handlebars', 'html.mustache', 'html.handlebars' ] }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
-Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
 Plug 'kchmck/vim-coffee-script', { 'for': [ 'coffee', 'eruby' ] }
-Plug 'galenframework/galen.vim', { 'for': 'gspec' }
 
 " Themes
 Plug 'mhartington/oceanic-next'
-Plug 'mhinz/vim-janah'
-Plug 'iCyMind/NeoSolarized'
 
 call plug#end()
 
