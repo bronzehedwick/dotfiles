@@ -20,25 +20,13 @@
   ;; If there is more than one, they won't work right.
   )
 
-;; Set evil mode options
-(setq evil-want-C-u-scroll t)
-(setq evil-want-C-i-jump nil)
+;; Set Org mode bindings
+(require 'org)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+(define-key global-map "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
 
-;; Require evil mode
-(add-to-list 'load-path "~/.emacs.d/evil")
-(require 'evil)
-
-;; Require evil leader
-(add-to-list 'load-path "~/.emacs.d/evil-leader")
-(require 'evil-leader)
-
-;; Enable evil leader and evil mode
-(global-evil-leader-mode)
-(evil-mode 1)
-
-;; Remap leader to `,`
-(evil-leader/set-leader ",")
-
-;; Require evil org mode
-(add-to-list 'load-path "~/.emacs.d/evil-org-mode")
-(require 'evil-org)
+;; Change color scheme
+(require 'color-theme-sanityinc-tomorrow)
