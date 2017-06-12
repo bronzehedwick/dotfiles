@@ -147,8 +147,7 @@ set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr
 nmap <silent><leader>w :set wrap!<CR>
 
 " Open directory at current file path.
-map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>t :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>e :edit <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
@@ -232,13 +231,10 @@ let g:neoterm_shell = 'bash'
 let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
 
+nnoremap <silent> <leader>to :call neoterm#open()<cr>
 nnoremap <silent> <leader>th :call neoterm#close()<cr>
 nnoremap <silent> <leader>tl :call neoterm#clear()<cr>
 nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
-
-nnoremap <silent> <f10> :TREPLSendFile<cr>
-nnoremap <silent> <f9> :TREPLSendLine<cr>
-vnoremap <silent> <f9> :TREPLSendSelection<cr>
 
 " EditorConfig
 " Disable editorconfig on fugitive and remote buffers.
