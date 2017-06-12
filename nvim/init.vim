@@ -186,6 +186,10 @@ autocmd BufNew,BufNewFile,BufRead *.fountain :set filetype=fountain
 " Hard wrap markdown files.
 autocmd FileType markdown :setlocal textwidth=80
 
+" Terminal
+autocmd BufEnter term://* startinsert
+autocmd BufLeave term://* stopinsert
+
 """""""""""""""""""""""""
 " Plugin configurations "
 """""""""""""""""""""""""
