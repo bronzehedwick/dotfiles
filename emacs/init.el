@@ -20,13 +20,26 @@
   ;; If there is more than one, they won't work right.
   )
 
-;; Set Org mode bindings
+;; Require Org mode
 (require 'org)
+
+;; Org mode bindings
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+;; Org mode templates
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "" "Tasks")
+	 "* TODO %?\n %i\n %a")
+	("n" "Note" entry (file+headline "" "Notes")
+	 "* %?\nentered on %U\n %i\n %^g")))
+
+;; Org mode encryption
+(setq epa-file-encrypt-to "bronzehedwick@gmail.com")
+
 ;; Change color scheme
 (require 'color-theme-sanityinc-tomorrow)
+(color-theme-sanityinc-tomorrow-eighties)
