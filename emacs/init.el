@@ -54,6 +54,9 @@
 ;; Defaults
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
+;; Agenda files
+(setq org-agenda-files (list "~/org"))
+
 ;; Todo Keywords
 (setq org-todo-keywords
       '((sequence "TODO(t)" "STARTED(s)" "WAITING(f)" "DELEGATED(g)" "APPT(a)" "|" "DONE(d)" "DEFFERED(f)" "CANCELED(c)")))
@@ -64,8 +67,8 @@
 ;; Capture Templates
 (setq org-capture-templates
       (quote (("t" "Todo" entry (file+headline (concat org-directory "/todos.org") "Tasks")
-               "* TODO %? %^g\n%^t\n%i")
+               "* TODO %?\n%U\n%i\n")
               ("n" "Note" entry (file+headline (concat org-directory "/notes.org") "Notes")
                "* %?\n%U\n%i\n")
               ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
-               "* %?\nEntered on %U\n%i\n"))))
+               "Entered on %U\n%i\n%?\n"))))
