@@ -1,4 +1,7 @@
+;;
 ;; Packages
+;;
+
 (require 'package)
 
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -33,11 +36,35 @@
  ;; If there is more than one, they won't work right.
  )
 
+;;
+;; General configurations
+;;
+
 ;; Change color scheme
 (require 'color-theme-sanityinc-tomorrow)
 
 ;; Reload buffer
 (global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil)))
+
+;; Use spaces for all indentation
+(setq-default indent-tabs-mode nil)
+
+;; Save backup files to a common directory, instead of next to the original
+(setq make-backup-files t)
+(setq version-control t)
+(setq backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
+
+;; Set fill column. Not exactly sure what this is.
+(setq-default fill-column 72)
+
+;; Auto wrap to new lines when reaching column limit
+(setq auto-fill-mode 1)
+
+;; New buffers should default to text, instead of fundamental
+(setq default-major-mode 'text-mode)
+
+;; Highlight the current line
+(global-hl-line-mode 1)
 
 ;;
 ;; Org Mode
@@ -62,13 +89,30 @@
       '((sequence "TODO(t)" "STARTED(s)" "WAITING(f)" "DELEGATED(g)" "APPT(a)" "|" "DONE(d)" "DEFFERED(f)" "CANCELED(c)")))
 
 ;; Tags
-(setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("@art" . ?a)))
+(setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("@lunch" . ?l) ("errand" . ?e) ("art" . ?a)))
 
 ;; Capture Templates
 (setq org-capture-templates
       (quote (("t" "Todo" entry (file+headline (concat org-directory "/todos.org") "Tasks")
-               "* TODO %?\n%U\n%i\n")
+               "* TODO %?\nEntered on %U\n%i\n")
               ("n" "Note" entry (file+headline (concat org-directory "/notes.org") "Notes")
-               "* %?\n%U\n%i\n")
+               "* %?\nEntered on %U\n%i\n")
               ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
-               "Entered on %U\n%i\n%?\n"))))
+               "* Morning page\nEntered on %U\n%i\n%?\n"))))
+
+;;
+;; Olivetti (writing)
+;;
+
+(require 'olivetti)
+(use-package olivetti
+  :config
+  (setq-default
+   olivetti-hide-mode-line t
+   olivetti-body-width 66))
+
+;;
+;; Fountain (screenwriting)
+;;
+
+(require 'fountain-mode)
