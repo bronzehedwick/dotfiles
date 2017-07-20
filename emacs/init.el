@@ -28,7 +28,9 @@
  '(custom-safe-themes
    (quote
     ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
- '(package-selected-packages (quote (color-theme-sanityinc-tomorrow org))))
+ '(package-selected-packages
+   (quote
+    (fountain-mode olivetti color-theme-sanityinc-tomorrow org))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -99,20 +101,3 @@
                "* %?\nEntered on %U\n%i\n")
               ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
                "* Morning page\nEntered on %U\n%i\n%?\n"))))
-
-;;
-;; Olivetti (writing)
-;;
-
-(require 'olivetti)
-(use-package olivetti
-  :config
-  (setq-default
-   olivetti-hide-mode-line t
-   olivetti-body-width 66))
-
-;;
-;; Fountain (screenwriting)
-;;
-
-(require 'fountain-mode)
