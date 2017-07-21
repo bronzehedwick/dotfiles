@@ -10,6 +10,7 @@ Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-unimpaired'
 Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-rsi'
 
 " Working with the file system
 Plug 'cloudhead/neovim-fuzzy' " needs fzy and rg or ag installed
@@ -266,4 +267,5 @@ nnoremap <leader>u :GundoToggle<CR>
 " Colorscheme "
 """""""""""""""
 
-colorscheme OceanicNext
+" colorscheme OceanicNext
+colorscheme moonfly
