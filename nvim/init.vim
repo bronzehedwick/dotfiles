@@ -20,7 +20,8 @@ Plug 'mhinz/vim-grepper'
 Plug 'sjl/gundo.vim'
 
 " Programming
-Plug 'benekastah/neomake'
+" Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
 if has('python3')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
@@ -42,6 +43,7 @@ Plug 'kchmck/vim-coffee-script', { 'for': [ 'coffee', 'eruby' ] }
 
 " Themes
 Plug 'mhartington/oceanic-next'
+Plug 'bluz71/vim-moonfly-colors'
 
 call plug#end()
 
@@ -206,25 +208,6 @@ nnoremap <silent> <leader>gp :Git push<CR>
 nnoremap <silent> <leader>gr :Gread<CR>
 nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
-
-" Neomake
-let g:neomake_open_list=0
-
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_json_enabled_makers = ['jsonlint']
-
-let g:neomake_twig_twig_lint_makers = {
-  \ 'exe': 'twig-lint.phar',
-  \ 'args': ['lint'],
-  \ }
-let g:neomake_twig_twig_lint_makers = ['htmldjango']
-
-let g:neomake_grunt_maker = {
-  \ 'exe': 'grunt',
-  \ 'args': ['build'],
-  \ }
-
-autocmd! BufWritePost * Neomake
 
 " Neoterm
 let g:neoterm_shell = 'bash'
