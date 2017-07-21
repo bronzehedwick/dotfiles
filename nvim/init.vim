@@ -11,6 +11,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-unimpaired'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-rsi'
+Plug 'justinmk/vim-ipmotion'
 
 " Working with the file system
 Plug 'cloudhead/neovim-fuzzy' " needs fzy and rg or ag installed
@@ -33,6 +34,7 @@ Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
 
 " Syntaxes
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
