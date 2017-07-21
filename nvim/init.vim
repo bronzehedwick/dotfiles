@@ -35,6 +35,7 @@ Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
+Plug 'shumphrey/fugitive-gitlab.vim'
 
 " Syntaxes
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
@@ -211,6 +212,7 @@ nnoremap <silent> <leader>gp :Git push<CR>
 nnoremap <silent> <leader>gr :Gread<CR>
 nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
+let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 
 " Neoterm
 let g:neoterm_shell = 'bash'
