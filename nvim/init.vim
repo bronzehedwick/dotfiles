@@ -36,6 +36,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'tommcdo/vim-fubitive'
 
 " Syntaxes
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
