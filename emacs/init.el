@@ -28,9 +28,7 @@
  '(custom-safe-themes
    (quote
     ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
- '(package-selected-packages
-   (quote
-    (fountain-mode olivetti color-theme-sanityinc-tomorrow org))))
+ '(package-selected-packages (quote (color-theme-sanityinc-tomorrow org))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -100,12 +98,9 @@
               ("n" "Note" entry (file+headline (concat org-directory "/notes.org") "Notes")
                "* %?\nEntered on %U\n%i\n")
               ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
+               "* Entry at %U\n%i\n%?\n")
+              ("m" "Morning Page" entry (file+datetree (concat org-directory "/journal.org"))
                "* Morning page\nEntered on %U\n%i\n%?\n"))))
 
-(eval-after-load "org"
-  '(require 'ox-md nil t))
-
-;; Custom Agenda Commands
- (setq org-agenda-custom-commands
-       `(;; match those tagged with :inbox:, are not scheduled, are not DONE.
-         ("ii" "[i]nbox tagged unscheduled tasks" tags "+inbox-SCHEDULED={.+}/!+TODO|+STARTED|+WAITING")))
+;; Mobile Org
+(setq org-mobile-directory "~/org")
