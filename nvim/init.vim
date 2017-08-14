@@ -224,6 +224,7 @@ let g:neoterm_automap_keys = ',tt'
 let g:neoterm_autoscroll = 1
 
 nnoremap <silent> <leader>to :Ttoggle<cr>
+nnoremap <silent> <leader>th :call neoterm#close()<cr>
 nnoremap <silent> <leader>tl :call neoterm#clear()<cr>
 nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
 
