@@ -1,3 +1,4 @@
+"""""""""""
 " Plugins "
 """""""""""
 
@@ -7,10 +8,11 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
-Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-rsi'
+Plug 'jiangmiao/auto-pairs'
+Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
 
 " Working with the file system
@@ -219,9 +221,9 @@ let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 let g:neoterm_shell = 'bash'
 let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
+let g:neoterm_autoscroll = 1
 
-nnoremap <silent> <leader>to :call neoterm#open()<cr>
-nnoremap <silent> <leader>th :call neoterm#close()<cr>
+nnoremap <silent> <leader>to :Ttoggle<cr>
 nnoremap <silent> <leader>tl :call neoterm#clear()<cr>
 nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
 
