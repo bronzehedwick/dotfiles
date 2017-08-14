@@ -80,8 +80,9 @@ set background=dark
 " Neovim's standard clipboard register = the system register
 set clipboard+=unnamedplus
 
-" Spell checking
-set spell
+" No spell checking
+" TODO: Turn on spell check for certain file types
+set nospell
 
 " Prevents inserting two spaces after punctuation on a join (J)
 set nojoinspaces
