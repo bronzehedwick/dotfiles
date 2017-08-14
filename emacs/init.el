@@ -88,7 +88,7 @@
 
 ;; Todo Keywords
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "STARTED(s)" "WAITING(f)" "DELEGATED(g)" "APPT(a)" "|" "DONE(d)" "DEFFERED(f)" "CANCELED(c)")))
+      '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "DELEGATED(g)" "APPT(a)" "|" "DONE(d)" "DEFFERED(f)" "CANCELED(c)")))
 
 ;; Tags
 (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("@lunch" . ?l) ("errand" . ?e) ("art" . ?a)))
@@ -101,3 +101,11 @@
                "* %?\nEntered on %U\n%i\n")
               ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
                "* Morning page\nEntered on %U\n%i\n%?\n"))))
+
+(eval-after-load "org"
+  '(require 'ox-md nil t))
+
+;; Custom Agenda Commands
+ (setq org-agenda-custom-commands
+       `(;; match those tagged with :inbox:, are not scheduled, are not DONE.
+         ("ii" "[i]nbox tagged unscheduled tasks" tags "+inbox-SCHEDULED={.+}/!+TODO|+STARTED|+WAITING")))
