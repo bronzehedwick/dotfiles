@@ -6,7 +6,6 @@
 OS="$(uname)"
 TARGET="$HOME"
 DIR="$(dirname "$0")"
-FILES="$DIR/.*"
 
 find "$DIR" -type f -name "\.*" | while read -r file;
 do
@@ -62,7 +61,15 @@ if [ ! -f "$TARGET/.emacs.d/init.el" ]; then
 fi
 
 # Link config for Aquamacs
-if [ -d "~/Library/Preferences/Aquamacs Emacs" ]; then
+if [ -d "$HOME/Library/Preferences/Aquamacs Emacs" ]; then
   mv ~/Library/Preferences/Aquamacs Emacs/Preferences.el ~/Library/Preferences/Aquamacs Emacs/Preferences.el.bak
   ln -s "$DIR/emacs/init.el" ~/Library/Preferences/Aquamacs Emacs/Preferences.el
+fi
+
+# Link alacritty config
+if [ -f "$TARGET/.config/alacritty/" ]; then
+  if [ -f "$TARGET/.config/alacritty/alacritty.yml" ]; then
+    mv "$TARGET/.config/alacritty/alacritty.yml" "$TARGET/.config/alacritty/alacritty.yml.bak"
+  fi
+  ln -s "$DIR/alacritty/alacritty.yml" "$TARGET/.config/alacritty/"
 fi
