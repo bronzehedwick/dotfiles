@@ -181,13 +181,14 @@ endfunction
 " Autodetect extra file types
 
 " django templates (syntax is built in to vim) are very similar to twig.
-autocmd BufNew,BufNewFile,BufRead *.twig set filetype=htmldjango
+autocmd BufRead,BufNewFile *.twig setlocal filetype=htmldjango
 " Support Drupal .module and .theme files.
-autocmd BufNew,BufNewFile,BufRead *.theme,*.module set filetype=php
+autocmd BufRead,BufNewFile *.theme setlocal filetype=php
+autocmd BufRead,BufNewFile *.module setlocal filetype=php
 " Support fountain files.
-autocmd BufNew,BufNewFile,BufRead *.fountain :set filetype=fountain
+autocmd BufRead,BufNewFile *.fountain setlocal filetype=fountain
 " Hard wrap markdown files.
-autocmd FileType markdown :setlocal textwidth=80
+autocmd FileType markdown setlocal textwidth=80
 
 " Terminal
 autocmd BufEnter term://* startinsert
