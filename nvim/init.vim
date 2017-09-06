@@ -22,6 +22,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
 Plug 'mhinz/vim-grepper'
 Plug 'sjl/gundo.vim'
+Plug 'jamessan/vim-gnupg'
 
 " Programming
 Plug 'w0rp/ale'
