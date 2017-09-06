@@ -24,12 +24,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'sjl/gundo.vim'
 
 " Programming
-" Plug 'benekastah/neomake'
 Plug 'w0rp/ale'
-if has('python3')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-endif
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars' ] }
 
@@ -50,7 +45,6 @@ Plug 'kchmck/vim-coffee-script', { 'for': [ 'coffee', 'eruby' ] }
 
 " Themes
 Plug 'mhartington/oceanic-next'
-Plug 'bluz71/vim-moonfly-colors'
 
 call plug#end()
 
@@ -204,7 +198,7 @@ autocmd BufLeave term://* stopinsert
 """""""""""""""""""""""""
 
 " Fuzzy
-nnoremap <C-p> :FuzzyOpen<CR>
+nnoremap <leader>/ :FuzzyOpen<CR>
 
 " Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
@@ -243,29 +237,6 @@ nnoremap <silent> <leader>tp :call ToggleNeotermPosition()<cr>
 " Disable editorconfig on fugitive and remote buffers.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
-" Deoplete / Tern
-if has('python3')
-  let g:deoplete#enable_at_startup = 1
-
-  if !exists('g:deoplete#omni#input_patterns')
-    let g:deoplete#omni#input_patterns = {}
-  endif
-  " let g:deoplete#disable_auto_complete = 1
-  autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-  let g:tern_request_timeout = 1
-  let g:tern_show_signature_in_pum = 1
-endif
-
-augroup omnifuncs
-  autocmd!
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-augroup end
-
 " Dirvish
 autocmd FileType dirvish call fugitive#detect(@%)
 
@@ -292,5 +263,4 @@ nnoremap <leader>u :GundoToggle<CR>
 " Colorscheme "
 """""""""""""""
 
-" colorscheme OceanicNext
-colorscheme moonfly
+colorscheme OceanicNext
