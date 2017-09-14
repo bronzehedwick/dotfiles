@@ -14,6 +14,8 @@ Plug 'tpope/vim-rsi'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
 
 " Working with the file system
 Plug 'cloudhead/neovim-fuzzy' " needs fzy and rg or ag installed
@@ -260,6 +262,9 @@ let g:grepper = {
 
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
+
+" Notes
+let g:notes_directories = ['~/ownCloud/notes']
 
 """""""""""""""
 " Colorscheme "

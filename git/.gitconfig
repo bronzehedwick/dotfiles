@@ -1,10 +1,10 @@
 # vim: set noexpandtab
 [user]
 	name = Chris DeLuca
-	email = bronzehedwick@gmail.com
+	email = iam@chrisdeluca.me
 	signingkey = 461C015E032EF9CB
 [core]
-	editor = nvim
+	editor = nvr
 [alias]
 	co = checkout
 	cm = commit

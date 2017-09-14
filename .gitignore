@@ -1,4 +1,2 @@
 *.log
-.weechat/logs
-.mutt/cache
 *.cache
