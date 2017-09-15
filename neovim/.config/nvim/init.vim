@@ -16,6 +16,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
+Plug 'freitass/todo.txt-vim'
 
 " Working with the file system
 Plug 'cloudhead/neovim-fuzzy' " needs fzy and rg or ag installed
@@ -25,6 +26,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'mhinz/vim-grepper'
 Plug 'sjl/gundo.vim'
 Plug 'jamessan/vim-gnupg'
+Plug 'vim-scripts/utl.vim'
 
 " Programming
 Plug 'w0rp/ale'
