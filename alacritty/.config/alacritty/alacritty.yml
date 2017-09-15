@@ -183,6 +183,7 @@ key_bindings:
   - { key: B,        mods: Alt,     chars: "\x1bb"                       }
   - { key: F,        mods: Alt,     chars: "\x1bf"                       }
   - { key: A,        mods: Alt,     chars: "\x1ba"                       }
+  - { key: D,        mods: Alt,     chars: "\x1bd"                       }
 
 # Mouse bindings
 #
