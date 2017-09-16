@@ -11,5 +11,5 @@ fi
 find "$(dirname "$0")" -type d -depth 1 -name "[^.]*" | while read -r program;
 do
   # Stow (install/link) all programs.
-  stow "$(basename $program)"
+  stow "$(basename "$program")"
 done
