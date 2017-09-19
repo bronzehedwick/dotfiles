@@ -113,6 +113,9 @@ set inccommand=nosplit
 " Don't redraw while typing macros
 set lazyredraw
 
+" Disable netrw, since I'm using Dirvish instead.
+let g:loaded_netrwPlugin = 1
+
 " Status line
 set statusline=%{fugitive#statusline()} " Git branch
 set statusline+=%<\ %t " Tail of file (just the name.ext)
