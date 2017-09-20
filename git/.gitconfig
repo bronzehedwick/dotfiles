@@ -1,7 +1,7 @@
 # vim: set noexpandtab
 [user]
 	name = Chris DeLuca
-	email = iam@chrisdeluca.me
+	email = bronzehedwick@gmail.com
 	signingkey = 461C015E032EF9CB
 [core]
 	editor = nvr --remote-wait-silent
