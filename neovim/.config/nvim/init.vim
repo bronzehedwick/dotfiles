@@ -14,7 +14,6 @@ Plug 'tpope/vim-rsi'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
-Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'freitass/todo.txt-vim'
 
@@ -27,6 +26,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'sjl/gundo.vim'
 Plug 'jamessan/vim-gnupg'
 Plug 'vim-scripts/utl.vim'
+Plug 'fmoralesc/vim-pad'
 
 " Programming
 Plug 'w0rp/ale'
@@ -268,8 +268,8 @@ let g:grepper = {
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 
-" Notes
-let g:notes_directories = ['~/ownCloud/notes']
+" Pad (Notes)
+let g:pad#dir = '~/ownCloud/notepad'
 
 """""""""""""""
 " Colorscheme "
