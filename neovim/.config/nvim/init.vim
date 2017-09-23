@@ -16,6 +16,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
 Plug 'xolox/vim-misc'
 Plug 'freitass/todo.txt-vim'
+Plug 'mikewest/vimroom'
 
 " Working with the file system
 Plug 'cloudhead/neovim-fuzzy' " needs fzy and rg or ag installed
@@ -267,6 +268,10 @@ let g:grepper = {
 
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
+
+" Vimroom
+" disable vertical padding.
+let g:vimroom_sidebar_height = 0
 
 " Pad (Notes)
 let g:pad#dir = '~/ownCloud/notepad'
