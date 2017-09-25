@@ -96,8 +96,9 @@ set splitbelow
 " Show matching brackets/parenthesis
 set showmatch
 
-" Case insensitive search
-set ignorecase
+" Case insensitive search when using any capital letters
+set noignorecase
+set smartcase
 
 " Highlight invisible whitespace
 set list
