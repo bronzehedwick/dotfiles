@@ -29,6 +29,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+alias t="todo.sh"
+
 #################
 # Vim/Vi/Neovim #
 #################

@@ -52,6 +52,8 @@ export PAGER=less
 # Personal prompt
 export PS1="\W $ "
 
+PATH=$PATH:/usr/local/bin
+
 if [ "$(uname)" == "Darwin" ]; then
   export PATH="/usr/local/sbin:$PATH"
 fi
