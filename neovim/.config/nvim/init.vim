@@ -30,7 +30,7 @@ Plug 'vim-scripts/utl.vim'
 Plug 'fmoralesc/vim-pad'
 
 " Programming
-Plug 'w0rp/ale'
+Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars' ] }
 
@@ -243,6 +243,10 @@ nnoremap <silent> <leader>th :call neoterm#close()<cr>
 nnoremap <silent> <leader>tl :call neoterm#clear()<cr>
 nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
 nnoremap <silent> <leader>tp :call ToggleNeotermPosition()<cr>
+
+" Neomake
+" call neomake on save and 750ms after text is inserted.
+call neomake#configure#automake('nw', 750)
 
 " EditorConfig
 " Disable editorconfig on fugitive and remote buffers.
