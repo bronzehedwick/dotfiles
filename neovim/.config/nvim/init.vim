@@ -149,6 +149,12 @@ command! -bang Q q<bang>
 command! -bang QA qa<bang>
 command! -bang Qa qa<bang>
 
+" Autocomplete
+au FileType php setl ofu=phpcomplete#CompletePHP
+au FileType html,xhtml,htmldjango setl ofu=htmlcomplete#CompleteTags
+au FileType css setl ofu=csscomplete#CompleteCSS
+au FileType javascript setl ofu=javascriptcomplete#CompleteJS
+
 " True color!
 if has('termguicolors')
   set termguicolors
