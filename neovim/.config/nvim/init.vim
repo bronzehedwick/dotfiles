@@ -177,6 +177,9 @@ nmap <C-l> <C-w>l
 nmap <C-j> <C-w>j
 nmap <C-h> <C-w>h
 
+" Jet-pack movement between buffers…
+nnoremap <leader>l :ls<CR>:b<space>
+
 """""""""""""
 " Functions "
 """""""""""""
