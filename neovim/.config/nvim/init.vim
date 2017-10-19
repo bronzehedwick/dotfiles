@@ -270,15 +270,28 @@ nnoremap <leader>* :Grepper -cword -noprompt<cr>
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
 
-" let g:grepper.tools += ['rgt']
-" let g:grepper.rgt = {
-"   \ 'grepprg': 'rg -H --no-heading --vimgrep --type-add "%:e:*.%:e" -t%:e',
-"   \ 'grepformat': '%f:%l:%c:%m',
-"   \ 'escape': '\^$.*+?()[]{}|',
-"   \ }
 let g:grepper = {
-  \ 'tools': ['rg', 'git']
-  \ }
+  \ 'tools': ['rg', 'rgsass', 'rgtwig', 'rgjs', 'rgphp'],
+  \ 'rgsass': {
+  \   'grepprg': 'rg -H --no-heading --vimgrep -tsass',
+  \   'grepformat': '%f:%l:%c:%m',
+  \   'escape': '\^$.*+?()[]{}|',
+  \ },
+  \ 'rgtwig': {
+  \   'grepprg': 'rg -H --no-heading --vimgrep -ttwig',
+  \   'grepformat': '%f:%l:%c:%m',
+  \   'escape': '\^$.*+?()[]{}|',
+  \ },
+  \ 'rgjs': {
+  \   'grepprg': 'rg -H --no-heading --vimgrep -tjs',
+  \   'grepformat': '%f:%l:%c:%m',
+  \   'escape': '\^$.*+?()[]{}|',
+  \ },
+  \ 'rgphp': {
+  \   'grepprg': 'rg -H --no-heading --vimgrep -tphp -tdrupal',
+  \   'grepformat': '%f:%l:%c:%m',
+  \   'escape': '\^$.*+?()[]{}|',
+  \ }}
 
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
