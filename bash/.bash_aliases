@@ -27,6 +27,7 @@ alias less='less -R'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias -- -="cd -"
 
 alias t="todo.sh"
 
