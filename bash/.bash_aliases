@@ -1,5 +1,4 @@
 # ~/.bash_aliases: executed by bash(1) for non-login shells.
-# for examples
 
 ######
 # LS #
@@ -60,6 +59,10 @@ alias gc="git commit"
 alias gd="git diff"
 alias ga="git add"
 alias grt='cd $(git rev-parse --show-toplevel || echo '.")"
+alias gpu='gpo'
+
+# Removes .orig files after git merge
+alias mergeclean='find . -name "*.orig" -delete'
 
 #########
 # Other #
@@ -70,8 +73,4 @@ alias starwars="telnet towel.blinkenlights.nl"
 
 # Update and prune homebrew packages
 alias bubu='brew update && brew upgrade && brew cleanup'
-
-# Use homebrew emacs if available
-if [ -f /usr/local/bin/emacs ]; then
-  alias emacs="/usr/local/bin/emacs"
-fi
+alias brews='brew list'

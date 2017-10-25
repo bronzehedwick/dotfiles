@@ -1,40 +1,42 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+########
+# PATH #
+########
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
+PATH="/usr/local/bin:$PATH"
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+if [ "$(uname)" == "Darwin" ]; then
+  export PATH="/usr/local/sbin:$PATH"
+fi
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+# Add rust to path
+export PATH="$HOME/.cargo/bin:$PATH"
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+####################
+# Load other files #
+####################
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# Use colored ls output.
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
+# Load profile.
+if [ -f "$HOME/.bash_profile" ]; then
+  . "$HOME/.bash_profile"
+fi
 
 # Load alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f "$HOME/.bash_aliases" ]; then
+  . "$HOME/.bash_aliases"
+fi
+
+# Load sensible configs.
+if [ -f "$HOME/.sensible.bash" ]; then
+  . "$HOME/.sensible.bash"
 fi
 
 # enable bash completion
 if [ "$(uname)" == "Darwin" ]; then
   # enable bash completion via homebrew.
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+  if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+    . "$(brew --prefix)/etc/bash_completion"
   fi
 else
   # enable programmable completion features (you don't need to enable
@@ -45,24 +47,20 @@ else
   fi
 fi
 
+###########
+# Exports #
+###########
+
+# Use colored ls output.
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
 # Set Vim to the EDITOR environment variable
 export EDITOR=nvim
 export PAGER=less
 
 # Personal prompt
 export PS1="\W $ "
-
-PATH=$PATH:/usr/local/bin
-
-if [ "$(uname)" == "Darwin" ]; then
-  export PATH="/usr/local/sbin:$PATH"
-fi
-
-# Add rust to path
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# Set go path
-export GOPATH="/usr/local/go"
 
 # GPG agent
 if [ -f "${HOME}/.gpg-agent-info" ]; then
@@ -71,6 +69,9 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
   export SSH_AUTH_SOCK
 fi
 export GPG_TTY=$(tty)
+
+# Set locale for terminals that don't set a default.
+export LANG=en_US.UTF-8
 
 #############
 # Functions #
@@ -89,16 +90,6 @@ man() {
     man "$@"
 }
 
-# Bitcoin
-function btcer {
-  if [ -z "$1" ]; then
-    AMOUNT=1
-  else
-    AMOUNT="$1"
-  fi
-  wget -qO- "https://www.google.com/finance/converter?a=$AMOUNT&from=BTC&to=USD" |  sed "/res/!d;s/<[^>]*>//g"
-}
-
 # Facts for today
 function today {
   calendar -A 0 -f /usr/share/calendar/calendar.birthday
@@ -108,7 +99,22 @@ function today {
   calendar -A 0 -f /usr/share/calendar/calendar.lotr
 }
 
-# Bashmarks
-if [ -f "${HOME}/.local/bin/bashmarks.sh" ]; then
-  source "${HOME}/.local/bin/bashmarks.sh"
-fi
+# Pushes the current git branch to origin
+function gpo {
+  git push origin "$(git rev-parse --abbrev-ref HEAD)"
+}
+
+# Changes to the git root
+function grt {
+  cd "$(git rev-parse --show-toplevel || echo '.')" || exit
+}
+
+# Get the last workday
+function yesterworkday {
+  if [[ "1" == "$(date +%u)" ]]
+  then
+    echo "last friday"
+  else
+    echo "yesterday"
+  fi
+}
