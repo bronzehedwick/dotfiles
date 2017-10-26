@@ -118,16 +118,13 @@ set lazyredraw
 " Disable netrw, since I'm using Dirvish instead.
 let g:loaded_netrwPlugin = 1
 
-if exists("g:gui_oni")
-else
-  " Status line
-  set statusline=%{fugitive#statusline()} " Git branch
-  set statusline+=%<\ %t " Tail of file (just the name.ext)
-  set statusline+=%m " File modified flag
-  set statusline+=%<\ %h " Buffer is `help` flag
-  set statusline+=%<\ %r " Buffer is `readonly` flag
-  set statusline+=%<\ %w " Buffer is `preview` flag
-endif
+" Status line
+set statusline=%{fugitive#statusline()} " Git branch
+set statusline+=%<\ %t " Tail of file (just the name.ext)
+set statusline+=%m " File modified flag
+set statusline+=%<\ %h " Buffer is `help` flag
+set statusline+=%<\ %r " Buffer is `readonly` flag
+set statusline+=%<\ %w " Buffer is `preview` flag
 
 " Disable mouse, to prevent accidental clicks
 set mouse-=a
@@ -189,7 +186,7 @@ cnoremap <c-p> <up>
 
 " Quickly move current line
 noremap [e :<c-u>execute 'move -1-'. v:count1<cr>
-noremap e] :<c-u>execute 'move +'. v:count1<cr>
+noremap ]e :<c-u>execute 'move +'. v:count1<cr>
 
 " Quickly add empty lines
 noremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
