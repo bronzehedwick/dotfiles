@@ -18,8 +18,8 @@ Plug 'freitass/todo.txt-vim'
 Plug 'mikewest/vimroom'
 
 " Working with the file system
-Plug 'cloudhead/neovim-fuzzy' " needs fzy and rg or ag installed
 Plug 'kassio/neoterm'
+Plug 'cloudhead/neovim-fuzzy' " needs fzy and rg or ag installed
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
 Plug 'mhinz/vim-grepper'
@@ -104,7 +104,7 @@ set smartcase
 set list
 
 " Allow switching buffers without saving
-set hidden
+" set hidden
 
 " Set hard wrapping guide to 80 columns
 set colorcolumn=80
@@ -200,9 +200,9 @@ if has('nvim')
   let $VISUAL = 'nvr -cc split --remote-wait'
 endif
 
-"""""""""""""
+""""""""""""""
 " Functions "
-"""""""""""""
+""""""""""""""
 
 " Display date and time
 map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
@@ -213,9 +213,9 @@ function! Timestamp()
   :r !date "+\%Y-\%m-\%dT\%T\%z"
 endfunction
 
-""""""""""""""""
+"""""""""""""""""
 " Autocommands "
-""""""""""""""""
+"""""""""""""""""
 
 " Autodetect extra file types
 
@@ -233,9 +233,9 @@ autocmd FileType markdown setlocal textwidth=80
 autocmd BufEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 
-"""""""""""""""""""""""""
-" Plugin configurations "
-"""""""""""""""""""""""""
+""""""""""""""""""""""""""
+" Plugin configurations  "
+""""""""""""""""""""""""""
 
 " Fuzzy
 nnoremap <leader>/ :FuzzyOpen<CR>
@@ -326,8 +326,8 @@ let g:pad#dir = '~/ownCloud/notepad'
 " Utl (linking)
 let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
 
-"""""""""""""""
-" Colorscheme "
-"""""""""""""""
+""""""""""""""""
+" Colorscheme  "
+""""""""""""""""
 
 colorscheme OceanicNext
