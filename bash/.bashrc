@@ -118,3 +118,11 @@ function yesterworkday {
     echo "yesterday"
   fi
 }
+
+#############
+# Bookmarks #
+#############
+export sites="$HOME/Sites"
+export downloads="$HOME/Downloads"
+export owncloud="$HOME/ownCloud"
+export chrisdeluca="$HOME/Sites/chrisdeluca.me"
