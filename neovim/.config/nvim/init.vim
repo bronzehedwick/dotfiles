@@ -257,6 +257,7 @@ let g:neoterm_shell = 'bash'
 let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
 let g:neoterm_autoscroll = 1
+let g:neoterm_size = winheight(0)/3
 
 function! ToggleNeotermPosition()
   if g:neoterm_position == 'horizontal'
