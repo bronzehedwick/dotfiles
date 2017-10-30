@@ -251,18 +251,20 @@ nnoremap <silent> <leader>gr :Gread<CR>
 nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
 let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
+let g:neoterm_size = winheight(0)/3
 
 " Neoterm
 let g:neoterm_shell = 'bash'
 let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
 let g:neoterm_autoscroll = 1
-let g:neoterm_size = winheight(0)/3
 
 function! ToggleNeotermPosition()
   if g:neoterm_position == 'horizontal'
+    let g:neoterm_size = winwidth(0)/2
     :Tpos vertical
   else
+    let g:neoterm_size = winheight(0)/3
     :Tpos horizontal
   endif
 endfunction
