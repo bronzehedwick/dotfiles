@@ -115,6 +115,9 @@ set inccommand=nosplit
 " Don't redraw while typing macros
 set lazyredraw
 
+" Update swap file and gitgutter much faster.
+set updatetime=250
+
 " Disable netrw, since I'm using Dirvish instead.
 let g:loaded_netrwPlugin = 1
 
