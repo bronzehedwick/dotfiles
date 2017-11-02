@@ -264,10 +264,8 @@ let g:neoterm_autoscroll = 1
 
 function! ToggleNeotermPosition()
   if g:neoterm_position == 'horizontal'
-    let g:neoterm_size = winwidth(0)/2
     :Tpos vertical
   else
-    let g:neoterm_size = winheight(0)/3
     :Tpos horizontal
   endif
 endfunction
