@@ -282,7 +282,6 @@ nnoremap <silent> <leader>tp :call ToggleNeotermPosition()<cr>
 " Neomake
 " call neomake on save.
 call neomake#configure#automake('w')
-nnoremap <C-m> :Neomake<cr>
 
 " EditorConfig
 " Disable editorconfig on fugitive and remote buffers.
