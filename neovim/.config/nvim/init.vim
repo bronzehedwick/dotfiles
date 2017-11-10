@@ -33,6 +33,7 @@ Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars' ] }
 Plug 'janko-m/vim-test'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -164,7 +165,9 @@ if has('termguicolors')
 endif
 
 " Cursor is line in insert mode, block in normal mode
-set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+  \,sm:block-blinkwait175-blinkoff150-blinkon175
 
 " Toggle set wrap
 nmap <silent><leader>w :set wrap!<CR>
@@ -329,6 +332,9 @@ let g:pad#dir = '~/ownCloud/notepad'
 
 " Utl (linking)
 let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
+
+" Deoplete
+let g:deoplete#enable_at_startup=1
 
 """"""""""""""""
 " Colorscheme  "
