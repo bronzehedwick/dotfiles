@@ -34,6 +34,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars' ] }
 Plug 'janko-m/vim-test'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -335,6 +336,17 @@ let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
 
 " Deoplete
 let g:deoplete#enable_at_startup=1
+
+" LanguageServer
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['/usr/local/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ }
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 """"""""""""""""
 " Colorscheme  "
