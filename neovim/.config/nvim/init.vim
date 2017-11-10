@@ -104,7 +104,7 @@ set smartcase
 set list
 
 " Allow switching buffers without saving
-" set hidden
+set hidden
 
 " Set hard wrapping guide to 80 columns
 set colorcolumn=80

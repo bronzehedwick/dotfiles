@@ -126,4 +126,4 @@ export sites="$HOME/Sites"
 export downloads="$HOME/Downloads"
 export owncloud="$HOME/ownCloud"
 export chrisdeluca="$HOME/Sites/chrisdeluca.me"
-export gambini="$HOME/Sites/gambini"
+if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
