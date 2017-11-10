@@ -119,11 +119,4 @@ function yesterworkday {
   fi
 }
 
-#############
-# Bookmarks #
-#############
-export sites="$HOME/Sites"
-export downloads="$HOME/Downloads"
-export owncloud="$HOME/ownCloud"
-export chrisdeluca="$HOME/Sites/chrisdeluca.me"
 if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi

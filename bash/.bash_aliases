@@ -75,3 +75,12 @@ alias starwars="telnet towel.blinkenlights.nl"
 # Update and prune homebrew packages
 alias bubu='brew update && brew upgrade && brew cleanup'
 alias brews='brew list'
+
+#############
+# Bookmarks #
+#############
+export sites="$HOME/Sites"
+export downloads="$HOME/Downloads"
+export owncloud="$HOME/ownCloud"
+export chrisdeluca="$HOME/Sites/chrisdeluca.me"
+export gambini="$HOME/Sites/gambini"
