@@ -34,7 +34,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars' ] }
 Plug 'janko-m/vim-test'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -197,11 +196,6 @@ nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 " Quickly edit macros
 nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
-" Configure neovim remote
-if has('nvim')
-  let $VISUAL = 'nvr -cc split --remote-wait'
-endif
-
 """"""""""""""
 " Functions "
 """"""""""""""
@@ -331,13 +325,6 @@ let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
 
 " Deoplete
 let g:deoplete#enable_at_startup=1
-
-" LanguageServer
-let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['/usr/local/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
-    \ }
-" Automatically start language servers.
-let g:LanguageClient_autoStart = 1
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
