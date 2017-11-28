@@ -247,7 +247,6 @@ nnoremap <silent> <leader>gr :Gread<CR>
 nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
 let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
-let g:neoterm_size = winheight(0)/3
 
 " Neoterm
 let g:neoterm_shell = 'bash'
@@ -325,9 +324,6 @@ let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
 
 " Deoplete
 let g:deoplete#enable_at_startup=1
-
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 
 """"""""""""""""
 " Colorscheme  "
