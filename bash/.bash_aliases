@@ -35,7 +35,8 @@ alias t="todo.sh"
 # Vim/Vi/Neovim #
 #################
 
-alias vi="nvim -u ~/.vimrc.sparse"
+alias vi="TERM=tmux-256color nvim -u ~/.vimrc.sparse"
+alias nvim="TERM=tmux-256color nvim"
 
 ###############
 # Replacement #
