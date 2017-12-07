@@ -17,19 +17,14 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Load other files #
 ####################
 
-# Load profile.
-if [ -f "$HOME/.bash_profile" ]; then
-  . "$HOME/.bash_profile"
-fi
-
 # Load alias definitions.
 if [ -f "$HOME/.bash_aliases" ]; then
-  . "$HOME/.bash_aliases"
+  source "$HOME/.bash_aliases"
 fi
 
 # Load sensible configs.
 if [ -f "$HOME/.sensible.bash" ]; then
-  . "$HOME/.sensible.bash"
+  source "$HOME/.sensible.bash"
 fi
 
 # enable bash completion
@@ -119,4 +114,5 @@ function yesterworkday {
   fi
 }
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
+# shellcheck source=/usr/local/etc/bash_completion
+if [ -f "$(brew --prefix)/etc/bash_completion" ]; then source "$(brew --prefix)/etc/bash_completion"; fi
