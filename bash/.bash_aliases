@@ -32,11 +32,10 @@ alias -- -="cd -"
 alias t="todo.sh"
 
 #################
-# Vim/Vi/Neovim #
+# Vi/Vim/Neovim #
 #################
 
-alias vi="TERM=tmux-256color nvim -u ~/.vimrc.sparse"
-alias nvim="TERM=tmux-256color nvim"
+alias vi="nvim -u ~/.vimrc.sparse"
 
 ###############
 # Replacement #
@@ -57,6 +56,7 @@ alias du="du -h"
 
 alias gs="git status"
 alias gb="git branch"
+alias gbt="git branch | grep \"\*\" | cut -d ' ' -f 2"
 alias gc="git commit"
 alias gd="git diff"
 alias ga="git add"
