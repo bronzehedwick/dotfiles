@@ -28,19 +28,8 @@ if [ -f "$HOME/.sensible.bash" ]; then
 fi
 
 # enable bash completion
-if [ "$(uname)" == "Darwin" ]; then
-  # enable bash completion via homebrew.
-  if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-    . "$(brew --prefix)/etc/bash_completion"
-  fi
-else
-  # enable programmable completion features (you don't need to enable
-  # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-  # sources /etc/bash.bashrc).
-  if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-      . /etc/bash_completion
-  fi
-fi
+# shellcheck source=/usr/local/etc/bash_completion
+if [ -f "$(brew --prefix)/etc/bash_completion" ]; then source "$(brew --prefix)/etc/bash_completion"; fi
 
 ###########
 # Exports #
@@ -113,6 +102,3 @@ function yesterworkday {
     echo "yesterday"
   fi
 }
-
-# shellcheck source=/usr/local/etc/bash_completion
-if [ -f "$(brew --prefix)/etc/bash_completion" ]; then source "$(brew --prefix)/etc/bash_completion"; fi
