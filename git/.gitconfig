@@ -30,6 +30,7 @@
 	grep = grep --break --heading --line-number
 	g = grep --break --heading --line-number
 	po = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+	up = pull --rebase --autostash
 [merge]
 	conflictstyle = diff3
 	tool = diffmerge
