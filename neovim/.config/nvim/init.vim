@@ -52,6 +52,9 @@ Plug 'kchmck/vim-coffee-script', { 'for': [ 'coffee', 'eruby' ] }
 
 " Themes
 Plug 'mhartington/oceanic-next'
+Plug 'morhetz/gruvbox'
+
+let g:gruvbox_contrast_dark="hard"
 
 call plug#end()
 
@@ -329,4 +332,5 @@ let g:deoplete#enable_at_startup=1
 " Colorscheme  "
 """"""""""""""""
 
-colorscheme OceanicNext
+" colorscheme OceanicNext
+colorscheme gruvbox
