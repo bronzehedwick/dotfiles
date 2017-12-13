@@ -27,6 +27,11 @@ if [ -f "$HOME/.sensible.bash" ]; then
   source "$HOME/.sensible.bash"
 fi
 
+# Load machine-specific configs.
+if [ -f "$HOME/.$(hostname).bash" ]; then
+  source "$HOME/.$(hostname).bash"
+fi
+
 # enable bash completion
 # shellcheck source=/usr/local/etc/bash_completion
 if [ -f "$(brew --prefix)/etc/bash_completion" ]; then source "$(brew --prefix)/etc/bash_completion"; fi

@@ -82,6 +82,7 @@ alias brews='brew list'
 #############
 export sites="$HOME/Sites"
 export downloads="$HOME/Downloads"
+export dotfiles="$HOME/.dotfiles"
 export owncloud="$HOME/ownCloud"
 export chrisdeluca="$HOME/Sites/chrisdeluca.me"
 export gambini="$HOME/Sites/gambini"
