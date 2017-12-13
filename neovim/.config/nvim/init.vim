@@ -328,6 +328,18 @@ let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
 " Deoplete
 let g:deoplete#enable_at_startup=1
 
+"""""""
+" Oni "
+"""""""
+
+if exists('g:gui_oni')
+  " Disable status bar, since Oni provides one.
+  set noshowmode
+  set noruler
+  set laststatus=0
+  set noshowcmd
+endif
+
 """"""""""""""""
 " Colorscheme  "
 """"""""""""""""
