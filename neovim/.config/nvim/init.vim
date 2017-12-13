@@ -332,5 +332,5 @@ let g:deoplete#enable_at_startup=1
 " Colorscheme  "
 """"""""""""""""
 
-" colorscheme OceanicNext
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme OceanicNext
