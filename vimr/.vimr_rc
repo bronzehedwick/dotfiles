@@ -1,0 +1,2 @@
+global.keybinding.menuitem.file.open-quickly = @-p
+open.quickly.ignore.patterns = */.git, .DS_Store, */node_modules, */public, *.bak, *.min.*
