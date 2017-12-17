@@ -320,7 +320,7 @@ nnoremap <leader>u :GundoToggle<CR>
 let g:vimroom_sidebar_height = 0
 
 " Pad (Notes)
-let g:pad#dir = '~/ownCloud/notepad'
+let g:pad#dir = '~/Nextcloud/notepad'
 
 " Utl (linking)
 let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
