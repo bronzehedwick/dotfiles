@@ -110,5 +110,3 @@ function yesterworkday {
 
 # Todo.txt
 export TODOTXT_DEFAULT_ACTION=ls
-
-export BASHRC_LOADED=1
