@@ -48,6 +48,9 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export EDITOR=nvim
 export PAGER=less
 
+# Todo.txt
+export TODOTXT_DEFAULT_ACTION=ls
+
 # Personal prompt
 export PS1="\W $ "
 
@@ -107,6 +110,12 @@ function yesterworkday {
     echo "yesterday"
   fi
 }
+
+if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
+  alias sp='nvr -o'
+  alias vsp='nvr -O'
+  alias tabe='nvr --remote-tab'
+fi
 
 # Todo.txt
 export TODOTXT_DEFAULT_ACTION=ls

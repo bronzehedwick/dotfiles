@@ -49,6 +49,7 @@ Plug 'JulesWang/css.vim', { 'for': [ 'css', 'scss', 'sass', 'less' ] }
 Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'kchmck/vim-coffee-script', { 'for': [ 'coffee', 'eruby' ] }
+Plug 'lumiliet/vim-twig', { 'for': 'twig' }
 
 " Themes
 Plug 'mhartington/oceanic-next'
@@ -219,7 +220,7 @@ endfunction
 " Autodetect extra file types
 
 " django templates (syntax is built in to vim) are very similar to twig.
-autocmd BufRead,BufNewFile *.twig setlocal filetype=htmldjango
+" autocmd BufRead,BufNewFile *.twig setlocal filetype=htmldjango
 " Support Drupal .module and .theme files.
 autocmd BufRead,BufNewFile *.theme setlocal filetype=php
 autocmd BufRead,BufNewFile *.module setlocal filetype=php
