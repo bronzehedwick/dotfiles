@@ -31,7 +31,7 @@ Plug 'fmoralesc/vim-pad'
 " Programming
 Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars' ] }
+Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
 Plug 'janko-m/vim-test'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -48,14 +48,10 @@ Plug 'othree/html5.vim', { 'for': [ 'html', 'htmldjango' ] }
 Plug 'JulesWang/css.vim', { 'for': [ 'css', 'scss', 'sass', 'less' ] }
 Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
-Plug 'kchmck/vim-coffee-script', { 'for': [ 'coffee', 'eruby' ] }
 Plug 'lumiliet/vim-twig', { 'for': 'twig' }
 
 " Themes
 Plug 'mhartington/oceanic-next'
-Plug 'morhetz/gruvbox'
-
-let g:gruvbox_contrast_dark="hard"
 
 call plug#end()
 
@@ -256,7 +252,7 @@ let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 let g:neoterm_shell = 'bash'
 let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
-let g:neoterm_autoscroll = 1
+let g:neoterm_autoscroll = 0
 
 function! ToggleNeotermPosition()
   if g:neoterm_position == 'horizontal'
