@@ -206,7 +206,12 @@ map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 " Insert time into a document
 command! -nargs=* Timestamp call Timestamp()
 function! Timestamp()
-  :r !date "+\%Y-\%m-\%dT\%T\%z"
+  let my_filetype = &filetype
+  if my_filetype == 'fountain'
+    :r !date "+\%m/\%d/\%Y"
+  else
+    :r !date "+\%Y-\%m-\%dT\%T\%z"
+  endif
 endfunction
 
 """""""""""""""""
