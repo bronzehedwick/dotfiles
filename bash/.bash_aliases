@@ -44,11 +44,14 @@ alias vi="nvim -u ~/.vimrc.sparse"
 # Flags       #
 ###############
 
-#Disk usage for humans
+# Disk usage for humans
 alias df='df -h'
 
-#Directory usage for humans
+# Directory usage for humans
 alias du="du -h"
+
+# Calendar that highlights the date (unneeded on linux)
+alias cal="cal | grep --color -EC6 \"\b\$(date +%e | sed \"s/ //g\")\""
 
 #######
 # Git #
@@ -82,6 +85,7 @@ alias brews='brew list'
 #############
 export sites="$HOME/Sites"
 export downloads="$HOME/Downloads"
+export documents="$HOME/Documents"
 export writing="$HOME/Documents/Writing"
 export dotfiles="$HOME/.dotfiles"
 export nextcloud="$HOME/Nextcloud"
