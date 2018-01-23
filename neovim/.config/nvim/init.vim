@@ -330,6 +330,11 @@ let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
 " Deoplete
 let g:deoplete#enable_at_startup=1
 
+" Neovim remote
+if has('nvim')
+  let $VISUAL = 'nvr -cc split --remote-wait'
+endif
+
 """""""
 " Oni "
 """""""
