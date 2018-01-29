@@ -33,7 +33,12 @@ Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
 Plug 'janko-m/vim-test'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh; npm install -g javascript-typescript-langserver vscode-css-languageserver-bin',
+    \ }
+Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
+Plug 'roxma/nvim-completion-manager'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -229,6 +234,11 @@ autocmd BufRead,BufNewFile *.module setlocal filetype=php
 autocmd BufRead,BufNewFile *.fountain setlocal filetype=fountain
 " Hard wrap markdown files.
 autocmd FileType markdown setlocal textwidth=80
+" Start LanguageClient for enabled files.
+autocmd FileType javascript LanguageClientStart
+autocmd FileType php LanguageClientStart
+autocmd FileType css LanguageClientStart
+autocmd FileType sass LanguageClientStart
 
 " Terminal
 autocmd BufEnter term://* startinsert
@@ -327,8 +337,13 @@ let g:pad#dir = '~/Nextcloud/Notes'
 " Utl (linking)
 let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
 
-" Deoplete
-let g:deoplete#enable_at_startup=1
+" Language Server
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ }
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 " Neovim remote
 if has('nvim')
