@@ -335,18 +335,6 @@ if has('nvim')
   let $VISUAL = 'nvr -cc split --remote-wait'
 endif
 
-"""""""
-" Oni "
-"""""""
-
-if exists('g:gui_oni')
-  " Disable status bar, since Oni provides one.
-  set noshowmode
-  set noruler
-  set laststatus=0
-  set noshowcmd
-endif
-
 """"""""""""""""
 " Colorscheme  "
 """"""""""""""""
