@@ -33,10 +33,7 @@ Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
 Plug 'janko-m/vim-test'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh; npm install -g javascript-typescript-langserver vscode-css-languageserver-bin',
-    \ }
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
 Plug 'roxma/nvim-completion-manager'
 
@@ -158,12 +155,6 @@ command! -bang Q q<bang>
 command! -bang QA qa<bang>
 command! -bang Qa qa<bang>
 
-" Autocomplete
-au FileType php setl ofu=phpcomplete#CompletePHP
-au FileType html,xhtml,htmldjango setl ofu=htmlcomplete#CompleteTags
-au FileType css setl ofu=csscomplete#CompleteCSS
-au FileType javascript setl ofu=javascriptcomplete#CompleteJS
-
 " True color!
 if has('termguicolors')
   set termguicolors
@@ -234,11 +225,6 @@ autocmd BufRead,BufNewFile *.module setlocal filetype=php
 autocmd BufRead,BufNewFile *.fountain setlocal filetype=fountain
 " Hard wrap markdown files.
 autocmd FileType markdown setlocal textwidth=80
-" Start LanguageClient for enabled files.
-autocmd FileType javascript LanguageClientStart
-autocmd FileType php LanguageClientStart
-autocmd FileType css LanguageClientStart
-autocmd FileType sass LanguageClientStart
 
 " Terminal
 autocmd BufEnter term://* startinsert
@@ -338,12 +324,19 @@ let g:pad#dir = '~/Nextcloud/Notes'
 let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
 
 " Language Server
-let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ }
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {}
+if executable('javascript-typescript-stdio')
+  let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
+  " Use LanguageServer for omnifunc completion
+  autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
+else
+  echo "javascript-typescript-stdio no installed\n"
+  :cq
+endif
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <F3> :call LanguageClient_textDocument_rename()<CR>
 
 " Neovim remote
 if has('nvim')
@@ -354,5 +347,4 @@ endif
 " Colorscheme  "
 """"""""""""""""
 
-" colorscheme gruvbox
 colorscheme OceanicNext
