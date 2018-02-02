@@ -13,6 +13,9 @@ fi
 # Add rust to path
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Add TeX to path
+export PATH="/Library/TeX/texbin:$PATH"
+
 ####################
 # Load other files #
 ####################
