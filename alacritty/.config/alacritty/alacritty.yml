@@ -33,6 +33,7 @@ font:
   # The italic font face
   italic:
     family: Terminus (TTF) # should be "Menlo" or something on macOS.
+    # family: Inconsolata LGC
     # Style can be specified to pick a specific face.
     style: Italic
 
@@ -52,73 +53,39 @@ font:
 # Should display the render timer
 render_timer: false
 
-# Colors (IR Black)
+# Colors (Oceanic Next)
 colors:
   # Default colors
   primary:
-    background: '0x000000'
-    foreground: '0xffffff'
+    background: '0x1b2b34'
+    foreground: '0xD8DEE9'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0xffffff'
-    cursor: '0xffffff'
+    text: '0xec5f67'
+    cursor: '0xec5f67'
 
   # Normal colors
   normal:
-    black:   '0x4e4e4e'
-    red:     '0xff6c60'
-    green:   '0xa8ff60'
-    yellow:  '0xffffb6'
-    blue:    '0x96cbfe'
-    magenta: '0xff73fd'
-    cyan:    '0xc6c5fe'
-    white:   '0xeeeeee'
+    black:   '0x343d46'
+    red:     '0xEC5f67'
+    green:   '0x99C794'
+    yellow:  '0xFAC863'
+    blue:    '0x6699cc'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0xd8dee9'
 
   # Bright colors
   bright:
-    black:   '0x7c7c7c'
-    red:     '0xffb6b0'
-    green:   '0xceffab'
-    yellow:  '0xffffcb'
-    blue:    '0xb5dcfe'
-    magenta: '0xff9cfe'
-    cyan:    '0xdfdffe'
-    white:   '0xffffff'
-
-# # Colors (Base16 Default Dark)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x181818'
-#     foreground: '0xd8d8d8'
-
-#   # Colors the cursor will use if `custom_cursor_colors` is true
-#   cursor:
-#     text: '0xd8d8d8'
-#     cursor: '0xd8d8d8'
-
-#   # Normal colors
-#   normal:
-#     black:   '0x181818'
-#     red:     '0xab4642'
-#     green:   '0xa1b56c'
-#     yellow:  '0xf7ca88'
-#     blue:    '0x7cafc2'
-#     magenta: '0xba8baf'
-#     cyan:    '0x86c1b9'
-#     white:   '0xd8d8d8'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x585858'
-#     red:     '0xab4642'
-#     green:   '0xa1b56c'
-#     yellow:  '0xf7ca88'
-#     blue:    '0x7cafc2'
-#     magenta: '0xba8baf'
-#     cyan:    '0x86c1b9'
-#     white:   '0xf8f8f8'
+    black:   '0x343d46'
+    red:     '0xEC5f67'
+    green:   '0x99C794'
+    yellow:  '0xFAC863'
+    blue:    '0x6699cc'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0xd8dee9'
 
 # Key bindings
 #
