@@ -256,7 +256,6 @@ let g:neoterm_shell = 'bash'
 let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
 let g:neoterm_autoscroll = 0
-let g:neoterm_autoinsert = 1
 
 function! ToggleNeotermPosition()
   if g:neoterm_position == 'horizontal'
@@ -322,7 +321,7 @@ let g:vimroom_sidebar_height = 0
 
 " Pad (Notes)
 let g:pad#dir = '~/Nextcloud/Notes'
-let g:pad#default_file_extension = 'md'
+let g:pad#default_file_extension = '.md'
 
 " Utl (linking)
 let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
