@@ -176,6 +176,8 @@ nmap <C-h> <C-w>h
 
 " Jet-pack movement between buffers…
 nnoremap <leader>l :ls<CR>:b<space>
+nnoremap <leader>k :ls<CR>:sbuffer<space>
+nnoremap <leader>; :ls<CR>:vert sb<space>
 
 " More sane command-line history
 cnoremap <c-n> <down>
@@ -254,6 +256,7 @@ let g:neoterm_shell = 'bash'
 let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
 let g:neoterm_autoscroll = 0
+let g:neoterm_autoinsert = 1
 
 function! ToggleNeotermPosition()
   if g:neoterm_position == 'horizontal'
@@ -319,6 +322,7 @@ let g:vimroom_sidebar_height = 0
 
 " Pad (Notes)
 let g:pad#dir = '~/Nextcloud/Notes'
+let g:pad#default_file_extension = 'md'
 
 " Utl (linking)
 let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
@@ -347,4 +351,6 @@ endif
 " Colorscheme  "
 """"""""""""""""
 
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 colorscheme OceanicNext
