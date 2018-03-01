@@ -15,7 +15,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
 Plug 'freitass/todo.txt-vim'
-Plug 'mikewest/vimroom'
 
 " Working with the file system
 Plug 'kassio/neoterm'
@@ -23,7 +22,7 @@ Plug 'cloudhead/neovim-fuzzy' " needs fzy and rg or ag installed
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
 Plug 'mhinz/vim-grepper'
-Plug 'sjl/gundo.vim'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'jamessan/vim-gnupg'
 Plug 'vim-scripts/utl.vim'
 Plug 'fmoralesc/vim-pad'
@@ -312,12 +311,12 @@ let g:grepper = {
       \   'escape': '\^$.*+?()[]{}|',
       \ }}
 
-" toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
-
-" Vimroom
-" disable vertical padding.
-let g:vimroom_sidebar_height = 0
+" Undotree
+nnoremap <F5> :UndotreeToggle<cr>
+if has("persistent_undo")
+  set undodir=~/.config/nvim/undodir
+  set undofile
+endif
 
 " Pad (Notes)
 let g:pad#dir = '~/Nextcloud/Notes'
