@@ -2,6 +2,8 @@
 " Configurations "
 """"""""""""""""""
 
+syntax off
+
 " Use soft tabs
 set expandtab
 
@@ -15,17 +17,11 @@ set tabstop=2
 set wildmode=list:longest,full
 
 " Use relative line numbers with the current line the absolute line number
-set number
-set relativenumber
+" set number
+" set relativenumber
 
 " Use a dark background
 set background=dark
-
-" Neovim's standard clipboard register = the system register
-set clipboard+=unnamedplus
-
-" Spell checking
-set spell
 
 " Prevents inserting two spaces after punctuation on a join (J)
 set nojoinspaces
@@ -49,7 +45,7 @@ set list
 set hidden
 
 " Set hard wrapping guide to 80 columns
-set colorcolumn=80
+" set colorcolumn=80
 
 " Remap mapleader
 let mapleader = ','
@@ -59,9 +55,6 @@ nnoremap Y y$
 
 " Add new insert mode mapping for Esc
 :imap jh <Esc>
-
-" Esc exits insert mode in Neovim terminal
-tnoremap <Esc> <C-\><C-n>
 
 " Stupid shift key fixes, lifted from spf13
 command! -bang -nargs=* -complete=file E e<bang> <args>
@@ -74,13 +67,14 @@ command! -bang Q q<bang>
 command! -bang QA qa<bang>
 command! -bang Qa qa<bang>
 
-" True color!
-if has('termguicolors')
-  set termguicolors
-endif
-
-" Cursor is line in insert mode, block in normal mode
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+if has('nvim')
+  " Cursor is line in insert mode, block in normal mode
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+  " Esc exits insert mode in Neovim terminal
+  tnoremap <Esc> <C-\><C-n>
+  " Neovim's standard clipboard register = the system register
+  set clipboard+=unnamedplus
+end
 
 " Toggle set wrap
 nmap <silent><leader>w :set wrap!<CR>
@@ -90,22 +84,3 @@ map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>t :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
-
-"""""""""""""
-" Functions "
-"""""""""""""
-
-" Display date and time
-map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
-
-" Insert time into a document
-command! -nargs=* Timestamp call Timestamp()
-function! Timestamp()
-  :r !date "+\%h \%d, \%Y, \%l:\%M:\%S \%p"
-endfunction
-
-"""""""""""""""
-" Colorscheme "
-"""""""""""""""
-
-colorscheme slate
