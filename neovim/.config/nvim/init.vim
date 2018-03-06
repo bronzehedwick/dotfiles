@@ -329,7 +329,14 @@ if executable('javascript-typescript-stdio')
   " Use LanguageServer for omnifunc completion
   autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
 else
-  echo "javascript-typescript-stdio no installed\n"
+  echo "javascript-typescript-stdio not installed\n"
+  :cq
+endif
+if executable('rustup')
+  let g:LanguageClient_serverCommands.rust = ['rustup', 'run', 'stable', 'rls']
+  autocmd FileType rust setlocal omnifunc=LanguageClient#complete
+else
+  echo "rust not installed\n"
   :cq
 endif
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
