@@ -28,7 +28,7 @@ Plug 'vim-scripts/utl.vim'
 Plug 'fmoralesc/vim-pad'
 
 " Programming
-Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
 Plug 'janko-m/vim-test'
@@ -270,10 +270,6 @@ nnoremap <silent> <leader>th :call neoterm#close()<cr>
 nnoremap <silent> <leader>tl :call neoterm#clear()<cr>
 nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
 nnoremap <silent> <leader>tp :call ToggleNeotermPosition()<cr>
-
-" Neomake
-" call neomake on save.
-call neomake#configure#automake('w')
 
 " EditorConfig
 " Disable editorconfig on fugitive and remote buffers.
