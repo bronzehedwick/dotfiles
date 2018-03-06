@@ -22,16 +22,19 @@ export PATH="/Library/TeX/texbin:$PATH"
 
 # Load alias definitions.
 if [ -f "$HOME/.bash_aliases" ]; then
+  # shellcheck source=/dev/null
   source "$HOME/.bash_aliases"
 fi
 
 # Load sensible configs.
 if [ -f "$HOME/.sensible.bash" ]; then
+  # shellcheck source=/dev/null
   source "$HOME/.sensible.bash"
 fi
 
 # Load machine-specific configs.
 if [ -f "$HOME/.$(hostname).bash" ]; then
+  # shellcheck source=/dev/null
   source "$HOME/.$(hostname).bash"
 fi
 
@@ -55,15 +58,17 @@ export PAGER=less
 export TODOTXT_DEFAULT_ACTION=ls
 
 # Personal prompt
-export PS1="\W $ "
+export PS1="\\W $ "
 
 # GPG agent
 if [ -f "${HOME}/.gpg-agent-info" ]; then
+  # shellcheck source=/dev/null
   . "${HOME}/.gpg-agent-info"
   export GPG_AGENT_INFO
   export SSH_AUTH_SOCK
 fi
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # Set locale for terminals that don't set a default.
 export LANG=en_US.UTF-8
