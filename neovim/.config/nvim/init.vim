@@ -254,7 +254,7 @@ let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 let g:neoterm_shell = 'bash'
 let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
-let g:neoterm_autoscroll = 0
+let g:neoterm_autoscroll = 1
 
 function! ToggleNeotermPosition()
   if g:neoterm_position == 'horizontal'
