@@ -118,6 +118,7 @@ if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
   alias sp='nvr -o'
   alias vsp='nvr -O'
   alias tabe='nvr --remote-tab'
+  export PS1="\\W » "
 fi
 
 # Todo.txt
