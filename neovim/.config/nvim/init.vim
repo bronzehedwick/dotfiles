@@ -344,8 +344,8 @@ nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F3> :call LanguageClient_textDocument_rename()<CR>
 
 " Neovim remote
-if has('nvim')
-  let $VISUAL = 'nvr -cc split --remote-wait'
+if has('nvim') && executable('nvr')
+  let $VISUAL = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
 
 """"""""""""""""
