@@ -320,6 +320,13 @@ if has("persistent_undo")
   set undofile
 endif
 
+" ALE
+let g:ale_sign_error="✕"
+let g:ale_sign_warning="⚠"
+let g:ale_sign_info="i"
+let g:ale_sign_style_error="✕"
+let g:ale_sign_style_warning="⚠"
+
 " Pad (Notes)
 let g:pad#dir = '~/Nextcloud/Notes'
 let g:pad#default_file_extension = '.md'
