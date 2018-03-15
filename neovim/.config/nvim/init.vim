@@ -321,6 +321,9 @@ if has("persistent_undo")
 endif
 
 " ALE
+let g:ale_linters = {
+\  'html': []
+\}
 let g:ale_sign_error="✕"
 let g:ale_sign_warning="⚠"
 let g:ale_sign_info="i"
@@ -337,14 +340,15 @@ let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
 " Language Server
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {}
+"" LSP JavaScript
 if executable('javascript-typescript-stdio')
   let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
-  " Use LanguageServer for omnifunc completion
   autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
 else
   echo "javascript-typescript-stdio not installed\n"
   :cq
 endif
+"" LSP Rust
 if executable('rustup')
   let g:LanguageClient_serverCommands.rust = ['rustup', 'run', 'stable', 'rls']
   autocmd FileType rust setlocal omnifunc=LanguageClient#complete
@@ -352,6 +356,7 @@ else
   echo "rust not installed\n"
   :cq
 endif
+"" LSP keymaps
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F3> :call LanguageClient_textDocument_rename()<CR>
