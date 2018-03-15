@@ -35,7 +35,7 @@ alias t="todo.sh"
 # Vi/Vim/Neovim #
 #################
 
-alias vi="nvim -u ~/.vimrc.sparse"
+alias vi="nvi"
 
 ###############
 # Replacement #
