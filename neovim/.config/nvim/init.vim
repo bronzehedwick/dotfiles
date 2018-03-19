@@ -149,6 +149,9 @@ nnoremap Y y$
 " Esc exits insert mode in Neovim terminal
 tnoremap <Esc> <C-\><C-n>
 
+" Alt+r to paste in terminal mode
+tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+
 " Stupid shift key fixes, lifted from spf13
 command! -bang -nargs=* -complete=file E e<bang> <args>
 command! -bang -nargs=* -complete=file W w<bang> <args>
