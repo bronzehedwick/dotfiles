@@ -261,24 +261,13 @@ let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 
 " Neoterm
 let g:neoterm_shell = 'bash'
-let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
 let g:neoterm_autoscroll = 1
-
-function! ToggleNeotermPosition()
-  if g:neoterm_position == 'horizontal'
-    :Tpos vertical
-  else
-    :Tpos horizontal
-  endif
-endfunction
-command! -nargs=* ToggleNeotermPosition call ToggleNeotermPosition()
 
 nnoremap <silent> <leader>to :Ttoggle<cr>
 nnoremap <silent> <leader>th :call neoterm#close()<cr>
 nnoremap <silent> <leader>tl :call neoterm#clear()<cr>
 nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
-nnoremap <silent> <leader>tp :call ToggleNeotermPosition()<cr>
 
 " EditorConfig
 " Disable editorconfig on fugitive and remote buffers.
