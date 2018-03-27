@@ -260,14 +260,12 @@ nnoremap <silent> <leader>ge :Gedit<CR>
 let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 
 " Neoterm
-let g:neoterm_shell = 'bash'
 let g:neoterm_automap_keys = ',tt'
 let g:neoterm_autoscroll = 1
 
 nnoremap <silent> <leader>to :Ttoggle<cr>
-nnoremap <silent> <leader>th :call neoterm#close()<cr>
-nnoremap <silent> <leader>tl :call neoterm#clear()<cr>
-nnoremap <silent> <leader>tc :call neoterm#kill()<cr>
+nnoremap <silent> <leader>tl :Tclear<cr>
+nnoremap <silent> <leader>tc :Tkill<cr>
 
 " EditorConfig
 " Disable editorconfig on fugitive and remote buffers.
