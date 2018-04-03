@@ -31,7 +31,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'jamessan/vim-gnupg'
 Plug 'vim-scripts/utl.vim'
-Plug 'fmoralesc/vim-pad'
+Plug 'fmoralesc/vim-pad', { 'branch': 'devel' }
 
 " Programming
 Plug 'w0rp/ale'
