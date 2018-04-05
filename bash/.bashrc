@@ -119,6 +119,17 @@ function yesterworkday {
   fi
 }
 
+# Check the last command status.
+check_lastcommandfailed() {
+  code=$?
+  if [ $code != 0 ]; then
+    echo -n $'\033[37m exited \033[31m'
+    echo -n $code
+    echo -n $'\033[37m'
+    echo ""
+  fi
+}
+
 if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
   alias sp='nvr -o'
   alias vsp='nvr -O'
