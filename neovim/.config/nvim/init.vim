@@ -202,6 +202,9 @@ nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 " Quickly edit macros
 nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
+" Quickly open URLs
+nnoremap <leader>u :Utl<cr>
+
 """"""""""""""
 " Functions "
 """"""""""""""
@@ -219,6 +222,7 @@ function! Timestamp()
     :r !date "+\%Y-\%m-\%dT\%T\%z"
   endif
 endfunction
+nmap <F4> call Timestamp()
 
 """""""""""""""""
 " Autocommands "
@@ -257,6 +261,7 @@ nnoremap <silent> <leader>gp :Git push<CR>
 nnoremap <silent> <leader>gr :Gread<CR>
 nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
+nnoremap <silent> <leader>gu :Git up<CR>
 let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 
 " Neoterm
@@ -270,6 +275,9 @@ nnoremap <silent> <leader>tc :Tkill<cr>
 " EditorConfig
 " Disable editorconfig on fugitive and remote buffers.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" Vim-Test
+let test#strategy = "neovim"
 
 " Dirvish
 autocmd FileType dirvish call fugitive#detect(@%)
