@@ -248,8 +248,11 @@ autocmd BufLeave term://* stopinsert
 " Plugin configurations  "
 """"""""""""""""""""""""""
 
+" AutoPairs
+let g:AutoPairsShortcutToggle = ''
+
 " Fuzzy
-nnoremap <leader>/ :FuzzyOpen<CR>
+nnoremap <M-/> :FuzzyOpen<CR>
 
 " Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
@@ -268,9 +271,9 @@ let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 let g:neoterm_automap_keys = ',tt'
 let g:neoterm_autoscroll = 1
 
-nnoremap <silent> <leader>to :Ttoggle<cr>
-nnoremap <silent> <leader>tl :Tclear<cr>
-nnoremap <silent> <leader>tc :Tkill<cr>
+nnoremap <silent> <M-t> :rightbelow Ttoggle<cr>
+nnoremap <silent> <M-l> :rightbelow Tclear<cr>
+nnoremap <silent> <M-k> :rightbelow Tkill<cr>
 
 " EditorConfig
 " Disable editorconfig on fugitive and remote buffers.
@@ -283,10 +286,9 @@ let test#strategy = "neovim"
 autocmd FileType dirvish call fugitive#detect(@%)
 
 " Grepper
-nnoremap <leader>p :Grepper<cr>
-nnoremap <leader>* :Grepper -cword -noprompt<cr>
-nmap gs  <plug>(GrepperOperator)
-xmap gs  <plug>(GrepperOperator)
+nnoremap <M-p> :Grepper<cr>
+nmap ps  <plug>(GrepperOperator)
+xmap ps  <plug>(GrepperOperator)
 
 let g:grepper = {
       \ 'tools': ['rg', 'rgsass', 'rgtwig', 'rgjs', 'rgphp'],

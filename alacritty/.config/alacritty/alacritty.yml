@@ -161,7 +161,12 @@ key_bindings:
   - { key: A,        mods: Alt,     chars: "\x1ba"                       }
   - { key: D,        mods: Alt,     chars: "\x1bd"                       }
   - { key: R,        mods: Alt,     chars: "\x1br"                       }
+  - { key: T,        mods: Alt,     chars: "\x1bt"                       }
+  - { key: L,        mods: Alt,     chars: "\x1bl"                       }
+  - { key: K,        mods: Alt,     chars: "\x1bk"                       }
+  - { key: P,        mods: Alt,     chars: "\x1bp"                       }
   - { key: Period,   mods: Alt,       chars: "\x1b."                     }
+  - { key: Slash,    mods: Alt,       chars: "\x1b/"                     }
   - { key: Key8,     mods: Alt|Shift, chars: "\x1b*"                     }
   - { key: Key3,     mods: Alt|Shift, chars: "\x1b#"                     }
 
