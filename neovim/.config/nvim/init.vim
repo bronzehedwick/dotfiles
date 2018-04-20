@@ -255,16 +255,16 @@ let g:AutoPairsShortcutToggle = ''
 nnoremap <M-/> :FuzzyOpen<CR>
 
 " Fugitive
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
-nnoremap <silent> <leader>gp :Git push<CR>
-nnoremap <silent> <leader>gr :Gread<CR>
-nnoremap <silent> <leader>gw :Gwrite<CR>
-nnoremap <silent> <leader>ge :Gedit<CR>
-nnoremap <silent> <leader>gu :Git up<CR>
+nnoremap <silent> <M-g>s :Gstatus<CR>
+nnoremap <silent> <M-g>d :Gdiff<CR>
+nnoremap <silent> <M-g>c :Gcommit<CR>
+nnoremap <silent> <M-g>b :Gblame<CR>
+nnoremap <silent> <M-g>l :Glog<CR>
+nnoremap <silent> <M-g>p :Git push<CR>
+nnoremap <silent> <M-g>r :Gread<CR>
+nnoremap <silent> <M-g>w :Gwrite<CR>
+nnoremap <silent> <M-g>e :Gedit<CR>
+nnoremap <silent> <M-g>u :Git up<CR>
 let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 
 " Neoterm
@@ -286,9 +286,9 @@ let test#strategy = "neovim"
 autocmd FileType dirvish call fugitive#detect(@%)
 
 " Grepper
-nnoremap <M-p> :Grepper<cr>
-nmap ps  <plug>(GrepperOperator)
-xmap ps  <plug>(GrepperOperator)
+nnoremap <M-g> :Grepper<cr>
+nmap gs  <plug>(GrepperOperator)
+xmap gs  <plug>(GrepperOperator)
 
 let g:grepper = {
       \ 'tools': ['rg', 'rgsass', 'rgtwig', 'rgjs', 'rgphp'],
