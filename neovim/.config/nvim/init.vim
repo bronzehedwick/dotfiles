@@ -286,7 +286,7 @@ let test#strategy = "neovim"
 autocmd FileType dirvish call fugitive#detect(@%)
 
 " Grepper
-nnoremap <M-g> :Grepper<cr>
+nnoremap <M-p> :Grepper<cr>
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
 
