@@ -1,4 +1,4 @@
-# vim: set noexpandtab
+# vim: set noexpandtab:
 [user]
 	name = Chris DeLuca
 	email = bronzehedwick@gmail.com
@@ -31,7 +31,8 @@
 	g = grep --break --heading --line-number
 	po = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
 	pd = "!git push deploy $(git rev-parse --abbrev-ref HEAD)"
-	up = pull --rebase --autostash
+	up = pull --rebase --autostash --all
+	cb = "!git branch | grep '\\*' | cut -d ' ' -f 2"
 [merge]
 	conflictstyle = diff3
 	tool = diffmerge
@@ -58,5 +59,5 @@
 [github]
 	user = bronzehedwick
 [commit]
-	template = /Users/chris/.git_commit_msg.txt
-  #gpgsign = true
+	template = ~/.git_commit_msg.txt
+	#gpgsign = true
