@@ -39,7 +39,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
 Plug 'janko-m/vim-test'
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
+Plug 'roxma/LanguageServer-php-neovim',  { 'do': 'composer install && composer run-script parse-stubs' }
 Plug 'roxma/nvim-completion-manager'
 
 " Git
@@ -55,7 +55,7 @@ Plug 'othree/html5.vim', { 'for': [ 'html', 'htmldjango' ] }
 Plug 'JulesWang/css.vim', { 'for': [ 'css', 'scss', 'sass', 'less' ] }
 Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
-Plug 'lumiliet/vim-twig', { 'for': 'twig' }
+Plug 'lumiliet/vim-twig', { 'for': [ 'twig', 'html.twig' ] }
 
 " Themes
 Plug 'mhartington/oceanic-next'
@@ -230,8 +230,6 @@ nmap <F4> call Timestamp()
 
 " Autodetect extra file types
 
-" django templates (syntax is built in to vim) are very similar to twig.
-" autocmd BufRead,BufNewFile *.twig setlocal filetype=htmldjango
 " Support Drupal .module and .theme files.
 autocmd BufRead,BufNewFile *.theme setlocal filetype=php
 autocmd BufRead,BufNewFile *.module setlocal filetype=php
@@ -343,7 +341,7 @@ let g:LanguageClient_serverCommands = {}
 "" LSP JavaScript
 if executable('javascript-typescript-stdio')
   let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
-  autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
+  " autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
 else
   echo "javascript-typescript-stdio not installed\n"
   :cq
@@ -351,7 +349,7 @@ endif
 "" LSP Rust
 if executable('rustup')
   let g:LanguageClient_serverCommands.rust = ['rustup', 'run', 'stable', 'rls']
-  autocmd FileType rust setlocal omnifunc=LanguageClient#complete
+  " autocmd FileType rust setlocal omnifunc=LanguageClient#complete
 else
   echo "rust not installed\n"
   :cq
