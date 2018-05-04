@@ -169,7 +169,7 @@ if has('termguicolors')
 endif
 
 " Toggle set wrap
-nmap <silent><leader>w :set wrap!<CR>
+nmap <silent><leader>w :setlocal wrap!<CR>
 
 " Open directory at current file path.
 map <leader>e :edit <C-R>=expand("%:p:h") . "/" <CR>
@@ -190,14 +190,6 @@ nnoremap <leader>; :ls<CR>:vert sb<space>
 " More sane command-line history
 cnoremap <c-n> <down>
 cnoremap <c-p> <up>
-
-" Quickly move current line
-noremap [e :<c-u>execute 'move -1-'. v:count1<cr>
-noremap ]e :<c-u>execute 'move +'. v:count1<cr>
-
-" Quickly add empty lines
-noremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
-nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
 " Quickly edit macros
 nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
