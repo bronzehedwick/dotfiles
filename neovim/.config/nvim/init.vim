@@ -109,7 +109,7 @@ set splitbelow
 set showmatch
 
 " Case insensitive search when using any capital letters
-set noignorecase
+set ignorecase
 set smartcase
 
 " Highlight invisible whitespace
