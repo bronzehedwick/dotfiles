@@ -21,6 +21,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
 Plug 'freitass/todo.txt-vim'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-characterize'
 
 " Working with the file system
 Plug 'kassio/neoterm'
@@ -41,6 +43,8 @@ Plug 'janko-m/vim-test'
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'roxma/LanguageServer-php-neovim',  { 'do': 'composer install && composer run-script parse-stubs' }
 Plug 'roxma/nvim-completion-manager'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-dadbod'
 
 " Git
 Plug 'tpope/vim-fugitive'
