@@ -58,7 +58,7 @@ export PAGER=less
 export TODOTXT_DEFAULT_ACTION=ls
 
 # Personal prompt
-export PS1="\\W$ "
+export PS1="\\t$ "
 
 # GPG agent
 if [ -f "${HOME}/.gpg-agent-info" ]; then
@@ -135,7 +135,7 @@ if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
   alias vsp='nvr -O'
   alias tabe='nvr --remote-tab'
   alias nvim='echo "No nesting!"'
-  export PS1="\\W» "
+  export PS1="\\t» "
 fi
 
 # Todo.txt
