@@ -11,6 +11,7 @@ export const activate = (oni: Oni.Plugin.Api) => {
     // Add input bindings here:
     //
     oni.input.bind("<c-enter>", () => console.log("Control+Enter was pressed"))
+    oni.input.bind("<f8>", "markdown.togglePreview")
 
     //
     // Or remove the default bindings here by uncommenting the below line:
@@ -31,10 +32,11 @@ export const configuration = {
     //"oni.useDefaultConfig": true,
     //"oni.bookmarks": ["~/Documents"],
     "oni.loadInitVim": true,
-    "editor.fontSize": "16px",
-    "editor.fontFamily": "Inconsolata LGC",
-    "tabs.mode": "tabs",
+    "editor.fontSize": "18px",
+    "editor.fontFamily": "InconsolataLGC",
     "editor.renderer": "webgl",
+    "tabs.mode": "tabs",
+    "sidebar.enabled": false,
 
     // UI customizations
     "ui.animations.enabled": true,
