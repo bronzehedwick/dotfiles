@@ -238,6 +238,13 @@ autocmd FileType markdown setlocal textwidth=80
 autocmd BufEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 
+" Spelling
+autocmd FileType gitcommit setlocal spell
+autocmd FileType markdown setlocal spell
+autocmd FileType text setlocal spell
+autocmd FileType fountain setlocal spell
+autocmd FileType help setlocal nospell
+
 """"""""""""""""""""""""""
 " Plugin configurations  "
 """"""""""""""""""""""""""
