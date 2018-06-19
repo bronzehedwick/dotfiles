@@ -73,6 +73,9 @@ export GPG_TTY
 # Set locale for terminals that don't set a default.
 export LANG=en_US.UTF-8
 
+# Add directories to auto-jump list.
+export CDPATH='~:~/Sites'
+
 #############
 # Functions #
 #############

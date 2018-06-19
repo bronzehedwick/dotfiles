@@ -83,14 +83,6 @@ alias brews='brew list'
 #############
 # Bookmarks #
 #############
-export sites="$HOME/Sites"
-export downloads="$HOME/Downloads"
-export documents="$HOME/Documents"
 export writing="$HOME/Documents/Writing"
-export dotfiles="$HOME/.dotfiles"
-export nextcloud="$HOME/Nextcloud"
-export chrisdeluca="$HOME/Sites/chrisdeluca.me"
-export gambini="$HOME/Sites/gambini"
-export patti="/Users/chris/Sites/patriciahorvath"
 export gwengween="$HOME/Documents/GwenGween"
 export dts="/Users/chris/Documents/dts"
