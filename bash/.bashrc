@@ -112,6 +112,11 @@ function grt {
   cd "$(git rev-parse --show-toplevel || echo '.')" || exit
 }
 
+# Deletes all branches merged into current branch (excluding master and dev).
+function gdelmerged {
+  git branch --merged | grep -E -v "(^\\*master|dev)" | xargs git branch -d
+}
+
 # Get the last workday
 function yesterworkday {
   if [[ "1" == "$(date +%u)" ]]
