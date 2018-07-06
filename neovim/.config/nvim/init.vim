@@ -20,9 +20,7 @@ Plug 'tpope/vim-rsi'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
-Plug 'freitass/todo.txt-vim'
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-characterize'
 
 " Working with the file system
 Plug 'kassio/neoterm'
