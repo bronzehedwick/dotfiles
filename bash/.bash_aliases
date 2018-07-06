@@ -51,7 +51,7 @@ alias df='df -h'
 alias du="du -h"
 
 # Calendar that highlights the date (unneeded on linux)
-alias cal="cal | grep --color -EC6 \"\b\$(date +%e | sed \"s/ //g\")\""
+alias cal="cal | grep --color -EC6 \"\\b\$(date +%e | sed \"s/ //g\")\""
 
 #######
 # Git #
@@ -59,7 +59,7 @@ alias cal="cal | grep --color -EC6 \"\b\$(date +%e | sed \"s/ //g\")\""
 
 alias gs="git status"
 alias gb="git branch"
-alias gbt="git branch | grep \"\*\" | cut -d ' ' -f 2"
+alias gbt="git branch | grep \"\\*\" | cut -d ' ' -f 2"
 alias gc="git commit"
 alias gd="git diff"
 alias ga="git add"
@@ -83,6 +83,12 @@ alias brews='brew list'
 #############
 # Bookmarks #
 #############
+export sites="$HOME/Sites"
+export downloads="$HOME/Downloads"
+export documents="$HOME/Documents"
 export writing="$HOME/Documents/Writing"
+export dotfiles="$HOME/.dotfiles"
+export nextcloud="$HOME/Nextcloud"
+export chrisdeluca="$HOME/Sites/chrisdeluca.me"
 export gwengween="$HOME/Documents/GwenGween"
 export dts="/Users/chris/Documents/dts"

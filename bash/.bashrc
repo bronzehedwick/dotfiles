@@ -16,6 +16,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Add TeX to path
 export PATH="/Library/TeX/texbin:$PATH"
 
+# Add user python to path
+export PATH="$PATH:~/Library/Python/3.7/bin"
+
 ####################
 # Load other files #
 ####################
@@ -72,9 +75,6 @@ export GPG_TTY
 
 # Set locale for terminals that don't set a default.
 export LANG=en_US.UTF-8
-
-# Add directories to auto-jump list.
-export CDPATH='~:~/Sites'
 
 #############
 # Functions #
