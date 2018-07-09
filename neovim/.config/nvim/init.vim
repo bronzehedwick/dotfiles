@@ -237,6 +237,10 @@ autocmd FileType markdown setlocal textwidth=80
 autocmd BufEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 
+" NeoMutt
+autocmd BufEnter term://*neomutt setlocal nonumber
+autocmd BufEnter term://*neomutt setlocal norelativenumber
+
 " Spelling
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal spell
