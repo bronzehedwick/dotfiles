@@ -1,42 +1,85 @@
-# Server Variables
-set my_server = imap.fastmail.com:993
-set my_smtp_server = smtp.fastmail.com:465
-set my_user = iam@chrisdeluca.me
-set my_pass = "`pass show Email/fastmail_mutt`"
+# vim: ft=muttrc
 
-# Account Information
+# mail type
+set mbox_type = Maildir
+set sendmail = /usr/local/bin/msmtp
+
+# account options
+source ~/.config/neomutt/mail_accounts
 set from = $my_user
 set realname = "Chris DeLuca"
+set mail_check = 0
+set envelope_from
+unset move
+set delete
+unset confirmappend
+set quit
 
-# IMAP Information
-set record = "imaps://$my_server/INBOX/Sent Items"
-set postponed = "imaps://$my_server/INBOX.Drafts"
+# folders
+set folder = ~/Mail
+set spoolfile = "+INBOX"
+set mbox = "+Archive"
+set postponed = "+Drafts"
+set record = "+Sent"
+set send_charset = "us-ascii:utf-8"
 
-# SMTP Information
-set smtp_url = "smtp://$my_user:$my_pass@$my_smtp_server"
-set smtp_pass = $my_pass
-set imap_user = $my_user
-set imap_pass = $my_pass
+# mailboxes
+mailboxes +INBOX \
+          +Archive \
+          +Sent \
+          +Drafts \
+          +Notes \
+          +Junk \
+          +Trash
 
-# Connection Encryption
-set ssl_force_tls = yes
-set ssl_starttls = no
+# trash handling
+folder-hook . set trash = +Trash
+folder-hook trash$ unset trash
 
-# Default inbox
-set spoolfile = imaps://$my_server/INBOX
+# sort/threading
+set sort = threads
+set sort_aux = reverse-last-date-received
+set sort_re
 
-# Default mailboxes location
-set folder = imaps://$my_server/INBOX
+# look and feel
+set pager_index_lines = 8
+set pager_context = 5
+set pager_stop
+set menu_scroll
+set smart_wrap
+set tilde
+unset markers
 
-# Mailboxes
+# sidebar
+set sidebar_visible
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+set sidebar_width = 20
+set sidebar_divider_char = '│'
+bind index,pager B sidebar-toggle-visible
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
 
-# Auto Complete Addresses
+# composing
+set fcc_attach
+unset mime_forward
+set forward_format = "Fwd: %s"
+set include
+set forward_quote
+set signature="~/.config/neomutt/signature"
 
-# Cache
-set header_cache=~/.mutt/cache/headers
-set message_cachedir=~/.mutt/cache/bodies
-set certificate_file=~/.mutt/certificates
+ignore * # first, ignore all headers
+unignore from: to: cc: bcc: reply-to: date: subject: # then, show only these
+hdr_order from: to: cc: bcc: reply-to: date: subject: # and in this order
 
-# Options
+# colors
+source ~/.config/neomutt/colors
 
-# Keyboard
+# key bindings
+macro index S \
+  "<save-message>+Junk<enter>" \
+  "mark message as spam"
+macro index A \
+  "<save-message>+Archive<enter>" \
+  "archive message"

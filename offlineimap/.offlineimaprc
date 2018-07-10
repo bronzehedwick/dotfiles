@@ -1,0 +1,25 @@
+[general]
+ui = ttyui
+accounts = chrisdeluca
+# Controls how many accounts may be synced simultaneously
+maxsyncaccounts = 1
+pythonfile = ~/.offlineimap.py
+
+[Account chrisdeluca]
+localrepository = Local
+remoterepository = Remote
+
+[Repository Local]
+type = Maildir
+localfolders = ~/Mail
+
+[Repository Remote]
+type = IMAP
+remotehost = imap.fastmail.com
+remoteuser = iam@chrisdeluca.me
+remotepasseval = macosgetpass()
+remoteport = 993
+ssl = yes
+cert_fingerprint = B1:6A:72:A2:D3:68:69:B7:10:4C:6B:88:99:67:D8:B5:8D:11:93:28:68:02:42:EA:5E:79:CE:68:DA:92:E4:1A
+keepalive = 60
+holdconnectionopen = no
