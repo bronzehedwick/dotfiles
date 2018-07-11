@@ -50,6 +50,7 @@ set menu_scroll
 set smart_wrap
 set tilde
 unset markers
+set text_flowed = yes
 
 # html mails
 auto_view text/html
@@ -72,7 +73,7 @@ unset mime_forward
 set forward_format = "Fwd: %s"
 set include
 set forward_quote
-set signature="~/.config/neomutt/signature"
+set signature = ~/.config/neomutt/signature
 
 ignore * # first, ignore all headers
 unignore from: to: cc: bcc: reply-to: date: subject: # then, show only these

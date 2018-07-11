@@ -241,6 +241,7 @@ autocmd BufLeave term://* stopinsert
 " NeoMutt
 autocmd BufEnter term://*neomutt setlocal nonumber
 autocmd BufEnter term://*neomutt setlocal norelativenumber
+autocmd BufEnter mail setlocal fo+=aw
 
 " Chat
 autocmd BufEnter term://*chat setlocal nonumber
