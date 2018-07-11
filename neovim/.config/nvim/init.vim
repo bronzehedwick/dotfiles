@@ -242,6 +242,10 @@ autocmd BufLeave term://* stopinsert
 autocmd BufEnter term://*neomutt setlocal nonumber
 autocmd BufEnter term://*neomutt setlocal norelativenumber
 
+" Chat
+autocmd BufEnter term://*chat setlocal nonumber
+autocmd BufEnter term://*chat setlocal norelativenumber
+
 " Spelling
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal spell
