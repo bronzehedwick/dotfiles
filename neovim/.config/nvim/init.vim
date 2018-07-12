@@ -60,6 +60,7 @@ Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'lumiliet/vim-twig', { 'for': [ 'twig', 'html.twig' ] }
 Plug 'ernestorenanche/offlineimaprc.vim'
+Plug 'bronzehedwick/msmtp-syntax.vim'
 
 " Themes
 Plug 'mhartington/oceanic-next'
