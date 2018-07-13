@@ -36,6 +36,7 @@ alias t="todo.sh -t"
 #################
 
 alias vi="nvi"
+alias vimdiff="nvim -d"
 
 ###############
 # Replacement #
