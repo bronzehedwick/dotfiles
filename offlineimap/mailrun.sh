@@ -26,4 +26,4 @@ if ps "$pid" &>/dev/null; then
   exit 1
 fi
 
-offlineimap -o -u quiet > "$HOME/.offlineimap/offlineimap.log" 2>&1 & monitor $!
+/usr/local/bin/offlineimap -o -u quiet > "$HOME/.offlineimap/offlineimap.log" 2>&1 & monitor $!
