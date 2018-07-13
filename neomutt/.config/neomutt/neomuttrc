@@ -33,6 +33,9 @@ mailboxes +INBOX \
           +Junk \
           +Trash
 
+# auto alias
+set display_filter = ~/.dotfiles/neomutt/.config/neomutt/auto_add_alias.sh
+
 # trash handling
 folder-hook . set trash = +Trash
 folder-hook trash$ unset trash
