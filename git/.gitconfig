@@ -1,4 +1,4 @@
-# vim: set noexpandtab:
+# vim: noexpandtab: tabstop=4: shiftwidth=4
 [user]
 	name = Chris DeLuca
 	email = iam@chrisdeluca.me
@@ -32,10 +32,12 @@
 	po = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
 	pd = "!git push deploy $(git rev-parse --abbrev-ref HEAD)"
 	up = pull --rebase --autostash --all
+	ticket = "!git branch | grep '\\*' | cut -d '-' -f 1,2 | cut -d '/' -f 2"
 	cb = "!git branch | grep '\\*' | cut -d ' ' -f 2"
 [merge]
 	conflictstyle = diff3
-	tool = diffmerge
+	; tool = Kaleidoscope
+	tool = vimdiff
 [color]
 	ui = auto
 [credential]
@@ -46,13 +48,9 @@
 	lineNumber = true
 [mergetool]
 	keepBackup = false
-[mergetool "diffmerge"]
-	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
-	trustExitCode = true
+	prompt = false
 [diff]
-	tool = diffmerge
-[difftool "diffmerge"]
-	cmd = diffmerge $LOCAL $REMOTE
+	tool = vimdiff
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
@@ -60,9 +58,13 @@
 	user = bronzehedwick
 [commit]
 	template = ~/.git_commit_msg.txt
-	#gpgsign = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+	gpgsign = true
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[advice]
+	statusHints = false
