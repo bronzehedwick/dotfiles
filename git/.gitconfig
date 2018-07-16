@@ -37,7 +37,7 @@
 [merge]
 	conflictstyle = diff3
 	; tool = Kaleidoscope
-	tool = vimdiff
+	tool = Kaleidoscope
 [color]
 	ui = auto
 [credential]
@@ -50,7 +50,7 @@
 	keepBackup = false
 	prompt = false
 [diff]
-	tool = vimdiff
+	tool = Kaleidoscope
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
