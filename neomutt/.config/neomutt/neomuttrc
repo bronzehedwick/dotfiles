@@ -92,3 +92,6 @@ macro index S \
 macro index A \
   "<save-message>+Archive<enter>" \
   "archive message"
+macro index O \
+  "<shell-escape>$HOME/.dotfiles/offlineimap/mailrun.sh<enter>" \
+  "sync all mail"
