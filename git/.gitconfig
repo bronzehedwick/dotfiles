@@ -12,13 +12,13 @@
 	br = branch
 	cl = clone
 	cp = cherry-pick
-	hist = log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%ad | %s%d %Cblue[%an]\" --graph --date=short --date=relative --no-merges 
-	mist = log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%ad | %s%d %Cblue[%an]\" --graph --date=short --date=relative
+	hist = log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%ad | %s%d %Cblue[%an] %C(cyan)%G?%Creset\" --graph --date=short --date=relative --no-merges 
+	mist = log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%ad | %s%d %Cblue[%an] %C(cyan)%G?%Creset\" --graph --date=short --date=relative
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	filelog = log -u
+	fl = log -u
 	dl = "!git ll -1"
 	dlc = diff --cached HEAD^
-	fl = log -u
 	dr  = "!f() { git diff "$1"^.."$1"; }; f"
 	lc  = "!f() { git ll "$1"^.."$1"; }; f"
 	diffr  = "!f() { git diff "$1"^.."$1"; }; f"
