@@ -7,3 +7,6 @@ do
   # Stow (install/link) all programs.
   stow "$(basename "$program")"
 done
+
+# Add the Mail directory if it doesn't already exist.
+mkdir -p ~/Mail
