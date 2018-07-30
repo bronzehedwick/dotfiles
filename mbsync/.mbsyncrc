@@ -1,0 +1,34 @@
+# IMAP keeps an "internaldate" attribute for messages, which is separate from
+# the date given in the message header, set based upon when the message was
+# first received.  Fastmail's webmail interface at least uses this attribute to
+# properly order messages chronologically. The CopyArrivalDate option isn't
+# well documented but it seems that when synchronising a new message it uses
+# the Maildir file's Modify date as the IMAP internaldate attribute and vice
+# versa. Otherwise it seemed the synchronisation time was being used instead.
+# By setting the option here it's enabled by default for all Channels.
+CopyArrivalDate yes
+
+IMAPAccount chris
+Host imap.fastmail.com
+SSLType IMAPS
+SSLVersions TLSv1.2
+User iam@chrisdeluca.me
+PassCmd "security find-generic-password -w -s fastmail_offlineimap"
+
+IMAPStore chris-remote
+Account chris
+
+MaildirStore chris-local
+# The trailing "/" is important
+Path ~/Mail/
+Inbox ~/Mail/INBOX
+Flatten .
+
+Channel chris
+Master :chris-remote:
+Slave :chris-local:
+Patterns INBOX Archive Sent Spam Trash
+Expunge Both
+SyncState *
+Sync All
+Create Both
