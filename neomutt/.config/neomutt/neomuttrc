@@ -2,7 +2,7 @@
 
 # mail type
 set mbox_type = Maildir
-set sendmail = /usr/local/bin/msmtp
+set sendmail = "/usr/local/bin/msmtp"
 
 # account options
 source ~/.config/neomutt/mail_accounts
