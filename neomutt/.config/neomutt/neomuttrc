@@ -94,5 +94,5 @@ macro index A \
   "<save-message>+Archive<enter>" \
   "archive message"
 macro index O \
-  "<shell-escape>$HOME/.dotfiles/offlineimap/mailrun.sh<enter>" \
+  "<shell-escape>$HOME/.dotfiles/mailsync.sh<enter>" \
   "sync all mail"
