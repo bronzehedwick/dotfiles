@@ -87,12 +87,12 @@ hdr_order from: to: cc: bcc: reply-to: date: subject: # and in this order
 source ~/.config/neomutt/colors
 
 # key bindings
-macro index S \
+macro index,pager S \
   "<save-message>+Junk<enter>" \
   "mark message as spam"
-macro index A \
+macro index,pager A \
   "<save-message>+Archive<enter>" \
   "archive message"
-macro index O \
+macro index,pager O \
   "<shell-escape>$HOME/.dotfiles/mailsync.sh<enter>" \
   "sync all mail"
