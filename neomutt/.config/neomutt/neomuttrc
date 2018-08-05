@@ -61,7 +61,7 @@ auto_view text/html
 alternative_order text/plain text/encriched text/html
 
 # sidebar
-set sidebar_visible
+# set sidebar_visible
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
 set sidebar_width = 20
