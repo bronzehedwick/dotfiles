@@ -83,6 +83,14 @@ ignore * # first, ignore all headers
 unignore from: to: cc: bcc: reply-to: date: subject: # then, show only these
 hdr_order from: to: cc: bcc: reply-to: date: subject: # and in this order
 
+# pgp
+source ~/.config/neomutt/gpg.rc
+set pgp_use_gpg_agent = yes
+set pgp_sign_as = 43A5CE95
+set pgp_timeout = 3600
+set crypt_autosign = yes
+set crypt_replyencrypt = yes
+
 # colors
 source ~/.config/neomutt/colors
 
