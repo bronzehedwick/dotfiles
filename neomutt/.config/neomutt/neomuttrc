@@ -56,6 +56,10 @@ set tilde
 unset markers
 set text_flowed = yes
 
+# notification for new mails
+set new_mail_command = "terminal-notifier -title 'You\'ve got mail' \
+   -message '%n new messages, %u unread.' -activate 'com.apple.Terminal'"
+
 # html mails
 auto_view text/html
 alternative_order text/plain text/encriched text/html
