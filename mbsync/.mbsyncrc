@@ -23,6 +23,7 @@ MaildirStore chris-local
 Path ~/Mail/
 Inbox ~/Mail/INBOX
 Flatten .
+SubFolders Legacy
 
 Channel chris
 Master :chris-remote:
