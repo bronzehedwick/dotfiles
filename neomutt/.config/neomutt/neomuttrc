@@ -33,6 +33,10 @@ mailboxes +INBOX \
           +Junk \
           +Trash
 
+# notmuch indexer
+# set nm_default_uri = "notmuch:///Users/chris/Mail"
+# virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
+
 # auto alias
 set display_filter = ~/.dotfiles/neomutt/.config/neomutt/auto_add_alias.sh
 source ~/Nextcloud/aliases.txt
@@ -57,8 +61,8 @@ unset markers
 set text_flowed = yes
 
 # notification for new mails
-set new_mail_command = "terminal-notifier -title 'You\'ve got mail' \
-   -message '%n new messages, %u unread.' -activate 'com.apple.Terminal'"
+# set new_mail_command = "terminal-notifier -title 'You\'ve got mail' \
+#    -message '%n new messages, %u unread.' -activate 'com.apple.Terminal'"
 
 # html mails
 auto_view text/html
