@@ -22,6 +22,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
 Plug 'tpope/vim-abolish'
 Plug 'junegunn/goyo.vim'
+Plug 'ron89/thesaurus_query.vim'
 
 " Working with the file system
 Plug 'kassio/neoterm'
