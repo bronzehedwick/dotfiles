@@ -21,6 +21,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
 Plug 'tpope/vim-abolish'
+Plug 'junegunn/goyo.vim'
 
 " Working with the file system
 Plug 'kassio/neoterm'
