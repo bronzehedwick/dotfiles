@@ -45,7 +45,8 @@ Plug 'autozimu/LanguageClient-neovim', {
   \ 'do': 'bash install.sh',
   \ }
 Plug 'roxma/LanguageServer-php-neovim',  { 'do': 'composer install && composer run-script parse-stubs' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2', { 'do': ':UpdateRemotePlugins' }
 
 " Git
 Plug 'tpope/vim-fugitive'
