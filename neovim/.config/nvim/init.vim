@@ -372,8 +372,9 @@ nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F3> :call LanguageClient_textDocument_rename()<CR>
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
+" NCM2 (completion manager)
+autocmd BufEnter  *  call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
 
 " Neovim remote
 if has('nvim') && executable('nvr')
