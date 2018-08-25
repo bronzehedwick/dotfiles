@@ -234,8 +234,6 @@ autocmd BufRead,BufNewFile *.theme setlocal filetype=php
 autocmd BufRead,BufNewFile *.module setlocal filetype=php
 " Support fountain files.
 autocmd BufRead,BufNewFile *.fountain setlocal filetype=fountain
-" Hard wrap markdown files.
-autocmd FileType markdown setlocal textwidth=80
 
 " Terminal
 autocmd BufEnter term://* startinsert
