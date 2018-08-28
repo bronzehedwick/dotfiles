@@ -33,26 +33,3 @@ Expunge Both
 SyncState *
 Sync All
 Create Both
-
-IMAPAccount msk
-Host localhost
-Port 1143
-User delucac
-SSLType None
-PassCmd "security find-generic-password -w -s exchange_mutt"
-AuthMechs LOGIN
-
-IMAPStore msk-remote
-Account msk
-
-MaildirStore msk-local
-Path ~/Mail/
-Inbox ~/Mail/INBOX
-
-Channel msk
-Master :msk-remote:
-Slave :msk-local:
-Patterns INBOX Archive Sent Spam Trash
-Create Slave
-Sync All
-SyncState *
