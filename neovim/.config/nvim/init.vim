@@ -1,16 +1,17 @@
-"""""""""""
-" Plugins "
-"""""""""""
+" vim:fdm=marker ft=vim et sts=2 sw=2 ts=2
 
-" Install vim-plug if it's not present on the system.
+" Plugins {{{
+
+" Install vim-plug if it's not present on the system. {{{
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.config/nvim/plugged')
+" }}}
 
-" Working with text
+" Working with text {{{
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -23,8 +24,9 @@ Plug 'justinmk/vim-ipmotion'
 Plug 'tpope/vim-abolish'
 Plug 'junegunn/goyo.vim'
 Plug 'ron89/thesaurus_query.vim'
+" }}}
 
-" Working with the file system
+" Working with the file system {{{
 Plug 'kassio/neoterm'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-eunuch'
@@ -34,8 +36,9 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'jamessan/vim-gnupg'
 Plug 'vim-scripts/utl.vim'
 Plug 'fmoralesc/vim-pad', { 'branch': 'devel' }
+" }}}
 
-" Programming
+" Programming {{{
 Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
@@ -45,17 +48,20 @@ Plug 'autozimu/LanguageClient-neovim', {
   \ 'do': 'bash install.sh',
   \ }
 Plug 'roxma/LanguageServer-php-neovim',  { 'do': 'composer install && composer run-script parse-stubs' }
+Plug 'CandySunPlus/LanguageServer-css-neovim',  {'do': 'npm i'}
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2', { 'do': ':UpdateRemotePlugins' }
+" }}}
 
-" Git
+" Git {{{
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'tommcdo/vim-fubitive'
+" }}}
 
-" Syntaxes
+" Syntaxes {{{
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/html5.vim', { 'for': [ 'html', 'htmldjango' ] }
 Plug 'JulesWang/css.vim', { 'for': [ 'css', 'scss', 'sass', 'less' ] }
@@ -63,15 +69,16 @@ Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'lumiliet/vim-twig', { 'for': [ 'twig', 'html.twig' ] }
 Plug 'bronzehedwick/msmtp-syntax.vim'
+" }}}
 
 " Themes
 Plug 'mhartington/oceanic-next'
 
 call plug#end()
 
-""""""""""""""""""
-" Configurations "
-""""""""""""""""""
+" }}}
+
+" Configurations {{{
 
 " Use soft tabs
 set expandtab
@@ -204,9 +211,9 @@ nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v
 " Quickly open URLs
 nnoremap <leader>u :Utl<cr>
 
-""""""""""""""
-" Functions "
-""""""""""""""
+" }}}
+
+" Functions {{{
 
 " Display date and time
 map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
@@ -223,9 +230,9 @@ function! Timestamp()
 endfunction
 nmap <F4> call Timestamp()
 
-"""""""""""""""""
-" Autocommands "
-"""""""""""""""""
+" }}}
+
+" Autocommands {{{
 
 " Autodetect extra file types
 
@@ -255,17 +262,19 @@ autocmd FileType text setlocal spell
 autocmd FileType fountain setlocal spell
 autocmd FileType help setlocal nospell
 
-""""""""""""""""""""""""""
-" Plugin configurations  "
-""""""""""""""""""""""""""
+" }}}
 
-" AutoPairs
+" Plugin configurations {{{
+
+" AutoPairs {{{
 let g:AutoPairsShortcutToggle = ''
+" }}}
 
-" Fuzzy
+" Fuzzy {{{
 nnoremap <M-/> :FZF<CR>
+" }}}
 
-" Fugitive
+" Fugitive {{{
 nnoremap <silent> <M-g>s :Gstatus<CR>
 nnoremap <silent> <M-g>d :Gdiff<CR>
 nnoremap <silent> <M-g>c :Gcommit<CR>
@@ -277,30 +286,33 @@ nnoremap <silent> <M-g>w :Gwrite<CR>
 nnoremap <silent> <M-g>e :Gedit<CR>
 nnoremap <silent> <M-g>u :Git up<CR>
 let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
+" }}}
 
-" Neoterm
+" Neoterm {{{
 let g:neoterm_automap_keys = ',tt'
 let g:neoterm_autoscroll = 1
-
 nnoremap <silent> <M-t> :rightbelow Ttoggle<cr>
 nnoremap <silent> <M-l> :rightbelow Tclear<cr>
 nnoremap <silent> <M-k> :rightbelow Tkill<cr>
+" }}}
 
-" EditorConfig
+" EditorConfig {{{
 " Disable editorconfig on fugitive and remote buffers.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+" }}}
 
-" Vim-Test
+" Vim-Test {{{
 let test#strategy = "neovim"
+" }}}
 
-" Dirvish
+" Dirvish {{{
 autocmd FileType dirvish call fugitive#detect(@%)
+" }}}
 
-" Grepper
+" Grepper {{{
 nnoremap <M-p> :Grepper<cr>
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
-
 let g:grepper = {
       \ 'tools': ['rg', 'rgsass', 'rgtwig', 'rgjs', 'rgphp'],
       \ 'rgsass': {
@@ -323,15 +335,17 @@ let g:grepper = {
       \   'grepformat': '%f:%l:%c:%m',
       \   'escape': '\^$.*+?()[]{}|',
       \ }}
+" }}}
 
-" Undotree
+" Undotree {{{
 nnoremap <F5> :UndotreeToggle<cr>
 if has("persistent_undo")
   set undodir=~/.config/nvim/undodir
   set undofile
 endif
+" }}}
 
-" ALE
+" ALE {{{
 let g:ale_linters = {
 \  'html': []
 \}
@@ -340,21 +354,24 @@ let g:ale_sign_warning="⚠"
 let g:ale_sign_info="i"
 let g:ale_sign_style_error="✕"
 let g:ale_sign_style_warning="⚠"
+" }}}
 
-" Pad (Notes)
+" Pad (Notes) {{{
 let g:pad#dir = '~/Nextcloud/Notes'
 let g:pad#default_file_extension = '.md'
+" }}}
 
-" Utl (linking)
+" Utl (linking) {{{
 let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
+" }}}
 
-" Language Server
+" Language Server {{{
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {}
 "" LSP JavaScript
 if executable('javascript-typescript-stdio')
   let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
-  " autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
+  autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
 else
   echo "javascript-typescript-stdio not installed\n"
   :cq
@@ -362,7 +379,7 @@ endif
 "" LSP Rust
 if executable('rustup')
   let g:LanguageClient_serverCommands.rust = ['rustup', 'run', 'stable', 'rls']
-  " autocmd FileType rust setlocal omnifunc=LanguageClient#complete
+  autocmd FileType rust setlocal omnifunc=LanguageClient#complete
 else
   echo "rust not installed\n"
   :cq
@@ -371,20 +388,25 @@ endif
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F3> :call LanguageClient_textDocument_rename()<CR>
+" }}}
 
-" NCM2 (completion manager)
+" NCM2 (completion manager) {{{
 autocmd BufEnter  *  call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
+" }}}
 
-" Neovim remote
+" Neovim remote {{{
 if has('nvim') && executable('nvr')
   let $VISUAL = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
+" }}}
 
-""""""""""""""""
-" Colorscheme  "
-""""""""""""""""
+" }}}
+
+" Colorscheme {{{
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 colorscheme OceanicNext
+
+" }}}
