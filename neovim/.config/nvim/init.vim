@@ -26,7 +26,7 @@ Plug 'ron89/thesaurus_query.vim'
 
 " Working with the file system
 Plug 'kassio/neoterm'
-Plug 'cloudhead/neovim-fuzzy' " needs fzy and rg or ag installed
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
 Plug 'mhinz/vim-grepper'
@@ -263,7 +263,7 @@ autocmd FileType help setlocal nospell
 let g:AutoPairsShortcutToggle = ''
 
 " Fuzzy
-nnoremap <M-/> :FuzzyOpen<CR>
+nnoremap <M-/> :FZF<CR>
 
 " Fugitive
 nnoremap <silent> <M-g>s :Gstatus<CR>
