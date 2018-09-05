@@ -146,5 +146,20 @@ if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
   export PS1="\\W» "
 fi
 
+# FZF
+# shellcheck source=/dev/null
+[ -f "$HOME"/.fzf.bash ] && source "$HOME"/.fzf.bash
+if command -v fd > /dev/null 2>&1; then
+  # Use fd for path completion.
+  _fzf_compgen_path() {
+    fd --hidden --follow --exclude ".git" . "$1"
+  }
+
+  # Use fd to generate the list for directory completion
+  _fzf_compgen_dir() {
+    fd --type d --hidden --follow --exclude ".git" . "$1"
+  }
+fi
+
 # Todo.txt
 export TODOTXT_DEFAULT_ACTION=ls
