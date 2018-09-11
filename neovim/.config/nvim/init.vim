@@ -384,10 +384,21 @@ else
   echo "rust not installed\n"
   :cq
 endif
+"" LSP CSS
+if executable('css-languageserver')
+  let g:LanguageClient_serverCommands.css = ['css-languageserver', '--stdio']
+  let g:LanguageClient_serverCommands.scss = ['css-languageserver', '--stdio']
+  autocmd FileType css setlocal omnifunc=LanguageClient#complete
+  autocmd FileType scss setlocal omnifunc=LanguageClient#complete
+else
+  echo "vscode-css-languageservice not installed\n"
+  :cq
+endif
 "" LSP keymaps
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F3> :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <M-s> :call LanguageClient_textDocument_documentSymbol()<CR>
 " }}}
 
 " NCM2 (completion manager) {{{
