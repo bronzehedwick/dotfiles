@@ -272,6 +272,9 @@ let g:AutoPairsShortcutToggle = ''
 
 " Fuzzy {{{
 nnoremap <M-/> :FZF<CR>
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 " }}}
 
 " Fugitive {{{
