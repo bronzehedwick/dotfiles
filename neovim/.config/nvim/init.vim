@@ -4,8 +4,8 @@ scriptencoding utf-8
 " Plugins {{{
 
 " Install vim-plug if it's not present on the system. {{{
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+if !filereadable(expand('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo "~/.config/nvim/autoload/plug.vim" --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
