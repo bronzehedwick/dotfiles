@@ -49,9 +49,16 @@ Plug 'autozimu/LanguageClient-neovim', {
   \ 'do': 'bash install.sh',
   \ }
 Plug 'roxma/LanguageServer-php-neovim',  { 'do': 'composer install && composer run-script parse-stubs' }
-Plug 'CandySunPlus/LanguageServer-css-neovim',  {'do': 'npm i'}
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2', { 'do': ':UpdateRemotePlugins' }
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
+Plug 'yuki-ycino/ncm2-dictionary'
+Plug 'ncm2/ncm2-cssomni'
+Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
+Plug 'ncm2/ncm2-html-subscope'
+Plug 'ncm2/ncm2-markdown-subscope'
 " }}}
 
 " Git {{{
