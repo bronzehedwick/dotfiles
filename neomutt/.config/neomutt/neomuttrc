@@ -5,7 +5,7 @@ set mbox_type = Maildir
 set sendmail = "/usr/local/bin/msmtp"
 
 # account options
-source ~/.config/neomutt/mail_accounts
+set my_user = iam@chrisdeluca.me
 set from = $my_user
 set realname = "Chris DeLuca"
 set mail_check = 0
