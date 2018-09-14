@@ -28,7 +28,7 @@ Plug 'ron89/thesaurus_query.vim'
 " }}}
 
 " Working with the file system {{{
-Plug 'kassio/neoterm'
+Plug 'https://gitlab.com/Lenovsky/nuake.git'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
@@ -300,12 +300,10 @@ nnoremap <silent> <M-g>u :Git up<CR>
 let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 " }}}
 
-" Neoterm {{{
-let g:neoterm_automap_keys = ',tt'
-let g:neoterm_autoscroll = 1
-nnoremap <silent> <M-t> :rightbelow Ttoggle<cr>
-nnoremap <silent> <M-l> :rightbelow Tclear<cr>
-nnoremap <silent> <M-k> :rightbelow Tkill<cr>
+" Nuake {{{
+nnoremap <silent> <M-t> :Nuake<cr>
+inoremap <silent> <M-t> <C-\><C-n>:Nuake<cr>
+tnoremap <silent> <M-t> <C-\><C-n>:Nuake<cr>
 " }}}
 
 " EditorConfig {{{
