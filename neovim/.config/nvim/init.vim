@@ -81,6 +81,7 @@ Plug 'bronzehedwick/msmtp-syntax.vim'
 
 " Themes
 Plug 'mhartington/oceanic-next'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -427,8 +428,6 @@ endif
 
 " Colorscheme {{{
 
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+colorscheme onedark
 
 " }}}
