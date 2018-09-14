@@ -148,8 +148,9 @@ fi
 
 # FZF
 # shellcheck source=/dev/null
-[ -f "$HOME"/.fzf.bash ] && source "$HOME"/.fzf.bash
+# [ -f "$HOME"/.fzf.bash ] && source "$HOME"/.fzf.bash
 if command -v fd > /dev/null 2>&1; then
+  export FZF_DEFAULT_COMMAND='fd --type f'
   # Use fd for path completion.
   _fzf_compgen_path() {
     fd --hidden --follow --exclude ".git" . "$1"
