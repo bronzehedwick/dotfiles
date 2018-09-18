@@ -301,6 +301,7 @@ let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 " }}}
 
 " Nuake {{{
+let g:nuake_size=0.33
 nnoremap <silent> <M-t> :Nuake<cr>
 inoremap <silent> <M-t> <C-\><C-n>:Nuake<cr>
 tnoremap <silent> <M-t> <C-\><C-n>:Nuake<cr>
