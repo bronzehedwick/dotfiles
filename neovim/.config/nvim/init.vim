@@ -16,7 +16,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-rsi'
 Plug 'jiangmiao/auto-pairs'
@@ -24,7 +23,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
 Plug 'tpope/vim-abolish'
 Plug 'junegunn/goyo.vim'
-Plug 'ron89/thesaurus_query.vim'
 " }}}
 
 " Working with the file system {{{
@@ -35,7 +33,6 @@ Plug 'justinmk/vim-dirvish'
 Plug 'mhinz/vim-grepper'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'jamessan/vim-gnupg'
-Plug 'vim-scripts/utl.vim'
 Plug 'fmoralesc/vim-pad', { 'branch': 'devel' }
 " }}}
 
@@ -371,10 +368,6 @@ let g:ale_php_phpcs_standard="Drupal"
 " Pad (Notes) {{{
 let g:pad#dir = '~/Nextcloud/Notes'
 let g:pad#default_file_extension = '.md'
-" }}}
-
-" Utl (linking) {{{
-let g:utl_cfg_hdl_scm_http = "silent !open '%u'"
 " }}}
 
 " Language Server {{{
