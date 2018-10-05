@@ -27,13 +27,13 @@ export const deactivate = (oni: Oni.Plugin.Api) => {
 export const configuration = {
     //add custom config here, such as
 
-    "ui.colorscheme": "OceanicNext",
+    "ui.colorscheme": "onedark",
 
     //"oni.useDefaultConfig": true,
     //"oni.bookmarks": ["~/Documents"],
     "oni.loadInitVim": true,
     "editor.fontSize": "18px",
-    "editor.fontFamily": "InconsolataLGC",
+    "editor.fontFamily": "Fira Code",
     "editor.renderer": "webgl",
     "tabs.mode": "tabs",
     "sidebar.enabled": false,
