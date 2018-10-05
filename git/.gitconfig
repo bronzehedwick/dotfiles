@@ -34,10 +34,6 @@
 	up = pull --rebase --autostash --all
 	ticket = "!git branch | grep '\\*' | cut -d '-' -f 1,2 | cut -d '/' -f 2"
 	cb = "!git branch | grep '\\*' | cut -d ' ' -f 2"
-[merge]
-	conflictstyle = diff3
-	; tool = Kaleidoscope
-	tool = Kaleidoscope
 [color]
 	ui = auto
 [credential]
@@ -46,11 +42,23 @@
 	default = simple
 [grep]
 	lineNumber = true
+[merge]
+	conflictstyle = diff3
+	tool = Kaleidoscope
 [mergetool]
 	keepBackup = false
 	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
 [diff]
-	tool = Kaleidoscope
+	tool = nvr
+; [difftool]
+; 	prompt = false
+[difftool "nvr"]
+	cmd = nvr -s -d \"$LOCAL\" \"$REMOTE\"
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
@@ -59,12 +67,5 @@
 [commit]
 	template = ~/.git_commit_msg.txt
 	gpgsign = true
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
 [advice]
 	statusHints = false
