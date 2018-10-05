@@ -202,6 +202,12 @@ nmap <C-l> <C-w>l
 nmap <C-j> <C-w>j
 nmap <C-h> <C-w>h
 
+" Window navigation from terminal mode
+tnoremap <silent> <C-k> <C-\><C-n><C-w>k
+tnoremap <silent> <C-l> <C-\><C-n><C-w>l
+tnoremap <silent> <C-j> <C-\><C-n><C-w>j
+tnoremap <silent> <C-h> <C-\><C-n><C-w>h
+
 " Jet-pack movement between buffers…
 nnoremap <leader>l :ls<CR>:b<space>
 nnoremap <leader>k :ls<CR>:sbuffer<space>
