@@ -7,13 +7,15 @@ Installation
 ------------
 
 ```sh
+# Clone the repo into your home directory in a hidden folder.
 cd && git clone git@github.com:bronzehedwick/dotfiles.git .dotfiles
 ```
+
+For automatic config linking, install [GNU Stow][stow].
 
 Setup
 -----
 
-Use [GNU Stow][stow] to install each program's files. For example, to install
-Neovim's configuration, you would run `stow neovim` from the `.dotfiles` directory.
+Provided [GNU Stow][stow] is installed, all config files can be linked by running `make`.
 
 [stow]: http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
