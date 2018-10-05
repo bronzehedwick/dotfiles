@@ -272,6 +272,7 @@ autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal spell
 autocmd FileType text setlocal spell
 autocmd FileType fountain setlocal spell
+autocmd BufEnter mail setlocal spell
 autocmd FileType help setlocal nospell
 
 " }}}
