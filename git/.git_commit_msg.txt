@@ -1,4 +1,4 @@
-# If applied, this commit will...
+# If applied, this commit will…
 
 # Explain why this change is being made
 
