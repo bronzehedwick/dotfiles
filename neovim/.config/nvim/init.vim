@@ -27,7 +27,7 @@ Plug 'junegunn/goyo.vim'
 
 " Working with the file system {{{
 Plug 'https://gitlab.com/Lenovsky/nuake.git'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
 Plug 'mhinz/vim-grepper'
