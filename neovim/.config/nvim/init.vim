@@ -197,10 +197,7 @@ map <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 " More useful window navigation bindings.
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
 nmap <C-j> <C-w>j
-nmap <C-h> <C-w>h
 
 " Window navigation from terminal mode
 tnoremap <silent> <C-k> <C-\><C-n><C-w>k
