@@ -182,6 +182,9 @@ command! -bang Q q<bang>
 command! -bang QA qa<bang>
 command! -bang Qa qa<bang>
 
+" Disable Ex mode mapping. Can still be accessed via gQ.
+nnoremap Q q
+
 " True color!
 if has('termguicolors')
   set termguicolors
