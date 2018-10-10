@@ -26,7 +26,6 @@ Plug 'junegunn/goyo.vim'
 " }}}
 
 " Working with the file system {{{
-Plug 'https://gitlab.com/Lenovsky/nuake.git'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
@@ -197,13 +196,10 @@ map <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 " More useful window navigation bindings.
+nmap <C-k> <C-w>k
 nmap <C-j> <C-w>j
-
-" Window navigation from terminal mode
-tnoremap <silent> <C-k> <C-\><C-n><C-w>k
-tnoremap <silent> <C-l> <C-\><C-n><C-w>l
-tnoremap <silent> <C-j> <C-\><C-n><C-w>j
-tnoremap <silent> <C-h> <C-\><C-n><C-w>h
+nmap <C-l> <C-w>l
+nmap <C-h> <C-w>h
 
 " Jet-pack movement between buffers…
 nnoremap <leader>l :ls<CR>:b<space>
@@ -299,13 +295,6 @@ nnoremap <silent> <M-g>w :Gwrite<CR>
 nnoremap <silent> <M-g>e :Gedit<CR>
 nnoremap <silent> <M-g>u :Git up<CR>
 let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
-" }}}
-
-" Nuake {{{
-let g:nuake_size=0.33
-nnoremap <silent> <M-t> :Nuake<cr>
-inoremap <silent> <M-t> <C-\><C-n>:Nuake<cr>
-tnoremap <silent> <M-t> <C-\><C-n>:Nuake<cr>
 " }}}
 
 " EditorConfig {{{
