@@ -60,7 +60,7 @@ color attachment black green
 color error red black
 color message white black
 color search brightwhite magenta
-color status brightyellow blue
+color status black blue
 color tree brightblue black
 color normal white black
 color tilde green black
