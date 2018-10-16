@@ -281,7 +281,7 @@ autocmd FileType help setlocal nospell
 let g:AutoPairsShortcutToggle = ''
 " }}}
 
-" Fuzzy {{{
+" FZF {{{
 nnoremap <M-/> :FZF<CR>
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
