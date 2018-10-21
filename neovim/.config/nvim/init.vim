@@ -33,6 +33,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'jamessan/vim-gnupg'
 Plug 'fmoralesc/vim-pad', { 'branch': 'devel' }
+Plug 'vim-scripts/utl.vim'
 " }}}
 
 " Programming {{{
@@ -218,7 +219,8 @@ nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v
 
 " Quickly open URLs
 nnoremap <leader>u :Utl<cr>
-
+" Configure HTTP handler (works for macOS).
+let g:utl_cfg_hdl_scm_http_system = "silent !open '%u'"
 " }}}
 
 " Functions {{{
