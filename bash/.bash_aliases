@@ -4,9 +4,16 @@
 # LS #
 ######
 
-alias ll='ls -lhcF'
-alias la='ls -AF'
-alias lla='ls -AFchl'
+if hash exa 2>/dev/null; then
+  alias ls='exa'
+  alias ll='exa --long'
+  alias la='exa -a'
+  alias lla='exa --long -a'
+else
+  alias ll='ls -lhcF'
+  alias la='ls -AF'
+  alias lla='ls -AFchl'
+fi
 
 ########
 # grep #
