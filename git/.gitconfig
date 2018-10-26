@@ -34,6 +34,7 @@
 	up = pull --rebase --autostash --all
 	ticket = "!git branch | grep '\\*' | cut -d '-' -f 1,2 | cut -d '/' -f 2"
 	cb = "!git branch | grep '\\*' | cut -d ' ' -f 2"
+	ctags = !.git/hooks/ctags
 [color]
 	ui = auto
 [credential]
