@@ -55,7 +55,7 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # Set Vim to the EDITOR environment variable
 export EDITOR=nvim
-export PAGER=less
+export MANPAGER="nvim -u NORC -c 'set laststatus=0' -c 'colorscheme delek' -c 'set ft=man' -"
 
 # Todo.txt
 export TODOTXT_DEFAULT_ACTION=ls
