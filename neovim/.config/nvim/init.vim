@@ -37,7 +37,7 @@ Plug 'vim-scripts/utl.vim'
 " }}}
 
 " Programming {{{
-Plug 'w0rp/ale'
+Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
 Plug 'janko-m/vim-test'
@@ -351,16 +351,8 @@ if has("persistent_undo")
 endif
 " }}}
 
-" ALE {{{
-let g:ale_linters = {
-\  'html': []
-\}
-let g:ale_sign_error="✕"
-let g:ale_sign_warning="⚠"
-let g:ale_sign_info="i"
-let g:ale_sign_style_error="✕"
-let g:ale_sign_style_warning="⚠"
-let g:ale_php_phpcs_standard="Drupal"
+" Neomake {{{
+call neomake#configure#automake('w')
 " }}}
 
 " Pad (Notes) {{{
