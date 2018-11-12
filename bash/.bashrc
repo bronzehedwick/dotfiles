@@ -54,8 +54,8 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # Set Vim to the EDITOR environment variable
-export EDITOR=nvim
-export MANPAGER="nvim -u NORC -c 'set laststatus=0' -c 'colorscheme delek' -c 'set ft=man' -"
+export EDITOR=nvr
+export VISUAL=nvr
 
 # Todo.txt
 export TODOTXT_DEFAULT_ACTION=ls
