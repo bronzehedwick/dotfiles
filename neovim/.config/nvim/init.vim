@@ -252,6 +252,10 @@ autocmd BufRead,BufNewFile *.module setlocal filetype=php
 " Support fountain files.
 autocmd BufRead,BufNewFile *.fountain setlocal filetype=fountain
 
+" Tables (tsv)
+autocmd BufRead,BufNewFile *.tsv setlocal tabstop=20
+autocmd BufRead,BufNewFile *.tsv setlocal noexpandtab
+
 " Terminal
 autocmd BufEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
