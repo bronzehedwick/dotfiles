@@ -142,7 +142,9 @@ if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
   alias sp='nvr -o'
   alias vsp='nvr -O'
   alias tabe='nvr --remote-tab'
-  alias nvim='echo "No nesting!"'
+  alias nvim='nvr'
+  alias vim='nvr'
+  alias vi='nvr'
   export PS1="\\W» "
 fi
 
