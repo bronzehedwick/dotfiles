@@ -67,12 +67,8 @@ Plug 'tommcdo/vim-fubitive'
 " }}}
 
 " Syntaxes {{{
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'othree/html5.vim', { 'for': [ 'html', 'htmldjango' ] }
-Plug 'JulesWang/css.vim', { 'for': [ 'css', 'scss', 'sass', 'less' ] }
+Plug 'sheerun/vim-polyglot'
 Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
-Plug 'cespare/vim-toml', { 'for': 'toml' }
-Plug 'lumiliet/vim-twig', { 'for': [ 'twig', 'html.twig' ] }
 Plug 'bronzehedwick/msmtp-syntax.vim'
 " }}}
 
