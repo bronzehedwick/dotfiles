@@ -356,7 +356,7 @@ call neomake#configure#automake('w')
 " }}}
 
 " Pad (Notes) {{{
-let g:pad#dir = '~/Nextcloud/Notes'
+let g:pad#dir = '~/Dropbox/Notes'
 let g:pad#default_file_extension = '.md'
 let g:pad#window_height = 12
 " }}}
