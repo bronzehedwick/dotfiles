@@ -41,21 +41,22 @@ Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
 Plug 'janko-m/vim-test'
-Plug 'autozimu/LanguageClient-neovim', {
-  \ 'branch': 'next',
-  \ 'do': 'bash install.sh',
-  \ }
-Plug 'roxma/LanguageServer-php-neovim',  { 'do': 'composer install && composer run-script parse-stubs' }
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2', { 'do': ':UpdateRemotePlugins' }
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
-Plug 'yuki-ycino/ncm2-dictionary'
-Plug 'ncm2/ncm2-cssomni'
-Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
-Plug 'ncm2/ncm2-html-subscope'
-Plug 'ncm2/ncm2-markdown-subscope'
+" Plug 'autozimu/LanguageClient-neovim', {
+"   \ 'branch': 'next',
+"   \ 'do': 'bash install.sh',
+"   \ }
+" Plug 'roxma/LanguageServer-php-neovim',  { 'do': 'composer install && composer run-script parse-stubs' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'roxma/nvim-yarp'
+" Plug 'ncm2/ncm2', { 'do': ':UpdateRemotePlugins' }
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-path'
+" Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
+" Plug 'yuki-ycino/ncm2-dictionary'
+" Plug 'ncm2/ncm2-cssomni'
+" Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
+" Plug 'ncm2/ncm2-html-subscope'
+" Plug 'ncm2/ncm2-markdown-subscope'
 " }}}
 
 " Git {{{
@@ -77,7 +78,6 @@ Plug 'mhartington/oceanic-next'
 Plug 'joshdick/onedark.vim'
 
 call plug#end()
-
 " }}}
 
 " Configurations {{{
@@ -363,33 +363,10 @@ let g:pad#window_height = 12
 
 " Language Server {{{
 let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {}
-"" LSP JavaScript
-if executable('javascript-typescript-stdio')
-  let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
-  autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
-else
-  echo "javascript-typescript-stdio not installed\n"
-  :cq
-endif
-"" LSP Rust
-if executable('rustup')
-  let g:LanguageClient_serverCommands.rust = ['rustup', 'run', 'stable', 'rls']
-  autocmd FileType rust setlocal omnifunc=LanguageClient#complete
-else
-  echo "rust not installed\n"
-  :cq
-endif
-"" LSP CSS
-if executable('css-languageserver')
-  let g:LanguageClient_serverCommands.css = ['css-languageserver', '--stdio']
-  let g:LanguageClient_serverCommands.scss = ['css-languageserver', '--stdio']
-  autocmd FileType css setlocal omnifunc=LanguageClient#complete
-  autocmd FileType scss setlocal omnifunc=LanguageClient#complete
-else
-  echo "vscode-css-languageservice not installed\n"
-  :cq
-endif
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ }
 "" LSP keymaps
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
@@ -397,9 +374,8 @@ nnoremap <silent> <F3> :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> <M-s> :call LanguageClient_textDocument_documentSymbol()<CR>
 " }}}
 
-" NCM2 (completion manager) {{{
-autocmd BufEnter  *  call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
+" Deoplete {{{
+let g:deoplete#enable_at_startup = 1
 " }}}
 
 " Neovim remote {{{
