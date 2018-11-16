@@ -37,7 +37,7 @@ mailboxes +INBOX \
 
 # auto alias
 set display_filter = ~/.dotfiles/neomutt/.config/neomutt/auto_add_alias.sh
-source ~/Nextcloud/aliases.txt
+source ~/Dropbox/aliases.txt
 
 # trash handling
 folder-hook . set trash = +Trash
