@@ -86,10 +86,10 @@ call plug#end()
 set expandtab
 
 " Soft tabs equal two spaces
-set shiftwidth=2
+set shiftwidth=4
 
 " Real tabs equal to spaces
-set tabstop=2
+set tabstop=4
 
 " Command <Tab> completion, list matches, then longest common part, then all.
 set wildmode=list:longest,full
@@ -272,6 +272,12 @@ autocmd FileType text setlocal spell
 autocmd FileType fountain setlocal spell
 autocmd BufEnter mail setlocal spell
 autocmd FileType help setlocal nospell
+
+" HTML
+autocmd FileType html setlocal shiftwidth=2
+autocmd FileType html setlocal tabstop=2
+autocmd FileType twig setlocal shiftwidth=2
+autocmd FileType twig setlocal tabstop=2
 
 " }}}
 
