@@ -249,35 +249,40 @@ autocmd BufRead,BufNewFile *.module setlocal filetype=php
 autocmd BufRead,BufNewFile *.fountain setlocal filetype=fountain
 
 " Tables (tsv)
-autocmd BufRead,BufNewFile *.tsv setlocal tabstop=20
-autocmd BufRead,BufNewFile *.tsv setlocal noexpandtab
+autocmd BufRead,BufNewFile *.tsv setlocal tabstop=20 |
+            \ setlocal noexpandtab
 
 " Terminal
-autocmd BufEnter term://* startinsert
-autocmd BufLeave term://* stopinsert
-
-" NeoMutt
-autocmd BufEnter term://*neomutt setlocal nonumber
-autocmd BufEnter term://*neomutt setlocal norelativenumber
-autocmd BufEnter mail setlocal fo+=aw
+autocmd BufEnter term://* startinsert |
+            \ stopinsert
 
 " Chat
-autocmd BufEnter term://*chat setlocal nonumber
-autocmd BufEnter term://*chat setlocal norelativenumber
+autocmd BufEnter term://*chat setlocal nonumber |
+            \ setlocal norelativenumber
+
+" NeoMutt
+autocmd BufEnter term://*neomutt setlocal nonumber |
+            \ setlocal norelativenumber
+
+autocmd FileType mail setlocal fo+=aw |
+            \ setlocal spell |
+            \ setlocal textwidth=72 |
+            \ setlocal nonumber |
+            \ setlocal norelativenumber |
+            \ setlocal spell
 
 " Spelling
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal spell
 autocmd FileType text setlocal spell
 autocmd FileType fountain setlocal spell
-autocmd BufEnter mail setlocal spell
 autocmd FileType help setlocal nospell
 
 " HTML
-autocmd FileType html setlocal shiftwidth=2
-autocmd FileType html setlocal tabstop=2
-autocmd FileType twig setlocal shiftwidth=2
-autocmd FileType twig setlocal tabstop=2
+autocmd FileType html setlocal shiftwidth=2 |
+            \ setlocal tabstop=2
+autocmd FileType twig setlocal shiftwidth=2 |
+            \ setlocal tabstop=2
 
 " }}}
 
