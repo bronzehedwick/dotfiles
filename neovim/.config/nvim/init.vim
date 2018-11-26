@@ -399,6 +399,6 @@ endif
 
 " Colorscheme {{{
 
-colorscheme onedark
+colorscheme OceanicNext
 
 " }}}
