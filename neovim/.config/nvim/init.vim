@@ -6,7 +6,7 @@ scriptencoding utf-8
 " Install vim-plug if it's not present on the system. {{{
 if !filereadable(expand('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo "~/.config/nvim/autoload/plug.vim" --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.config/nvim/plugged')
@@ -250,26 +250,26 @@ autocmd BufRead,BufNewFile *.fountain setlocal filetype=fountain
 
 " Tables (tsv)
 autocmd BufRead,BufNewFile *.tsv setlocal tabstop=20 |
-            \ setlocal noexpandtab
+      \ setlocal noexpandtab
 
 " Terminal
 autocmd BufEnter term://* startinsert |
-            \ stopinsert
+      \ stopinsert
 
 " Chat
 autocmd BufEnter term://*chat setlocal nonumber |
-            \ setlocal norelativenumber
+      \ setlocal norelativenumber
 
 " NeoMutt
 autocmd BufEnter term://*neomutt setlocal nonumber |
-            \ setlocal norelativenumber
+      \ setlocal norelativenumber
 
 autocmd FileType mail setlocal fo+=aw |
-            \ setlocal spell |
-            \ setlocal textwidth=72 |
-            \ setlocal nonumber |
-            \ setlocal norelativenumber |
-            \ setlocal spell
+      \ setlocal spell |
+      \ setlocal textwidth=72 |
+      \ setlocal nonumber |
+      \ setlocal norelativenumber |
+      \ setlocal spell
 
 " Spelling
 autocmd FileType gitcommit setlocal spell
@@ -280,9 +280,9 @@ autocmd FileType help setlocal nospell
 
 " HTML
 autocmd FileType html setlocal shiftwidth=2 |
-            \ setlocal tabstop=2
+      \ setlocal tabstop=2
 autocmd FileType twig setlocal shiftwidth=2 |
-            \ setlocal tabstop=2
+      \ setlocal tabstop=2
 
 " }}}
 
@@ -296,7 +296,7 @@ let g:AutoPairsShortcutToggle = ''
 nnoremap <M-/> :FZF<CR>
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 " }}}
 
 " Fugitive {{{
@@ -375,9 +375,9 @@ let g:pad#window_height = 12
 " Language Server {{{
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ }
+      \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+      \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+      \ }
 "" LSP keymaps
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
