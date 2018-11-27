@@ -13,27 +13,28 @@ set delete
 unset confirmappend
 set quit
 set header_cache = ~/.cache/neomutt
-
-# folders
-set folder = ~/Mail
-set spoolfile = "+INBOX"
-set mbox = "+Archive"
-set postponed = "+Drafts"
-set record = "+Sent"
 set send_charset = "us-ascii:utf-8"
 
-# mailboxes
-mailboxes +INBOX \
-          +Archive \
-          +Sent \
-          +Drafts \
-          +Notes \
-          +Junk \
-          +Trash
-
 # notmuch indexer
-# set nm_default_uri = "notmuch:///Users/chris/Mail"
-# virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
+set nm_default_uri = "notmuch:///Users/chris/Mail" # path to the maildir
+set virtual_spoolfile = yes # enable virtual folders
+set folder="~/Mail"
+virtual-mailboxes \
+    "Inbox"     "notmuch://?query=tag:inbox and NOT tag:archive"\
+    "Unread"    "notmuch://?query=tag:unread" \
+    "Sent"      "notmuch://?query=tag:sent" \
+    "Archive"   "notmuch://?query=tag:archive" \
+    "Starred"   "notmuch://?query=tag:*" \
+    "Lists"     "notmuch://?query=tag:lists" \
+    "Flyers"    "notmuch://?query=tag:flyer" \
+    "Junk"      "notmuch://?query=tag:spam" \
+    "Trash"     "notmuch://?query=tag:deleted"
+# notmuch bindings
+macro index \\\\ "<vfolder-from-query>" # looks up a hand made query
+macro index A "<modify-labels>+archive -unread -inbox\<Enter>"        # tag as Archived
+macro index S "<modify-labels-then-hide>-inbox -unread +spam\<Enter>" # tag as Junk mail
+macro index + "<modify-labels>+*\<Enter><sync-mailbox>"               # tag as starred
+macro index - "<modify-labels>-*\<Enter><sync-mailbox>"               # tag as unstarred
 
 # auto alias
 set display_filter = ~/.dotfiles/neomutt/.config/neomutt/auto_add_alias.sh
@@ -58,24 +59,27 @@ set tilde
 unset markers
 set text_flowed = yes
 
-# notification for new mails
-# set new_mail_command = "terminal-notifier -title 'You\'ve got mail' \
-#    -message '%n new messages, %u unread.' -activate 'com.apple.Terminal'"
-
 # html mails
 auto_view text/html
 alternative_order text/plain text/encriched text/html
 
 # sidebar
-# set sidebar_visible
+set sidebar_visible
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
 set sidebar_width = 20
 set sidebar_divider_char = '│'
+# sidebar bindings
 bind index,pager B sidebar-toggle-visible
 bind index,pager \CP sidebar-prev
 bind index,pager \CN sidebar-next
-bind index,pager \CO sidebar-open
+bind index <left> sidebar-prev          # got to previous folder in sidebar
+bind index <right> sidebar-next         # got to next folder in sidebar
+bind index <space> sidebar-open         # open selected folder from sidebar
+# sidebar toggle
+macro index ,@) "<enter-command> set sidebar_visible=no; macro index ~ ,@( 'Toggle sidebar'<Enter>"
+macro index ,@( "<enter-command> set sidebar_visible=yes; macro index ~ ,@) 'Toggle sidebar'<Enter>"
+macro index ~ ,@( 'Toggle sidebar'      # toggle the sidebar
 
 # composing
 set fcc_attach
@@ -85,6 +89,7 @@ set include
 set forward_quote
 set signature = ~/.config/neomutt/signature
 
+# mail headers
 ignore * # first, ignore all headers
 unignore from: to: cc: bcc: reply-to: date: subject: # then, show only these
 hdr_order from: to: cc: bcc: reply-to: date: subject: # and in this order
@@ -98,16 +103,5 @@ set crypt_replyencrypt = yes
 
 # colors
 source ~/.config/neomutt/colors
-
-# key bindings
-macro index,pager S \
-  "<save-message>+Junk<enter>" \
-  "mark message as spam"
-macro index,pager A \
-  "<save-message>+Archive<enter>" \
-  "archive message"
-macro index,pager O \
-  "<shell-escape>$HOME/.dotfiles/mailsync.sh<enter>" \
-  "sync all mail"
 
 # vim: ft=muttrc

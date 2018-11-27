@@ -253,8 +253,8 @@ autocmd BufRead,BufNewFile *.tsv setlocal tabstop=20 |
       \ setlocal noexpandtab
 
 " Terminal
-autocmd BufEnter term://* startinsert |
-      \ stopinsert
+autocmd BufEnter term://* startinsert
+autocmd BufLeave term://* stopinsert
 
 " Chat
 autocmd BufEnter term://*chat setlocal nonumber |
@@ -262,14 +262,19 @@ autocmd BufEnter term://*chat setlocal nonumber |
 
 " NeoMutt
 autocmd BufEnter term://*neomutt setlocal nonumber |
-      \ setlocal norelativenumber
+      \ setlocal norelativenumber |
+      \ setlocal noshowmode |
+      \ setlocal noruler |
+      \ setlocal laststatus=0 |
+      \ setlocal noshowcmd |
+      \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
 
+" Mails
 autocmd FileType mail setlocal fo+=aw |
       \ setlocal spell |
       \ setlocal textwidth=72 |
       \ setlocal nonumber |
-      \ setlocal norelativenumber |
-      \ setlocal spell
+      \ setlocal norelativenumber
 
 " Spelling
 autocmd FileType gitcommit setlocal spell
