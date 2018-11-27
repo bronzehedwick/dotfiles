@@ -41,22 +41,13 @@ Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
 Plug 'janko-m/vim-test'
-" Plug 'autozimu/LanguageClient-neovim', {
-"   \ 'branch': 'next',
-"   \ 'do': 'bash install.sh',
-"   \ }
-" Plug 'roxma/LanguageServer-php-neovim',  { 'do': 'composer install && composer run-script parse-stubs' }
+Plug 'vimlab/mdn.vim'
+"Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'make release',
+"     \ }
+"Plug 'roxma/LanguageServer-php-neovim',  { 'do': 'composer install && composer run-script parse-stubs' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'roxma/nvim-yarp'
-" Plug 'ncm2/ncm2', { 'do': ':UpdateRemotePlugins' }
-" Plug 'ncm2/ncm2-bufword'
-" Plug 'ncm2/ncm2-path'
-" Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
-" Plug 'yuki-ycino/ncm2-dictionary'
-" Plug 'ncm2/ncm2-cssomni'
-" Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
-" Plug 'ncm2/ncm2-html-subscope'
-" Plug 'ncm2/ncm2-markdown-subscope'
 " }}}
 
 " Git {{{
@@ -68,8 +59,11 @@ Plug 'tommcdo/vim-fubitive'
 " }}}
 
 " Syntaxes {{{
-Plug 'sheerun/vim-polyglot'
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'othree/html5.vim', { 'for': [ 'html', 'htmldjango' ] }
+Plug 'JulesWang/css.vim', { 'for': [ 'css', 'scss', 'sass', 'less' ] }
 Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'bronzehedwick/msmtp-syntax.vim'
 " }}}
 
@@ -378,16 +372,16 @@ let g:pad#window_height = 12
 " }}}
 
 " Language Server {{{
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-      \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-      \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-      \ }
-"" LSP keymaps
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F3> :call LanguageClient_textDocument_rename()<CR>
-nnoremap <silent> <M-s> :call LanguageClient_textDocument_documentSymbol()<CR>
+" let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_serverCommands = {
+"     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+"     \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+"     \ }
+" "" LSP keymaps
+" nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+" nnoremap <silent> <F3> :call LanguageClient_textDocument_rename()<CR>
+" nnoremap <silent> <M-s> :call LanguageClient_textDocument_documentSymbol()<CR>
 " }}}
 
 " Deoplete {{{
