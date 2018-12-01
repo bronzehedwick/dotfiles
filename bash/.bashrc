@@ -54,8 +54,8 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # Set Vim to the EDITOR environment variable
-export EDITOR="nvim -u NORC"
-export VISUAL="nvim -u NORC"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Todo.txt
 export TODOTXT_DEFAULT_ACTION=ls
@@ -146,8 +146,8 @@ if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
   alias vim='nvr'
   alias vi='nvr'
   export PS1="\\W» "
-  export EDITOR=nvr
-  export VISUAL=nvr
+  export EDITOR='nvr'
+  export VISUAL='nvr'
 fi
 
 # FZF
