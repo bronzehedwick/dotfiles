@@ -1,12 +1,22 @@
 #!/bin/sh
 
-/usr/local/bin/mbsync chris > ~/.mbsync.log 2>&1
-notmuch new
-# retag all "new" messages "inbox" and "unread"
-notmuch tag +inbox +unread -new -- tag:new
-# tag all messages from "me" as sent and remove tags inbox and unread
-notmuch tag -new -inbox +sent -- delucac@mskcc.org or contact@chrisdeluca.me or signups@chrisdeluca.me or bronzehedwick@gmail.com or christopher.j.deluca@gmail.com
-# tag newsletters, but dont show them in inbox
-notmuch tag +lists +unread -inbox -new -- from:notifications@github.com
-# tag anything that has unsubscribe in the message body as a flyer
-# notmuch tag +flyer -inbox -new +unread message:
+# sync mail from IMAP
+/usr/local/bin/mbsync chris > /tmp/mbsync.log 2>&1
+
+# do initial tagging
+/usr/local/bin/notmuch new
+
+# retag all "new" messages in INBOX as "inbox"
+/usr/local/bin/notmuch tag +inbox -new folder:INBOX
+
+# retag all messages in Archive as "archive"
+/usr/local/bin/notmuch tag +archive -inbox folder:Archive
+
+# retag all messages in Junk as "spam"
+/usr/local/bin/notmuch tag +spam -inbox folder:Junk
+
+# retag all messages in Trash as "deleted"
+/usr/local/bin/notmuch tag +deleted -inbox -archive folder:Trash
+
+# tag newsletters, defined as anything with the phrase "unsubscribe"
+/usr/local/bin/notmuch tag +lists -inbox -new unsubscribe
