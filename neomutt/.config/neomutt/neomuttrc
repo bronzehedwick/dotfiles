@@ -14,6 +14,8 @@ unset confirmappend
 set quit
 set header_cache = ~/.cache/neomutt
 set send_charset = "us-ascii:utf-8"
+set fast_reply = yes
+set include = yes
 
 # folders
 set folder = "~/Mail"
