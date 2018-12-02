@@ -33,15 +33,8 @@ mailboxes +INBOX \
           +Junk \
           +Trash
 
-# notmuch indexer
-set nm_default_uri = "notmuch:///Users/chris/Mail" # path to the maildir
-virtual-mailboxes \
-    "Lists"     "notmuch://?query=tag:lists and NOT tag:archive and NOT tag:deleted and NOT tag:spam"
-#    "Starred"   "notmuch://?query=tag:*"
-
-# notmuch bindings
-macro index / "<vfolder-from-query>" \
-    "search messages with notmuch"
+# trash handling
+set trash = '+Trash'
 
 # key bindings
 macro index,pager S \
@@ -54,13 +47,16 @@ macro index,pager O \
   "<shell-escape>$HOME/.dotfiles/mailsync.sh<enter>" \
   "sync all mail"
 
+# notmuch indexer
+set nm_default_uri = "notmuch:///Users/chris/Mail" # path to the maildir
+
+# notmuch bindings
+macro index / "<vfolder-from-query>" \
+    "search messages with notmuch"
+
 # auto alias
 set display_filter = ~/.dotfiles/neomutt/.config/neomutt/auto_add_alias.sh
 source ~/Dropbox/aliases.txt
-
-# trash handling
-folder-hook . set trash = +Trash
-folder-hook trash$ unset trash
 
 # sort/threading
 set sort = threads
