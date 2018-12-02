@@ -119,6 +119,9 @@ set pgp_timeout = 3600
 set crypt_autosign = no
 set crypt_replyencrypt = yes
 
+# mailing lists/newsletters
+source ~/.config/neomutt/mailinglists
+
 # colors
 source ~/.config/neomutt/colors
 

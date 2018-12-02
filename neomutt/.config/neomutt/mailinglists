@@ -1,0 +1,52 @@
+# subscribed mailing lists
+
+# github
+subscribe .*@noreply.github.com
+color index color85 black "~C .*@noreply.github.com"
+# color index brightcolor73 black "~N .*@noreply.github.com"
+
+# dev.to
+color index color87 black "~f .*@dev.to"
+
+# freebsd
+color index color99 black "~f .*@freebsd.org"
+
+# heatonist
+color index color130 black "~f .*@heatonist.com"
+
+# meetup
+color index color126 black "~f .*@meetup.com"
+
+# kickstarter
+color index color36 black "~f .*@kickstarter.com"
+
+# namecheap
+color index color172 black "~f .*@namecheap.com"
+
+# wikimedia
+color index color211 black "~f .*@wikimedia.org"
+
+# mint
+color index color120 black "~f .*@mint.com"
+
+# fight for the future
+color index color45 black "~f .*@fightforthefuture.org"
+
+# chase bank
+color index color63 black "~f .*@.*chase.com"
+
+# quantic bank
+color index color202 black "~f .*@quonticbank.com"
+
+# electronic frontier foundation
+color index color142 black "~f .*@eff.org"
+
+# care.org
+color index color136 black "~f .*@care.org"
+
+# digital ocean
+color index color117 black "~f @support.digitalocean.com"
+
+# WNYC
+color index color164 black "~f @wnyc.org"
+# vim: ft=muttrc
