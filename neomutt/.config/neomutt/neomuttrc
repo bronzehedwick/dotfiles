@@ -80,6 +80,9 @@ set text_flowed = yes
 # don't make me press enter after shell command is run
 set wait_key = no
 
+# speed up folder switching
+set sleep_time = 0
+
 # html mails
 auto_view text/html
 alternative_order text/plain text/encriched text/html
