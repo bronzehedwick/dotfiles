@@ -252,13 +252,11 @@ autocmd BufRead,BufNewFile *.tsv setlocal tabstop=20 |
 
 " Terminal
 autocmd BufEnter term://* startinsert
-autocmd BufEnter term://* setlocal norelativenumber |
-      \ setlocal nonumber
 autocmd BufLeave term://* stopinsert
+autocmd TermOpen * setlocal norelativenumber nonumber
 
 " Chat
-autocmd BufEnter term://*chat setlocal nonumber |
-      \ setlocal norelativenumber
+autocmd BufEnter term://*chat setlocal nonumber norelativenumber
 
 " NeoMutt
 autocmd BufEnter term://*neomutt setlocal nonumber |
