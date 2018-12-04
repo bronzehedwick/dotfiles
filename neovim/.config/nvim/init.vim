@@ -43,11 +43,12 @@ Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.
 Plug 'janko-m/vim-test'
 Plug 'vimlab/mdn.vim'
 "Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'make release',
-"     \ }
+"  \ 'branch': 'next',
+"  \ 'do': 'make release',
+"  \ }
 "Plug 'roxma/LanguageServer-php-neovim',  { 'do': 'composer install && composer run-script parse-stubs' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'lifepillar/vim-mucomplete'
 " }}}
 
 " Git {{{
@@ -195,6 +196,9 @@ nmap <C-j> <C-w>j
 nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
 
+" Mandatory setting for mu complete
+set completeopt+=menuone
+
 " Jet-pack movement between buffers…
 nnoremap <leader>l :ls<CR>:b<space>
 nnoremap <leader>k :ls<CR>:sbuffer<space>
@@ -248,6 +252,8 @@ autocmd BufRead,BufNewFile *.tsv setlocal tabstop=20 |
 
 " Terminal
 autocmd BufEnter term://* startinsert
+autocmd BufEnter term://* setlocal norelativenumber |
+      \ setlocal nonumber
 autocmd BufLeave term://* stopinsert
 
 " Chat
@@ -372,20 +378,20 @@ let g:pad#window_height = 12
 " }}}
 
 " Language Server {{{
-" let g:LanguageClient_autoStart = 1
-" let g:LanguageClient_serverCommands = {
-"     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-"     \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-"     \ }
-" "" LSP keymaps
-" nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-" nnoremap <silent> <F3> :call LanguageClient_textDocument_rename()<CR>
-" nnoremap <silent> <M-s> :call LanguageClient_textDocument_documentSymbol()<CR>
+"let g:LanguageClient_autoStart = 1
+"let g:LanguageClient_serverCommands = {
+"   \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+"   \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+"   \ }
+"" LSP keymaps
+"nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+"nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+"nnoremap <silent> <F3> :call LanguageClient_textDocument_rename()<CR>
+"nnoremap <silent> <M-s> :call LanguageClient_textDocument_documentSymbol()<CR>
 " }}}
 
 " Deoplete {{{
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 " }}}
 
 " Neovim remote {{{
