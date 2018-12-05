@@ -17,6 +17,7 @@ set header_cache = ~/.cache/neomutt
 set send_charset = "us-ascii:utf-8"
 set fast_reply = yes
 set include = yes
+set mark_old = no
 
 # folders
 set folder = "~/Mail"
@@ -43,7 +44,7 @@ macro index,pager S \
 macro index,pager A \
   "<save-message>+Archive<enter>" \
   "archive message"
-macro index,pager O \
+macro index,pager G \
   "<shell-escape>$HOME/.dotfiles/mailsync.sh<enter>" \
   "sync all mail"
 
