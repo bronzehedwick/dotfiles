@@ -36,6 +36,7 @@ mailboxes +INBOX \
 
 # trash handling
 set trash = '+Trash'
+folder-hook =Trash 'push <delete-pattern>~d>30d<enter>'
 
 # key bindings
 macro index,pager S \
