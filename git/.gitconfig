@@ -3,8 +3,6 @@
 	name = Chris DeLuca
 	email = iam@chrisdeluca.me
 	signingkey = 461C015E032EF9CB
-; [core]
-; 	editor = nvr --remote-wait-silent
 [alias]
 	co = checkout
 	cm = commit
