@@ -22,6 +22,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
 Plug 'tpope/vim-abolish'
+Plug 'freitass/todo.txt-vim'
 " }}}
 
 " Working with the file system {{{
