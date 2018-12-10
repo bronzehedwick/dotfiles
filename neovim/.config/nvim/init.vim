@@ -41,14 +41,6 @@ Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
 Plug 'janko-m/vim-test'
-Plug 'vimlab/mdn.vim'
-"Plug 'autozimu/LanguageClient-neovim', {
-"  \ 'branch': 'next',
-"  \ 'do': 'make release',
-"  \ }
-"Plug 'roxma/LanguageServer-php-neovim',  { 'do': 'composer install && composer run-script parse-stubs' }
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'lifepillar/vim-mucomplete'
 " }}}
 
 " Git {{{
@@ -379,23 +371,6 @@ let g:neomake_twig_enabled_makers = ['twig']
 let g:pad#dir = '~/Dropbox/Notes'
 let g:pad#default_file_extension = '.md'
 let g:pad#window_height = 12
-" }}}
-
-" Language Server {{{
-"let g:LanguageClient_autoStart = 1
-"let g:LanguageClient_serverCommands = {
-"   \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-"   \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-"   \ }
-"" LSP keymaps
-"nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-"nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-"nnoremap <silent> <F3> :call LanguageClient_textDocument_rename()<CR>
-"nnoremap <silent> <M-s> :call LanguageClient_textDocument_documentSymbol()<CR>
-" }}}
-
-" Deoplete {{{
-"let g:deoplete#enable_at_startup = 1
 " }}}
 
 " Neovim remote {{{
