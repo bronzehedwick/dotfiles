@@ -374,6 +374,7 @@ let g:pad#set_mappings = 0
 
 " Neovim remote {{{
 if has('nvim') && executable('nvr')
+  let $EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
   let $VISUAL = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
 " }}}
