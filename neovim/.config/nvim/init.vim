@@ -199,6 +199,11 @@ nmap <C-h> <C-w>h
 " Mandatory setting for mu complete
 set completeopt+=menuone
 
+" Jet-pack movement between buffers…
+nnoremap <leader>l :ls<CR>:b<space>
+nnoremap <leader>k :ls<CR>:sbuffer<space>
+nnoremap <leader>; :ls<CR>:vert sb<space>
+
 " More sane command-line history
 cnoremap <c-n> <down>
 cnoremap <c-p> <up>
@@ -292,13 +297,9 @@ let g:AutoPairsShortcutToggle = ''
 
 " FZF {{{
 nnoremap <M-/> :FZF<CR>
-" Jet-pack movement between buffers…
-command! Buffers call fzf#run(fzf#wrap(
-    \ {'source': map(range(1, bufnr('$')), 'bufname(v:val)')}))
-nnoremap <silent> <leader>l :Buffers<CR>
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler norelativenumber nonumber
-    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler relativenumber number
+      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler relativenumber number
 " }}}
 
 " Fugitive {{{
