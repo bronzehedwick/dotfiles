@@ -22,7 +22,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-ipmotion'
 Plug 'tpope/vim-abolish'
-Plug 'junegunn/goyo.vim'
 " }}}
 
 " Working with the file system {{{
@@ -30,7 +29,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'tpope/vim-eunuch'
 Plug 'justinmk/vim-dirvish'
 Plug 'mhinz/vim-grepper'
-Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'jamessan/vim-gnupg'
 Plug 'fmoralesc/vim-pad', { 'branch': 'devel' }
 Plug 'vim-scripts/utl.vim'
@@ -92,7 +90,6 @@ set background=dark
 set clipboard+=unnamedplus
 
 " No spell checking
-" TODO: Turn on spell check for certain file types
 set nospell
 
 " Prevents inserting two spaces after punctuation on a join (J)
@@ -189,7 +186,7 @@ nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
 
 " Mandatory setting for mu complete
-set completeopt+=menuone
+set completeopt+=menu
 
 " Jet-pack movement between buffers…
 nnoremap <leader>l :ls<CR>:b<space>
