@@ -367,6 +367,12 @@ endif
 
 " Neomake {{{
 call neomake#configure#automake('w')
+let g:neomake_twig_maker = {
+  \ 'exe': '/usr/local/bin/twig-lint.phar',
+  \ 'args': ['lint', '--no-ansi', '--format', 'csv'],
+  \ 'errorformat': '\"%f\"\,%l\,%m',
+  \ }
+let g:neomake_twig_enabled_makers = ['twig']
 " }}}
 
 " Pad (Notes) {{{
