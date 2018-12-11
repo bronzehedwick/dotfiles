@@ -39,7 +39,6 @@ Plug 'vim-scripts/utl.vim'
 Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
-Plug 'janko-m/vim-test'
 " }}}
 
 " Git {{{
