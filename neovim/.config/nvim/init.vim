@@ -261,13 +261,6 @@ autocmd BufEnter term://*neomutt setlocal nonumber |
             \ setlocal noshowcmd |
             \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
 
-" Mails
-autocmd FileType mail setlocal fo+=aw |
-            \ setlocal spell |
-            \ setlocal textwidth=72 |
-            \ setlocal nonumber |
-            \ setlocal norelativenumber
-
 " Spelling
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal spell
