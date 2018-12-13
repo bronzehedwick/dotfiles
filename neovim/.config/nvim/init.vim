@@ -1,13 +1,13 @@
-" vim:fdm=marker ft=vim et sts=2 sw=2 ts=2
+" vim:fdm=marker ft=vim et sts=4 sw=4 ts=4
 scriptencoding utf-8
 
 " Plugins {{{
 
 " Install vim-plug if it's not present on the system. {{{
 if !filereadable(expand('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo "~/.config/nvim/autoload/plug.vim" --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo "~/.config/nvim/autoload/plug.vim" --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.config/nvim/plugged')
 " }}}
@@ -39,6 +39,7 @@ Plug 'vim-scripts/utl.vim'
 Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
+Plug 'lifepillar/vim-mucomplete'
 " }}}
 
 " Git {{{
@@ -118,7 +119,9 @@ set hidden
 set colorcolumn=80
 
 " Show effects of commands incrementally, as you type.
-set inccommand=nosplit
+if has('nvim')
+    set inccommand=nosplit
+endif
 
 " Don't redraw while typing macros
 set lazyredraw
@@ -168,7 +171,7 @@ nnoremap Q q
 
 " True color!
 if has('termguicolors')
-  set termguicolors
+    set termguicolors
 endif
 
 " Toggle set wrap
@@ -214,12 +217,12 @@ map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 " Insert time into a document
 command! -nargs=* Timestamp call Timestamp()
 function! Timestamp()
-  let my_filetype = &filetype
-  if my_filetype == 'fountain'
-    :r !date "+\%m/\%d/\%Y"
-  else
-    :r !date "+\%Y-\%m-\%dT\%T\%z"
-  endif
+    let my_filetype = &filetype
+    if my_filetype == 'fountain'
+        :r !date "+\%m/\%d/\%Y"
+    else
+        :r !date "+\%Y-\%m-\%dT\%T\%z"
+    endif
 endfunction
 nmap <F4> call Timestamp()
 
@@ -237,31 +240,33 @@ autocmd BufRead,BufNewFile *.fountain setlocal filetype=fountain
 
 " Tables (tsv)
 autocmd BufRead,BufNewFile *.tsv setlocal tabstop=20 |
-      \ setlocal noexpandtab
+            \ setlocal noexpandtab
 
 " Terminal
-autocmd BufEnter term://* startinsert
-autocmd BufLeave term://* stopinsert
-autocmd TermOpen * setlocal norelativenumber nonumber
+if has('nvim')
+    autocmd BufEnter term://* startinsert
+    autocmd BufLeave term://* stopinsert
+    autocmd TermOpen * setlocal norelativenumber nonumber
+endif
 
 " Chat
 autocmd BufEnter term://*chat setlocal nonumber norelativenumber
 
 " NeoMutt
 autocmd BufEnter term://*neomutt setlocal nonumber |
-      \ setlocal norelativenumber |
-      \ setlocal noshowmode |
-      \ setlocal noruler |
-      \ setlocal laststatus=0 |
-      \ setlocal noshowcmd |
-      \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
+            \ setlocal norelativenumber |
+            \ setlocal noshowmode |
+            \ setlocal noruler |
+            \ setlocal laststatus=0 |
+            \ setlocal noshowcmd |
+            \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
 
 " Mails
 autocmd FileType mail setlocal fo+=aw |
-      \ setlocal spell |
-      \ setlocal textwidth=72 |
-      \ setlocal nonumber |
-      \ setlocal norelativenumber
+            \ setlocal spell |
+            \ setlocal textwidth=72 |
+            \ setlocal nonumber |
+            \ setlocal norelativenumber
 
 " Spelling
 autocmd FileType gitcommit setlocal spell
@@ -272,10 +277,9 @@ autocmd FileType help setlocal nospell
 
 " HTML
 autocmd FileType html setlocal shiftwidth=2 |
-      \ setlocal tabstop=2
+            \ setlocal tabstop=2
 autocmd FileType twig setlocal shiftwidth=2 |
-      \ setlocal tabstop=2
-
+            \ setlocal tabstop=2
 " }}}
 
 " Plugin configurations {{{
@@ -288,7 +292,7 @@ let g:AutoPairsShortcutToggle = ''
 nnoremap <M-/> :FZF<CR>
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler norelativenumber nonumber
-      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler relativenumber number
+            \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler relativenumber number
 " }}}
 
 " Fugitive {{{
@@ -323,44 +327,44 @@ nnoremap <M-p> :Grepper<cr>
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
 let g:grepper = {
-      \ 'tools': ['rg', 'rgsass', 'rgtwig', 'rgjs', 'rgphp'],
-      \ 'rgsass': {
-      \   'grepprg': 'rg -H --no-heading --vimgrep -tsass',
-      \   'grepformat': '%f:%l:%c:%m',
-      \   'escape': '\^$.*+?()[]{}|',
-      \ },
-      \ 'rgtwig': {
-      \   'grepprg': 'rg -H --no-heading --vimgrep -ttwig',
-      \   'grepformat': '%f:%l:%c:%m',
-      \   'escape': '\^$.*+?()[]{}|',
-      \ },
-      \ 'rgjs': {
-      \   'grepprg': 'rg -H --no-heading --vimgrep -tjs',
-      \   'grepformat': '%f:%l:%c:%m',
-      \   'escape': '\^$.*+?()[]{}|',
-      \ },
-      \ 'rgphp': {
-      \   'grepprg': 'rg -H --no-heading --vimgrep --type-add="module:*.module" --type-add="theme:*.theme" -tphp -tmodule -ttheme',
-      \   'grepformat': '%f:%l:%c:%m',
-      \   'escape': '\^$.*+?()[]{}|',
-      \ }}
+            \ 'tools': ['rg', 'rgsass', 'rgtwig', 'rgjs', 'rgphp'],
+            \ 'rgsass': {
+            \   'grepprg': 'rg -H --no-heading --vimgrep -tsass',
+            \   'grepformat': '%f:%l:%c:%m',
+            \   'escape': '\^$.*+?()[]{}|',
+            \ },
+            \ 'rgtwig': {
+            \   'grepprg': 'rg -H --no-heading --vimgrep -ttwig',
+            \   'grepformat': '%f:%l:%c:%m',
+            \   'escape': '\^$.*+?()[]{}|',
+            \ },
+            \ 'rgjs': {
+            \   'grepprg': 'rg -H --no-heading --vimgrep -tjs',
+            \   'grepformat': '%f:%l:%c:%m',
+            \   'escape': '\^$.*+?()[]{}|',
+            \ },
+            \ 'rgphp': {
+            \   'grepprg': 'rg -H --no-heading --vimgrep --type-add="module:*.module" --type-add="theme:*.theme" -tphp -tmodule -ttheme',
+            \   'grepformat': '%f:%l:%c:%m',
+            \   'escape': '\^$.*+?()[]{}|',
+            \ }}
 " }}}
 
 " Undotree {{{
 nnoremap <F5> :UndotreeToggle<cr>
 if has("persistent_undo")
-  set undodir=~/.config/nvim/undodir
-  set undofile
+    set undodir=~/.config/nvim/undodir
+    set undofile
 endif
 " }}}
 
 " Neomake {{{
 call neomake#configure#automake('w')
 let g:neomake_twig_maker = {
-  \ 'exe': '/usr/local/bin/twig-lint.phar',
-  \ 'args': ['lint', '--no-ansi', '--format', 'csv'],
-  \ 'errorformat': '\"%f\"\,%l\,%m',
-  \ }
+            \ 'exe': '/usr/local/bin/twig-lint.phar',
+            \ 'args': ['lint', '--no-ansi', '--format', 'csv'],
+            \ 'errorformat': '\"%f\"\,%l\,%m',
+            \ }
 let g:neomake_twig_enabled_makers = ['twig']
 " }}}
 
@@ -373,15 +377,13 @@ let g:pad#set_mappings = 0
 
 " Neovim remote {{{
 if has('nvim') && executable('nvr')
-  let $EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
-  let $VISUAL = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
+    let $EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
+    let $VISUAL = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
 " }}}
 
 " }}}
 
 " Colorscheme {{{
-
 colorscheme OceanicNext
-
 " }}}
