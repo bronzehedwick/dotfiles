@@ -189,7 +189,7 @@ nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
 
 " Mandatory setting for mu complete
-set completeopt+=menu
+set completeopt+=menuone
 
 " Jet-pack movement between buffers…
 nnoremap <leader>l :ls<CR>:b<space>
