@@ -175,18 +175,18 @@ if has('termguicolors')
 endif
 
 " Toggle set wrap
-nmap <silent><leader>w :setlocal wrap!<CR>
+noremap <silent><leader>w :setlocal wrap!<CR>
 
 " Open directory at current file path.
-map <leader>e :edit <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
+noremap <leader>e :edit <C-R>=expand("%:p:h") . "/" <CR>
+noremap <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
+noremap <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 " More useful window navigation bindings.
-nmap <C-k> <C-w>k
-nmap <C-j> <C-w>j
-nmap <C-l> <C-w>l
-nmap <C-h> <C-w>h
+noremap <C-k> <C-w>k
+noremap <C-j> <C-w>j
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
 
 " Mandatory setting for mu complete
 set completeopt+=menuone
@@ -212,7 +212,7 @@ let g:utl_cfg_hdl_scm_http_system = "silent !open '%u'"
 " Functions {{{
 
 " Display date and time
-map <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
+noremap <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 
 " Insert time into a document
 command! -nargs=* Timestamp call Timestamp()
@@ -224,7 +224,7 @@ function! Timestamp()
         :r !date "+\%Y-\%m-\%dT\%T\%z"
     endif
 endfunction
-nmap <F4> call Timestamp()
+noremap <F4> :call Timestamp()<CR>
 
 " }}}
 
@@ -314,18 +314,14 @@ let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " }}}
 
-" Vim-Test {{{
-let test#strategy = "neovim"
-" }}}
-
 " Dirvish {{{
 autocmd FileType dirvish call fugitive#detect(@%)
 " }}}
 
 " Grepper {{{
 nnoremap <M-p> :Grepper<cr>
-nmap gs  <plug>(GrepperOperator)
-xmap gs  <plug>(GrepperOperator)
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
 let g:grepper = {
             \ 'tools': ['rg', 'rgsass', 'rgtwig', 'rgjs', 'rgphp'],
             \ 'rgsass': {
