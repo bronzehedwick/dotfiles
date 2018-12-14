@@ -4,9 +4,9 @@ scriptencoding utf-8
 
 " Install vim-plug if it's not present on the system. {{{
 if !filereadable(expand('~/.config/nvim/autoload/plug.vim'))
-    silent !curl -fLo "~/.config/nvim/autoload/plug.vim" --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  silent !curl -fLo "~/.config/nvim/autoload/plug.vim" --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.config/nvim/plugged')
 " }}}
@@ -118,7 +118,7 @@ set colorcolumn=80
 
 " Show effects of commands incrementally, as you type..
 if has('nvim')
-    set inccommand=nosplit
+  set inccommand=nosplit
 endif
 
 " Don't redraw while typing macros.
@@ -221,17 +221,13 @@ noremap <F4> <Plug>(Timestamp)<CR>
 
 " }}}
 
-" Functions {{{
-
-" }}}
-
 " Autocommands {{{
 
 " Terminal
 if has('nvim')
-    autocmd BufEnter term://* startinsert
-    autocmd BufLeave term://* stopinsert
-    autocmd TermOpen * setlocal norelativenumber nonumber
+  autocmd BufEnter term://* startinsert
+  autocmd BufLeave term://* stopinsert
+  autocmd TermOpen * setlocal norelativenumber nonumber
 endif
 
 " Chat
@@ -239,23 +235,23 @@ autocmd BufEnter term://*chat setlocal nonumber norelativenumber
 
 " NeoMutt
 autocmd BufEnter term://*neomutt setlocal nonumber |
-            \ setlocal norelativenumber |
-            \ setlocal noshowmode |
-            \ setlocal noruler |
-            \ setlocal laststatus=0 |
-            \ setlocal noshowcmd |
-            \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
+      \ setlocal norelativenumber |
+      \ setlocal noshowmode |
+      \ setlocal noruler |
+      \ setlocal laststatus=0 |
+      \ setlocal noshowcmd |
+      \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
 " }}}
 
 " Color {{{
 
 " True color!
 if has('termguicolors')
-    set termguicolors
+  set termguicolors
 endif
 
 colorscheme OceanicNext
 
 " }}}
 
-" vim:fdm=marker ft=vim et sts=4 sw=4 ts=4
+" vim:fdm=marker ft=vim et sts=2 sw=2 ts=2

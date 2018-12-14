@@ -1,6 +1,6 @@
 " Exit if fugitive isn't loaded.
 if ! exists(':Git')
-    finish
+  finish
 endif
 
 " Fugitive mappings.
@@ -14,3 +14,5 @@ nnoremap <silent> <M-g>r :Gread<CR>
 nnoremap <silent> <M-g>w :Gwrite<CR>
 nnoremap <silent> <M-g>e :Gedit<CR>
 nnoremap <silent> <M-g>u :Git up<CR>
+
+" vim:fdm=marker ft=vim et sts=2 sw=2 ts=2
