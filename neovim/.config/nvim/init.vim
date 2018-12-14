@@ -255,19 +255,6 @@ autocmd BufEnter term://*neomutt setlocal nonumber |
             \ setlocal laststatus=0 |
             \ setlocal noshowcmd |
             \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
-
-" Spelling
-autocmd FileType gitcommit setlocal spell
-autocmd FileType markdown setlocal spell
-autocmd FileType text setlocal spell
-autocmd FileType fountain setlocal spell
-autocmd FileType help setlocal nospell
-
-" HTML
-autocmd FileType html setlocal shiftwidth=2 |
-            \ setlocal tabstop=2
-autocmd FileType twig setlocal shiftwidth=2 |
-            \ setlocal tabstop=2
 " }}}
 
 " Plugin configurations {{{
@@ -278,9 +265,6 @@ let g:AutoPairsShortcutToggle = ''
 
 " FZF {{{
 nnoremap <M-/> :FZF<CR>
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noshowmode noruler norelativenumber nonumber
-            \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler relativenumber number
 " }}}
 
 " Fugitive {{{
