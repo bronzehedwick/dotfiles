@@ -238,10 +238,6 @@ autocmd BufRead,BufNewFile *.module setlocal filetype=php
 " Support fountain files.
 autocmd BufRead,BufNewFile *.fountain setlocal filetype=fountain
 
-" Tables (tsv)
-autocmd BufRead,BufNewFile *.tsv setlocal tabstop=20 |
-            \ setlocal noexpandtab
-
 " Terminal
 if has('nvim')
     autocmd BufEnter term://* startinsert
@@ -337,14 +333,6 @@ let g:grepper = {
             \   'grepformat': '%f:%l:%c:%m',
             \   'escape': '\^$.*+?()[]{}|',
             \ }}
-" }}}
-
-" Undotree {{{
-nnoremap <F5> :UndotreeToggle<cr>
-if has("persistent_undo")
-    set undodir=~/.config/nvim/undodir
-    set undofile
-endif
 " }}}
 
 " Neomake {{{
