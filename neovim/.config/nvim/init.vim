@@ -1,4 +1,3 @@
-" vim:fdm=marker ft=vim et sts=4 sw=4 ts=4
 scriptencoding utf-8
 
 " Plugins {{{
@@ -65,224 +64,93 @@ Plug 'joshdick/onedark.vim'
 call plug#end()
 " }}}
 
-" Configurations {{{
+" General configuration {{{
 
-" Use soft tabs
+" Use soft tabs.
 set expandtab
 
-" Soft tabs equal two spaces
+" Soft tabs equal four spaces.
 set shiftwidth=4
 
-" Real tabs equal to spaces
+" Real tabs equal to spaces.
 set tabstop=4
 
 " Command <Tab> completion, list matches, then longest common part, then all.
 set wildmode=list:longest,full
 
-" Use relative line numbers with the current line the absolute line number
+" Use relative line numbers with the current line the absolute line number.
 set number
 set relativenumber
 
-" Use a dark background
+" Use a dark background.
 set background=dark
 
-" Neovim's standard clipboard register = the system register
+" Neovim's standard clipboard register = the system register.
 set clipboard+=unnamedplus
 
-" No spell checking
+" No spell checking.
 set nospell
 
-" Prevents inserting two spaces after punctuation on a join (J)
+" Prevents inserting two spaces after punctuation on a join (J).
 set nojoinspaces
 
-" Puts new vsplit windows to the right of the current
+" Puts new vsplit windows to the right of the current.
 set splitright
 
-" Puts new split windows to the bottom of the currentset hidden
+" Puts new split windows to the bottom of the currentset hidden.
 set splitbelow
 
-" Show matching brackets/parenthesis
+" Show matching brackets/parenthesis.
 set showmatch
 
-" Case insensitive search when using any capital letters
+" Case insensitive search when using any capital letters.
 set ignorecase
 set smartcase
 
-" Highlight invisible whitespace
+" Highlight invisible whitespace.
 set list
 
-" Allow switching buffers without saving
+" Allow switching buffers without saving.
 set hidden
 
-" Set hard wrapping guide to 80 columns
+" Set hard wrapping guide to 80 columns.
 set colorcolumn=80
 
-" Show effects of commands incrementally, as you type.
+" Show effects of commands incrementally, as you type..
 if has('nvim')
     set inccommand=nosplit
 endif
 
-" Don't redraw while typing macros
+" Don't redraw while typing macros.
 set lazyredraw
 
-" Update swap file and gitgutter much faster.
+" Update swap file and gitgutter much faster..
 set updatetime=250
 
-" Disable netrw, since I'm using Dirvish instead.
-let g:loaded_netrwPlugin = 1
-
-" Status line
-set statusline=%{fugitive#statusline()} " Git branch
-set statusline+=%<\ %t " Tail of file (just the name.ext)
-set statusline+=%m " File modified flag
-set statusline+=%<\ %h " Buffer is `help` flag
-set statusline+=%<\ %r " Buffer is `readonly` flag
-set statusline+=%<\ %w " Buffer is `preview` flag
-
-" Disable mouse, to prevent accidental clicks
+" Disable mouse, to prevent accidental clicks.
 set mouse-=a
-
-" Remap mapleader
-let mapleader = ','
-
-" Yank from the cursor to the end of the line, to be consistent with C and D.
-nnoremap Y y$
-
-" Esc exits insert mode in Neovim terminal
-tnoremap <Esc> <C-\><C-n>
-
-" Alt+r to paste in terminal mode
-tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
-
-" Stupid shift key fixes, lifted from spf13
-command! -bang -nargs=* -complete=file E e<bang> <args>
-command! -bang -nargs=* -complete=file W w<bang> <args>
-command! -bang -nargs=* -complete=file Wq wq<bang> <args>
-command! -bang -nargs=* -complete=file WQ wq<bang> <args>
-command! -bang Wa wa<bang>
-command! -bang WA wa<bang>
-command! -bang Q q<bang>
-command! -bang QA qa<bang>
-command! -bang Qa qa<bang>
-
-" Disable Ex mode mapping. Can still be accessed via gQ.
-nnoremap Q q
-
-" True color!
-if has('termguicolors')
-    set termguicolors
-endif
-
-" Toggle set wrap
-noremap <silent><leader>w :setlocal wrap!<CR>
-
-" Open directory at current file path.
-noremap <leader>e :edit <C-R>=expand("%:p:h") . "/" <CR>
-noremap <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
-noremap <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
-
-" More useful window navigation bindings.
-noremap <C-k> <C-w>k
-noremap <C-j> <C-w>j
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
 
 " Mandatory setting for mu complete
 set completeopt+=menuone
 
-" Jet-pack movement between buffers…
-nnoremap <leader>l :ls<CR>:b<space>
-nnoremap <leader>k :ls<CR>:sbuffer<space>
-nnoremap <leader>; :ls<CR>:vert sb<space>
+" Disable netrw, since I'm using Dirvish instead.
+let g:loaded_netrwPlugin = 1
 
-" More sane command-line history
-cnoremap <c-n> <down>
-cnoremap <c-p> <up>
-
-" Quickly edit macros
-nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
-
-" Quickly open URLs
-nnoremap <leader>u :Utl<cr>
 " Configure HTTP handler (works for macOS).
 let g:utl_cfg_hdl_scm_http_system = "silent !open '%u'"
-" }}}
 
-" Functions {{{
-
-" Display date and time
-noremap <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
-
-" Insert time into a document
-command! -nargs=* Timestamp call Timestamp()
-function! Timestamp()
-    let my_filetype = &filetype
-    if my_filetype == 'fountain'
-        :r !date "+\%m/\%d/\%Y"
-    else
-        :r !date "+\%Y-\%m-\%dT\%T\%z"
-    endif
-endfunction
-noremap <F4> :call Timestamp()<CR>
-
-" }}}
-
-" Autocommands {{{
-
-" Autodetect extra file types
-
-" Terminal
-if has('nvim')
-    autocmd BufEnter term://* startinsert
-    autocmd BufLeave term://* stopinsert
-    autocmd TermOpen * setlocal norelativenumber nonumber
-endif
-
-" Chat
-autocmd BufEnter term://*chat setlocal nonumber norelativenumber
-
-" NeoMutt
-autocmd BufEnter term://*neomutt setlocal nonumber |
-            \ setlocal norelativenumber |
-            \ setlocal noshowmode |
-            \ setlocal noruler |
-            \ setlocal laststatus=0 |
-            \ setlocal noshowcmd |
-            \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
 " }}}
 
 " Plugin configurations {{{
 
-" AutoPairs {{{
+" AutoPairs
 let g:AutoPairsShortcutToggle = ''
-" }}}
 
-" FZF {{{
-nnoremap <M-/> :FZF<CR>
-" }}}
-
-" Fugitive {{{
-nnoremap <silent> <M-g>s :Gstatus<CR>
-nnoremap <silent> <M-g>d :Gdiff<CR>
-nnoremap <silent> <M-g>c :Gcommit<CR>
-nnoremap <silent> <M-g>b :Gblame<CR>
-nnoremap <silent> <M-g>l :Glog<CR>
-nnoremap <silent> <M-g>p :Git push<CR>
-nnoremap <silent> <M-g>r :Gread<CR>
-nnoremap <silent> <M-g>w :Gwrite<CR>
-nnoremap <silent> <M-g>e :Gedit<CR>
-nnoremap <silent> <M-g>u :Git up<CR>
-" }}}
-
-" EditorConfig {{{
+" EditorConfig
 " Disable editorconfig on fugitive and remote buffers.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-" }}}
 
-" Grepper {{{
-nnoremap <M-p> :Grepper<cr>
-nmap gs <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)
+" Grepper
 let g:grepper = {
             \ 'tools': ['rg', 'rgsass', 'rgtwig', 'rgjs', 'rgphp'],
             \ 'rgsass': {
@@ -305,9 +173,8 @@ let g:grepper = {
             \   'grepformat': '%f:%l:%c:%m',
             \   'escape': '\^$.*+?()[]{}|',
             \ }}
-" }}}
 
-" Neomake {{{
+" Neomake
 call neomake#configure#automake('w')
 let g:neomake_twig_maker = {
             \ 'exe': '/usr/local/bin/twig-lint.phar',
@@ -315,24 +182,159 @@ let g:neomake_twig_maker = {
             \ 'errorformat': '\"%f\"\,%l\,%m',
             \ }
 let g:neomake_twig_enabled_makers = ['twig']
-" }}}
 
-" Pad (Notes) {{{
+" Pad (Notes)
 let g:pad#dir = '~/Dropbox/Notes'
 let g:pad#default_file_extension = '.md'
 let g:pad#window_height = 12
 let g:pad#set_mappings = 0
-" }}}
 
-" Neovim remote {{{
+" Neovim remote
 if has('nvim') && executable('nvr')
     let $EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
     let $VISUAL = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
-" }}}
 
 " }}}
 
-" Colorscheme {{{
+" Statusline {{{
+
+" Git branch
+set statusline=%{fugitive#statusline()}
+" Tail of file (just the name.ext)
+set statusline+=%<\ %t
+" File modified flag
+set statusline+=%m
+" Buffer is `help` flag
+set statusline+=%<\ %h
+" Buffer is `readonly` flag
+set statusline+=%<\ %r
+" Buffer is `preview` flag
+set statusline+=%<\ %w
+
+" }}}
+
+" Mappings {{{
+
+" Remap mapleader.
+let mapleader = ','
+let maplocalleader = ','
+
+" Yank from the cursor to the end of the line, to be consistent with C and D.
+nnoremap Y y$
+
+" Stupid shift key fixes, lifted from spf13
+command! -bang -nargs=* -complete=file E e<bang> <args>
+command! -bang -nargs=* -complete=file W w<bang> <args>
+command! -bang -nargs=* -complete=file Wq wq<bang> <args>
+command! -bang -nargs=* -complete=file WQ wq<bang> <args>
+command! -bang Wa wa<bang>
+command! -bang WA wa<bang>
+command! -bang Q q<bang>
+command! -bang QA qa<bang>
+command! -bang Qa qa<bang>
+
+" Disable Ex mode mapping. Can still be accessed via gQ.
+nnoremap Q q
+
+" Toggle set wrap
+noremap <silent><leader>w :setlocal wrap!<CR>
+
+" Open directory at current file path.
+noremap <leader>e :edit <C-R>=expand("%:p:h") . "/" <CR>
+noremap <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
+noremap <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
+
+" More useful window navigation bindings.
+noremap <C-k> <C-w>k
+noremap <C-j> <C-w>j
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+
+" Display date and time
+noremap <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
+
+" Jet-pack movement between buffers…
+nnoremap <leader>l :ls<CR>:b<space>
+nnoremap <leader>k :ls<CR>:sbuffer<space>
+nnoremap <leader>; :ls<CR>:vert sb<space>
+
+" More sane command-line history
+cnoremap <c-n> <down>
+cnoremap <c-p> <up>
+
+" Quickly edit macros
+nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
+
+" Terminal
+" Escape exits insert mode inside terminal.
+tnoremap <Esc> <C-\><C-n>
+" M-r pastes inside terminal.
+tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+
+" Insert time into a document.
+noremap <F4> <Plug>(Timestamp)<CR>
+
+" Quickly open URLs
+nnoremap <leader>u :Utl<cr>
+
+" Fuzzy finder.
+nnoremap <M-/> :FZF<CR>
+
+" Fugitive
+nnoremap <silent> <M-g>s :Gstatus<CR>
+nnoremap <silent> <M-g>d :Gdiff<CR>
+nnoremap <silent> <M-g>c :Gcommit<CR>
+nnoremap <silent> <M-g>b :Gblame<CR>
+nnoremap <silent> <M-g>l :Glog<CR>
+nnoremap <silent> <M-g>p :Git push<CR>
+nnoremap <silent> <M-g>r :Gread<CR>
+nnoremap <silent> <M-g>w :Gwrite<CR>
+nnoremap <silent> <M-g>e :Gedit<CR>
+nnoremap <silent> <M-g>u :Git up<CR>
+
+" Grepper
+nnoremap <M-p> :Grepper<cr>
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
+
+" }}}
+
+" Functions {{{
+
+" }}}
+
+" Autocommands {{{
+
+" Terminal
+if has('nvim')
+    autocmd BufEnter term://* startinsert
+    autocmd BufLeave term://* stopinsert
+    autocmd TermOpen * setlocal norelativenumber nonumber
+endif
+
+" Chat
+autocmd BufEnter term://*chat setlocal nonumber norelativenumber
+
+" NeoMutt
+autocmd BufEnter term://*neomutt setlocal nonumber |
+            \ setlocal norelativenumber |
+            \ setlocal noshowmode |
+            \ setlocal noruler |
+            \ setlocal laststatus=0 |
+            \ setlocal noshowcmd |
+            \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
+" }}}
+
+" Color {{{
+
+" True color!
+if has('termguicolors')
+    set termguicolors
+endif
+
 colorscheme OceanicNext
+
 " }}}
+
+" vim:fdm=marker ft=vim et sts=4 sw=4 ts=4
