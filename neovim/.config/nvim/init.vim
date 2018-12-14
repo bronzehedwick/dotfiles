@@ -46,7 +46,6 @@ Plug 'lifepillar/vim-mucomplete'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
-Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'tommcdo/vim-fubitive'
 " }}}
 
@@ -295,7 +294,6 @@ nnoremap <silent> <M-g>r :Gread<CR>
 nnoremap <silent> <M-g>w :Gwrite<CR>
 nnoremap <silent> <M-g>e :Gedit<CR>
 nnoremap <silent> <M-g>u :Git up<CR>
-let g:fugitive_gitlab_domains = ['https://plvmskgitlab1/']
 " }}}
 
 " EditorConfig {{{
