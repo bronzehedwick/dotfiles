@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # sync mail from IMAP
-/usr/local/bin/mbsync chris > /tmp/mbsync.log 2>&1
+/usr/local/bin/mbsync chris
 
 # do initial tagging
 /usr/local/bin/notmuch new
