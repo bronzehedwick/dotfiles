@@ -37,7 +37,7 @@ Plug 'vim-scripts/utl.vim'
 " Programming {{{
 Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango', 'html.mustache', 'html.handlebars', 'twig', 'html.twig' ] }
+Plug 'mattn/emmet-vim', { 'for': [ 'html', 'htmldjango' ] }
 Plug 'lifepillar/vim-mucomplete'
 " }}}
 
@@ -241,6 +241,7 @@ autocmd BufEnter term://*neomutt setlocal nonumber |
       \ setlocal laststatus=0 |
       \ setlocal noshowcmd |
       \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
+
 " }}}
 
 " Color {{{
