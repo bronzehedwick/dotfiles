@@ -50,11 +50,11 @@ Plug 'tommcdo/vim-fubitive'
 " }}}
 
 " Syntaxes {{{
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'othree/html5.vim', { 'for': [ 'html', 'htmldjango' ] }
-Plug 'JulesWang/css.vim', { 'for': [ 'css', 'scss', 'sass', 'less' ] }
-Plug 'vim-scripts/fountain.vim', { 'for': 'fountain' }
-Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'othree/yajs.vim'
+Plug 'othree/html5.vim'
+Plug 'JulesWang/css.vim'
+Plug 'vim-scripts/fountain.vim'
+Plug 'cespare/vim-toml'
 Plug 'bronzehedwick/msmtp-syntax.vim'
 " }}}
 
@@ -231,12 +231,6 @@ noremap <F4> :call Timestamp()<CR>
 
 " Autodetect extra file types
 
-" Support Drupal .module and .theme files.
-autocmd BufRead,BufNewFile *.theme setlocal filetype=php
-autocmd BufRead,BufNewFile *.module setlocal filetype=php
-" Support fountain files.
-autocmd BufRead,BufNewFile *.fountain setlocal filetype=fountain
-
 " Terminal
 if has('nvim')
     autocmd BufEnter term://* startinsert
@@ -283,10 +277,6 @@ nnoremap <silent> <M-g>u :Git up<CR>
 " EditorConfig {{{
 " Disable editorconfig on fugitive and remote buffers.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-" }}}
-
-" Dirvish {{{
-autocmd FileType dirvish call fugitive#detect(@%)
 " }}}
 
 " Grepper {{{
