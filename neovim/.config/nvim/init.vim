@@ -136,64 +136,8 @@ set completeopt+=menuone
 " Disable netrw, since I'm using Dirvish instead.
 let g:loaded_netrwPlugin = 1
 
-" Configure HTTP handler (works for macOS).
-let g:utl_cfg_hdl_scm_http_system = "silent !open '%u'"
-
-" }}}
-
-" Plugin configurations {{{
-
 " AutoPairs
 let g:AutoPairsShortcutToggle = ''
-
-" EditorConfig
-" Disable editorconfig on fugitive and remote buffers.
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-
-" Grepper
-let g:grepper = {
-            \ 'tools': ['rg', 'rgsass', 'rgtwig', 'rgjs', 'rgphp'],
-            \ 'rgsass': {
-            \   'grepprg': 'rg -H --no-heading --vimgrep -tsass',
-            \   'grepformat': '%f:%l:%c:%m',
-            \   'escape': '\^$.*+?()[]{}|',
-            \ },
-            \ 'rgtwig': {
-            \   'grepprg': 'rg -H --no-heading --vimgrep -ttwig',
-            \   'grepformat': '%f:%l:%c:%m',
-            \   'escape': '\^$.*+?()[]{}|',
-            \ },
-            \ 'rgjs': {
-            \   'grepprg': 'rg -H --no-heading --vimgrep -tjs',
-            \   'grepformat': '%f:%l:%c:%m',
-            \   'escape': '\^$.*+?()[]{}|',
-            \ },
-            \ 'rgphp': {
-            \   'grepprg': 'rg -H --no-heading --vimgrep --type-add="module:*.module" --type-add="theme:*.theme" -tphp -tmodule -ttheme',
-            \   'grepformat': '%f:%l:%c:%m',
-            \   'escape': '\^$.*+?()[]{}|',
-            \ }}
-
-" Neomake
-call neomake#configure#automake('w')
-let g:neomake_twig_maker = {
-            \ 'exe': '/usr/local/bin/twig-lint.phar',
-            \ 'args': ['lint', '--no-ansi', '--format', 'csv'],
-            \ 'errorformat': '\"%f\"\,%l\,%m',
-            \ }
-let g:neomake_twig_enabled_makers = ['twig']
-
-" Pad (Notes)
-let g:pad#dir = '~/Dropbox/Notes'
-let g:pad#default_file_extension = '.md'
-let g:pad#window_height = 12
-let g:pad#set_mappings = 0
-
-" Neovim remote
-if has('nvim') && executable('nvr')
-    let $EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
-    let $VISUAL = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
-endif
 
 " }}}
 
@@ -274,29 +218,6 @@ tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 
 " Insert time into a document.
 noremap <F4> <Plug>(Timestamp)<CR>
-
-" Quickly open URLs
-nnoremap <leader>u :Utl<cr>
-
-" Fuzzy finder.
-nnoremap <M-/> :FZF<CR>
-
-" Fugitive
-nnoremap <silent> <M-g>s :Gstatus<CR>
-nnoremap <silent> <M-g>d :Gdiff<CR>
-nnoremap <silent> <M-g>c :Gcommit<CR>
-nnoremap <silent> <M-g>b :Gblame<CR>
-nnoremap <silent> <M-g>l :Glog<CR>
-nnoremap <silent> <M-g>p :Git push<CR>
-nnoremap <silent> <M-g>r :Gread<CR>
-nnoremap <silent> <M-g>w :Gwrite<CR>
-nnoremap <silent> <M-g>e :Gedit<CR>
-nnoremap <silent> <M-g>u :Git up<CR>
-
-" Grepper
-nnoremap <M-p> :Grepper<cr>
-nmap gs <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)
 
 " }}}
 
