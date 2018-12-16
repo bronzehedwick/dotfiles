@@ -38,7 +38,7 @@ mailboxes +INBOX \
 set trash = '+Trash'
 folder-hook =Trash 'push <delete-pattern>~d>30d<enter>'
 
-# key bindings
+# general key bindings
 macro index,pager S \
   "<save-message>+Junk<enter>" \
   "mark message as spam"
@@ -48,13 +48,18 @@ macro index,pager A \
 macro index,pager G \
   "<shell-escape>$HOME/.dotfiles/mailsync.sh<enter>" \
   "sync all mail"
+macro attach s \
+  "<save-entry><bol>~/Downloads/<eol>" \
+  "save to downloads folder"
 
 # notmuch indexer
 set nm_default_uri = "notmuch:///Users/chris/Mail" # path to the maildir
 
 # notmuch bindings
 macro index / "<vfolder-from-query>" \
-    "search messages with notmuch"
+  "search messages with notmuch"
+macro index,pager \` "<modify-labels>" \
+  "modify (notmuch) tags"
 
 # auto alias
 set display_filter = ~/.dotfiles/neomutt/.config/neomutt/auto_add_alias.sh
@@ -127,4 +132,4 @@ source ~/.config/neomutt/colors
 # mailing lists/newsletters
 source ~/.config/neomutt/mailinglists
 
-# vim: ft=muttrc
+# vim: ft=muttrc sw=2 ts=2 et
