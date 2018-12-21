@@ -139,6 +139,9 @@ let g:loaded_netrwPlugin = 1
 " AutoPairs
 let g:AutoPairsShortcutToggle = ''
 
+" Turn off default Pad plugin mappings.
+let g:pad#set_mappings = 0
+
 " }}}
 
 " Statusline {{{
