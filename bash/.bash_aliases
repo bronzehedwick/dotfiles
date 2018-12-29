@@ -58,9 +58,6 @@ alias df='df -h'
 # Directory usage for humans
 alias du="du -h"
 
-# Calendar that highlights the date (unneeded on linux)
-alias cal="cal | grep --color -EC6 \"\\b\$(date +%e | sed \"s/ //g\")\""
-
 #######
 # Git #
 #######
