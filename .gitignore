@@ -1,3 +1,4 @@
 *.log
 *.cache
 aliases.txt
+vdirsyncer/.config/vdirsyncer/status
