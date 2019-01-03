@@ -78,6 +78,9 @@ let g:AutoPairsShortcutToggle = ''
 " Turn off default Pad plugin mappings.
 let g:pad#set_mappings = 0
 
+" Enable FZF
+set rtp+=/usr/local/opt/fzf
+
 " }}}
 
 " Statusline {{{

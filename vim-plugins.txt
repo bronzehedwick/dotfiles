@@ -15,13 +15,13 @@ git@github.com:tpope/vim-eunuch.git
 git@github.com:justinmk/vim-dirvish.git
 git@github.com:mhinz/vim-grepper.git
 git@github.com:jamessan/vim-gnupg.git
-git@github.com:fmoralesc/vim-pad
+git@github.com:fmoralesc/vim-pad.git
 git@github.com:vim-scripts/utl.vim.git
 
 # Programming
 git@github.com:neomake/neomake.git
 git@github.com:editorconfig/editorconfig-vim.git
-git@github.com:mattn/emmet-vim
+git@github.com:mattn/emmet-vim.git
 git@github.com:lifepillar/vim-mucomplete.git
 
 # Git
