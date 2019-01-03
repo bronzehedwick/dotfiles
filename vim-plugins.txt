@@ -1,0 +1,46 @@
+# Working with text
+git@github.com:tpope/vim-commentary.git
+git@github.com:tpope/vim-surround.git
+git@github.com:tpope/vim-repeat.git
+git@github.com:tpope/vim-unimpaired.git
+git@github.com:tpope/vim-rsi.git
+git@github.com:jiangmiao/auto-pairs.git
+git@github.com:justinmk/vim-sneak.git
+git@github.com:justinmk/vim-ipmotion.git
+git@github.com:tpope/vim-abolish.git
+git@github.com:freitass/todo.txt-vim.git
+
+# Working with the file system
+git@github.com:tpope/vim-eunuch.git
+git@github.com:justinmk/vim-dirvish.git
+git@github.com:mhinz/vim-grepper.git
+git@github.com:jamessan/vim-gnupg.git
+git@github.com:fmoralesc/vim-pad
+git@github.com:vim-scripts/utl.vim.git
+
+# Programming
+git@github.com:neomake/neomake.git
+git@github.com:editorconfig/editorconfig-vim.git
+git@github.com:mattn/emmet-vim
+git@github.com:lifepillar/vim-mucomplete.git
+
+# Git
+git@github.com:tpope/vim-fugitive.git
+git@github.com:airblade/vim-gitgutter.git
+git@github.com:junegunn/gv.vim.git
+git@github.com:tommcdo/vim-fubitive.git
+
+# Syntaxes
+git@github.com:othree/yajs.vim.git
+git@github.com:othree/html5.vim.git
+git@github.com:JulesWang/css.vim.git
+git@github.com:vim-scripts/fountain.vim.git
+git@github.com:cespare/vim-toml.git
+git@github.com:bronzehedwick/msmtp-syntax.vim.git
+
+# Themes
+git@github.com:mhartington/oceanic-next.git
+git@github.com:joshdick/onedark.vim.git
+
+# vim: ft=conf
+
