@@ -1,14 +1,20 @@
-#!/bin/sh
+#!/bin/bash
 
 # Base plugin directory.
-DIR="$HOME/.config/nvim/pack/"
+DIR="$HOME/.config/nvim/pack"
 
 # Make sure the plugin directory exists.
 mkdir -p "$DIR"
 
+# Delete packages removed from the plugins file.
+diff <(find "$DIR" -type d -depth 1 | xargs basename | sort) \
+  <(grep -v -e "^#" -e "^$" ./vim-plugins.txt | xargs -I {} basename {} .git | sort) | \
+  while IFS= read -r OUTDATED || [ -n "$OUTDATED" ]; do
+    echo "$OUTDATED" | awk -F ' ' '{print $2}' | xargs -I {} rm -r "$DIR/"{}
+  done
+
 # Loop over each line of the plugins file, minus empty lines and comments.
-grep -v -e "^#" -e "^$" ./vim-plugins.txt | while IFS= read -r LINE || [ -n "$LINE" ]
-do
+grep -v -e "^#" -e "^$" ./vim-plugins.txt | while IFS= read -r LINE || [ -n "$LINE" ]; do
     # Extract repository name from git url.
     REPO="$(echo "$LINE" | cut -d ':' -f 2- | xargs -I {} basename {} .git)"
 

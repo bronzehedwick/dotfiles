@@ -40,7 +40,6 @@ git@github.com:bronzehedwick/msmtp-syntax.vim.git
 
 # Themes
 git@github.com:mhartington/oceanic-next.git
-git@github.com:joshdick/onedark.vim.git
 
 # vim: ft=conf
 
