@@ -79,9 +79,7 @@ let g:AutoPairsShortcutToggle = ''
 let g:pad#set_mappings = 0
 
 " Enable FZF
-if filereadable('/usr/local/opt/fzf')
-  set rtp+=/usr/local/opt/fzf
-endif
+set rtp+=/usr/local/opt/fzf
 
 " }}}
 
