@@ -52,7 +52,7 @@ set hidden
 " Set hard wrapping guide to 80 columns.
 set colorcolumn=80
 
-" Show effects of commands incrementally, as you type..
+" Show effects of commands incrementally, as you type.
 if has('nvim')
   set inccommand=nosplit
 endif
@@ -60,7 +60,7 @@ endif
 " Don't redraw while typing macros.
 set lazyredraw
 
-" Update swap file and gitgutter much faster..
+" Update swap file and gitgutter much faster.
 set updatetime=250
 
 " Disable mouse, to prevent accidental clicks.
@@ -79,7 +79,9 @@ let g:AutoPairsShortcutToggle = ''
 let g:pad#set_mappings = 0
 
 " Enable FZF
-set rtp+=/usr/local/opt/fzf
+if filereadable('/usr/local/opt/fzf')
+  set rtp+=/usr/local/opt/fzf
+endif
 
 " }}}
 
