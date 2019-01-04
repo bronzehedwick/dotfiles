@@ -1,4 +1,4 @@
-PROGRAMS = $(shell find . -type d -depth 1 -name "[^.]*"|xargs basename)
+PROGRAMS = $(shell find . -type d -depth 1 -name "[^.]*"|grep -v scripts|xargs basename)
 OS = $(shell uname -s)
 HAS_BREW = $(shell command -v brew >/dev/null 2>&1 || false)
 BREW_INSTALL = $(shell curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
@@ -18,4 +18,10 @@ programs: ## Installs all programs listed in programs.txt.
 	@$(HAS_BREW) || { /usr/bin/ruby -e $(BREW_INSTALL) }
 	@cat ./programs.txt | xargs brew install
 
-all: programs link
+vim-plugins: ## Installs/updates vim plugins defined in vim-plugins.txt.
+	@./scripts/vim-plugins.sh
+
+mail: ## Syncronizes all mail locally to ~/Mail.
+	@./scripts/mailsync.sh
+
+all: programs link vim-plugins mail
