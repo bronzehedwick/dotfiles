@@ -24,4 +24,7 @@ vim-plugins: ## Installs/updates vim plugins defined in vim-plugins.txt.
 mail: ## Syncronizes all mail locally to ~/Mail.
 	@./scripts/mailsync.sh
 
+caldav: ## Syncronizes all contacts and calendars.
+	@vdirsyncer sync
+
 all: programs link vim-plugins mail
