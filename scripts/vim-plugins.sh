@@ -3,15 +3,17 @@
 # Base plugin directory.
 DIR="$HOME/.config/nvim/pack"
 
-# Make sure the plugin directory exists.
-mkdir -p "$DIR"
+# Delete packages removed from the plugins file, but only if the pack directory exists.
+if [ -d "$DIR" ]; then
+    diff <(find "$DIR" -type d -depth 1 | xargs basename | sort) \
+      <(grep -v -e "^#" -e "^$" ./vim-plugins.txt | xargs -I {} basename {} .git | sort) | \
+      while IFS= read -r OUTDATED || [ -n "$OUTDATED" ]; do
+        echo "$OUTDATED" | awk -F ' ' '{print $2}' | xargs -I {} rm -r "$DIR/"{}
+      done
+fi
 
-# Delete packages removed from the plugins file.
-diff <(find "$DIR" -type d -depth 1 | xargs basename | sort) \
-  <(grep -v -e "^#" -e "^$" ./vim-plugins.txt | xargs -I {} basename {} .git | sort) | \
-  while IFS= read -r OUTDATED || [ -n "$OUTDATED" ]; do
-    echo "$OUTDATED" | awk -F ' ' '{print $2}' | xargs -I {} rm -r "$DIR/"{}
-  done
+# Create the plugin directory if it doesn't exist.
+mkdir -p "$DIR"
 
 # Loop over each line of the plugins file, minus empty lines and comments.
 grep -v -e "^#" -e "^$" ./vim-plugins.txt | while IFS= read -r LINE || [ -n "$LINE" ]; do
@@ -20,10 +22,13 @@ grep -v -e "^#" -e "^$" ./vim-plugins.txt | while IFS= read -r LINE || [ -n "$LI
 
     # Clone the repo if it doesn't exist yet, otherwise update it.
     if [ -d "$DIR/$REPO/start/$REPO" ]; then
-        git -C "$DIR/$REPO/start/$REPO" pull origin >/dev/null 2>&1 &
+        echo "Updating $REPO"
+        git -C "$DIR/$REPO/start/$REPO" pull origin --log
+        echo ""
     else
         mkdir -p "$DIR/$REPO/start/$REPO"
-        git -C "$DIR/$REPO/start" clone --depth 1 "$LINE" >/dev/null 2>&1 &
+        git -C "$DIR/$REPO/start" clone --depth 1 "$LINE"
+        echo ""
     fi
 done
 
