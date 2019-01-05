@@ -46,7 +46,7 @@ macro index,pager A \
   "<save-message>+Archive<enter>" \
   "archive message"
 macro index,pager G \
-  "<shell-escape>$HOME/.dotfiles/mailsync.sh<enter>" \
+  "<shell-escape>$HOME/.dotfiles/scripts/mailsync.sh<enter>" \
   "sync all mail"
 macro attach s \
   "<save-entry><bol>~/Downloads/<eol>" \
