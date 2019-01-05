@@ -51,6 +51,9 @@ macro index,pager G \
 macro attach s \
   "<save-entry><bol>~/Downloads/<eol>" \
   "save to downloads folder"
+macro index,pager a \
+    "<pipe-message>khard add-email<return>" \
+    "add the sender email address to khard"
 
 # notmuch indexer
 set nm_default_uri = "notmuch:///Users/chris/Mail" # path to the maildir
@@ -61,9 +64,10 @@ macro index / "<vfolder-from-query>" \
 macro index,pager \` "<modify-labels>" \
   "modify (notmuch) tags"
 
-# auto alias
-set display_filter = ~/.dotfiles/neomutt/.config/neomutt/auto_add_alias.sh
-source ~/Dropbox/aliases.txt
+# contacts
+set query_command= "khard email --parsable --search-in-source-files %s"
+bind editor <Tab> complete-query
+bind editor ^T    complete
 
 # sort/threading
 set sort = threads
