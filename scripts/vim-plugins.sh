@@ -24,7 +24,7 @@ grep -v -e "^#" -e "^$" ./vim-plugins.txt | while IFS= read -r LINE || [ -n "$LI
     if [ -d "$DIR/$REPO/start/$REPO" ]; then
         echo "Updating $REPO"
         git -C "$DIR/$REPO/start/$REPO" fetch
-        git -C "$DIR/$REPO/start/$REPO" log --oneline origin/"$(git rev-parse --abbrev-ref HEAD)"..
+        git -C "$DIR/$REPO/start/$REPO" log --oneline origin/"$(git branch | grep '\*' | cut -d ' ' -f 2)"..
         git -C "$DIR/$REPO/start/$REPO" pull origin --quiet
         echo ""
     else
