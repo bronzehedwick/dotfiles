@@ -23,7 +23,9 @@ grep -v -e "^#" -e "^$" ./vim-plugins.txt | while IFS= read -r LINE || [ -n "$LI
     # Clone the repo if it doesn't exist yet, otherwise update it.
     if [ -d "$DIR/$REPO/start/$REPO" ]; then
         echo "Updating $REPO"
-        git -C "$DIR/$REPO/start/$REPO" pull origin --log
+        git -C "$DIR/$REPO/start/$REPO" fetch
+        git -C "$DIR/$REPO/start/$REPO" log --oneline origin/"$(git rev-parse --abbrev-ref HEAD)"..
+        git -C "$DIR/$REPO/start/$REPO" pull origin --quiet
         echo ""
     else
         mkdir -p "$DIR/$REPO/start/$REPO"
