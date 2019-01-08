@@ -167,8 +167,6 @@ noremap <F4> <Plug>(Timestamp)<CR>
 
 " Terminal
 if has('nvim')
-  autocmd BufEnter term://* startinsert
-  autocmd BufLeave term://* stopinsert
   autocmd TermOpen * setlocal norelativenumber nonumber
 endif
 
