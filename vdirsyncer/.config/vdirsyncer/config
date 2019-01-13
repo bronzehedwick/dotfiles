@@ -15,7 +15,7 @@ fileext = ".vcf"
 type = "carddav"
 url = "https://carddav.fastmail.com/"
 username = "iam@chrisdeluca.me"
-password.fetch = ["command", "pass", "show", "Email/vdirsyncer_carddav"]
+password.fetch = ["command", "security", "find-generic-password", "-w", "-s", "vdirsyncer_carddav"]
 
 [pair my_calendars]
 a = "my_calendars_local"
@@ -32,6 +32,7 @@ fileext = ".ics"
 type = "caldav"
 url = "https://caldav.fastmail.com/"
 username = "iam@chrisdeluca.me"
-password.fetch = ["command", "pass", "show", "Email/vdirsyncer_caldav"]
+password.fetch = ["command", "security", "find-generic-password", "-w", "-s", "vdirsyncer_caldav"]
 
-# vim: set ft=config
+# security find-generic-password -w -s "fastmail_msmtp"
+# vim: ft=config
