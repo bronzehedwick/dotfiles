@@ -3,3 +3,5 @@
 text/*; less '%s'; edit=nvim '%s'; needsterminal; test=test -t 0
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
 */*; open '%s'; test=expr "$DISPLAY" : :
+text/calendar; mutt-ics; copiousoutput
+application/ics; mutt-ics; copiousoutput
