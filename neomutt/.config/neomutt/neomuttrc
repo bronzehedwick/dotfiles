@@ -96,6 +96,9 @@ set sleep_time = 0
 auto_view text/html
 alternative_order text/plain text/encriched text/html
 
+# calendar events
+auto_view text/calendar application/ics
+
 # sidebar
 set sidebar_visible
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
