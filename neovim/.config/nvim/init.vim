@@ -167,20 +167,25 @@ noremap <F4> <Plug>(Timestamp)<CR>
 
 " Terminal
 if has('nvim')
-  autocmd TermOpen * setlocal norelativenumber nonumber
-endif
-
-" Chat
-autocmd BufEnter term://*chat setlocal nonumber norelativenumber
-
-" NeoMutt
-autocmd BufEnter term://*neomutt setlocal nonumber |
-      \ setlocal norelativenumber |
-      \ setlocal noshowmode |
-      \ setlocal noruler |
-      \ setlocal laststatus=0 |
-      \ setlocal noshowcmd |
+  " Show the terminal cursor seperately from the Vim cursor.
+  highlight! link TermCursor Cursor
+  highlight! TermCursorNC guibg=#f99157 guifg=white ctermbg=1 ctermfg=15
+  " Disable Vim chrome inside terminal buffers.
+  autocmd TermOpen * set nonumber |
+      \ set norelativenumber |
+      \ set noshowmode |
+      \ set noruler |
+      \ set laststatus=0 |
+      \ set noshowcmd |
       \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
+  autocmd BufEnter term://* set nonumber |
+      \ set norelativenumber |
+      \ set noshowmode |
+      \ set noruler |
+      \ set laststatus=0 |
+      \ set noshowcmd |
+      \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
+endif
 
 " }}}
 
