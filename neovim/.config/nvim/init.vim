@@ -177,14 +177,14 @@ if has('nvim')
       \ set noruler |
       \ set laststatus=0 |
       \ set noshowcmd |
-      \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
+      \ autocmd BufLeave <buffer> set number relativenumber laststatus=2 showmode ruler showcmd
   autocmd BufEnter term://* set nonumber |
       \ set norelativenumber |
       \ set noshowmode |
       \ set noruler |
       \ set laststatus=0 |
       \ set noshowcmd |
-      \ autocmd BufLeave <buffer> set laststatus=2 showmode ruler showcmd
+      \ autocmd BufLeave <buffer> set number relativenumber laststatus=2 showmode ruler showcmd
 endif
 
 " }}}
