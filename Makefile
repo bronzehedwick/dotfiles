@@ -27,4 +27,4 @@ mail: ## Syncronizes all mail locally to ~/Mail.
 caldav: ## Syncronizes all contacts and calendars.
 	@vdirsyncer sync
 
-all: programs link vim-plugins mail
+all: programs link vim-plugins mail caldav
