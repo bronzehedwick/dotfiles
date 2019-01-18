@@ -167,24 +167,8 @@ noremap <F4> <Plug>(Timestamp)<CR>
 
 " Terminal
 if has('nvim')
-  " Show the terminal cursor seperately from the Vim cursor.
-  highlight! link TermCursor Cursor
-  highlight! TermCursorNC guibg=#f99157 guifg=white ctermbg=1 ctermfg=15
-  " Disable Vim chrome inside terminal buffers.
-  autocmd TermOpen * set nonumber |
-      \ set norelativenumber |
-      \ set noshowmode |
-      \ set noruler |
-      \ set laststatus=0 |
-      \ set noshowcmd |
-      \ autocmd BufLeave <buffer> set number relativenumber laststatus=2 showmode ruler showcmd
-  autocmd BufEnter term://* set nonumber |
-      \ set norelativenumber |
-      \ set noshowmode |
-      \ set noruler |
-      \ set laststatus=0 |
-      \ set noshowcmd |
-      \ autocmd BufLeave <buffer> set number relativenumber laststatus=2 showmode ruler showcmd
+  " Set a filetype for terminal buffers to react to in a ftplugin.
+  autocmd TermOpen term://* set ft=terminal
 endif
 
 " }}}
@@ -197,6 +181,9 @@ if has('termguicolors')
 endif
 
 colorscheme OceanicNext
+
+" Show the terminal cursor seperately from the Vim cursor.
+let g:oceanic_next_terminal_cursor_highlight = 1
 
 " }}}
 
