@@ -12,4 +12,7 @@ setlocal include="^\s*\{\%\s*include\|^\s*\{\%\s*embed\|^\s*\{\%\s*extends"
 " Remove `@` in include for file path. MSK specific.
 setlocal includeexpr=substitute(v:fname,'\@mskcc_','mskcc_','g')
 
+" Load emmet HTML quickwrite plugin.
+packadd emmet-vim
+
 " vim:fdm=marker ft=vim et sts=2 sw=2 ts=2
