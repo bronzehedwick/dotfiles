@@ -98,9 +98,6 @@ set splitright
 " Puts new split windows to the bottom of the currentset hidden.
 set splitbelow
 
-" Show matching brackets/parenthesis.
-set showmatch
-
 " Case insensitive search when using any capital letters.
 set ignorecase
 set smartcase
