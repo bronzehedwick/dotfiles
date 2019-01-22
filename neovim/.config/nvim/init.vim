@@ -1,5 +1,67 @@
 scriptencoding utf-8
 
+" Plugins {{{
+
+function! PackInit() abort
+  " Initialize minpac.
+  packadd minpac
+  call minpac#init()
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+  " Additional plugins…
+
+  " Working with text
+  call minpac#add('tpope/vim-commentary')
+  call minpac#add('tpope/vim-surround')
+  call minpac#add('tpope/vim-repeat')
+  call minpac#add('tpope/vim-unimpaired')
+  call minpac#add('tpope/vim-rsi')
+  call minpac#add('justinmk/vim-sneak')
+  call minpac#add('justinmk/vim-ipmotion')
+  call minpac#add('tpope/vim-abolish')
+  call minpac#add('freitass/todo.txt-vim')
+
+  " Working with the file system.
+  call minpac#add('tpope/vim-eunuch')
+  call minpac#add('justinmk/vim-dirvish')
+  call minpac#add('mhinz/vim-grepper')
+  call minpac#add('jamessan/vim-gnupg')
+  call minpac#add('fmoralesc/vim-pad')
+  call minpac#add('vim-scripts/utl.vim')
+
+  " Programming.
+  call minpac#add('neomake/neomake')
+  call minpac#add('editorconfig/editorconfig-vim')
+  call minpac#add('mattn/emmet-vim')
+  call minpac#add('lifepillar/vim-mucomplete')
+
+  " Git.
+  call minpac#add('tpope/vim-fugitive')
+  call minpac#add('airblade/vim-gitgutter')
+  call minpac#add('junegunn/gv.vim')
+  call minpac#add('tommcdo/vim-fubitive')
+
+  " Syntaxes.
+  call minpac#add('othree/yajs.vim')
+  call minpac#add('othree/html5.vim')
+  call minpac#add('JulesWang/css.vim')
+  call minpac#add('vim-scripts/fountain.vim')
+  call minpac#add('cespare/vim-toml')
+  call minpac#add('bronzehedwick/msmtp-syntax.vim')
+
+  " Themes.
+  call minpac#add('bronzehedwick/oceanic-next', {'branch': 'terminal-cursor-highlight'})
+endfunction
+
+" Define user commands for updating/cleaning the plugins.
+" Each of them calls PackInit() to load minpac and register
+" the information of plugins, then performs the task.
+command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus call PackInit() | call minpac#status()
+
+" }}}
+
 " General configuration {{{
 
 " Use soft tabs.
