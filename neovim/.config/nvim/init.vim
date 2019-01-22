@@ -145,7 +145,9 @@ set rtp+=/usr/local/opt/fzf
 " Statusline {{{
 
 " Git branch
-set statusline=%{fugitive#statusline()}
+if exists(':Git')
+  set statusline=%{fugitive#statusline()}
+endif
 " Tail of file (just the name.ext)
 set statusline+=%<\ %t
 " File modified flag
@@ -239,7 +241,7 @@ if has('termguicolors')
   set termguicolors
 endif
 
-colorscheme OceanicNext
+silent! colorscheme OceanicNext
 
 " Show the terminal cursor seperately from the Vim cursor.
 let g:oceanic_next_terminal_cursor_highlight = 1
