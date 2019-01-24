@@ -10,7 +10,7 @@ function! PackInit() abort
 
   " Additional plugins…
 
-  " Working with text
+  " Working with text.
   call minpac#add('tpope/vim-commentary')
   call minpac#add('tpope/vim-surround')
   call minpac#add('tpope/vim-repeat')
@@ -145,19 +145,17 @@ set rtp+=/usr/local/opt/fzf
 
 " Statusline {{{
 
-" Git branch
-if exists(':Git')
-  set statusline=%{fugitive#statusline()}
-endif
-" Tail of file (just the name.ext)
+" Git branch.
+set statusline=%{fugitive#statusline()}
+" Tail of file (just the name.ext).
 set statusline+=%<\ %t
-" File modified flag
+" File modified flag.
 set statusline+=%m
-" Buffer is `help` flag
+" Buffer is `help` flag.
 set statusline+=%<\ %h
-" Buffer is `readonly` flag
+" Buffer is `readonly` flag.
 set statusline+=%<\ %r
-" Buffer is `preview` flag
+" Buffer is `preview` flag.
 set statusline+=%<\ %w
 
 " }}}
