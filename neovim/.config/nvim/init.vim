@@ -48,6 +48,7 @@ function! PackInit() abort
   call minpac#add('vim-scripts/fountain.vim')
   call minpac#add('cespare/vim-toml')
   call minpac#add('bronzehedwick/msmtp-syntax.vim')
+  call minpac#add('beyondwords/vim-twig')
 
   " Themes.
   call minpac#add('bronzehedwick/oceanic-next', {'branch': 'terminal-cursor-highlight'})
