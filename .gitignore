@@ -5,3 +5,4 @@ vdirsyncer/.config/vdirsyncer/status
 *.weechatlog
 sec.conf
 *.gz
+pack
