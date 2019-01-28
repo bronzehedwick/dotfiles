@@ -146,7 +146,7 @@ set rtp+=/usr/local/opt/fzf
 " Statusline {{{
 
 " Git branch.
-set statusline=%{fugitive#statusline()}
+set statusline=%{FugitiveStatusline()}
 " Tail of file (just the name.ext).
 set statusline+=%<\ %t
 " File modified flag.
