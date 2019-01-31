@@ -219,7 +219,7 @@ tnoremap <Esc> <C-\><C-n>
 tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 
 " Insert time into a document.
-noremap <F4> <Plug>(Timestamp)<CR>
+inoremap <C-g><C-t> <C-r>=strftime("%Y-%m-%dT%H:%M:%S")<cr>
 
 " }}}
 
