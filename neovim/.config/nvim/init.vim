@@ -169,7 +169,7 @@ let maplocalleader = ','
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
-" Stupid shift key fixes, lifted from spf13
+" Stupid shift key fixes, lifted from spf13.
 command! -bang -nargs=* -complete=file E e<bang> <args>
 command! -bang -nargs=* -complete=file W w<bang> <args>
 command! -bang -nargs=* -complete=file Wq wq<bang> <args>
@@ -183,7 +183,7 @@ command! -bang Qa qa<bang>
 " Disable Ex mode mapping. Can still be accessed via gQ.
 nnoremap Q q
 
-" Toggle set wrap
+" Toggle set wrap.
 noremap <silent><leader>w :setlocal wrap!<CR>
 
 " Open directory at current file path.
@@ -197,7 +197,7 @@ noremap <C-j> <C-w>j
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 
-" Display date and time
+" Display date and time.
 noremap <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 
 " Jet-pack movement between buffers…
@@ -205,11 +205,11 @@ nnoremap <leader>l :ls<CR>:b<space>
 nnoremap <leader>k :ls<CR>:sbuffer<space>
 nnoremap <leader>; :ls<CR>:vert sb<space>
 
-" More sane command-line history
+" More sane command-line history.
 cnoremap <c-n> <down>
 cnoremap <c-p> <up>
 
-" Quickly edit macros
+" Quickly edit macros.
 nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
 " Terminal
@@ -220,6 +220,10 @@ tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 
 " Insert time into a document.
 inoremap <C-g><C-t> <C-r>=strftime("%Y-%m-%dT%H:%M:%S")<cr>
+
+" Quickly access make and lmake.
+nnoremap <C-m> :make<CR>
+nnoremap <C-l> :lmake<CR>
 
 " }}}
 
