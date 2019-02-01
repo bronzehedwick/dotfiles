@@ -25,7 +25,6 @@ function! PackInit() abort
   call minpac#add('tpope/vim-eunuch')
   call minpac#add('justinmk/vim-dirvish')
   call minpac#add('mhinz/vim-grepper')
-  call minpac#add('jamessan/vim-gnupg')
   call minpac#add('fmoralesc/vim-pad')
   call minpac#add('vim-scripts/utl.vim')
 
