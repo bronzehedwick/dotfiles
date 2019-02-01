@@ -18,7 +18,7 @@ function! PackInit() abort
   call minpac#add('tpope/vim-rsi')
   call minpac#add('justinmk/vim-sneak')
   call minpac#add('justinmk/vim-ipmotion')
-  call minpac#add('freitass/todo.txt-vim')
+  call minpac#add('freitass/todo.txt-vim', {'type': 'opt'})
   call minpac#add('tpope/vim-jdaddy', {'type': 'opt'})
 
   " Working with the file system.
