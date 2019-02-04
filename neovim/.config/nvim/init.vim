@@ -27,6 +27,7 @@ function! PackInit() abort
   call minpac#add('mhinz/vim-grepper')
   call minpac#add('fmoralesc/vim-pad')
   call minpac#add('vim-scripts/utl.vim')
+  call minpac#add('junegunn/fzf')
 
   " Programming.
   call minpac#add('neomake/neomake')
@@ -137,9 +138,6 @@ let g:AutoPairsShortcutToggle = ''
 " Turn off default Pad plugin mappings.
 let g:pad#set_mappings = 0
 
-" Enable FZF
-set rtp+=/usr/local/opt/fzf
-
 " }}}
 
 " Statusline {{{
@@ -221,8 +219,8 @@ tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 inoremap <C-g><C-t> <C-r>=strftime("%Y-%m-%dT%H:%M:%S")<cr>
 
 " Quickly access make and lmake.
-nnoremap <C-m> :make<CR>
-nnoremap <C-l> :lmake<CR>
+nnoremap <M-m> :make<CR>
+nnoremap <M-l> :lmake<CR>
 
 " }}}
 
@@ -233,6 +231,19 @@ if has('nvim')
   " Set a filetype for terminal buffers to react to in a ftplugin.
   autocmd TermOpen term://* set ft=terminal
 endif
+
+" Semi-Automatic Pairs
+function! SemiAutoPairs()
+  let s:c = getchar()
+  if s:c == "'"
+      setline(238, 'whoa')
+  endif
+endfunction
+
+augroup semiautopairs
+  autocmd!
+  autocmd InsertChange call SemiAutoPairs()
+augroup END
 
 " }}}
 
