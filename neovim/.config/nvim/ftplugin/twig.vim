@@ -10,3 +10,6 @@ setlocal include="^\s*\{\%\s*include\|^\s*\{\%\s*embed\|^\s*\{\%\s*extends"
 
 " Remove `@` in include for file path. MSK specific.
 setlocal includeexpr=substitute(v:fname,'\@mskcc_','mskcc_','g')
+
+" Add twig template auto pairs.
+let b:AutoPairs = AutoPairsDefine({'{%' : '%}'})
