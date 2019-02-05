@@ -20,6 +20,7 @@ function! PackInit() abort
   call minpac#add('justinmk/vim-ipmotion')
   call minpac#add('freitass/todo.txt-vim', {'type': 'opt'})
   call minpac#add('tpope/vim-jdaddy', {'type': 'opt'})
+  call minpac#add('jiangmiao/auto-pairs')
 
   " Working with the file system.
   call minpac#add('tpope/vim-eunuch')
