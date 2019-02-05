@@ -14,9 +14,9 @@ link: ## Link all program configuration via GNU stow.
 unlink: ## Remove links to all program configuration via GNU stow.
 	@echo $(PROGRAMS) | xargs -D stow
 
-programs: ## Installs all programs listed in programs.txt.
+brew: ## Installs packages in Brewfile.
 	@$(HAS_BREW) || { /usr/bin/ruby -e $(BREW_INSTALL) }
-	@cat ./programs.txt | xargs brew install
+	@brew bundle
 
 mail: ## Syncronizes all mail locally to ~/Mail.
 	@./scripts/mailsync.sh
@@ -24,4 +24,4 @@ mail: ## Syncronizes all mail locally to ~/Mail.
 caldav: ## Syncronizes all contacts and calendars.
 	@vdirsyncer sync
 
-all: programs link mail caldav
+all: brew link mail caldav
