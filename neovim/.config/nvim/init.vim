@@ -127,6 +127,11 @@ set updatetime=250
 " Disable mouse, to prevent accidental clicks.
 set mouse-=a
 
+" Format text (gq) with par if it exists.
+if executable('par')
+  set formatprg=par
+endif
+
 " Mandatory setting for mu complete
 set completeopt+=menuone
 
