@@ -179,17 +179,18 @@ key_bindings:
   - { key: Back,                    chars: "\x7f"                        }
   - { key: Delete,                  chars: "\x1b[3~",  mode: AppKeypad   }
   - { key: Delete,                  chars: "\x1b[P",   mode: ~AppKeypad  }
+  - { key: A,        mods: Alt,     chars: "\x1ba"                       }
   - { key: B,        mods: Alt,     chars: "\x1bb"                       }
+  - { key: D,        mods: Alt,     chars: "\x1bd"                       }
   - { key: E,        mods: Alt,     chars: "\x1be"                       }
   - { key: F,        mods: Alt,     chars: "\x1bf"                       }
-  - { key: A,        mods: Alt,     chars: "\x1ba"                       }
-  - { key: D,        mods: Alt,     chars: "\x1bd"                       }
+  - { key: G,        mods: Alt,     chars: "\x1bg"                       }
+  - { key: K,        mods: Alt,     chars: "\x1bk"                       }
+  - { key: L,        mods: Alt,     chars: "\x1bl"                       }
+  - { key: M,        mods: Alt,     chars: "\x1bm"                       }
+  - { key: P,        mods: Alt,     chars: "\x1bp"                       }
   - { key: R,        mods: Alt,     chars: "\x1br"                       }
   - { key: T,        mods: Alt,     chars: "\x1bt"                       }
-  - { key: L,        mods: Alt,     chars: "\x1bl"                       }
-  - { key: K,        mods: Alt,     chars: "\x1bk"                       }
-  - { key: G,        mods: Alt,     chars: "\x1bg"                       }
-  - { key: P,        mods: Alt,     chars: "\x1bp"                       }
   - { key: Period,   mods: Alt,       chars: "\x1b."                     }
   - { key: Slash,    mods: Alt,       chars: "\x1b/"                     }
   - { key: Key8,     mods: Alt|Shift, chars: "\x1b*"                     }
