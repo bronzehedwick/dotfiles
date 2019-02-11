@@ -13,3 +13,8 @@ setlocal includeexpr=substitute(v:fname,'\@mskcc_','mskcc_','g')
 
 " Add twig template auto pairs.
 let b:AutoPairs = AutoPairsDefine({'{%' : '%}'})
+
+" Use twiglint linter.
+execute('compiler twiglint')
+
+" vim:fdm=marker ft=vim et sts=2 sw=2 ts=2

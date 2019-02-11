@@ -31,7 +31,6 @@ function! PackInit() abort
   call minpac#add('junegunn/fzf')
 
   " Programming.
-  call minpac#add('neomake/neomake')
   call minpac#add('editorconfig/editorconfig-vim')
   call minpac#add('mattn/emmet-vim', {'type': 'opt'})
   call minpac#add('lifepillar/vim-mucomplete')
