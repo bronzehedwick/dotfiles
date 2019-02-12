@@ -2,7 +2,7 @@
 setlocal spell
 
 " Mapping to insert current git ticket into file.
-inoremap <C-g><C-t> <C-r>=execute('!git ticket')<cr>
+nnoremap <buffer> <silent> <LocalLeader>t :r !git ticket<cr>
 
 " Mapping to retrieve commit message after failed commit.
 function! GetPrevCommit()
