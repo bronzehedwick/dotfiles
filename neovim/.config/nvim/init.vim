@@ -68,6 +68,31 @@ command! PackStatus call PackInit() | call minpac#status()
 
 " }}}
 
+" Re-mappings {{{
+
+" Remap mapleader.
+let mapleader = ','
+let maplocalleader = ','
+
+" Yank from the cursor to the end of the line, to be consistent with C and D.
+nnoremap Y y$
+
+" Stupid shift key fixes, lifted from spf13.
+command! -bang -nargs=* -complete=file E e<bang> <args>
+command! -bang -nargs=* -complete=file W w<bang> <args>
+command! -bang -nargs=* -complete=file Wq wq<bang> <args>
+command! -bang -nargs=* -complete=file WQ wq<bang> <args>
+command! -bang Wa wa<bang>
+command! -bang WA wa<bang>
+command! -bang Q q<bang>
+command! -bang QA qa<bang>
+command! -bang Qa qa<bang>
+
+" Disable Ex mode mapping. Can still be accessed via gQ.
+nnoremap Q q
+
+" }}}
+
 " Interface {{{
 
 " Use soft tabs.
@@ -196,31 +221,6 @@ set statusline+=%<\ %h
 set statusline+=%<\ %r
 " Buffer is `preview` flag.
 set statusline+=%<\ %w
-
-" }}}
-
-" Re-mappings {{{
-
-" Remap mapleader.
-let mapleader = ','
-let maplocalleader = ','
-
-" Yank from the cursor to the end of the line, to be consistent with C and D.
-nnoremap Y y$
-
-" Stupid shift key fixes, lifted from spf13.
-command! -bang -nargs=* -complete=file E e<bang> <args>
-command! -bang -nargs=* -complete=file W w<bang> <args>
-command! -bang -nargs=* -complete=file Wq wq<bang> <args>
-command! -bang -nargs=* -complete=file WQ wq<bang> <args>
-command! -bang Wa wa<bang>
-command! -bang WA wa<bang>
-command! -bang Q q<bang>
-command! -bang QA qa<bang>
-command! -bang Qa qa<bang>
-
-" Disable Ex mode mapping. Can still be accessed via gQ.
-nnoremap Q q
 
 " }}}
 
