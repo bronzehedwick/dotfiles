@@ -134,8 +134,10 @@ endif
 " Note: Normally, :cwindow jumps to the quickfix window if the command opens it
 " (but not if it's already open). However, as part of the autocmd, this doesn't
 " seem to happen.
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
+augroup MakerQuickFix
+  autocmd QuickFixCmdPost [^l]* nested cwindow
+  autocmd QuickFixCmdPost    l* nested lwindow
+augroup END
 
 " }}}
 
