@@ -50,10 +50,10 @@
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
+[mergetool "nfugitive"]
+	cmd = nvr -f -c "Gdiff" "$MERGED"
 [diff]
 	tool = nvr
-; [difftool]
-; 	prompt = false
 [difftool "nvr"]
 	cmd = nvr -s -d \"$LOCAL\" \"$REMOTE\"
 [difftool "Kaleidoscope"]
@@ -64,7 +64,6 @@
 [github]
 	user = bronzehedwick
 [commit]
-	template = ~/.git_commit_msg.txt
 	gpgsign = true
 [advice]
 	statusHints = false
