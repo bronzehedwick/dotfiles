@@ -27,7 +27,6 @@ function! PackInit() abort
   call minpac#add('tpope/vim-eunuch')
   call minpac#add('justinmk/vim-dirvish')
   call minpac#add('mhinz/vim-grepper')
-  call minpac#add('fmoralesc/vim-pad')
   call minpac#add('vim-scripts/utl.vim')
   call minpac#add('junegunn/fzf')
   " }}}
@@ -36,6 +35,7 @@ function! PackInit() abort
   call minpac#add('editorconfig/editorconfig-vim')
   call minpac#add('mattn/emmet-vim', {'type': 'opt'})
   call minpac#add('lifepillar/vim-mucomplete')
+  call minpac#add('alvan/vim-php-manual')
   " }}}
 
   " Git. {{{2
@@ -274,6 +274,8 @@ let g:AutoPairsShortcutToggle = ''
 " Turn off default Pad plugin mappings.
 let g:pad#set_mappings = 0
 
+" Turn off default PHP Docs CTRL-H shortcut.
+let g:php_manual_online_search_shortcut = ''
 " }}}
 
 " Colorscheme {{{
