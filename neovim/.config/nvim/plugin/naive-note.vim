@@ -7,6 +7,7 @@
 " - Get dirvish to refresh
 " - q mapping
 " - Mapping to open archive
+" - Consistent interface (NaiveNote new, NaiveNote list, etc)
 " - Export as plugin(?)
 "   - Note directory configurable
 "   - Error when note directory variable isn't present
@@ -18,7 +19,7 @@
 "   - Write readme
 "   - Type of file generated configurable(?)
 
-if exists('g:loaded_naive_note') || &cp || v:version < 700
+if exists('g:loaded_naive_note') || v:version < 700
   finish
 endif
 let g:loaded_naive_note = 1
