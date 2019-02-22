@@ -26,7 +26,6 @@ function! PackInit() abort
   " Working with the file system. {{{2
   call minpac#add('tpope/vim-eunuch')
   call minpac#add('justinmk/vim-dirvish')
-  call minpac#add('mhinz/vim-grepper')
   call minpac#add('vim-scripts/utl.vim')
   call minpac#add('junegunn/fzf')
   " }}}
@@ -124,6 +123,11 @@ set mouse-=a
 " Format text (gq) with par if it exists.
 if executable('par')
   set formatprg=par
+endif
+
+" Use ripgrep as external grep tool if available.
+if executable('rg')
+  set grepprg=rg\ -H\ --no-heading\ --vimgrep
 endif
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
