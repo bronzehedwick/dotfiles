@@ -1,0 +1,5 @@
+# Add Drupal file type
+--type-add
+drupal:*.{theme,module,inc,php}*
+
+# vim: ft=conf

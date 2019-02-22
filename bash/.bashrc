@@ -167,5 +167,8 @@ if command -v fd > /dev/null 2>&1; then
     }
 fi
 
+# Ripgrep needs an environment variable to point to it's config.
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/ripgreprc"
+
 # Todo.txt
 export TODOTXT_DEFAULT_ACTION=ls
