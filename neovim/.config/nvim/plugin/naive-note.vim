@@ -5,8 +5,6 @@
 " say, '…What?'
 " TODO:
 " - Get dirvish to refresh
-" - q mapping
-" - Mapping to open archive
 " - Consistent interface (NaiveNote new, NaiveNote list, etc)
 " - Export as plugin(?)
 "   - Note directory configurable
@@ -26,6 +24,9 @@ let g:loaded_naive_note = 1
 
 " Open note listing buffer.
 nnoremap <leader>o :split ~/Dropbox/Notes<CR>
+
+" Open note archive.
+nnoremap <leader>p :split ~/Dropbox/Notes/archive<CR>
 
 " Create a new note.
 function! CreateNote()
