@@ -23,7 +23,7 @@ endif
 let g:loaded_naive_note = 1
 
 if empty(glob('~/Dropbox/Notes/archive'))
-  silent execute('~/Dropbox/Notes/archive')
+  silent execute(':!mkdir -p ~/Dropbox/Notes/archive')
 endif
 
 " Open note listing buffer mapping.
