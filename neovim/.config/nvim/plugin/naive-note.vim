@@ -11,13 +11,12 @@
 "   - All mappings configurable
 "   - Configurable split calls
 "   - Figure out minimum vim version needed
-"   - Figure out what `&cp` is, and if needed
 "   - Write documentation
 "   - Write readme
 "   - Type of file generated configurable(?)
 " - Get dirvish to refresh
 
-if exists('g:loaded_naive_note') || v:version < 700
+if exists('g:loaded_naive_note') || &cp || v:version < 700
   finish
 endif
 let g:loaded_naive_note = 1
