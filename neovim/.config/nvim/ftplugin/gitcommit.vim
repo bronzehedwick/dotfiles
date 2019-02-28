@@ -4,11 +4,11 @@ setlocal spell
 " Mapping to insert current git ticket into file.
 nnoremap <buffer> <silent> <LocalLeader>t :0read !git ticket<cr>
 
-" Mapping to retrieve commit message after failed commit.
-function! GetPrevCommit()
-  let l:git_toplevel = glob("`git rev-parse --show-toplevel`/.git/COMMIT_EDITMSG")
-  :0read `git rev-parse --show-toplevel`/.git/COMMIT_EDITMSG
+" Save contents of a buffer to register g.
+function! s:SaveBuffer() abort
+  silent normal! gg
+  silent normal! "gyG
 endfunction
-nnoremap <buffer> <silent> <LocalLeader>b :call GetPrevCommit()<CR>
+autocmd BufWritePre <buffer> call s:SaveBuffer()
 
 " vim:fdm=marker ft=vim et sts=2 sw=2 ts=2
