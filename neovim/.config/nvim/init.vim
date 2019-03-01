@@ -72,7 +72,6 @@ command! PackStatus call PackInit() | call minpac#status()
 
 " Remap mapleader.
 let mapleader = ','
-let maplocalleader = ','
 
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
@@ -280,6 +279,14 @@ let g:pad#set_mappings = 0
 
 " Turn off default PHP Docs CTRL-H shortcut.
 let g:php_manual_online_search_shortcut = ''
+
+" Configure note director.
+let g:naivenote#dir = '~/Dropbox/Notes'
+
+" Configure note mappings.
+nnoremap <leader>n :call naivenote#create()<CR>
+nnoremap <leader>o :call naivenote#list()<CR>
+
 " }}}
 
 " Colorscheme {{{

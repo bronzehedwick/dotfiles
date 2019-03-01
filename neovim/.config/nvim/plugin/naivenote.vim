@@ -5,31 +5,26 @@
 " say, '…What?'
 " TODO:
 " - Un-archive mapping when in archive
+" - Change interface? Instead of input, command line
 " - Export as plugin(?)
-"   - Note directory configurable
-"   - Error when note directory variable isn't present
-"   - All mappings configurable
 "   - Configurable split calls
 "   - Figure out minimum vim version needed
 "   - Write documentation
 "   - Write readme
 "   - Type of file generated configurable(?)
+"   - Use <Plug> interface(?)
 " - Get dirvish to refresh
 
-if exists('g:loaded_naive_note') || &cp || v:version < 700
+if exists('g:loaded_naivenote') || &cp || v:version < 700
   finish
 endif
-let g:loaded_naive_note = 1
+let g:loaded_naivenote = 1
 
-if empty(glob('~/Dropbox/Notes/archive'))
-  silent execute(':!mkdir -p ~/Dropbox/Notes/archive')
+if !exists('g:naivenote#dir')
+  echom 'naivenote: please set g:naivenote#dir in your configuration.'
+  finish
 endif
 
-" Open note listing buffer mapping.
-nnoremap <leader>o :split ~/Dropbox/Notes<CR>
-
-" Open note archive mapping.
-nnoremap <leader>p :split ~/Dropbox/Notes/archive<CR>
-
-" Create a new note mapping.
-nnoremap <leader>n :call naivenote#create()<CR>
+if empty(glob(expand(g:naivenote#dir) . '/archive'))
+  silent execute(':!mkdir -p ' . expand(g:naivenote#dir) . '/archive')
+endif
