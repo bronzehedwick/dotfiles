@@ -63,7 +63,7 @@
 	smudge = git-media-smudge %f
 [github]
 	user = bronzehedwick
-[commit]
-	gpgsign = true
+; [commit]
+; 	gpgsign = true
 [advice]
 	statusHints = false
