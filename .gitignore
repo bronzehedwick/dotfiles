@@ -6,3 +6,4 @@ vdirsyncer/.config/vdirsyncer/status
 sec.conf
 *.gz
 pack
+*.spl
