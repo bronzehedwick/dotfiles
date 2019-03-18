@@ -14,6 +14,9 @@ setlocal includeexpr=substitute(v:fname,'\@mskcc_','mskcc_','g')
 " Add twig template auto pairs.
 let b:AutoPairs = AutoPairsDefine({'{%' : '%}'})
 
+" Use twig commenting instead of HTML.
+setlocal commentstring={#\ %s\ #}
+
 " Use twiglint linter.
 execute('compiler twiglint')
 
