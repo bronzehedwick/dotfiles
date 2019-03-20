@@ -35,6 +35,7 @@ function! PackInit() abort
   call minpac#add('mattn/emmet-vim', {'type': 'opt'})
   call minpac#add('lifepillar/vim-mucomplete')
   call minpac#add('alvan/vim-php-manual')
+  call minpac#add('jungomi/vim-mdnquery', {'do': '!gem install mdn_query'})
   " }}}
 
   " Git. {{{2
