@@ -1,3 +1,6 @@
+" Use the PHP binary to lookup documentation.
+setlocal keywordprg=php\ --rf
+
 " Use phpcs linter.
 execute('compiler phpcs')
 
