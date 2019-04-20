@@ -1,4 +1,5 @@
 # subscribed mailing lists
+# color cheat sheet: https://jonasjacek.github.io/colors/
 
 # github
 subscribe .*@noreply.github.com
@@ -115,7 +116,7 @@ color index brightcolor104 black "~N ~f .*vanguard.*com"
 color index brightred black "~D ~f .*vanguard.*com"
 
 # Powatan Democrats
-subscribe .com
+subscribe .*powhatan.*.com
 color index color212 black "~f powhatan01@gmail.com"
 color index brightcolor212 black "~N ~f powhatan01@gmail.com"
 color index brightred black "~D ~f powhatan01@gmail.com"
@@ -137,5 +138,11 @@ subscribe .*@chromium.org
 color index color117 black "~f .*@chromium.org"
 color index brightcolor118 black "~N ~f .*@chromium.org"
 color index brightred black "~D ~f .*@chromium.org"
+
+# FireFox bug tracker and tooling
+subscribe .*@mozilla.*
+color index color160 black "~f .*@mozilla.*"
+color index brightcolor160 black "~N ~f .*@mozilla.*"
+color index brightred black "~D ~f .*@mozilla.*"
 
 # vim: ft=muttrc
