@@ -19,6 +19,9 @@ export PATH="/Library/TeX/texbin:$PATH"
 # Add user python to path
 export PATH="$PATH:~/Library/Python/3.7/bin"
 
+# Add mozilla build tools to path.
+export PATH="$HOME/.config/mozbuild/arcanist/bin:$HOME/.config/mozbuild/moz-phab:$PATH"
+
 ####################
 # Load other files #
 ####################
