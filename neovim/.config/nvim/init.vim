@@ -27,7 +27,7 @@ function! PackInit() abort
   call minpac#add('tpope/vim-eunuch')
   call minpac#add('justinmk/vim-dirvish')
   call minpac#add('vim-scripts/utl.vim')
-  call minpac#add('junegunn/fzf')
+  call minpac#add('srstevenson/vim-picker')
   " }}}
 
   " Programming. {{{2
@@ -273,18 +273,24 @@ let g:loaded_netrwPlugin = 1
 " AutoPairs
 let g:AutoPairsShortcutToggle = ''
 
-" Turn off default Pad plugin mappings.
-let g:pad#set_mappings = 0
-
-" Turn off default PHP Docs CTRL-H shortcut.
-let g:php_manual_online_search_shortcut = ''
-
 " Configure note director.
 let g:naivenote#dir = '~/Dropbox/Notes'
 
 " Configure note mappings.
 nnoremap <leader>n :call naivenote#create()<CR>
 nnoremap <leader>o :call naivenote#list()<CR>
+
+" Add vim picker mappings.
+nmap <unique> <leader>pe <Plug>(PickerEdit)
+nmap <unique> <leader>ps <Plug>(PickerSplit)
+nmap <unique> <leader>pt <Plug>(PickerTabedit)
+nmap <unique> <leader>pv <Plug>(PickerVsplit)
+nmap <unique> <leader>pb <Plug>(PickerBuffer)
+nmap <unique> <leader>p] <Plug>(PickerTag)
+nmap <unique> <leader>pw <Plug>(PickerStag)
+nmap <unique> <leader>po <Plug>(PickerBufferTag)
+nmap <unique> <leader>ph <Plug>(PickerHelp)
+
 
 " }}}
 
