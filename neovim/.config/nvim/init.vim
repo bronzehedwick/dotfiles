@@ -181,11 +181,6 @@ noremap <leader>e :edit <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
-" Jet-pack movement between buffers…
-nnoremap <leader>l :ls<CR>:b<space>
-nnoremap <leader>k :ls<CR>:sbuffer<space>
-nnoremap <leader>; :ls<CR>:vert sb<space>
-
 " }}}
 
 " Windows {{{
@@ -281,15 +276,15 @@ nnoremap <leader>n :call naivenote#create()<CR>
 nnoremap <leader>o :call naivenote#list()<CR>
 
 " Add vim picker mappings.
-nmap <unique> <leader>pe <Plug>(PickerEdit)
-nmap <unique> <leader>ps <Plug>(PickerSplit)
-nmap <unique> <leader>pt <Plug>(PickerTabedit)
-nmap <unique> <leader>pv <Plug>(PickerVsplit)
-nmap <unique> <leader>pb <Plug>(PickerBuffer)
-nmap <unique> <leader>p] <Plug>(PickerTag)
-nmap <unique> <leader>pw <Plug>(PickerStag)
-nmap <unique> <leader>po <Plug>(PickerBufferTag)
-nmap <unique> <leader>ph <Plug>(PickerHelp)
+nnoremap <unique> <M>/ <Plug>(PickerEdit)
+nnoremap <unique> <M>. <Plug>(PickerSplit)
+nnoremap <unique> <M>, <Plug>(PickerTabedit)
+nnoremap <unique> <M>; <Plug>(PickerVsplit)
+nnoremap <unique> <leader>l <Plug>(PickerBuffer)
+nnoremap <unique> <M>] <Plug>(PickerTag)
+nnoremap <unique> <M>[ <Plug>(PickerStag)
+nnoremap <unique> <M>} <Plug>(PickerBufferTag)
+nnoremap <unique> <M>h <Plug>(PickerHelp)
 
 
 " }}}
