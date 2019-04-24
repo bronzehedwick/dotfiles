@@ -275,17 +275,6 @@ let g:naivenote#dir = '~/Dropbox/Notes'
 nnoremap <leader>n :call naivenote#create()<CR>
 nnoremap <leader>o :call naivenote#list()<CR>
 
-" Add vim picker mappings.
-nnoremap <unique> <M>/ <Plug>(PickerEdit)
-nnoremap <unique> <M>. <Plug>(PickerSplit)
-nnoremap <unique> <M>, <Plug>(PickerTabedit)
-nnoremap <unique> <M>; <Plug>(PickerVsplit)
-nnoremap <unique> <leader>l <Plug>(PickerBuffer)
-nnoremap <unique> <M>] <Plug>(PickerTag)
-nnoremap <unique> <M>[ <Plug>(PickerStag)
-nnoremap <unique> <M>} <Plug>(PickerBufferTag)
-nnoremap <unique> <M>h <Plug>(PickerHelp)
-
 
 " }}}
 
