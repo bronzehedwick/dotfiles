@@ -41,6 +41,7 @@ function! PackInit() abort
   call minpac#add('airblade/vim-gitgutter')
   call minpac#add('junegunn/gv.vim')
   call minpac#add('tommcdo/vim-fubitive')
+  call minpac#add('ludovicchabant/vim-lawrencium')
   " }}}
 
   " Syntaxes. {{{2
