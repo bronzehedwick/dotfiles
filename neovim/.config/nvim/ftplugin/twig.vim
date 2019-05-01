@@ -1,6 +1,6 @@
 " Add twig pattern files to path to be able to configure below. Enables `gf`
 " on include to jump to that file. MSK specific.
-setlocal path+=/Users/delucac/Sites/mskcc_build/web/themes/mskcc/patternlab/source/_patterns/
+setlocal path+=/Users/delucac/Sites/mskcc_build/web/themes/mskcc/patternlab/source/_patterns/,/Users/delucac/Sites/msk-design-system/src/patterns/
 
 " Disable AMP since it includes different numbers in the directories.
 " setlocal path+=/Users/delucac/Sites/mskcc_amp/web/themes/mskcc/patternlab/source/_patterns/
