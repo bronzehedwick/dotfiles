@@ -1,3 +1,7 @@
+" Basic JS from/require include config.
+setlocal include=^\\s*[^\/]\\+\\(from\\\|require(['\"]\\)
+setlocal suffixesadd=.js
+
 " Use eslint linter.
 execute('compiler eslint')
 
