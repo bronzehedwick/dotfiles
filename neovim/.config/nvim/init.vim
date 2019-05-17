@@ -36,11 +36,10 @@ function! PackInit() abort
   call minpac#add('lifepillar/vim-mucomplete')
   " }}}
 
-  " Git. {{{2
+  " Version control. {{{2
   call minpac#add('tpope/vim-fugitive')
-  call minpac#add('airblade/vim-gitgutter')
-  call minpac#add('junegunn/gv.vim')
   call minpac#add('tommcdo/vim-fubitive')
+  call minpac#add('mhinz/vim-signify')
   call minpac#add('ludovicchabant/vim-lawrencium')
   " }}}
 
@@ -98,10 +97,10 @@ nnoremap Q q
 set expandtab
 
 " Soft tabs equal four spaces.
-set shiftwidth=4
+set shiftwidth=2
 
 " Real tabs equal to spaces.
-set tabstop=4
+set tabstop=2
 
 " Neovim's standard clipboard register = the system register.
 set clipboard+=unnamedplus
