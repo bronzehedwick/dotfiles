@@ -1,5 +1,5 @@
 " Exit if fugitive isn't loaded.
-if ! exists(':Git')
+if ! filereadable(expand('~/.config/nvim/pack/minpac/start/vim-fugitive/ftdetect/fugitive.vim'))
   finish
 endif
 
