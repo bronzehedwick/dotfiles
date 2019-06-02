@@ -86,8 +86,9 @@ command! -bang Q q<bang>
 command! -bang QA qa<bang>
 command! -bang Qa qa<bang>
 
-" Disable Ex mode mapping. Can still be accessed via gQ.
-nnoremap Q q
+" Replace Ex mode mapping with repeat last macro used.
+" Ex mode can still be accessed via gQ.
+nnoremap Q @@
 
 " }}}
 
