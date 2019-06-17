@@ -243,6 +243,9 @@ inoremap <C-g><C-t> <C-r>=strftime("%Y-%m-%dT%H:%M:%S")<cr>
 nnoremap <M-m> :make<CR>
 nnoremap <M-l> :lmake<CR>
 
+" Add customized Grep that's silent and doesn't jump to the first result.
+command! -nargs=+ Grep execute 'silent grep! <args>'
+
 " }}}
 
 " Terminal {{{
