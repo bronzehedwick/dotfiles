@@ -103,9 +103,6 @@ set shiftwidth=2
 " Real tabs equal to spaces.
 set tabstop=2
 
-" Neovim's standard clipboard register = the system register.
-set clipboard+=unnamedplus
-
 " No spell checking.
 set nospell
 
