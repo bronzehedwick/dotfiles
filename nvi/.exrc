@@ -4,4 +4,3 @@ set showmode
 set showmatch
 set autoindent
 set ruler
-set showmode
