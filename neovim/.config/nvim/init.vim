@@ -39,7 +39,7 @@ function! PackInit() abort
   " Version control. {{{2
   call minpac#add('tpope/vim-fugitive')
   call minpac#add('tommcdo/vim-fubitive')
-  call minpac#add('mhinz/vim-signify')
+  call minpac#add('airblade/vim-gitgutter')
   call minpac#add('ludovicchabant/vim-lawrencium')
   " }}}
 
@@ -153,8 +153,8 @@ set updatetime=250
 set wildmode=list:longest,full
 
 " Use relative line numbers with the current line the absolute line number.
-set number
-set relativenumber
+" set number
+" set relativenumber
 
 " Highlight invisible whitespace.
 set list
