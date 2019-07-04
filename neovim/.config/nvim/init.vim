@@ -270,7 +270,7 @@ let g:loaded_netrwPlugin = 1
 let g:AutoPairsShortcutToggle = ''
 
 " Configure note director.
-let g:naivenote#dir = '~/Dropbox/Notes'
+let g:naivenote#dir = '~/Documents/Notes'
 
 " Configure note mappings.
 nnoremap <leader>n :call naivenote#create()<CR>
