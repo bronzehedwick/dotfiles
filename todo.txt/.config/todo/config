@@ -2,7 +2,7 @@
 # === EDIT FILE LOCATIONS BELOW ===
 
 # Your todo.txt directory (this should be an absolute path)
-export TODO_DIR="$HOME/Dropbox/tasks"
+export TODO_DIR="$HOME/Documents/tasks"
 
 # Your todo/done/report.txt locations
 export TODO_FILE="$TODO_DIR/todo.txt"
