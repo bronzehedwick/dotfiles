@@ -55,7 +55,7 @@ function! PackInit() abort
 
   " Themes. {{{2
   call minpac#add('bronzehedwick/oceanic-next', {'branch': 'terminal-cursor-highlight'})
-  call minpac#add('morhetz/gruvbox')
+  call minpac#add('gruvbox-community/gruvbox')
   " }}}
 endfunction
 
