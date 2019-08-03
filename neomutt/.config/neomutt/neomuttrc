@@ -123,9 +123,8 @@ set signature = ~/.config/neomutt/signature
 
 # mail headers
 ignore * # first, ignore all headers
-unignore from: to: cc: bcc: reply-to: date: subject: X-Label: # then, show only these
-hdr_order from: to: cc: bcc: reply-to: date: subject: X-Label: # and in this order
-unignore x-label
+unignore from: to: cc: bcc: reply-to: date: subject: x-label: # then, show only these
+hdr_order from: to: cc: bcc: reply-to: date: subject: x-label: # and in this order
 
 # pgp
 source ~/.config/neomutt/gpg.rc
