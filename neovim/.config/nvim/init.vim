@@ -44,7 +44,8 @@ function! PackInit() abort
   " }}}
 
   " Syntaxes. {{{2
-  call minpac#add('othree/yajs.vim')
+  call minpac#add('pangloss/vim-javascript')
+  call minpac#add('mxw/vim-jsx')
   call minpac#add('othree/html5.vim')
   call minpac#add('JulesWang/css.vim')
   call minpac#add('vim-scripts/fountain.vim')
@@ -280,6 +281,8 @@ let g:naivenote#dir = '~/Documents/Notes'
 nnoremap <leader>n :call naivenote#create()<CR>
 nnoremap <leader>o :call naivenote#list()<CR>
 
+" Enable syntax highlighting for JSDoc.
+let g:javascript_plugin_jsdoc = 1
 
 " }}}
 
