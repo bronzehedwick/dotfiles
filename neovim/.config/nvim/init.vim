@@ -99,11 +99,12 @@ nnoremap Q @@
 " Use soft tabs.
 set expandtab
 
-" Soft tabs equal four spaces.
+" Soft tabs equal two spaces.
 set shiftwidth=2
 
-" Real tabs equal to spaces.
-set tabstop=2
+" Keep tab widths default to address possible display issues.
+" see: https://www.reddit.com/r/vim/wiki/tabstop
+set tabstop=8
 
 " No spell checking.
 set nospell
@@ -221,6 +222,14 @@ set statusline+=%<\ %h
 set statusline+=%<\ %r
 " Buffer is `preview` flag.
 set statusline+=%<\ %w
+" Switch to the right side.
+set statusline+=%=
+" Current line number.
+set statusline+=%l
+" Seperator.
+set statusline+=/
+" Total lines.
+set statusline+=%L
 
 " }}}
 
@@ -246,7 +255,7 @@ nnoremap <M-l> :lmake<CR>
 command! -nargs=+ Grep execute 'silent grep! <args>'
 
 " Use <C-L> to clear the highlighting of hlsearch.
-nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+" nnoremap <silent> <C-/> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-/>
 
 " }}}
 
