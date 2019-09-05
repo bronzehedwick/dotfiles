@@ -40,29 +40,25 @@ folder-hook =Trash 'push <delete-pattern>~d>30d<enter>'
 
 # general key bindings
 macro index,pager S \
-  "<save-message>+Spam<enter>" \
-  "mark message as spam"
+        "<save-message>+Spam<enter>" \
+        "mark message as spam"
 macro index,pager A \
-  "<save-message>+Archive<enter>" \
-  "archive message"
+        "<save-message>+Archive<enter>" \
+        "archive message"
 macro index,pager G \
-  "<shell-escape>$HOME/.dotfiles/scripts/mailsync.sh<enter>" \
-  "sync all mail"
+        "<shell-escape>$HOME/.dotfiles/scripts/mailsync.sh<enter>" \
+        "sync all mail"
 macro attach s \
-  "<save-entry><bol>~/Downloads/<eol>" \
-  "save to downloads folder"
+        "<save-entry><bol>~/Downloads/<eol>" \
+        "save to downloads folder"
 macro index,pager a \
-    "<pipe-message>khard add-email<return>" \
-    "add the sender email address to khard"
+        "<pipe-message>khard add-email<return>" \
+        "add the sender email address to khard"
 
-# notmuch indexer
-set nm_default_uri = "notmuch:///Users/chris/Mail" # path to the maildir
-
-# notmuch bindings
-macro index / "<vfolder-from-query>" \
-  "search messages with notmuch"
-macro index,pager \` "<modify-labels>" \
-  "modify (notmuch) tags"
+macro index / "<shell-escape>mu find --clearlinks --format=links --linksdir=~/Mail/search " \
+        "mu find"
+macro index ` "<change-folder-readonly>~/Mail/search<enter>" \
+        "mu switch to results"
 
 # contacts
 set query_command= "khard email --parsable --search-in-source-files %s"
@@ -139,4 +135,4 @@ source ~/.config/neomutt/colors
 # mailing lists/newsletters
 source ~/.config/neomutt/mailinglists
 
-# vim: ft=muttrc sw=2 ts=2 et
+# vim: ft=muttrc et
