@@ -7,4 +7,4 @@ endif
 let $EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
 let $VISUAL = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
 
-" vim:fdm=marker ft=vim et sts=2 sw=2 ts=2
+" vim:fdm=marker ft=vim et sts=2 sw=2

@@ -9,4 +9,4 @@ endif
 
 CompilerSet makeprg=screenplain\ --format\ pdf\ --strong\ %:S\ %:h/%:t:r.pdf
 
-" vim:fdm=marker ft=vim et sts=2 sw=2 ts=2
+" vim:fdm=marker ft=vim et sts=2 sw=2

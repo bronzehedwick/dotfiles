@@ -17,4 +17,4 @@ if executable('dict')
   nnoremap <buffer> <silent> <s-k> :execute "split " . shellescape(&keywordprg) . "<bar> 0read !" . shellescape(&keywordprg) . " " . expand("<cword>")<bar> :Man!<CR>
 endif
 
-" vim:fdm=marker ft=vim et sts=2 sw=2 ts=2
+" vim:fdm=marker ft=vim et sts=2 sw=2

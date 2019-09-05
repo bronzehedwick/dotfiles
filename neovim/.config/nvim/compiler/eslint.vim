@@ -14,4 +14,4 @@ else
 endif
 CompilerSet errorformat=%A%f:%l:%c:%m,%-G%.%#
 
-" vim:fdm=marker ft=vim et sts=2 sw=2 ts=2
+" vim:fdm=marker ft=vim et sts=2 sw=2

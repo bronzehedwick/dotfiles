@@ -12,4 +12,4 @@ source ~/.config/nvim/pack/minpac/start/utl.vim/plugin/utl_rc.vim
 " Quickly open URLs
 nnoremap <leader>u :Utl<cr>
 
-" vim:fdm=marker ft=vim et sts=2 sw=2 ts=2
+" vim:fdm=marker ft=vim et sts=2 sw=2

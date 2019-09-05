@@ -27,3 +27,5 @@ endfunction
 function! naivenote#list() abort
   silent execute(':split ' . expand(g:naivenote#dir))
 endfunction
+
+" vim:fdm=marker ft=vim et sts=2 sw=2

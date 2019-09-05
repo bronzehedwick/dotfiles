@@ -7,4 +7,4 @@ nnoremap <buffer> <silent> <localleader>f :Fixup<CR>
 nnoremap <buffer> <silent> <localleader>d :Drop<CR>
 nnoremap <buffer> <silent> <localleader>S :Cycle<CR>
 
-" vim:fdm=marker ft=vim et sts=2 sw=2 ts=2
+" vim:fdm=marker ft=vim et sts=2 sw=2
