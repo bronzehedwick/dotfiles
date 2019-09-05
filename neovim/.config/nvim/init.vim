@@ -224,12 +224,6 @@ set statusline+=%<\ %r
 set statusline+=%<\ %w
 " Switch to the right side.
 set statusline+=%=
-" Current line number.
-set statusline+=%l
-" Seperator.
-set statusline+=/
-" Total lines.
-set statusline+=%L
 
 " }}}
 
