@@ -1,8 +1,11 @@
 " Turn on spell checking.
 setlocal spell
 
-" Line numbers are less useful in mails and can create distraction.
-setlocal nonumber
-setlocal norelativenumber
+" Turn off hard text wrapping, so there's no weird spaces in received mail.
+setlocal textwidth=0
 
-" vim:fdm=marker ft=vim et sts=2 sw=2 ts=2
+" Turn on format flowed.
+" See: http://joeclark.org/ffaq.html
+setlocal fo+=aw
+
+" vim:fdm=marker ft=vim et sts=2 sw=2
