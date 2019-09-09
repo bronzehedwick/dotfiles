@@ -248,8 +248,8 @@ nnoremap <M-l> :lmake<CR>
 " Add customized Grep that's silent and doesn't jump to the first result.
 command! -nargs=+ Grep execute 'silent grep! <args>'
 
-" Use <C-L> to clear the highlighting of hlsearch.
-" nnoremap <silent> <C-/> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-/>
+" Clear the highlighting of hlsearch.
+nnoremap <silent> <M-k> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><M-k>
 
 " }}}
 
