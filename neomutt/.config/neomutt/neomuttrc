@@ -38,6 +38,16 @@ mailboxes +INBOX \
 set trash = '+Trash'
 folder-hook =Trash 'push <delete-pattern>~d>30d<enter>'
 
+# vim-like bindings
+bind pager j next-line
+bind pager k previous-line
+bind attach,index,pager \CD next-page
+bind attach,index,pager \CU previous-page
+bind pager g top
+bind pager G bottom
+bind attach,index g first-entry
+bind attach,index G last-entry
+
 # general key bindings
 macro index,pager S \
         "<save-message>+Spam<enter>" \
@@ -45,7 +55,7 @@ macro index,pager S \
 macro index,pager A \
         "<save-message>+Archive<enter>" \
         "archive message"
-macro index,pager G \
+macro index,pager * \
         "<shell-escape>$HOME/.dotfiles/scripts/mailsync.sh<enter>" \
         "sync all mail"
 macro attach s \
@@ -57,7 +67,7 @@ macro index,pager a \
 
 macro index / "<shell-escape>mu find --clearlinks --format=links --linksdir=~/Mail/search " \
         "mu find"
-macro index ` "<change-folder-readonly>~/Mail/search<enter>" \
+macro index <Esc>/ "<change-folder-readonly>~/Mail/search<enter>" \
         "mu switch to results"
 
 # contacts
