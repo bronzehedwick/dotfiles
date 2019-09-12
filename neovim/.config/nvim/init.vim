@@ -21,6 +21,7 @@ function! PackInit() abort
   call minpac#add('tpope/vim-jdaddy', {'type': 'opt'})
   call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
   call minpac#add('jiangmiao/auto-pairs')
+  call minpac#add('easymotion/vim-easymotion')
   " }}}
 
   " Working with the file system. {{{2
