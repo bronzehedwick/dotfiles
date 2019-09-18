@@ -226,8 +226,14 @@ set statusline+=%<\ %h
 set statusline+=%<\ %r
 " Buffer is `preview` flag.
 set statusline+=%<\ %w
-" Switch to the right side.
+" New group.
 set statusline+=%=
+" Line and column number.
+set statusline+=%l,%v
+" New group.
+set statusline+=%=
+" Percentage through the file.
+set statusline+=%p%%
 
 " }}}
 
