@@ -166,6 +166,9 @@ set list
 " Set hard wrapping guide.
 set colorcolumn=80
 
+" Highlight the current line.
+set cursorline
+
 " Show effects of commands incrementally, as you type.
 if has('nvim')
   set inccommand=nosplit
