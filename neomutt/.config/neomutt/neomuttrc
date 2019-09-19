@@ -43,8 +43,8 @@ bind pager j next-line
 bind pager k previous-line
 bind attach,index,pager \CD next-page
 bind attach,index,pager \CU previous-page
-bind pager g top
-bind pager G bottom
+# bind pager g top
+# bind pager G bottom
 bind attach,index g first-entry
 bind attach,index G last-entry
 
