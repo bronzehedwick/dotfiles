@@ -268,6 +268,8 @@ nnoremap <silent> <M-k> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR
 if has('nvim')
   " Set a filetype for terminal buffers to react to in a ftplugin.
   autocmd TermOpen term://* set ft=terminal
+  " Set the statusline to the process name set by the terminal.
+  autocmd TermOpen * setlocal statusline=%{b:term_title}
   " Escape exits insert mode inside terminal.
   tnoremap <Esc> <C-\><C-n>
   " M-r pastes inside terminal.
