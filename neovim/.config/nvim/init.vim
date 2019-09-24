@@ -187,6 +187,9 @@ noremap <leader>e :edit <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
+" Shortcut to edit this file.
+noremap <leader>d :edit ~/.dotfiles/neovim/.config/nvim/init.vim<CR>
+
 " }}}
 
 " Windows {{{
