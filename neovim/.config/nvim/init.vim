@@ -35,6 +35,7 @@ function! PackInit() abort
   call minpac#add('editorconfig/editorconfig-vim')
   call minpac#add('mattn/emmet-vim', {'type': 'opt'})
   call minpac#add('lifepillar/vim-mucomplete')
+  call minpac#add('tpope/vim-dispatch')
   " }}}
 
   " Version control. {{{2
