@@ -47,7 +47,6 @@ function! PackInit() abort
 
   " Syntaxes. {{{2
   call minpac#add('pangloss/vim-javascript')
-  call minpac#add('mxw/vim-jsx')
   call minpac#add('othree/html5.vim')
   call minpac#add('JulesWang/css.vim')
   call minpac#add('vim-scripts/fountain.vim')
