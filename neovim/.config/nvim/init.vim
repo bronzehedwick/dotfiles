@@ -272,10 +272,34 @@ nnoremap <silent> <M-k> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR
 " Terminal {{{
 
 if has('nvim')
-  " Set a filetype for terminal buffers to react to in a ftplugin.
-  autocmd TermOpen term://* set ft=terminal
-  " Set the statusline to the process name set by the terminal.
-  autocmd TermOpen * setlocal statusline=%{b:term_title}
+  function! SetupTerminal()
+    if !exists('g:primary_terminal_job_id')
+      let g:primary_terminal_job_id = b:terminal_job_id
+      let g:primary_terminal_buffer_id = bufnr('%')
+    endif
+  endfunction
+
+  function! TeardownTerminal()
+    if bufnr('%') == g:primary_terminal_buffer_id
+      unlet! g:primary_terminal_job_id g:primary_terminal_buffer_id
+    endif
+  endfunction
+
+  function! TermCommand(command)
+    call jobsend(g:primary_terminal_job_id, a:command . "\<CR>")
+  endfunction
+  command! -nargs=1 T call TermCommand(<f-args>)
+
+  augroup terminal
+    autocmd!
+    " Set the statusline to the process name set by the terminal.
+    autocmd TermOpen * setlocal statusline=%{b:term_title}
+    " Setup primary terminal.
+    autocmd TermOpen * call SetupTerminal()
+    " Remove primary terminal if it's closed.
+    autocmd TermClose * call TeardownTerminal()
+  augroup END
+
   " Escape exits insert mode inside terminal.
   tnoremap <Esc> <C-\><C-n>
   " M-r pastes inside terminal.
