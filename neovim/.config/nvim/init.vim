@@ -257,10 +257,6 @@ nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v
 " Insert time into a document.
 inoremap <C-g><C-t> <C-r>=strftime("%Y-%m-%dT%H:%M:%S")<cr>
 
-" Quickly access make and lmake.
-nnoremap <M-m> :make<CR>
-nnoremap <M-l> :lmake<CR>
-
 " Add customized Grep that's silent and doesn't jump to the first result.
 command! -nargs=+ Grep execute 'silent grep! <args>'
 
