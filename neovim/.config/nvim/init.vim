@@ -261,12 +261,16 @@ inoremap <C-g><C-t> <C-r>=strftime("%Y-%m-%dT%H:%M:%S")<cr>
 command! -nargs=+ Grep execute 'silent grep! <args>'
 
 " Clear the highlighting of hlsearch.
-nnoremap <silent> <M-k> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><M-k>
+nnoremap <silent> <C-l> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>
 
 " }}}
 
 " Terminal {{{
 
+" TODO:
+" - Fix terminal teardown
+" - Add bang option to T to open preview window
+" - Add shortcut to open primary terminal buffer
 if has('nvim')
   function! SetupTerminal()
     if !exists('g:primary_terminal_job_id')
