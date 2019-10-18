@@ -187,10 +187,13 @@ noremap <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 " Shortcut to edit this file.
-noremap <leader>d :edit ~/.dotfiles/neovim/.config/nvim/init.vim<CR>
+noremap <leader>c :edit ~/.dotfiles/neovim/.config/nvim/init.vim<CR>
 
 " Shortcut to edit todo.txt file.
-noremap <leader>t :edit ~/Documents/tasks/todo.txt<CR>
+noremap <leader>d :edit ~/Documents/tasks/todo.txt<CR>
+
+" Shortcut to primary terminal buffer.
+noremap <leader>t :buffer expand(g:primary_terminal_buffer_id)
 
 " }}}
 
@@ -270,7 +273,6 @@ nnoremap <silent> <C-l> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR
 " TODO:
 " - Fix terminal teardown
 " - Add bang option to T to open preview window
-" - Add shortcut to open primary terminal buffer
 if has('nvim')
   function! SetupTerminal()
     if !exists('g:primary_terminal_job_id')
@@ -304,6 +306,8 @@ if has('nvim')
   tnoremap <Esc> <C-\><C-n>
   " M-r pastes inside terminal.
   tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+  " Switch to primary terminal buffer.
+  noremap <leader>t :execute 'buffer' . g:primary_terminal_buffer_id<CR>
 endif
 
 " }}}
