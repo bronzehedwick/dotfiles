@@ -264,7 +264,7 @@ inoremap <C-g><C-t> <C-r>=strftime("%Y-%m-%dT%H:%M:%S")<cr>
 command! -nargs=+ Grep execute 'silent grep! <args>'
 
 " Clear the highlighting of hlsearch.
-nnoremap <silent> <C-l> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>
+nnoremap <silent> <M-l> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>
 
 " }}}
 
