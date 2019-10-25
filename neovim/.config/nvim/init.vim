@@ -53,6 +53,7 @@ function! PackInit() abort
   call minpac#add('cespare/vim-toml')
   call minpac#add('bronzehedwick/msmtp-syntax.vim')
   call minpac#add('beyondwords/vim-twig')
+  call minpac#add('chr4/nginx.vim')
   " }}}
 
   " Themes. {{{2
