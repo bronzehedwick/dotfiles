@@ -62,6 +62,9 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 if [ -z "${NVIM_LISTEN_ADDRESS+x}" ]; then
     export EDITOR="nvim"
     export VISUAL="nvim"
+    # Add compatibility alias to nvr to launch regular nvim when not in
+    # an already running nvim session.
+    alias nvr="nvim"
 fi
 
 # Todo.txt
