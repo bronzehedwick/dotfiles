@@ -17,6 +17,14 @@ function! naivenote#create() abort
   silent execute(':write')
 endfunction
 
+" Create a new 'journal' note.
+function! naivenote#journal() abort
+  silent execute(':split ' . expand(g:naivenote#dir) . '/' . strftime("%Y-%m-%d") . '.md')
+  call setline(1, '# ' . strftime("%Y-%m-%d"))
+  call setline(2, '')
+  silent execute(':write')
+endfunction
+
 " Archive a note.
 function! naivenote#archive() abort
   silent execute(':!mv ' . shellescape(expand('%:p')) . ' ' . shellescape(expand('%:h') . '/archive/'))

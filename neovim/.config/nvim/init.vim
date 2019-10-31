@@ -328,6 +328,7 @@ let g:naivenote#dir = '~/Documents/Notes'
 
 " Configure note mappings.
 nnoremap <leader>n :call naivenote#create()<CR>
+nnoremap <leader>j :call naivenote#journal()<CR>
 nnoremap <leader>o :call naivenote#list()<CR>
 
 " Enable syntax highlighting for JSDoc.
