@@ -1,4 +1,4 @@
-" Exit if fugitive isn't loaded.
+" Exit if picker isn't loaded.
 if ! exists(':PickerEdit')
   finish
 endif

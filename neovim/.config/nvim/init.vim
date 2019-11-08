@@ -293,6 +293,14 @@ if has('nvim')
   endfunction
   command! -nargs=1 T call TermCommand(<f-args>)
 
+  function! TermOpen()
+    if exists('g:primary_terminal_buffer_id')
+      :execute 'buffer' . g:primary_terminal_buffer_id
+    else
+      :terminal
+    endif
+  endfunction
+
   augroup terminal
     autocmd!
     " Set the statusline to the process name set by the terminal.
@@ -308,7 +316,7 @@ if has('nvim')
   " M-r pastes inside terminal.
   tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
   " Switch to primary terminal buffer.
-  noremap <leader>t :execute 'buffer' . g:primary_terminal_buffer_id<CR>
+  noremap <silent> <leader>t :call TermOpen()<CR>
 endif
 
 " }}}
