@@ -271,27 +271,28 @@ nnoremap <silent> <M-l> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR
 
 " Terminal {{{
 
-" TODO:
-" - Fix terminal teardown
-" - Add bang option to T to open preview window
 if has('nvim')
   function! SetupTerminal()
     if !exists('g:primary_terminal_job_id')
       let g:primary_terminal_job_id = b:terminal_job_id
+      let g:primary_terminal_buffer_file = expand('%:p')
       let g:primary_terminal_buffer_id = bufnr('%')
     endif
   endfunction
 
   function! TeardownTerminal()
     if bufnr('%') == g:primary_terminal_buffer_id
-      unlet! g:primary_terminal_job_id g:primary_terminal_buffer_id
+      unlet! g:primary_terminal_job_id g:primary_terminal_buffer_id g:primary_terminal_buffer_file
     endif
   endfunction
 
-  function! TermCommand(command)
+  function! TermCommand(bang, command)
+    if a:bang
+      :execute 'pedit ' . g:primary_terminal_buffer_file
+    endif
     call jobsend(g:primary_terminal_job_id, a:command . "\<CR>")
   endfunction
-  command! -nargs=1 T call TermCommand(<f-args>)
+  command! -nargs=1 -bang T call TermCommand(<bang>0, <q-args>)
 
   function! TermOpen()
     if exists('g:primary_terminal_buffer_id')
