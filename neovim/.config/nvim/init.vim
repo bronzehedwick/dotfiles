@@ -344,6 +344,13 @@ nnoremap <leader>o :call naivenote#list()<CR>
 " Enable syntax highlighting for JSDoc.
 let g:javascript_plugin_jsdoc = 1
 
+" Use editorconfig external core, if available.
+if executable('/usr/local/bin/editorconfig')
+  let g:EditorConfig_core_mode = 'external_command'
+  let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
+endif
+
+
 " }}}
 
 " Colorscheme {{{
