@@ -272,46 +272,11 @@ nnoremap <silent> <M-l> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR
 " Terminal {{{
 
 if has('nvim')
-  function! SetupTerminal()
-    if !exists('g:primary_terminal_job_id')
-      let g:primary_terminal_job_id = b:terminal_job_id
-      let g:primary_terminal_buffer_file = expand('%:p')
-      let g:primary_terminal_buffer_id = bufnr('%')
-    endif
-  endfunction
-
-  function! TeardownTerminal()
-    if bufnr('%') == g:primary_terminal_buffer_id
-      unlet! g:primary_terminal_job_id g:primary_terminal_buffer_id g:primary_terminal_buffer_file
-    endif
-  endfunction
-
-  function! TermCommand(bang, command)
-    if a:bang
-      :execute 'pedit ' . g:primary_terminal_buffer_file
-    endif
-    call jobsend(g:primary_terminal_job_id, a:command . "\<CR>")
-  endfunction
-  command! -nargs=1 -bang T call TermCommand(<bang>0, <q-args>)
-
-  function! TermOpen()
-    if exists('g:primary_terminal_buffer_id')
-      :execute 'buffer' . g:primary_terminal_buffer_id
-    else
-      :terminal
-    endif
-  endfunction
-
   augroup terminal
     autocmd!
     " Set the statusline to the process name set by the terminal.
     autocmd TermOpen * setlocal statusline=%{b:term_title}
-    " Setup primary terminal.
-    autocmd TermOpen * call SetupTerminal()
-    " Remove primary terminal if it's closed.
-    autocmd TermClose * call TeardownTerminal()
   augroup END
-
   " Escape exits insert mode inside terminal.
   tnoremap <Esc> <C-\><C-n>
   " M-r pastes inside terminal.
