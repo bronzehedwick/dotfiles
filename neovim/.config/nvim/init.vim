@@ -282,7 +282,8 @@ if has('nvim')
   " M-r pastes inside terminal.
   tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
   " Switch to primary terminal buffer.
-  noremap <silent> <leader>t :call TermOpen()<CR>
+  " noremap <silent> <leader>t :call PrimaryTerminalOpen()<CR>
+  nmap <silent> <leader>t <Plug>PrimaryTerminalOpen
 endif
 
 " }}}

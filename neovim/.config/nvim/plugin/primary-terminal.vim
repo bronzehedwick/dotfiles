@@ -10,13 +10,14 @@
 " - Use this as a checklist: http://stevelosh.com/blog/2011/09/writing-vim-plugins
 " - Check platform support
 " - Vim8 support
+" - Add function to send control c to terminal
 
-if exists('g:loaded_primaryterminal') || &cp || v:version < 700 " {{{
+if exists('g:loaded_primaryterminal') || &cp || v:version < 700 || !has('nvim') " {{{
   finish
 endif
 let g:loaded_primaryterminal = 1 " }}}
 
-function! SetupTerminal() " {{{
+function! s:Setup() " {{{
   if !exists('g:primary_terminal_job_id')
     let g:primary_terminal_job_id = b:terminal_job_id
     let g:primary_terminal_buffer_file = expand('%:p')
@@ -24,21 +25,20 @@ function! SetupTerminal() " {{{
   endif
 endfunction " }}}
 
-function! TeardownTerminal() " {{{
+function! s:Teardown() " {{{
   if bufnr('%') == g:primary_terminal_buffer_id
     unlet! g:primary_terminal_job_id g:primary_terminal_buffer_id g:primary_terminal_buffer_file
   endif
 endfunction " }}}
 
-function! TermCommand(bang, command) " {{{
+function! s:PrimaryTerminalCommand(bang, command) " {{{
   if a:bang
     :execute 'pedit ' . g:primary_terminal_buffer_file
   endif
   call jobsend(g:primary_terminal_job_id, a:command . "\<CR>")
-endfunction
-command! -nargs=1 -bang T call TermCommand(<bang>0, <q-args>) " }}}
+endfunction " }}}
 
-function! TermOpen() " {{{
+function! s:Open() " {{{
   if exists('g:primary_terminal_buffer_id')
     :execute 'buffer' . g:primary_terminal_buffer_id
   else
@@ -49,9 +49,20 @@ endfunction " }}}
 augroup terminal " {{{
   autocmd!
   " Setup primary terminal.
-  autocmd TermOpen * call SetupTerminal()
+  autocmd TermOpen * call s:Setup()
   " Remove primary terminal if it's closed.
-  autocmd TermClose * call TeardownTerminal()
+  autocmd TermClose * call s:Teardown()
 augroup END " }}}
+
+" Mappings {{{
+
+if !exists(":T")
+  command -nargs=1 -bang T call s:PrimaryTerminalCommand(<bang>0, <q-args>)
+endif
+
+nnoremap <Plug>PrimaryTerminalOpen :call <SID>Open()<CR>
+" nnoremap <SID>PrimaryTerminalOpen :call <SID>PrimaryTerminalOpen()<CR>
+
+" }}}
 
 " vim: fdm=marker: sw=2
