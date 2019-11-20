@@ -36,6 +36,7 @@ function! PackInit() abort
   call minpac#add('mattn/emmet-vim', {'type': 'opt'})
   call minpac#add('lifepillar/vim-mucomplete')
   call minpac#add('tpope/vim-dispatch')
+  call minpac#add('bronzehedwick/primary-terminal')
   " }}}
 
   " Version control. {{{2
@@ -282,8 +283,9 @@ if has('nvim')
   " M-r pastes inside terminal.
   tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
   " Switch to primary terminal buffer.
-  " noremap <silent> <leader>t :call PrimaryTerminalOpen()<CR>
   nmap <silent> <leader>t <Plug>PrimaryTerminalOpen
+  nmap <silent> <leader>r <Plug>PrimaryTerminalOpenSplit
+  nmap <silent> <leader>y <Plug>PrimaryTerminalOpenVsplit
 endif
 
 " }}}
