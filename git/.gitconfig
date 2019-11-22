@@ -1,4 +1,3 @@
-# vim: noexpandtab
 [user]
 	name = Chris DeLuca
 	email = iam@chrisdeluca.me
@@ -67,3 +66,4 @@
 ; 	gpgsign = true
 [advice]
 	statusHints = false
+# vim: set noexpandtab:sw=8:ts=8
