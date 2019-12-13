@@ -42,15 +42,18 @@
 	lineNumber = true
 [merge]
 	conflictstyle = diff3
-	tool = Kaleidoscope
+	tool = vim_mergetool
 [mergetool]
 	keepBackup = false
 	prompt = false
+[mergetool "vim_mergetool"]
+	cmd = nvr -s -c \"MergetoolStart\" \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
+	trustexitcode = true
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
 [mergetool "nfugitive"]
-	cmd = nvr -f -c "Gdiff" "$MERGED"
+	cmd = nvr -s -c \"Gvdiffsplit!\" \"$MERGED\"
 [diff]
 	tool = nvr
 [difftool "nvr"]
