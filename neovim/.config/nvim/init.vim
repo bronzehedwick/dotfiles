@@ -316,6 +316,9 @@ if executable('/usr/local/bin/editorconfig')
   let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
 endif
 
+" Re-map git messenger binding.
+let g:git_messenger_no_default_mappings = v:true
+nmap <leader>g <Plug>(git-messenger)
 
 " }}}
 
