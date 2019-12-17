@@ -42,8 +42,9 @@ function! PackInit() abort
   " Version control. {{{2
   call minpac#add('tpope/vim-fugitive')
   call minpac#add('tommcdo/vim-fubitive')
+  call minpac#add('samoshkin/vim-mergetool')
   call minpac#add('tpope/vim-rhubarb')
-  call minpac#add('ludovicchabant/vim-lawrencium')
+  call minpac#add('rhysd/git-messenger.vim')
   " }}}
 
   " Syntaxes. {{{2
@@ -315,6 +316,9 @@ if executable('/usr/local/bin/editorconfig')
   let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
 endif
 
+" Re-map git messenger binding.
+let g:git_messenger_no_default_mappings = v:true
+nmap <leader>g <Plug>(git-messenger)
 
 " }}}
 
