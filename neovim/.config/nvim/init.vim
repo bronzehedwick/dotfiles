@@ -22,6 +22,7 @@ function! PackInit() abort
   call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
   call minpac#add('jiangmiao/auto-pairs')
   call minpac#add('easymotion/vim-easymotion')
+  call minpac#add('glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } })
   " }}}
 
   " Working with the file system. {{{2
@@ -284,6 +285,16 @@ if has('nvim')
   nmap <unique> <silent> <leader>t <Plug>(PrimaryTerminalOpen)
   nmap <unique> <silent> <leader>r <Plug>(PrimaryTerminalOpenSplit)
   nmap <unique> <silent> <leader>y <Plug>(PrimaryTerminalOpenVsplit)
+endif
+
+if exists('g:started_by_firenvim')
+  augroup firenvim
+    autocmd!
+    autocmd BufEnter github.com_*.txt set filetype=markdown
+    autocmd BufEnter jsfiddle.net__editor-DIV-1-DIV-1-DIV-2.txt set filetype=html
+    autocmd BufEnter jsfiddle.net__editor-DIV-1-DIV-3-DIV-2.txt set filetype=javascript
+    autocmd BufEnter jsfiddle.net__editor-DIV-1-DIV-5-DIV-2.txt set filetype=css
+  augroup END
 endif
 
 " }}}
