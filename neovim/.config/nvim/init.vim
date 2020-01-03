@@ -190,10 +190,10 @@ noremap <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 " Shortcut to edit this file.
-noremap <leader>c :edit ~/.dotfiles/neovim/.config/nvim/init.vim<CR>
+noremap <silent><leader>c :edit $MYVIMRC<CR>
 
 " Shortcut to edit todo.txt file.
-noremap <leader>d :edit ~/Documents/tasks/todo.txt<CR>
+noremap <silent><leader>d :edit ~/Documents/tasks/todo.txt<CR>
 
 " }}}
 
