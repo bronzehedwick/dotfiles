@@ -52,8 +52,6 @@
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
-[mergetool "nfugitive"]
-	cmd = nvr -s -c \"Gvdiffsplit!\" \"$MERGED\"
 [diff]
 	tool = nvr
 [difftool "nvr"]
