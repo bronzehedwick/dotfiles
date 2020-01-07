@@ -43,7 +43,7 @@ function! PackInit() abort
   " Version control. {{{2
   call minpac#add('tpope/vim-fugitive')
   call minpac#add('tommcdo/vim-fubitive')
-  call minpac#add('samoshkin/vim-mergetool')
+  call minpac#add('whiteinge/diffconflicts')
   call minpac#add('tpope/vim-rhubarb')
   call minpac#add('rhysd/git-messenger.vim')
   " }}}
