@@ -249,9 +249,6 @@ set statusline+=%p%%
 
 " Convenience Mappings {{{
 
-" Toggle set wrap.
-noremap <silent><leader>w :setlocal wrap!<CR>
-
 " Display date and time.
 noremap <F2> :echo 'It is ' . strftime('%a %b %e %I:%M %p')<CR>
 
@@ -263,9 +260,6 @@ inoremap <C-g><C-t> <C-r>=strftime("%Y-%m-%dT%H:%M:%S")<cr>
 
 " Add customized Grep that's silent and doesn't jump to the first result.
 command! -nargs=+ Grep execute 'silent grep! <args>'
-
-" Clear the highlighting of hlsearch.
-nnoremap <silent> <M-l> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>
 
 " }}}
 
