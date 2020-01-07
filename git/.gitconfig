@@ -42,13 +42,11 @@
 	lineNumber = true
 [merge]
 	conflictstyle = diff3
-	tool = vim_mergetool
-[mergetool]
+	tool = diffconflicts
+[mergetool "diffconflicts"]
+	cmd = nvr -s -c \"DiffConflicts\" \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
+	trustExitCode = true
 	keepBackup = false
-	prompt = false
-[mergetool "vim_mergetool"]
-	cmd = nvr -s -c \"MergetoolStart\" \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
-	trustexitcode = true
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
@@ -67,4 +65,3 @@
 ; 	gpgsign = true
 [advice]
 	statusHints = false
-# vim: set noexpandtab:sw=8:ts=8
