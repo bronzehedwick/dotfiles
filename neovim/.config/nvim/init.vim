@@ -45,7 +45,6 @@ function! PackInit() abort
   call minpac#add('tommcdo/vim-fubitive')
   call minpac#add('whiteinge/diffconflicts')
   call minpac#add('tpope/vim-rhubarb')
-  call minpac#add('rhysd/git-messenger.vim')
   " }}}
 
   " Syntaxes. {{{2
