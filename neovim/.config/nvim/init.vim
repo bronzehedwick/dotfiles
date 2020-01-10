@@ -33,11 +33,11 @@ function! PackInit() abort
   " }}}
 
   " Programming. {{{2
-  call minpac#add('editorconfig/editorconfig-vim')
   call minpac#add('mattn/emmet-vim', {'type': 'opt'})
   call minpac#add('lifepillar/vim-mucomplete')
   call minpac#add('tpope/vim-dispatch')
   call minpac#add('bronzehedwick/vim-primary-terminal')
+  call minpac#add('mbbill/undotree')
   " }}}
 
   " Version control. {{{2
@@ -184,6 +184,9 @@ endif
 " Allow switching buffers without saving.
 set hidden
 
+" Allow undo
+set undofile
+
 " Open directory at current file path.
 noremap <leader>e :edit <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
@@ -311,18 +314,11 @@ nnoremap <leader>n :call naivenote#create()<CR>
 nnoremap <leader>j :call naivenote#journal()<CR>
 nnoremap <leader>o :call naivenote#list()<CR>
 
+" Add back mapping for undotree.
+nnoremap <F5> :UndotreeToggle<CR>
+
 " Enable syntax highlighting for JSDoc.
 let g:javascript_plugin_jsdoc = 1
-
-" Use editorconfig external core, if available.
-if executable('/usr/local/bin/editorconfig')
-  let g:EditorConfig_core_mode = 'external_command'
-  let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
-endif
-
-" Re-map git messenger binding.
-let g:git_messenger_no_default_mappings = v:true
-nmap <leader>g <Plug>(git-messenger)
 
 " }}}
 
