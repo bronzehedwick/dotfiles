@@ -28,7 +28,6 @@ function! PackInit() abort
   " Working with the file system. {{{2
   call minpac#add('tpope/vim-eunuch')
   call minpac#add('justinmk/vim-dirvish')
-  call minpac#add('vim-scripts/utl.vim')
   call minpac#add('srstevenson/vim-picker')
   " }}}
 
@@ -131,6 +130,15 @@ endif
 " Use ripgrep as external grep tool if available.
 if executable('rg')
   set grepprg=rg\ -H\ --no-heading\ --vimgrep
+endif
+
+if executable('urlview')
+  function! UrlView() abort
+    :startinsert
+    :silent write /tmp/nvim-urlview.out
+    :split term://urlview /tmp/nvim-urlview.out
+  endfunction
+  nnoremap <leader>g :call UrlView()<CR>
 endif
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
