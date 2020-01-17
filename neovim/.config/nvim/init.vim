@@ -138,7 +138,7 @@ if executable('urlview')
     :silent write /tmp/nvim-urlview.out
     :split term://urlview /tmp/nvim-urlview.out
   endfunction
-  nnoremap <leader>g :call UrlView()<CR>
+  nnoremap <leader>u :call UrlView()<CR>
 endif
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
@@ -201,7 +201,7 @@ noremap <leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 " Shortcut to edit this file.
-noremap <silent><leader>c :edit $MYVIMRC<CR>
+noremap <silent><leader>c :edit ~/.dotfiles/neovim/.config/nvim/init.vim<CR>
 
 " Shortcut to edit todo.txt file.
 noremap <silent><leader>d :edit ~/Documents/tasks/todo.txt<CR>
