@@ -180,6 +180,9 @@ set colorcolumn=80
 " Highlight the current line.
 set cursorline
 
+" Diff options.
+set diffopt=internal,filler,vertical,algorithm:patience
+
 " Show effects of commands incrementally, as you type.
 if has('nvim')
   set inccommand=nosplit

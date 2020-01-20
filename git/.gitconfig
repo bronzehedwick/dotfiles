@@ -42,16 +42,18 @@
 	lineNumber = true
 [merge]
 	conflictstyle = diff3
-	tool = diffconflicts
-[mergetool "diffconflicts"]
-	cmd = nvr -s -c \"DiffConflicts\" \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
-	trustExitCode = true
+	tool = fugitive
+	keepBackup = false
+[mergetool "fugitive"]
+	cmd = nvr -s -f -c \"Gdiffsplit!\" \"$MERGED\"
 	keepBackup = false
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
+	keepBackup = false
+	trustExitCode = true
 [diff]
 	tool = nvr
+	algorithm = patience
 [difftool "nvr"]
 	cmd = nvr -s -d \"$LOCAL\" \"$REMOTE\"
 [difftool "Kaleidoscope"]
