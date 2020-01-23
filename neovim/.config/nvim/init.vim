@@ -135,7 +135,7 @@ endif
 if executable('urlview')
   function! UrlView() abort
     :startinsert
-    :silent write /tmp/nvim-urlview.out
+    :silent write! /tmp/nvim-urlview.out
     :split term://urlview /tmp/nvim-urlview.out
   endfunction
   nnoremap <leader>u :call UrlView()<CR>
