@@ -7,3 +7,4 @@ sec.conf
 *.gz
 pack
 *.spl
+tmux/.tmux/*
