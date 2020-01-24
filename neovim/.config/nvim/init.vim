@@ -132,13 +132,13 @@ if executable('rg')
   set grepprg=rg\ -H\ --no-heading\ --vimgrep
 endif
 
-if executable('urlview')
-  function! UrlView() abort
+if executable('extract_url')
+  function! ExtractUrl() abort
     :startinsert
-    :silent write! /tmp/nvim-urlview.out
-    :split term://urlview /tmp/nvim-urlview.out
+    :silent write! /tmp/nvim-extract-url.out
+    :split term://extract_url /tmp/nvim-extract-url.out
   endfunction
-  nnoremap <leader>u :call UrlView()<CR>
+  nnoremap <leader>u :call ExtractUrl()<CR>
 endif
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
