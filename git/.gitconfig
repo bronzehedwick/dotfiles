@@ -45,7 +45,7 @@
 	tool = fugitive
 	keepBackup = false
 [mergetool "fugitive"]
-	cmd = nvr -s -f -c \"Gdiffsplit!\" \"$MERGED\"
+	cmd = nvr -s -c \"Gdiffsplit!\" \"$MERGED\"
 	keepBackup = false
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
