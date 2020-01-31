@@ -55,6 +55,7 @@ function! PackInit() abort
   call minpac#add('bronzehedwick/msmtp-syntax.vim')
   call minpac#add('beyondwords/vim-twig')
   call minpac#add('chr4/nginx.vim')
+  call minpac#add('MaxMEllon/vim-jsx-pretty')
   " }}}
 
   " Themes. {{{2
