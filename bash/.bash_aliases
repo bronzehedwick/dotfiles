@@ -1,3 +1,4 @@
+#!/bin/bash
 # ~/.bash_aliases: executed by bash(1) for non-login shells.
 
 ######
@@ -64,7 +65,7 @@ alias grt='cd $(git rev-parse --show-toplevel || echo '.")"
 alias gpu='gpo'
 
 # Removes .orig files after git merge
-alias mergeclean='find . -name "*.orig" -delete'
+alias mergeclean="git st -s|grep orig|awk -F ' ' '{print $2}'|xargs rm"
 
 #########
 # Other #
