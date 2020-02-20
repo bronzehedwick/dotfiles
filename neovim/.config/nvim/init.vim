@@ -59,7 +59,7 @@ function! PackInit() abort
   " }}}
 
   " Themes. {{{2
-  call minpac#add('bronzehedwick/oceanic-next', {'branch': 'terminal-cursor-highlight'})
+  call minpac#add('NLKNguyen/papercolor-theme')
   call minpac#add('gruvbox-community/gruvbox')
   " }}}
 endfunction
@@ -336,15 +336,13 @@ let g:javascript_plugin_jsdoc = 1
 
 " Colorscheme {{{
 
-" Use a dark background.
-set background=dark
+set background=light
 
-" True color!
 if has('termguicolors')
   set termguicolors
 endif
 
-silent! colorscheme gruvbox
+silent! colorscheme PaperColor
 
 " Show the terminal cursor seperately from the Vim cursor.
 let g:oceanic_next_terminal_cursor_highlight = 1
