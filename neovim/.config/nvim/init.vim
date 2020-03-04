@@ -33,7 +33,6 @@ function! PackInit() abort
 
   " Programming. {{{2
   call minpac#add('mattn/emmet-vim', {'type': 'opt'})
-  call minpac#add('lifepillar/vim-mucomplete')
   call minpac#add('tpope/vim-dispatch')
   call minpac#add('bronzehedwick/vim-primary-terminal')
   call minpac#add('mbbill/undotree')
@@ -310,9 +309,6 @@ endif
 " }}}
 
 " Plugin Configuration {{{
-
-" Mandatory setting for mu complete
-set completeopt+=menuone
 
 " Disable netrw, since I'm using Dirvish instead.
 let g:loaded_netrwPlugin = 1
