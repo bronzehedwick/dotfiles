@@ -168,9 +168,8 @@ set updatetime=250
 " Command <Tab> completion, list matches, then longest common part, then all.
 set wildmode=list:longest,full
 
-" Use relative line numbers with the current line the absolute line number.
-" set number
-" set relativenumber
+" Line numbers.
+set number
 
 " Highlight invisible whitespace.
 set list
@@ -286,7 +285,7 @@ if has('nvim')
   augroup terminal
     autocmd!
     " Set the statusline to the process name set by the terminal.
-    autocmd TermOpen * setlocal statusline=%{b:term_title}
+    autocmd TermOpen * setlocal statusline=%{b:term_title} nonumber
   augroup END
   " Escape exits insert mode inside terminal.
   tnoremap <Esc> <C-\><C-n>
