@@ -26,6 +26,7 @@
 	dump = cat-file -p
 	grep = grep --break --heading --line-number
 	g = grep --break --heading --line-number
+	code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | grep -v package | head -10"
 	po = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
 	pd = "!git push deploy $(git rev-parse --abbrev-ref HEAD)"
 	up = pull --rebase --autostash --all
