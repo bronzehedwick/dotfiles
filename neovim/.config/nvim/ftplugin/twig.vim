@@ -2,6 +2,9 @@
 " on include to jump to that file. MSK specific.
 setlocal path+=/Users/delucac/Sites/mskcc_build/web/themes/mskcc/patternlab/source/_patterns/,/Users/delucac/Sites/msk-design-system/src/patterns/,/Users/delucac/Sites/mskcc_amp/web/themes/mskcc/patternlab/source/_patterns/
 
+" Always add html highlighting as well.
+setlocal filetype=html.twig
+
 " Set pattern for vim to recognize twig includes.
 setlocal include="^\s*\{\%\s*include\|^\s*\{\%\s*embed\|^\s*\{\%\s*extends"
 
