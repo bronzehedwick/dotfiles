@@ -65,7 +65,7 @@ alias grt='cd $(git rev-parse --show-toplevel || echo '.")"
 alias gpu='gpo'
 
 # Removes .orig files after git merge
-alias mergeclean="git st -s|grep orig|awk -F ' ' '{print $2}'|xargs rm"
+alias mergeclean="git status -s|grep orig|awk -F ' ' '{print $2}'|xargs rm"
 
 #########
 # Other #
