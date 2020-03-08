@@ -38,15 +38,10 @@ mailboxes +INBOX \
 set trash = '+Trash'
 folder-hook =Trash 'push <delete-pattern>~d>30d<enter>'
 
-# # vim-like bindings
-# bind pager j next-line
-# bind pager k previous-line
-# bind attach,index,pager \CD next-page
-# bind attach,index,pager \CU previous-page
-# # bind pager g top
-# # bind pager G bottom
-# bind attach,index g first-entry
-# bind attach,index G last-entry
+macro index,pager \cb "<enter-command> set my_pdsave=\$pipe_decode<enter>\
+<enter-command> unset pipe_decode<enter>\
+<pipe-message>extract_url<enter>\
+<enter-command> set pipe_decode=\$my_pdsave<enter>" "get URLs"
 
 # general key bindings
 macro index,pager S \
