@@ -167,9 +167,6 @@ set updatetime=250
 " Command <Tab> completion, list matches, then longest common part, then all.
 set wildmode=list:longest,full
 
-" Line numbers.
-set number
-
 " Highlight invisible whitespace.
 set list
 
