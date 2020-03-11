@@ -1,7 +1,7 @@
 function fish_prompt
   if test -e "$NVIM_LISTEN_ADDRESS"
-    echo "» "
+    echo (basename (pwd))"» "
   else
-    echo "\$ "
+    echo (basename (pwd))"\$ "
   end
 end
