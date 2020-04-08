@@ -22,7 +22,6 @@ function! PackInit() abort
   call minpac#add('freitass/todo.txt-vim')
   call minpac#add('tpope/vim-jdaddy', {'type': 'opt'})
   call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
-  call minpac#add('glacambre/firenvim', { 'type': 'opt', 'do': 'packadd firenvim | call firenvim#install(0)'})
   " }}}
 
   " Working with the file system. {{{2
