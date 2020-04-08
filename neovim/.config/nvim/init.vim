@@ -59,7 +59,6 @@ function! PackInit() abort
 
   " Themes. {{{2
   call minpac#add('NLKNguyen/papercolor-theme')
-  call minpac#add('gruvbox-community/gruvbox')
   " }}}
 endfunction
 
@@ -345,11 +344,6 @@ let g:PaperColor_Theme_Options = {
   \ }
 
 silent! colorscheme PaperColor
-
-" Show the terminal cursor seperately from the Vim cursor.
-let g:oceanic_next_terminal_cursor_highlight = 1
-
-let g:gruvbox_contrast_dark = 'hard'
 
 " }}}
 
