@@ -307,11 +307,22 @@ nnoremap <leader>n :call naivenote#create()<CR>
 nnoremap <leader>j :call naivenote#journal()<CR>
 nnoremap <leader>o :call naivenote#list()<CR>
 
-" Add back mapping for undotree.
+" Add mapping for undotree.
 nnoremap <F5> :UndotreeToggle<CR>
 
 " Enable syntax highlighting for JSDoc.
 let g:javascript_plugin_jsdoc = 1
+
+function! PageClose(page_alternate_bufnr)
+  bdelete!
+  if bufnr('%') == a:page_alternate_bufnr && mode('%') == 'n'
+    normal a
+  endif
+endfunction
+augroup pager
+  autocmd!
+  autocmd User PageOpen :map <buffer> gq :call PageClose(b:page_alternate_bufnr)<CR>
+augroup END
 
 " }}}
 
