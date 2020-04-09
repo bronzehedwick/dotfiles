@@ -315,8 +315,8 @@ let g:javascript_plugin_jsdoc = 1
 
 function! PageClose(page_alternate_bufnr)
   bdelete!
-  if bufnr('%') == a:page_alternate_bufnr && mode('%') == 'n'
-    normal a
+  if bufnr('%') == a:page_alternate_bufnr && mode('%') ==# 'n'
+    normal! a
   endif
 endfunction
 augroup pager
