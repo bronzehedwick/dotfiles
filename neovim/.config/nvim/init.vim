@@ -22,7 +22,6 @@ function! PackInit() abort
   call minpac#add('freitass/todo.txt-vim')
   call minpac#add('tpope/vim-jdaddy', {'type': 'opt'})
   call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
-  call minpac#add('glacambre/firenvim', { 'type': 'opt', 'do': 'packadd firenvim | call firenvim#install(0)'})
   " }}}
 
   " Working with the file system. {{{2
@@ -60,7 +59,6 @@ function! PackInit() abort
 
   " Themes. {{{2
   call minpac#add('NLKNguyen/papercolor-theme')
-  call minpac#add('gruvbox-community/gruvbox')
   " }}}
 endfunction
 
@@ -294,16 +292,6 @@ if has('nvim')
   nmap <unique> <silent> <leader>y <Plug>(PrimaryTerminalOpenVsplit)
 endif
 
-if exists('g:started_by_firenvim')
-  augroup firenvim
-    autocmd!
-    autocmd BufEnter github.com_*.txt set filetype=markdown
-    autocmd BufEnter jsfiddle.net__editor-DIV-1-DIV-1-DIV-2.txt set filetype=html
-    autocmd BufEnter jsfiddle.net__editor-DIV-1-DIV-3-DIV-2.txt set filetype=javascript
-    autocmd BufEnter jsfiddle.net__editor-DIV-1-DIV-5-DIV-2.txt set filetype=css
-  augroup END
-endif
-
 " }}}
 
 " Plugin Configuration {{{
@@ -319,11 +307,22 @@ nnoremap <leader>n :call naivenote#create()<CR>
 nnoremap <leader>j :call naivenote#journal()<CR>
 nnoremap <leader>o :call naivenote#list()<CR>
 
-" Add back mapping for undotree.
+" Add mapping for undotree.
 nnoremap <F5> :UndotreeToggle<CR>
 
 " Enable syntax highlighting for JSDoc.
 let g:javascript_plugin_jsdoc = 1
+
+function! PageClose(page_alternate_bufnr)
+  bdelete!
+  if bufnr('%') == a:page_alternate_bufnr && mode('%') ==# 'n'
+    normal! a
+  endif
+endfunction
+augroup pager
+  autocmd!
+  autocmd User PageOpen :map <buffer> gq :call PageClose(b:page_alternate_bufnr)<CR>
+augroup END
 
 " }}}
 
@@ -346,11 +345,6 @@ let g:PaperColor_Theme_Options = {
   \ }
 
 silent! colorscheme PaperColor
-
-" Show the terminal cursor seperately from the Vim cursor.
-let g:oceanic_next_terminal_cursor_highlight = 1
-
-let g:gruvbox_contrast_dark = 'hard'
 
 " }}}
 
