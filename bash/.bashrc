@@ -1,17 +1,15 @@
 #!/bin/bash
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-#########
-# SHELL #
-#########
+# SHELL {{{
 
 if [ -f /usr/local/bin/bash ]; then
   SHELL="/usr/local/bin/bash"
 fi
 
-########
-# PATH #
-########
+# }}}
+
+# PATH {{{
 
 PATH="/usr/local/bin:$PATH"
 
@@ -27,9 +25,9 @@ if hash yarn 2>/dev/null; then
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 fi
 
-####################
-# Load other files #
-####################
+# }}}
+
+# Load other files {{{
 
 # Load alias definitions.
 if [ -f "$HOME/.bash_aliases" ]; then
@@ -56,9 +54,9 @@ if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
   source "$(brew --prefix)/etc/bash_completion";
 fi
 
-###########
-# Exports #
-###########
+# }}}
+
+# Exports {{{
 
 # Set locale for terminals that don't set a default.
 export LANG=en_US.UTF-8
@@ -105,9 +103,9 @@ if hash nvm 2>/dev/null; then
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
-#############
-# Functions #
-#############
+# }}}
+
+# Functions {{{
 
 # Colorize man pages
 man() {
@@ -191,3 +189,7 @@ if hash fd > /dev/null 2>&1; then
     fd --type d --hidden --follow --exclude ".git" . "$1"
   }
 fi
+
+# }}}
+
+# vim: set fdm=marker
