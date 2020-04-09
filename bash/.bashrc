@@ -1,3 +1,4 @@
+#!/bin/bash
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
 #########
@@ -18,17 +19,13 @@ if [ "$(uname)" == "Darwin" ]; then
   export PATH="/usr/local/sbin:$PATH"
 fi
 
-# Add rust to path
-export PATH="$HOME/.cargo/bin:$PATH"
+if hash cargo 2>/dev/null; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
 
-# Add TeX to path
-export PATH="/Library/TeX/texbin:$PATH"
-
-# Add user python to path
-export PATH="$PATH:~/Library/Python/3.7/bin"
-
-# Add mozilla build tools to path.
-export PATH="$HOME/.config/mozbuild/arcanist/bin:$HOME/.config/mozbuild/moz-phab:$PATH"
+if hash yarn 2>/dev/null; then
+  export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+fi
 
 ####################
 # Load other files #
@@ -55,6 +52,7 @@ fi
 # enable bash completion
 # shellcheck source=/usr/local/etc/bash_completion
 if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+  # shellcheck source=/dev/null
   source "$(brew --prefix)/etc/bash_completion";
 fi
 
@@ -62,9 +60,18 @@ fi
 # Exports #
 ###########
 
+# Set locale for terminals that don't set a default.
+export LANG=en_US.UTF-8
+
 # Use colored ls output.
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
+
+# Personal prompt
+export PS1="\\W$ "
+
+# Todo.txt
+export TODOTXT_DEFAULT_ACTION=ls
 
 # Set Vim to the EDITOR environment variable
 if [ -z "${NVIM_LISTEN_ADDRESS+x}" ]; then
@@ -74,12 +81,6 @@ if [ -z "${NVIM_LISTEN_ADDRESS+x}" ]; then
   # an already running nvim session.
   alias nvr="nvim"
 fi
-
-# Todo.txt
-export TODOTXT_DEFAULT_ACTION=ls
-
-# Personal prompt
-export PS1="\\W$ "
 
 # GPG agent
 if [ -f "${HOME}/.gpg-agent-info" ]; then
@@ -91,8 +92,18 @@ fi
 GPG_TTY=$(tty)
 export GPG_TTY
 
-# Set locale for terminals that don't set a default.
-export LANG=en_US.UTF-8
+if hash rg 2>/dev/null; then
+  # Ripgrep needs an environment variable to point to it's config.
+  export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/ripgreprc"
+fi
+
+if hash nvm 2>/dev/null; then
+  export NVM_DIR="$HOME/.nvm"
+  # shellcheck source=/dev/null
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  # shellcheck source=/dev/null
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 #############
 # Functions #
@@ -168,27 +179,15 @@ fi
 
 # FZF
 # shellcheck source=/dev/null
-if command -v fd > /dev/null 2>&1; then
+if hash fd > /dev/null 2>&1; then
   export FZF_DEFAULT_COMMAND='fd --type f'
   # Use fd for path completion.
   _fzf_compgen_path() {
     fd --hidden --follow --exclude ".git" . "$1"
   }
 
-    # Use fd to generate the list for directory completion
-    _fzf_compgen_dir() {
-      fd --type d --hidden --follow --exclude ".git" . "$1"
-    }
+  # Use fd to generate the list for directory completion
+  _fzf_compgen_dir() {
+    fd --type d --hidden --follow --exclude ".git" . "$1"
+  }
 fi
-
-# Ripgrep needs an environment variable to point to it's config.
-export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/ripgreprc"
-
-# Todo.txt
-export TODOTXT_DEFAULT_ACTION=ls
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
