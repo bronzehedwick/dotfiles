@@ -1,16 +1,16 @@
 #!/bin/bash
 # ~/.bash_aliases: executed by bash(1) for non-login shells.
 
-######
-# LS #
-######
+# ls {{{
+
 alias ll='ls -lhcF'
 alias la='ls -AF'
 alias lla='ls -AFchl'
 
-########
-# grep #
-########
+# }}}
+
+# grep {{{
+
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -19,11 +19,10 @@ alias egrep='egrep --color=auto'
 alias cgrep='grep --color=always'
 alias less='less -R'
 
-#############
-# Shortcuts #
-#############
+# }}}
 
-#cd Shortcuts
+# Shortcuts {{{
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -31,19 +30,25 @@ alias -- -="cd -"
 
 alias t="todo.sh -t"
 
-#################
-# Vi/Vim/Neovim #
-#################
+# }}}
+
+# Vi/Vim/Neovim {{{
 
 alias vi="nvi"
 alias vimdiff="nvim -d"
 
-###############
-# Replacement #
-# Commands w/ #
-# Different   #
-# Flags       #
-###############
+if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
+  alias sp='nvr -o'
+  alias vsp='nvr -O'
+  alias tabe='nvr --remote-tab'
+  alias nvim='nvr'
+  alias vim='nvr'
+  alias vi='nvr'
+fi
+
+# }}}
+
+# Replacement commands with different flags {{{
 
 # Disk usage for humans
 alias df='df -h'
@@ -51,9 +56,9 @@ alias df='df -h'
 # Directory usage for humans
 alias du="du -h"
 
-#######
-# Git #
-#######
+# }}}
+
+# git {{{
 
 alias gs="git status"
 alias gb="git branch"
@@ -67,9 +72,9 @@ alias gpu='gpo'
 # Removes .orig files after git merge
 alias mergeclean="git status -s|grep orig|awk -F ' ' '{print $2}'|xargs rm"
 
-#########
-# Other #
-#########
+# }}}
+
+# Other {{{
 
 #Start text-based star wars
 alias starwars="telnet towel.blinkenlights.nl"
@@ -78,9 +83,10 @@ alias starwars="telnet towel.blinkenlights.nl"
 alias bubu='brew update && brew upgrade && brew cleanup'
 alias brews='brew list'
 
-#############
-# Bookmarks #
-#############
+# }}}
+
+# Bookmarks {{{
+
 export sites="$HOME/Sites"
 export downloads="$HOME/Downloads"
 export documents="$HOME/Documents"
@@ -89,3 +95,7 @@ export dotfiles="$HOME/.dotfiles"
 export chrisdeluca="$HOME/Sites/chrisdeluca.me"
 export gwengween="$HOME/Documents/GwenGween"
 export dts="/Users/chris/Documents/dts"
+
+# }}}
+
+# vim: set fdm=marker

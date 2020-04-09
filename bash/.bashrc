@@ -75,9 +75,7 @@ export TODOTXT_DEFAULT_ACTION=ls
 if [ -z "${NVIM_LISTEN_ADDRESS+x}" ]; then
   export EDITOR="nvim"
   export VISUAL="nvim"
-  # Add compatibility alias to nvr to launch regular nvim when not in
-  # an already running nvim session.
-  alias nvr="nvim"
+  export PS1="\\W» "
 fi
 
 # GPG agent
@@ -164,16 +162,6 @@ check_lastcommandfailed() {
     echo ""
   fi
 }
-
-if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
-  alias sp='nvr -o'
-  alias vsp='nvr -O'
-  alias tabe='nvr --remote-tab'
-  alias nvim='nvr'
-  alias vim='nvr'
-  alias vi='nvr'
-  export PS1="\\W» "
-fi
 
 # FZF
 # shellcheck source=/dev/null
