@@ -292,16 +292,6 @@ if has('nvim')
   nmap <unique> <silent> <leader>y <Plug>(PrimaryTerminalOpenVsplit)
 endif
 
-if exists('g:started_by_firenvim')
-  augroup firenvim
-    autocmd!
-    autocmd BufEnter github.com_*.txt set filetype=markdown
-    autocmd BufEnter jsfiddle.net__editor-DIV-1-DIV-1-DIV-2.txt set filetype=html
-    autocmd BufEnter jsfiddle.net__editor-DIV-1-DIV-3-DIV-2.txt set filetype=javascript
-    autocmd BufEnter jsfiddle.net__editor-DIV-1-DIV-5-DIV-2.txt set filetype=css
-  augroup END
-endif
-
 " }}}
 
 " Plugin Configuration {{{
