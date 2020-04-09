@@ -76,6 +76,9 @@ if [ -z "${NVIM_LISTEN_ADDRESS+x}" ]; then
   export EDITOR="nvim"
   export VISUAL="nvim"
   export PS1="\\W» "
+  if hash page 2>/dev/null; then
+    export PAGER="page"
+  fi
 fi
 
 # GPG agent
