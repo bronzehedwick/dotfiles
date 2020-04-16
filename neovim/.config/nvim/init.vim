@@ -321,7 +321,7 @@ function! PageClose(page_alternate_bufnr)
 endfunction
 augroup pager
   autocmd!
-  autocmd User PageOpen :map <buffer> gq :call PageClose(b:page_alternate_bufnr)<CR>
+  autocmd User PageOpen :nnoremap <buffer> gq :call PageClose(b:page_alternate_bufnr)<CR>
 augroup END
 
 " }}}
