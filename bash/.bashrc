@@ -47,11 +47,15 @@ if [ -f "$HOME/.$(hostname).bash" ]; then
   source "$HOME/.$(hostname).bash"
 fi
 
-# enable bash completion
-# shellcheck source=/usr/local/etc/bash_completion
-if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-  # shellcheck source=/dev/null
-  source "$(brew --prefix)/etc/bash_completion";
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
 fi
 
 # }}}
