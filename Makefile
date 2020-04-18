@@ -1,7 +1,5 @@
 PROGRAMS = $(shell find . -type d -depth 1 -name "[^.]*"|grep -v scripts|xargs basename)
 OS = $(shell uname -s)
-HAS_BREW = $(shell command -v brew >/dev/null 2>&1 || false)
-BREW_INSTALL = $(shell curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
 
 default: help
 
@@ -18,7 +16,6 @@ unlink: ## Remove links to all program configuration via GNU stow.
 	@echo $(PROGRAMS) | xargs -D stow
 
 brew: ## Installs packages in Brewfile.
-	@$(HAS_BREW) || { /usr/bin/ruby -e $(BREW_INSTALL) }
 	@brew bundle
 
 mail: ## Syncronizes all mail locally to ~/Mail.
@@ -27,4 +24,7 @@ mail: ## Syncronizes all mail locally to ~/Mail.
 caldav: ## Syncronizes all contacts and calendars.
 	@vdirsyncer sync
 
-all: brew link mail caldav
+vim: ## Installs minpac and vim plugins.
+	@git clone https://github.com/k-takata/minpact.git ~/.config/nvim/pack/minpac/opt/minpac && nvim +PackUpdate +qa
+
+all: brew link tmux vim mail caldav
