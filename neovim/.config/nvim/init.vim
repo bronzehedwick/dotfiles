@@ -276,6 +276,10 @@ command! -nargs=+ Grep execute 'silent grep! <args>'
 
 " Terminal {{{
 
+if executable('/usr/local/bin/bash')
+  set shell=/usr/local/bin/bash
+endif
+
 if has('nvim')
   augroup terminal
     autocmd!
