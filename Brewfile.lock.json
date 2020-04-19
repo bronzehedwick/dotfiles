@@ -795,6 +795,27 @@
             }
           }
         }
+      },
+      "pianobar": {
+        "version": "2020.04.05",
+        "bottle": {
+          "cellar": ":any",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/pianobar-2020.04.05.catalina.bottle.tar.gz",
+              "sha256": "72960248085d1258e84a2d864bff4a93f0b4f16aac3f8dff3a9d593fdcf0244f"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/pianobar-2020.04.05.mojave.bottle.tar.gz",
+              "sha256": "8169c7859a1dc35bd9c7eb1d353517fed364511cf875477d321b0e20313f665a"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/pianobar-2020.04.05.high_sierra.bottle.tar.gz",
+              "sha256": "e397752de16144f63aaed8e1341a602ee5ca5e4f7f02d5669091ecae1f8f02c3"
+            }
+          }
+        }
       }
     }
   },
@@ -805,7 +826,7 @@
         "HOMEBREW_PREFIX": "/usr/local",
         "Homebrew/homebrew-core": "1efbadc543b89e02e25a3fbe8d18660b1b3c7cde",
         "CLT": "1103.0.32.59",
-        "Xcode": "11.4",
+        "Xcode": "11.4.1",
         "macOS": "10.15.4"
       }
     }
