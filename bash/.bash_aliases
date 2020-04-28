@@ -28,7 +28,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias -- -="cd -"
 
-alias t="todo.sh -t"
+alias t="todo.sh -ta"
 
 # }}}
 
