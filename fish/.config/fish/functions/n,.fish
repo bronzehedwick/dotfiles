@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-function n,
+function n, --description "Present fuzzy searchable menu for npm scripts"
 
   if ! test -x /usr/local/bin/jq
     echo "jq not installed"
