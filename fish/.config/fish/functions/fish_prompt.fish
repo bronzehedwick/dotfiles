@@ -1,9 +1,14 @@
 #!/usr/bin/env fish
 
 function fish_prompt
-  if test -e "$NVIM_LISTEN_ADDRESS"
-    echo (basename (pwd))"» "
+  if test $status -gt 0
+    set_color red
   else
-    echo (basename (pwd))"\$ "
+    set_color normal
+  end
+  if test -e "$NVIM_LISTEN_ADDRESS"
+    echo (basename (pwd))"» "(set_color normal)
+  else
+    echo (basename (pwd))"\$ "(set_color normal)
   end
 end
