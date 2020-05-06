@@ -280,6 +280,10 @@ if executable('/usr/local/bin/bash')
   set shell=/usr/local/bin/bash
 endif
 
+if executable('/usr/local/bin/fish')
+  set shell=/usr/local/bin/fish
+endif
+
 if has('nvim')
   augroup terminal
     autocmd!
