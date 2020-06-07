@@ -92,8 +92,8 @@ color index brightcolor210 default "~N ~t contact@chrisdeluca.me"
 color index color142 default "~t signups@chrisdeluca.me"
 color index brightcolor142 default "~N ~t signups@chrisdeluca.me"
 
-color index color135 default "~t code@chrisdeluca.me"
-color index brightcolor135 default "~N ~t code@chrisdeluca.me"
+color index color28 default "~t code@chrisdeluca.me"
+color index brightcolor28 default "~N ~t code@chrisdeluca.me"
 
 color index color105 default "~T ~p"
 color index brightcolor105 default "~N ~T ~p"
