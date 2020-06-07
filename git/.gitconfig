@@ -68,3 +68,5 @@
 ; 	gpgsign = true
 [advice]
 	statusHints = false
+[pull]
+	rebase = true
