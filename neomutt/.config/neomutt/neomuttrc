@@ -6,7 +6,7 @@ set sendmail = "/usr/local/bin/msmtp"
 set my_user = iam@chrisdeluca.me
 set from = $my_user
 set realname = "Chris DeLuca"
-alternates contact@chrisdeluca.me|signups@chrisdeluca.me|bronzehedwick@gmail.com|christopher.j.deluca@gmail.com
+alternates code@chrisdeluca.me|contact@chrisdeluca.me|signups@chrisdeluca.me|bronzehedwick@gmail.com|christopher.j.deluca@gmail.com
 set mail_check = 0
 set envelope_from
 unset move
