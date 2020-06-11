@@ -2,6 +2,6 @@
 
 text/*; less '%s'; edit=nvim '%s'; needsterminal; test=test -t 0
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
+text/calendar; mv %s %s.ics && open %s.ics && rm %s.ics
+application/ics; mv %s %s.ics && open %s.ics && rm %s.ics
 */*; open '%s'; test=expr "$DISPLAY" : :
-text/calendar; mutt-ics; copiousoutput
-application/ics; mutt-ics; copiousoutput
