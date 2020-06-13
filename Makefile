@@ -18,6 +18,9 @@ unlink: ## Remove links to all program configuration via GNU stow.
 brew: ## Installs packages in Brewfile.
 	@brew bundle
 
+mailinit: ## Initializes first mail run to ~/Mail.
+	@./scripts/mailinit.sh
+
 mail: ## Syncronizes all mail locally to ~/Mail.
 	@./scripts/mailsync.sh
 
