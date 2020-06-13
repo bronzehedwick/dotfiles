@@ -66,7 +66,8 @@ macro index <Esc>/ "<change-folder-readonly>~/Mail/search<enter>" \
         "mu switch to results"
 
 # contacts
-set query_command= "khard email --parsable --search-in-source-files %s"
+# set query_command= "khard email --parsable --search-in-source-files %s"
+set query_command = "mu cfind --format=mutt-ab '%s'"
 bind editor <Tab> complete-query
 bind editor ^T    complete
 
