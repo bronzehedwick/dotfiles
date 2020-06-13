@@ -8,4 +8,4 @@ mkdir -p ~/Mail/Drafts/cur ~/Mail/Drafts/new ~/Mail/Drafts/tmp
 /usr/local/bin/mbsync chris
 
 # Do indexing.
-/usr/local/bin/mu index --maildir=~/Mail --lazy-check
+/usr/local/bin/mu index --lazy-check
