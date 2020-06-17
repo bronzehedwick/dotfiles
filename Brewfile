@@ -1,5 +1,6 @@
 brew "aspell"
 brew "bash"
+brew "bat"
 brew "coreutils"
 brew "ctags"
 brew "curl"
