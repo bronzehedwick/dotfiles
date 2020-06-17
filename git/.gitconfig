@@ -2,6 +2,10 @@
 	name = Chris DeLuca
 	email = code@chrisdeluca.me
 	signingkey = 461C015E032EF9CB
+[core]
+	pager = delta --theme=OneHalfLight
+[interactive]
+	diffFilter = delta --color-only
 [alias]
 	co = checkout
 	cm = commit
