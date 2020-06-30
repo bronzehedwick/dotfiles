@@ -291,9 +291,9 @@ if has('nvim')
   " M-r pastes inside terminal.
   tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
   " Switch to primary terminal buffer.
-  nmap <unique> <silent> <leader>t <Plug>(PrimaryTerminalOpen)
-  nmap <unique> <silent> <leader>r <Plug>(PrimaryTerminalOpenSplit)
-  nmap <unique> <silent> <leader>y <Plug>(PrimaryTerminalOpenVsplit)
+  nmap <silent> <leader>t <Plug>(PrimaryTerminalOpen)
+  nmap <silent> <leader>r <Plug>(PrimaryTerminalOpenSplit)
+  nmap <silent> <leader>y <Plug>(PrimaryTerminalOpenVsplit)
 endif
 
 " }}}
