@@ -16,7 +16,7 @@ function! PackInit() abort
   call minpac#add('tpope/vim-unimpaired')
   call minpac#add('tpope/vim-rsi')
   call minpac#add('tpope/vim-endwise')
-  call minpac#add('rstacruz/vim-closer')
+  call minpac#add('mcchrish/vim-closer', {'branch': 'php-support'})
   call minpac#add('justinmk/vim-sneak')
   call minpac#add('justinmk/vim-ipmotion')
   call minpac#add('freitass/todo.txt-vim')
