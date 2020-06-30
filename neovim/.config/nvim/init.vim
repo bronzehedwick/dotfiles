@@ -20,7 +20,6 @@ function! PackInit() abort
   call minpac#add('justinmk/vim-sneak')
   call minpac#add('justinmk/vim-ipmotion')
   call minpac#add('freitass/todo.txt-vim')
-  call minpac#add('tpope/vim-jdaddy', {'type': 'opt'})
   call minpac#add('plasticboy/vim-markdown', {'type': 'opt'})
   " }}}
 
