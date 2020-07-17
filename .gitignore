@@ -5,7 +5,6 @@ vdirsyncer/.config/vdirsyncer/status
 *.weechatlog
 sec.conf
 *.gz
-pack
 *.spl
 tmux/.tmux/*
 fish_variables

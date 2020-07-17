@@ -27,7 +27,4 @@ mail: ## Syncronizes all mail locally to ~/Mail.
 caldav: ## Syncronizes all contacts and calendars.
 	@vdirsyncer sync
 
-vim: ## Installs minpac and vim plugins.
-	@git clone https://github.com/k-takata/minpact.git ~/.config/nvim/pack/minpac/opt/minpac && nvim +PackUpdate +qa
-
-all: brew link tmux vim mail caldav
+all: brew link tmux mail caldav

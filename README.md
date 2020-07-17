@@ -8,7 +8,7 @@ Installation
 
 ```sh
 # Clone the repo into your home directory in a hidden folder.
-cd && git clone git@github.com:bronzehedwick/dotfiles.git .dotfiles
+cd && git clone --recurse-submodules git@github.com:bronzehedwick/dotfiles.git .dotfiles
 ```
 
 For automatic config linking, install [GNU Stow][stow].
