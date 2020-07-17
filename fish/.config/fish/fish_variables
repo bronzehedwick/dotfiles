@@ -1,9 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export AIRTABLE_API_KEY:keyFU9s8m32CIJst8
-SETUVAR --export AIRTABLE_BASE_ID:appnGCvy0BJW9uB2t
-SETUVAR --export AIRTABLE_REQUESTS_VIEW_URL:https\x3a//airtable\x2ecom/tbl1bFK3TjKzCsccs/viwvJg9504HIYVLwr
-SETUVAR --export AIRTABLE_VOLUNTEERS_VIEW_URL:https\x3a//airtable\x2ecom/tbloQ7gxlVpcGY9Z1/viwEoqHvwzxNOVOPF
+SETUVAR --export AIRTABLE_BASE_ID:app5A2Iqt2VYbFjT6
+SETUVAR --export AIRTABLE_REQUESTS_VIEW_URL:https\x3a//airtable\x2ecom/tblJ55XVmKWBEDU35/viwdDGmXtvTK06tn4\x3fblocks\x3dhide
+SETUVAR --export AIRTABLE_VOLUNTEERS_VIEW_URL:https\x3a//airtable\x2ecom/tbl6KxtpOmBeI9RQE/viwmiQUnZ0JPQ6wGi\x3fblocks\x3dhide
 SETUVAR --export EDITOR:nvim
 SETUVAR --export MAPQUEST_KEY:5aP9aKAvJr8uzF2IISL0Pxp0H3w099Vq
 SETUVAR --export SLACK_CHANNEL_ID:C0105JSSM6V
