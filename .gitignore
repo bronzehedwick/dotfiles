@@ -8,3 +8,4 @@ sec.conf
 pack
 *.spl
 tmux/.tmux/*
+fish_variables
