@@ -27,4 +27,7 @@ mail: ## Syncronizes all mail locally to ~/Mail.
 caldav: ## Syncronizes all contacts and calendars.
 	@vdirsyncer sync
 
+submodules: ## Updates all git submodules.
+	@git submodule update --remote
+
 all: brew link tmux mail caldav
