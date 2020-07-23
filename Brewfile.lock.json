@@ -286,48 +286,6 @@
           }
         }
       },
-      "khal": {
-        "version": "0.10.1_2",
-        "bottle": {
-          "cellar": ":any_skip_relocation",
-          "prefix": "/usr/local",
-          "files": {
-            "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/khal-0.10.1_2.catalina.bottle.tar.gz",
-              "sha256": "4fd8c3901fc6dc40fb4cca2b1724fc8c2f06aad6984c46a5f5cabd38549938ae"
-            },
-            "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/khal-0.10.1_2.mojave.bottle.tar.gz",
-              "sha256": "fa5e0a274c6e3cfd849fc8022f0dd94332f2f1e324b7d205b993cae5ed9c6a36"
-            },
-            "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/khal-0.10.1_2.high_sierra.bottle.tar.gz",
-              "sha256": "09300aa3a7c4f1d8840e039f8530fad8ccb716798abd34fc7a1f1a7398899339"
-            }
-          }
-        }
-      },
-      "khard": {
-        "version": "0.16.1",
-        "bottle": {
-          "cellar": ":any_skip_relocation",
-          "prefix": "/usr/local",
-          "files": {
-            "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/khard-0.16.1.catalina.bottle.tar.gz",
-              "sha256": "077ace786816be18db01618f82524bcaa63713f769588cdec5c3a7db7dc5db98"
-            },
-            "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/khard-0.16.1.mojave.bottle.tar.gz",
-              "sha256": "ccfb049a7e5887d37f3c7359b700ac36769422afe56f6422e326adf214dcda89"
-            },
-            "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/khard-0.16.1.high_sierra.bottle.tar.gz",
-              "sha256": "0b9d4ed54176ca9340d9605fdb9eb5fa19a96c461de05d6767ebe7fdf342c535"
-            }
-          }
-        }
-      },
       "mosh": {
         "version": "1.3.2_11",
         "bottle": {

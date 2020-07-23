@@ -59,9 +59,6 @@ macro index,pager * \
 macro attach s \
         "<save-entry><bol>~/Downloads/<eol>" \
         "save to downloads folder"
-macro index,pager a \
-        "<pipe-message>khard add-email<return>" \
-        "add the sender email address to khard"
 
 macro index / "<shell-escape>mu find --clearlinks --format=links --linksdir=~/Mail/search " \
         "mu find"
@@ -69,7 +66,6 @@ macro index <Esc>/ "<change-folder-readonly>~/Mail/search<enter>" \
         "mu switch to results"
 
 # contacts
-# set query_command= "khard email --parsable --search-in-source-files %s"
 set query_command = "mu cfind --format=mutt-ab '%s'"
 bind editor <Tab> complete-query
 bind editor ^T    complete
