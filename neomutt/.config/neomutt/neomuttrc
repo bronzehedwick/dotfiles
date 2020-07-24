@@ -138,28 +138,5 @@ set crypt_replyencrypt = yes
 source ~/.config/neomutt/colors
 
 # subscribed mailing lists
-subscribe .*@noreply.github.com
-subscribe .*@dev.to
-subscribe .*@freebsd.org
-subscribe .*@heatonist.com
-subscribe .*@meetup.com
-subscribe .*@kickstarter.com
-subscribe .*@namecheap.com
-subscribe .*@wikimedia.org
-subscribe .*@mint.com
-subscribe .*@fightforthefuture.org
-subscribe .*@.*chase.com
-subscribe .*@quonticbank.com
-subscribe .*@eff.org
-subscribe .*@care.org
-subscribe .*.digitalocean.com
-subscribe .*wnyc.org
-subscribe .*@.*dropbox.*com
-subscribe .*vanguard.*com
-subscribe .*powhatan.*.com
-subscribe .*@css-tricks.com
-subscribe .*@discogs.com
-subscribe .*@chromium.org
-subscribe .*@mozilla.*
 
 # vim: ft=muttrc et
