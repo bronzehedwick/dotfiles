@@ -8,3 +8,4 @@ sec.conf
 *.spl
 tmux/.tmux/*
 fish_variables
+pianobar/.config/pianobar/state
