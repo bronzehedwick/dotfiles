@@ -14,7 +14,7 @@
 " - https://github.com/lifepillar/vim-wwdc17-theme/blob/master/colors/wwdc17.vim
 " - https://github.com/NLKNguyen/papercolor-theme/blob/master/colors/PaperColor.vim
 
-hightlight clear
+highlight clear
 if exists('syntax_on')
   syntax reset
 endif
@@ -77,282 +77,143 @@ endif
 " }}}
 " }}}
 
+" Colors
 if (has('termguicolors') && &termguicolors) || has('gui_running')
-  " Dark theme {{{1
-  if &background ==# 'dark'
-    " Terminal {{{2
-    " Vim8 Terminal colors {{{3
-    let g:terminal_ansi_colors = ['#5f5f61', '#e8503f', '#00998c', '#d87900',
-          \ '#527f8f', '#db2d45', '#159ccc', '#f0f0f0', '#888888', '#d87900',
-          \ '#abb96e', '#e1ad0b', '#8c61a6', '#eb314b', '#23bce1', '#fafafa']
-    " }}}
-    " Neovim Terminal colors {{{3
-    if has('nvim')
-      let g:terminal_color_0 = '#5f5f61'
-      let g:terminal_color_1 = '#e8503f'
-      let g:terminal_color_2 = '#00998c'
-      let g:terminal_color_3 = '#d87900'
-      let g:terminal_color_4 = '#527f8f'
-      let g:terminal_color_5 = '#db2d45'
-      let g:terminal_color_6 = '#159ccc'
-      let g:terminal_color_7 = '#f0f0f0'
-      let g:terminal_color_8 = '#888888'
-      let g:terminal_color_9 = '#d87900'
-      let g:terminal_color_10 = '#abb96e'
-      let g:terminal_color_11 = '#e1ad0b'
-      let g:terminal_color_12 = '#8c61a6'
-      let g:terminal_color_13 = '#eb314b'
-      let g:terminal_color_14 = '#23bce1'
-      let g:terminal_color_15 = '#fafafa'
-      " }}}
-    endif " }}}
-    " User interface {{{2
-    hightlight Normal guifg=#8fa1b2 guibg=#14171a guisp=NONE gui=NONE cterm=NONE
-    hightlight Terminal guifg=fg guibg=#002b36 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight ToolbarButton guifg=#8fa1b2 guibg=#343c45 guisp=NONE gui=bold cterm=bold " in progress
-    hightlight ToolbarLine guifg=NONE guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight LineNr guifg=#657b83 guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight NonText guifg=#657b83 guibg=NONE guisp=NONE gui=bold cterm=bold " in progress
-    hightlight SpecialKey guifg=#657b83 guibg=#073642 guisp=NONE gui=bold cterm=bold " in progress
-    hightlight Title guifg=#cb4b16 guibg=NONE guisp=NONE gui=bold cterm=bold " in progress
-    hightlight ColorColumn guifg=NONE guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Conceal guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Directory guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight EndOfBuffer guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-    hightlight IncSearch guifg=#cb4b16 guibg=NONE guisp=NONE gui=standout cterm=standout " in progress
-    hightlight MatchParen guifg=#fdf6e3 guibg=#073642 guisp=NONE gui=bold cterm=bold " in progress
-    hightlight WildMenu guifg=#eee8d5 guibg=#073642 guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight Pmenu guifg=#93a1a1 guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight PmenuSbar guifg=NONE guibg=#586e75 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight PmenuSel guifg=#eee8d5 guibg=#657b83 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight PmenuThumb guifg=NONE guibg=#839496 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Question guifg=#2aa198 guibg=NONE guisp=NONE gui=bold cterm=bold " in progress
-    hightlight Search guifg=#b58900 guibg=NONE guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight SignColumn guifg=#839496 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Visual guifg=#1d4f73 guibg=#f5f7fa guisp=NONE gui=reverse cterm=reverse
-    hightlight VisualNOS guifg=NONE guibg=#073642 guisp=NONE gui=reverse cterm=reverse " in progress
-
-    hightlight ModeMsg guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight MoreMsg guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight NormalMode guifg=#839496 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight InsertMode guifg=#2aa198 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight ReplaceMode guifg=#cb4b16 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight VisualMode guifg=#d33682 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight CommandMode guifg=#d33682 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
-
-    hightlight Cursor guifg=#fdf6e3 guibg=#268bd2 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight CursorColumn guifg=NONE guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight CursorIM guifg=NONE guibg=fg guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight CursorLine guifg=NONE guibg=#353b48 guisp=NONE gui=NONE cterm=NONE
-    hightlight CursorLineNr guifg=#839496 guibg=#073642 guisp=NONE gui=bold cterm=bold " in progress
-
-    hightlight FoldColumn guifg=#839496 guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Folded guifg=#839496 guibg=#073642 guisp=#002b36 gui=bold cterm=bold " in progress
-
-    hightlight Error guifg=#dc322f guibg=#fdf6e3 guisp=NONE gui=bold,reverse cterm=bold,reverse " in progress
-    hightlight ErrorMsg guifg=#dc322f guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight WarningMsg guifg=#cb4b16 guibg=NONE guisp=NONE gui=bold cterm=bold " in progress
-
-    hightlight SpellCap guifg=#6c71c4 guibg=NONE guisp=#6c71c4 gui=undercurl cterm=undercurl " in progress
-    hightlight SpellLocal guifg=#b58900 guibg=NONE guisp=#b58900 gui=undercurl cterm=undercurl " in progress
-    hightlight SpellRare guifg=#2aa198 guibg=NONE guisp=#2aa198 gui=undercurl cterm=undercurl " in progress
-
-    hightlight DiffAdd guifg=#859900 guibg=#073642 guisp=#859900 gui=NONE cterm=NONE " in progress
-    hightlight DiffChange guifg=#b58900 guibg=#073642 guisp=#b58900 gui=NONE cterm=NONE " in progress
-    hightlight DiffDelete guifg=#dc322f guibg=#073642 guisp=NONE gui=bold cterm=bold " in progress
-    hightlight DiffText guifg=#268bd2 guibg=#073642 guisp=#268bd2 gui=NONE cterm=NONE " in progress
-
-    hightlight StatusLine guifg=#343c45 guibg=#8fa1b2 guisp=NONE gui=reverse cterm=reverse
-    hightlight StatusLineNC guifg=#586e75 guibg=#073642 guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight TabLine guifg=#343c45 guibg=#8fa1b2 guisp=NONE gui=reverse cterm=reverse
-    hightlight TabLineFill guifg=#343c45 guibg=#8fa1b2 guisp=NONE gui=reverse cterm=reverse
-    hightlight TabLineSel guifg=#667380 guibg=#f7f7f7 guisp=NONE gui=reverse cterm=reverse
-    hightlight VertSplit guifg=#073642 guibg=#586e75 guisp=NONE gui=NONE cterm=NONE " in progress
-    " }}}
-    " Syntax {{{2
-    hightlight Comment guifg=#5c6773 guibg=NONE guisp=NONE gui=italic cterm=italic
-    hightlight SpecialComment guifg=#586e75 guibg=NONE guisp=NONE gui=italic cterm=italic " in progress
-
-    hightlight Constant guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight String guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Character guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Number guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Boolean guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Float guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-
-    hightlight Identifier guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Function guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-
-    hightlight Statement guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Conditional guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Repeat guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Label guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Operator guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Exception guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-
-    hightlight PreProc guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Include guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Define guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Macro guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight PreCondit guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-
-    hightlight Type guifg=#b58900 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-
-    hightlight StorageClass guifg=#b58900 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Structure guifg=#b58900 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Typedef guifg=#b58900 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-
-    hightlight Special guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight SpecialChar guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight SpecialKey guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-
-    hightlight Tag guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Delimiter guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-
-    hightlight Ignore guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE " in progress
-    hightlight Todo guifg=#d33682 guibg=NONE guisp=NONE gui=bold cterm=bold " in progress
-    hightlight Directory guifg=#d33682 guibg=NONE guisp=NONE gui=bold cterm=bold " in progress
-
-    hightlight Underlined guifg=#6c71c4 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    " }}}
-  else " }}}
-    " Light theme {{{1
-    " Terminal {{{2
-    " Vim8 Terminal colors {{{3
-    let g:terminal_ansi_colors = ['#5f5f61', '#e8503f', '#00998c', '#d87900',
-          \ '#527f8f', '#db2d45', '#159ccc', '#f0f0f0', '#888888', '#d87900',
-          \ '#abb96e', '#e1ad0b', '#8c61a6', '#eb314b', '#23bce1', '#fafafa']
-    " }}}
-    " Neovim Terminal colors {{{3
-    if has('nvim')
-      let g:terminal_color_0 = '#5f5f61'
-      let g:terminal_color_1 = '#e8503f'
-      let g:terminal_color_2 = '#00998c'
-      let g:terminal_color_3 = '#d87900'
-      let g:terminal_color_4 = '#527f8f'
-      let g:terminal_color_5 = '#db2d45'
-      let g:terminal_color_6 = '#159ccc'
-      let g:terminal_color_7 = '#f0f0f0'
-      let g:terminal_color_8 = '#888888'
-      let g:terminal_color_9 = '#d87900'
-      let g:terminal_color_10 = '#abb96e'
-      let g:terminal_color_11 = '#e1ad0b'
-      let g:terminal_color_12 = '#8c61a6'
-      let g:terminal_color_13 = '#eb314b'
-      let g:terminal_color_14 = '#23bce1'
-      let g:terminal_color_15 = '#fafafa'
-    endif " }}}
-    " }}}
-    " User interface {{{2
-    exec "hightlight Normal guisp=NONE gui=NONE cterm=NONE guifg=" . s:body_color . " guibg=" . s:body_background
-    hightlight Terminal guifg=fg guibg=#002b36 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight ToolbarButton guifg=#18191a guibg=#ebeced guisp=NONE gui=bold cterm=bold " in progress
-    hightlight ToolbarLine guifg=NONE guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight LineNr guifg=#657b83 guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight NonText guifg=#657b83 guibg=NONE guisp=NONE gui=bold cterm=bold " in progress
-    hightlight SpecialKey guifg=#657b83 guibg=#073642 guisp=NONE gui=bold cterm=bold " in progress
-    hightlight Title guifg=#cb4b16 guibg=NONE guisp=NONE gui=bold cterm=bold " in progress
-    hightlight ColorColumn guifg=NONE guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Conceal guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Directory guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight EndOfBuffer guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE " in progress
-    hightlight IncSearch guifg=#cb4b16 guibg=NONE guisp=NONE gui=standout cterm=standout " in progress
-    hightlight MatchParen guifg=#fdf6e3 guibg=#073642 guisp=NONE gui=bold cterm=bold " in progress
-    hightlight WildMenu guifg=#eee8d5 guibg=#073642 guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight Pmenu guifg=#93a1a1 guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight PmenuSbar guifg=NONE guibg=#586e75 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight PmenuSel guifg=#eee8d5 guibg=#657b83 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight PmenuThumb guifg=NONE guibg=#839496 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Question guifg=#2aa198 guibg=NONE guisp=NONE gui=bold cterm=bold " in progress
-    hightlight Search guifg=#b58900 guibg=NONE guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight SignColumn guifg=#839496 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight Visual guifg=#4c9ed9 guibg=#f5f7fa guisp=NONE gui=reverse cterm=reverse
-    hightlight VisualNOS guifg=NONE guibg=#073642 guisp=NONE gui=reverse cterm=reverse " in progress
-
-    hightlight ModeMsg guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight MoreMsg guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight NormalMode guifg=#839496 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight InsertMode guifg=#2aa198 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight ReplaceMode guifg=#cb4b16 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight VisualMode guifg=#d33682 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
-    hightlight CommandMode guifg=#d33682 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
-
-    hightlight Cursor guifg=#fdf6e3 guibg=#268bd2 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight CursorColumn guifg=NONE guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight CursorIM guifg=NONE guibg=fg guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight CursorLine guifg=NONE guibg=#f0f9fe guisp=NONE gui=NONE cterm=NONE " in progress
-    hightlight CursorLineNr guifg=#839496 guibg=#073642 guisp=NONE gui=bold cterm=bold " in progress
-
-    hightlight FoldColumn guifg=#839496 guibg=#073642 guisp=NONE gui=NONE cterm=NONE
-    hightlight Folded guifg=#839496 guibg=#073642 guisp=#002b36 gui=bold cterm=bold
-
-    hightlight Error guifg=#dc322f guibg=#fdf6e3 guisp=NONE gui=bold,reverse cterm=bold,reverse
-    hightlight ErrorMsg guifg=#dc322f guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse
-    hightlight WarningMsg guifg=#cb4b16 guibg=NONE guisp=NONE gui=bold cterm=bold
-
-    hightlight SpellCap guifg=#6c71c4 guibg=NONE guisp=#6c71c4 gui=undercurl cterm=undercurl
-    hightlight SpellLocal guifg=#b58900 guibg=NONE guisp=#b58900 gui=undercurl cterm=undercurl
-    hightlight SpellRare guifg=#2aa198 guibg=NONE guisp=#2aa198 gui=undercurl cterm=undercurl
-
-    hightlight DiffAdd guifg=#859900 guibg=#073642 guisp=#859900 gui=NONE cterm=NONE
-    hightlight DiffChange guifg=#b58900 guibg=#073642 guisp=#b58900 gui=NONE cterm=NONE
-    hightlight DiffDelete guifg=#dc322f guibg=#073642 guisp=NONE gui=bold cterm=bold
-    hightlight DiffText guifg=#268bd2 guibg=#073642 guisp=#268bd2 gui=NONE cterm=NONE
-
-    hightlight StatusLine guifg=#839496 guibg=#073642 guisp=NONE gui=reverse cterm=reverse
-    hightlight StatusLineNC guifg=#586e75 guibg=#073642 guisp=NONE gui=reverse cterm=reverse
-    hightlight TabLine guifg=#586e75 guibg=#073642 guisp=NONE gui=reverse cterm=reverse
-    hightlight TabLineFill guifg=#586e75 guibg=#073642 guisp=NONE gui=reverse cterm=reverse
-    hightlight TabLineSel guifg=#839496 guibg=#073642 guisp=NONE gui=reverse cterm=reverse
-    hightlight VertSplit guifg=#073642 guibg=#586e75 guisp=NONE gui=NONE cterm=NONE"
-    " }}}
-    " Syntax {{{2
-    hightlight Comment guifg=#586e75 guibg=NONE guisp=NONE gui=italic cterm=italic
-    hightlight SpecialComment guifg=#586e75 guibg=NONE guisp=NONE gui=italic cterm=italic
-
-    hightlight Constant guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight String guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Character guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Number guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Boolean guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Float guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-
-    hightlight Identifier guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Function guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-
-    hightlight Statement guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Conditional guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Repeat guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Label guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Operator guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Exception guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-
-    hightlight PreProc guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Include guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Define guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Macro guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight PreCondit guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-
-    hightlight Type guifg=#b58900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-
-    hightlight StorageClass guifg=#b58900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Structure guifg=#b58900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Typedef guifg=#b58900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-
-    hightlight Special guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight SpecialChar guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight SpecialKey guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-
-    hightlight Tag guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    hightlight Delimiter guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-
-    hightlight Ignore guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-    hightlight Todo guifg=#d33682 guibg=NONE guisp=NONE gui=bold cterm=bold
-    hightlight Directory guifg=#d33682 guibg=NONE guisp=NONE gui=bold cterm=bold
-
-    hightlight Underlined guifg=#6c71c4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    " }}}
+  " Terminal {{{1
+  " Vim8 Terminal colors {{{2
+  let g:terminal_ansi_colors = ['#5f5f61', '#e8503f', '#00998c', '#d87900',
+        \ '#527f8f', '#db2d45', '#159ccc', '#f0f0f0', '#888888', '#d87900',
+        \ '#abb96e', '#e1ad0b', '#8c61a6', '#eb314b', '#23bce1', '#fafafa']
+  " }}}
+  " Neovim Terminal colors {{{2
+  if has('nvim')
+    let g:terminal_color_0 = '#5f5f61'
+    let g:terminal_color_1 = '#e8503f'
+    let g:terminal_color_2 = '#00998c'
+    let g:terminal_color_3 = '#d87900'
+    let g:terminal_color_4 = '#527f8f'
+    let g:terminal_color_5 = '#db2d45'
+    let g:terminal_color_6 = '#159ccc'
+    let g:terminal_color_7 = '#f0f0f0'
+    let g:terminal_color_8 = '#888888'
+    let g:terminal_color_9 = '#d87900'
+    let g:terminal_color_10 = '#abb96e'
+    let g:terminal_color_11 = '#e1ad0b'
+    let g:terminal_color_12 = '#8c61a6'
+    let g:terminal_color_13 = '#eb314b'
+    let g:terminal_color_14 = '#23bce1'
+    let g:terminal_color_15 = '#fafafa'
   endif " }}}
+  " }}}
+  " User interface {{{1
+  exec "highlight Normal guisp=NONE gui=NONE cterm=NONE guifg=" . s:body_color . " guibg=" . s:body_background
+  highlight Terminal guifg=fg guibg=#002b36 guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight ToolbarButton guifg=#18191a guibg=#ebeced guisp=NONE gui=bold cterm=bold " in progress
+  highlight ToolbarLine guifg=NONE guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight LineNr guifg=#657b83 guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight NonText guifg=#657b83 guibg=NONE guisp=NONE gui=bold cterm=bold " in progress
+  highlight SpecialKey guifg=#657b83 guibg=#073642 guisp=NONE gui=bold cterm=bold " in progress
+  highlight Title guifg=#cb4b16 guibg=NONE guisp=NONE gui=bold cterm=bold " in progress
+  highlight ColorColumn guifg=NONE guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight Conceal guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight Directory guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight EndOfBuffer guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE " in progress
+  highlight IncSearch guifg=#cb4b16 guibg=NONE guisp=NONE gui=standout cterm=standout " in progress
+  highlight MatchParen guifg=#fdf6e3 guibg=#073642 guisp=NONE gui=bold cterm=bold " in progress
+  highlight WildMenu guifg=#eee8d5 guibg=#073642 guisp=NONE gui=reverse cterm=reverse " in progress
+  highlight Pmenu guifg=#93a1a1 guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight PmenuSbar guifg=NONE guibg=#586e75 guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight PmenuSel guifg=#eee8d5 guibg=#657b83 guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight PmenuThumb guifg=NONE guibg=#839496 guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight Question guifg=#2aa198 guibg=NONE guisp=NONE gui=bold cterm=bold " in progress
+  highlight Search guifg=#b58900 guibg=NONE guisp=NONE gui=reverse cterm=reverse " in progress
+  highlight SignColumn guifg=#839496 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight Visual guifg=#4c9ed9 guibg=#f5f7fa guisp=NONE gui=reverse cterm=reverse
+  highlight VisualNOS guifg=NONE guibg=#073642 guisp=NONE gui=reverse cterm=reverse " in progress
+
+  highlight ModeMsg guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight MoreMsg guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight NormalMode guifg=#839496 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
+  highlight InsertMode guifg=#2aa198 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
+  highlight ReplaceMode guifg=#cb4b16 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
+  highlight VisualMode guifg=#d33682 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
+  highlight CommandMode guifg=#d33682 guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse " in progress
+
+  exec "highlight Cursor guifg=" . s:content_color3 . " guibg=" . s:content_color1 . " guisp=NONE gui=NONE cterm=NONE"
+  highlight CursorColumn guifg=NONE guibg=#073642 guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight CursorIM guifg=NONE guibg=fg guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight CursorLine guifg=NONE guibg=#f0f9fe guisp=NONE gui=NONE cterm=NONE " in progress
+  highlight CursorLineNr guifg=#839496 guibg=#073642 guisp=NONE gui=bold cterm=bold " in progress
+
+  highlight FoldColumn guifg=#839496 guibg=#073642 guisp=NONE gui=NONE cterm=NONE
+  highlight Folded guifg=#839496 guibg=#073642 guisp=#002b36 gui=bold cterm=bold
+
+  highlight Error guifg=#dc322f guibg=#fdf6e3 guisp=NONE gui=bold,reverse cterm=bold,reverse
+  highlight ErrorMsg guifg=#dc322f guibg=#fdf6e3 guisp=NONE gui=reverse cterm=reverse
+  highlight WarningMsg guifg=#cb4b16 guibg=NONE guisp=NONE gui=bold cterm=bold
+
+  highlight SpellCap guifg=#6c71c4 guibg=NONE guisp=#6c71c4 gui=undercurl cterm=undercurl
+  highlight SpellLocal guifg=#b58900 guibg=NONE guisp=#b58900 gui=undercurl cterm=undercurl
+  highlight SpellRare guifg=#2aa198 guibg=NONE guisp=#2aa198 gui=undercurl cterm=undercurl
+
+  highlight DiffAdd guifg=#859900 guibg=#073642 guisp=#859900 gui=NONE cterm=NONE
+  highlight DiffChange guifg=#b58900 guibg=#073642 guisp=#b58900 gui=NONE cterm=NONE
+  highlight DiffDelete guifg=#dc322f guibg=#073642 guisp=NONE gui=bold cterm=bold
+  highlight DiffText guifg=#268bd2 guibg=#073642 guisp=#268bd2 gui=NONE cterm=NONE
+
+  highlight StatusLine guifg=#839496 guibg=#073642 guisp=NONE gui=reverse cterm=reverse
+  highlight StatusLineNC guifg=#586e75 guibg=#073642 guisp=NONE gui=reverse cterm=reverse
+  highlight TabLine guifg=#586e75 guibg=#073642 guisp=NONE gui=reverse cterm=reverse
+  highlight TabLineFill guifg=#586e75 guibg=#073642 guisp=NONE gui=reverse cterm=reverse
+  highlight TabLineSel guifg=#839496 guibg=#073642 guisp=NONE gui=reverse cterm=reverse
+  highlight VertSplit guifg=#073642 guibg=#586e75 guisp=NONE gui=NONE cterm=NONE"
+  " }}}
+  " Syntax {{{1
+  highlight Comment guifg=#586e75 guibg=NONE guisp=NONE gui=italic cterm=italic
+  highlight SpecialComment guifg=#586e75 guibg=NONE guisp=NONE gui=italic cterm=italic
+
+  highlight Constant guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight String guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Character guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Number guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Boolean guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Float guifg=#2aa198 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+
+  highlight Identifier guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Function guifg=#268bd2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+
+  highlight Statement guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Conditional guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Repeat guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Label guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Operator guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Exception guifg=#859900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+
+  highlight PreProc guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Include guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Define guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Macro guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight PreCondit guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+
+  highlight Type guifg=#b58900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+
+  highlight StorageClass guifg=#b58900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Structure guifg=#b58900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Typedef guifg=#b58900 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+
+  highlight Special guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight SpecialChar guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight SpecialKey guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+
+  highlight Tag guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  highlight Delimiter guifg=#cb4b16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+
+  highlight Ignore guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+  highlight Todo guifg=#d33682 guibg=NONE guisp=NONE gui=bold cterm=bold
+  highlight Directory guifg=#d33682 guibg=NONE guisp=NONE gui=bold cterm=bold
+
+  highlight Underlined guifg=#6c71c4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  " }}}
 endif
 
 " vim:fdm=marker ft=vim et sts=2 sw=2
