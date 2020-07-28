@@ -131,7 +131,7 @@ noremap <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 noremap <silent><leader>c :edit ~/.dotfiles/neovim/.config/nvim/init.vim<CR>
 
 " Shortcut to edit todo.txt file.
-noremap <silent><leader>d :edit ~/Documents/tasks/todo.txt<CR>
+noremap <silent><leader>d :edit /Volumes/Backups/tasks/todo.txt<CR>
 
 " }}}
 
@@ -237,7 +237,7 @@ endif
 let g:loaded_netrwPlugin = 1
 
 " Configure note director.
-let g:naivenote#dir = '~/Documents/Notes'
+let g:naivenote#dir = '/Volumes/Backups/Notes'
 
 " Configure note mappings.
 nnoremap <leader>n :call naivenote#create()<CR>
