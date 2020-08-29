@@ -55,6 +55,11 @@ if executable('par')
   set formatprg=par
 endif
 
+" Make the jump-list behave like the tag list or a web browser.
+if has('nvim-0.5')
+  set jumpoptions=stack
+endif
+
 " Use ripgrep as external grep tool if available.
 if executable('rg')
   set grepprg=rg\ -H\ --no-heading\ --vimgrep
