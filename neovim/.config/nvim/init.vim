@@ -272,6 +272,13 @@ augroup END
 
 set background=light
 
+if executable('dark-mode')
+  let s:darkmode = substitute(system('dark-mode status'), '\n\+$', '', '')
+  if s:darkmode ==# 'on'
+    set background=dark
+  endif
+endif
+
 if has('termguicolors')
   set termguicolors
 endif
