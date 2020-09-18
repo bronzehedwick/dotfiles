@@ -50,6 +50,10 @@ set smartcase
 " Disable mouse, to prevent accidental clicks.
 set mouse-=a
 
+" Message pager does not fill entire screen.
+" See https://github.com/neovim/neovim/pull/8088
+set fillchars+=msgsep:—
+
 " Format text (gq) with par if it exists.
 if executable('par')
   set formatprg=par
