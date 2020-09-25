@@ -255,6 +255,7 @@ let g:naivenote#dir = '/Volumes/Backups/Notes'
 nnoremap <leader>n :call naivenote#create()<CR>
 nnoremap <leader>j :call naivenote#journal()<CR>
 nnoremap <leader>o :call naivenote#list()<CR>
+nnoremap <leader>f :call naivenote#search()<CR>
 
 " Add mapping for undotree.
 nnoremap <F5> :UndotreeToggle<CR>

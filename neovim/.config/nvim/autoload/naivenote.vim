@@ -37,8 +37,11 @@ function! naivenote#list() abort
 endfunction
 
 " Search notes.
-function! naivenote#search(searchArgs) abort
-  silent execute(':grep --max-depth 1 ' . expand(a:searchArgs) . ' ' . expand(g:naivenote#dir))
+function! naivenote#search() abort
+  call inputsave()
+  let l:note_search = input('Note search: ')
+  call inputrestore()
+  silent execute(':grep --max-depth 1 ' . expand(l:note_search) . ' ' . expand(g:naivenote#dir))
 endfunction
 
 " vim:fdm=marker ft=vim et sts=2 sw=2
