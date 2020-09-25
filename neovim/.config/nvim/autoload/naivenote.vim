@@ -36,4 +36,9 @@ function! naivenote#list() abort
   silent execute(':split ' . expand(g:naivenote#dir))
 endfunction
 
+" Search notes.
+function! naivenote#search(searchArgs) abort
+  silent execute(':grep --max-depth 1 ' . expand(a:searchArgs) . ' ' . expand(g:naivenote#dir))
+endfunction
+
 " vim:fdm=marker ft=vim et sts=2 sw=2
