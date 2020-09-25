@@ -66,7 +66,7 @@ endif
 
 " Use ripgrep as external grep tool if available.
 if executable('rg')
-  set grepprg=rg\ -H\ --no-heading\ --vimgrep
+  set grepprg=rg\ --no-heading\ --vimgrep
 endif
 
 if executable('extract_url')
