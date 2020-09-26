@@ -294,8 +294,13 @@ endif
 let g:PaperColor_Theme_Options = {
   \   'theme': {
   \     'default.light': {
-  \       'override' : {
-  \         'color00' : ['#FFFFFF', '255'],
+  \       'override': {
+  \         'color00': ['#FFFFFF', '255'],
+  \       }
+  \     },
+  \     'default.dark': {
+  \       'override': {
+  \         'color00': ['#080808', '000'],
   \       }
   \     }
   \   }
