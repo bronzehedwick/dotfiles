@@ -138,7 +138,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 24.0
+  size: 22.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -162,34 +162,88 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
+# Colors Dark
+# colors: # dark
+#   # Default colors
+#   primary: # dark
+#     background:        '#080808' # dark
+#     foreground:        '#b2b2b2' # dark
+#     bright_foreground: '#eeeeee' # dark
+
+#   # Cursor colors
+#   cursor: # dark
+#     text:   '#080808' # dark
+#     cursor: '#9e9e9e' # dark
+
+#   # Vi mode cursor colors
+#   vi_mode_cursor: # dark
+#     text:   '#080808' # dark
+#     cursor: '#e3c78a' # dark
+
+#   # Selection colors
+#   selection: # dark
+#     text:       '#080808' # dark
+#     background: '#b2ceee' # dark
+
+#   # Search colors
+#   search: # dark
+#     matches: # dark
+#       background: '#e3c78a' # dark
+#       foreground: '#080808' # dark
+#     bar: # dark
+#       background: '#e3c78a' # dark
+#       foreground: '#080808' # dark
+
+#   # Normal colors
+#   normal: # dark
+#     black:   '#373c40' # dark
+#     red:     '#ff5454' # dark
+#     green:   '#8cc85f' # dark
+#     yellow:  '#e3c78a' # dark
+#     blue:    '#80a0ff' # dark
+#     magenta: '#d183e8' # dark
+#     cyan:    '#79dac8' # dark
+#     white:   '#a1aab8' # dark
+
+#   # Bright colors
+#   bright: # dark
+#     black:   '#7c8f8f' # dark
+#     red:     '#ff5189' # dark
+#     green:   '#42cf89' # dark
+#     yellow:  '#bfbf97' # dark
+#     blue:    '#78c2ff' # dark
+#     magenta: '#ae81ff' # dark
+#     cyan:    '#85dc85' # dark
+#     white:   '#e2637f' # dark
+
 # Colors (PaperColor - Light)
-colors:
+colors: # light
   # Default colors
-  primary:
-    background: '0xFFFFFF'
-    foreground: '0x4D4D4C'
+  primary: # light
+    background: '0xFFFFFF' # light
+    foreground: '0x4D4D4C' # light
 
   # Normal colors
-  normal:
-    black:   '0xEDEDED'
-    red:     '0xD7005F'
-    green:   '0x718C00'
-    yellow:  '0xD75F00'
-    blue:    '0x4271AE'
-    magenta: '0x8959A8'
-    cyan:    '0x3E999F'
-    white:   '0x4D4D4C'
+  normal: # light
+    black:   '0xEDEDED' # light
+    red:     '0xD7005F' # light
+    green:   '0x718C00' # light
+    yellow:  '0xD75F00' # light
+    blue:    '0x4271AE' # light
+    magenta: '0x8959A8' # light
+    cyan:    '0x3E999F' # light
+    white:   '0x4D4D4C' # light
 
   # Bright colors
-  bright:
-    black:   '0x969694'
-    red:     '0xD7005F'
-    green:   '0x718C00'
-    yellow:  '0xD75F00'
-    blue:    '0x4271AE'
-    magenta: '0x8959A8'
-    cyan:    '0x3E999F'
-    white:   '0x888888'
+  bright: # light
+    black:   '0x969694' # light
+    red:     '0xD7005F' # light
+    green:   '0x718C00' # light
+    yellow:  '0xD75F00' # light
+    blue:    '0x4271AE' # light
+    magenta: '0x8959A8' # light
+    cyan:    '0x3E999F' # light
+    white:   '0x888888' # light
 
   # Indexed Colors
   #
