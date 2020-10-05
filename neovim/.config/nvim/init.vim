@@ -117,9 +117,7 @@ set cursorline
 set diffopt=internal,filler,vertical,algorithm:patience
 
 " Show effects of commands incrementally, as you type.
-if has('nvim')
-  set inccommand=nosplit
-endif
+set inccommand=nosplit
 
 " }}}
 
@@ -225,21 +223,19 @@ if executable('/usr/local/bin/fish')
   set shell=/usr/local/bin/fish
 endif
 
-if has('nvim')
-  augroup terminal
-    autocmd!
-    " Set the statusline to the process name set by the terminal.
-    autocmd TermOpen * setlocal statusline=%{b:term_title} nonumber
-  augroup END
-  " Escape exits insert mode inside terminal.
-  tnoremap <Esc> <C-\><C-n>
-  " M-r pastes inside terminal.
-  tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
-  " Switch to primary terminal buffer.
-  nmap <silent> <leader>t <Plug>(PrimaryTerminalOpen)
-  nmap <silent> <leader>r <Plug>(PrimaryTerminalOpenSplit)
-  nmap <silent> <leader>y <Plug>(PrimaryTerminalOpenVsplit)
-endif
+augroup terminal
+  autocmd!
+  " Set the statusline to the process name set by the terminal.
+  autocmd TermOpen * setlocal statusline=%{b:term_title} nonumber
+augroup END
+" Escape exits insert mode inside terminal.
+tnoremap <Esc> <C-\><C-n>
+" M-r pastes inside terminal.
+tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+" Switch to primary terminal buffer.
+nmap <silent> <leader>t <Plug>(PrimaryTerminalOpen)
+nmap <silent> <leader>r <Plug>(PrimaryTerminalOpenSplit)
+nmap <silent> <leader>y <Plug>(PrimaryTerminalOpenVsplit)
 
 " }}}
 
