@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$(/usr/local/bin/dark-mode status)" == 'on' ]; then
+  cp ~/.dotfiles/alacritty/.config/alacritty/colorscheme-dark.yml ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml
+else
+  cp ~/.dotfiles/alacritty/.config/alacritty/colorscheme-light.yml ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml
+fi

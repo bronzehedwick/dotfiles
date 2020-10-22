@@ -163,87 +163,58 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors Dark
-# colors: # dark
-#   # Default colors
-#   primary: # dark
-#     background:        '#080808' # dark
-#     foreground:        '#b2b2b2' # dark
-#     bright_foreground: '#eeeeee' # dark
-
-#   # Cursor colors
-#   cursor: # dark
-#     text:   '#080808' # dark
-#     cursor: '#9e9e9e' # dark
-
-#   # Vi mode cursor colors
-#   vi_mode_cursor: # dark
-#     text:   '#080808' # dark
-#     cursor: '#e3c78a' # dark
-
-#   # Selection colors
-#   selection: # dark
-#     text:       '#080808' # dark
-#     background: '#b2ceee' # dark
-
-#   # Search colors
-#   search: # dark
-#     matches: # dark
-#       background: '#e3c78a' # dark
-#       foreground: '#080808' # dark
-#     bar: # dark
-#       background: '#e3c78a' # dark
-#       foreground: '#080808' # dark
-
-#   # Normal colors
-#   normal: # dark
-#     black:   '#373c40' # dark
-#     red:     '#ff5454' # dark
-#     green:   '#8cc85f' # dark
-#     yellow:  '#e3c78a' # dark
-#     blue:    '#80a0ff' # dark
-#     magenta: '#d183e8' # dark
-#     cyan:    '#79dac8' # dark
-#     white:   '#a1aab8' # dark
-
-#   # Bright colors
-#   bright: # dark
-#     black:   '#7c8f8f' # dark
-#     red:     '#ff5189' # dark
-#     green:   '#42cf89' # dark
-#     yellow:  '#bfbf97' # dark
-#     blue:    '#78c2ff' # dark
-#     magenta: '#ae81ff' # dark
-#     cyan:    '#85dc85' # dark
-#     white:   '#e2637f' # dark
-
-# Colors (PaperColor - Light)
-colors: # light
+colors:
   # Default colors
-  primary: # light
-    background: '0xFFFFFF' # light
-    foreground: '0x4D4D4C' # light
+  primary:
+    background:        '#080808'
+    foreground:        '#b2b2b2'
+    bright_foreground: '#eeeeee'
+
+  # Cursor colors
+  cursor:
+    text:   '#080808'
+    cursor: '#9e9e9e'
+
+  # Vi mode cursor colors
+  vi_mode_cursor:
+    text:   '#080808'
+    cursor: '#e3c78a'
+
+  # Selection colors
+  selection:
+    text:       '#080808'
+    background: '#b2ceee'
+
+  # Search colors
+  search:
+    matches:
+      background: '#e3c78a'
+      foreground: '#080808'
+    bar:
+      background: '#e3c78a'
+      foreground: '#080808'
 
   # Normal colors
-  normal: # light
-    black:   '0xEDEDED' # light
-    red:     '0xD7005F' # light
-    green:   '0x718C00' # light
-    yellow:  '0xD75F00' # light
-    blue:    '0x4271AE' # light
-    magenta: '0x8959A8' # light
-    cyan:    '0x3E999F' # light
-    white:   '0x4D4D4C' # light
+  normal:
+    black:   '#373c40'
+    red:     '#ff5454'
+    green:   '#8cc85f'
+    yellow:  '#e3c78a'
+    blue:    '#80a0ff'
+    magenta: '#d183e8'
+    cyan:    '#79dac8'
+    white:   '#a1aab8'
 
   # Bright colors
-  bright: # light
-    black:   '0x969694' # light
-    red:     '0xD7005F' # light
-    green:   '0x718C00' # light
-    yellow:  '0xD75F00' # light
-    blue:    '0x4271AE' # light
-    magenta: '0x8959A8' # light
-    cyan:    '0x3E999F' # light
-    white:   '0x888888' # light
+  bright:
+    black:   '#7c8f8f'
+    red:     '#ff5189'
+    green:   '#42cf89'
+    yellow:  '#bfbf97'
+    blue:    '#78c2ff'
+    magenta: '#ae81ff'
+    cyan:    '#85dc85'
+    white:   '#e2637f'
 
   # Indexed Colors
   #
