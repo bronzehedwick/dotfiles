@@ -10,6 +10,6 @@ if [ "$(/usr/local/bin/dark-mode status)" == 'on' ]; then
   rm ~/.dotfiles/bat/bat/.config/bat/config.bak
 else
   cp ~/.dotfiles/alacritty/.config/alacritty/colorscheme-light.yml ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml
-  git checkout --quiet ~/.dotfiles/git/.gitconfig
-  git checkout --quiet ~/.dotfiles/bat/.config/bat/config
+  git -C ~/.dotfiles checkout --quiet ~/.dotfiles/git/.gitconfig
+  git -C ~/.dotfiles checkout --quiet ~/.dotfiles/bat/.config/bat/config
 fi
