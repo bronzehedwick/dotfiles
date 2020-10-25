@@ -7,7 +7,7 @@ if [ "$(/usr/local/bin/dark-mode status)" == 'on' ]; then
   sed -i.bak 's/OneHalfLight/OneHalfDark/g' ~/.dotfiles/git/.gitconfig
   sed -i.bak 's/OneHalfLight/OneHalfDark/g' ~/.dotfiles/bat/.config/bat/config
   rm ~/.dotfiles/git/.gitconfig.bak
-  rm ~/.dotfiles/bat/bat/.config/bat/config.bak
+  rm ~/.dotfiles/bat/.config/bat/config.bak
 else
   cp ~/.dotfiles/alacritty/.config/alacritty/colorscheme-light.yml ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml
   git -C ~/.dotfiles checkout --quiet ~/.dotfiles/git/.gitconfig
