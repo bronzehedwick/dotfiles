@@ -110,9 +110,6 @@ set list
 " Set hard wrapping guide.
 set colorcolumn=80
 
-" Highlight the current line.
-set cursorline
-
 " Diff options.
 set diffopt=internal,filler,vertical,algorithm:patience
 
