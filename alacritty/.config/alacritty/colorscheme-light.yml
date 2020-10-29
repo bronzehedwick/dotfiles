@@ -736,7 +736,9 @@ key_bindings:
   - { key: Z,        mods: Alt,     chars: "\x1bz"                       }
   - { key: Period,   mods: Alt,       chars: "\x1b."                     }
   - { key: Slash,    mods: Alt,       chars: "\x1b/"                     }
-  - { key: Semicolon,    mods: Alt,       chars: "\x1b;"                     }
+  - { key: Semicolon,    mods: Alt,       chars: "\x1b;"                 }
+  - { key: LeftParenthesis,    mods: Alt,       chars: "\x1b("           }
+  - { key: RightParenthesis,    mods: Alt,       chars: "\x1b)"          }
   - { key: Key8,     mods: Alt|Shift, chars: "\x1b*"                     }
 
 #debug:
