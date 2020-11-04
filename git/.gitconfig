@@ -13,7 +13,7 @@
 	br = branch
 	cl = clone
 	cp = cherry-pick
-	hist = log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%ad | %s%d %Cblue[%an]%Creset\" --graph --date=short --date=relative --no-merges 
+	hist = log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%ad | %s%d %Cblue[%an]%Creset %C(magenta)%G?%Creset\" --graph --date=short --date=relative --no-merges
 	mist = log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%ad | %s%d %Cblue[%an] %C(cyan)%G?%Creset\" --graph --date=short --date=relative
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	filelog = log -u
@@ -68,8 +68,8 @@
 	smudge = git-media-smudge %f
 [github]
 	user = bronzehedwick
-; [commit]
-; 	gpgsign = true
+[commit]
+	gpgsign = true
 [advice]
 	statusHints = false
 [pull]
