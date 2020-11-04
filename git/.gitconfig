@@ -43,6 +43,7 @@
 	helper = cache
 [push]
 	default = simple
+	gpgSign = if-asked
 [grep]
 	lineNumber = true
 [merge]
