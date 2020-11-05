@@ -14,7 +14,12 @@ if test -x /usr/local/bin/yarn
   set PATH ~/.yarn/bin ~/.config/yarn/global/node_modules/.bin $PATH
 end
 
-if test -e $NVIM_LISTEN_ADDRESS
+set EDITOR nvim
+set VISUAL nvim
+
+if test -n "$NVIM_LISTEN_ADDRESS"
+  set EDITOR nvr
+  set VISUAL nvr
   if test -x /usr/local/bin/page
     set PAGER /usr/local/bin/page
   end
