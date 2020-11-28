@@ -25,6 +25,14 @@ if test -n "$NVIM_LISTEN_ADDRESS"
   end
 end
 
+# GPG agent
+if test -f "$HOME/.gpg-agent-info"
+  . "$HOME/.gpg-agent-info"
+  set GPG_AGENT_INFO
+  set SSH_AUTH_SOCK
+end
+set GPG_TTY (tty)
+
 if not functions -q fisher
   set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
   curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
