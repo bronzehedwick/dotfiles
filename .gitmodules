@@ -91,3 +91,6 @@
 [submodule "neovim/.local/share/nvim/site/pack/github/start/vim-closer"]
 	path = neovim/.local/share/nvim/site/pack/github/start/vim-closer
 	url = https://github.com/rstacruz/vim-closer
+[submodule "neovim/.local/share/nvim/site/pack/github/start/vim-colors-xcode"]
+	path = neovim/.local/share/nvim/site/pack/github/start/vim-colors-xcode
+	url = https://github.com/arzg/vim-colors-xcode.git
