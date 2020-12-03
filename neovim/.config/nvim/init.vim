@@ -277,6 +277,8 @@ if has('termguicolors')
   set termguicolors
 endif
 
+let g:xcodelight_green_comments = 1
+
 if executable('dark-mode')
   let s:darkmode = substitute(system('dark-mode status'), '\n\+$', '', '')
   if s:darkmode ==# 'on'
