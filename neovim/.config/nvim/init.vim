@@ -273,37 +273,21 @@ augroup END
 
 set background=light
 
-if executable('dark-mode')
-  let s:darkmode = substitute(system('dark-mode status'), '\n\+$', '', '')
-  if s:darkmode ==# 'on'
-    set background=dark
-  endif
-endif
-
 if has('termguicolors')
   set termguicolors
 endif
 
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default': {
-  \       'allow_bold': '1',
-  \       'allow_italic': '1',
-  \     },
-  \     'default.light': {
-  \       'override': {
-  \         'color00': ['#FFFFFF', '255'],
-  \       }
-  \     },
-  \     'default.dark': {
-  \       'override': {
-  \         'color00': ['#080808', '000'],
-  \       }
-  \     }
-  \   }
-  \ }
-
-silent! colorscheme PaperColor
+if executable('dark-mode')
+  let s:darkmode = substitute(system('dark-mode status'), '\n\+$', '', '')
+  if s:darkmode ==# 'on'
+    set background=dark
+    silent! colorscheme xcodedarkhc
+  else
+    silent! colorscheme xcodelight
+  endif
+else
+  silent! colorscheme xcodelight
+endif
 
 " }}}
 
