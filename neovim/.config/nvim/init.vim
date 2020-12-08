@@ -101,8 +101,11 @@ set lazyredraw
 " Update swap file and gitgutter much faster.
 set updatetime=250
 
-" Command <Tab> completion, list matches, then longest common part, then all.
-set wildmode=list:longest,full
+" Command <Tab> completion.
+set wildmode=longest:full
+
+" Message popup is slightly transparent.
+set pumblend=10
 
 " Highlight invisible whitespace.
 set list
@@ -115,6 +118,9 @@ set diffopt=internal,filler,vertical,algorithm:patience
 
 " Show effects of commands incrementally, as you type.
 set inccommand=nosplit
+
+" Make file messages even shorter and messier.
+set shortmess=filnxrtToOF
 
 " }}}
 
