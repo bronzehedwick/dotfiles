@@ -189,3 +189,4 @@ fi
 # }}}
 
 # vim: set fdm=marker
+source "$HOME/.cargo/env"
