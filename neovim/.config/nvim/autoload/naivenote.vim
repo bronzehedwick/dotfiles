@@ -33,7 +33,11 @@ endfunction
 
 " List notes.
 function! naivenote#list() abort
-  silent execute(':split ' . expand(g:naivenote#dir))
+  if exists(':PickerEdit')
+    silent execute(':PickerEdit ' . expand(g:naivenote#dir))
+  else
+    silent execute(':split ' . expand(g:naivenote#dir))
+  endif
 endfunction
 
 " Search notes.
