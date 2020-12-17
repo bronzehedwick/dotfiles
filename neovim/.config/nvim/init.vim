@@ -257,7 +257,7 @@ nnoremap <leader>o :call naivenote#list()<CR>
 nnoremap <leader>f :call naivenote#search()<CR>
 
 " Add mapping for undotree.
-nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <F8> :UndotreeToggle<CR>
 
 " Enable syntax highlighting for JSDoc.
 let g:javascript_plugin_jsdoc = 1
