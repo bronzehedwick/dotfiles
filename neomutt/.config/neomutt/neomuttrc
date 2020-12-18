@@ -32,6 +32,7 @@ mailboxes +INBOX \
           +Sent \
           +Drafts \
           +Spam \
+          +Learn spam \
           +Trash
 
 # trash handling
@@ -45,7 +46,7 @@ folder-hook =Trash 'push <delete-pattern>~d>30d<enter>'
 
 # general key bindings
 macro index,pager S \
-        "<save-message>+Spam<enter>" \
+        "<save-message>+Learn spam<enter>" \
         "mark message as spam"
 macro index,pager A \
         "<save-message>+Archive<enter>" \
