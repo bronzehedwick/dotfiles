@@ -14,7 +14,7 @@ packadd vim-markdown
 " Use a dictionary to lookup words.
 if executable('dict')
   setlocal keywordprg=dict
-  nnoremap <buffer> <silent> <s-k> :execute "split " . shellescape(&keywordprg) . "<bar> 0read !" . shellescape(&keywordprg) . " " . expand("<cword>")<bar> :Man!<CR>
+  " nnoremap <buffer> <silent> <S-k> :execute "split " . shellescape(&keywordprg) . "<bar> 0read !" . shellescape(&keywordprg) . " " . expand("<cword>")<bar> :Man!<CR>
 endif
 
 " vim:fdm=marker ft=vim et sts=2 sw=2
