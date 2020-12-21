@@ -3,7 +3,7 @@ scriptencoding utf-8
 " Re-mappings {{{
 
 " Remap mapleader.
-let mapleader = ','
+" let mapleader = ','
 
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
