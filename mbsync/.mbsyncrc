@@ -28,7 +28,7 @@ SubFolders Legacy
 Channel chris
 Master :chris-remote:
 Slave :chris-local:
-Patterns INBOX Archive Sent Spam Trash
+Patterns INBOX Archive Sent Spam Trash Learn\ spam
 Expunge Both
 SyncState *
 Sync All

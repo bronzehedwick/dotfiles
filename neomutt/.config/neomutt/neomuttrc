@@ -32,17 +32,12 @@ mailboxes +INBOX \
           +Sent \
           +Drafts \
           +Spam \
-          +Learn spam \
+          +Learn\ spam \
           +Trash
 
 # trash handling
 set trash = '+Trash'
 folder-hook =Trash 'push <delete-pattern>~d>30d<enter>'
-
-# macro index,pager \cb "<enter-command> set my_pdsave=\$pipe_decode<enter>\
-# <enter-command> unset pipe_decode<enter>\
-# <pipe-message>extract_url<enter>\
-# <enter-command> set pipe_decode=\$my_pdsave<enter>" "get URLs"
 
 # general key bindings
 macro index,pager S \
