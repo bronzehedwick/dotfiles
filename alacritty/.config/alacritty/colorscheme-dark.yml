@@ -166,9 +166,9 @@ font:
 colors:
   # Default colors
   primary:
-    background:        '#080808'
-    foreground:        '#b2b2b2'
-    bright_foreground: '#eeeeee'
+    background:        '#1c1c1c'
+    foreground:        '#ffffff'
+    bright_foreground: '#ffffff'
 
   # Cursor colors
   cursor:
