@@ -295,10 +295,13 @@ augroup terminal
   " Set the statusline to the process name set by the terminal.
   autocmd TermOpen * setlocal statusline=%{b:term_title} nonumber
 augroup END
+
 " Escape exits insert mode inside terminal.
 tnoremap <Esc> <C-\><C-n>
+
 " M-r pastes inside terminal.
 tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+
 " Switch to primary terminal buffer.
 nmap <silent> <leader>t <Plug>(PrimaryTerminalOpen)
 nmap <silent> <leader>r <Plug>(PrimaryTerminalOpenSplit)
