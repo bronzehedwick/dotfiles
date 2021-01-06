@@ -323,6 +323,15 @@ nnoremap <leader>j :call naivenote#journal()<CR>
 nnoremap <leader>o :call naivenote#list()<CR>
 nnoremap <leader>f :call naivenote#search()<CR>
 
+" Configure match-up off screen display.
+let g:matchup_matchparen_offscreen = {'method': 'popup'}
+
+" Change match-up match word highlight.
+augroup matchup_matchparen_highlight
+  autocmd!
+  autocmd ColorScheme * hi MatchWord gui=italic guibg=transparent guifg=#156adf
+augroup END
+
 " Add mapping for undotree.
 nnoremap <F8> :UndotreeToggle<CR>
 
