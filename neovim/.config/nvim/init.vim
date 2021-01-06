@@ -352,6 +352,8 @@ endif
 
 let g:xcodelight_green_comments = 1
 let g:xcodedarkhc_green_comments = 1
+let g:xcodelight_match_paren_style = 1
+let g:xcodedarkhc_match_paren_style = 1
 
 if executable('dark-mode')
   let s:darkmode = substitute(system('dark-mode status'), '\n\+$', '', '')
