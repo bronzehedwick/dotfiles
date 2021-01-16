@@ -17,4 +17,8 @@ if executable('dict')
   " nnoremap <buffer> <silent> <S-k> :execute "split " . shellescape(&keywordprg) . "<bar> 0read !" . shellescape(&keywordprg) . " " . expand("<cword>")<bar> :Man!<CR>
 endif
 
+" Change time format for todo files.
+" Fri Jan 15 19:50:41 EST 2021
+inoremap <buffer> <C-g><C-t> <C-r>=strftime("%c")<CR>
+
 " vim:fdm=marker ft=vim et sts=2 sw=2
