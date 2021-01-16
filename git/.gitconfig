@@ -86,3 +86,5 @@
 	smtpserveroption = /Users/chris/.msmtprc
 	smtpserveroption = -t
 	smtpserveroption = --read-envelope-from
+[init]
+	defaultBranch = main
