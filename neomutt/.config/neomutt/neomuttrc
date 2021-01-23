@@ -9,6 +9,8 @@ set realname = "Chris DeLuca"
 alternates code@chrisdeluca.me|contact@chrisdeluca.me|signups@chrisdeluca.me|bronzehedwick@gmail.com|christopher.j.deluca@gmail.com
 set mail_check = 0
 set envelope_from
+set reverse_name = yes
+set reverse_realname = no
 unset move
 set delete
 unset confirmappend
