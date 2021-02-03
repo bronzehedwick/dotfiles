@@ -2,4 +2,8 @@
 --type-add
 drupal:*.{theme,module,inc,php}*
 
+# Add JSX file type
+--type-add
+jsx:*.jsx*
+
 # vim: ft=conf
