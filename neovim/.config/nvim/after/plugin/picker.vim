@@ -8,8 +8,8 @@ command! -bar PickerBufferSplit split | PickerBuffer
 command! -bar PickerBufferVsplit vsplit | PickerBuffer
 
 " Add vim picker mappings.
-nmap <unique> <M-,> <Plug>(PickerTabedit)
 nmap <unique> <M-.> <Plug>(PickerSplit)
+nmap <unique> <C-/> <Plug>(PickerEdit)
 nmap <unique> <M-/> <Plug>(PickerEdit)
 nmap <unique> <M-;> <Plug>(PickerVsplit)
 nmap <unique> <M-[> <Plug>(PickerStag)
