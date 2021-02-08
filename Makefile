@@ -24,9 +24,6 @@ mailinit: ## Initializes first mail run to ~/Mail.
 mail: ## Syncronizes all mail locally to ~/Mail.
 	@./scripts/mailsync.sh
 
-caldav: ## Syncronizes all contacts and calendars.
-	@vdirsyncer sync
-
 submodules: ## Updates all git submodules.
 	@git submodule update --remote
 
