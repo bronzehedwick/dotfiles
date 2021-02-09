@@ -309,6 +309,14 @@ nmap <silent> <leader>y <Plug>(PrimaryTerminalOpenVsplit)
 
 " }}}
 
+" LSP {{{
+
+if has('nvim-0.5')
+  lua require('lspsetup')
+endif
+
+" }}}
+
 " Plugin Configuration {{{
 
 " Disable netrw, since I'm using Dirvish instead.
