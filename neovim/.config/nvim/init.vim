@@ -346,6 +346,16 @@ nnoremap <F8> :UndotreeToggle<CR>
 " Enable syntax highlighting for JSDoc.
 let g:javascript_plugin_jsdoc = 1
 
+" Add back async fugitive mappings.
+command! -bang -bar -nargs=* Gpush execute 'Dispatch<bang> -dir=' .
+      \ fnameescape(FugitiveGitDir()) 'git push' <q-args>
+command! -bang -bar -nargs=* Gfetch execute 'Dispatch<bang> -dir=' .
+      \ fnameescape(FugitiveGitDir()) 'git fetch' <q-args>
+command! -bang -bar -nargs=* Gup execute 'Dispatch<bang> -dir=' .
+      \ fnameescape(FugitiveGitDir()) 'git up' <q-args>
+command! -bang -bar -nargs=* Gpo execute 'Dispatch<bang> -dir=' .
+      \ fnameescape(FugitiveGitDir()) 'git po' <q-args>
+
 function! PageClose(page_alternate_bufnr)
   bdelete!
   if bufnr('%') == a:page_alternate_bufnr && mode('%') ==# 'n'
