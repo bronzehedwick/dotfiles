@@ -100,3 +100,6 @@
 [submodule "neovim/.local/share/nvim/site/pack/github/start/nvim-lspconfig"]
 	path = neovim/.local/share/nvim/site/pack/github/start/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
+[submodule "neovim/.local/share/nvim/site/pack/github/start/nvim-treesitter"]
+	path = neovim/.local/share/nvim/site/pack/github/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter

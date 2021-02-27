@@ -309,10 +309,11 @@ nmap <silent> <leader>y <Plug>(PrimaryTerminalOpenVsplit)
 
 " }}}
 
-" LSP {{{
+" LSP/Treesitter {{{
 
 if has('nvim-0.5')
   lua require('lspsetup')
+  lua require('treesittersetup')
 endif
 
 " }}}
