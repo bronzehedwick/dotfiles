@@ -32,6 +32,7 @@ set expandtab
 
 " Soft tabs equal two spaces.
 set shiftwidth=2
+set softtabstop=2
 
 " Keep tab widths default to address possible display issues.
 " see: https://www.reddit.com/r/vim/wiki/tabstop
