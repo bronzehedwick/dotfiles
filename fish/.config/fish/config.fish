@@ -15,8 +15,8 @@ if test -x /usr/local/bin/yarn
 end
 
 if test -z "$NVIM_LISTEN_ADDRESS"
-  set EDITOR nvim
-  set VISUAL nvim
+  set EDITOR nvim --noplugin
+  set VISUAL nvim --noplugin
 end
 
 if test -n "$NVIM_LISTEN_ADDRESS"
