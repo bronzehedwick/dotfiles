@@ -237,7 +237,9 @@ cnoremap <c-p> <up>
 " Statusline {{{
 
 " Git branch.
-set statusline=%{FugitiveStatusline()}
+if filereadable('~/.local/share/nvim/site/pack/github/start/vim-fugitive/plugin//fugitive.vim')
+  set statusline=%{FugitiveStatusline()}
+endif
 " Tail of file (just the name.ext).
 set statusline+=%<\ %t
 " File modified flag.
