@@ -321,6 +321,11 @@ if has('nvim-0.5')
   lua require('treesittersetup')
 endif
 
+if exists(':TSUpdate')
+  set foldmethod=expr
+  set foldexpr=nvim_treesitter#foldexpr()
+endif
+
 " }}}
 
 " Plugin Configuration {{{
@@ -402,4 +407,4 @@ endif
 
 " }}}
 
-" vim:fdm=marker ft=vim et sts=2 sw=2
+" vim:foldmethod=marker ft=vim et sts=2 sw=2
