@@ -26,8 +26,8 @@ Flatten .
 SubFolders Legacy
 
 Channel chris
-Master :chris-remote:
-Slave :chris-local:
+Far :chris-remote:
+Near :chris-local:
 Patterns INBOX Archive Sent Spam Trash Learn\ spam
 Expunge Both
 SyncState *
