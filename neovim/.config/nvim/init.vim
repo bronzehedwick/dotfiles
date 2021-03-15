@@ -330,6 +330,10 @@ endif
 
 " Plugin Configuration {{{
 
+if has('nvim-0.5')
+  lua require('plugins')
+endif
+
 " Disable netrw, since I'm using Dirvish instead.
 let g:loaded_netrwPlugin = 1
 

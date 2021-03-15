@@ -11,3 +11,4 @@ fish_variables
 pianobar/.config/pianobar/state
 alacritty.yml
 tmux/.config/tmux/plugins
+packer_compiled.vim
