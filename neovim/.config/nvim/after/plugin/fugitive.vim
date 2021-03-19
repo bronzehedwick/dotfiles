@@ -1,5 +1,5 @@
 " Exit if fugitive isn't loaded.
-if ! filereadable(expand('~/.local/share/nvim/site/pack/github/start/vim-fugitive/ftdetect/fugitive.vim'))
+if ! filereadable(expand('~/.local/share/nvim/site/pack/packer/start/vim-fugitive/ftdetect/fugitive.vim'))
   finish
 endif
 
