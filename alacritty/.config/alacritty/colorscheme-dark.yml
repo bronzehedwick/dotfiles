@@ -317,7 +317,7 @@ colors:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /bin/local/bin/fish
+  program: /usr/local/bin/fish
   args:
     - --login
 
