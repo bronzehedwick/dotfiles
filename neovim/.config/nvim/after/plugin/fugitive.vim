@@ -3,6 +3,29 @@ if ! filereadable(expand('~/.local/share/nvim/site/pack/packer/start/vim-fugitiv
   finish
 endif
 
+" Status line.
+" Git branch.
+set statusline=%{FugitiveStatusline()}
+" Tail of file (just the name.ext).
+set statusline+=%<\ %t
+" File modified flag.
+set statusline+=%m
+" Buffer is `help` flag.
+set statusline+=%<\ %h
+" Buffer is `readonly` flag.
+set statusline+=%<\ %r
+" Buffer is `preview` flag.
+set statusline+=%<\ %w
+" New group.
+set statusline+=%=
+" Line and column number.
+set statusline+=%l,%v
+" New group.
+set statusline+=%=
+" Percentage through the file.
+set statusline+=%p%%
+
+
 " Fugitive mappings.
 nnoremap <silent> <M-g>s :Gstatus<CR>
 nnoremap <silent> <M-g>d :Gdiff<CR>

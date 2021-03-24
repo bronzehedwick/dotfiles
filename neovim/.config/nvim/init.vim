@@ -237,13 +237,8 @@ cnoremap <c-p> <up>
 " Statusline {{{
 
 " Git branch.
-if exists(':Git')
-  set statusline=%{FugitiveStatusline()}
-else
-  set statusline=
-endif
 " Tail of file (just the name.ext).
-set statusline+=%<\ %t
+set statusline=%<\ %t
 " File modified flag.
 set statusline+=%m
 " Buffer is `help` flag.
