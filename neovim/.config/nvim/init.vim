@@ -307,11 +307,6 @@ tnoremap <Esc> <C-\><C-n>
 " M-r pastes inside terminal.
 tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 
-" Switch to primary terminal buffer.
-nmap <silent> <leader>t <Plug>(PrimaryTerminalOpen)
-nmap <silent> <leader>r <Plug>(PrimaryTerminalOpenSplit)
-nmap <silent> <leader>y <Plug>(PrimaryTerminalOpenVsplit)
-
 " }}}
 
 " LSP/Treesitter {{{
@@ -319,6 +314,7 @@ nmap <silent> <leader>y <Plug>(PrimaryTerminalOpenVsplit)
 if has('nvim-0.5')
   lua require('lspsetup')
   lua require('treesittersetup')
+  lua require('toggleterm-setup')
 endif
 
 if exists(':TSUpdate')

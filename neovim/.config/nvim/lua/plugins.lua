@@ -8,10 +8,10 @@ return require('packer').startup(function()
 
     -- Simple plugins can be specified as strings
     use 'MaxMEllon/vim-jsx-pretty'
+    use 'akinsho/nvim-toggleterm.lua'
     use 'arp242/jumpy.vim'
     use 'arzg/vim-colors-xcode'
     use 'bronzehedwick/msmtp-syntax.vim'
-    use 'bronzehedwick/vim-primary-terminal'
     use 'cespare/vim-toml'
     use 'chr4/nginx.vim'
     use 'dag/vim-fish'
