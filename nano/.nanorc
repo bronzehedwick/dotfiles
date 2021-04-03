@@ -1,0 +1,10 @@
+set tabsize 4
+set tabstospaces
+set speller "/usr/local/bin/aspell -x -c"
+
+syntax "Email" ".*"
+color magenta "^>([^>].*|$)"
+color blue "^> ?>([^>].*|$)"
+color green "^> ?> ?>([^>].*|$)"
+color cyan "^> ?> ?> ?>.*"
+color yellow "^> ?> ?> ?> ?>.*"
