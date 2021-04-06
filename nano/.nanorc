@@ -3,7 +3,7 @@ set tabstospaces
 set speller "/usr/local/bin/aspell -x -c"
 set softwrap
 
-¨syntax "Email" ".*"
+syntax "Email" ".*"
 color magenta "^>([^>].*|$)"
 color blue "^> ?>([^>].*|$)"
 color green "^> ?> ?>([^>].*|$)"
