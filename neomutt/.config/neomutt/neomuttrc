@@ -65,7 +65,7 @@ macro index <Esc>/ "<change-folder-readonly>~/Mail/search<enter>" \
 
 # contacts
 set query_command = "mu cfind --format=mutt-ab '%s'"
-set editor = 'nano'
+set editor = '/usr/local/bin/nano'
 bind editor <Tab> complete-query
 bind editor ^T    complete
 
@@ -93,11 +93,8 @@ set wait_key = no
 set sleep_time = 0
 
 # html mails
-auto_view text/html
-alternative_order text/plain text/encriched text/html
-
-# calendar events
-auto_view text/calendar application/ics
+auto_view text/v-card text/html text/enriched text/calendar application/ics
+alternative_order text/plain text/enriched text/html
 
 # sidebar
 # set sidebar_visible

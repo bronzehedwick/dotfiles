@@ -1,7 +1,7 @@
 # ~/.mailcap
 
 text/*; less '%s'; edit=nvim '%s'; needsterminal; test=test -t 0
-text/html; w3m -I %{charset} -T text/html; copiousoutput;
+text/html; lynx -dump -force_html %s; copiousoutput; needsterminal;
 text/calendar; mv %s %s.ics && open %s.ics && rm %s.ics
 application/ics; mv %s %s.ics && open %s.ics && rm %s.ics
 */*; open '%s'; test=expr "$DISPLAY" : :
