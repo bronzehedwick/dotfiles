@@ -65,7 +65,7 @@ macro index <Esc>/ "<change-folder-readonly>~/Mail/search<enter>" \
 
 # contacts
 set query_command = "mu cfind --format=mutt-ab '%s'"
-set editor = '/usr/local/bin/nano'
+set editor = '/usr/local/bin/nano -Y Email'
 bind editor <Tab> complete-query
 bind editor ^T    complete
 

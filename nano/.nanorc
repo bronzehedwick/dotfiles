@@ -6,12 +6,9 @@ set softwrap
 bind M-F nextword main
 bind M-B prevword main
 
-syntax "Email" ".*"
+syntax "Email" ".*.mail"
 color magenta "^>([^>].*|$)"
 color blue "^> ?>([^>].*|$)"
 color green "^> ?> ?>([^>].*|$)"
 color cyan "^> ?> ?> ?>.*"
 color yellow "^> ?> ?> ?> ?>.*"
-color green "^#.*"
-color cyan "^([-|*|+].*|$).*"
-color yellow "^    .*"
