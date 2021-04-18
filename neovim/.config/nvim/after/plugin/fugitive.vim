@@ -19,7 +19,7 @@ set statusline+=%<\ %w
 " New group.
 set statusline+=%=
 " Line and column number.
-set statusline+=%l,%v
+set statusline+=%l
 " New group.
 set statusline+=%=
 " Percentage through the file.
