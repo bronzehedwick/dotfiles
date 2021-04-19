@@ -2,7 +2,8 @@
 
 text/*; less '%s'; edit=nvim '%s'; needsterminal; test=test -t 0
 text/html; lynx -dump -force_html %s; copiousoutput; needsterminal;
-text/calendar; mv %s %s.ics && open %s.ics && rm %s.ics
-application/ics; mv %s %s.ics && open %s.ics && rm %s.ics
+image/*; open '%s';
+text/calendar; open '%s';
+application/ics; open '%s';
 application/pdf; open '%s';
 */*; open '%s'; test=expr "$DISPLAY" : :
