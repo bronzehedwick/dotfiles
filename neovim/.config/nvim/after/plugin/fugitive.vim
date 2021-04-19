@@ -27,7 +27,7 @@ set statusline+=%p%%
 
 
 " Fugitive mappings.
-nnoremap <silent> <M-g>s :Gstatus<CR>
+nnoremap <silent> <M-g>s :Git<CR>
 nnoremap <silent> <M-g>d :Gdiff<CR>
 nnoremap <silent> <M-g>c :Gcommit<CR>
 nnoremap <silent> <M-g>b :Gblame<CR>
