@@ -331,15 +331,6 @@ endif
 " Disable netrw, since I'm using Dirvish instead.
 let g:loaded_netrwPlugin = 1
 
-" Configure note director.
-let g:naivenote#dir = '/Volumes/Backups/Notes'
-
-" Configure note mappings.
-nnoremap <leader>n :call naivenote#create()<CR>
-nnoremap <leader>j :call naivenote#journal()<CR>
-nnoremap <leader>o :call naivenote#list()<CR>
-nnoremap <leader>f :call naivenote#search()<CR>
-
 " Configure match-up off screen display.
 let g:matchup_matchparen_offscreen = {'method': 'popup'}
 
