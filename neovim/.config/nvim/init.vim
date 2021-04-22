@@ -278,6 +278,9 @@ nnoremap <silent> <M-s> :%s/\s\+$//e<CR>
 " Add customized Grep that's silent and doesn't jump to the first result.
 command! -nargs=+ Grep execute 'silent grep! <args>'
 
+" Add command to open a git mergetool window.
+command! MergeTool execute 'edit term://git\ mergetool'
+
 " }}}
 
 " Terminal {{{
