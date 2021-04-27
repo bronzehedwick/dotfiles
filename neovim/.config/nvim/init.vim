@@ -307,7 +307,7 @@ tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 
 " }}}
 
-" LSP/Treesitter {{{
+" LUA Plugin Configuration {{{
 
 if has('nvim-0.5')
   lua require('lspsetup')
@@ -315,10 +315,8 @@ if has('nvim-0.5')
   lua require('toggleterm-setup')
 endif
 
-if exists(':TSUpdate')
-  set foldmethod=expr
-  set foldexpr=nvim_treesitter#foldexpr()
-endif
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 
 " }}}
 
