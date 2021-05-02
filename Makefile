@@ -24,9 +24,6 @@ mailinit: ## Initializes first mail run to ~/Mail.
 mail: ## Syncronizes all mail locally to ~/Mail.
 	@./scripts/mailsync.sh
 
-submodules: ## Updates all git submodules.
-	@git submodule update --remote
-
 all: brew link tmux mail caldav
 
 # vim: nolist
