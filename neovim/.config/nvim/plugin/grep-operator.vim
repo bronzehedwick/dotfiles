@@ -1,3 +1,7 @@
+if exists(':Telescope')
+  finish
+endif
+
 nnoremap gs :set operatorfunc=GrepOperator<CR>g@
 vnoremap gs :<c-u>call GrepOperator(visualmode())<CR>
 

@@ -38,4 +38,14 @@ nnoremap <silent> <M-g>w :Gwrite<CR>
 nnoremap <silent> <M-g>e :Gedit<CR>
 nnoremap <silent> <M-g>u :Git up<CR>
 
+" Add back async fugitive mappings.
+command! -bang -bar -nargs=* Gpush execute 'Dispatch<bang> -dir=' .
+      \ fnameescape(FugitiveGitDir()) 'git push' <q-args>
+command! -bang -bar -nargs=* Gfetch execute 'Dispatch<bang> -dir=' .
+      \ fnameescape(FugitiveGitDir()) 'git fetch' <q-args>
+command! -bang -bar -nargs=* Gup execute 'Dispatch<bang> -dir=' .
+      \ fnameescape(FugitiveGitDir()) 'git up' <q-args>
+command! -bang -bar -nargs=* Gpo execute 'Dispatch<bang> -dir=' .
+      \ fnameescape(FugitiveGitDir()) 'git po' <q-args>
+
 " vim:fdm=marker ft=vim et sts=2 sw=2

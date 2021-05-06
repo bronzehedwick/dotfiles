@@ -24,7 +24,6 @@ return require('packer').startup(function()
     use 'othree/html5.vim'
     use 'pangloss/vim-javascript'
     use 'rstacruz/vim-closer'
-    use 'srstevenson/vim-picker'
     use 'tpope/vim-commentary'
     use 'tpope/vim-endwise'
     use 'tpope/vim-eunuch'
@@ -38,6 +37,10 @@ return require('packer').startup(function()
     use 'whiteinge/diffconflicts'
     use { 'andymass/vim-matchup', event = 'VimEnter' }
     use { 'mattn/emmet-vim', opt = true }
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'plasticboy/vim-markdown', opt = true }
     use { 'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'} }

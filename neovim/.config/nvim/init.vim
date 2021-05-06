@@ -310,21 +310,15 @@ tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 " LUA Plugin Configuration {{{
 
 if has('nvim-0.5')
-  lua require('lspsetup')
-  lua require('treesittersetup')
-  lua require('toggleterm-setup')
+  lua require('plugins')
+  lua require('pluginconfig')
+  set foldmethod=expr
+  set foldexpr=nvim_treesitter#foldexpr()
 endif
-
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
 
 " }}}
 
 " Plugin Configuration {{{
-
-if has('nvim-0.5')
-  lua require('plugins')
-endif
 
 " Disable netrw, since I'm using Dirvish instead.
 let g:loaded_netrwPlugin = 1
@@ -338,32 +332,8 @@ augroup matchup_matchparen_highlight
   autocmd ColorScheme * hi MatchWord gui=italic guibg=transparent guifg=#156adf
 augroup END
 
-" Add mapping for undotree.
-nnoremap <F8> :UndotreeToggle<CR>
-
 " Enable syntax highlighting for JSDoc.
 let g:javascript_plugin_jsdoc = 1
-
-" Add back async fugitive mappings.
-command! -bang -bar -nargs=* Gpush execute 'Dispatch<bang> -dir=' .
-      \ fnameescape(FugitiveGitDir()) 'git push' <q-args>
-command! -bang -bar -nargs=* Gfetch execute 'Dispatch<bang> -dir=' .
-      \ fnameescape(FugitiveGitDir()) 'git fetch' <q-args>
-command! -bang -bar -nargs=* Gup execute 'Dispatch<bang> -dir=' .
-      \ fnameescape(FugitiveGitDir()) 'git up' <q-args>
-command! -bang -bar -nargs=* Gpo execute 'Dispatch<bang> -dir=' .
-      \ fnameescape(FugitiveGitDir()) 'git po' <q-args>
-
-function! PageClose(page_alternate_bufnr)
-  bdelete!
-  if bufnr('%') == a:page_alternate_bufnr && mode('%') ==# 'n'
-    normal! a
-  endif
-endfunction
-augroup pager
-  autocmd!
-  autocmd User PageOpen :nnoremap <buffer> gq :call PageClose(b:page_alternate_bufnr)<CR>
-augroup END
 
 " }}}
 

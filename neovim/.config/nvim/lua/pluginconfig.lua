@@ -1,3 +1,5 @@
+-- LSP {{{
+
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.cssls.setup{}
 require'lspconfig'.html.setup{}
@@ -56,3 +58,48 @@ local servers = { "cssls", "html", "tsserver", "jsonls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
+
+-- }}}
+
+-- Treesitter {{{
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true, -- false will disable the whole extension
+    disable = {},  -- list of language that will be disabled
+  },
+  matchup = {
+    enable = true
+  },
+  indent = {
+    enable = true
+  }
+}
+
+-- }}}
+
+-- ToggleTerm {{{
+
+require"toggleterm".setup{
+  open_mapping = [[<c-s>]],
+  hide_numbers = true,
+  shade_terminals = false,
+  start_in_insert = true,
+  persist_size = true,
+  direction = 'float',
+  float_opts = {
+    border = 'single',
+      width = 78,
+      height = 30,
+      winblend = 3,
+      highlights = {
+        border = "Normal",
+        background = "Normal",
+      }
+  }
+}
+
+-- }}}
+
+-- vim: foldmethod=marker
