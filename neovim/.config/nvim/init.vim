@@ -281,6 +281,16 @@ command! -nargs=+ Grep execute 'silent grep! <args>'
 " Add command to open a git mergetool window.
 command! MergeTool execute 'edit term://git\ mergetool'
 
+" Add command to run prettier over a file, if the tool is present
+function! Prettier() abort
+  if filereadable('./node_modules/prettier/bin-prettier.js')
+    :%!./node_modules/prettier/bin-prettier.js --stdin-filepath %:p
+  else
+    echo 'Prettier not found'
+  endif
+endfunction
+nnoremap <silent> gp :call Prettier()<CR>
+
 " }}}
 
 " Terminal {{{
