@@ -15,7 +15,6 @@ return require('packer').startup(function()
     use 'cespare/vim-toml'
     use 'chr4/nginx.vim'
     use 'dag/vim-fish'
-    use 'freitass/todo.txt-vim'
     use 'justinmk/vim-dirvish'
     use 'justinmk/vim-ipmotion'
     use 'justinmk/vim-sneak'
