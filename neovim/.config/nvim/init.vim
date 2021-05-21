@@ -249,7 +249,7 @@ set statusline+=%<\ %r
 set statusline+=%<\ %w
 " New group.
 set statusline+=%=
-" Line and column number.
+" Line number.
 set statusline+=%l
 " New group.
 set statusline+=%=
