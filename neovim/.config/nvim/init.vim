@@ -95,34 +95,34 @@ augroup END
 " Make list-like commands more intuitive.
 function! CCR()
   let cmdline = getcmdline()
-  if cmdline =~ '\v\C^(ls|files|buffers)'
+  if cmdline =~# '\v\C^(ls|files|buffers)'
     " Like :ls but prompts for a buffer command.
     return "\<CR>:b"
-  elseif cmdline =~ '\v\C/(#|nu|num|numb|numbe|number)$'
+  elseif cmdline =~# '\v\C/(#|nu|num|numb|numbe|number)$'
     " Like :g//# but prompts for a command.
     return "\<CR>:"
-  elseif cmdline =~ '\v\C^(dli|il)'
+  elseif cmdline =~# '\v\C^(dli|il)'
     " Like :dlist or :ilist but prompts for a count for :djump or :ijump.
-    return "\<CR>:" . cmdline[0] . "j  " . split(cmdline, " ")[1] . "\<S-Left>\<Left>"
-  elseif cmdline =~ '\v\C^(cli|lli)'
+    return "\<CR>:" . cmdline[0] . 'j  ' . split(cmdline, ' ')[1] . "\<S-Left>\<Left>"
+  elseif cmdline =~# '\v\C^(cli|lli)'
     " Like :clist or :llist but prompts for an error/location number.
     return "\<CR>:sil " . repeat(cmdline[0], 2) . "\<Space>"
-  elseif cmdline =~ '\C^old'
+  elseif cmdline =~# '\C^old'
     " Like :oldfiles but prompts for an old file to edit.
     set nomore
     return "\<CR>:sil se more|e #<"
-  elseif cmdline =~ '\C^changes'
+  elseif cmdline =~# '\C^changes'
     " Like :changes but prompts for a change to jump to.
     set nomore
     return "\<CR>:sil se more|norm! g;\<S-Left>"
-  elseif cmdline =~ '\C^ju'
+  elseif cmdline =~# '\C^ju'
     " Like :jumps but prompts for a position to jump to.
     set nomore
     return "\<CR>:sil se more|norm! \<C-o>\<S-Left>"
-  elseif cmdline =~ '\C^marks'
+  elseif cmdline =~# '\C^marks'
     " Like :marks but prompts for a mark to jump to.
     return "\<CR>:norm! `"
-  elseif cmdline =~ '\C^undol'
+  elseif cmdline =~# '\C^undol'
     " Like :undolist but prompts for a change to undo.
     return "\<CR>:u "
   else
@@ -174,7 +174,7 @@ function! HlSearch()
 endfunction
 
 function! StopHL()
-  if !v:hlsearch || mode() isnot 'n'
+  if !v:hlsearch || mode() isnot# 'n'
     return
   else
     sil call feedkeys("\<Plug>(StopHL)", 'm')

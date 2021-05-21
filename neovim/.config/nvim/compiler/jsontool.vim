@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 if exists('g:current_compiler')
   finish
 endif
