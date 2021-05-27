@@ -52,7 +52,7 @@ macro index,pager G \
         "<tag-thread><tag-prefix><save-message>+Archive<enter>" \
         "archive thread"
 macro index,pager * \
-        "<shell-escape>$HOME/.dotfiles/scripts/mailsync.sh<enter>" \
+        "<shell-escape>/usr/local/bin/mbsync chris<enter>" \
         "sync all mail"
 macro attach s \
         "<save-entry><bol>~/Downloads/<eol>" \
