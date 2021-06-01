@@ -270,7 +270,7 @@ nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v
 inoremap <C-g><C-t> <C-r>=strftime("%Y-%m-%dT%H:%M:%S")<cr>
 
 " Clear the highlighting of hlsearch.
-nnoremap <silent> <C-l> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>
+nnoremap <silent> <M-l> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>
 
 " Strip trailing whitespace.
 nnoremap <silent> <M-s> :%s/\s\+$//e<CR>
