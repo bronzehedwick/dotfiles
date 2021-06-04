@@ -8,7 +8,12 @@ return require('packer').startup(function()
 
     -- Simple plugins can be specified as strings
     use 'MaxMEllon/vim-jsx-pretty'
-    use 'akinsho/nvim-toggleterm.lua'
+    use {
+      "numtostr/FTerm.nvim",
+      config = function()
+        require("FTerm").setup()
+      end
+    }
     use 'arp242/jumpy.vim'
     use 'arzg/vim-colors-xcode'
     use 'bronzehedwick/msmtp-syntax.vim'
