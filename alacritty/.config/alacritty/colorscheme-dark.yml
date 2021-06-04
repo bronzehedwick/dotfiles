@@ -166,55 +166,19 @@ font:
 colors:
   # Default colors
   primary:
-    background:        '#1c1c1c'
-    foreground:        '#ffffff'
-    bright_foreground: '#ffffff'
-
-  # Cursor colors
-  cursor:
-    text:   '#080808'
-    cursor: '#9e9e9e'
-
-  # Vi mode cursor colors
-  vi_mode_cursor:
-    text:   '#080808'
-    cursor: '#e3c78a'
-
-  # Selection colors
-  selection:
-    text:       '#080808'
-    background: '#b2ceee'
-
-  # Search colors
-  search:
-    matches:
-      background: '#e3c78a'
-      foreground: '#080808'
-    bar:
-      background: '#e3c78a'
-      foreground: '#080808'
+    background: '0x292A30'
+    foreground: '0xFFFFFF'
 
   # Normal colors
   normal:
-    black:   '#373c40'
-    red:     '#ff5454'
-    green:   '#8cc85f'
-    yellow:  '#e3c78a'
-    blue:    '#80a0ff'
-    magenta: '#d183e8'
-    cyan:    '#79dac8'
-    white:   '#a1aab8'
-
-  # Bright colors
-  bright:
-    black:   '#7c8f8f'
-    red:     '#ff5189'
-    green:   '#42cf89'
-    yellow:  '#bfbf97'
-    blue:    '#78c2ff'
-    magenta: '#ae81ff'
-    cyan:    '#85dc85'
-    white:   '#e2637f'
+    black:   '0x292A30'
+    red:     '0xFF8170'
+    green:   '0x84B360'
+    yellow:  '0xD9C97C'
+    blue:    '0x4EB0CC'
+    magenta: '0xFF7AB2'
+    cyan:    '0xB281EB'
+    white:   '0xFFFFFF'
 
   # Indexed Colors
   #
@@ -274,10 +238,10 @@ colors:
 #background_opacity: 1.0
 
 #selection:
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  #save_to_clipboard: false
+  save_to_clipboard: true
 
 #cursor:
   # Cursor style
