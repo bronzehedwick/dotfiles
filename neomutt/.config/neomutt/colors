@@ -56,14 +56,14 @@ color quoted6 red default
 color quoted7 green default
 
 # Default color definitions
-color normal white default
+color normal black default
 color signature brightmagenta default
-color indicator black cyan
+color indicator white cyan
 color attachment black green
 color error red black
 color message white default
 color search brightwhite magenta
-color status black blue
+color status white blue
 color tree brightblue default
 color tilde green default
 color bold brightyellow default
