@@ -64,6 +64,7 @@
 [diff]
 	tool = nvr
 	algorithm = patience
+	colorMoved = default
 [difftool "nvr"]
 	cmd = nvr -s -d \"$LOCAL\" \"$REMOTE\"
 [difftool "Kaleidoscope"]
