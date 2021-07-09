@@ -5,11 +5,8 @@ hash dark-mode 2>/dev/null || echo >&2 "dark-mode command needed to continue"
 if [ "$(/usr/local/bin/dark-mode status)" == 'on' ]; then
   cp ~/.dotfiles/alacritty/.config/alacritty/colorscheme-dark.yml ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml
   sed -i.bak 's/OneHalfLight/OneHalfDark/g' ~/.dotfiles/git/.gitconfig
-  sed -i.bak 's/OneHalfLight/OneHalfDark/g' ~/.dotfiles/bat/.config/bat/config
   rm ~/.dotfiles/git/.gitconfig.bak
-  rm ~/.dotfiles/bat/.config/bat/config.bak
 else
   cp ~/.dotfiles/alacritty/.config/alacritty/colorscheme-light.yml ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml
   git -C ~/.dotfiles checkout --quiet ~/.dotfiles/git/.gitconfig
-  git -C ~/.dotfiles checkout --quiet ~/.dotfiles/bat/.config/bat/config
 fi
