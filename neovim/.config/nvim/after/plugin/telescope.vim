@@ -1,4 +1,4 @@
-" Exit if picker isn't loaded.
+" Exit if Telescope isn't loaded.
 if ! exists(':Telescope')
   finish
 endif
