@@ -1,9 +1,9 @@
 " Exit if fugitive isn't loaded.
-if ! filereadable(expand('~/.local/share/nvim/site/pack/packer/start/vim-fugitive/ftdetect/fugitive.vim'))
+if ! exists(':Git')
   finish
 endif
 
-" Status line.
+" Status line. {{{
 " Git branch.
 set statusline=%{FugitiveStatusline()}
 " Tail of file (just the name.ext).
@@ -24,8 +24,9 @@ set statusline+=%l
 set statusline+=%=
 " Percentage through the file.
 set statusline+=%p%%
+" }}}
 
-" Add back async fugitive mappings.
+" Fugitive commands. {{{
 command! -bang -bar -nargs=* Gpush execute 'Dispatch<bang> -dir=' .
       \ fnameescape(FugitiveWorkTree()) 'git push' <q-args>
 command! -bang -bar -nargs=* Gfetch execute 'Dispatch<bang> -dir=' .
@@ -34,8 +35,11 @@ command! -bang -bar -nargs=* Gup execute 'Dispatch<bang> -dir=' .
       \ fnameescape(FugitiveWorkTree()) 'git up' <q-args>
 command! -bang -bar -nargs=* Gpo execute 'Dispatch<bang> -dir=' .
       \ fnameescape(FugitiveWorkTree()) 'git po' <q-args>
+command! -bang -bar -nargs=* Gph execute 'Dispatch<bang> -dir=' .
+      \ fnameescape(FugitiveWorkTree()) 'git ph' <q-args>
+" }}}
 
-" Fugitive mappings.
+" Fugitive mappings. {{{
 nnoremap <silent> <M-g>s :Git<CR>
 nnoremap <silent> <M-g>d :Gdiff<CR>
 nnoremap <silent> <M-g>c :Git commit<CR>
@@ -47,5 +51,6 @@ nnoremap <silent> <M-g>w :Gwrite<CR>
 nnoremap <silent> <M-g>e :Gedit<CR>
 nnoremap <silent> <M-g>u :Gup<CR>
 nnoremap <silent> <M-g>f :Gfetch<CR>
+" }}}
 
 " vim:fdm=marker ft=vim et sts=2 sw=2
