@@ -3,7 +3,12 @@
 	email = code@chrisdeluca.me
 	signingkey = 461C015E032EF9CB
 [core]
-	pager = delta --syntax-theme=OneHalfLight
+	pager = delta
+	log = delta
+	reflog = delta
+	show = delta
+[delta]
+	syntax-theme = OneHalfLight
 [interactive]
 	diffFilter = delta --color-only
 [alias]
