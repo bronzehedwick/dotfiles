@@ -56,7 +56,7 @@ color quoted6 red default
 color quoted7 green default
 
 # Default color definitions
-color normal black default
+color normal white default
 color signature brightmagenta default
 color indicator white cyan
 color attachment black green
