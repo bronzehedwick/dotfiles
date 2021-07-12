@@ -59,20 +59,27 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
+require'lspinstall'.setup() -- important
+
+local servers = require'lspinstall'.installed_servers()
+for _, server in pairs(servers) do
+  require'lspconfig'[server].setup{}
+end
+
 -- }}}
 
 -- Treesitter {{{
 
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = {},  -- list of language that will be disabled
-  },
-  matchup = {
-    enable = true
-  }
-}
+-- require'nvim-treesitter.configs'.setup {
+--   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+--   highlight = {
+--     enable = true, -- false will disable the whole extension
+--     disable = {},  -- list of language that will be disabled
+--   },
+--   matchup = {
+--     enable = true
+--   }
+-- }
 
 -- }}}
 

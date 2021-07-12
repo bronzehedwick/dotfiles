@@ -25,6 +25,7 @@ return require('packer').startup(function()
     use 'justinmk/vim-sneak'
     use 'mbbill/undotree'
     use 'neovim/nvim-lspconfig'
+    use 'kabouzeid/nvim-lspinstall'
     use 'othree/html5.vim'
     use 'pangloss/vim-javascript'
     use 'rstacruz/vim-closer'
@@ -45,7 +46,7 @@ return require('packer').startup(function()
       'nvim-telescope/telescope.nvim',
       requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'plasticboy/vim-markdown', opt = true }
     use { 'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'} }
 

@@ -322,8 +322,8 @@ tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 if has('nvim-0.5')
   lua require('plugins')
   lua require('pluginconfig')
-  set foldmethod=expr
-  set foldexpr=nvim_treesitter#foldexpr()
+  " set foldmethod=expr
+  " set foldexpr=nvim_treesitter#foldexpr()
 endif
 
 " }}}
