@@ -23,7 +23,6 @@ return require('packer').startup(function()
     use 'justinmk/vim-dirvish'
     use 'phaazon/hop.nvim'
     use 'justinmk/vim-ipmotion'
-    use 'justinmk/vim-sneak'
     use 'mbbill/undotree'
     use 'neovim/nvim-lspconfig'
     use 'kabouzeid/nvim-lspinstall'
