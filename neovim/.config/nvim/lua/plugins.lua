@@ -21,6 +21,7 @@ return require('packer').startup(function()
     use 'chr4/nginx.vim'
     use 'dag/vim-fish'
     use 'justinmk/vim-dirvish'
+    use 'phaazon/hop.nvim'
     use 'justinmk/vim-ipmotion'
     use 'justinmk/vim-sneak'
     use 'mbbill/undotree'

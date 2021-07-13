@@ -68,6 +68,15 @@ end
 
 -- }}}
 
+-- Hop {{{
+require'hop'.setup()
+vim.api.nvim_set_keymap('n', '<M-w>', "<cmd>lua require'hop'.hint_words()<cr>", {})
+vim.api.nvim_set_keymap('n', '<M-p>', "<cmd>lua require'hop'.hint_patterns()<cr>", {})
+vim.api.nvim_set_keymap('n', '<M-i>', "<cmd>lua require'hop'.hint_lines()<cr>", {})
+vim.api.nvim_set_keymap('n', '<M-f>', "<cmd>lua require'hop'.hint_char1()<cr>", {})
+vim.api.nvim_set_keymap('n', '<M-s>', "<cmd>lua require'hop'.hint_char2()<cr>", {})
+-- }}}
+
 -- Treesitter {{{
 
 -- require'nvim-treesitter.configs'.setup {
