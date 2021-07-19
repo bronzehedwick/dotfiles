@@ -275,7 +275,7 @@ inoremap <C-g><C-t> <C-r>=strftime("%Y-%m-%dT%H:%M:%S")<cr>
 nnoremap <silent> <M-l> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>
 
 " Strip trailing whitespace.
-nnoremap <silent> <M-s> :%s/\s\+$//e<CR>
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Add customized Grep that's silent and doesn't jump to the first result.
 command! -nargs=+ Grep execute 'silent grep! <args>'
