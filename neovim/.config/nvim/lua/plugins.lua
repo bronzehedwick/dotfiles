@@ -25,7 +25,6 @@ return require('packer').startup(function()
     use 'justinmk/vim-ipmotion'
     use 'mbbill/undotree'
     use 'neovim/nvim-lspconfig'
-    use 'kabouzeid/nvim-lspinstall'
     use 'othree/html5.vim'
     use 'pangloss/vim-javascript'
     use 'rstacruz/vim-closer'
