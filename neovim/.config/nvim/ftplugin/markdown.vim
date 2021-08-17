@@ -17,4 +17,14 @@ if executable('dict')
   " nnoremap <buffer> <silent> <S-k> :execute "split " . shellescape(&keywordprg) . "<bar> 0read !" . shellescape(&keywordprg) . " " . expand("<cword>")<bar> :Man!<CR>
 endif
 
+" Mapping to toggle todo list status.
+function! ToggleTodo() abort
+  if (getline('.') =~ "[x")
+    normal ^f[lr 
+  else
+    normal ^f[lrx
+  endif
+endfunction
+nnoremap <silent> <localleader>x :call ToggleTodo()<CR>
+
 " vim:fdm=marker ft=vim et sts=2 sw=2
