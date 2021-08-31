@@ -94,4 +94,27 @@ map('t', '<C-s>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
 
 -- }}}
 
+-- Orgmode {{{
+
+require('orgmode').setup({
+  org_agenda_files = '~/org/*',
+  org_default_notes_file = '~/org/refile.org',
+  org_indent_mode = 'noindent',
+  org_todo_keyword_faces = {
+    DONE = ':foreground #1f6300', -- overrides builtin color for `TODO` keyword
+  },
+  org_agenda_templates = {
+    t = { description = 'Task', template = '* TODO %?\n%u' },
+    n = { description = 'Note', template = '* %?\n%u' },
+    l = { description = 'Line Note', template = '* %?\n%a' },
+    j = {
+      description = 'Journal',
+      template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
+      target = '~/org/journal.org',
+    },
+  }
+})
+
+-- }}}
+
 -- vim: foldmethod=marker
