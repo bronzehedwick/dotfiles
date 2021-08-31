@@ -207,9 +207,6 @@ noremap <leader>v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 " Shortcut to edit this file.
 noremap <silent><leader>c :edit $MYVIMRC<CR>
 
-" Shortcut to edit todo.txt file.
-noremap <silent><leader>d :edit /Volumes/Backups/tasks/todo.txt<CR>
-
 " }}}
 
 " Windows {{{
