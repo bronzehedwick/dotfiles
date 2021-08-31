@@ -99,7 +99,7 @@ map('t', '<C-s>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
 require('orgmode').setup({
   org_agenda_files = '~/org/*',
   org_default_notes_file = '~/org/refile.org',
-  org_indent_mode = 'noindent',
+  org_indent_mode = 'indent',
   org_todo_keyword_faces = {
     DONE = ':foreground #1f6300', -- overrides builtin color for `TODO` keyword
   },
@@ -112,6 +112,19 @@ require('orgmode').setup({
       template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
       target = '~/org/journal.org',
     },
+  },
+  mappings = {
+    global = {
+      org_agenda = '<M-a>',
+      org_capture = '<M-c>'
+    },
+    org = {
+      org_do_promote = '',
+      org_do_demote = '',
+      org_next_visible_heading = '',
+      org_previous_visible_heading = '',
+      org_show_help = '<leader>?'
+    }
   }
 })
 
