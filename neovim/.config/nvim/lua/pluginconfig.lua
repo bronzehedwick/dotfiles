@@ -104,12 +104,12 @@ require('orgmode').setup({
     DONE = ':foreground #1f6300', -- overrides builtin color for `TODO` keyword
   },
   org_agenda_templates = {
-    t = { description = 'Task', template = '* TODO %?\n%u' },
+    t = { description = 'Task', template = '* TODO %?\n %u' },
     n = { description = 'Note', template = '* %?\n%u' },
-    l = { description = 'Line Note', template = '* %?\n%a' },
+    l = { description = 'Line Note', template = '* %?\n %a' },
     j = {
       description = 'Journal',
-      template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
+      template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n %?',
       target = '~/org/journal.org',
     },
   },
@@ -119,10 +119,10 @@ require('orgmode').setup({
       org_capture = '<M-c>'
     },
     org = {
-      org_do_promote = '',
-      org_do_demote = '',
-      org_next_visible_heading = '',
-      org_previous_visible_heading = '',
+      org_do_promote = '<leader>>',
+      org_do_demote = '<leader><',
+      org_next_visible_heading = '<leader>}',
+      org_previous_visible_heading = '<leader>{',
       org_show_help = '<leader>?'
     }
   }
