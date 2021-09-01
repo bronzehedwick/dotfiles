@@ -104,12 +104,12 @@ require('orgmode').setup({
     DONE = ':foreground #1f6300', -- overrides builtin color for `TODO` keyword
   },
   org_agenda_templates = {
-    t = { description = 'Task', template = '* TODO %?\n %u' },
-    n = { description = 'Note', template = '* %?\n%u' },
-    l = { description = 'Line Note', template = '* %?\n %a' },
+    t = { description = 'Task', template = '* TODO %?\n  %u' },
+    n = { description = 'Note', template = '* %?\n  %u' },
+    l = { description = 'Line Note', template = '* %?\n  %a' },
     j = {
       description = 'Journal',
-      template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n %?',
+      template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n  %?',
       target = '~/org/journal.org',
     },
   },
