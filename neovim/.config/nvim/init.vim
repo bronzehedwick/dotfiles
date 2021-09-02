@@ -344,6 +344,28 @@ augroup END
 " Enable syntax highlighting for JSDoc.
 let g:javascript_plugin_jsdoc = 1
 
+" Add responsive meta tag to html5 emmet snippet.
+let g:user_emmet_settings = {
+\  'variables': {'lang': 'en-US'},
+\  'html': {
+\    'default_attributes': {
+\      'option': {'value': v:null},
+\      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
+\    },
+\    'snippets': {
+\      'html:5': "<!DOCTYPE html>\n"
+\              ."<html lang=\"${lang}\">\n"
+\              ."<head>\n"
+\              ."\t<meta charset=\"${charset}\">\n"
+\              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+\              ."\t<title></title>\n"
+\              ."</head>\n"
+\              ."<body>\n\t${child}|\n</body>\n"
+\              ."</html>",
+\    },
+\  },
+\}
+
 " }}}
 
 " Colorscheme {{{
