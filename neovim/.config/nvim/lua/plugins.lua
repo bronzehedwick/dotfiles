@@ -6,14 +6,9 @@ return require('packer').startup(function()
     -- Packer can manage itself as an optional plugin
     use {'wbthomason/packer.nvim', opt = true}
 
-    -- Simple plugins can be specified as strings
     use 'MaxMEllon/vim-jsx-pretty'
-    use {
-      "numtostr/FTerm.nvim",
-      config = function()
-        require("FTerm").setup()
-      end
-    }
+    use 'numtostr/FTerm.nvim'
+    use 'cormacrelf/dark-notify'
     use 'arp242/jumpy.vim'
     use 'arzg/vim-colors-xcode'
     use 'bronzehedwick/msmtp-syntax.vim'

@@ -235,7 +235,6 @@ cnoremap <c-p> <up>
 
 " Statusline {{{
 
-" Git branch.
 " Tail of file (just the name.ext).
 set statusline=%<\ %t
 " File modified flag.
@@ -381,17 +380,15 @@ let g:xcodedarkhc_green_comments = 1
 let g:xcodelight_match_paren_style = 1
 let g:xcodedarkhc_match_paren_style = 1
 
-if executable('dark-mode')
-  let s:darkmode = substitute(system('dark-mode status'), '\n\+$', '', '')
-  if s:darkmode ==# 'on'
-    set background=dark
-    silent! colorscheme xcodedarkhc
-  else
-    silent! colorscheme xcodelight
-  endif
-else
-  silent! colorscheme xcodelight
-endif
+lua <<EOF
+local dn = require('dark_notify')
+dn.run({
+  schemes = {
+    light = 'xcodelight',
+    dark = 'xcodedarkhc'
+  }
+})
+EOF
 
 " }}}
 
