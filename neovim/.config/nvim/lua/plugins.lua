@@ -27,7 +27,6 @@ return require('packer').startup(function()
     use 'tpope/vim-eunuch'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-repeat'
-    use 'tpope/vim-rhubarb'
     use 'tpope/vim-rsi'
     use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
@@ -36,9 +35,10 @@ return require('packer').startup(function()
     use 'whiteinge/diffconflicts'
     use { 'andymass/vim-matchup', event = 'VimEnter' }
     use { 'mattn/emmet-vim', opt = true }
-    use {'kristijanhusak/orgmode.nvim', config = function()
-      require('orgmode').setup{}
-    end
+    use {
+      'kristijanhusak/orgmode.nvim', config = function()
+        require('orgmode').setup{}
+      end
     }
     use {
       'nvim-telescope/telescope.nvim',

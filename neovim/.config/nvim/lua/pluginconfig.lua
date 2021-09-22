@@ -1,3 +1,60 @@
+-- Dirvish/netrw {{{
+
+-- Disable netrw, since I'm using Dirvish instead.
+vim.g.loaded_netrwPlugin = 0
+
+-- }}}
+
+-- Matchup {{{
+
+-- Configure match-up off screen display.
+vim.g.matchup_matchparen_offscreen = "{'method': 'popup'}"
+
+-- Change match-up match word highlight.
+vim.cmd [[
+augroup matchup_matchparen_highlight
+   autocmd!
+   autocmd ColorScheme * hi MatchWord gui=italic guibg=transparent guifg=#156adf
+augroup END
+]]
+
+-- }}}
+
+-- JavaScript {{{
+
+-- Enable syntax highlighting for JSDoc.
+vim.g.javascript_plugin_jsdoc = 1
+
+-- }}}
+
+-- Emmet {{{
+
+-- Add responsive meta tag to html5 emmet snippet.
+--[[ TODO: This throws an error.
+vim.g.user_emmet_settings = [[{
+\  'variables': {'lang': 'en-US'},
+\  'html': {
+\    'default_attributes': {
+\      'option': {'value': v:null},
+\      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
+\    },
+\    'snippets': {
+\      'html:5': "<!DOCTYPE html>\n"
+\              ."<html lang=\"${lang}\">\n"
+\              ."<head>\n"
+\              ."\t<meta charset=\"${charset}\">\n"
+\              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+\              ."\t<title></title>\n"
+\              ."</head>\n"
+\              ."<body>\n\t${child}|\n</body>\n"
+\              ."</html>",
+\    },
+\  },
+\}]]
+--]]
+
+-- }}}
+
 -- LSP {{{
 
 require'lspconfig'.tsserver.setup{}
@@ -85,6 +142,9 @@ vim.api.nvim_set_keymap('n', '<M-s>', "<cmd>lua require'hop'.hint_char2()<cr>", 
 --   }
 -- }
 
+-- vim.opt.foldmethod = 'expr'
+-- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
 -- }}}
 
 -- FTerm {{{
@@ -149,3 +209,4 @@ require('orgmode').setup({
 -- }}}
 
 -- vim: foldmethod=marker
+
