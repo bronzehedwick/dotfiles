@@ -188,5 +188,7 @@ fi
 
 # }}}
 
+export REVIEW_BASE=main
+
 # vim: set fdm=marker
 source "$HOME/.cargo/env"

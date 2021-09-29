@@ -28,6 +28,10 @@ if test -n "$NVIM_LISTEN_ADDRESS"
   end
 end
 
+# Git
+
+set -x REVIEW_BASE main
+
 # Fisher plugins
 
 if not functions -q fisher

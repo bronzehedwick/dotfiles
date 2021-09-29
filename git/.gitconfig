@@ -41,6 +41,9 @@
 	ticket = "!git branch | grep '\\*' | cut -d '-' -f 1,2 | cut -d '/' -f 2"
 	cb = "!git branch | grep '\\*' | cut -d ' ' -f 2"
 	ctags = !.git/hooks/ctags
+	envar = "!echo \"$REVIEW_BASE\""
+	files = "!git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")"
+	stat = "!git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")"
 [color]
 	ui = auto
 [credential]
