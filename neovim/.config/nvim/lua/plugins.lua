@@ -12,7 +12,6 @@ return require('packer').startup(function()
     use 'arp242/jumpy.vim'
     use 'arzg/vim-colors-xcode'
     use 'bronzehedwick/msmtp-syntax.vim'
-    use 'cespare/vim-toml'
     use 'chr4/nginx.vim'
     use 'dag/vim-fish'
     use 'justinmk/vim-dirvish'
