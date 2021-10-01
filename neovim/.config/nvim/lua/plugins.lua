@@ -33,7 +33,7 @@ return require('packer').startup(function()
     use 'vim-scripts/fountain.vim'
     use 'folke/lsp-colors.nvim'
     use 'whiteinge/diffconflicts'
-    use { 'andymass/vim-matchup', event = 'VimEnter' }
+    -- use { 'andymass/vim-matchup', event = 'VimEnter' }
     use { 'mattn/emmet-vim', opt = true }
     use {
       'kristijanhusak/orgmode.nvim', config = function()
