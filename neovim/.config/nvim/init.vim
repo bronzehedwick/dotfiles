@@ -3,7 +3,7 @@ scriptencoding utf-8
 " Re-mappings {{{
 
 " Remap mapleader.
-" let mapleader = ','
+let mapleader = ','
 
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
@@ -360,7 +360,7 @@ let g:user_emmet_settings = {
 \              ."\t<title></title>\n"
 \              ."</head>\n"
 \              ."<body>\n\t${child}|\n</body>\n"
-\              ."</html>",
+\              .'</html>',
 \    },
 \  },
 \}

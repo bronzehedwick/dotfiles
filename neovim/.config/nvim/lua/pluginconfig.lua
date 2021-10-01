@@ -121,11 +121,27 @@ require('orgmode').setup({
       org_capture = '<M-c>'
     },
     org = {
-      org_do_promote = '<leader>>',
-      org_do_demote = '<leader><',
-      org_next_visible_heading = '<leader>}',
-      org_previous_visible_heading = '<leader>{',
-      org_show_help = '<leader>?'
+      org_refine = '<LocalLeader>r',
+      org_open_at_point = '<LocalLeader>o',
+      org_archive_subtree = '<LocalLeader>$',
+      org_set_tags_command = '<LocalLeader>t',
+      org_toggle_archive_tag = '<LocalLeader>A',
+      org_do_promote = '<LocalLeader>>',
+      org_do_demote = '<LocalLeader><',
+      org_meta_return = '<LocalLeader><CR>',
+      org_insert_heading_respect_content = '<LocalLeader>ih',
+      org_insert_todo_heading = '<LocalLeader>iT',
+      org_insert_todo_heading_respect_content = '<LocalLeader>it',
+      org_move_subtree_up = '<LocalLeader>k',
+      org_move_subtree_down = '<LocalLeader>j',
+      org_export = '<LocalLeader>e',
+      org_next_visible_heading = '<LocalLeader>}',
+      org_previous_visible_heading = '<LocalLeader>{',
+      org_deadline = '<LocalLeader>id',
+      org_schedule = '<LocalLeader>is',
+      org_time_stamp = '<LocalLeader>i.',
+      org_time_stamp_inactive = '<LocalLeader>i!',
+      org_show_help = '<LocalLeader>?'
     }
   }
 })
