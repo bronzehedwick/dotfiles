@@ -22,6 +22,9 @@ end
 
 -- Re-mappings {{{
 
+-- Set mapleader to ",", keeping localleader as the default "\".
+vim.g.mapleader = ','
+
 -- Yank from the cursor to the end of the line, to be consistent with C and D.
 map {'n', 'Y', 'y$'}
 

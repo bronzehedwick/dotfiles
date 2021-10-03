@@ -181,7 +181,7 @@ require('orgmode').setup({
       org_capture = '<M-c>'
     },
     org = {
-      org_refine = '<LocalLeader>r',
+      org_refile = '<LocalLeader>r',
       org_open_at_point = '<LocalLeader>o',
       org_archive_subtree = '<LocalLeader>$',
       org_set_tags_command = '<LocalLeader>t',
@@ -209,4 +209,3 @@ require('orgmode').setup({
 -- }}}
 
 -- vim: foldmethod=marker
-
