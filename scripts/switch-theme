@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
 
-hash dark-mode 2>/dev/null || echo >&2 "dark-mode command needed to continue"
-
-if [ "$(/usr/local/bin/dark-mode status)" == 'on' ]; then
+if [ "$1" == "dark" ]; then
   cp ~/.dotfiles/alacritty/.config/alacritty/colorscheme-dark.yml ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml
   sed -i.bak 's/OneHalfLight/OneHalfDark/g' ~/.dotfiles/git/.gitconfig
   rm ~/.dotfiles/git/.gitconfig.bak
