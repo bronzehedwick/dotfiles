@@ -294,7 +294,41 @@ vim.opt.statusline:append('%p%%')
 -- Convenience mappings {{{
 
 -- Display date and time.
-map {'n', '<F2>', ':echo "It is"' .. vim.fn.strftime('%a %b %e %I:%M %p') .. '<CR>'}
+map {'n', '<F2>', '<cmd>lua print("It is " .. vim.fn.strftime("%a %b %e %I:%M %p"))<CR>'}
+
+-- Quickly edit macros.
+map { 'n', '<leader>m',  ":<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>" }
+
+-- Insert time into a document.
+map {'i', '<C-g><C-t>', '<C-r>=strftime("%Y-%m-%dT%H:%M:%S")<CR>'}
+
+-- Clear the highlighting of hlsearch.
+map {'n', '<M-l>', ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>", silent = true}
+
+-- Strip trailing whitespace.
+map {'n', '<F5>', ':let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR>', silent = true}
+
+-- Add customized Grep that's silent and doesn't jump to the first result.
+vim.cmd [[
+  command! -nargs=+ Grep execute 'silent grep! <args>'
+]]
+
+-- Add command to open a git mergetool window.
+vim.cmd [[
+  command! MergeTool execute 'edit term://git\ mergetool'
+]]
+
+-- Add command to run prettier over a file, if the tool is present
+prettier = function()
+  if vim.fn.filereadable('./node_modules/prettier/bin-prettier.js') == 1 then
+    vim.cmd [[
+      :%!./node_modules/prettier/bin-prettier.js --stdin-filepath %:p
+    ]]
+  else
+    print('Prettier not found')
+  end
+end
+map {'n', 'gp', '<cmd>lua prettier()<CR>'}
 
 -- }}}
 
