@@ -7,21 +7,23 @@ return require('packer').startup(function()
     use {'wbthomason/packer.nvim', opt = true}
 
     use 'MaxMEllon/vim-jsx-pretty'
-    use 'numtostr/FTerm.nvim'
-    use 'cormacrelf/dark-notify'
     use 'arp242/jumpy.vim'
     use 'arzg/vim-colors-xcode'
     use 'bronzehedwick/msmtp-syntax.vim'
     use 'chr4/nginx.vim'
+    use 'cormacrelf/dark-notify'
     use 'dag/vim-fish'
+    use 'folke/lsp-colors.nvim'
     use 'justinmk/vim-dirvish'
-    use 'phaazon/hop.nvim'
     use 'justinmk/vim-ipmotion'
     use 'mbbill/undotree'
     use 'neovim/nvim-lspconfig'
+    use 'numtostr/FTerm.nvim'
     use 'othree/html5.vim'
     use 'pangloss/vim-javascript'
+    use 'phaazon/hop.nvim'
     use 'rstacruz/vim-closer'
+    use 'sindrets/diffview.nvim'
     use 'tpope/vim-commentary'
     use 'tpope/vim-endwise'
     use 'tpope/vim-eunuch'
@@ -31,7 +33,6 @@ return require('packer').startup(function()
     use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
     use 'vim-scripts/fountain.vim'
-    use 'folke/lsp-colors.nvim'
     use 'whiteinge/diffconflicts'
     -- use { 'andymass/vim-matchup', event = 'VimEnter' }
     use { 'mattn/emmet-vim', opt = true }
@@ -46,6 +47,10 @@ return require('packer').startup(function()
     }
     -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'plasticboy/vim-markdown', opt = true }
-    use { 'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'} }
+    use {
+      'tpope/vim-dispatch',
+      opt = true,
+      cmd = {'Dispatch', 'Make', 'Focus', 'Start'}
+    }
 
 end)

@@ -156,6 +156,15 @@ map('t', '<C-s>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
 
 -- }}}
 
+-- Diffview {{{
+
+local cb = require'diffview.config'.diffview_callback
+require'diffview'.setup {
+  use_icons = false
+}
+
+-- }}}
+
 -- Orgmode {{{
 
 require('orgmode').setup({
