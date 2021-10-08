@@ -359,7 +359,7 @@ vim.opt.termguicolors = true
 vim.g.xcodelight_green_comments = 1
 vim.g.xcodedarkhc_green_comments = 1
 vim.g.xcodelight_match_paren_style = 1
-vim.g.xcodedarkhc_match_paren_style = 1
+vim.g.xcodedarkhc_match_paren_style = 0
 
 vim.cmd('colorscheme xcodelight')
 
