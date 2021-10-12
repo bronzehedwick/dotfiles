@@ -371,6 +371,18 @@ dn.run({
   }
 })
 
+vim.cmd [[
+  function! MyOrgHighlights() abort
+    hi link OrgAgendaDeadline ErrorMsg
+    hi link OrgAgendaScheduled DiffChange
+    hi link OrgAgendaScheduledPast Warning
+  endfunction
+  augroup MyOrgColors
+    autocmd!
+    autocmd ColorScheme * call MyOrgHighlights()
+  augroup END
+]]
+
 -- }}}
 
 -- vim:foldmethod=marker et sts=2 sw=2
