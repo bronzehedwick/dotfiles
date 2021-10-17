@@ -64,7 +64,10 @@ macro index <Esc>/ "<change-folder-readonly>~/Mail/search<enter>" \
         "mu switch to results"
 
 # contacts
-set query_command = "mu cfind --format=mutt-ab '%s'"
+# set query_command = "mu cfind --format=mutt-ab '%s'"
+set query_command = "/usr/local/bin/lbdbq '%s'"
+
+# editor
 # set editor = '/usr/local/bin/nano -Y Email'
 bind editor <Tab> complete-query
 bind editor ^T    complete
