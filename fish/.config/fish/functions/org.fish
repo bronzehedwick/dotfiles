@@ -13,17 +13,18 @@ function org --description "Sync org files to and from a mounted webdav remote."
   end
 
   # Make a local backup.
-  rsync -a ~/org/ /tmp/org.bak
+  rsync --archive --delete ~/org/ /tmp/org.bak
 
   switch $argv[1]
     case "pull"
-      rsync -a /Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org/ ~/org/
+      rsync --archive --delete --exclude=".*" /Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org/ ~/org/
       return
     case "push"
-      rsync -a ~/org/ /Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org/
+      rsync --archive --delete --exclude=".*" ~/org/ /Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org/
       return
     case "merge"
-      if diff -rq ~/org/ /tmp/org.bak/
+      diff -rq ~/org/ /tmp/org.bak/
+      if test $status -eq 0
         echo "Folders are identical."
         return
       end
