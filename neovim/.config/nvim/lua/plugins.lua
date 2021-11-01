@@ -33,17 +33,15 @@ return require('packer').startup(function()
     use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
     use 'vim-scripts/fountain.vim'
+    use { 'Yggdroot/Leaderf',
+      run = ':LeaderfInstallCExtension'
+    }
     use 'whiteinge/diffconflicts'
-    -- use { 'andymass/vim-matchup', event = 'VimEnter' }
     use { 'mattn/emmet-vim', opt = true }
     use {
       'kristijanhusak/orgmode.nvim', config = function()
         require('orgmode').setup{}
       end
-    }
-    use {
-      'nvim-telescope/telescope.nvim',
-      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
     -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'plasticboy/vim-markdown', opt = true }
