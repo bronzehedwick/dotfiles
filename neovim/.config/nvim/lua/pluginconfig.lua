@@ -169,7 +169,7 @@ require'diffview'.setup {
 
 vim.g.Lf_WindowPosition = 'popup'
 vim.g.Lg_PreviewInPopup = 1
-map('n', '<C-f>', '<CMD>LeaderfFile<CR>', opts)
+map('n', '<M-/>', '<CMD>LeaderfFile<CR>', opts)
 
 -- }}}
 
