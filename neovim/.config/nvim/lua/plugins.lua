@@ -43,7 +43,8 @@ return require('packer').startup(function()
         require('orgmode').setup{}
       end
     }
-    -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use 'milisims/tree-sitter-org'
     use { 'plasticboy/vim-markdown', opt = true }
     use {
       'tpope/vim-dispatch',

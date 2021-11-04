@@ -57,11 +57,46 @@ vim.g.user_emmet_settings = [[{
 
 -- LSP {{{
 
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.cssls.setup{}
-require'lspconfig'.html.setup{}
-require'lspconfig'.jsonls.setup{}
-require'lspconfig'.phpactor.setup{}
+  -- LUA LSP {{{2
+  local system_name
+  if vim.fn.has('mac') == 1 then
+    system_name = 'macOS'
+  elseif vim.fn.has('unix') == 1 then
+    system_name = 'Linux'
+  elseif vim.fn.has('win32') == 1 then
+    system_name = 'Windows'
+  else
+    print('Unsupported system for sumneko lua LSP')
+  end
+
+  local sumneko_root_path = '/usr/local/bin/lua-language-server'
+  local sumneko_binary = sumneko_root_path .. '/bin/' .. system_name .. '/lua-language-server'
+
+  local runtime_path = vim.split(package.path, ';')
+  table.insert(runtime_path, 'lua/?.lua')
+  table.insert(runtime_path, 'lua/?/init.lua')
+
+  require'lspconfig'.sumneko_lua.setup {
+    cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'};
+    settings = {
+      Lua = {
+        runtime = {
+          version = 'LuaJIT',
+          path = runtime_path,
+        },
+        diagnostics = {
+          globals = {'vim'},
+        },
+        workspace = {
+          library = vim.api.nvim_get_runtime_file('', true),
+        },
+        telemetry = {
+          enable = false,
+        },
+      },
+    },
+  }
+  -- }}}
 
 local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
@@ -131,16 +166,29 @@ vim.api.nvim_set_keymap('n', '<M-s>', "<cmd>lua require'hop'.hint_char2()<cr>", 
 
 -- Treesitter {{{
 
--- require'nvim-treesitter.configs'.setup {
---   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
---   highlight = {
---     enable = true, -- false will disable the whole extension
---     disable = {},  -- list of language that will be disabled
---   },
---   matchup = {
---     enable = true
---   }
--- }
+local parser_config = require'nvim-treesitter.parsers'.get_parser_configs()
+
+parser_config.org = {
+  install_info = {
+    url = 'https://github.com/milisims/tree-sitter-org',
+    revision = 'main',
+    files = {'src/parser.c', 'src/scanner.cc'},
+  },
+  filetype = 'org',
+}
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true, -- false will disable the whole extension
+    disable = {'org'},  -- list of language that will be disabled
+    additional_vim_regex_highlighting = {'org'}
+  },
+  ensure_installed = {'org'}
+  -- matchup = {
+  --   enable = true
+  -- }
+}
 
 -- vim.opt.foldmethod = 'expr'
 -- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
