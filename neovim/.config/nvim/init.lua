@@ -1,6 +1,8 @@
 -- Helpers {{{
 
 local map = require'utilities'.map
+local create_augroups = require'utilities'.create_augroups
+local autocmds = {}
 
 -- }}}
 
@@ -95,12 +97,10 @@ end
 -- Note: Normally, :cwindow jumps to the quickfix window if the command opens it
 -- (but not if it's already open). However, as part of the autocmd, this doesn't
 -- seem to happen.
-vim.cmd [[
-  augroup MakerQuickFix
-    autocmd QuickFixCmdPost [^l]* nested cwindow
-    autocmd QuickFixCmdPost    l* nested lwindow
-  augroup END
-]]
+autocmds.MakerQuickFix = {
+  {'QuickFixCmdPost', '[^l]*', 'nested cwindow'},
+  {'QuickFixCmdPost', 'l*', 'nested lwindow'},
+}
 
 -- Make list-like commands more intuitive.
 -- TODO: Re-write this in lua.
@@ -326,13 +326,10 @@ if vim.fn.executable('/usr/local/bin/fish') then
   vim.opt.shell = '/usr/local/bin/fish'
 end
 
-vim.cmd [[
-  augroup terminal
-    autocmd!
-    " Set the statusline to the process name set by the terminal.
-    autocmd TermOpen * setlocal statusline=%{b:term_title} nonumber
-  augroup END
-]]
+-- Set the statusline to the process name set by the terminal.
+autocmds.terminal = {
+  {'TermOpen', '*', 'setlocal statusline=%{b:term_title} nonumber'},
+}
 
 -- Escape exits insert mode inside terminal.
 map {'t', '<Esc>', '<C-\\><C-n>'}
@@ -382,6 +379,9 @@ vim.cmd [[
     autocmd ColorScheme * call MyOrgHighlights()
   augroup END
 ]]
+
+-- Create all augroups
+create_augroups(autocmds)
 
 -- }}}
 

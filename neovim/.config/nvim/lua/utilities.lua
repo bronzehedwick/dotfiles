@@ -19,7 +19,7 @@ M.map = function(key)
 end
 
 -- Taken from https://github.com/norcalli/nvim_utils
-M.create_augroup = function (definitions)
+M.create_augroups = function (definitions)
   for group_name, definition in pairs(definitions) do
     vim.api.nvim_command('augroup ' .. group_name)
     vim.api.nvim_command('autocmd!')
