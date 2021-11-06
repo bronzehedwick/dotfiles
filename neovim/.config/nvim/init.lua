@@ -315,6 +315,9 @@ Prettier = function()
 end
 map {'n', 'gp', '<cmd>lua Prettier()<CR>'}
 
+-- Simple fuzzy finding.
+map {'n', '<M-/>', "<cmd>lua require'fuzzy-search'.FuzzySearch()<CR>"}
+
 -- }}}
 
 -- Terminal {{{
@@ -385,3 +388,5 @@ vim.cmd [[
 create_augroups(autocmds)
 
 -- }}}
+
+-- vim:fdm=marker ft=lua et sts=2 sw=2

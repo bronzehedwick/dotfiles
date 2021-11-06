@@ -32,10 +32,6 @@ return require('packer').startup(function(use)
     use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
     use 'vim-scripts/fountain.vim'
-    use {
-      'nvim-telescope/telescope.nvim',
-      requires = { {'nvim-lua/plenary.nvim'} }
-    }
     use 'whiteinge/diffconflicts'
     use { 'mattn/emmet-vim', opt = true }
     use {
