@@ -79,14 +79,11 @@ end
 -- Add mapping to open URLs in the current buffer.
 -- TODO: Re-write this in lua.
 if vim.fn.executable('urlview') == 1 then
-  vim.cmd [[
-    function! UrlView() abort
-      :startinsert
-      :silent write! /tmp/nvim-extract-url.out
-      :split term://urlview /tmp/nvim-extract-url.out
-    endfunction
-    nnoremap <leader>u :call UrlView()<CR>
-  ]]
+  UrlView = function()
+    vim.api.nvim_command('startinsert')
+    vim.cmd('split term://urlview ' .. vim.fn.expand('%:p'))
+  end
+  map {'n', '<Leader>u', '<cmd>lua UrlView()<CR>', silent = true}
 end
 
 -- Automatically open, but do not go to (if there are errors) the quickfix /
