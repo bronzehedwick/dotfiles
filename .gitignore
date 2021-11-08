@@ -1,15 +1,10 @@
 *.log
 *.cache
-aliases.txt
-vdirsyncer/.config/vdirsyncer/status
-*.weechatlog
-sec.conf
 *.gz
 *.spl
-tmux/.tmux/*
 fish_variables
-pianobar/.config/pianobar/state
-alacritty.yml
+tmux/.tmux/*
 tmux/.config/tmux/plugins
+pianobar/.config/pianobar/state
 packer_compiled.vim
 packer_compiled.lua
