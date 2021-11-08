@@ -299,8 +299,17 @@ vim.cmd [[
   command! MergeTool execute 'edit term://git\ mergetool'
 ]]
 
+-- Add command to open mail.
+Mail = function()
+  vim.api.nvim_command('startinsert')
+  vim.cmd('edit term://neomutt')
+end
+vim.cmd [[
+  command! Mail lua Mail()<CR>
+]]
+
 -- Add command to run prettier over a file, if the tool is present
-prettier = function()
+Prettier = function()
   if vim.fn.filereadable('./node_modules/prettier/bin-prettier.js') == 1 then
     vim.cmd [[
       :%!./node_modules/prettier/bin-prettier.js --stdin-filepath %:p
@@ -309,7 +318,7 @@ prettier = function()
     print('Prettier not found')
   end
 end
-map {'n', 'gp', '<cmd>lua prettier()<CR>'}
+map {'n', 'gp', '<cmd>lua Prettier()<CR>'}
 
 -- }}}
 
