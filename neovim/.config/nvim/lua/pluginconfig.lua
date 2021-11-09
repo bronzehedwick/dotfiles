@@ -5,21 +5,6 @@ vim.g.loaded_netrwPlugin = 0
 
 -- }}}
 
--- Matchup {{{
-
--- Configure match-up off screen display.
-vim.g.matchup_matchparen_offscreen = "{'method': 'popup'}"
-
--- Change match-up match word highlight.
-vim.cmd [[
-augroup matchup_matchparen_highlight
-   autocmd!
-   autocmd ColorScheme * hi MatchWord gui=italic guibg=transparent guifg=#156adf
-augroup END
-]]
-
--- }}}
-
 -- JavaScript {{{
 
 -- Enable syntax highlighting for JSDoc.
