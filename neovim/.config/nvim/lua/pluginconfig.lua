@@ -213,14 +213,6 @@ require'diffview'.setup {
 
 -- }}}
 
--- LeaderF {{{
-
-vim.g.Lf_WindowPosition = 'popup'
-vim.g.Lg_PreviewInPopup = 1
-map('n', '<M-/>', '<CMD>LeaderfFile<CR>', opts)
-
--- }}}
-
 -- Orgmode {{{
 
 require('orgmode').setup({
