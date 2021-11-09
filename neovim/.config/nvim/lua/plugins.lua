@@ -23,7 +23,6 @@ return require('packer').startup(function(use)
     use 'pangloss/vim-javascript'
     use 'phaazon/hop.nvim'
     use 'rstacruz/vim-closer'
-    use 'sindrets/diffview.nvim'
     use 'tpope/vim-commentary'
     use 'tpope/vim-endwise'
     use 'tpope/vim-eunuch'

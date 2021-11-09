@@ -169,10 +169,6 @@ require'nvim-treesitter.configs'.setup {
     disable = {'org'},  -- list of language that will be disabled
     additional_vim_regex_highlighting = {'org'}
   },
-  ensure_installed = {'org'}
-  -- matchup = {
-  --   enable = true
-  -- }
 }
 
 -- vim.opt.foldmethod = 'expr'
@@ -186,15 +182,6 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 map('n', '<C-s>', '<CMD>lua require("FTerm").toggle()<CR>', opts)
 map('t', '<C-s>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
-
--- }}}
-
--- Diffview {{{
-
-local cb = require'diffview.config'.diffview_callback
-require'diffview'.setup {
-  use_icons = false
-}
 
 -- }}}
 
