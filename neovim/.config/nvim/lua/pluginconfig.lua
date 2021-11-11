@@ -15,28 +15,29 @@ vim.g.javascript_plugin_jsdoc = 1
 -- Emmet {{{
 
 -- Add responsive meta tag to html5 emmet snippet.
---[[ TODO: This throws an error.
-vim.g.user_emmet_settings = [[{
-\  'variables': {'lang': 'en-US'},
-\  'html': {
-\    'default_attributes': {
-\      'option': {'value': v:null},
-\      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
-\    },
-\    'snippets': {
-\      'html:5': "<!DOCTYPE html>\n"
-\              ."<html lang=\"${lang}\">\n"
-\              ."<head>\n"
-\              ."\t<meta charset=\"${charset}\">\n"
-\              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
-\              ."\t<title></title>\n"
-\              ."</head>\n"
-\              ."<body>\n\t${child}|\n</body>\n"
-\              ."</html>",
-\    },
-\  },
-\}]]
---]]
+local emmet_opts = {
+  variables = {lang = 'en-US'},
+  html = {
+    default_attributes = {
+      option = {value = nil},
+      textarea = {id = nil, name = nil, cols = 10, rows = 10},
+    },
+    snippets = {},
+  },
+}
+emmet_opts.html.snippets['html:5'] = [[
+<!DOCTYPE html>
+<html lang="${lang}">
+  <head>
+      <meta charset="${charset}">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title></title>
+  </head>
+  <body>
+      ${child}|
+  </body>
+</html>]]
+vim.g.user_emmet_settings = emmet_opts
 
 -- }}}
 
