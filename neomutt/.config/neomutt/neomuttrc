@@ -15,7 +15,7 @@ unset move
 set delete
 unset confirmappend
 set quit
-set header_cache = ~/.cache/neomutt
+set header_cache = ~/.cache/neomutt/header_cache
 set send_charset = "us-ascii:utf-8"
 set fast_reply = yes
 set include = yes
@@ -45,7 +45,7 @@ folder-hook =Trash 'push <delete-pattern>~d>30d<enter>'
 macro index,pager S \
         "<save-message>+Learn spam<enter>" \
         "mark message as spam"
-macro index,pager A \
+macro index,pager a \
         "<save-message>+Archive<enter>" \
         "archive message"
 macro index,pager G \
