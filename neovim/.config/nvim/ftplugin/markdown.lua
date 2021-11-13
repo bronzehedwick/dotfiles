@@ -1,7 +1,7 @@
 local map = require'utilities'.map
 
 -- Enable spell checking.
-vim.opt.spell = true
+vim.cmd('setlocal spell')
 
 -- Support YAML and TOML front matter syntax highlighting, via vim-markdown.
 vim.g.vim_markdown_frontmatter = 1

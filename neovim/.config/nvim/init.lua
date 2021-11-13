@@ -178,7 +178,7 @@ vim.opt.inccommand = 'nosplit'
 vim.opt.shortmess = 'filnxrtToOF'
 
 -- Turn off search highlight after cursor moved.
--- TODO: rewrite in vimscript.
+-- TODO: rewrite in lua.
 -- vim.cmd [[
 --   noremap <expr> <Plug>(StopHL) execute('nohlsearch')[-1]
 --   noremap! <expr> <Plug>(StopHL) execute('nohlsearch')[-1]
