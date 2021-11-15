@@ -1,3 +1,5 @@
+local map = require'utilities'.map
+
 -- Dirvish/netrw {{{
 
 -- Disable netrw, since I'm using Dirvish instead.
@@ -179,18 +181,21 @@ require'nvim-treesitter.configs'.setup {
 
 -- FTerm {{{
 
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-map('n', '<C-s>', '<CMD>lua require("FTerm").toggle()<CR>', opts)
-map('t', '<C-s>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
+map { 'n', '<C-s>', '<CMD>lua require("FTerm").toggle()<CR>', silent = true }
+map { 't', '<C-s>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', silent = true }
 
 -- }}}
 
 -- Orgmode {{{
 
+local org_path = '/Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org'
+local refile_path = org_path .. '/refile.org'
+map {'n', '<Leader>o', ':edit ' .. org_path .. '<CR>'}
+map {'n', '<Leader>r', ':edit ' .. refile_path .. '<CR>'}
+
 require('orgmode').setup({
-  org_agenda_files = '/Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org',
-  org_default_notes_file = '/Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org/refile.org',
+  org_agenda_files = org_path,
+  org_default_notes_file = refile_path,
   org_indent_mode = 'indent',
   org_todo_keyword_faces = {
     DONE = ':foreground #1f6300', -- overrides builtin color for `TODO` keyword

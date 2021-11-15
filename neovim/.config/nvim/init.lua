@@ -218,12 +218,12 @@ vim.opt.hidden = true
 vim.opt.undofile = true
 
 -- Open directory at current file path.
-map {'n', '<leader>e', ':edit <C-R>=expand("%:p:h") . "/" <CR>'}
-map {'n', '<leader>s', ':split <C-R>=expand("%:p:h") . "/" <CR>'}
-map {'n', '<leader>v', ':vsplit <C-R>=expand("%:p:h") . "/" <CR>'}
+map {'n', '<Leader>e', ':edit <C-R>=expand("%:p:h") . "/" <CR>'}
+map {'n', '<Leader>s', ':split <C-R>=expand("%:p:h") . "/" <CR>'}
+map {'n', '<Leader>v', ':vsplit <C-R>=expand("%:p:h") . "/" <CR>'}
 
 -- Shortcut to edit this file.
-map {'n', '<leader>c', ':edit ~/.dotfiles/neovim/.config/nvim/init.lua<CR>'}
+map {'n', '<Leader>c', ':edit ~/.dotfiles/neovim/.config/nvim/init.lua<CR>'}
 
 -- }}}
 
