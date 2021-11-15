@@ -189,8 +189,8 @@ map('t', '<C-s>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
 -- Orgmode {{{
 
 require('orgmode').setup({
-  org_agenda_files = '~/org/*',
-  org_default_notes_file = '~/org/refile.org',
+  org_agenda_files = '/Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org',
+  org_default_notes_file = '/Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org/refile.org',
   org_indent_mode = 'indent',
   org_todo_keyword_faces = {
     DONE = ':foreground #1f6300', -- overrides builtin color for `TODO` keyword
