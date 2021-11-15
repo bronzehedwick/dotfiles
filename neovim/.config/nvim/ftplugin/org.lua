@@ -1,7 +1,7 @@
 local map = require'utilities'.map
 
 -- Enable spell checking.
-vim.opt.spell = true
+vim.cmd('setlocal spell')
 
 -- Use a dictionary to lookup words.
 if vim.fn.executable('dict') then
