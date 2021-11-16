@@ -65,7 +65,7 @@ vim.o.fillchars = 'msgsep:◌'
 
 -- Format text (gq) with par if it exists.
 if vim.fn.executable('par') == 1 then
-  vim.o.formatprg = 'par'
+  vim.opt.formatprg = 'par'
 end
 
 -- Make the jump-list behave like the tag list or a web browser.
@@ -80,8 +80,8 @@ end
 if vim.fn.executable('urlview') == 1 then
   UrlView = function()
     vim.api.nvim_command('startinsert')
-    vim.cmd('write! /tmp/nvim-extract-url.out')
-    vim.cmd('split term://urlview /tmp/nvim-extract-url.out')
+    vim.api.nvim_command('write! /tmp/nvim-extract-url.out')
+    vim.api.nvim_command('split term://urlview /tmp/nvim-extract-url.out')
   end
   map {'n', '<Leader>u', '<cmd>lua UrlView()<CR>', silent = true}
 end
