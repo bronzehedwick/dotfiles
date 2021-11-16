@@ -1,6 +1,6 @@
 -- Add twig pattern files to path to be able to configure below.
 -- Enables `gf` on include to jump to that file. MSK specific.
-vim.opt.path = vim.opt.path .. '/Users/delucac/Sites/msk-pattern-garden/packages/twig/src/'
+vim.opt.path:append('/Users/delucac/Sites/msk-pattern-garden/packages/twig/src/')
 
 -- Set pattern for vim to recognize twig includes.
 vim.opt.include = "^/s*{%/s*include|^/s*{%/s*embed|^/s*{%/s*extends"
