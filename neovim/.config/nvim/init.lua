@@ -36,52 +36,52 @@ map {'n', 'Q', '@@'}
 -- Interface {{{
 
 -- Use soft tabs.
-vim.opt.expandtab = true
+vim.o.expandtab = true
 
 -- Soft tabs equal two spaces.
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
 
 -- Keep tab widths default to address possible display issues.
 -- see: https://www.reddit.com/r/vim/wiki/tabstop
-vim.opt.tabstop = 8
+vim.o.tabstop = 8
 
 -- No spell checking.
-vim.opt.spell = false
+vim.o.spell = false
 
 -- Prevents inserting two spaces after punctuation on a join (J).
-vim.opt.joinspaces = false
+vim.o.joinspaces = false
 
 -- Case insensitive search when using any capital letters.
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 -- Disable mouse, to prevent accidental clicks.
-vim.opt.mouse = ''
+vim.o.mouse = ''
 
 -- Message pager does not fill entire screen.
 -- See https://github.com/neovim/neovim/pull/8088
-vim.opt.fillchars = 'msgsep:◌'
+vim.o.fillchars = 'msgsep:◌'
 
 -- Format text (gq) with par if it exists.
 if vim.fn.executable('par') == 1 then
-  vim.opt.formatprg = 'par'
+  vim.o.formatprg = 'par'
 end
 
 -- Make the jump-list behave like the tag list or a web browser.
-vim.opt.jumpoptions = 'stack'
+vim.o.jumpoptions = 'stack'
 
 -- Use ripgrep as external grep tool, if available.
 if vim.fn.executable('rg') == 1 then
-  vim.opt.grepprg = 'rg --no-heading --vimgrep'
+  vim.o.grepprg = 'rg --no-heading --vimgrep'
 end
 
 -- Add mapping to open URLs in the current buffer.
--- TODO: Re-write this in lua.
 if vim.fn.executable('urlview') == 1 then
   UrlView = function()
     vim.api.nvim_command('startinsert')
-    vim.cmd('split term://urlview ' .. vim.fn.expand('%:p'))
+    vim.cmd('write! /tmp/nvim-extract-url.out')
+    vim.cmd('split term://urlview /tmp/nvim-extract-url.out')
   end
   map {'n', '<Leader>u', '<cmd>lua UrlView()<CR>', silent = true}
 end
@@ -146,36 +146,31 @@ vim.cmd [[
 -- Display {{{
 
 -- Don't redraw while typing macros.
-vim.opt.lazyredraw = true
+vim.o.lazyredraw = true
 
 -- Update swap file and gitgutter much faster.
-vim.opt.updatetime = 250
+vim.o.updatetime = 250
 
 -- Command <Tab> completion.
-vim.opt.wildmode = { 'longest:full' }
+vim.o.wildmode = 'longest:full'
 
 -- Message popup is slightly transparent.
-vim.opt.pumblend = 10
+vim.o.pumblend = 10
 
 -- Higlight invisible whitespace.
-vim.opt.list = true
+vim.o.list = true
 
 -- Set hard wrapping guide.
-vim.opt.colorcolumn = '80'
+vim.o.colorcolumn = '80'
 
 -- Diff options.
-vim.opt.diffopt = {
-  'internal',
-  'filler',
-  'vertical',
-  'algorithm:patience',
-}
+vim.o.diffopt = 'internal,filler,vertical,algorithm:patience'
 
 -- Show effects of comman incrementally, as you type.
-vim.opt.inccommand = 'nosplit'
+vim.o.inccommand = 'nosplit'
 
 -- Make file messages even shorter and messier.
-vim.opt.shortmess = 'filnxrtToOF'
+vim.o.shortmess = 'filnxrtToOF'
 
 -- Turn off search highlight after cursor moved.
 -- TODO: rewrite in lua.
@@ -212,10 +207,10 @@ vim.opt.shortmess = 'filnxrtToOF'
 -- Buffers {{{
 
 -- Allow switching buffers without saving.
-vim.opt.hidden = true
+vim.o.hidden = true
 
 -- Allow undo
-vim.opt.undofile = true
+vim.o.undofile = true
 
 -- Open directory at current file path.
 map {'n', '<Leader>e', ':edit <C-R>=expand("%:p:h") . "/" <CR>'}
@@ -230,10 +225,10 @@ map {'n', '<Leader>c', ':edit ~/.dotfiles/neovim/.config/nvim/init.lua<CR>'}
 -- Windows {{{
 
 -- Puts new vsplit windows to the right of the current.
-vim.opt.splitright = true
+vim.o.splitright = true
 
 -- Puts new split windows to the bottom of the current.
-vim.opt.splitbelow = true
+vim.o.splitbelow = true
 
 -- More useful window navigation bindings.
 map {'n', '<C-k>', '<C-w>k'}
@@ -325,11 +320,11 @@ map {'n', 'gp', '<cmd>lua Prettier()<CR>'}
 -- Terminal {{{
 
 if vim.fn.executable('/usr/local/bin/bash') then
-  vim.opt.shell = '/usr/local/bin/bash'
+  vim.o.shell = '/usr/local/bin/bash'
 end
 
 if vim.fn.executable('/usr/local/bin/fish') then
-  vim.opt.shell = '/usr/local/bin/fish'
+  vim.o.shell = '/usr/local/bin/fish'
 end
 
 -- Set the statusline to the process name set by the terminal.
@@ -355,8 +350,8 @@ require'pluginconfig'
 
 -- Colorscheme {{{
 
-vim.opt.background = 'light'
-vim.opt.termguicolors = true
+vim.o.background = 'light'
+vim.o.termguicolors = true
 
 -- xcode color theme.
 vim.g.xcodelight_green_comments = 1
@@ -390,5 +385,3 @@ vim.cmd [[
 create_augroups(autocmds)
 
 -- }}}
-
--- vim:foldmethod=marker et sts=2 sw=2
