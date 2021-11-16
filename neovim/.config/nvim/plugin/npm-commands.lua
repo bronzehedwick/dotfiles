@@ -1,4 +1,4 @@
-npmstart = function()
+Npmstart = function()
   if vim.fn.filereadable('package-lock.json') then
     vim.cmd [[
       :edit term://npm\ start
@@ -12,6 +12,4 @@ npmstart = function()
   end
 end
 
-vim.cmd [[
-  command NpmStart :lua npmstart()
-]]
+vim.cmd('command NpmStart :lua Npmstart()')
