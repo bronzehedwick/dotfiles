@@ -1,13 +1,26 @@
-if exists('g:current_compiler')
+" Vim compiler file
+" Compiler:	ShellCheck
+" Maintainer:	Doug Kearns <dougkearns@gmail.com>
+" Last Change:	2020 Sep 4
+
+if exists("current_compiler")
   finish
 endif
-let g:current_compiler = 'shellcheck'
+let current_compiler = "shellcheck"
 
-if exists(':CompilerSet') != 2
+if exists(":CompilerSet") != 2		" older Vim always used :setlocal
   command -nargs=* CompilerSet setlocal <args>
 endif
 
-CompilerSet makeprg=shellcheck\ -x\ -f\ gcc\ --\ %:S
-CompilerSet errorformat=%f:%l:%c:\ %m\ [SC%n]
+let s:cpo_save = &cpo
+set cpo&vim
 
-" vim:fdm=marker ft=vim et sts=2 sw=2
+CompilerSet makeprg=shellcheck\ -f\ gcc\ %:S
+CompilerSet errorformat=%f:%l:%c:\ %trror:\ %m\ [SC%n],
+		       \%f:%l:%c:\ %tarning:\ %m\ [SC%n],
+		       \%f:%l:%c:\ %tote:\ %m\ [SC%n],
+		       \%-G%.%#
+
+let &cpo = s:cpo_save
+unlet s:cpo_save
+
