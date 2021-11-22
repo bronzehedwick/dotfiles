@@ -19,14 +19,7 @@ M.FuzzySearch = function()
     }
   )
 
-  local raw_git_branch = assert(io.popen('git rev-parse --abbrev-ref HEAD', 'r'))
-  local git_branch = assert(raw_git_branch:read('*a'))
-  raw_git_branch:close()
-  git_branch = string.gsub(git_branch, '^%s+', '')
-  git_branch = string.gsub(git_branch, '%s+$', '')
-  git_branch = string.gsub(git_branch, '[\n\r]+', '')
-
-  vim.fn.termopen('git ls-tree -r --name-only ' .. git_branch .. '|fzy --lines ' .. (height - 1) .. '|xargs nvr --nostart --remote -cc "lua vim.api.nvim_win_close(vim.fn.win_getid(), true)" -l')
+  vim.fn.termopen('git ls-files|fzy --lines ' .. (height - 1) .. '|xargs nvr --nostart --remote -cc "lua vim.api.nvim_win_close(vim.fn.win_getid(), true)" -l')
   vim.api.nvim_command('startinsert')
 end
 
