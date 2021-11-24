@@ -316,7 +316,7 @@ end
 map {'n', 'gp', '<cmd>lua Prettier()<CR>'}
 
 -- Simple fuzzy finding.
-map {'n', '<M-/>', "<cmd>lua require'fuzzy-search'.FuzzySearch()<CR>"}
+map {'n', '<M-/>', "<cmd>lua require'fuzzy-search'.FuzzySearch('git ls-files', 'edit')<CR>"}
 
 -- }}}
 

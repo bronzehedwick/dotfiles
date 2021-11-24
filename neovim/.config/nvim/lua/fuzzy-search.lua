@@ -1,8 +1,9 @@
 local M = {}
 
-M.FuzzySearch = function()
-  local width = 55
+M.FuzzySearch = function(files_command, action)
+  local width = vim.o.columns - 4
   local height = 11
+  local winid = vim.fn.win_getid()
 
   vim.api.nvim_open_win(
     vim.api.nvim_create_buf(false, true),
@@ -19,8 +20,24 @@ M.FuzzySearch = function()
     }
   )
 
-  vim.fn.termopen('git ls-files|fzy --lines ' .. (height - 1) .. '|xargs nvr --nostart --remote -cc "lua vim.api.nvim_win_close(vim.fn.win_getid(), true)" -l')
+  local file = vim.fn.tempname()
+  local shell_command = {
+    '/bin/sh',
+    '-c',
+    files_command .. ' | fzy > ' .. file
+  }
+
   vim.api.nvim_command('startinsert')
+
+  vim.fn.termopen(shell_command, {on_exit = function()
+    vim.api.nvim_command('bdelete!')
+    vim.fn.win_gotoid(winid)
+    local f = io.open(file, 'r')
+    local stdout = f:read('*all')
+    f:close()
+    os.remove(file)
+    vim.api.nvim_command(table.concat({action, stdout}, ' '))
+  end})
 end
 
 return M
