@@ -11,9 +11,6 @@ local autocmds = {}
 -- Set mapleader to ",", keeping localleader as the default "\".
 vim.g.mapleader = ','
 
--- Yank from the cursor to the end of the line, to be consistent with C and D.
-map {'n', 'Y', 'y$'}
-
 -- Stupid shift key fixes, lifted from spf13.
 vim.cmd [[
   command! -bang -nargs=* -complete=file E e<bang> <args>
@@ -173,34 +170,59 @@ vim.o.inccommand = 'nosplit'
 vim.o.shortmess = 'filnxrtToOF'
 
 -- Turn off search highlight after cursor moved.
--- TODO: rewrite in lua.
 -- vim.cmd [[
---   noremap <expr> <Plug>(StopHL) execute('nohlsearch')[-1]
---   noremap! <expr> <Plug>(StopHL) execute('nohlsearch')[-1]
+--   noremap <expr> <Plug>(StopHl) execute('nohlsearch')[-1]
+--   noremap! <expr> <Plug>(StopHl) execute('nohlsearch')[-1]
 
---   function! HlSearch()
---     let s:pos = match(getline('.'), @/, col('.') - 1) + 1
---     if s:pos != col('.')
---       call StopHL()
---     endif
---   endfunction
+---   function! HlSearch()
+---     let s:pos = match(getline('.'), @/, col('.') - 1) + 1
+---     if s:pos != col('.')
+---       call StopHL()
+---     endif
+---   endfunction
 
---   function! StopHL()
---     if !v:hlsearch || mode() isnot# 'n'
---       return
---     else
---       sil call feedkeys("\<Plug>(StopHL)", 'm')
---     endif
---   endfunction
+---   function! StopHL()
+---     if !v:hlsearch || mode() isnot# 'n'
+---       return
+---     else
+---       sil call feedkeys("\<Plug>(StopHL)", 'm')
+---     endif
+---   endfunction
 
 --   augroup SearchHighlight
 --     au!
 --     au CursorMoved * call HlSearch()
---     au InsertEnter * call StopHL()
+--     au InsertEnter * call StopHl()
 --   augroup end
 
 --   au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 -- ]]
+
+function StopHl()
+  if (vim.v.hlsearch == 0 or not vim.fn.mode() == 'n') then
+    return
+  else
+    vim.opt.hlsearch = false
+    -- vim.fn.feedkeys('<Plug>(StopHl)', 'm')
+  end
+end
+
+function HLSearch()
+  local pos = vim.fn.match(vim.fn.getline('.'), '@/', vim.fn.col('.') - 1) + 1
+  if (not pos == vim.fn.col('.')) then
+    StopHl()
+  end
+end
+
+-- vim.cmd [[
+--   noremap <expr> <Plug>(StopHl) execute('nohlsearch')[-1]
+--   noremap! <expr> <Plug>(StopHl) execute('nohlsearch')[-1]
+-- ]]
+
+autocmds.SearchHighlight = {
+  {'CursorMoved', '*', 'lua HLSearch()'},
+  {'InsertEnter', '*', 'lua StopHl()'},
+}
 
 -- }}}
 
