@@ -179,13 +179,6 @@ require'nvim-treesitter.configs'.setup {
 
 -- }}}
 
--- FTerm {{{
-
-map { 'n', '<C-s>', '<CMD>lua require("FTerm").toggle()<CR>', silent = true }
-map { 't', '<C-s>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', silent = true }
-
--- }}}
-
 -- Orgmode {{{
 
 local org_path = '/Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org'

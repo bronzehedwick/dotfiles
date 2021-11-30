@@ -335,6 +335,13 @@ autocmds.terminal = {
   {'TermOpen', '*', 'setlocal statusline=%{b:term_title} nonumber'},
 }
 
+vim.cmd[[
+  nmap <unique> <silent> <C-s> <Plug>(PrimaryTerminalOpenSplit)
+  tmap <unique> <silent> <C-s> <C-\><C-n><C-w>c
+  autocmd TermOpen * startinsert
+  autocmd BufEnter term://* startinsert
+]]
+
 -- Escape exits insert mode inside terminal.
 map {'t', '<Esc>', '<C-\\><C-n>'}
 

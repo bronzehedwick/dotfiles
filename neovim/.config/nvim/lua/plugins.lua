@@ -8,17 +8,20 @@ return require('packer').startup(function(use)
 
     use 'MaxMEllon/vim-jsx-pretty'
     use 'arp242/jumpy.vim'
-    use 'arzg/vim-colors-xcode'
+    use {
+      'bronzehedwick/vim-colors-xcode',
+      branch = 'lsp-treesitter-highlights'
+    }
     -- use 'bronzehedwick/msmtp-syntax.vim'
     -- use 'chr4/nginx.vim'
     use 'cormacrelf/dark-notify'
     use 'dag/vim-fish'
-    use 'folke/lsp-colors.nvim'
+    -- use 'folke/lsp-colors.nvim'
     use 'justinmk/vim-dirvish'
     use 'justinmk/vim-ipmotion'
     use 'mbbill/undotree'
     use 'neovim/nvim-lspconfig'
-    use 'numtostr/FTerm.nvim'
+    use 'bronzehedwick/vim-primary-terminal'
     use 'othree/html5.vim'
     use 'pangloss/vim-javascript'
     use 'phaazon/hop.nvim'
