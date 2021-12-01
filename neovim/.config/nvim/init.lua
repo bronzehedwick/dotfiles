@@ -230,12 +230,6 @@ vim.o.splitright = true
 -- Puts new split windows to the bottom of the current.
 vim.o.splitbelow = true
 
--- More useful window navigation bindings.
-map {'n', '<C-k>', '<C-w>k'}
-map {'n', '<C-j>', '<C-w>j'}
-map {'n', '<C-l>', '<C-w>l'}
-map {'n', '<C-h>', '<C-w>h'}
-
 -- }}}
 
 -- Command line {{{
@@ -279,7 +273,9 @@ map { 'n', '<leader>m',  ":<c-u><c-r><c-r>='let @'. v:register .' = '. string(ge
 map {'i', '<C-g><C-t>', '<C-r>=strftime("%Y-%m-%dT%H:%M:%S")<CR>'}
 
 -- Clear the highlighting of hlsearch.
-map {'n', '<M-l>', ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>", silent = true}
+if (vim.fn.has('nvim-0.6') == 0) then
+  map {'n', '<C-l>', ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>", silent = true}
+end
 
 -- Strip trailing whitespace.
 map {'n', '<F5>', ':let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR>', silent = true}
