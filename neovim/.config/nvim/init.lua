@@ -33,11 +33,11 @@ map {'n', 'Q', '@@'}
 -- Interface {{{
 
 -- Use soft tabs.
-vim.o.expandtab = true
+vim.opt.expandtab = true
 
 -- Soft tabs equal two spaces.
-vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 
 -- Keep tab widths default to address possible display issues.
 -- see: https://www.reddit.com/r/vim/wiki/tabstop
