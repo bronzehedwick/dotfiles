@@ -331,7 +331,7 @@ Prettier = function()
     print('Prettier not found')
   end
 end
-map {'n', 'gp', '<cmd>lua Prettier()<CR>'}
+vim.cmd('command! Prettier lua Prettier()<CR>')
 
 -- Simple fuzzy finding.
 map {'n', '<M-/>', "<cmd>lua require'fuzzy-search'.FuzzySearch('git ls-files', 'edit')<CR>"}
