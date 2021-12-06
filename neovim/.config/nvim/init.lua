@@ -285,6 +285,10 @@ vim.opt.statusline:append('%p%%')
 
 -- Convenience mappings {{{
 
+-- Re-map omni-complete to command line complete. I don't use command line
+-- complete, and <C-X><C-O> is hard to type on my 34-key keyboard.
+map {'i', '<C-V>', '<C-X><C-O>'}
+
 -- Display date and time.
 map {'n', '<F2>', '<cmd>lua print("It is " .. vim.fn.strftime("%a %b %e %I:%M %p"))<CR>'}
 
