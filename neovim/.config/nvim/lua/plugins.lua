@@ -44,7 +44,6 @@ return require('packer').startup(function(use)
     }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'milisims/tree-sitter-org'
-    use { 'plasticboy/vim-markdown', opt = true }
     use {
       'tpope/vim-dispatch',
       opt = true,
