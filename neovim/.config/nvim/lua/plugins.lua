@@ -12,7 +12,6 @@ return require('packer').startup(function(use)
       branch = 'lsp-treesitter-highlights'
     }
     use 'cormacrelf/dark-notify'
-    use 'dag/vim-fish'
     use 'justinmk/vim-dirvish'
     use 'mbbill/undotree'
     use 'neovim/nvim-lspconfig'
