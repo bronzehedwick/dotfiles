@@ -20,7 +20,6 @@ return require('packer').startup(function(use)
     use 'phaazon/hop.nvim'
     use 'rstacruz/vim-closer'
     use 'tpope/vim-commentary'
-    use 'tpope/vim-endwise'
     use 'tpope/vim-eunuch'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-repeat'
