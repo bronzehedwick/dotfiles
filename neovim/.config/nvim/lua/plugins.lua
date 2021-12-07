@@ -6,24 +6,18 @@ return require('packer').startup(function(use)
     -- Packer can manage itself as an optional plugin
     use {'wbthomason/packer.nvim', opt = true}
 
-    use 'MaxMEllon/vim-jsx-pretty'
     use 'arp242/jumpy.vim'
     use {
       'bronzehedwick/vim-colors-xcode',
       branch = 'lsp-treesitter-highlights'
     }
-    -- use 'bronzehedwick/msmtp-syntax.vim'
-    -- use 'chr4/nginx.vim'
     use 'cormacrelf/dark-notify'
     use 'dag/vim-fish'
-    -- use 'folke/lsp-colors.nvim'
     use 'justinmk/vim-dirvish'
     use 'justinmk/vim-ipmotion'
     use 'mbbill/undotree'
     use 'neovim/nvim-lspconfig'
     use 'bronzehedwick/vim-primary-terminal'
-    use 'othree/html5.vim'
-    use 'pangloss/vim-javascript'
     use 'phaazon/hop.nvim'
     use 'rstacruz/vim-closer'
     use 'tpope/vim-commentary'
