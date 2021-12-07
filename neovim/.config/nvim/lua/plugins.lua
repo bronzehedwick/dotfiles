@@ -14,7 +14,6 @@ return require('packer').startup(function(use)
     use 'cormacrelf/dark-notify'
     use 'dag/vim-fish'
     use 'justinmk/vim-dirvish'
-    use 'justinmk/vim-ipmotion'
     use 'mbbill/undotree'
     use 'neovim/nvim-lspconfig'
     use 'bronzehedwick/vim-primary-terminal'
