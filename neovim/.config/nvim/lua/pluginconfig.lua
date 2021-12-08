@@ -196,7 +196,8 @@ parser_config.org = {
 }
 
 require'nvim-treesitter.configs'.setup {
-  -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
+  -- If TS highlights are not enabled at all, or disabled via `disable` prop,
+  -- highlighting will fallback to default Vim syntax highlighting.
   highlight = {
     enable = true,
     -- disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
@@ -248,7 +249,11 @@ require('orgmode').setup({
       org_schedule = '<LocalLeader>is',
       org_time_stamp = '<LocalLeader>i.',
       org_time_stamp_inactive = '<LocalLeader>i!',
-      org_show_help = '<LocalLeader>?'
+      org_clock_in = '<LocalLeader>xi',
+      org_clock_out = '<LocalLeader>xo',
+      org_clock_cancel = '<LocalLeader>xq',
+      org_clock_goto = '<LocalLeader>xj',
+      org_set_effort = '<LocalLeader>xe',
     }
   }
 })
