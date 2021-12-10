@@ -219,10 +219,10 @@ end
 --   noremap! <expr> <Plug>(StopHl) execute('nohlsearch')[-1]
 -- ]]
 
-autocmds.SearchHighlight = {
-  {'CursorMoved', '*', 'lua HLSearch()'},
-  {'InsertEnter', '*', 'lua StopHl()'},
-}
+-- autocmds.SearchHighlight = {
+--   {'CursorMoved', '*', 'lua HLSearch()'},
+--   {'InsertEnter', '*', 'lua StopHl()'},
+-- }
 
 -- }}}
 
