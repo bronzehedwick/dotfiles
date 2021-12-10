@@ -210,6 +210,7 @@ require('orgmode').setup({
   org_agenda_files = org_path,
   org_default_notes_file = refile_path,
   org_indent_mode = 'indent',
+  org_ellipsis = '…',
   org_todo_keyword_faces = {
     DONE = ':foreground #1f6300', -- overrides builtin color for `TODO` keyword
   },
