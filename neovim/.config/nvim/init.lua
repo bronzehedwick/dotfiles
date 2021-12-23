@@ -303,7 +303,7 @@ autocmds.terminal = {
 }
 
 vim.cmd[[
-  nmap <unique> <silent> <C-s> <Plug>(PrimaryTerminalOpenSplit)
+  nmap <unique> <silent> <C-s> <Plug>(PrimaryTerminalOpenDynamic)
   tmap <unique> <silent> <C-s> <C-\><C-n><C-w>c
   autocmd TermOpen * startinsert
   autocmd BufEnter term://* startinsert
