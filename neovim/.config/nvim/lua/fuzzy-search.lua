@@ -5,6 +5,10 @@ M.FuzzySearch = function(files_command, action)
   local height = 11
   local winid = vim.fn.win_getid()
 
+  if (vim.o.columns > 85) then
+    width = 80
+  end
+
   vim.api.nvim_open_win(
     vim.api.nvim_create_buf(false, true),
     true,
