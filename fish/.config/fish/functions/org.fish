@@ -17,10 +17,10 @@ function org --description "Sync org files to and from a mounted webdav remote."
 
   switch $argv[1]
     case "pull"
-      rsync --archive --delete --exclude=".*" /Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org/ ~/org/
+      rsync --archive --delete --exclude=".*" /Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org ~/
       return
     case "push"
-      rsync --archive --delete --exclude=".*" ~/org/ /Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org/
+      rsync --archive --delete --exclude=".*" ~/org /Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/
       return
     case "merge"
       diff -rq ~/org/ /tmp/org.bak/
