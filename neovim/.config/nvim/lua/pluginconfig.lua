@@ -181,7 +181,7 @@ require'nvim-treesitter.configs'.setup {
 
 -- Orgmode {{{
 
-local org_path = '/Volumes/webdav.fastmail.com/iam.chrisdeluca.me/files/org'
+local org_path = '~/org'
 local refile_path = org_path .. '/refile.org'
 map {'n', '<Leader>o', ':edit ' .. org_path .. '<CR>'}
 map {'n', '<Leader>r', ':edit ' .. refile_path .. '<CR>'}
@@ -207,7 +207,12 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require('orgmode').setup({
-  org_agenda_files = org_path,
+  org_agenda_files = {
+      org_path .. '/tech.org',
+      org_path .. '/projects.org',
+      org_path .. '/refile.org',
+      org_path .. '/random.org',
+  },
   org_default_notes_file = refile_path,
   org_indent_mode = 'noindent',
   org_ellipsis = '…',
