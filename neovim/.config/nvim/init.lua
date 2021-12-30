@@ -179,6 +179,12 @@ vim.o.hidden = true
 -- Allow undo
 vim.o.undofile = true
 
+-- Enable syntax highlighting for JSDoc.
+vim.g.javascript_plugin_jsdoc = 1
+
+-- Disable netrw, since I'm using Dirvish instead.
+vim.g.loaded_netrwPlugin = 0
+
 -- Open directory at current file path.
 map {'n', '<Leader>e', ':edit <C-R>=expand("%:p:h") . "/" <CR>'}
 map {'n', '<Leader>s', ':split <C-R>=expand("%:p:h") . "/" <CR>'}

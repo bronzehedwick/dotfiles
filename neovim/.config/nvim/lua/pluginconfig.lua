@@ -1,19 +1,5 @@
 local map = require'utilities'.map
 
--- Dirvish/netrw {{{
-
--- Disable netrw, since I'm using Dirvish instead.
-vim.g.loaded_netrwPlugin = 0
-
--- }}}
-
--- JavaScript {{{
-
--- Enable syntax highlighting for JSDoc.
-vim.g.javascript_plugin_jsdoc = 1
-
--- }}}
-
 -- Emmet {{{
 
 -- Add responsive meta tag to html5 emmet snippet.
