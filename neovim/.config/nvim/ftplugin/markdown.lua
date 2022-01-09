@@ -5,7 +5,7 @@ vim.cmd('setlocal spell')
 
 -- Default to 4 space indent, as that's the amount that triggers preformatted
 -- text in markdown.
-vim.opt.shiftwidth = 4
+vim.bo.shiftwidth = 4
 
 -- Support code fencing syntax highlighting for the listed languages.
 vim.g.markdown_fenced_languages = {
@@ -23,7 +23,7 @@ vim.g.markdown_fenced_languages = {
 
 -- Use a dictionary to lookup words.
 if vim.fn.executable('dict') then
-  vim.opt.keywordprg = 'dict'
+  vim.bo.keywordprg = 'dict'
 end
 
 -- Mapping to toggle todo list status.
