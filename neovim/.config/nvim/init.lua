@@ -334,7 +334,9 @@ require'pluginconfig'
 -- Colorscheme {{{
 
 vim.o.background = 'light'
-vim.o.termguicolors = true
+if vim.env.TERM_PROGRAM ~= 'Apple_Terminal' then
+  vim.o.termguicolors = true
+end
 
 -- xcode color theme.
 vim.g.xcodelight_green_comments = 1
