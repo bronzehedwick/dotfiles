@@ -76,9 +76,28 @@ end
 -- Add mapping to open URLs in the current buffer.
 if vim.fn.executable('urlview') == 1 then
   UrlView = function()
+    local width = vim.o.columns - 4
+    local height = 10
+    local file = vim.fn.tempname()
+    vim.api.nvim_command('write! ' .. file)
+    vim.api.nvim_open_win(
+      vim.api.nvim_create_buf(false, true),
+      true,
+      {
+        relative = 'win',
+        style = 'minimal',
+        border = 'shadow',
+        width = width,
+        height = height,
+        col = math.min((vim.o.columns - width) / 2),
+        row = math.min((vim.o.lines - height) / 2 - 1),
+      }
+    )
     vim.api.nvim_command('startinsert')
-    vim.api.nvim_command('write! /tmp/nvim-extract-url.out')
-    vim.api.nvim_command('split term://urlview /tmp/nvim-extract-url.out')
+    vim.fn.termopen('urlview ' .. file, {on_exit = function()
+      vim.api.nvim_command('bdelete!')
+      os.remove(file)
+    end})
   end
   map {'n', '<Leader>u', '<cmd>lua UrlView()<CR>', silent = true}
 end
