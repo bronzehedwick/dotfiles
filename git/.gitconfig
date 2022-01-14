@@ -96,3 +96,5 @@
 	smtpserveroption = --read-envelope-from
 [init]
 	defaultBranch = main
+[fetch]
+	prune = true
