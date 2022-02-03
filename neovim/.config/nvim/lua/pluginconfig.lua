@@ -152,12 +152,51 @@ parser_config.org = {
 }
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = {
+    'bash',
+    'c',
+    'comment',
+    'css',
+    'fish',
+    'hjson',
+    'html',
+    'http',
+    'javascript',
+    'jsdoc',
+    'json5',
+    'lua',
+    'make',
+    'markdown',
+    'org',
+    'php',
+    'phpdoc',
+    'python',
+    'rst',
+    'scss',
+    'rust',
+    'toml',
+    'tsx',
+    'typescript',
+    'vim',
+    'yaml',
+  },
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = {'org'},  -- list of language that will be disabled
     additional_vim_regex_highlighting = {'org'}
   },
+}
+
+require'nvim-treesitter.configs'.setup {
+  -- If TS highlights are not enabled at all, or disabled via `disable` prop,
+  -- highlighting will fallback to default Vim syntax highlighting.
+  highlight = {
+    enable = true,
+    -- disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
+    additional_vim_regex_highlighting = {'org'}, -- Required since TS highlighter doesn't support all syntax features (conceal)
+  },
+  ensure_installed = {'org'}, -- Or run :TSUpdate org
 }
 
 -- vim.opt.foldmethod = 'expr'
@@ -172,32 +211,12 @@ local refile_path = org_path .. '/refile.org'
 map {'n', '<Leader>o', ':edit ' .. org_path .. '<CR>'}
 map {'n', '<Leader>r', ':edit ' .. refile_path .. '<CR>'}
 
-parser_config.org = {
-  install_info = {
-    url = 'https://github.com/milisims/tree-sitter-org',
-    revision = 'main',
-    files = {'src/parser.c', 'src/scanner.cc'},
-  },
-  filetype = 'org',
-}
-
-require'nvim-treesitter.configs'.setup {
-  -- If TS highlights are not enabled at all, or disabled via `disable` prop,
-  -- highlighting will fallback to default Vim syntax highlighting.
-  highlight = {
-    enable = true,
-    -- disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
-    additional_vim_regex_highlighting = {'org'}, -- Required since TS highlighter doesn't support all syntax features (conceal)
-  },
-  ensure_installed = {'org'}, -- Or run :TSUpdate org
-}
-
 require('orgmode').setup({
   org_agenda_files = {
-      org_path .. '/tech.org',
-      org_path .. '/projects.org',
-      org_path .. '/refile.org',
-      org_path .. '/random.org',
+    org_path .. '/tech.org',
+    org_path .. '/projects.org',
+    org_path .. '/refile.org',
+    org_path .. '/random.org',
   },
   org_default_notes_file = refile_path,
   org_indent_mode = 'noindent',
