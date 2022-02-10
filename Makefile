@@ -24,6 +24,9 @@ mailinit: ## Initializes first mail run to ~/Mail.
 mail: ## Syncronizes all mail locally to ~/Mail.
 	@./scripts/mailsync.sh
 
+lsp: ## Installs all my LSP servers.
+	@./scripts/install-lsps.sh
+
 all: brew link tmux mail caldav
 
 # vim: nolist
