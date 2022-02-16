@@ -32,14 +32,12 @@
 	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 	type = cat-file -t
 	dump = cat-file -p
-	grep = grep --break --heading --line-number
-	g = grep --break --heading --line-number
 	code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | grep -v package | head -10"
 	po = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
 	ph = "!git push github $(git rev-parse --abbrev-ref HEAD)"
 	up = pull --rebase --autostash --all
 	ticket = "!git branch | grep '\\*' | cut -d '-' -f 1,2 | cut -d '/' -f 2"
-	cb = "!git rev-parse --abbrev-ref HEAD"
+	cb = rev-parse --abbrev-ref HEAD
 	ctags = !.git/hooks/ctags
 	envar = "!echo \"$REVIEW_BASE\""
 	files = "!git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")"
@@ -52,7 +50,7 @@
 	default = simple
 	gpgSign = if-asked
 [grep]
-	lineNumber = true
+	linenumber = true
 [merge]
 	conflictstyle = diff3
 	tool = fugitive
