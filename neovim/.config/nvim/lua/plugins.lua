@@ -28,13 +28,10 @@ return require('packer').startup(function(use)
     use 'vim-scripts/fountain.vim'
     use 'whiteinge/diffconflicts'
     use { 'mattn/emmet-vim', opt = true }
-    use {
-      'kristijanhusak/orgmode.nvim', config = function()
-        require('orgmode').setup{}
-      end
-    }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use 'milisims/tree-sitter-org'
+    use { 'nvim-orgmode/orgmode', config = function()
+      require('orgmode').setup{}
+    end }
     use {
       'tpope/vim-dispatch',
       opt = true,
