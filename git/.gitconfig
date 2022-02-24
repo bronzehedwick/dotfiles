@@ -2,15 +2,6 @@
 	name = Chris DeLuca
 	email = code@chrisdeluca.me
 	signingkey = 461C015E032EF9CB
-[core]
-	pager = delta
-	log = delta
-	reflog = delta
-	show = delta
-[delta]
-	syntax-theme = OneHalfLight
-[interactive]
-	diffFilter = delta --color-only
 [alias]
 	co = checkout
 	cm = commit
@@ -47,7 +38,7 @@
 [credential]
 	helper = cache
 [push]
-	default = simple
+	default = upstream
 	gpgSign = if-asked
 [grep]
 	linenumber = true
@@ -64,7 +55,6 @@
 	trustExitCode = true
 [diff]
 	tool = nvr
-	algorithm = patience
 	colorMoved = default
 [difftool "nvr"]
 	cmd = nvr -s -d \"$LOCAL\" \"$REMOTE\"
