@@ -17,14 +17,14 @@ end
 # Neovim settings
 
 if test -z "$NVIM_LISTEN_ADDRESS"
-  set EDITOR nvim --noplugin
-  set VISUAL nvim --noplugin
+  set -x EDITOR ed
+  set -x VISUAL nvim --noplugin
 end
 
 if test -n "$NVIM_LISTEN_ADDRESS"
-  set MANPAGER "/usr/local/bin/nvr -c 'set ft=man' -o -"
+  # set -x MANPAGER "/usr/local/bin/nvr -c 'set ft=man' -o -"
   if test -x /usr/local/bin/page
-    set PAGER /usr/local/bin/page
+    set -x PAGER /usr/local/bin/page
   end
 end
 

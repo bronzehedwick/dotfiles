@@ -77,7 +77,7 @@ export TODOTXT_DEFAULT_ACTION=ls
 
 # Set Vim to the EDITOR environment variable
 if [ -z "${NVIM_LISTEN_ADDRESS+x}" ]; then
-  export EDITOR="nvim --noplugin"
+  export EDITOR="ed"
   export VISUAL="nvim --noplugin"
 fi
 
