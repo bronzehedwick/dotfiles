@@ -21,12 +21,12 @@ if test -z "$NVIM_LISTEN_ADDRESS"
   set -x VISUAL nvim --noplugin
 end
 
-if test -n "$NVIM_LISTEN_ADDRESS"
+# if test -n "$NVIM_LISTEN_ADDRESS"
   # set -x MANPAGER "/usr/local/bin/nvr -c 'set ft=man' -o -"
-  if test -x /usr/local/bin/page
-    set -x PAGER /usr/local/bin/page
-  end
-end
+  # if test -x /usr/local/bin/page
+    # set -x PAGER /usr/local/bin/page
+  # end
+# end
 
 # Git
 
