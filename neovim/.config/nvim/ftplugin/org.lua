@@ -14,5 +14,9 @@ end
 -- `gq`, which I do care bout.
 vim.opt.formatexpr = ''
 
+-- Conceal syntax on org files. This applies to links that I can tell.
+vim.opt.concealcursor = 'nc'
+vim.opt.conceallevel = 2
+
 -- Insert time in this format: [2021-09-01 Wed]
 map {'i', '<C-g><C-t>', '<C-r>=strftime("[%Y-%m-%d %a]")<CR>'}
