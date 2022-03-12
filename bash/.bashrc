@@ -83,9 +83,6 @@ fi
 
 if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
   export PS1="\\W» "
-  if hash page 2>/dev/null; then
-    export PAGER="page"
-  fi
 fi
 
 # GPG agent
