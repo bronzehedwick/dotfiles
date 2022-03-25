@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-commentary'
     use 'tpope/vim-eunuch'
     use 'tpope/vim-fugitive'
+    use 'tpope/vim-rhubarb'
     use 'tpope/vim-repeat'
     use 'tpope/vim-rsi'
     use 'tpope/vim-surround'
