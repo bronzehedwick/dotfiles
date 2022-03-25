@@ -23,7 +23,7 @@ vim.g.markdown_fenced_languages = {
 
 -- Use a dictionary to lookup words.
 if vim.fn.executable('dict') then
-  vim.bo.keywordprg = 'dict'
+  vim.opt.keywordprg = 'dict'
 end
 
 -- Mapping to toggle todo list status.
