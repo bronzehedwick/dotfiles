@@ -60,6 +60,8 @@
 	cmd = nvr -s -d \"$LOCAL\" \"$REMOTE\"
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool "Difftastic"]
+	cmd = difft \"$LOCAL\" \"$REMOTE\"
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
