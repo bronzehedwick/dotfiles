@@ -137,5 +137,7 @@ set crypt_replyencrypt = yes
 source ~/.config/neomutt/colors
 
 # subscribed mailing lists
+lists neomutt-users@
+subscribe neomutt-users
 
 # vim: ft=muttrc et
