@@ -68,6 +68,7 @@
 	user = bronzehedwick
 [advice]
 	statusHints = false
+	skippedCherryPicks = false
 [pull]
 	rebase = true
 [filter "lfs"]
