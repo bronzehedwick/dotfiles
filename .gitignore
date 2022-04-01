@@ -8,3 +8,4 @@ tmux/.config/tmux/plugins
 pianobar/.config/pianobar/state
 packer_compiled.vim
 packer_compiled.lua
+.DS_Store
