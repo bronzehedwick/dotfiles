@@ -61,7 +61,7 @@ color signature brightmagenta default
 color indicator white cyan
 color attachment black green
 color error red black
-color message white default
+color message default default
 color search brightwhite magenta
 color status white blue
 color tree brightblue default
