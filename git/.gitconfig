@@ -39,7 +39,6 @@
 	helper = cache
 [push]
 	default = upstream
-	gpgSign = if-asked
 [grep]
 	linenumber = true
 [merge]
@@ -67,8 +66,6 @@
 	smudge = git-media-smudge %f
 [github]
 	user = bronzehedwick
-[commit]
-	gpgsign = true
 [advice]
 	statusHints = false
 [pull]
