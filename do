@@ -86,6 +86,16 @@ mail_setup() {
     mail_sync
 }
 
+switch_theme() {
+    if [ "$1" == "dark" ]; then
+        sed -i.bak 's/colors: \*light/colors: \*dark/g' ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml
+        sed -i.bak 's/OneHalfLight/OneHalfDark/g' ~/.dotfiles/git/.gitconfig
+        rm ~/.dotfiles/git/.gitconfig.bak ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml.bak
+    else
+        git -C ~/.dotfiles checkout --quiet git/.gitconfig alacritty/.config/alacritty/alacritty.yml
+    fi
+}
+
 install() {
     brew_install
     tpm_install
