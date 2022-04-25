@@ -1,6 +1,5 @@
 -- Helpers {{{
 
-local map = require'utilities'.map
 local create_augroups = require'utilities'.create_augroups
 local autocmds = {}
 
@@ -26,7 +25,7 @@ vim.cmd [[
 
 -- Replace Ex mode mapping with repeat last macro used.
 -- Ex mode can still be accessed via gQ.
-map {'n', 'Q', '@@'}
+vim.keymap.set('n', 'Q', '@@')
 
 -- }}}
 
@@ -75,31 +74,30 @@ end
 
 -- Add mapping to open URLs in the current buffer.
 if vim.fn.executable('urlview') == 1 then
-  UrlView = function()
+  vim.keymap.set('n', '<Leader>u', function()
     local width = vim.o.columns - 4
     local height = 10
     local file = vim.fn.tempname()
     vim.api.nvim_command('write! ' .. file)
     vim.api.nvim_open_win(
-      vim.api.nvim_create_buf(false, true),
-      true,
-      {
-        relative = 'win',
-        style = 'minimal',
-        border = 'shadow',
-        width = width,
-        height = height,
-        col = math.min((vim.o.columns - width) / 2),
-        row = math.min((vim.o.lines - height) / 2 - 1),
-      }
+    vim.api.nvim_create_buf(false, true),
+    true,
+    {
+      relative = 'win',
+      style = 'minimal',
+      border = 'shadow',
+      width = width,
+      height = height,
+      col = math.min((vim.o.columns - width) / 2),
+      row = math.min((vim.o.lines - height) / 2 - 1),
+    }
     )
     vim.api.nvim_command('startinsert')
     vim.fn.termopen('urlview ' .. file, {on_exit = function()
       vim.api.nvim_command('bdelete!')
       os.remove(file)
     end})
-  end
-  map {'n', '<Leader>u', '<cmd>lua UrlView()<CR>', silent = true}
+  end, { silent = true })
 end
 
 -- Automatically open, but do not go to (if there are errors) the quickfix /
@@ -205,12 +203,12 @@ vim.g.javascript_plugin_jsdoc = 1
 vim.g.loaded_netrwPlugin = 0
 
 -- Open directory at current file path.
-map {'n', '<Leader>e', ':edit <C-R>=expand("%:p:h") . "/" <CR>'}
-map {'n', '<Leader>s', ':split <C-R>=expand("%:p:h") . "/" <CR>'}
-map {'n', '<Leader>v', ':vsplit <C-R>=expand("%:p:h") . "/" <CR>'}
+vim.keymap.set('n', '<Leader>e', ':edit <C-R>=expand("%:p:h") . "/" <CR>')
+vim.keymap.set('n', '<Leader>s', ':split <C-R>=expand("%:p:h") . "/" <CR>')
+vim.keymap.set('n', '<Leader>v', ':vsplit <C-R>=expand("%:p:h") . "/" <CR>')
 
 -- Shortcut to edit this file.
-map {'n', '<Leader>c', ':edit ~/.dotfiles/neovim/.config/nvim/init.lua<CR>'}
+vim.keymap.set('n', '<Leader>c', ':edit ~/.dotfiles/neovim/.config/nvim/init.lua<CR>')
 
 -- }}}
 
@@ -227,8 +225,8 @@ vim.o.splitbelow = true
 -- Command line {{{
 
 -- More sane command-line history.
-map {'c', '<C-n>', '<down>'}
-map {'c', '<C-p>', '<up>'}
+vim.keymap.set('c', '<C-n>', '<down>')
+vim.keymap.set('c', '<C-p>', '<up>')
 
 -- }}}
 
@@ -257,24 +255,24 @@ vim.opt.statusline:append('%p%%')
 
 -- Re-map omni-complete to command line complete. I don't use command line
 -- complete, and <C-X><C-O> is hard to type on my 34-key keyboard.
-map {'i', '<C-V>', '<C-X><C-O>'}
+vim.keymap.set('i', '<C-V>', '<C-X><C-O>')
 
 -- Display date and time.
-map {'n', '<F2>', '<cmd>lua print("It is " .. vim.fn.strftime("%a %b %e %I:%M %p"))<CR>'}
+vim.keymap.set('n', '<F2>', function()
+  print("It is " .. vim.fn.strftime("%a %b %e %I:%M %p"))
+end)
 
 -- Quickly edit macros.
-map { 'n', '<leader>m',  ":<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>" }
+vim.keymap.set('n', '<leader>m',  ":<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>")
 
 -- Insert time into a document.
-map {'i', '<C-g><C-t>', '<C-r>=strftime("%Y-%m-%dT%H:%M:%S")<CR>'}
+vim.keymap.set('i', '<C-g><C-t>', '<C-r>=strftime("%Y-%m-%dT%H:%M:%S")<CR>')
 
 -- Clear the highlighting of hlsearch.
-if (vim.fn.has('nvim-0.6') == 0) then
-  map {'n', '<C-l>', ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>", silent = true}
-end
+vim.keymap.set('n', '<C-l>', ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>", { silent = true })
 
 -- Strip trailing whitespace.
-map {'n', '<F5>', ':let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR>', silent = true}
+vim.keymap.set('n', '<F5>', ':let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR>', { silent = true })
 
 -- Add customized Grep that's silent and doesn't jump to the first result.
 vim.cmd [[
@@ -308,7 +306,9 @@ end
 vim.cmd('command! Prettier lua Prettier()<CR>')
 
 -- Simple fuzzy finding.
-map {'n', '<M-/>', "<cmd>lua require'fuzzy-search'.FuzzySearch('git ls-files', 'edit')<CR>"}
+vim.keymap.set('n', '<M-/>', function()
+  return require('fuzzy-search').FuzzySearch('git ls-files', 'edit')
+end)
 
 -- }}}
 
@@ -335,7 +335,7 @@ vim.cmd[[
 ]]
 
 -- Escape exits insert mode inside terminal.
-map {'t', '<Esc>', '<C-\\><C-n>'}
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- M-r pastes inside terminal.
 -- NOTE: This really slows down init. Not sure why.

@@ -1,10 +1,8 @@
-local map = require'utilities'.map
-
 -- Mappings for built-in Vim git rebase convenience commands.
-map {'n', '<LocalLeader>p', ':Pick<CR>', silent = true}
-map {'n', '<LocalLeader>s', ':Squash<CR>', silent = true}
-map {'n', '<LocalLeader>e', ':Edit<CR>', silent = true}
-map {'n', '<LocalLeader>r', ':Reword<CR>', silent = true}
-map {'n', '<LocalLeader>f', ':Fixup<CR>', silent = true}
-map {'n', '<LocalLeader>d', ':Drop<CR>', silent = true}
-map {'n', '<LocalLeader>S', ':Cycle<CR>', silent = true}
+vim.keymap.set('n', '<LocalLeader>p', ':Pick<CR>', { silent = true })
+vim.keymap.set('n', '<LocalLeader>s', ':Squash<CR>', { silent = true })
+vim.keymap.set('n', '<LocalLeader>e', ':Edit<CR>', { silent = true })
+vim.keymap.set('n', '<LocalLeader>r', ':Reword<CR>', { silent = true })
+vim.keymap.set('n', '<LocalLeader>f', ':Fixup<CR>', { silent = true })
+vim.keymap.set('n', '<LocalLeader>d', ':Drop<CR>', { silent = true })
+vim.keymap.set('n', '<LocalLeader>S', ':Cycle<CR>', { silent = true })

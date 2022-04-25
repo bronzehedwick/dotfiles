@@ -1,5 +1,3 @@
-local map = require'utilities'.map
-
 -- Enable spell checking.
 vim.cmd('setlocal spell')
 
@@ -19,4 +17,4 @@ vim.opt.concealcursor = 'nc'
 vim.opt.conceallevel = 2
 
 -- Insert time in this format: [2021-09-01 Wed]
-map {'i', '<C-g><C-t>', '<C-r>=strftime("[%Y-%m-%d %a]")<CR>'}
+vim.keymap.set('i', '<C-g><C-t>', '<C-r>=strftime("[%Y-%m-%d %a]")<CR>')

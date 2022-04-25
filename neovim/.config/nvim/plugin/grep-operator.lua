@@ -1,5 +1,3 @@
-local map = require'utilities'.map
-
 function GrepOperator(type)
   if (type == 'v') then
     vim.cmd('normal! `<v`>y')
@@ -11,5 +9,5 @@ function GrepOperator(type)
   vim.cmd('grep! ' .. vim.fn.shellescape(vim.cmd('@@')))
 end
 
-map {'n', 'gs', 'set operatorfunc=GrepOperator<CR>g@'}
-map {'v', 'gs', '<c-u>call GrepOperator(visualmode())<CR>'}
+vim.keymap.set('n', 'gs', 'set operatorfunc=GrepOperator<CR>g@')
+vim.keymap.set('v', 'gs', '<c-u>call GrepOperator(visualmode())<CR>')

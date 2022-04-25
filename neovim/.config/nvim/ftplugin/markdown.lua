@@ -1,5 +1,3 @@
-local map = require'utilities'.map
-
 -- Enable spell checking.
 vim.cmd('setlocal spell')
 
@@ -27,7 +25,7 @@ if vim.fn.executable('dict') then
 end
 
 -- Mapping to toggle todo list status.
-function ToggleTodo()
+vim.keymap.set('n', '<LocalLeader>x', function()
   vim.cmd('normal mp')
   if (string.match(vim.fn.getline('.'), '[x]')) then
     vim.cmd('normal ^f[lr ')
@@ -35,5 +33,4 @@ function ToggleTodo()
     vim.cmd('normal ^f[lrx')
   end
   vim.cmd('normal `p')
-end
-map {'n', '<LocalLeader>x', '<cmd>lua ToggleTodo()<CR>', silent = true}
+end, { silent = true })

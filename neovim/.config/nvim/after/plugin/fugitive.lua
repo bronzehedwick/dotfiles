@@ -3,8 +3,6 @@ if (vim.fn.exists(':Git') == 1) then
   return
 end
 
-local map = require'utilities'.map
-
 -- Status line. {{{
 -- Git branch.
 vim.opt.statusline='%{FugitiveStatusline()}'
@@ -44,15 +42,15 @@ command! -bang -bar -nargs=* Gph execute 'Dispatch<bang> -dir=' .
 -- }}}
 
 -- Fugitive mappings. {{{
-map {'n', '<M-g>s', ':Git<CR>', silent = true}
-map {'n', '<M-g>d', ':Gdiff<CR>', silent = true}
-map {'n', '<M-g>c', ':Git commit<CR>', silent = true}
-map {'n', '<M-g>b', ':Git blame<CR>', silent = true}
-map {'n', '<M-g>l', ':Gclog<CR>', silent = true}
-map {'n', '<M-g>p', ':Gpo<CR>', silent = true}
-map {'n', '<M-g>r', ':Gread<CR>', silent = true}
-map {'n', '<M-g>w', ':Gwrite<CR>', silent = true}
-map {'n', '<M-g>e', ':Gedit<CR>', silent = true}
-map {'n', '<M-g>u', ':Gup<CR>', silent = true}
-map {'n', '<M-g>f', ':Gfetch<CR>', silent = true}
--- }}}
+vim.keymap.set('n', '<M-g>s', ':Git<CR>', { silent = true })
+vim.keymap.set('n', '<M-g>d', ':Gdiff<CR>', { silent = true })
+vim.keymap.set('n', '<M-g>c', ':Git commit<CR>', { silent = true })
+vim.keymap.set('n', '<M-g>b', ':Git blame<CR>', { silent = true })
+vim.keymap.set('n', '<M-g>l', ':Gclog<CR>', { silent = true })
+vim.keymap.set('n', '<M-g>p', ':Gpo<CR>', { silent = true })
+vim.keymap.set('n', '<M-g>r', ':Gread<CR>', { silent = true })
+vim.keymap.set('n', '<M-g>w', ':Gwrite<CR>', { silent = true })
+vim.keymap.set('n', '<M-g>e', ':Gedit<CR>', { silent = true })
+vim.keymap.set('n', '<M-g>u', ':Gup<CR>', { silent = true })
+vim.keymap.set('n', '<M-g>f', ':Gfetch<CR>', { silent = true })
+-- )}}

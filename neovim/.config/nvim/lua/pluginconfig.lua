@@ -1,5 +1,3 @@
-local map = require'utilities'.map
-
 -- Emmet {{{
 
 -- Add responsive meta tag to html5 emmet snippet.
@@ -131,11 +129,11 @@ end
 
 -- Hop {{{
 require'hop'.setup()
-map {'n', '<M-w>', "<cmd>lua require'hop'.hint_words()<CR>"}
-map {'n', '<M-p>', "<cmd>lua require'hop'.hint_patterns()<CR>"}
-map {'n', '<M-f>', "<cmd>lua require'hop'.hint_char1()<CR>"}
-map {'n', '<M-l>', "<cmd>lua require'hop'.hint_lines_skip_whitespace()<CR>"}
-map {'n', 's', "<cmd>lua require'hop'.hint_char2()<CR>"}
+vim.keymap.set('n', '<M-w>', require('hop').hint_words)
+vim.keymap.set('n', '<M-p>', require('hop').hint_patterns)
+vim.keymap.set('n', '<M-f>', require('hop').hint_char1)
+vim.keymap.set('n', '<M-l>', require('hop').hint_lines_skip_whitespace)
+vim.keymap.set('n', 's', require('hop').hint_char2)
 -- }}}
 
 -- Treesitter {{{
@@ -188,8 +186,8 @@ require'nvim-treesitter.configs'.setup {
 
 local org_path = '~/org'
 local refile_path = org_path .. '/refile.org'
-map {'n', '<Leader>o', ':edit ' .. org_path .. '<CR>'}
-map {'n', '<Leader>r', ':edit ' .. refile_path .. '<CR>'}
+vim.keymap.set('n', '<Leader>o', ':edit ' .. org_path .. '<CR>')
+vim.keymap.set('n', '<Leader>r', ':edit ' .. refile_path .. '<CR>')
 
 require('orgmode').setup({
   org_agenda_files = {
