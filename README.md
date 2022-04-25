@@ -1,21 +1,20 @@
-dotfiles
-========
+# dotfiles
 
-Personal config files for Chris DeLuca
+Personal config files for Chris DeLuca.
 
-Installation
-------------
+## Installation
 
-```sh
+```bash
 # Clone the repo into your home directory in a hidden folder.
 cd && git clone git@github.com:bronzehedwick/dotfiles.git .dotfiles
 ```
 
-For automatic config linking, install [GNU Stow][stow].
+## Setup
 
-Setup
------
+All automation is provided by the [`./do`](./do) shell script.
 
-Provided [GNU Stow][stow] is installed, all config files can be linked by running `make`.
+On a fresh machine, `./do all` will install and configure everything.
+
+See `./do -h` for all commands.
 
 [stow]: http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
