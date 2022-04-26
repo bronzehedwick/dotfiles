@@ -64,21 +64,25 @@ brew_install() {
 }
 
 link() {
-    cd ~/.dotfiles || exit 6
+    cd ~/.dotfiles || exit 1
     find . -type d -depth 1 -name "[^.]*" | \
         grep -v scripts | \
         xargs basename | \
         xargs stow
     cd -
+    launchctl load -w ~/Library/LaunchAgents/local.mailsync.plist
+    launchctl load -w ~/Library/LaunchAgents/local.switch-theme.plist
 }
 
 unlink() {
-    cd ~/.dotfiles || exit 6
+    cd ~/.dotfiles || exit 1
     find . -type d -depth 1 -name "[^.]*" | \
         grep -v scripts | \
         xargs basename | \
         xargs -D stow
     cd -
+    launchctl unload -w ~/Library/LaunchAgents/local.mailsync.plist
+    launchctl unload -w ~/Library/LaunchAgents/local.switch-theme.plist
 }
 
 mail_setup() {

@@ -8,8 +8,7 @@
         <array>
             <string>/usr/local/bin/dark-notify</string>
             <string>-c</string>
-            <string>/Users/chris/.dotfiles/do</string>
-            <string>switch_theme</string>
+            <string>/Users/chris/.dotfiles/scripts/switch-theme</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
