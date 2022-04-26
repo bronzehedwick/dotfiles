@@ -337,6 +337,9 @@ vim.cmd[[
 -- Escape exits insert mode inside terminal.
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
+-- Quickly make the terminal the only window in terminal mode.
+vim.keymap.set('t', '<M-o>', '<C-\><C-n>:only<CR>i<CR>')
+
 -- M-r pastes inside terminal.
 -- NOTE: This really slows down init. Not sure why.
 -- map {'t', '<expr> <A-r>', '<C-\\><C-N>' .. vim.fn.nr2char(vim.fn.getchar()) .. 'pi'}
