@@ -99,3 +99,12 @@ color index color105 default "~T ~p"
 color index brightcolor105 default "~N ~T ~p"
 color index red default "~D ~p"
 color index brightred default "~N ~D ~p"
+
+# Diff/patch colors
+color body green default "^diff \-.*"
+color body green default "^index [a-f0-9].*"
+color body green default "^\-\-\- .*"
+color body green default "^[\+]{3} .*"
+color body cyan default "^[\+][^\+]+.*"
+color body red default "^\-[^\-]+.*"
+color body brightblue default "^@@ .*"
