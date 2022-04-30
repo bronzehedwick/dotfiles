@@ -1,4 +1,2 @@
--- Enable spell checking.
-vim.opt.shiftwidth = 8
-vim.opt.tabstop = 8
+-- Makefiles require hard tabs.
 vim.opt.expandtab = false

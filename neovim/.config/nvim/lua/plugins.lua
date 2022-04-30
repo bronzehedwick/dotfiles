@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-rhubarb'
     use 'tpope/vim-repeat'
     use 'tpope/vim-rsi'
+    use 'tpope/vim-sleuth'
     use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
     use 'vim-scripts/fountain.vim'

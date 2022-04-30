@@ -1,10 +1,6 @@
 -- Enable spell checking.
 vim.cmd('setlocal spell')
 
--- Default to 4 space indent, as that's the amount that triggers preformatted
--- text in markdown.
-vim.bo.shiftwidth = 4
-
 -- Support code fencing syntax highlighting for the listed languages.
 vim.g.markdown_fenced_languages = {
   'bash=sh',

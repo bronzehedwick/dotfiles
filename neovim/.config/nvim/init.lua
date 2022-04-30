@@ -38,14 +38,6 @@ vim.keymap.set('n', 'Q', '@@')
 -- Use soft tabs.
 vim.opt.expandtab = true
 
--- Soft tabs equal two spaces.
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-
--- Keep tab widths default to address possible display issues.
--- see: https://www.reddit.com/r/vim/wiki/tabstop
-vim.o.tabstop = 8
-
 -- No spell checking.
 vim.o.spell = false
 
