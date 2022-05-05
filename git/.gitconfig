@@ -43,26 +43,16 @@
 	linenumber = true
 [merge]
 	conflictstyle = diff3
-	tool = diffconflicts
+	tool = fugitive
 	keepBackup = false
 [mergetool "fugitive"]
 	cmd = nvr -s -c \"Gdiffsplit!\" \"$MERGED\"
 	keepBackup = false
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
 [diff]
 	tool = nvr
 	colorMoved = default
 [difftool "nvr"]
 	cmd = nvr -s -d \"$LOCAL\" \"$REMOTE\"
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool "Difftastic"]
-	cmd = difft \"$LOCAL\" \"$REMOTE\"
-[mergetool "diffconflicts"]
-	cmd = nvr -c DiffConflicts \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
-	trustExitCode = true
 [mergetool]
 	keepBackup = false
 [filter "media"]

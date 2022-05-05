@@ -29,7 +29,6 @@ return require('packer').startup(function(use)
     use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
     use 'vim-scripts/fountain.vim'
-    use 'whiteinge/diffconflicts'
     use { 'mattn/emmet-vim', opt = true }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'nvim-orgmode/orgmode', config = function()
