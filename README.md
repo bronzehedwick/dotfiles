@@ -6,7 +6,7 @@ Personal config files for Chris DeLuca.
 
 ```bash
 # Clone the repo into your home directory in a hidden folder.
-cd && git clone git@github.com:bronzehedwick/dotfiles.git .dotfiles
+git clone git@github.com:bronzehedwick/dotfiles.git ~/.dotfiles
 ```
 
 ## Setup
