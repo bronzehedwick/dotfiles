@@ -63,6 +63,12 @@ macro index / "<shell-escape>mu find --clearlinks --format=links --linksdir=~/Ma
 macro index <Esc>/ "<change-folder-readonly>~/Mail/search<enter>" \
         "mu switch to results"
 macro index,pager <Esc>a  '| git am -s'\n  "Git apply email patch"
+macro index <Esc>R \
+        "<tag-thread><tag-prefix><edit-label>receipt<enter><tag-prefix><save-message>+Archive<enter>" \
+        "receipt and archive"
+macro pager <Esc>R \
+        "<edit-label>receipt<enter><Up><save-message>+Archive<enter>" \
+        "receipt and archive"
 
 # contacts
 # set query_command = "mu cfind --format=mutt-ab '%s'"
