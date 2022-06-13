@@ -303,7 +303,7 @@ vim.cmd('command! Prettier lua Prettier()<CR>')
 
 -- Simple fuzzy finding.
 vim.keymap.set('n', '<M-/>', function()
-  return require('fuzzy-search').FuzzySearch('git ls-files', 'edit')
+  return require('utilities').fuzzy_search('git ls-files', 'edit')
 end)
 
 -- }}}
