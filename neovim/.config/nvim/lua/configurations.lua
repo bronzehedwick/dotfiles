@@ -49,46 +49,42 @@ autocmds.MakerQuickFix = {
 }
 
 -- Make list-like commands more intuitive.
--- TODO: Re-write this in lua.
-vim.cmd [[
-  function! CCR()
-    let cmdline = getcmdline()
-    if cmdline =~# '\v\C^(ls|files|buffers)'
-      " Like :ls but prompts for a buffer command.
-      return "\<CR>:b"
-    elseif cmdline =~# '\v\C/(#|nu|num|numb|numbe|number)$'
-      " Like :g//# but prompts for a command.
-      return "\<CR>:"
-    elseif cmdline =~# '\v\C^(dli|il)'
-      " Like :dlist or :ilist but prompts for a count for :djump or :ijump.
-      return "\<CR>:" . cmdline[0] . 'j  ' . split(cmdline, ' ')[1] . "\<S-Left>\<Left>"
-    elseif cmdline =~# '\v\C^(cli|lli)'
-      " Like :clist or :llist but prompts for an error/location number.
-      return "\<CR>:sil " . repeat(cmdline[0], 2) . "\<Space>"
-    elseif cmdline =~# '\C^old'
-      " Like :oldfiles but prompts for an old file to edit.
-      set nomore
-      return "\<CR>:sil se more|e #<"
-    elseif cmdline =~# '\C^changes'
-      " Like :changes but prompts for a change to jump to.
-      set nomore
-      return "\<CR>:sil se more|norm! g;\<S-Left>"
-    elseif cmdline =~# '\C^ju'
-      " Like :jumps but prompts for a position to jump to.
-      set nomore
-      return "\<CR>:sil se more|norm! \<C-o>\<S-Left>"
-    elseif cmdline =~# '\C^marks'
-      " Like :marks but prompts for a mark to jump to.
-      return "\<CR>:norm! `"
-    elseif cmdline =~# '\C^undol'
-      " Like :undolist but prompts for a change to undo.
-      return "\<CR>:u "
-    else
-      return "\<CR>"
-    endif
-  endfunction
-  cnoremap <expr> <CR> CCR()
-]]
+vim.keymap.set('c', '<CR>', function()
+  local cmdline = vim.fn.getcmdline()
+  if vim.regex('\\v\\C^(ls|files|buffers)'):match_str(cmdline) then
+    -- Like :ls but prompts for a buffer command.
+    return '<CR>:b'
+  elseif vim.regex('\\v\\C/(#|nu|num|numb|numbe|number)$'):match_str(cmdline) then
+    -- Like :g//# but prompts for a command.
+    return '<CR>:'
+  elseif vim.regex('\\v\\C^(dli|il)'):match_str(cmdline) then
+    -- Like :dlist or :ilist but prompts for a count for :djump or :ijump.
+    return '<CR>:' .. cmdline:sub(1, 1) .. 'j ' .. vim.fn.split(cmdline, ' ')[1] .. '<S-Left><Left>'
+  elseif vim.regex('\\v\\C^(cli|lli)'):match_str(cmdline) then
+    -- Like :clist or :llist but prompts for an error/location number.
+    return '<CR>:sil ' .. cmdline:sub(1, 1) .. cmdline:sub(1, 1) .. '<Space>'
+  elseif vim.regex('\\C^old'):match_str(cmdline) then
+    -- Like :oldfiles but prompts for an old file to edit.
+    vim.opt.more = false
+    return '<CR>:sil se more|e #<'
+  elseif vim.regex('\\C^changes'):match_str(cmdline) then
+    -- Like :changes but prompts for a change to jump to.
+    vim.opt.more = false
+    return '<CR>:sil se more|norm! g;<S-Left>'
+  elseif vim.regex('\\C^ju'):match_str(cmdline) then
+    -- Like :jumps but prompts for a position to jump to.
+    vim.opt.more = false
+    return '<CR>:sil se more|norm! <C-o><S-Left>'
+  elseif vim.regex('\\C^marks'):match_str(cmdline) then
+    -- Like :marks but prompts for a mark to jump to.
+    return '<CR>:norm! `'
+  elseif vim.regex('\\C^undol'):match_str(cmdline) then
+    -- Like :undolist but prompts for a change to undo.
+    return '<CR>:u '
+  else
+    return '<CR>'
+  end
+end, { noremap=true, expr=true })
 
 -- }}}
 
