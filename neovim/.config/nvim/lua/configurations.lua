@@ -357,7 +357,7 @@ require'nvim-treesitter.configs'.setup {
 
 -- Orgmode {{{2
 
-local org_path = '~/org'
+local org_path = '~/Documents/org'
 local refile_path = org_path .. '/refile.org'
 vim.keymap.set('n', '<Leader>o', ':edit ' .. org_path .. '<CR>')
 vim.keymap.set('n', '<Leader>r', ':edit ' .. refile_path .. '<CR>')
