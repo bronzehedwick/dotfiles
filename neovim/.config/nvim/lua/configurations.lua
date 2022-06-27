@@ -359,14 +359,12 @@ require'nvim-treesitter.configs'.setup {
 
 local org_path = '~/Documents/org'
 local refile_path = org_path .. '/refile.org'
-vim.keymap.set('n', '<Leader>o', ':edit ' .. org_path .. '<CR>')
-vim.keymap.set('n', '<Leader>r', ':edit ' .. refile_path .. '<CR>')
 
 require('orgmode').setup({
   org_agenda_files = {
     org_path .. '/tech.org',
     org_path .. '/projects.org',
-    org_path .. '/refile.org',
+    refile_path,
     org_path .. '/random.org',
   },
   org_default_notes_file = refile_path,

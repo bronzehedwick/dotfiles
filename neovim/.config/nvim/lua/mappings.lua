@@ -38,6 +38,9 @@ vim.keymap.set('n', '<F2>', function()
   print("It is " .. vim.fn.strftime("%a %b %e %I:%M %p"))
 end)
 
+-- Open org files.
+vim.keymap.set('n', '<Leader>o', ':edit ~/Documents/org/index.org<CR>')
+
 -- Quickly edit macros.
 vim.keymap.set('n', '<leader>m',  ":<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>")
 
