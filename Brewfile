@@ -1,4 +1,5 @@
 brew "aspell"
+brew "colima"
 brew "dark-notify"
 brew "dict"
 brew "fd"
