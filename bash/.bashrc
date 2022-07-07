@@ -76,12 +76,12 @@ export PS1="\\W$ "
 export TODOTXT_DEFAULT_ACTION=ls
 
 # Set Vim to the EDITOR environment variable
-if [ -z "${NVIM_LISTEN_ADDRESS+x}" ]; then
+if [ -z "${NVIM+x}" ]; then
   export EDITOR="ed"
   export VISUAL="nvim --noplugin"
 fi
 
-if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
+if [ -n "${NVIM+x}" ]; then
   export PS1="\\W» "
 fi
 

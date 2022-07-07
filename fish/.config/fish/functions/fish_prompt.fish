@@ -6,7 +6,7 @@ function fish_prompt
   else
     set_color normal
   end
-  if test -e "$NVIM_LISTEN_ADDRESS"
+  if test -e "$NVIM"
     echo (basename (pwd))"» "(set_color normal)
   else
     echo (basename (pwd))"\$ "(set_color normal)

@@ -37,7 +37,7 @@ alias t="todo.sh -ta"
 alias vi="nvi"
 alias vimdiff="nvim -d"
 
-if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
+if [ -n "${NVIM+x}" ]; then
   alias sp='nvr -o'
   alias vsp='nvr -O'
   alias tabe='nvr --remote-tab'
