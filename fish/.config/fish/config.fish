@@ -36,3 +36,8 @@ if not functions -q fisher
   fish -c fisher
 end
 set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
+
+# Bun
+set -Ux BUN_INSTALL "/Users/chris/.bun"
+set -px --path PATH "/Users/chris/.bun/bin"
+
