@@ -16,12 +16,11 @@ end
 
 # Neovim settings
 
-if test -z "$NVIM_LISTEN_ADDRESS"
-  set -x EDITOR ed
+if test -z "$NVIM"
   set -x VISUAL nvim --noplugin
 end
 
-if test -n "$NVIM_LISTEN_ADDRESS"
+if test -n "$NVIM"
   set -x MANPAGER "/usr/local/bin/nvr -c 'Man!' -o -"
 end
 
