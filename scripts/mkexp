@@ -1,0 +1,36 @@
+#!/bin/sh
+
+exp_name="unnamed_experiment"
+if [ -n "$1" ]; then
+  exp_name="$1"
+fi
+
+if [ -d "/tmp/$exp_name" ]; then
+  echo "$exp_name already exists. Replace? (y/n)"
+  read answer
+  if [ "$answer" != "y" ]; then
+    echo "Bailing out"
+    exit 0
+  fi
+fi
+
+mkdir -p "/tmp/$exp_name"
+
+echo "<!DOCTYPE html>
+<html lang=\"en-US\">
+  <head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>${exp_name}</title>
+    <link rel=\"stylesheet\" href=\"./styles.css\">
+  </head>
+  <body>
+    <script src=\"./main.js\"></script>
+  </body>
+</html>" > "/tmp/$exp_name/index.html"
+
+touch "/tmp/$exp_name/main.js" "/tmp/$exp_name/styles.css" "/tmp/$exp_name/favicon.ico"
+
+echo "Experiement created at /tmp/$exp_name"
+
+# vim: sw=2
