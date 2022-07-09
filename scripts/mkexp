@@ -29,7 +29,7 @@ echo "<!DOCTYPE html>
   </body>
 </html>" > "/tmp/$exp_name/index.html"
 
-touch "/tmp/$exp_name/main.js" "/tmp/$exp_name/styles.css" "/tmp/$exp_name/favicon.ico"
+touch "/tmp/$exp_name/main.js" "/tmp/$exp_name/styles.css" "/tmp/$exp_name/favicon.ico" "/tmp/$exp_name/package.json"
 
 echo "Experiement created at /tmp/$exp_name"
 
