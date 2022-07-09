@@ -36,5 +36,6 @@ brew "tree-sitter"
 brew "urlview"
 brew "w3m"
 brew "wget"
+brew "yamllint"
 brew "youtube-dl"
 # vim: ft=conf
