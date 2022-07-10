@@ -31,6 +31,13 @@ echo "<!DOCTYPE html>
 
 touch "/tmp/$exp_name/main.js" "/tmp/$exp_name/styles.css" "/tmp/$exp_name/favicon.ico" "/tmp/$exp_name/package.json"
 
+echo "root = true
+[*]
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2" > "/tmp/$exp_name/.editorconfig"
+
 echo "Experiement created at /tmp/$exp_name"
 
 # vim: sw=2
