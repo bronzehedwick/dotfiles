@@ -29,6 +29,10 @@ vim.cmd [[
   command! -nargs=+ Grep execute 'silent grep! <args>'
 ]]
 
+-- More sane command-line history.
+vim.keymap.set('c', '<C-n>', '<down>')
+vim.keymap.set('c', '<C-p>', '<up>')
+
 -- }}}
 
 -- Convenience mappings {{{
@@ -120,9 +124,11 @@ vim.keymap.set('n', '<M-/>', function()
   return require('utilities').fuzzy_search('git ls-files', 'edit')
 end)
 
--- More sane command-line history.
-vim.keymap.set('c', '<C-n>', '<down>')
-vim.keymap.set('c', '<C-p>', '<up>')
+-- Search org files.
+vim.cmd [[
+  command! -nargs=+ Ogrep execute 'silent grep! <args> ~/Documents/org/'
+  command! -nargs=+ Orgrep execute 'silent grep! <args> --no-ignore ~/Documents/org/'
+]]
 
 -- }}}
 
