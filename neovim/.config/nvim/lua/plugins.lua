@@ -18,7 +18,9 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'bronzehedwick/vim-primary-terminal'
     use 'phaazon/hop.nvim'
-    use 'rstacruz/vim-closer'
+    -- Disabled until #37 is resolved.
+    -- https://github.com/rstacruz/vim-closer/issues/37
+    -- use 'rstacruz/vim-closer'
     use 'tpope/vim-commentary'
     use 'tpope/vim-eunuch'
     use 'tpope/vim-fugitive'
