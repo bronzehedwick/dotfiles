@@ -33,3 +33,5 @@ Expunge Both
 SyncState *
 Sync All
 Create Both
+
+# vim: ft=conf
