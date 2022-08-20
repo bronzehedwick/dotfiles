@@ -14,6 +14,7 @@ SSLType IMAPS
 SSLVersions TLSv1.2
 User iam@chrisdeluca.me
 PassCmd "security find-generic-password -w -s fastmail_offlineimap"
+AuthMechs LOGIN
 
 IMAPStore chris-remote
 Account chris
