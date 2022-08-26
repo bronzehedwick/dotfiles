@@ -81,3 +81,5 @@
 	defaultBranch = main
 [fetch]
 	prune = true
+[includeIf "gitdir:~/Sites/Lullabot/"]
+	path = config-lullabot
