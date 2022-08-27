@@ -50,6 +50,19 @@ lsp_install() {
     phpactor status
 }
 
+lsp_update() {
+    # CSS/SASS, HTML, JSON
+    npm update --global vscode-langservers-extracted
+    # Python
+    npm update --global pyright
+    # JavaScript
+    npm update --global typescript typescript-language-server
+    # PHP
+    cd ~/Documents/phpactor || exit 1
+    composer update
+    phpactor status
+}
+
 tpm_install() {
     mkdir -p ~/.dotfiles/tmux/.config/tmux/plugins
     git clone https://github.com/tmux-plugins/tpm ~/.dotfiles/tmux/.config/tmux/plugins/tpm
