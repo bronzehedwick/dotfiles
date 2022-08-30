@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
     -- Disabled until #37 is resolved.
     -- https://github.com/rstacruz/vim-closer/issues/37
     -- use 'rstacruz/vim-closer'
+    use 'tommcdo/vim-fubitive'
     use 'tpope/vim-commentary'
     use 'tpope/vim-eunuch'
     use 'tpope/vim-fugitive'
