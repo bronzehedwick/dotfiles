@@ -399,3 +399,5 @@ follow-location = true
 
 #
 # end of siegerc
+
+# vim: ft=conf
