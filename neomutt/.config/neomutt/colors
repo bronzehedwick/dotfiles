@@ -2,6 +2,7 @@
 # color cheat sheet: https://jonasjacek.github.io/colors/
 
 # Colors for items in the index
+color status color231 color25
 color index brightcyan default ~N
 color index brightyellow default ~F
 color index black green ~T
@@ -21,6 +22,9 @@ mono body bold "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
 
 # email addresses
 color body brightblue default "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+
+# attachment indicator
+color attachment yellow default
 
 # header
 color header green default "^from:"
@@ -55,21 +59,6 @@ color quoted5 yellow default
 color quoted6 red default
 color quoted7 green default
 
-# Default color definitions
-color normal default default
-color signature brightmagenta default
-color indicator white cyan
-color attachment black green
-color error red black
-color message default default
-color search brightwhite magenta
-color status white blue
-color tree brightblue default
-color tilde green default
-color bold brightyellow default
-color underline magenta default
-color markers brightcyan default
-
 # Color definitions when on a mono screen
 mono bold bold
 mono underline underline
@@ -80,8 +69,8 @@ mono indicator reverse
 color index color45 default "~t bronzehedwick@gmail.com"
 color index brightcolor45 default "~N ~t bronzehedwick@gmail.com"
 
-color index color117 default "~t christopher.j.deluca@gmail.com"
-color index brightcolor117 default "~N ~t christopher.j.deluca@gmail.com"
+color index color45 default "~t christopher.j.deluca@gmail.com"
+color index brightcolor45 default "~N ~t christopher.j.deluca@gmail.com"
 
 color index color112 default "~t iam@chrisdeluca.me"
 color index brightcolor112 default "~N ~t iam@chrisdeluca.me"
