@@ -32,6 +32,9 @@ mail_sync() {
     /usr/local/bin/mbsync chris
     # Do indexing.
     /usr/local/bin/mu index --lazy-check
+    # Generate recent sent and archive folders.
+    /usr/local/bin/mu find --clearlinks --format=links --linksdir=~/Mail/RArchive date:3m.. maildir:'/Archive'
+    /usr/local/bin/mu find --clearlinks --format=links --linksdir=~/Mail/ReSent date:3m.. maildir:'/Sent'
 }
 
 lsp_install() {

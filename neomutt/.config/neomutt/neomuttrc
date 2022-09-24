@@ -30,11 +30,13 @@ set record = "+Sent"
 
 # mailboxes
 mailboxes +INBOX \
-          +Archive \
-          +Sent \
+          +ReSent \
+          +RArchive \
           +Drafts \
           +Spam \
           +Learn\ spam \
+          +Sent \
+          +Archive \
           +Trash
 
 # trash handling
