@@ -383,8 +383,12 @@ require('orgmode').setup({
   org_default_notes_file = refile_path,
   org_indent_mode = 'noindent',
   org_ellipsis = '…',
+  emacs_config = {
+    executable_path = 'emacs',
+    config_path = '$HOME/.dotfiles/emacs/.emacs.d/init.el'
+  },
   org_todo_keyword_faces = {
-    DONE = ':foreground #1f6300', -- overrides builtin color for `TODO` keyword
+    DONE = ':foreground green'
   },
   org_agenda_templates = {
     t = { description = 'Task', template = '* TODO %?\n%u' },
