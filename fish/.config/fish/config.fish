@@ -20,10 +20,6 @@ if test -z "$NVIM"
   set -x VISUAL nvim --noplugin
 end
 
-if test -n "$NVIM"
-  set -x MANPAGER "/usr/local/bin/nvr -c 'Man!' -o -"
-end
-
 # Git
 
 set -x REVIEW_BASE main
@@ -40,4 +36,3 @@ set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
 # Bun
 set -Ux BUN_INSTALL "/Users/chris/.bun"
 set -px --path PATH "/Users/chris/.bun/bin"
-
