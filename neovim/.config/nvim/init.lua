@@ -1,3 +1,5 @@
+vim.g.ts_highlight_lua = true
+
 require'configurations'
 require'mappings'
 require'plugins'
