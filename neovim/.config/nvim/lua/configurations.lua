@@ -390,7 +390,7 @@ require('orgmode').setup({
   org_todo_keyword_faces = {
     DONE = ':foreground green'
   },
-  org_agenda_templates = {
+  org_capture_templates = {
     t = { description = 'Task', template = '* TODO %?\n%u' },
     n = { description = 'Note', template = '* %?\n%u' },
     l = { description = 'Line Note', template = '* %?\n%a' },
@@ -401,6 +401,7 @@ require('orgmode').setup({
     },
   },
   mappings = {
+    org_return = false,
     global = {
       org_agenda = '<M-a>',
       org_capture = '<M-c>'
