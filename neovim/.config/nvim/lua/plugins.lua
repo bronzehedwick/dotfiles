@@ -6,6 +6,12 @@ return require('packer').startup(function(use)
   -- Packer can manage itself as an optional plugin
   use {'wbthomason/packer.nvim', opt = true}
 
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
   use 'justinmk/vim-ipmotion'
   use 'arp242/jumpy.vim'
   use {
@@ -20,7 +26,6 @@ return require('packer').startup(function(use)
   use 'phaazon/hop.nvim'
   use 'rstacruz/vim-closer'
   use 'tommcdo/vim-fubitive'
-  use 'tpope/vim-commentary'
   use 'tpope/vim-eunuch'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
@@ -39,6 +44,12 @@ return require('packer').startup(function(use)
     'tpope/vim-dispatch',
     opt = true,
     cmd = {'Dispatch', 'Make', 'Focus', 'Start'}
+  }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
   }
 
 end)
