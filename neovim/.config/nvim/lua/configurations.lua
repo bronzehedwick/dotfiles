@@ -188,6 +188,16 @@ vim.cmd[[
 
 -- Plugins {{{1
 
+-- Hop {{{
+
+vim.keymap.set('n', '<M-w>', require('hop').hint_words)
+vim.keymap.set('n', '<M-p>', require('hop').hint_patterns)
+vim.keymap.set('n', '<M-f>', require('hop').hint_char1)
+vim.keymap.set('n', '<M-l>', require('hop').hint_lines_skip_whitespace)
+vim.keymap.set('n', 's', require('hop').hint_char2)
+
+-- }}}
+
 -- Emmet {{{2
 
 -- Add responsive meta tag to html5 emmet snippet.
@@ -307,15 +317,6 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
--- }}}
-
--- Hop {{{2
-require'hop'.setup()
-vim.keymap.set('n', '<M-w>', require('hop').hint_words)
-vim.keymap.set('n', '<M-p>', require('hop').hint_patterns)
-vim.keymap.set('n', '<M-f>', require('hop').hint_char1)
-vim.keymap.set('n', '<M-l>', require('hop').hint_lines_skip_whitespace)
-vim.keymap.set('n', 's', require('hop').hint_char2)
 -- }}}
 
 -- Treesitter {{{2
