@@ -1,4 +1,4 @@
--- Only required if you have packer in your `opt` pack
+-- Only required since I have packer in my `opt` pack.
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
     cmd = {'Dispatch', 'Make', 'Focus', 'Start'}
   }
   use 'justinmk/vim-ipmotion'
+  use 'tpope/vim-repeat'
 
   -- Movement
   use 'arp242/jumpy.vim'
@@ -25,43 +26,22 @@ return require('packer').startup(function(use)
     'phaazon/hop.nvim',
     branch = 'v2',
     config = function()
-      require'hop'.setup{ keys = 'etovxqpdygfblzhckisuran' }
+      local hop = require'hop'
+      hop.setup{}
+      vim.keymap.set('n', '<M-w>', hop.hint_words)
+      vim.keymap.set('n', '<M-p>', hop.hint_patterns)
+      vim.keymap.set('n', '<M-f>', hop.hint_char1)
+      vim.keymap.set('n', '<M-l>', hop.hint_lines_skip_whitespace)
+      vim.keymap.set('n', 's', hop.hint_char2)
     end
   }
+  use 'tpope/vim-rsi'
+  use 'tpope/vim-unimpaired'
 
   -- Git
   use 'tpope/vim-fugitive'
   use 'tommcdo/vim-fubitive'
-
-  -- Colorschemes
-  use 'cormacrelf/dark-notify'
-  use {
-    'bronzehedwick/vim-colors-xcode',
-    branch = 'lsp-treesitter-highlights'
-  }
-
-  use 'justinmk/vim-dirvish'
-  use 'mbbill/undotree'
-  use 'bronzehedwick/vim-primary-terminal'
-  use 'rstacruz/vim-closer'
-  use 'tpope/vim-eunuch'
   use 'tpope/vim-rhubarb'
-  use 'tpope/vim-repeat'
-  use 'tpope/vim-rsi'
-  use 'tpope/vim-sleuth'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-unimpaired'
-  use 'vim-scripts/fountain.vim'
-  use { 'mattn/emmet-vim', opt = true }
-  use { 'nvim-orgmode/orgmode', config = function()
-    require('orgmode').setup{}
-  end }
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  }
   use {
     'lewis6991/gitsigns.nvim',
     config = function()
@@ -106,6 +86,42 @@ return require('packer').startup(function(use)
         end
       }
     end
+  }
+
+  -- Buffers
+  use 'tpope/vim-eunuch'
+  use 'tpope/vim-sleuth'
+  use 'justinmk/vim-dirvish'
+  use 'mbbill/undotree'
+
+  -- Text
+  use 'rstacruz/vim-closer'
+  use 'tpope/vim-surround'
+  use {
+    'mattn/emmet-vim',
+    opt = true
+  }
+  use { 'nvim-orgmode/orgmode', config = function()
+    require('orgmode').setup{}
+  end }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
+  -- Terminal
+  use 'bronzehedwick/vim-primary-terminal'
+
+  -- Syntax
+  use 'vim-scripts/fountain.vim'
+
+  -- Colorschemes
+  use 'cormacrelf/dark-notify'
+  use {
+    'bronzehedwick/vim-colors-xcode',
+    branch = 'lsp-treesitter-highlights'
   }
 
 end)
