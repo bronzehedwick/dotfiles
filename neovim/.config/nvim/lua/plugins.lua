@@ -3,10 +3,11 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
 
-  -- Packer can manage itself as an optional plugin
+  -- Packer can manage itself as an optional plugin {{{
   use {'wbthomason/packer.nvim', opt = true}
+  -- }}}
 
-  -- Utilities
+  -- Utilities {{{
   use 'neovim/nvim-lspconfig'
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -19,8 +20,9 @@ return require('packer').startup(function(use)
   }
   use 'justinmk/vim-ipmotion'
   use 'tpope/vim-repeat'
+  -- }}}
 
-  -- Movement
+  -- Movement {{{
   use 'arp242/jumpy.vim'
   use {
     'phaazon/hop.nvim',
@@ -37,8 +39,9 @@ return require('packer').startup(function(use)
   }
   use 'tpope/vim-rsi'
   use 'tpope/vim-unimpaired'
+  -- }}}
 
-  -- Git
+  -- Git {{{
   use 'tpope/vim-fugitive'
   use 'tommcdo/vim-fubitive'
   use 'tpope/vim-rhubarb'
@@ -48,26 +51,22 @@ return require('packer').startup(function(use)
       require('gitsigns').setup{
         on_attach = function(bufnr)
           local gs = package.loaded.gitsigns
-
           local function map(mode, l, r, opts)
             opts = opts or {}
             opts.buffer = bufnr
             vim.keymap.set(mode, l, r, opts)
           end
-
           -- Navigation
           map('n', ']c', function()
             if vim.wo.diff then return ']c' end
             vim.schedule(function() gs.next_hunk() end)
             return '<Ignore>'
           end, {expr=true})
-
           map('n', '[c', function()
             if vim.wo.diff then return '[c' end
             vim.schedule(function() gs.prev_hunk() end)
             return '<Ignore>'
           end, {expr=true})
-
           -- Actions
           map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
           map({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>')
@@ -80,21 +79,22 @@ return require('packer').startup(function(use)
           map('n', '<leader>hd', gs.diffthis)
           map('n', '<leader>hD', function() gs.diffthis('~') end)
           map('n', '<leader>td', gs.toggle_deleted)
-
           -- Text object
           map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
         end
       }
     end
   }
+  -- }}}
 
-  -- Buffers
+  -- Buffers {{{
   use 'tpope/vim-eunuch'
   use 'tpope/vim-sleuth'
   use 'justinmk/vim-dirvish'
   use 'mbbill/undotree'
+  -- }}}
 
-  -- Text
+  -- Text {{{
   use 'rstacruz/vim-closer'
   use 'tpope/vim-surround'
   use {
@@ -110,18 +110,24 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   }
+  -- }}}
 
-  -- Terminal
+  -- Terminal {{{
   use 'bronzehedwick/vim-primary-terminal'
+  -- }}}
 
-  -- Syntax
+  -- Syntax {{{
   use 'vim-scripts/fountain.vim'
+  -- }}}
 
-  -- Colorschemes
+  -- Colorschemes {{{
   use 'cormacrelf/dark-notify'
   use {
     'bronzehedwick/vim-colors-xcode',
     branch = 'lsp-treesitter-highlights'
   }
+  -- }}}
 
 end)
+
+-- vim: foldmethod=marker
