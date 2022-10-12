@@ -1,7 +1,8 @@
--- Exit if fugitive isn't loaded.
+-- Exit if fugitive isn't loaded. {{{
 if (vim.fn.exists(':Git') == 1) then
   return
 end
+-- }}}
 
 -- Status line. {{{
 -- Git branch.
@@ -54,3 +55,5 @@ vim.keymap.set('n', '<M-g>e', ':Gedit<CR>', { silent = true })
 vim.keymap.set('n', '<M-g>u', ':Gup<CR>', { silent = true })
 vim.keymap.set('n', '<M-g>f', ':Gfetch<CR>', { silent = true })
 -- )}}
+
+-- vim:fdm=marker ft=lua et sts=2 sw=2
