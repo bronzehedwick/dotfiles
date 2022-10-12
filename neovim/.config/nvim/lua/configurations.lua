@@ -22,10 +22,11 @@ vim.o.mouse = ''
 -- See https://github.com/neovim/neovim/pull/8088
 vim.o.fillchars = 'msgsep:◌'
 
+-- TODO Re-enable if LSP server for buffer does not have a formatexpr.
 -- Format text (gq) with par if it exists.
-if vim.fn.executable('par') == 1 then
-  vim.opt.formatprg = 'par'
-end
+-- if vim.fn.executable('par') == 1 then
+--   vim.opt.formatprg = 'par'
+-- end
 
 -- Make the jump-list behave like the tag list or a web browser.
 vim.o.jumpoptions = 'stack'
@@ -249,9 +250,6 @@ vim.g.user_emmet_settings = emmet_opts
 local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
 
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
   -- Mappings.
   local opts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -270,13 +268,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
   vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
   vim.keymap.set('n', '<space>s', vim.lsp.buf.document_symbol, opts)
-
-  -- Set some keybinds conditional on server capabilities
-  if client.server_capabilities.document_formatting then
-    vim.keymap.set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-  elseif client.server_capabilities.document_range_formatting then
-    vim.keymap.set("n", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-  end
 
   -- Set autocommands conditional on server_capabilities
   if client.server_capabilities.document_highlight then
