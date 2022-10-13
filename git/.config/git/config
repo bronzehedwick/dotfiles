@@ -39,6 +39,7 @@
 	helper = cache
 [push]
 	default = upstream
+	autoSetupRemote = true
 [grep]
 	linenumber = true
 [merge]
