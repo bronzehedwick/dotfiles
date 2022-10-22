@@ -96,7 +96,7 @@ set tilde
 unset markers
 set text_flowed = yes
 
-set index_format = "%4C %Z %{%b %d} %-15.15L %?K?%9.10K&          ? %?X?📎&  ? (%?l?%4l&%4c?) %s %> %?g?%g?"
+set index_format="%4C %Z %[%D] %-15.15L %s"
 
 # don't make me press enter after shell command is run
 set wait_key = no
