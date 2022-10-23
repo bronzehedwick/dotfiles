@@ -2,6 +2,13 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+ARCH="$(arch)"
+if [ "$ARCH" == "arm64" ]; then
+    brew_path=/opt/homebrew/bin
+else
+    brew_path=$brew_path
+fi
+
 _valid_commands() {
     echo -e "Valid commands:\n\t-h|--help"
     for command in $command_list
@@ -12,11 +19,11 @@ _valid_commands() {
 
 mail_init() {
     # Add the Mail directory if it doesn't already exist.
-    /usr/local/bin/mu mkdir ~/Mail
+    $brew_path/mu mkdir ~/Mail
     # Sync mail from IMAP.
-    /usr/local/bin/mbsync chris
+    $brew_path/mbsync chris
     # Do initial mail indexing.
-    /usr/local/bin/mu init --maildir ~/Mail \
+    $brew_path/mu init --maildir ~/Mail \
         --my-address iam@chrisdeluca.me \
         --my-address contact@chrisdeluca.me \
         --my-address code@chrisdeluca.me \
@@ -24,17 +31,17 @@ mail_init() {
         --my-address bronzehedwick@gmail.com \
         --my-address signups@chrisdeluca.me
     # Initial index.
-    /usr/local/bin/mu index
+    $brew_path/mu index
 }
 
 mail_sync() {
     # Sync mail from IMAP.
-    /usr/local/bin/mbsync chris
+    $brew_path/mbsync chris
     # Do indexing.
-    /usr/local/bin/mu index --lazy-check
+    $brew_path/mu index --lazy-check
     # Generate recent sent and archive folders.
-    /usr/local/bin/mu find --clearlinks --format=links --linksdir=~/Mail/RArchive date:3m.. maildir:'/Archive'
-    /usr/local/bin/mu find --clearlinks --format=links --linksdir=~/Mail/ReSent date:3m.. maildir:'/Sent'
+    $brew_path/mu find --clearlinks --format=links --linksdir=~/Mail/RArchive date:3m.. maildir:'/Archive'
+    $brew_path/mu find --clearlinks --format=links --linksdir=~/Mail/ReSent date:3m.. maildir:'/Sent'
 }
 
 lsp_install() {
@@ -45,11 +52,13 @@ lsp_install() {
     # JavaScript
     npm install --global typescript typescript-language-server
     # PHP
-    cd ~/Documents || exit 1
-    git clone git@github.com:phpactor/phpactor
-    cd phpactor || exit 1
+    if [ ! -d ~/Documents/phpactor ]; then
+        cd ~/Documents || exit 1
+        git clone git@github.com:phpactor/phpactor
+    fi
+    cd ~/Documents/phpactor || exit 1
     composer install
-    ln -s ~/Documents/phpactor/bin/phpactor /usr/local/bin/phpactor
+    ln -s ~/Documents/phpactor/bin/phpactor $brew_path/phpactor
     phpactor status
 }
 
