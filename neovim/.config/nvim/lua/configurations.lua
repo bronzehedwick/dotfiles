@@ -1,5 +1,15 @@
 local autocmds = {}
 
+local arch = vim.fn.system{'arch'}
+
+local function brew_path()
+  if arch == 'arm64' then
+    return '/opt/homebrew/bin'
+  else
+    return '/usr/local/bin'
+  end
+end
+
 -- Interface {{{
 
 -- Use soft tabs.
@@ -165,12 +175,12 @@ vim.opt.statusline:append('%p%%')
 
 -- Terminal {{{
 
-if vim.fn.executable('/usr/local/bin/bash') then
-  vim.o.shell = '/usr/local/bin/bash'
+if vim.fn.executable(brew_path()..'/bash') then
+  vim.o.shell = brew_path()..'/bash'
 end
 
-if vim.fn.executable('/usr/local/bin/fish') then
-  vim.o.shell = '/usr/local/bin/fish'
+if vim.fn.executable(brew_path()..'/fish') then
+  vim.o.shell = brew_path()..'/fish'
 end
 
 -- Set the statusline to the process name set by the terminal.
@@ -226,7 +236,7 @@ vim.g.user_emmet_settings = emmet_opts
   table.insert(runtime_path, 'lua/?/init.lua')
 
   require'lspconfig'.sumneko_lua.setup {
-    cmd = {'/usr/local/bin/lua-language-server'},
+    cmd = {brew_path()..'/lua-language-server'},
     settings = {
       Lua = {
         runtime = {
