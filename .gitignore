@@ -15,3 +15,4 @@ gnupg/.gnupg/pubring.kbx*
 gnupg/.gnupg/reader*.status
 gnupg/.gnupg/trustdb.gpg
 gnupg/.gnupg/random_seed
+gnupg/.gnupg/.*
