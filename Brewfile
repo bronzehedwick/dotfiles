@@ -43,4 +43,5 @@ brew "w3m"
 brew "wget"
 brew "yamllint"
 brew "youtube-dl"
+cask "basictex"
 # vim: ft=conf
