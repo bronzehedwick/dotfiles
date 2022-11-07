@@ -25,17 +25,8 @@ return require('packer').startup(function(use)
   -- Movement {{{
   use 'arp242/jumpy.vim'
   use {
-    'phaazon/hop.nvim',
-    branch = 'v2',
-    config = function()
-      local hop = require'hop'
-      hop.setup{}
-      vim.keymap.set('n', '<M-w>', hop.hint_words)
-      vim.keymap.set('n', '<M-p>', hop.hint_patterns)
-      vim.keymap.set('n', '<M-f>', hop.hint_char1)
-      vim.keymap.set('n', '<M-l>', hop.hint_lines_skip_whitespace)
-      vim.keymap.set('n', 's', hop.hint_char2)
-    end
+    'ggandor/leap.nvim',
+    config = function() require('leap').add_default_mappings() end
   }
   use 'tpope/vim-rsi'
   use 'tpope/vim-unimpaired'
