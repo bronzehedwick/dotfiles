@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ARCH="$(arch)"
+if [ "$ARCH" = "arm64" ]
+then
+        /opt/homebrew/bin/pinentry-mac
+else
+        /usr/local/bin/pinentry-mac
+fi
