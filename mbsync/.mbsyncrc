@@ -1,6 +1,6 @@
 # IMAP keeps an "internaldate" attribute for messages, which is separate from
 # the date given in the message header, set based upon when the message was
-# first received.  Fastmail's webmail interface at least uses this attribute to
+# first received. Fastmail's webmail interface at least uses this attribute to
 # properly order messages chronologically. The CopyArrivalDate option isn't
 # well documented but it seems that when synchronising a new message it uses
 # the Maildir file's Modify date as the IMAP internaldate attribute and vice
@@ -21,18 +21,45 @@ Account chris
 
 MaildirStore chris-local
 # The trailing "/" is important
-Path ~/Mail/
-Inbox ~/Mail/INBOX
-Flatten .
+Path ~/.local/share/neomutt/mailbox/chris/
+Inbox ~/.local/share/neomutt/mailbox/chris/INBOX
+Trash ~/.local/share/neomutt/mailbox/chris/Trash
 SubFolders Legacy
+Flatten .
 
 Channel chris
 Far :chris-remote:
 Near :chris-local:
-Patterns INBOX Archive Sent Spam Trash Learn\ spam
+Patterns *
+# Patterns INBOX Archive Sent Spam Trash Learn\ spam
 Expunge Both
 SyncState *
 Sync All
 Create Both
+
+IMAPAccount lullabot
+Host imap.gmail.com
+User chris.deluca@lullabot.com
+PassCmd "security find-generic-password -w -s lullabot_mbsync"
+SSLType IMAPS
+AuthMechs LOGIN
+
+IMAPStore lullabot-remote
+Account lullabot
+
+MaildirStore lullabot-local
+# The trailing "/" is important
+Path ~/.local/share/neomutt/mailbox/lullabot/
+Inbox ~/.local/share/neomutt/mailbox/lullabot/INBOX
+Trash ~/.local/share/neomutt/mailbox/lullabot/Trash
+SubFolders Legacy
+Flatten .
+
+Channel lullabot
+Far :lullabot-remote:
+Near :lullabot-local:
+Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail" "[Gmail]/Trash"
+Create Both
+SyncState *
 
 # vim: ft=conf

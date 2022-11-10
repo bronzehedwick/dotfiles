@@ -19,29 +19,22 @@ _valid_commands() {
 
 mail_init() {
     # Add the Mail directory if it doesn't already exist.
-    $brew_path/mu mkdir ~/Mail
+    mkdir -p $HOME/.local/share/neomutt/mailbox/chris
+    mkdir -p $HOME/.local/share/neomutt/mailbox/lullabot
     # Sync mail from IMAP.
-    $brew_path/mbsync chris
+    $brew_path/mbsync --all
     # Do initial mail indexing.
-    $brew_path/mu init --maildir ~/Mail \
-        --my-address iam@chrisdeluca.me \
-        --my-address contact@chrisdeluca.me \
-        --my-address code@chrisdeluca.me \
-        --my-address christopher.j.deluca@gmail.com \
-        --my-address bronzehedwick@gmail.com \
-        --my-address signups@chrisdeluca.me
-    # Initial index.
-    $brew_path/mu index
+    $brew_path/notmuch new
 }
 
 mail_sync() {
     # Sync mail from IMAP.
-    $brew_path/mbsync chris
+    $brew_path/mbsync --all
     # Do indexing.
-    $brew_path/mu index --lazy-check
+    $brew_path/notmuch new
     # Generate recent sent and archive folders.
-    $brew_path/mu find --clearlinks --format=links --linksdir=~/Mail/RArchive date:3m.. maildir:'/Archive'
-    $brew_path/mu find --clearlinks --format=links --linksdir=~/Mail/ReSent date:3m.. maildir:'/Sent'
+    # $brew_path/mu find --clearlinks --format=links --linksdir=~/$HOME/.local/share/neomutt/mailbox/ RArchive date:3m.. maildir:'/Archive'
+    # $brew_path/mu find --clearlinks --format=links --linksdir=~/$HOME/.local/share/neomutt/mailbox/ ReSent date:3m.. maildir:'/Sent'
 }
 
 lsp_install() {

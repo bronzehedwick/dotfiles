@@ -1,12 +1,16 @@
 # mail type
 set mbox_type = Maildir
 set sendmail = "/usr/local/bin/msmtp"
+set folder = "~/.local/share/neomutt/mailbox/chris"
+set spoolfile = +/
+set record = +/
+set postponed = +/../draftbox
 
 # account options
 set my_user = iam@chrisdeluca.me
 set from = $my_user
 set realname = "Chris DeLuca"
-alternates code@chrisdeluca.me|contact@chrisdeluca.me|signups@chrisdeluca.me|bronzehedwick@gmail.com|christopher.j.deluca@gmail.com
+alternates code@chrisdeluca.me|contact@chrisdeluca.me|signups@chrisdeluca.me|bronzehedwick@gmail.com|christopher.j.deluca@gmail.com|chris.deluca@lullabot.com
 set mail_check = 0
 set envelope_from
 set reverse_name = yes
@@ -21,63 +25,82 @@ set fast_reply = yes
 set include = yes
 set mark_old = no
 
+# virtual folders
+set nm_default_uri = "notmuch:///Users/chris/.local/share/neomutt/mailbox"
+set virtual_spoolfile = yes
+virtual-mailboxes "Inbox" "notmuch://?query=tag:inbox and NOT tag:trash"
+virtual-mailboxes "Newsletters" "notmuch://?query=tag:newsletter and NOT tag:trash"
+virtual-mailboxes "Archive" "notmuch://?query=tag:archive and date:3M.."
+virtual-mailboxes "Sent" "notmuch://?query=tag:sent"
+virtual-mailboxes "Trash" "notmuch://?query=tag:trash"
+virtual-mailboxes "Personal" "notmuch://?query=folder:chris/INBOX"
+virtual-mailboxes "Lullabot" "notmuch://?query=folder:lullabot/INBOX"
+
 # folders
-set folder = "~/Mail"
-set spoolfile = "+INBOX"
-set mbox = "+Archive"
-set postponed = "+Drafts"
-set record = "+Sent"
+# set folder = "~/Mail"
+# set spoolfile = "+INBOX"
+# set mbox = "+Archive"
+# set postponed = "+Drafts"
+# set record = "+Sent"
 
 # mailboxes
-mailboxes +INBOX \
-          +ReSent \
-          +RArchive \
-          +Drafts \
-          +Spam \
-          +Learn\ spam \
-          +Sent \
-          +Archive \
-          +Trash
+# mailboxes +INBOX \
+#           +ReSent \
+#           +RArchive \
+#           +Drafts \
+#           +Spam \
+#           +Learn\ spam \
+#           +Sent \
+#           +Archive \
+#           +Trash
 
 # trash handling
 set trash = '+Trash'
 folder-hook =Trash 'push <delete-pattern>~d>30d<enter>'
 
 # general key bindings
-macro index,pager S \
-        "<save-message>+Learn spam<enter>" \
-        "mark message as spam"
-macro index,pager a \
-        "<save-message>+Archive<enter>" \
-        "archive message"
-macro index,pager G \
-        "<tag-thread><tag-prefix><save-message>+Archive<enter>" \
-        "archive thread"
-macro index,pager * \
-        "<shell-escape>/usr/local/bin/mbsync chris<enter>" \
-        "sync all mail"
-macro attach s \
-        "<save-entry><bol>~/Downloads/<eol>" \
-        "save to downloads folder"
+# macro index,pager S \
+#         "<save-message>+Learn spam<enter>" \
+#         "mark message as spam"
+# macro index,pager a \
+#         "<save-message>+Archive<enter>" \
+#         "archive message"
+# macro index,pager G \
+#         "<tag-thread><tag-prefix><save-message>+Archive<enter>" \
+#         "archive thread"
+# macro index,pager * \
+#         "<shell-escape>/usr/local/bin/mbsync chris<enter>" \
+#         "sync all mail"
+# macro attach s \
+#         "<save-entry><bol>~/Downloads/<eol>" \
+#         "save to downloads folder"
 
-macro index / "<shell-escape>mu find --clearlinks --format=links --linksdir=~/Mail/search " \
-        "mu find"
-macro index <Esc>/ "<change-folder-readonly>~/Mail/search<enter>" \
-        "mu switch to results"
-macro index,pager <Esc>a  '| git am -s'\n  "Git apply email patch"
-macro index <Esc>R \
-        "<tag-thread><tag-prefix><edit-label>receipt<enter><tag-prefix><save-message>+Archive<enter>" \
-        "receipt and archive"
-macro pager <Esc>R \
-        "<edit-label>receipt<enter><Up><save-message>+Archive<enter>" \
-        "receipt and archive"
+# macro index / "<shell-escape>mu find --clearlinks --format=links --linksdir=~/Mail/search " \
+#         "mu find"
+# macro index <Esc>/ "<change-folder-readonly>~/Mail/search<enter>" \
+#         "mu switch to results"
+# macro index,pager <Esc>a  '| git am -s'\n  "Git apply email patch"
+# macro index <Esc>R \
+#         "<tag-thread><tag-prefix><edit-label>receipt<enter><tag-prefix><save-message>+Archive<enter>" \
+#         "receipt and archive"
+# macro pager <Esc>R \
+#         "<edit-label>receipt<enter><Up><save-message>+Archive<enter>" \
+#         "receipt and archive"
+
+macro index \\ "<vfolder-from-query>"
+macro index,pager A "<modify-labels>+archive -unread -inbox\\n"
+bind index,pager y modify-labels
+bind index,pager X change-vfolder
 
 # contacts
 # set query_command = "mu cfind --format=mutt-ab '%s'"
-set query_command = "/usr/local/bin/lbdbq '%s'"
+# set query_command = "/usr/local/bin/lbdbq '%s'"
+set query_command = "notmuch address %s"
+set query_format = "%5c %t %a %n %?e?(%e)?"
 
 # editor
 # set editor = '/usr/local/bin/nano -Y Email'
+set editor = "nvim +/^$/+1 +':noh'"
 bind editor <Tab> complete-query
 bind editor ^T    complete
 
@@ -94,6 +117,7 @@ set menu_scroll
 set smart_wrap
 set tilde
 unset markers
+unset help
 set text_flowed = yes
 
 set index_format="%4C %Z %[%D] %-15.15L %s"
@@ -108,12 +132,32 @@ set sleep_time = 0
 auto_view text/v-card text/html text/enriched text/calendar application/ics
 alternative_order text/plain text/enriched text/html
 
+# tag transformations
+tag-transforms "inbox"   "i"   \
+               "unread"  "u"   \
+               "replied" "↩︎"  \
+               "sent"    "➥ "  \
+               "todo"    "T"   \
+               "deleted" "␡" \
+               "invites" "📅" \
+               "attachment" "@" \
+               "encrypted"  "" \
+               "signed"     "✎" \
+               "github-issues" "gh"
+tag-formats "attachment" "GA" \
+            "encrypted"  "GE" \
+            "signed"     "GS"
+
 # sidebar
-# set sidebar_visible
-set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
-set mail_check_stats
+set mail_check_stats = yes
+set sidebar_visible = yes
 set sidebar_width = 20
-set sidebar_divider_char = '│'
+set sidebar_new_mail_only = no
+set sidebar_sort_method = 'unsorted'
+set sidebar_format = "%D%* %?N?(%N)? %S"
+
+# set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+# set sidebar_divider_char = '│'
 # sidebar bindings
 bind index,pager B sidebar-toggle-visible
 bind index,pager \CP sidebar-prev
@@ -135,6 +179,10 @@ ignore * # first, ignore all headers
 unignore from: to: cc: bcc: reply-to: date: subject: x-label: # then, show only these
 hdr_order from: to: cc: bcc: reply-to: date: subject: x-label: # and in this order
 
+# attachments
+set abort_noattach = ask-yes
+# set abort_noattach_regex = "\\<attach(|ed|ments?)\\>"
+
 # pgp
 source ~/.config/neomutt/gpg.rc
 set pgp_use_gpg_agent = yes
@@ -152,4 +200,4 @@ lists lists.sr.ht
 subscribe sr.ht-announce
 subscribe sr.ht-dev
 
-# vim: ft=muttrc et
+# vim: ft=neomuttrc et

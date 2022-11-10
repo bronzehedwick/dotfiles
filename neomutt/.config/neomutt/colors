@@ -75,14 +75,17 @@ color index brightcolor45 default "~N ~t christopher.j.deluca@gmail.com"
 color index color112 default "~t iam@chrisdeluca.me"
 color index brightcolor112 default "~N ~t iam@chrisdeluca.me"
 
-color index color210 default "~t contact@chrisdeluca.me"
-color index brightcolor210 default "~N ~t contact@chrisdeluca.me"
+color index color113 default "~t contact@chrisdeluca.me"
+color index brightcolor113 default "~N ~t contact@chrisdeluca.me"
 
 color index color142 default "~t signups@chrisdeluca.me"
 color index brightcolor142 default "~N ~t signups@chrisdeluca.me"
 
-color index color28 default "~t code@chrisdeluca.me"
-color index brightcolor28 default "~N ~t code@chrisdeluca.me"
+color index color106 default "~t code@chrisdeluca.me"
+color index brightcolor106 default "~N ~t code@chrisdeluca.me"
+
+color index color210 default "~t @lullabot.com"
+color index brightcolor210 default "~N ~t @lullabot.com"
 
 color index color105 default "~T ~p"
 color index brightcolor105 default "~N ~T ~p"
