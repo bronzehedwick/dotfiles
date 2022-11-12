@@ -16,4 +16,5 @@ gnupg/.gnupg/reader*.status
 gnupg/.gnupg/trustdb.gpg
 gnupg/.gnupg/random_seed
 gnupg/.gnupg/.*
-*com.*
+launchctl/Library/LaunchAgents/com.*
+launchctl/Library/LaunchAgents/net.*
