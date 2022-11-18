@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 function today
   calendar -A 0 -f /usr/share/calendar/calendar.lotr
   calendar -A 0 -f /usr/share/calendar/calendar.world

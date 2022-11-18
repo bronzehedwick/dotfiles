@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 function jq
   if test -x /usr/local/bin/gojq; or test -x /opt/homebrew/bin/gojq
     command gojq $argv
