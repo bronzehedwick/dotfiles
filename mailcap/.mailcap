@@ -7,3 +7,4 @@ image/*; open '%s';
 text/calendar; open '%s';
 application/ics; open '%s';
 application/pdf; open '%s';
+application/pgp-keys; gpg -f < %s ; copiousoutput
