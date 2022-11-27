@@ -24,8 +24,7 @@ MaildirStore chris-local
 Path ~/.local/share/neomutt/mailbox/chris/
 Inbox ~/.local/share/neomutt/mailbox/chris/INBOX
 Trash ~/.local/share/neomutt/mailbox/chris/Trash
-SubFolders Legacy
-Flatten .
+SubFolders Verbatim
 
 Channel chris
 Far :chris-remote:
@@ -48,12 +47,11 @@ IMAPStore lullabot-remote
 Account lullabot
 
 MaildirStore lullabot-local
+SubFolders Verbatim
 # The trailing "/" is important
 Path ~/.local/share/neomutt/mailbox/lullabot/
 Inbox ~/.local/share/neomutt/mailbox/lullabot/INBOX
 Trash ~/.local/share/neomutt/mailbox/lullabot/Trash
-SubFolders Legacy
-Flatten .
 
 Channel lullabot
 Far :lullabot-remote:

@@ -1,0 +1,10 @@
+# mailbox settings.
+set postponed = "+Drafts"
+set trash = "+lullabot/[Gmail]/Trash"
+
+# general key bindings.
+macro index,pager S \
+        "<save-message>+[Gmail]/Spam<enter>" \
+        "mark message as spam"
+
+# vim: ft=neomuttrc et

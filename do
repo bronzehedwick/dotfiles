@@ -4,10 +4,12 @@ IFS=$'\n\t'
 
 ARCH="$(arch)"
 if [ "$ARCH" == "arm64" ]; then
-    brew_path=/opt/homebrew/bin
+    BREW_PATH=/opt/homebrew/bin
 else
-    brew_path=$brew_path
+    BREW_PATH=/usr/local/bin
 fi
+
+MAIL_PATH="$HOME/.local/share/neomutt/mailbox"
 
 _valid_commands() {
     echo -e "Valid commands:\n\t-h|--help"
@@ -19,22 +21,43 @@ _valid_commands() {
 
 mail_init() {
     # Add the Mail directory if it doesn't already exist.
-    mkdir -p $HOME/.local/share/neomutt/mailbox/chris
-    mkdir -p $HOME/.local/share/neomutt/mailbox/lullabot
+    mkdir -p "$MAIL_PATH/chris"
+    mkdir -p "$MAIL_PATH/lullabot"
     # Sync mail from IMAP.
-    $brew_path/mbsync --all
+    $BREW_PATH/mbsync --all
     # Do initial mail indexing.
-    $brew_path/notmuch new
+    $BREW_PATH/notmuch new --quiet
+    # Tag folders.
+    while read -r dir; do
+        $BREW_PATH/notmuch tag +home -- folder:"$dir"
+    done < <(find "$MAIL_PATH/chris" -type d -depth 1 -print0)
+    while read -r dir; do
+        $BREW_PATH/notmuch tag +lullabot -- folder:"$dir"
+    done < <(find "$MAIL_PATH/lullabot" -type d -depth 1 -print0)
+    $BREW_PATH/notmuch tag +inbox -- folder:"chris/INBOX"
+    $BREW_PATH/notmuch tag +inbox -- folder:"lullabot/[Gmail]/INBOX"
+    $BREW_PATH/notmuch tag -inbox +sent -- folder:"chris/Sent"
+    $BREW_PATH/notmuch tag -inbox +sent -- folder:"lullabot/[Gmail]/Sent Mail"
+    $BREW_PATH/notmuch tag -inbox +archive -- folder:"chris/Archive"
+    $BREW_PATH/notmuch tag -inbox +archive -- folder:"lullabot/[Gmail]/All Mail"
+    $BREW_PATH/notmuch tag -inbox +trash -- folder:"chris/Trash"
+    $BREW_PATH/notmuch tag -inbox +trash -- folder:"lullabot/[Gmail]/Trash"
+    $BREW_PATH/notmuch tag -inbox +draft -- folder:"chris/Drafts"
+    $BREW_PATH/notmuch tag -inbox +draft -- folder:"lullabot/[Gmail]/Drafts"
 }
 
 mail_sync() {
+    # Run only if not already running in other instance.
+    pgrep mbsync >/dev/null && { echo "mbsync is already running."; exit ;}
+    # Re-tag moved messages.
+    $BREW_PATH/notmuch tag +archive -index -unread -- folder:"chris/Archive"
+    $BREW_PATH/notmuch tag +archive -index -unread -- folder:"lullabot/[Gmail]/All Mail"
     # Sync mail from IMAP.
-    $brew_path/mbsync --all
+    $BREW_PATH/mbsync --all --quiet
+    # Hack to delete dumb extra folder.
+    rm -r "$MAIL_PATH/chris/~"
     # Do indexing.
-    $brew_path/notmuch new
-    # Generate recent sent and archive folders.
-    # $brew_path/mu find --clearlinks --format=links --linksdir=~/$HOME/.local/share/neomutt/mailbox/ RArchive date:3m.. maildir:'/Archive'
-    # $brew_path/mu find --clearlinks --format=links --linksdir=~/$HOME/.local/share/neomutt/mailbox/ ReSent date:3m.. maildir:'/Sent'
+    $BREW_PATH/notmuch new --quiet
 }
 
 lsp_install() {
@@ -51,7 +74,7 @@ lsp_install() {
     fi
     cd ~/Documents/phpactor || exit 1
     composer install
-    ln -s ~/Documents/phpactor/bin/phpactor $brew_path/phpactor
+    ln -s ~/Documents/phpactor/bin/phpactor $BREW_PATH/phpactor
     phpactor status
 }
 

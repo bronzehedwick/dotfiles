@@ -1,0 +1,16 @@
+# mailbox settings.
+set postponed = "+Drafts"
+set trash = "+Trash"
+
+# general key bindings.
+macro index,pager S \
+        "<save-message>+Learn spam<enter>" \
+        "mark message as spam"
+macro index,pager a \
+        "<save-message>+Archive<enter>" \
+        "archive message"
+# macro index,pager G \
+#         "<tag-thread><tag-prefix><save-message>+Archive<enter>" \
+#         "archive thread"
+
+# vim: ft=neomuttrc et

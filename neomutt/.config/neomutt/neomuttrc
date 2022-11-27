@@ -1,85 +1,47 @@
-# mail type
-set mbox_type = Maildir
-set sendmail = "/usr/local/bin/msmtp"
-set folder = "~/.local/share/neomutt/mailbox/chris"
-set spoolfile = +/
-set record = +/
-set postponed = +/../draftbox
-
-# account options
-set my_user = iam@chrisdeluca.me
+# Account options.
+set my_user = "iam@chrisdeluca.me"
 set from = $my_user
-set realname = "Chris DeLuca"
+set real_name = "Chris DeLuca"
+set use_from = yes
+set user_agent = yes
 alternates code@chrisdeluca.me|contact@chrisdeluca.me|signups@chrisdeluca.me|bronzehedwick@gmail.com|christopher.j.deluca@gmail.com|chris.deluca@lullabot.com
-set mail_check = 0
-set envelope_from
-set reverse_name = yes
-set reverse_realname = no
-unset move
-set delete
-unset confirmappend
-set quit
 set header_cache = ~/.cache/neomutt/header_cache
-set send_charset = "us-ascii:utf-8"
+
+# Mail behavior.
+set mail_check = 0
+set use_envelope_from = yes
+set reverse_name = yes
+set reverse_real_name = no
+# unset move
+set delete = yes
+set quit = yes
+set charset = "utf-8"
+set send_charset = "utf-8"
+set assumed_charset = "utf-8"
 set fast_reply = yes
 set include = yes
 set mark_old = no
+set history_remove_dups = yes
+
+# mail type
+set mbox_type = Maildir
+set sendmail = /opt/homebrew/bin/msmtp
+set folder = ~/.local/share/neomutt/mailbox
+set spool_file = +/
+set record = +/
+set postponed = +/../draftbox
 
 # virtual folders
-set nm_default_uri = "notmuch:///Users/chris/.local/share/neomutt/mailbox"
-set virtual_spoolfile = yes
-virtual-mailboxes "Inbox" "notmuch://?query=tag:inbox and NOT tag:trash"
-virtual-mailboxes "Newsletters" "notmuch://?query=tag:newsletter and NOT tag:trash"
-virtual-mailboxes "Archive" "notmuch://?query=tag:archive and date:3M.."
-virtual-mailboxes "Sent" "notmuch://?query=tag:sent"
-virtual-mailboxes "Trash" "notmuch://?query=tag:trash"
-virtual-mailboxes "Personal" "notmuch://?query=folder:chris/INBOX"
+set nm_default_url = "notmuch:///Users/chris/.local/share/neomutt/mailbox"
+set virtual_spool_file = yes
+virtual-mailboxes "Home" "notmuch://?query=folder:chris/INBOX"
 virtual-mailboxes "Lullabot" "notmuch://?query=folder:lullabot/INBOX"
 
-# folders
-# set folder = "~/Mail"
-# set spoolfile = "+INBOX"
-# set mbox = "+Archive"
-# set postponed = "+Drafts"
-# set record = "+Sent"
-
-# mailboxes
-# mailboxes +INBOX \
-#           +ReSent \
-#           +RArchive \
-#           +Drafts \
-#           +Spam \
-#           +Learn\ spam \
-#           +Sent \
-#           +Archive \
-#           +Trash
-
-# trash handling
-set trash = '+Trash'
-folder-hook =Trash 'push <delete-pattern>~d>30d<enter>'
-
-# general key bindings
-# macro index,pager S \
-#         "<save-message>+Learn spam<enter>" \
-#         "mark message as spam"
-# macro index,pager a \
-#         "<save-message>+Archive<enter>" \
-#         "archive message"
-# macro index,pager G \
-#         "<tag-thread><tag-prefix><save-message>+Archive<enter>" \
-#         "archive thread"
-# macro index,pager * \
-#         "<shell-escape>/usr/local/bin/mbsync chris<enter>" \
-#         "sync all mail"
-# macro attach s \
-#         "<save-entry><bol>~/Downloads/<eol>" \
-#         "save to downloads folder"
-
-# macro index / "<shell-escape>mu find --clearlinks --format=links --linksdir=~/Mail/search " \
-#         "mu find"
-# macro index <Esc>/ "<change-folder-readonly>~/Mail/search<enter>" \
-#         "mu switch to results"
-# macro index,pager <Esc>a  '| git am -s'\n  "Git apply email patch"
+# general key bindings.
+macro attach s \
+        "<save-entry><bol>~/Downloads/<eol>" \
+        "save to downloads folder"
+macro index,pager <Esc>a  '| git am -s'\n  "Git apply email patch"
 # macro index <Esc>R \
 #         "<tag-thread><tag-prefix><edit-label>receipt<enter><tag-prefix><save-message>+Archive<enter>" \
 #         "receipt and archive"
@@ -88,19 +50,15 @@ folder-hook =Trash 'push <delete-pattern>~d>30d<enter>'
 #         "receipt and archive"
 
 macro index \\ "<vfolder-from-query>"
-macro index,pager A "<modify-labels>+archive -unread -inbox\\n"
+# macro index,pager A "<modify-labels>+archive -unread -inbox\n"
+bind index,pager + entire-thread
 bind index,pager y modify-labels
-bind index,pager X change-vfolder
 
 # contacts
-# set query_command = "mu cfind --format=mutt-ab '%s'"
-# set query_command = "/usr/local/bin/lbdbq '%s'"
 set query_command = "notmuch address %s"
 set query_format = "%5c %t %a %n %?e?(%e)?"
 
 # editor
-# set editor = '/usr/local/bin/nano -Y Email'
-set editor = "nvim +/^$/+1 +':noh'"
 bind editor <Tab> complete-query
 bind editor ^T    complete
 
@@ -108,16 +66,19 @@ bind editor ^T    complete
 set sort = threads
 set sort_aux = reverse-last-date-received
 set sort_re
+set collapse_unread = yes
+set uncollapse_jump = yes
+folder-hook . "exec collapse-all"
 
 # look and feel
 set pager_index_lines = 8
 set pager_context = 5
-set pager_stop
-set menu_scroll
-set smart_wrap
-set tilde
-unset markers
-unset help
+set pager_stop = yes
+set menu_scroll = yes
+set smart_wrap = yes
+set tilde = yes
+set markers = no
+set help = no
 set text_flowed = yes
 
 set index_format="%4C %Z %[%D] %-15.15L %s"
@@ -156,8 +117,6 @@ set sidebar_new_mail_only = no
 set sidebar_sort_method = 'unsorted'
 set sidebar_format = "%D%* %?N?(%N)? %S"
 
-# set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
-# set sidebar_divider_char = '│'
 # sidebar bindings
 bind index,pager B sidebar-toggle-visible
 bind index,pager \CP sidebar-prev
@@ -179,16 +138,19 @@ ignore * # first, ignore all headers
 unignore from: to: cc: bcc: reply-to: date: subject: x-label: # then, show only these
 hdr_order from: to: cc: bcc: reply-to: date: subject: x-label: # and in this order
 
+# seperate accounts
+folder-hook 'Home' 'source ~/.config/neomutt/neomuttrc.home'
+folder-hook 'Lullabot' 'source ~/.config/neomutt/neomuttrc.lullabot'
+
 # attachments
 set abort_noattach = ask-yes
-# set abort_noattach_regex = "\\<attach(|ed|ments?)\\>"
 
 # pgp
 source ~/.config/neomutt/gpg.rc
 set pgp_use_gpg_agent = yes
 set pgp_timeout = 3600
-set crypt_autosign = no
-set crypt_replyencrypt = yes
+set crypt_auto_sign = no
+set crypt_reply_encrypt = yes
 
 # colors
 source ~/.config/neomutt/colors
