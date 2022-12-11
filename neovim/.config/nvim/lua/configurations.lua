@@ -346,7 +346,7 @@ require'nvim-treesitter.configs'.setup {
   },
   highlight = {
     enable = true, -- false will disable the whole extension
-    additional_vim_regex_highlighting = {'org'}
+    additional_vim_regex_highlighting = {'org', 'markdown'}
   },
   indent = {
     enable = true
