@@ -6,7 +6,7 @@
         <string>local.switch-theme</string>
         <key>ProgramArguments</key>
         <array>
-            <string>/usr/local/bin/dark-notify</string>
+            <string>/opt/homebrew/bin/dark-notify</string>
             <string>-c</string>
             <string>/Users/chris/.dotfiles/scripts/switch-theme</string>
         </array>
