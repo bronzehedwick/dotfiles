@@ -439,6 +439,21 @@ require('orgmode').setup({
 
 -- }}}
 
+-- Neovide {{{
+if vim.fn.exists('g:neovide') then
+  vim.cmd[[
+    set guifont=SF\ Mono,Menlo:h20
+    let g:neovide_floating_blur_amount_x = 2.0
+    let g:neovide_floating_blur_amount_y = 2.0
+    let g:neovide_scroll_animation_length = 0.3
+    let g:neovide_hide_mouse_when_typing = v:true
+    let g:neovide_input_macos_alt_is_meta = v:true
+    let g:neovide_cursor_animation_length = 0.05
+    let g:neovide_cursor_trail_size = 0.3
+  ]]
+end
+-- }}}
+
 require'utilities'.create_augroups(autocmds)
 
 -- vim:fdm=marker ft=lua et sts=2 sw=2
