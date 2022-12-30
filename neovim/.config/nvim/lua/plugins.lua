@@ -95,6 +95,12 @@ return require('packer').startup(function(use)
   use 'tpope/vim-sleuth'
   use 'justinmk/vim-dirvish'
   use 'mbbill/undotree'
+  use({
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  })
   -- }}}
 
   -- Text {{{
