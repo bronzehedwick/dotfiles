@@ -450,6 +450,7 @@ if vim.fn.exists('g:neovide') then
     let g:neovide_input_macos_alt_is_meta = v:true
     let g:neovide_cursor_animation_length = 0.05
     let g:neovide_cursor_trail_size = 0.3
+    let g:neovide_input_use_logo = v:true
   ]]
 end
 -- }}}
