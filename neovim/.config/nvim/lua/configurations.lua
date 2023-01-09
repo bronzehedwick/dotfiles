@@ -49,11 +49,30 @@ end
 -- Automatically open, but do not go to (if there are errors) the quickfix /
 -- location list window, or close it when is has become empty.
 --
--- Note: Must allow nesting of autocmds to enable any customizations for quickfix
--- buffers.
--- Note: Normally, :cwindow jumps to the quickfix window if the command opens it
--- (but not if it's already open). However, as part of the autocmd, this doesn't
--- seem to happen.
+-- NOTE: Must allow nesting of autocmds to enable any customizations for
+-- quickfix buffers.
+--
+-- NOTE: Normally, :cwindow jumps to the quickfix window if the command opens
+-- it (but not if it's already open). However, as part of the autocmd, this
+-- doesn't seem to happen.
+--
+-- TODO Finish porting this to Lua.
+-- local quickfix_augroup = vim.api.nvim_create_augroup(
+--   'QuickFixCmdPost',
+--   { clear = true }
+-- )
+-- vim.api.nvim_create_autocmd('MakerQuickFix', {
+--   pattern = 'QuickFixCmdPost',
+--   command = '[^l]*',
+--   desc = 'nested cwindow',
+--   group = quickfix_augroup,
+-- })
+-- vim.api.nvim_create_autocmd('MakerQuickFix', {
+--   pattern = 'QuickFixCmdPost',
+--   command = 'l*',
+--   desc = 'nested lwindow',
+--   group = quickfix_augroup,
+-- })
 autocmds.MakerQuickFix = {
   {'QuickFixCmdPost', '[^l]*', 'nested cwindow'},
   {'QuickFixCmdPost', 'l*', 'nested lwindow'},
@@ -189,9 +208,10 @@ if vim.fn.executable(brew_path()..'/fish') then
 end
 
 -- Set the statusline to the process name set by the terminal.
-autocmds.terminal = {
-  {'TermOpen', '*', 'setlocal statusline=%{b:term_title} nonumber'},
-}
+vim.api.nvim_create_autocmd('TermOpen', {
+  pattern = { '*' },
+  command = [[setlocal statusline=%{b:term_title} nonumber]]
+})
 
 vim.cmd[[
   nmap <unique> <silent> <C-s> <Plug>(PrimaryTerminalOpenDynamic)
@@ -447,7 +467,7 @@ require('orgmode').setup({
 -- Neovide {{{
 if vim.fn.exists('g:neovide') then
   vim.cmd[[
-    set guifont=SF\ Mono,Menlo:h20
+    set guifont=SF\ Mono,Menlo:h19
     let g:neovide_floating_blur_amount_x = 2.0
     let g:neovide_floating_blur_amount_y = 2.0
     let g:neovide_scroll_animation_length = 0.3
