@@ -1,6 +1,6 @@
 local autocmds = {}
 
-local arch = vim.fn.system{'arch'}
+local arch = vim.fn.system { 'arch' }
 
 local function brew_path()
   if arch == 'arm64' then
@@ -74,8 +74,8 @@ end
 --   group = quickfix_augroup,
 -- })
 autocmds.MakerQuickFix = {
-  {'QuickFixCmdPost', '[^l]*', 'nested cwindow'},
-  {'QuickFixCmdPost', 'l*', 'nested lwindow'},
+  { 'QuickFixCmdPost', '[^l]*', 'nested cwindow' },
+  { 'QuickFixCmdPost', 'l*', 'nested lwindow' },
 }
 
 -- Make list-like commands more intuitive.
@@ -114,7 +114,7 @@ vim.keymap.set('c', '<CR>', function()
   else
     return '<CR>'
   end
-end, { noremap=true, expr=true })
+end, { noremap = true, expr = true })
 
 -- }}}
 
@@ -199,12 +199,12 @@ vim.opt.statusline:append('%p%%')
 
 -- Terminal {{{
 
-if vim.fn.executable(brew_path()..'/bash') then
-  vim.o.shell = brew_path()..'/bash'
+if vim.fn.executable(brew_path() .. '/bash') then
+  vim.o.shell = brew_path() .. '/bash'
 end
 
-if vim.fn.executable(brew_path()..'/fish') then
-  vim.o.shell = brew_path()..'/fish'
+if vim.fn.executable(brew_path() .. '/fish') then
+  vim.o.shell = brew_path() .. '/fish'
 end
 
 -- Set the statusline to the process name set by the terminal.
@@ -213,7 +213,7 @@ vim.api.nvim_create_autocmd('TermOpen', {
   command = [[setlocal statusline=%{b:term_title} nonumber]]
 })
 
-vim.cmd[[
+vim.cmd [[
   nmap <unique> <silent> <C-s> <Plug>(PrimaryTerminalOpenDynamic)
   tmap <unique> <silent> <C-s> <C-\><C-n><C-w>c
   autocmd TermOpen * startinsert
@@ -228,11 +228,11 @@ vim.cmd[[
 
 -- Add responsive meta tag to html5 emmet snippet.
 local emmet_opts = {
-  variables = {lang = 'en-US'},
+  variables = { lang = 'en-US' },
   html = {
     default_attributes = {
-      option = {value = nil},
-      textarea = {id = nil, name = nil, cols = 10, rows = 10},
+      option = { value = nil },
+      textarea = { id = nil, name = nil, cols = 10, rows = 10 },
     },
     snippets = {},
   },
@@ -254,42 +254,42 @@ vim.g.user_emmet_settings = emmet_opts
 -- }}}
 
 -- LSP {{{2
+local nvim_lsp = require('lspconfig')
 
-  -- LUA LSP {{{3
-  local runtime_path = vim.split(package.path, ';')
-  table.insert(runtime_path, 'lua/?.lua')
-  table.insert(runtime_path, 'lua/?/init.lua')
+-- LUA LSP {{{3
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
 
-  require'lspconfig'.sumneko_lua.setup {
-    cmd = {brew_path()..'/lua-language-server'},
-    settings = {
-      Lua = {
-        runtime = {
-          version = 'LuaJIT',
-          path = runtime_path,
-        },
-        diagnostics = {
-          globals = {'vim'},
-        },
-        workspace = {
-          library = vim.api.nvim_get_runtime_file('', true),
-        },
-        telemetry = {
-          enable = false,
-        },
+nvim_lsp.sumneko_lua.setup {
+  cmd = { brew_path() .. '/lua-language-server' },
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+        path = runtime_path,
+      },
+      diagnostics = {
+        globals = { 'vim' },
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file('', true),
+      },
+      telemetry = {
+        enable = false,
       },
     },
-  }
-  -- }}}
+  },
+}
+-- }}}
 
-local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
 
   -- Mappings.
-  local opts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  vim.keymap.set('n', '<C-]>', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  vim.keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  local opts = { noremap = true, silent = true, buffer = bufnr }
+  vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  vim.keymap.set('n', '<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   vim.keymap.set('n', '<space>k', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   vim.keymap.set('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
@@ -303,6 +303,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
   vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
   vim.keymap.set('n', '<space>s', vim.lsp.buf.document_symbol, opts)
+  vim.keymap.set('n', '<space>f', vim.lsp.buf.format, opts)
 
   -- Set autocommands conditional on server_capabilities
   if client.server_capabilities.document_highlight then
@@ -339,7 +340,7 @@ end
 
 require('orgmode').setup_ts_grammar()
 
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
   -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ensure_installed = {
     'bash',
@@ -371,7 +372,7 @@ require'nvim-treesitter.configs'.setup {
   },
   highlight = {
     enable = true, -- false will disable the whole extension
-    additional_vim_regex_highlighting = {'org', 'markdown'}
+    additional_vim_regex_highlighting = { 'org', 'markdown' }
   },
   indent = {
     enable = true
@@ -466,7 +467,7 @@ require('orgmode').setup({
 
 -- Neovide {{{
 if vim.fn.exists('g:neovide') then
-  vim.cmd[[
+  vim.cmd [[
     set guifont=SF\ Mono,Menlo:h19
     let g:neovide_floating_blur_amount_x = 2.0
     let g:neovide_floating_blur_amount_y = 2.0
@@ -480,6 +481,6 @@ if vim.fn.exists('g:neovide') then
 end
 -- }}}
 
-require'utilities'.create_augroups(autocmds)
+require 'utilities'.create_augroups(autocmds)
 
 -- vim:fdm=marker ft=lua et sts=2 sw=2

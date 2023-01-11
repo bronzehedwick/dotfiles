@@ -5,7 +5,7 @@ vim.cmd('packadd emmet-vim')
 vim.opt.include = "^\\s*{%\\s*include|^\\s*{%\\s*embed|^\\s*{%\\s*extends"
 
 -- Use twig commenting instead of HTML.
-vim.opt.commentstring="{# %s #}"
+vim.opt.commentstring = "{# %s #}"
 local ft = require('Comment.ft')
 ft.set('htmldjango', '{#%s#}')
 

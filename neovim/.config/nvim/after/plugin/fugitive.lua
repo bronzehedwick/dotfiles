@@ -6,7 +6,7 @@ end
 
 -- Status line. {{{
 -- Git branch.
-vim.opt.statusline='%{FugitiveStatusline()}'
+vim.opt.statusline = '%{FugitiveStatusline()}'
 -- Tail of file (just the name.ext).
 vim.opt.statusline:append('%< %t')
 -- File modified flag.

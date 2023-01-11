@@ -1,12 +1,12 @@
 local M = {}
 
 -- Taken from https://github.com/norcalli/nvim_utils
-M.create_augroups = function (definitions)
+M.create_augroups = function(definitions)
   for group_name, definition in pairs(definitions) do
     vim.api.nvim_command('augroup ' .. group_name)
     vim.api.nvim_command('autocmd!')
     for _, def in ipairs(definition) do
-      local command = table.concat(vim.tbl_flatten{'autocmd', def}, ' ')
+      local command = table.concat(vim.tbl_flatten { 'autocmd', def }, ' ')
       vim.api.nvim_command(command)
     end
     vim.api.nvim_command('augroup END')
@@ -46,15 +46,15 @@ M.fuzzy_search = function(files_command, action)
 
   vim.api.nvim_command('startinsert')
 
-  vim.fn.termopen(shell_command, {on_exit = function()
+  vim.fn.termopen(shell_command, { on_exit = function()
     vim.api.nvim_command('bdelete!')
     vim.fn.win_gotoid(winid)
     local f = io.open(file, 'r')
     local stdout = f:read('*all')
     f:close()
     os.remove(file)
-    vim.api.nvim_command(table.concat({action, stdout}, ' '))
-  end})
+    vim.api.nvim_command(table.concat({ action, stdout }, ' '))
+  end })
 end
 
 return M

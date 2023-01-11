@@ -46,7 +46,7 @@ end)
 vim.keymap.set('n', '<Leader>o', ':edit ~/Documents/org/index.org<CR>')
 
 -- Quickly edit macros.
-vim.keymap.set('n', '<leader>m',  ":<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>")
+vim.keymap.set('n', '<leader>m', ":<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>")
 
 -- Insert time into a document.
 vim.keymap.set('i', '<C-g><C-t>', '<C-r>=strftime("%Y-%m-%dT%H:%M:%S")<CR>')
@@ -99,23 +99,23 @@ if vim.fn.executable('urlview') == 1 then
     local file = vim.fn.tempname()
     vim.api.nvim_command('write! ' .. file)
     vim.api.nvim_open_win(
-    vim.api.nvim_create_buf(false, true),
-    true,
-    {
-      relative = 'win',
-      style = 'minimal',
-      border = 'shadow',
-      width = width,
-      height = height,
-      col = math.min((vim.o.columns - width) / 2),
-      row = math.min((vim.o.lines - height) / 2 - 1),
-    }
+      vim.api.nvim_create_buf(false, true),
+      true,
+      {
+        relative = 'win',
+        style = 'minimal',
+        border = 'shadow',
+        width = width,
+        height = height,
+        col = math.min((vim.o.columns - width) / 2),
+        row = math.min((vim.o.lines - height) / 2 - 1),
+      }
     )
     vim.api.nvim_command('startinsert')
-    vim.fn.termopen('urlview ' .. file, {on_exit = function()
+    vim.fn.termopen('urlview ' .. file, { on_exit = function()
       vim.api.nvim_command('bdelete!')
       os.remove(file)
-    end})
+    end })
   end, { silent = true })
 end
 

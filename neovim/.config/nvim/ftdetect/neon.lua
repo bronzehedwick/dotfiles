@@ -3,4 +3,3 @@ vim.cmd [[
     au BufRead,BufNewFile *.neon set filetype=yaml
   augroup END
 ]]
-

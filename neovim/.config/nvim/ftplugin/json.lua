@@ -4,4 +4,3 @@ if vim.fn.executable('jsonlint') then
 else
   vim.cmd('compiler jsontool')
 end
-

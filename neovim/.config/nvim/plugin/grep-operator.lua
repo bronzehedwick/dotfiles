@@ -1,3 +1,4 @@
+-- TODO Fix this, it does not work.
 function GrepOperator(type)
   if (type == 'v') then
     vim.cmd('normal! `<v`>y')

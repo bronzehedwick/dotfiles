@@ -26,6 +26,11 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use {
+    'tpope/vim-dispatch',
+    opt = true,
+    cmd = { 'Dispatch', 'Make', 'Focus', 'Start' }
+  }
   use 'justinmk/vim-ipmotion'
   use 'tpope/vim-repeat'
   -- }}}
