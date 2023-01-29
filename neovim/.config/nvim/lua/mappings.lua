@@ -1,7 +1,7 @@
 -- Re-mappings {{{
 
--- Set mapleader to ",", keeping localleader as the default "\".
-vim.g.mapleader = ','
+-- Set mapleader to "<space>", keeping localleader as the default "\".
+vim.g.mapleader = ' '
 
 -- Stupid shift key fixes, lifted from spf13.
 vim.cmd [[
