@@ -153,9 +153,13 @@ vim.o.splitright = true
 -- Puts new split windows to the bottom of the current.
 vim.o.splitbelow = true
 
--- Disable virtual_text since it's redundant due to lsp_lines.
-vim.diagnostic.config({
-  virtual_text = false,
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = vim.api.nvim_create_augroup('highlight_yank', {}),
+  desc = 'Hightlight selection on yank',
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300 }
+  end,
 })
 
 -- }}}
