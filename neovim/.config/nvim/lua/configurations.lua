@@ -78,7 +78,7 @@ autocmds.MakerQuickFix = {
   { 'QuickFixCmdPost', 'l*', 'nested lwindow' },
 }
 
--- Make list-like commands more intuitive.
+-- Make list-like commands more intuitive. {{{2
 vim.keymap.set('c', '<CR>', function()
   local cmdline = vim.fn.getcmdline()
   if vim.regex('\\v\\C^(ls|files|buffers)'):match_str(cmdline) then
@@ -114,7 +114,7 @@ vim.keymap.set('c', '<CR>', function()
   else
     return '<CR>'
   end
-end, { noremap = true, expr = true })
+end, { noremap = true, expr = true }) -- 2}}}
 
 -- }}}
 
