@@ -96,15 +96,19 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- Text {{{
+  use 'editorconfig/editorconfig-vim' -- TODO Remove after nvim 0.9+
   use 'rstacruz/vim-closer'
   use 'tpope/vim-surround'
   use {
     'mattn/emmet-vim',
     opt = true
   }
-  use { 'nvim-orgmode/orgmode', config = function()
-    require('orgmode').setup {}
-  end }
+  use {
+    'nvim-orgmode/orgmode',
+    config = function()
+      require('orgmode').setup {}
+    end
+  }
   use {
     'numToStr/Comment.nvim',
     config = function()

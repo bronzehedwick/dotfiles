@@ -15,6 +15,9 @@ end
 -- Use soft tabs.
 vim.opt.expandtab = true
 
+-- Indent 2 spaces by default.
+vim.opt.shiftwidth = 2
+
 -- No spell checking.
 vim.o.spell = false
 
