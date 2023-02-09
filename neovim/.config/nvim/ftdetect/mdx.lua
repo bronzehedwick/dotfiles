@@ -1,8 +1,6 @@
-local create_augroups = require 'utilities'.create_augroups
-local autocmds = {}
-
-autocmds.mdx = {
-  { 'BufNewFile,BufRead', '*.mdx', 'set filetype=markdown' },
-}
-
-create_augroups(autocmds)
+vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
+  pattern = '*.mdx',
+  callback = function()
+    vim.api.nvim_set_option_value('filetype', 'markdown', {scope='local'})
+  end
+})

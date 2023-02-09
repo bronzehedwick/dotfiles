@@ -1,13 +1,11 @@
-local autocmds = {}
-
 local arch = vim.fn.system { 'arch' }
 
 local function brew_path()
-  if arch == 'arm64' then
-    return '/opt/homebrew/bin'
-  else
-    return '/usr/local/bin'
-  end
+    if arch == 'arm64' then
+        return '/opt/homebrew/bin'
+    else
+        return '/usr/local/bin'
+    end
 end
 
 -- Interface {{{
@@ -42,11 +40,11 @@ vim.o.fillchars = 'msgsep:◌'
 -- end
 
 -- Make the jump-list behave like the tag list or a web browser.
-vim.o.jumpoptions = 'stack'
+vim.opt.jumpoptions = 'stack'
 
 -- Use ripgrep as external grep tool, if available.
 if vim.fn.executable('rg') == 1 then
-  vim.o.grepprg = 'rg --no-heading --vimgrep'
+    vim.opt.grepprg = 'rg --no-heading --vimgrep'
 end
 
 -- Automatically open, but do not go to (if there are errors) the quickfix /
@@ -58,66 +56,19 @@ end
 -- NOTE: Normally, :cwindow jumps to the quickfix window if the command opens
 -- it (but not if it's already open). However, as part of the autocmd, this
 -- doesn't seem to happen.
---
--- TODO Finish porting this to Lua.
--- local quickfix_augroup = vim.api.nvim_create_augroup(
---   'QuickFixCmdPost',
---   { clear = true }
--- )
--- vim.api.nvim_create_autocmd('MakerQuickFix', {
---   pattern = 'QuickFixCmdPost',
---   command = '[^l]*',
---   desc = 'nested cwindow',
---   group = quickfix_augroup,
--- })
--- vim.api.nvim_create_autocmd('MakerQuickFix', {
---   pattern = 'QuickFixCmdPost',
---   command = 'l*',
---   desc = 'nested lwindow',
---   group = quickfix_augroup,
--- })
-autocmds.MakerQuickFix = {
-  { 'QuickFixCmdPost', '[^l]*', 'nested cwindow' },
-  { 'QuickFixCmdPost', 'l*', 'nested lwindow' },
-}
-
--- Make list-like commands more intuitive. {{{2
-vim.keymap.set('c', '<CR>', function()
-  local cmdline = vim.fn.getcmdline()
-  if vim.regex('\\v\\C^(ls|files|buffers)'):match_str(cmdline) then
-    -- Like :ls but prompts for a buffer command.
-    return '<CR>:b'
-  elseif vim.regex('\\v\\C/(#|nu|num|numb|numbe|number)$'):match_str(cmdline) then
-    -- Like :g//# but prompts for a command.
-    return '<CR>:'
-  elseif vim.regex('\\v\\C^(dli|il)'):match_str(cmdline) then
-    -- Like :dlist or :ilist but prompts for a count for :djump or :ijump.
-    return '<CR>:' .. cmdline:sub(1, 1) .. 'j ' .. vim.fn.split(cmdline, ' ')[1] .. '<S-Left><Left>'
-  elseif vim.regex('\\v\\C^(cli|lli)'):match_str(cmdline) then
-    -- Like :clist or :llist but prompts for an error/location number.
-    return '<CR>:sil ' .. cmdline:sub(1, 1) .. cmdline:sub(1, 1) .. '<Space>'
-  elseif vim.regex('\\C^old'):match_str(cmdline) then
-    -- Like :oldfiles but prompts for an old file to edit.
-    vim.opt.more = false
-    return '<CR>:sil se more|e #<'
-  elseif vim.regex('\\C^changes'):match_str(cmdline) then
-    -- Like :changes but prompts for a change to jump to.
-    vim.opt.more = false
-    return '<CR>:sil se more|norm! g;<S-Left>'
-  elseif vim.regex('\\C^ju'):match_str(cmdline) then
-    -- Like :jumps but prompts for a position to jump to.
-    vim.opt.more = false
-    return '<CR>:sil se more|norm! <C-o><S-Left>'
-  elseif vim.regex('\\C^marks'):match_str(cmdline) then
-    -- Like :marks but prompts for a mark to jump to.
-    return '<CR>:norm! `'
-  elseif vim.regex('\\C^undol'):match_str(cmdline) then
-    -- Like :undolist but prompts for a change to undo.
-    return '<CR>:u '
-  else
-    return '<CR>'
-  end
-end, { noremap = true, expr = true }) -- 2}}}
+vim.api.nvim_create_augroup('MakerQuickFix', {})
+vim.api.nvim_create_autocmd({ 'QuickFixCmdPost' }, {
+    group = 'MakerQuickFix',
+    pattern = { '[^l]*' },
+    command = 'cwindow',
+    nested = true,
+})
+vim.api.nvim_create_autocmd({ 'QuickFixCmdPost' }, {
+    group = 'MakerQuickFix',
+    pattern = { 'l*' },
+    command = 'lwindow',
+    nested = true,
+})
 
 -- }}}
 
@@ -157,12 +108,12 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-  group = vim.api.nvim_create_augroup('highlight_yank', {}),
-  desc = 'Hightlight selection on yank',
-  pattern = '*',
-  callback = function()
-    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300 }
-  end,
+    group = vim.api.nvim_create_augroup('highlight_yank', {}),
+    desc = 'Hightlight selection on yank',
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300 }
+    end,
 })
 
 -- }}}
@@ -207,17 +158,17 @@ vim.opt.statusline:append('%p%%')
 -- Terminal {{{
 
 if vim.fn.executable(brew_path() .. '/bash') then
-  vim.o.shell = brew_path() .. '/bash'
+    vim.o.shell = brew_path() .. '/bash'
 end
 
 if vim.fn.executable(brew_path() .. '/fish') then
-  vim.o.shell = brew_path() .. '/fish'
+    vim.o.shell = brew_path() .. '/fish'
 end
 
 -- Set the statusline to the process name set by the terminal.
 vim.api.nvim_create_autocmd('TermOpen', {
-  pattern = { '*' },
-  command = [[setlocal statusline=%{b:term_title} nonumber]]
+    pattern = { '*' },
+    command = [[setlocal statusline=%{b:term_title} nonumber]]
 })
 
 vim.cmd [[
@@ -235,14 +186,14 @@ vim.cmd [[
 
 -- Add responsive meta tag to html5 emmet snippet.
 local emmet_opts = {
-  variables = { lang = 'en-US' },
-  html = {
-    default_attributes = {
-      option = { value = nil },
-      textarea = { id = nil, name = nil, cols = 10, rows = 10 },
+    variables = { lang = 'en-US' },
+    html = {
+        default_attributes = {
+            option = { value = nil },
+            textarea = { id = nil, name = nil, cols = 10, rows = 10 },
+        },
+        snippets = {},
     },
-    snippets = {},
-  },
 }
 emmet_opts.html.snippets['html:5'] = [[
 <!DOCTYPE html>
@@ -269,24 +220,24 @@ table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
 nvim_lsp.sumneko_lua.setup {
-  cmd = { brew_path() .. '/lua-language-server' },
-  settings = {
-    Lua = {
-      runtime = {
-        version = 'LuaJIT',
-        path = runtime_path,
-      },
-      diagnostics = {
-        globals = { 'vim' },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file('', true),
-      },
-      telemetry = {
-        enable = false,
-      },
+    cmd = { brew_path() .. '/lua-language-server' },
+    settings = {
+        Lua = {
+            runtime = {
+                version = 'LuaJIT',
+                path = runtime_path,
+            },
+            diagnostics = {
+                globals = { 'vim' },
+            },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file('', true),
+            },
+            telemetry = {
+                enable = false,
+            },
+        },
     },
-  },
 }
 -- }}}
 
@@ -299,40 +250,40 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
 local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    -- Enable completion triggered by <c-x><c-o>
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Buffer mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set('n', '<leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts)
-  vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+    -- Buffer mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+    vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+    vim.keymap.set('n', '<leader>wl', function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, bufopts)
+    vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+    vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
 local servers = {
-  "cssls",
-  "html",
-  "tsserver",
-  "jsonls",
-  "phpactor",
+    "cssls",
+    "html",
+    "tsserver",
+    "jsonls",
+    "phpactor",
 }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
+    nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
 -- }}}
@@ -342,56 +293,56 @@ end
 require('orgmode').setup_ts_grammar()
 
 require 'nvim-treesitter.configs'.setup {
-  -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = {
-    'bash',
-    'c',
-    'comment',
-    'css',
-    'fish',
-    'git_rebase',
-    'gitattributes',
-    'gitcommit',
-    'gitignore',
-    'help',
-    'hjson',
-    'html',
-    'http',
-    'javascript',
-    'jsdoc',
-    'json5',
-    'lua',
-    'make',
-    'markdown',
-    'org',
-    'php',
-    'phpdoc',
-    'python',
-    'rst',
-    'rust',
-    'scss',
-    'toml',
-    'tsx',
-    'typescript',
-    'vim',
-    'yaml',
-  },
-  highlight = {
-    enable = true, -- false will disable the whole extension
-    additional_vim_regex_highlighting = { 'org', 'markdown' }
-  },
-  indent = {
-    enable = true
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "gnr",
-      scope_incremental = "gnc",
-      node_decremental = "gnm",
+    -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    ensure_installed = {
+        'bash',
+        'c',
+        'comment',
+        'css',
+        'fish',
+        'git_rebase',
+        'gitattributes',
+        'gitcommit',
+        'gitignore',
+        'help',
+        'hjson',
+        'html',
+        'http',
+        'javascript',
+        'jsdoc',
+        'json5',
+        'lua',
+        'make',
+        'markdown',
+        'org',
+        'php',
+        'phpdoc',
+        'python',
+        'rst',
+        'rust',
+        'scss',
+        'toml',
+        'tsx',
+        'typescript',
+        'vim',
+        'yaml',
     },
-  },
+    highlight = {
+        enable = true, -- false will disable the whole extension
+        additional_vim_regex_highlighting = { 'org', 'markdown' }
+    },
+    indent = {
+        enable = true
+    },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "gnn",
+            node_incremental = "gnr",
+            scope_incremental = "gnc",
+            node_decremental = "gnm",
+        },
+    },
 }
 
 -- vim.opt.foldmethod = 'expr'
@@ -405,66 +356,66 @@ local org_path = '~/Documents/org'
 local refile_path = org_path .. '/refile.org'
 
 require('orgmode').setup({
-  org_agenda_files = {
-    org_path .. '/tech.org',
-    org_path .. '/projects.org',
-    refile_path,
-    org_path .. '/random.org',
-  },
-  org_default_notes_file = refile_path,
-  org_indent_mode = 'noindent',
-  org_ellipsis = '…',
-  emacs_config = {
-    executable_path = 'emacs',
-    config_path = '$HOME/.dotfiles/emacs/.emacs.d/init.el'
-  },
-  org_todo_keyword_faces = {
-    DONE = ':foreground green'
-  },
-  org_capture_templates = {
-    t = { description = 'Task', template = '* TODO %?\n%u' },
-    n = { description = 'Note', template = '* %?\n%u' },
-    l = { description = 'Line Note', template = '* %?\n%a' },
-    j = {
-      description = 'Journal',
-      template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
-      target = '~/org/journal.org',
+    org_agenda_files = {
+        org_path .. '/tech.org',
+        org_path .. '/projects.org',
+        refile_path,
+        org_path .. '/random.org',
     },
-  },
-  mappings = {
-    org_return = false,
-    global = {
-      org_agenda = '<M-a>',
-      org_capture = '<M-c>'
+    org_default_notes_file = refile_path,
+    org_indent_mode = 'noindent',
+    org_ellipsis = '…',
+    emacs_config = {
+        executable_path = 'emacs',
+        config_path = '$HOME/.dotfiles/emacs/.emacs.d/init.el'
     },
-    org = {
-      org_refile = '<LocalLeader>r',
-      org_open_at_point = '<LocalLeader>o',
-      org_archive_subtree = '<LocalLeader>$',
-      org_set_tags_command = '<LocalLeader>t',
-      org_toggle_archive_tag = '<LocalLeader>A',
-      org_do_promote = '<LocalLeader><',
-      org_do_demote = '<LocalLeader>>',
-      org_meta_return = '<LocalLeader><CR>',
-      org_insert_heading_respect_content = '<LocalLeader>ih',
-      org_insert_todo_heading = '<LocalLeader>iT',
-      org_insert_todo_heading_respect_content = '<LocalLeader>it',
-      org_move_subtree_up = '<LocalLeader>k',
-      org_move_subtree_down = '<LocalLeader>j',
-      org_export = '<LocalLeader>e',
-      org_next_visible_heading = '<LocalLeader>}',
-      org_previous_visible_heading = '<LocalLeader>{',
-      org_deadline = '<LocalLeader>id',
-      org_schedule = '<LocalLeader>is',
-      org_time_stamp = '<LocalLeader>i.',
-      org_time_stamp_inactive = '<LocalLeader>i!',
-      org_clock_in = '<LocalLeader>xi',
-      org_clock_out = '<LocalLeader>xo',
-      org_clock_cancel = '<LocalLeader>xq',
-      org_clock_goto = '<LocalLeader>xj',
-      org_set_effort = '<LocalLeader>xe',
+    org_todo_keyword_faces = {
+        DONE = ':foreground green'
+    },
+    org_capture_templates = {
+        t = { description = 'Task', template = '* TODO %?\n%u' },
+        n = { description = 'Note', template = '* %?\n%u' },
+        l = { description = 'Line Note', template = '* %?\n%a' },
+        j = {
+            description = 'Journal',
+            template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
+            target = '~/org/journal.org',
+        },
+    },
+    mappings = {
+        org_return = false,
+        global = {
+            org_agenda = '<M-a>',
+            org_capture = '<M-c>'
+        },
+        org = {
+            org_refile = '<LocalLeader>r',
+            org_open_at_point = '<LocalLeader>o',
+            org_archive_subtree = '<LocalLeader>$',
+            org_set_tags_command = '<LocalLeader>t',
+            org_toggle_archive_tag = '<LocalLeader>A',
+            org_do_promote = '<LocalLeader><',
+            org_do_demote = '<LocalLeader>>',
+            org_meta_return = '<LocalLeader><CR>',
+            org_insert_heading_respect_content = '<LocalLeader>ih',
+            org_insert_todo_heading = '<LocalLeader>iT',
+            org_insert_todo_heading_respect_content = '<LocalLeader>it',
+            org_move_subtree_up = '<LocalLeader>k',
+            org_move_subtree_down = '<LocalLeader>j',
+            org_export = '<LocalLeader>e',
+            org_next_visible_heading = '<LocalLeader>}',
+            org_previous_visible_heading = '<LocalLeader>{',
+            org_deadline = '<LocalLeader>id',
+            org_schedule = '<LocalLeader>is',
+            org_time_stamp = '<LocalLeader>i.',
+            org_time_stamp_inactive = '<LocalLeader>i!',
+            org_clock_in = '<LocalLeader>xi',
+            org_clock_out = '<LocalLeader>xo',
+            org_clock_cancel = '<LocalLeader>xq',
+            org_clock_goto = '<LocalLeader>xj',
+            org_set_effort = '<LocalLeader>xe',
+        }
     }
-  }
 })
 
 -- }}}
@@ -473,7 +424,7 @@ require('orgmode').setup({
 
 -- Neovide {{{
 if vim.fn.exists('g:neovide') then
-  vim.cmd [[
+    vim.cmd [[
     set guifont=SF\ Mono,Menlo:h19
     let g:neovide_floating_blur_amount_x = 2.0
     let g:neovide_floating_blur_amount_y = 2.0
@@ -487,6 +438,4 @@ if vim.fn.exists('g:neovide') then
 end
 -- }}}
 
-require 'utilities'.create_augroups(autocmds)
-
--- vim:fdm=marker ft=lua et sts=2 sw=2
+-- vim:fdm=marker ft=lua et sts=4 sw=4

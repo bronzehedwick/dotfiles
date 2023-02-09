@@ -1,8 +1,6 @@
-local create_augroups = require 'utilities'.create_augroups
-local autocmds = {}
-
-autocmds.twig = {
-  { 'BufNewFile,BufRead', '*.twig', 'set filetype=htmldjango' },
-}
-
-create_augroups(autocmds)
+vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
+  pattern = '*.twig',
+  callback = function()
+    vim.api.nvim_set_option_value('filetype', 'htmldjango', {scope='local'})
+  end
+})

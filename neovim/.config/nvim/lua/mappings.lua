@@ -99,23 +99,25 @@ if vim.fn.executable('urlview') == 1 then
     local file = vim.fn.tempname()
     vim.api.nvim_command('write! ' .. file)
     vim.api.nvim_open_win(
-      vim.api.nvim_create_buf(false, true),
-      true,
-      {
-        relative = 'win',
-        style = 'minimal',
-        border = 'shadow',
-        width = width,
-        height = height,
-        col = math.min((vim.o.columns - width) / 2),
-        row = math.min((vim.o.lines - height) / 2 - 1),
-      }
+        vim.api.nvim_create_buf(false, true),
+        true,
+        {
+            relative = 'win',
+            style = 'minimal',
+            border = 'shadow',
+            width = width,
+            height = height,
+            col = math.min((vim.o.columns - width) / 2),
+            row = math.min((vim.o.lines - height) / 2 - 1),
+        }
     )
     vim.api.nvim_command('startinsert')
-    vim.fn.termopen('urlview ' .. file, { on_exit = function()
-      vim.api.nvim_command('bdelete!')
-      os.remove(file)
-    end })
+    vim.fn.termopen('urlview ' .. file, {
+        on_exit = function()
+          vim.api.nvim_command('bdelete!')
+          os.remove(file)
+        end
+    })
   end, { silent = true })
 end
 
@@ -146,4 +148,4 @@ vim.keymap.set('t', '<M-o>', '<C-\\><C-n>:only<CR>i<CR>')
 
 -- }}}
 
--- vim:fdm=marker ft=lua et sts=2 sw=2
+-- vim:fdm=marker ft=lua et sts=4 sw=4
