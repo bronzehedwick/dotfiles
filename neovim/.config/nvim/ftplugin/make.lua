@@ -1,2 +1,5 @@
 -- Makefiles require hard tabs.
-vim.opt.expandtab = false
+vim.opt_local.expandtab = false
+
+-- Makefiles always use 8 spaces.
+vim.opt_local.shiftwidth = 8
