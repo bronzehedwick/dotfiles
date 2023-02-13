@@ -123,7 +123,7 @@ end
 
 -- Simple fuzzy finding.
 vim.keymap.set('n', '<M-/>', function()
-  return require('utilities').fuzzy_search('git ls-files', 'edit')
+    return require('utilities').fuzzy_search('git ls-files', 'edit')
 end)
 
 -- Search org files.
