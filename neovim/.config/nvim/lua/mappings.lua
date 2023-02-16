@@ -72,32 +72,18 @@ vim.keymap.set('n', '<Leader>c', ':edit ~/.dotfiles/neovim/.config/nvim/init.lua
 
 -- Add mapping to open URLs in the current buffer.
 if vim.fn.executable('urlview') == 1 then
-  vim.keymap.set('n', '<Leader>u', function()
-    local width = vim.o.columns - 4
-    local height = 10
-    local file = vim.fn.tempname()
-    vim.api.nvim_command('write! ' .. file)
-    vim.api.nvim_open_win(
-        vim.api.nvim_create_buf(false, true),
-        true,
-        {
-            relative = 'win',
-            style = 'minimal',
-            border = 'shadow',
-            width = width,
-            height = height,
-            col = math.min((vim.o.columns - width) / 2),
-            row = math.min((vim.o.lines - height) / 2 - 1),
-        }
-    )
-    vim.api.nvim_command('startinsert')
-    vim.fn.termopen('urlview ' .. file, {
-        on_exit = function()
-          vim.api.nvim_command('bdelete!')
-          os.remove(file)
-        end
-    })
-  end, { silent = true })
+    vim.keymap.set('n', '<Leader>u', function()
+        local file = vim.fn.tempname()
+        vim.api.nvim_command('write! ' .. file)
+        require('utilities').make_modal()
+        vim.api.nvim_command('startinsert')
+        vim.fn.termopen('urlview ' .. file, {
+            on_exit = function()
+                vim.api.nvim_command('bdelete!')
+                os.remove(file)
+            end
+        })
+    end, { silent = true })
 end
 
 -- Simple fuzzy finding.

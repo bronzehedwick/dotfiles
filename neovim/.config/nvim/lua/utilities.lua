@@ -1,6 +1,6 @@
 local M = {}
 
-M.fuzzy_search = function(files_command, action)
+M.make_modal = function()
     local width = vim.o.columns - 4
     local height = 11
     local winid = vim.fn.win_getid()
@@ -23,6 +23,10 @@ M.fuzzy_search = function(files_command, action)
             noautocmd = true,
         }
     )
+end
+
+M.fuzzy_search = function(files_command, action)
+    M.make_modal()
 
     local file = vim.fn.tempname()
     local shell_command = {
