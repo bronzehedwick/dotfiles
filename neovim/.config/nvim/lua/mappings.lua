@@ -39,7 +39,7 @@ vim.keymap.set('c', '<C-p>', '<up>')
 
 -- Display date and time.
 vim.keymap.set('n', '<F2>', function()
-  print("It is " .. vim.fn.strftime("%a %b %e %I:%M %p"))
+    print("It is " .. vim.fn.strftime("%a %b %e %I:%M %p"))
 end)
 
 -- Open org files.
@@ -61,27 +61,6 @@ vim.keymap.set('n', '<F5>', ':let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><C
 vim.cmd [[
   command! MergeTool execute 'edit term://git\ mergetool'
 ]]
-
--- Add command to open mail.
-Mail = function()
-  vim.api.nvim_command('startinsert')
-  vim.cmd('edit term://neomutt')
-end
-vim.cmd [[
-  command! Mail lua Mail()<CR>
-]]
-
--- Add command to run prettier over a file, if the tool is present
-Prettier = function()
-  if vim.fn.filereadable('./node_modules/prettier/bin-prettier.js') == 1 then
-    vim.cmd [[
-      :%!./node_modules/prettier/bin-prettier.js --stdin-filepath %:p
-    ]]
-  else
-    print('Prettier not found')
-  end
-end
-vim.cmd('command! Prettier lua Prettier()<CR>')
 
 -- Open directory at current file path.
 vim.keymap.set('n', '<Leader>e', ':edit <C-R>=expand("%:p:h") . "/" <CR>')
