@@ -86,10 +86,20 @@ if vim.fn.executable('urlview') == 1 then
     end, { silent = true })
 end
 
--- Simple fuzzy finding.
-vim.keymap.set('n', '<M-/>', function()
-    return require('utilities').fuzzy_search('git ls-files', 'edit')
-end)
+-- Fuzzy finding…
+if vim.fn.executable('fzy') == 1 then
+    -- Files.
+    vim.keymap.set('n', '<M-/>', function()
+        return require('utilities').fuzzy_search('git ls-files', 'edit')
+    end)
+
+    -- Git branches
+    vim.keymap.set('n', '<M-r>', function()
+        require('utilities').make_modal()
+        vim.api.nvim_command('startinsert')
+        vim.fn.termopen('git branch | fzy | xargs git checkout')
+    end, { silent = true })
+end
 
 -- Search org files.
 vim.cmd [[
