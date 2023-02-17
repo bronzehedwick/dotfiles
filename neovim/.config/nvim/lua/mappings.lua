@@ -25,9 +25,9 @@ vim.keymap.set('n', 'Q', '@@')
 vim.keymap.set('i', '<C-V>', '<C-X><C-O>')
 
 -- Add customized Grep that's silent and doesn't jump to the first result.
-vim.cmd [[
-  command! -nargs=+ Grep execute 'silent grep! <args>'
-]]
+-- vim.cmd [[
+--   command! -nargs=+ Grep execute 'silent grep! <args>'
+-- ]]
 
 -- More sane command-line history.
 vim.keymap.set('c', '<C-n>', '<down>')
@@ -35,44 +35,63 @@ vim.keymap.set('c', '<C-p>', '<up>')
 
 -- }}}
 
--- Convenience mappings {{{
+-- Time {{{
 
 -- Display date and time.
 vim.keymap.set('n', '<F2>', function()
     print("It is " .. vim.fn.strftime("%a %b %e %I:%M %p"))
 end)
 
--- Open org files.
-vim.keymap.set('n', '<Leader>o', ':edit ~/Documents/org/index.org<CR>')
-
--- Quickly edit macros.
-vim.keymap.set('n', '<leader>m', ":<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>")
-
 -- Insert time into a document.
 vim.keymap.set('i', '<C-g><C-t>', '<C-r>=strftime("%Y-%m-%dT%H:%M:%S")<CR>')
 
--- Clear the highlighting of hlsearch.
-vim.keymap.set('n', '<C-l>', ":nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>", { silent = true })
+-- }}}
 
--- Strip trailing whitespace.
+-- Quickly edit macros {{{
+vim.keymap.set('n', '<leader>m', ":<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>")
+-- }}}
+
+-- Strip trailing whitespace {{{
 vim.keymap.set('n', '<F5>', ':let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR>', { silent = true })
+-- }}}
+
+-- Git {{{
 
 -- Add command to open a git mergetool window.
 vim.cmd [[
   command! MergeTool execute 'edit term://git\ mergetool'
 ]]
 
+-- }}}
+
+-- Files {{{
+
 -- Open directory at current file path.
-vim.keymap.set('n', '<Leader>e', ':edit <C-R>=expand("%:p:h") . "/" <CR>')
-vim.keymap.set('n', '<Leader>s', ':split <C-R>=expand("%:p:h") . "/" <CR>')
-vim.keymap.set('n', '<Leader>v', ':vsplit <C-R>=expand("%:p:h") . "/" <CR>')
+vim.keymap.set('n', '<leader>e', ':edit <C-R>=expand("%:p:h") . "/" <CR>')
+vim.keymap.set('n', '<leader>s', ':split <C-R>=expand("%:p:h") . "/" <CR>')
+vim.keymap.set('n', '<leader>v', ':vsplit <C-R>=expand("%:p:h") . "/" <CR>')
 
 -- Shortcut to edit this file.
-vim.keymap.set('n', '<Leader>c', ':edit ~/.dotfiles/neovim/.config/nvim/init.lua<CR>')
+vim.keymap.set('n', '<leader>c', ':edit ~/.dotfiles/neovim/.config/nvim/init.lua<CR>')
 
--- Add mapping to open URLs in the current buffer.
+-- }}}
+
+-- Org {{{
+
+-- Open org files.
+vim.keymap.set('n', '<leader>o', ':edit ~/Documents/org/index.org<CR>')
+
+-- Search org files.
+vim.cmd [[
+  command! -nargs=+ Ogrep execute 'silent grep! <args> ~/Documents/org/'
+  command! -nargs=+ Orgrep execute 'silent grep! <args> --no-ignore ~/Documents/org/'
+]]
+
+-- }}}
+
+-- UrlView {{{
 if vim.fn.executable('urlview') == 1 then
-    vim.keymap.set('n', '<Leader>u', function()
+    vim.keymap.set('n', '<leader>u', function()
         local file = vim.fn.tempname()
         vim.api.nvim_command('write! ' .. file)
         require('utilities').make_modal()
@@ -85,6 +104,9 @@ if vim.fn.executable('urlview') == 1 then
         })
     end, { silent = true })
 end
+-- }}}
+
+-- Fuzzy finding {{{
 
 -- Fuzzy finding…
 if vim.fn.executable('fzy') == 1 then
@@ -133,12 +155,6 @@ if vim.fn.executable('fzy') == 1 then
     end, { silent = true })
 end
 
--- Search org files.
-vim.cmd [[
-  command! -nargs=+ Ogrep execute 'silent grep! <args> ~/Documents/org/'
-  command! -nargs=+ Orgrep execute 'silent grep! <args> --no-ignore ~/Documents/org/'
-]]
-
 -- }}}
 
 -- Terminal {{{
@@ -148,10 +164,6 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Quickly make the terminal the only window in terminal mode.
 vim.keymap.set('t', '<M-o>', '<C-\\><C-n>:only<CR>i<CR>')
-
--- M-r pastes inside terminal.
--- NOTE: This really slows down init. Not sure why.
--- map {'t', '<expr> <A-r>', '<C-\\><C-N>' .. vim.fn.nr2char(vim.fn.getchar()) .. 'pi'}
 
 -- }}}
 
