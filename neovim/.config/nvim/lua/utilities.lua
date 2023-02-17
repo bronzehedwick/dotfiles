@@ -35,11 +35,14 @@ M.fuzzy_search = function(files_command, action)
         files_command .. ' | fzy > ' .. file
     }
 
-    vim.api.nvim_command('startinsert')
+    vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
 
     vim.fn.termopen(shell_command, {
         on_exit = function()
-            vim.api.nvim_command('bdelete!')
+            vim.api.nvim_cmd(
+                { cmd = 'bdelete', bang = true },
+                { output = false }
+            )
             vim.fn.win_gotoid(winid)
             local f = io.open(file, 'r')
             if f == nil then return end

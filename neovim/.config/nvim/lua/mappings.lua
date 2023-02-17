@@ -93,11 +93,43 @@ if vim.fn.executable('fzy') == 1 then
         return require('utilities').fuzzy_search('git ls-files', 'edit')
     end)
 
-    -- Git branches
+    -- Git branches.
     vim.keymap.set('n', '<M-r>', function()
         require('utilities').make_modal()
-        vim.api.nvim_command('startinsert')
+        vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
         vim.fn.termopen('git branch | fzy | xargs git checkout')
+    end, { silent = true })
+
+    -- Buffers.
+    vim.keymap.set('n', '<M-b>', function()
+        local buffers = vim.api.nvim_cmd(
+            { cmd = 'buffers' },
+            { output = true }
+        )
+        require('utilities').make_modal()
+        vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
+        local id = nil
+        vim.fn.termopen('echo "' .. buffers .. '" | fzy', {
+            stdout_buffered = true,
+            on_stdout = function(chan_id, data, name)
+                local stdout = data[table.maxn(data) - 1]
+                local t = {}
+                for i in string.gmatch(stdout, "%S+") do
+                    table.insert(t, i)
+                end
+                id = t[2]
+            end,
+            on_exit = function()
+                vim.api.nvim_cmd(
+                    { cmd = 'bdelete', bang = true },
+                    { output = false }
+                )
+                vim.api.nvim_cmd(
+                    { cmd = 'buffer', args = { id } },
+                    { output = false }
+                )
+            end
+        })
     end, { silent = true })
 end
 
