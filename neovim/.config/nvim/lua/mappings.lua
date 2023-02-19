@@ -107,22 +107,23 @@ end
 -- }}}
 
 -- Fuzzy finding {{{
-
--- Fuzzy finding…
 if vim.fn.executable('fzy') == 1 then
-    -- Files.
+
+    -- Files {{{2
     vim.keymap.set('n', '<M-/>', function()
         return require('utilities').fuzzy_search('git ls-files', 'edit')
     end)
+    --- }}}
 
-    -- Git branches.
+    -- Git branches {{{2
     vim.keymap.set('n', '<M-r>', function()
         require('utilities').make_modal()
         vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
         vim.fn.termopen('git branch | fzy | xargs git checkout')
     end, { silent = true })
+    -- }}}
 
-    -- Buffers.
+    -- Buffers {{{2
     vim.keymap.set('n', '<M-b>', function()
         local buffers = vim.api.nvim_cmd(
             { cmd = 'buffers' },
@@ -153,8 +154,9 @@ if vim.fn.executable('fzy') == 1 then
             end
         })
     end, { silent = true })
-end
+    -- }}}
 
+end
 -- }}}
 
 -- Terminal {{{

@@ -1,5 +1,6 @@
 local M = {}
 
+-- Make a modal {{{
 M.make_modal = function()
     local width = vim.o.columns - 4
     local height = 11
@@ -24,32 +25,34 @@ M.make_modal = function()
         }
     )
 end
+-- }}}
 
 M.fuzzy_search = function(files_command, action)
     M.make_modal()
 
-    local file = vim.fn.tempname()
+    local file = nil
     local shell_command = {
         '/bin/sh',
         '-c',
-        files_command .. ' | fzy > ' .. file
+        files_command .. ' | fzy'
     }
 
     vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
 
     vim.fn.termopen(shell_command, {
+        stdout_buffered = true,
+        on_stdout = function(chan_id, data, name)
+            local stdout = data[table.maxn(data) - 1]
+            print(vim.inspect(string.gsub(stdout, "\27\[K\27\[10A", "")))
+            -- \27[K\27[10Acompiler/screenplain.vim\r
+        end,
         on_exit = function()
             vim.api.nvim_cmd(
                 { cmd = 'bdelete', bang = true },
                 { output = false }
             )
             vim.fn.win_gotoid(winid)
-            local f = io.open(file, 'r')
-            if f == nil then return end
-            local stdout = f:read('*all')
-            f:close()
-            os.remove(file)
-            vim.api.nvim_command(table.concat({ action, stdout }, ' '))
+            -- vim.api.nvim_command(table.concat({ action, file }, ' '))
         end
     })
 end
