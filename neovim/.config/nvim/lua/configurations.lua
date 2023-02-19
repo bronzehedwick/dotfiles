@@ -296,6 +296,7 @@ require 'nvim-treesitter.configs'.setup {
         'scss',
         'toml',
         'tsx',
+        'twig',
         'typescript',
         'vim',
         'yaml',
