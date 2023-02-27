@@ -62,6 +62,13 @@ vim.cmd [[
   command! MergeTool execute 'edit term://git\ mergetool'
 ]]
 
+-- Mapping to show the current git branch.
+vim.keymap.set('n', '<C-c>', function()
+    local branch = io.popen('git cb')
+    print(branch:read())
+    branch:close()
+end)
+
 -- }}}
 
 -- Files {{{
@@ -94,7 +101,7 @@ if vim.fn.executable('urlview') == 1 then
     vim.keymap.set('n', '<leader>u', function()
         local file = vim.fn.tempname()
         vim.api.nvim_command('write! ' .. file)
-        require('utilities').make_modal()
+        require('utilities').make_modal({max_width = true})
         vim.api.nvim_command('startinsert')
         vim.fn.termopen('urlview ' .. file, {
             on_exit = function()
@@ -117,7 +124,7 @@ if vim.fn.executable('fzy') == 1 then
 
     -- Git branches.
     vim.keymap.set('n', '<M-r>', function()
-        require('utilities').make_modal()
+        require('utilities').make_modal({max_width = true})
         vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
         vim.fn.termopen('git branch | fzy | xargs git checkout')
     end, { silent = true })
