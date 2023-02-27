@@ -1,10 +1,16 @@
 #!/usr/bin/env fish
 
+set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+
 # Neovim settings
 
 if test -z "$NVIM"
   set -x VISUAL nvim --noplugin
 end
+
+# Ripgrep
+
+set -x RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/ripgrep/ripgreprc
 
 # Git
 
@@ -13,7 +19,6 @@ set -x REVIEW_BASE main
 # Fisher plugins
 
 if not functions -q fisher
-  set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
   curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
   fish -c fisher
 end
