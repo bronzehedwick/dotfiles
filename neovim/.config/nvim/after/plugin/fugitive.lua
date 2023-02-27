@@ -4,29 +4,6 @@ if (vim.fn.exists(':Git') == 1) then
 end
 -- }}}
 
--- Status line. {{{
--- Git branch.
-vim.opt.statusline = '%{FugitiveStatusline()}'
--- Tail of file (just the name.ext).
-vim.opt.statusline:append('%< %t')
--- File modified flag.
-vim.opt.statusline:append('%m')
--- Buffer is `help` flag.
-vim.opt.statusline:append('%< %h')
--- Buffer is `readonly` flag.
-vim.opt.statusline:append('%< %r')
--- Buffer is `preview` flag.
-vim.opt.statusline:append('%< %w')
--- New group.
-vim.opt.statusline:append('%=')
--- Line and column number.
-vim.opt.statusline:append('%l')
--- New group.
-vim.opt.statusline:append('%=')
--- Percentage through the file.
-vim.opt.statusline:append('%p%%')
--- }}}
-
 -- Fugitive commands. {{{
 vim.cmd [[
 command! -bang -bar -nargs=* Gpush execute 'Dispatch<bang> -dir=' .
