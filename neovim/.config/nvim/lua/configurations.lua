@@ -150,8 +150,8 @@ vim.opt.statusline:append('%=')
 vim.opt.statusline:append('%l')
 -- New group.
 vim.opt.statusline:append('%=')
--- Percentage through the file.
-vim.opt.statusline:append('%p%%')
+-- Window ID.
+vim.opt.statusline:append('%{winnr()}')
 
 -- }}}
 
@@ -168,7 +168,7 @@ end
 -- Set the statusline to the process name set by the terminal.
 vim.api.nvim_create_autocmd('TermOpen', {
     pattern = { '*' },
-    command = [[setlocal statusline=%{b:term_title} nonumber]]
+    command = [[setlocal statusline=%{b:term_title}%=%{winnr()} nonumber]]
 })
 
 vim.cmd [[
