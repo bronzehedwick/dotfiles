@@ -1,3 +1,6 @@
+-- Use treesitter.
+vim.treesitter.start()
+
 -- Turn off spell checking; I don't care about spelling errors I can't correct.
 vim.opt.spell = false
 

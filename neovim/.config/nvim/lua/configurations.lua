@@ -269,7 +269,6 @@ require 'nvim-treesitter.configs'.setup {
     -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     ensure_installed = {
         'bash',
-        'c',
         'comment',
         'css',
         'fish',
@@ -277,14 +276,12 @@ require 'nvim-treesitter.configs'.setup {
         'gitattributes',
         'gitcommit',
         'gitignore',
-        'help',
         'hjson',
         'html',
         'http',
         'javascript',
         'jsdoc',
         'json5',
-        'lua',
         'make',
         'markdown',
         'org',
@@ -298,7 +295,6 @@ require 'nvim-treesitter.configs'.setup {
         'tsx',
         'twig',
         'typescript',
-        'vim',
         'yaml',
     },
     highlight = {
