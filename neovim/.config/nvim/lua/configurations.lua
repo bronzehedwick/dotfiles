@@ -249,11 +249,12 @@ end
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
 local servers = {
-    "cssls",
-    "html",
-    "tsserver",
-    "jsonls",
-    "phpactor",
+    'cssls',
+    'eslint',
+    'html',
+    'jsonls',
+    'phpactor',
+    'tsserver',
 }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup { on_attach = on_attach }
@@ -307,10 +308,10 @@ require 'nvim-treesitter.configs'.setup {
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = "gnn",
-            node_incremental = "gnr",
-            scope_incremental = "gnc",
-            node_decremental = "gnm",
+            init_selection = 'gnn',
+            node_incremental = 'gnr',
+            scope_incremental = 'gnc',
+            node_decremental = 'gnm',
         },
     },
 }
