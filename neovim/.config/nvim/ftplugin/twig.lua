@@ -13,3 +13,12 @@ vim.opt.commentstring = "{# %s #}"
 
 -- Use twiglint linter.
 vim.cmd('compiler twiglint')
+
+-- Use emmet.
+vim.cmd('packadd emmet-vim')
+
+-- Add html runtime.
+vim.cmd[[
+  runtime! ftplugin/html.vim
+  runtime! ftplugin/html_*.vim ftplugin/html/*.vim
+]]
