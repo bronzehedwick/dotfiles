@@ -45,14 +45,7 @@ lsp_install() {
     # JavaScript
     npm install --global typescript typescript-language-server
     # PHP
-    if [ ! -d ~/Documents/phpactor ]; then
-        cd ~/Documents || exit 1
-        git clone git@github.com:phpactor/phpactor
-    fi
-    cd ~/Documents/phpactor || exit 1
-    composer install
-    ln -s ~/Documents/phpactor/bin/phpactor $brew_path/phpactor
-    phpactor status
+    npm install --global intelephense
 }
 
 lsp_update() {
@@ -63,9 +56,7 @@ lsp_update() {
     # JavaScript
     npm update --global typescript typescript-language-server
     # PHP
-    cd ~/Documents/phpactor || exit 1
-    composer update
-    phpactor status
+    npm update --global intelephense
 }
 
 tpm_install() {

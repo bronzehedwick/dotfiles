@@ -253,12 +253,20 @@ local servers = {
     'eslint',
     'html',
     'jsonls',
-    'phpactor',
     'tsserver',
 }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup { on_attach = on_attach }
 end
+
+-- Intelephense setup.
+-- See https://github.com/bmewburn/intelephense-docs/blob/master/installation.md#initialisation-options
+nvim_lsp.intelephense.setup({
+    on_attach = on_attach,
+    init_options = {
+        licenseKey = os.getenv('HOME') .. '/.local/share/intelephense/license.txt'
+    },
+})
 
 -- }}}
 
