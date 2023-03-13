@@ -18,3 +18,4 @@ gnupg/.gnupg/random_seed
 gnupg/.gnupg/.*
 launchctl/Library/LaunchAgents/com.*
 launchctl/Library/LaunchAgents/net.*
+SessionDesktop.el
