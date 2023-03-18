@@ -146,8 +146,8 @@ vim.opt.statusline:append('%< %h')
 vim.opt.statusline:append('%< %w')
 -- New group.
 vim.opt.statusline:append('%=')
--- Line number.
-vim.opt.statusline:append('%l')
+-- Percentage through the file.
+vim.opt.statusline:append('%p%%')
 -- New group.
 vim.opt.statusline:append('%=')
 -- Window ID.
