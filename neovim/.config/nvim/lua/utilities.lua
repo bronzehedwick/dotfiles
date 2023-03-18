@@ -1,12 +1,17 @@
 local M = {}
 
-M.make_modal = function()
+M.make_modal = function(opts)
+    if not opts then
+        opts = {}
+    end
     local width = vim.o.columns - 4
     local height = 11
     local winid = vim.fn.win_getid()
 
-    if (vim.o.columns > 85) then
-        width = 80
+    if opts.max_width then
+        if (vim.o.columns > 85) then
+            width = 80
+        end
     end
 
     vim.api.nvim_open_win(
@@ -26,7 +31,7 @@ M.make_modal = function()
 end
 
 M.fuzzy_search = function(files_command, action)
-    M.make_modal()
+    M.make_modal({max_width = true})
 
     local file = vim.fn.tempname()
     local shell_command = {
