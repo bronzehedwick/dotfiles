@@ -295,7 +295,6 @@ require 'nvim-treesitter.configs'.setup {
         'html',
         'htmldjango',
         'http',
-        'ini',
         'javascript',
         'jsdoc',
         'json',
