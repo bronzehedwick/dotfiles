@@ -59,7 +59,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("~/org/random.org" "~/org/journal.org" "~/org/projects.org" "~/org/index.org" "~/org/books.org" "~/org/bits.org" "~/org/refile.org" "~/org/habits.org")))
+   '("~/Documents/org/random.org" "~/Documents/org/journal.org" "~/Documents/org/projects.org" "~/Documents/org/index.org" "~/Documents/org/books.org" "~/Documents/org/bits.org" "~/Documents/org/refile.org" "~/Documents/org/habits.org")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -115,3 +115,9 @@
         (insert "\n* Today\n  - ")
         (org-mode)
         (show-all)))))
+
+
+;; Orgmode mappings
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
