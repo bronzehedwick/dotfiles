@@ -360,6 +360,8 @@ require('orgmode').setup({
     org_default_notes_file = refile_path,
     org_indent_mode = 'noindent',
     org_ellipsis = '…',
+    org_deadline_warning_days = 5,
+    org_use_tag_inheritance = false,
     emacs_config = {
         executable_path = 'emacs',
         config_path = '$HOME/.dotfiles/emacs/.emacs.d/init.el'
