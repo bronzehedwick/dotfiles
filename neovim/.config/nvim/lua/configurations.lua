@@ -1,3 +1,4 @@
+-- Archetecture detection {{{
 local arch = vim.fn.system { 'arch' }
 
 local function brew_path()
@@ -7,6 +8,7 @@ local function brew_path()
         return '/usr/local/bin'
     end
 end
+-- }}}
 
 -- Interface {{{
 
