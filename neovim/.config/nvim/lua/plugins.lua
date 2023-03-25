@@ -102,6 +102,7 @@ require 'paq' {
         branch = 'lsp-treesitter-highlights'
     },
     -- }}}
+
 }
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4
