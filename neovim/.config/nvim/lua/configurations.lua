@@ -94,6 +94,9 @@ vim.o.list = true
 -- Set hard wrapping guide.
 vim.o.colorcolumn = '80'
 
+-- Highlight the cursor line background.
+vim.opt.cursorline = true
+
 -- Diff options.
 vim.o.diffopt = 'internal,filler,vertical,algorithm:patience'
 
