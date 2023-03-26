@@ -286,7 +286,8 @@ nvim_lsp.intelephense.setup({
 require('orgmode').setup_ts_grammar()
 
 require 'nvim-treesitter.configs'.setup {
-    -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    -- one of "all", "maintained" (parsers with maintainers), or a list of
+    -- languages
     ensure_installed = {
         'awk',
         'bash',
@@ -349,10 +350,62 @@ require 'nvim-treesitter.configs'.setup {
             node_decremental = 'gnm',
         },
     },
+    textobjects = {
+        select = {
+            enable = true,
+            -- Automatically jump forward to textobj, similar to targets.vim
+            lookahead = true,
+            keymaps = {
+                ['af'] = '@function.outer',
+                ['if'] = '@function.inner',
+                ['ac'] = '@comment.outer',
+                ['al'] = '@class.outer',
+                ['il'] = '@class.inner',
+                ['ab'] = '@block.outer',
+                ['ib'] = '@block.inner',
+            },
+        },
+        swap = {
+            enable = true,
+            swap_next = {
+                ['<leader>p'] = '@parameter.inner',
+            },
+            swap_previous = {
+                ['<leader>P'] = '@parameter.inner',
+            }
+        },
+        move = {
+            enable = true,
+            -- Set these jumps in the jump list.
+            set_jumps = true,
+            goto_next_start = {
+                [']m'] = '@function.outer',
+                [']]'] = '@class.outer',
+            },
+            goto_next_end = {
+                [']M'] = '@function.outer',
+                [']['] = '@class.outer',
+            },
+            goto_previous_start = {
+                ['[m'] = '@function.outer',
+                ['[['] = '@class.outer',
+            },
+            goto_previous_end = {
+                ['[M'] = '@function.outer',
+                ['[]'] = '@class.outer',
+            }
+        },
+        lsp_interop = {
+            enable = true,
+            border = 'none',
+            floating_preview_opts = {},
+            peek_definition_code = {
+                ['<leader>df'] = '@function.outer',
+                ['<leader>dF'] = '@class.outer',
+            }
+        }
+    }
 }
-
--- vim.opt.foldmethod = 'expr'
--- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- }}}
 
