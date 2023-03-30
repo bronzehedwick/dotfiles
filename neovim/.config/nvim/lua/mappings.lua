@@ -72,7 +72,7 @@ vim.cmd [[
 ]]
 
 -- Mapping to show the current git branch.
-vim.keymap.set('n', '<C-c>', function()
+vim.keymap.set('n', '<F3>', function()
     local branch = io.popen('git cb')
     print(branch:read())
     branch:close()
