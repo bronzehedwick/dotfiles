@@ -1,15 +1,16 @@
 -- Enable spell checking.
-vim.cmd('setlocal spell')
+vim.opt_local.spell = true
 
 -- Set conceal
-vim.cmd('setlocal conceallevel=2')
-vim.cmd('setlocal concealcursor=nc')
+vim.opt_local.conceallevel = 2
+vim.opt_local.concealcursor = 'nc'
 
 -- Use a dictionary to lookup words.
 if vim.fn.executable('dict') then
-  vim.opt.keywordprg = 'dict'
-  -- nnoremap <buffer> <silent> <S-k> :execute "split " . shellescape(&keywordprg) . "<bar> 0read !" . shellescape(&keywordprg) . " " . expand("<cword>")<bar> :Man!<CR>
+    vim.opt.keywordprg = 'dict'
 end
 
 -- Insert time in this format: [2021-09-01 Wed]
 vim.keymap.set('i', '<C-g><C-t>', '<C-r>=strftime("[%Y-%m-%d %a]")<CR>')
+
+-- vim:fdm=marker ft=lua et sts=2 sw=2

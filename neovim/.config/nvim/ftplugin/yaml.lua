@@ -1,2 +1,2 @@
 -- Use yamllint linter.
-vim.cmd('compiler yamllint')
+vim.opt_local.compiler = 'yamllint'
