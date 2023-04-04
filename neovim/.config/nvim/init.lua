@@ -1,3 +1,8 @@
+if vim.fn.has('nvim-0.9') == 1 then
+  -- Byte compile Lua packages for performance.
+  vim.loader.enable()
+end
+
 require 'plugins'
 require 'configurations'
 require 'mappings'
