@@ -187,6 +187,8 @@ vim.cmd [[
 
 -- Plugins {{{1
 
+vim.g.undotree_SetFocusWhenToggle = true
+
 -- Emmet {{{2
 
 -- Add responsive meta tag to html5 emmet snippet.

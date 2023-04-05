@@ -4,4 +4,4 @@ if not vim.fn.exists(':UndotreeToggle') then
 end
 
 -- Add mapping for undotree.
-vim.keymap.set('n', '<F8>', ':UndotreeToggle<CR>', { silent = true })
+vim.keymap.set('n', '<F8>', vim.cmd.UndotreeToggle, { silent = true })
