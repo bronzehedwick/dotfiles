@@ -20,17 +20,17 @@ command! -bang -bar -nargs=* Gph execute 'Dispatch<bang> -dir=' .
 -- }}}
 
 -- Fugitive mappings. {{{
-vim.keymap.set('n', '<M-g>s', ':Git<CR>', { silent = true })
-vim.keymap.set('n', '<M-g>d', ':Gdiff<CR>', { silent = true })
-vim.keymap.set('n', '<M-g>c', ':Git commit<CR>', { silent = true })
-vim.keymap.set('n', '<M-g>b', ':Git blame<CR>', { silent = true })
-vim.keymap.set('n', '<M-g>l', ':Gclog<CR>', { silent = true })
-vim.keymap.set('n', '<M-g>p', ':Gpo<CR>', { silent = true })
-vim.keymap.set('n', '<M-g>r', ':Gread<CR>', { silent = true })
-vim.keymap.set('n', '<M-g>w', ':Gwrite<CR>', { silent = true })
-vim.keymap.set('n', '<M-g>e', ':Gedit<CR>', { silent = true })
-vim.keymap.set('n', '<M-g>u', ':Gup<CR>', { silent = true })
-vim.keymap.set('n', '<M-g>f', ':Gfetch<CR>', { silent = true })
+vim.keymap.set('n', '<M-g>s', vim.cmd.Git, { silent = true })
+vim.keymap.set('n', '<M-g>d', vim.cmd.Gdiff, { silent = true })
+vim.keymap.set('n', '<M-g>c', ':Git commit<cr>', { silent = true })
+vim.keymap.set('n', '<M-g>b', ':Git blame<cr>', { silent = true })
+vim.keymap.set('n', '<M-g>l', vim.cmd.Gclog, { silent = true })
+vim.keymap.set('n', '<M-g>p', vim.cmd.Gpo, { silent = true })
+vim.keymap.set('n', '<M-g>r', vim.cmd.Gread, { silent = true })
+vim.keymap.set('n', '<M-g>w', vim.cmd.Gwrite, { silent = true })
+vim.keymap.set('n', '<M-g>e', vim.cmd.Gedit, { silent = true })
+vim.keymap.set('n', '<M-g>u', vim.cmd.Gup, { silent = true })
+vim.keymap.set('n', '<M-g>f', vim.cmd.Gfetch, { silent = true })
 -- )}}
 
 -- vim:fdm=marker ft=lua et sts=2 sw=2
