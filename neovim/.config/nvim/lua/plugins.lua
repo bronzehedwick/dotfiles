@@ -73,7 +73,6 @@ require 'paq' {
     -- }}}
 
     -- Text {{{
-    'editorconfig/editorconfig-vim', -- TODO Remove after nvim 0.9+
     'rstacruz/vim-closer',
     'tpope/vim-surround',
     { 'mattn/emmet-vim', opt = true },
