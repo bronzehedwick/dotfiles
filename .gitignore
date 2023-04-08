@@ -6,8 +6,6 @@ fish_variables
 tmux/.tmux/*
 tmux/.config/tmux/plugins
 pianobar/.config/pianobar/state
-packer_compiled.vim
-packer_compiled.lua
 .DS_Store
 gnupg/.gnupg/crls.d/
 gnupg/.gnupg/private-keys-*
