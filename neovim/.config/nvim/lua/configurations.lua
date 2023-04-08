@@ -311,7 +311,6 @@ require 'nvim-treesitter.configs'.setup {
         'gitattributes',
         'gitcommit',
         'gitignore',
-        'help',
         'hjson',
         'html',
         'htmldjango',
@@ -341,6 +340,7 @@ require 'nvim-treesitter.configs'.setup {
         'twig',
         'typescript',
         'vim',
+        'vimdoc',
         'yaml',
     },
     highlight = {
