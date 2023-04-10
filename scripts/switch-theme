@@ -5,6 +5,8 @@ IFS=$'\n\t'
 if [ "$1" == "dark" ]; then
   sed -i.bak 's/colors: \*light/colors: \*dark/g' ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml
   rm ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml.bak
+  fish_config theme choose tokyonight_night
 else
   git -C ~/.dotfiles checkout --quiet alacritty/.config/alacritty/alacritty.yml
+  fish_config theme choose tokyonight_day
 fi
