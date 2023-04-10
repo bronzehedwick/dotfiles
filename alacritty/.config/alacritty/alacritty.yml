@@ -162,95 +162,76 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Modus)
+# TokyoNight Day Colors
 schemes:
-modus-vivendi: &dark
+tokyo-night: &light
   # Default colors
   primary:
-    background: '#1f1f24'
-    foreground: '#ffffff'
+    background: '0xe1e2e7'
+    foreground: '0x3760bf'
 
-  cursor:
-    text: '#000000'
-    background: '#777777'
-
-  # Normal colors (except green it is from intense colors)
+    # Normal colors
   normal:
-    black:   '#000000'
-    red:     '#ff8059'
-    green:   '#00fc50'
-    yellow:  '#eecc00'
-    blue:    '#29aeff'
-    magenta: '#feacd0'
-    cyan:    '#00d3d0'
-    white:   '#eeeeee'
+    black:   '0xe9e9ed'
+    red:     '0xf52a65'
+    green:   '0x587539'
+    yellow:  '0x8c6c3e'
+    blue:    '0x2e7de9'
+    magenta: '0x9854f1'
+    cyan:    '0x007197'
+    white:   '0x6172b0'
 
-  # Bright colors [all the faint colors in the modus theme]
+    # Bright colors
   bright:
-    black:   '#555555'
-    red:     '#ffa0a0'
-    green:   '#88cf88'
-    yellow:  '#d2b580'
-    blue:    '#92baff'
-    magenta: '#e0b2d6'
-    cyan:    '#a0bfdf'
-    white:   '#ffffff'
+    black:   '0xa1a6c5'
+    red:     '0xf52a65'
+    green:   '0x587539'
+    yellow:  '0x8c6c3e'
+    blue:    '0x2e7de9'
+    magenta: '0x9854f1'
+    cyan:    '0x007197'
+    white:   '0x3760bf'
 
-  # dim [all the intense colors in modus theme]
-  dim:
-    black:   '#222222'
-    red:     '#fb6859'
-    green:   '#00fc50'
-    yellow:  '#ffdd00'
-    blue:    '#00a2ff'
-    magenta: '#ff8bd4'
-    cyan:    '#30ffc0'
-    white:   '#dddddd'
+  indexed_colors:
+    - { index: 16, color: '0xb15c00' }
+    - { index: 17, color: '0xc64343' }
 
-modus-operandi: &light
+# TokyoNight Night Colors
+schemes:
+tokyo-night: &dark
   # Default colors
   primary:
-    background: '#ffffff'
-    foreground: '#000000'
+    background: '0x1a1b26'
+    foreground: '0xc0caf5'
 
-  cursor:
-    text: '#ffffff'
-    background: '#777777'
-
-  # Normal colors (except green it is from intense colors)
+  # Normal colors
   normal:
-    black:   '#000000'
-    red:     '#a60000'
-    green:   '#006800'
-    yellow:  '#813e00'
-    blue:    '#0030a6'
-    magenta: '#721045'
-    cyan:    '#00538b'
-    white:   '#eeeeee'
+    black:   '0x15161e'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
 
-  # Bright colors [all the faint colors in the modus theme]
+  # Bright colors
   bright:
-    black:   '#555555'
-    red:     '#7f1010'
-    green:   '#104410'
-    yellow:  '#5f4400'
-    blue:    '#002f88'
-    magenta: '#752f50'
-    cyan:    '#12506f'
-    white:   '#ffffff'
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
 
-  # dim [all the intense colors in modus theme]
-  dim:
-    black:   '#222222'
-    red:     '#b60000'
-    green:   '#006800'
-    yellow:  '#904200'
-    blue:    '#1111ee'
-    magenta: '#7000e0'
-    cyan:    '#205b93'
-    white:   '#dddddd'
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
 
-colors: *light
+colors: *dark
+
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
