@@ -26,7 +26,7 @@ require 'paq' {
     'tpope/vim-rhubarb',
     {
         'lewis6991/gitsigns.nvim',
-        function()
+        run = function()
             require('gitsigns').setup {
                 on_attach = function(bufnr)
                     local gs = package.loaded.gitsigns
@@ -78,11 +78,11 @@ require 'paq' {
     { 'mattn/emmet-vim', opt = true },
     {
         'nvim-orgmode/orgmode',
-        function() require('orgmode').setup {} end
+        run = function() require('orgmode').setup {} end
     },
     {
         'numToStr/Comment.nvim',
-        function() require('Comment').setup() end
+        run = function() require('Comment').setup() end
     },
     {
         'L3MON4D3/LuaSnip',
@@ -100,10 +100,7 @@ require 'paq' {
 
     -- Colorschemes {{{
     'cormacrelf/dark-notify',
-    {
-        'bronzehedwick/vim-colors-xcode',
-        branch = 'lsp-treesitter-highlights'
-    },
+    'folke/tokyonight.nvim',
     -- }}}
 
 }
