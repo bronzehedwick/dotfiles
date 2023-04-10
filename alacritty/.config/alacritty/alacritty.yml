@@ -164,7 +164,7 @@ font:
 
 # TokyoNight Day Colors
 schemes:
-tokyo-night: &light
+tokyo-day: &light
   # Default colors
   primary:
     background: '0xe1e2e7'
@@ -230,7 +230,7 @@ tokyo-night: &dark
     - { index: 16, color: '0xff9e64' }
     - { index: 17, color: '0xdb4b4b' }
 
-colors: *dark
+colors: *light
 
 # Bell
 #
