@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
 
 function gd
-  command git diff
+  command git diff $argv
 end
