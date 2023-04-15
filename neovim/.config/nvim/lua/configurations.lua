@@ -121,6 +121,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
+-- Use relative line numbers. Useful for jumping.
+vim.opt.relativenumber = true
+
 -- }}}
 
 -- Buffers {{{
@@ -162,10 +165,6 @@ vim.opt.statusline:append('%{winnr()}')
 
 -- Terminal {{{
 
-if vim.fn.executable(brew_path() .. '/bash') then
-    vim.o.shell = brew_path() .. '/bash'
-end
-
 if vim.fn.executable(brew_path() .. '/fish') then
     vim.o.shell = brew_path() .. '/fish'
 end
@@ -173,14 +172,14 @@ end
 -- Set the statusline to the process name set by the terminal.
 vim.api.nvim_create_autocmd('TermOpen', {
     pattern = { '*' },
-    command = [[setlocal statusline=%{b:term_title}%=%{winnr()} nonumber]]
+    command = [[setlocal statusline=%{b:term_title}%=%{winnr()} nonumber norelativenumber]]
 })
 
 vim.cmd [[
-  nmap <unique> <silent> <C-s> <Plug>(PrimaryTerminalOpenDynamic)
-  tmap <unique> <silent> <C-s> <C-\><C-n><C-w>c
-  autocmd TermOpen * startinsert
-  autocmd BufEnter term://* startinsert
+    nmap <unique> <silent> <C-s> <Plug>(PrimaryTerminalOpenDynamic)
+    tmap <unique> <silent> <C-s> <C-\><C-n><C-w>c
+    autocmd TermOpen * startinsert
+    autocmd BufEnter term://* startinsert
 ]]
 
 -- }}}
