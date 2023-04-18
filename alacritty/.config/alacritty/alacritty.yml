@@ -167,7 +167,7 @@ schemes:
 modus-vivendi: &dark
   # Default colors
   primary:
-    background: '#1f1f24'
+    background: '#292a30'
     foreground: '#ffffff'
 
   cursor:
