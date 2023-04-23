@@ -28,3 +28,6 @@ if test -x "/usr/local/opt/curl/bin"
 else if test -x "/opt/homebrew/opt/curl/bin"
   set -g fish_user_paths "/opt/homebrew/opt/curl/bin" $fish_user_paths
 end
+
+# Abbreviations
+abbr --add e nvim
