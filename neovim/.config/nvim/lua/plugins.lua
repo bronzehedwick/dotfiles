@@ -46,10 +46,6 @@ require 'paq' {
     },
     -- }}}
 
-    -- Terminal {{{
-    'bronzehedwick/vim-primary-terminal',
-    -- }}}
-
     -- Syntax {{{
     'vim-scripts/fountain.vim',
     -- }}}
