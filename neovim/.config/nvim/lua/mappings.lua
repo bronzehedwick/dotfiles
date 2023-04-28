@@ -178,6 +178,7 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Quickly make the terminal the only window in terminal mode.
 vim.keymap.set('t', '<M-o>', '<C-\\><C-n>:only<CR>i')
+vim.keymap.set('n', '<M-o>', ':only<CR>')
 
 -- Lua-based primary terminal.
 vim.keymap.set({'n', 't'}, '<C-j>', function()
@@ -185,10 +186,12 @@ vim.keymap.set({'n', 't'}, '<C-j>', function()
         vim.cmd('close')
     else
         vim.cmd { cmd = 'sbuffer', args = { buf_id } }
+        vim.cmd('startinsert')
     end
     if buf_id == nil then
         vim.cmd('terminal')
         buf_id = vim.fn.bufnr('%')
+        vim.cmd('startinsert')
     end
 end)
 
