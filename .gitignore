@@ -17,3 +17,6 @@ gnupg/.gnupg/.*
 launchctl/Library/LaunchAgents/com.*
 launchctl/Library/LaunchAgents/net.*
 SessionDesktop.el
+fish/.config/fish/conf.d
+fish/.config/fish/fish_plugins
+fish/.config/fish/functions/_nvm_*
