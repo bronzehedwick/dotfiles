@@ -182,16 +182,20 @@ vim.keymap.set('n', '<M-o>', ':only<CR>')
 
 -- Lua-based primary terminal.
 vim.keymap.set({'n', 't'}, '<C-j>', function()
-    if buf_id == vim.fn.bufnr('%') then
-        vim.cmd('close')
-    else
-        vim.cmd { cmd = 'sbuffer', args = { buf_id } }
-        vim.cmd('startinsert')
-    end
-    if buf_id == nil then
+    if term_buf_id == nil then
+        vim.cmd('split')
         vim.cmd('terminal')
-        buf_id = vim.fn.bufnr('%')
+        term_buf_id = vim.fn.bufnr('%')
+        term_win_id = vim.fn.bufwinid('%')
         vim.cmd('startinsert')
+        return
+    end
+    if vim.fn.bufwinnr(term_buf_id) == -1 then
+        vim.cmd { cmd = 'sbuffer', args = { term_buf_id } }
+        term_win_id = vim.fn.bufwinid('%')
+        vim.cmd('startinsert')
+    else
+        vim.api.nvim_win_hide(term_win_id)
     end
 end)
 
