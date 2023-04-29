@@ -8,4 +8,4 @@ require 'configurations'
 require 'mappings'
 require 'colorscheme'
 
--- vim:fdm=marker ft=lua et sts=2 sw=2 path=./lua
+-- vim:fdm=marker ft=lua et sts=4 sw=4 path=./lua
