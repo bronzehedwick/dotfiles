@@ -124,6 +124,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Use relative line numbers. Useful for jumping.
 vim.opt.relativenumber = true
 
+-- Set timeout to lower than default. Useful for which key, plus I don't need to wait.
+vim.opt.timeoutlen = 500
+
 -- }}}
 
 -- Buffers {{{
@@ -182,6 +185,26 @@ vim.api.nvim_create_autocmd('TermOpen', {
 vim.g.undotree_SetFocusWhenToggle = true
 
 require('Comment').setup()
+
+-- Which key {{{2
+require('which-key').setup {
+    marks = true,
+    registers = true,
+    spelling = {
+        enabled = true,
+        suggestions = 20
+    },
+    presets = {
+        operators = false,
+        motions = false,
+        text_objects = false,
+        windows = true,
+        nav = true,
+        z = true,
+        g = true,
+    }
+}
+-- }}}
 
 -- Gitsigns {{{2
 require('gitsigns').setup {
@@ -314,9 +337,11 @@ end
 -- See https://github.com/bmewburn/intelephense-docs/blob/master/installation.md#initialisation-options
 nvim_lsp.intelephense.setup({
     on_attach = on_attach,
-    init_options = {
-        licenseKey = os.getenv('HOME') .. '/.local/share/intelephense/license.txt'
-    },
+    settings = {
+        intelephense = {
+            licenseKey = '008RPZYAVQHN2E0' -- os.getenv('HOME') .. '/.local/share/intelephense/license.txt'
+        }
+    }
 })
 
 -- }}}
