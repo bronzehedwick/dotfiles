@@ -193,7 +193,9 @@ vim.keymap.set({'n', 't'}, '<C-j>', function()
     if vim.fn.bufwinnr(term_buf_id) == -1 then
         vim.cmd { cmd = 'sbuffer', args = { term_buf_id } }
         term_win_id = vim.fn.bufwinid('%')
-        vim.cmd('startinsert')
+        if vim.fn.line('.') == vim.fn.line('$') then
+            vim.cmd('startinsert')
+        end
     else
         vim.api.nvim_win_hide(term_win_id)
     end
