@@ -188,20 +188,22 @@ require('Comment').setup()
 
 -- Which key {{{2
 require('which-key').setup {
-    marks = true,
-    registers = true,
-    spelling = {
-        enabled = true,
-        suggestions = 20
-    },
-    presets = {
-        operators = false,
-        motions = false,
-        text_objects = false,
-        windows = true,
-        nav = true,
-        z = true,
-        g = true,
+    plugins = {
+        marks = true,
+        registers = true,
+        spelling = {
+            enabled = true,
+            suggestions = 20
+        },
+        presets = {
+            operators = false,
+            motions = false,
+            text_objects = false,
+            windows = false,
+            nav = false,
+            z = false,
+            g = false,
+        }
     }
 }
 -- }}}
