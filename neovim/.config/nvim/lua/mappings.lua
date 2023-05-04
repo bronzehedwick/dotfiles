@@ -36,12 +36,12 @@ vim.keymap.set('c', '<C-p>', '<up>')
 -- }}}
 
 -- Window movement {{{
-vim.keymap.set('n', '<M-s>', '<cmd>execute 1 .. "wincmd w"<cr>')
-vim.keymap.set('n', '<M-d>', '<cmd>execute 2 .. "wincmd w"<cr>')
-vim.keymap.set('n', '<M-f>', '<cmd>execute 3 .. "wincmd w"<cr>')
-vim.keymap.set('n', '<M-x>', '<cmd>execute 4 .. "wincmd w"<cr>')
-vim.keymap.set('n', '<M-c>', '<cmd>execute 5 .. "wincmd w"<cr>')
-vim.keymap.set('n', '<M-v>', '<cmd>execute 6 .. "wincmd w"<cr>')
+vim.keymap.set({ 'n', 't' }, '<M-1>', '<cmd>execute 1 .. "wincmd w"<cr>')
+vim.keymap.set({ 'n', 't' }, '<M-2>', '<cmd>execute 2 .. "wincmd w"<cr>')
+vim.keymap.set({ 'n', 't' }, '<M-3>', '<cmd>execute 3 .. "wincmd w"<cr>')
+vim.keymap.set({ 'n', 't' }, '<M-4>', '<cmd>execute 4 .. "wincmd w"<cr>')
+vim.keymap.set({ 'n', 't' }, '<M-5>', '<cmd>execute 5 .. "wincmd w"<cr>')
+vim.keymap.set({ 'n', 't' }, '<M-6>', '<cmd>execute 6 .. "wincmd w"<cr>')
 -- }}}
 
 -- Time {{{
