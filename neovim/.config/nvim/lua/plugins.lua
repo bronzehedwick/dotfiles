@@ -11,7 +11,6 @@ require 'paq' {
     'tpope/vim-dispatch',
     'justinmk/vim-ipmotion',
     'tpope/vim-repeat',
-    'folke/which-key.nvim',
     -- }}}
 
     -- Movement {{{

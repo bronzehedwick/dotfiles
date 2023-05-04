@@ -186,28 +186,6 @@ vim.g.undotree_SetFocusWhenToggle = true
 
 require('Comment').setup()
 
--- Which key {{{2
-require('which-key').setup {
-    plugins = {
-        marks = true,
-        registers = true,
-        spelling = {
-            enabled = true,
-            suggestions = 20
-        },
-        presets = {
-            operators = false,
-            motions = false,
-            text_objects = false,
-            windows = false,
-            nav = false,
-            z = false,
-            g = false,
-        }
-    }
-}
--- }}}
-
 -- Gitsigns {{{2
 require('gitsigns').setup {
     on_attach = function(bufnr)
