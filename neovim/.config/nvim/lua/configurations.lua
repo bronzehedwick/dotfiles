@@ -485,7 +485,7 @@ require('orgmode').setup({
         j = {
             description = 'Journal',
             template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
-            target = '~/org/journal.org',
+            target = org_path ..'/journal.org',
         },
     },
     mappings = {
