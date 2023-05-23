@@ -98,7 +98,7 @@ vim.o.colorcolumn = '80'
 vim.opt.cursorline = true
 
 -- Diff options.
-vim.o.diffopt = 'internal,filler,vertical,algorithm:patience'
+vim.o.diffopt = 'internal,filler,vertical,algorithm:patience,linematch:60'
 
 -- Show effects of comman incrementally, as you type.
 vim.o.inccommand = 'nosplit'
@@ -122,7 +122,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Use relative line numbers. Useful for jumping.
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- Set timeout to lower than default. Useful for which key, plus I don't need to wait.
 vim.opt.timeoutlen = 500
