@@ -319,7 +319,7 @@ nvim_lsp.intelephense.setup({
     on_attach = on_attach,
     settings = {
         intelephense = {
-            licenseKey = '008RPZYAVQHN2E0' -- os.getenv('HOME') .. '/.local/share/intelephense/license.txt'
+            licenseKey = os.getenv('HOME') .. '/.local/share/intelephense/license.txt'
         }
     }
 })
