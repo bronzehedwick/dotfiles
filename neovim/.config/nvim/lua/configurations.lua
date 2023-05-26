@@ -319,7 +319,7 @@ nvim_lsp.intelephense.setup({
     on_attach = on_attach,
     settings = {
         intelephense = {
-            licenseKey = os.getenv('HOME') .. '/.local/share/intelephense/license.txt'
+            licenceKey = os.getenv('HOME') .. '/.local/share/intelephense/licence.txt'
         }
     }
 })
@@ -484,7 +484,7 @@ require('orgmode').setup({
         l = { description = 'Line Note', template = '* %?\n%a' },
         j = {
             description = 'Journal',
-            template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
+            template = '** %<%Y-%m-%d> %<%A>\n** %<%X>\n%?',
             target = org_path ..'/journal.org',
         },
     },
