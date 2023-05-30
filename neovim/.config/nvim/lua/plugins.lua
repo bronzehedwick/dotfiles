@@ -2,7 +2,6 @@ require 'paq' {
     'savq/paq-nvim', -- Let Paq manage itself
 
     -- Utilities {{{
-    'neovim/nvim-lspconfig',
     {
         'nvim-treesitter/nvim-treesitter',
         run = function() vim.cmd 'TSUpdate' end
