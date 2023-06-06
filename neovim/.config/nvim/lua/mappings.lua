@@ -35,15 +35,6 @@ vim.keymap.set('c', '<C-p>', '<up>')
 
 -- }}}
 
--- Window movement {{{
-vim.keymap.set({ 'n', 't' }, '<M-1>', '<cmd>execute 1 .. "wincmd w"<cr>')
-vim.keymap.set({ 'n', 't' }, '<M-2>', '<cmd>execute 2 .. "wincmd w"<cr>')
-vim.keymap.set({ 'n', 't' }, '<M-3>', '<cmd>execute 3 .. "wincmd w"<cr>')
-vim.keymap.set({ 'n', 't' }, '<M-4>', '<cmd>execute 4 .. "wincmd w"<cr>')
-vim.keymap.set({ 'n', 't' }, '<M-5>', '<cmd>execute 5 .. "wincmd w"<cr>')
-vim.keymap.set({ 'n', 't' }, '<M-6>', '<cmd>execute 6 .. "wincmd w"<cr>')
--- }}}
-
 -- Time {{{
 
 -- Display date and time.
@@ -138,6 +129,38 @@ if vim.fn.executable('fzy') == 1 then
     -- }}}
     -- Buffers. {{{2
     vim.keymap.set('n', '<M-b>', function()
+        local buffers = vim.api.nvim_cmd(
+            { cmd = 'buffers' },
+            { output = true }
+        )
+        require('utilities').make_modal()
+        vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
+        local id = nil
+        vim.fn.termopen('echo "' .. buffers .. '" | fzy', {
+            stdout_buffered = true,
+            on_stdout = function(chan_id, data, name)
+                local stdout = data[table.maxn(data) - 1]
+                local t = {}
+                for i in string.gmatch(stdout, "%S+") do
+                    table.insert(t, i)
+                end
+                id = t[2]
+            end,
+            on_exit = function()
+                vim.api.nvim_cmd(
+                    { cmd = 'bdelete', bang = true },
+                    { output = false }
+                )
+                vim.api.nvim_cmd(
+                    { cmd = 'buffer', args = { id } },
+                    { output = false }
+                )
+            end
+        })
+    end, { silent = true })
+    -- }}}
+    -- Modified buffers. {{{2
+    vim.keymap.set('n', '<M-m>', function()
         local buffers = vim.api.nvim_cmd(
             { cmd = 'buffers' },
             { output = true }

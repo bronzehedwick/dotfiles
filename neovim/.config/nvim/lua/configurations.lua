@@ -161,8 +161,8 @@ vim.opt.statusline:append('%=')
 vim.opt.statusline:append('%p%%')
 -- New group.
 vim.opt.statusline:append('%=')
--- Window ID.
-vim.opt.statusline:append('%{winnr()}')
+-- Line number.
+vim.opt.statusline:append('%l')
 
 -- }}}
 
