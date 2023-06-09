@@ -12,10 +12,9 @@ if vim.fn.filereadable(lsp_path) == 1 then
         name = 'intelephense',
         cmd = { 'intelephense', '--stdio' },
         root_dir = vim.fs.dirname(vim.fs.find({'composer.json', 'index.php', '.git'})[1]),
-        settings = {
-            licenceKey = os.getenv('HOME') .. '/.local/share/intelephense/licence.txt'
-        },
     })
+    -- The settings only work by putting the licence key in
+    -- ~/intelephense/licence.txt. Note the UK spelling.
 end
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4
