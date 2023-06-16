@@ -175,7 +175,7 @@ end
 -- Set the statusline to the process name set by the terminal.
 vim.api.nvim_create_autocmd('TermOpen', {
     pattern = { '*' },
-    command = [[setlocal statusline=%{b:term_title}%=%{winnr()} nonumber norelativenumber]]
+    command = [[setlocal statusline=%{b:term_title} nonumber norelativenumber]]
 })
 
 -- }}}
