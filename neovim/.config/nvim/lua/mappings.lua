@@ -25,13 +25,16 @@ vim.keymap.set('n', 'Q', '@@')
 vim.keymap.set('i', '<C-V>', '<C-X><C-O>')
 
 -- Add customized Grep that's silent and doesn't jump to the first result.
--- vim.cmd [[
---   command! -nargs=+ Grep execute 'silent grep! <args>'
--- ]]
+vim.cmd [[
+  command! -nargs=+ Grep execute 'silent grep! <args>'
+]]
 
 -- More sane command-line history.
 vim.keymap.set('c', '<C-n>', '<down>')
 vim.keymap.set('c', '<C-p>', '<up>')
+
+-- Quickly toggle the quickfix list.
+vim.keymap.set('n', '<C-w>u', ':cclose<CR>', { silent = true })
 
 -- }}}
 
