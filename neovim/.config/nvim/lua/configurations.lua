@@ -98,7 +98,11 @@ vim.o.colorcolumn = '80'
 vim.opt.cursorline = true
 
 -- Diff options.
-vim.o.diffopt = 'internal,filler,vertical,algorithm:patience,linematch:60'
+if vim.fn.has('nvim-0.9') == 1 then
+    vim.o.diffopt = 'internal,filler,vertical,algorithm:patience,linematch:60'
+else
+    vim.o.diffopt = 'internal,filler,vertical,algorithm:patience'
+end
 
 -- Show effects of comman incrementally, as you type.
 vim.o.inccommand = 'nosplit'
