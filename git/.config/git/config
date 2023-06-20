@@ -23,7 +23,7 @@
 	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 	type = cat-file -t
 	dump = cat-file -p
-	code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | grep -v package | head -10"
+	code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | grep -v package | grep -v lock | head -10"
 	po = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
 	ph = "!git push github $(git rev-parse --abbrev-ref HEAD)"
 	up = pull --rebase --autostash --all
