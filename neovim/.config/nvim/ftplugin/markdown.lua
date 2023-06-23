@@ -21,7 +21,7 @@ if vim.fn.executable('dict') then
 end
 
 -- Mapping to toggle todo list status.
-vim.keymap.set('n', '<LocalLeader>x', function()
+vim.keymap.set('n', '<C-Space>', function()
     vim.cmd('normal mp')
     if (string.match(vim.fn.getline('.'), '[x]')) then
         vim.cmd('normal ^f[lr ')
