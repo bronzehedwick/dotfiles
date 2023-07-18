@@ -29,6 +29,7 @@ require 'paq' {
     -- Buffers {{{
     'tpope/vim-eunuch',
     'tpope/vim-sleuth',
+    'tpope/vim-abolish',
     'justinmk/vim-dirvish',
     'mbbill/undotree',
     -- }}}
