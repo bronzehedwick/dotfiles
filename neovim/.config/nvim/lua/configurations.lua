@@ -393,8 +393,9 @@ require('orgmode').setup({
     org_agenda_files = {
         org_path .. '/tech.org',
         org_path .. '/projects.org',
+        org_path .. '/bits.org',
+        org_path .. '/recipes.org',
         refile_path,
-        org_path .. '/random.org',
     },
     org_default_notes_file = refile_path,
     org_indent_mode = 'noindent',
