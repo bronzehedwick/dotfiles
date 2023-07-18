@@ -1,6 +1,7 @@
 #!/usr/bin/env fish
 
 set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+set -q XDG_CACHE_HOME; or set XDG_CACHE_HOME ~/.cache
 
 # Neovim settings
 
@@ -28,6 +29,3 @@ if test -x "/usr/local/opt/curl/bin"
 else if test -x "/opt/homebrew/opt/curl/bin"
   set -g fish_user_paths "/opt/homebrew/opt/curl/bin" $fish_user_paths
 end
-
-# Abbreviations
-abbr --add e nvim
