@@ -76,6 +76,9 @@ vim.api.nvim_create_autocmd({ 'QuickFixCmdPost' }, {
 
 -- Display {{{
 
+-- Use 24-bit color.
+vim.opt.termguicolors = true
+
 -- Don't redraw while typing macros.
 vim.o.lazyredraw = true
 
