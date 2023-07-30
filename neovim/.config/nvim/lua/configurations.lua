@@ -430,7 +430,7 @@ require('orgmode').setup({
         },
         org = {
             org_refile = '<LocalLeader>r',
-            org_open_at_point = '<LocalLeader>o',
+            org_open_at_point = 'gx',
             org_archive_subtree = '<LocalLeader>$',
             org_set_tags_command = '<LocalLeader>t',
             org_toggle_archive_tag = '<LocalLeader>A',
