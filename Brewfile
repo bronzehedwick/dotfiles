@@ -1,6 +1,7 @@
 brew "aspell"
 brew "colima"
 brew "composer"
+brew "coreutils"
 brew "dark-notify"
 brew "dict"
 brew "docker"
