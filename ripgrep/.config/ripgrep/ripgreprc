@@ -6,4 +6,8 @@ drupal:*.{theme,module,inc,php}*
 --type-add
 jsx:*.jsx*
 
+# Add Svelte file type
+--type-add
+svelte:*.svelte
+
 # vim: ft=conf
