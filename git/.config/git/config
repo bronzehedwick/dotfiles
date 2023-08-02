@@ -44,16 +44,19 @@
 	linenumber = true
 [merge]
 	conflictstyle = diff3
-	tool = fugitive
+	tool = diffview
 	keepBackup = false
 [mergetool "fugitive"]
 	cmd = nvr -s -c \"Gdiffsplit!\" \"$MERGED\"
-	keepBackup = false
+[mergetool "diffview"]
+	cmd = nvr -s -c \"DiffviewOpen\"
 [diff]
-	tool = nvr
+	tool = diffview
 	colorMoved = default
 [difftool "nvr"]
 	cmd = nvr -s -d \"$LOCAL\" \"$REMOTE\"
+[difftool "diffview"]
+	cmd = nvr -s -c \"DiffviewOpen\"
 [mergetool]
 	keepBackup = false
 	prompt = false

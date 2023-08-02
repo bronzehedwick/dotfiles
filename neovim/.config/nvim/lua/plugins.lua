@@ -24,6 +24,7 @@ require 'paq' {
     'tommcdo/vim-fubitive',
     'tpope/vim-rhubarb',
     'lewis6991/gitsigns.nvim',
+    'sindrets/diffview.nvim',
     -- }}}
 
     -- Buffers {{{
