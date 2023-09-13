@@ -33,8 +33,9 @@ vim.cmd [[
 vim.keymap.set('c', '<C-n>', '<down>')
 vim.keymap.set('c', '<C-p>', '<up>')
 
--- Quickly toggle the quickfix list.
+-- Quickly toggle the quickfix and location list.
 vim.keymap.set('n', '<C-w>u', ':cclose<CR>', { silent = true })
+vim.keymap.set('n', '<C-w>l', ':lclose<CR>', { silent = true })
 
 -- Open links under the cursor.
 vim.keymap.set('n', 'gx', function()
