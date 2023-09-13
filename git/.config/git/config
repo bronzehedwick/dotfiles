@@ -33,6 +33,8 @@
 	envar = "!echo \"$REVIEW_BASE\""
 	files = "!git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")"
 	stat = "!git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")"
+	list = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit
+	branches = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]'
 [color]
 	ui = auto
 [credential]
@@ -43,7 +45,7 @@
 [grep]
 	linenumber = true
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 	tool = diffview
 	keepBackup = false
 [mergetool "fugitive"]
