@@ -4,7 +4,7 @@ require 'paq' {
     -- Utilities {{{
     {
         'nvim-treesitter/nvim-treesitter',
-        run = function() vim.cmd 'TSUpdate' end
+        build = function() vim.cmd 'TSUpdate' end
     },
     'nvim-treesitter/nvim-treesitter-textobjects',
     'tpope/vim-dispatch',
@@ -43,7 +43,7 @@ require 'paq' {
     'numToStr/Comment.nvim',
     {
         'L3MON4D3/LuaSnip',
-        run = 'make install_jsregexp'
+        build = 'make install_jsregexp'
     },
     'rafamadriz/friendly-snippets',
     -- }}}
