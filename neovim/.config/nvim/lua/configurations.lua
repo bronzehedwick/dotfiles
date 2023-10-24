@@ -310,6 +310,7 @@ require 'nvim-treesitter.configs'.setup {
         'rust',
         'scss',
         'sql',
+        'ssh_config',
         'toml',
         'tsx',
         'twig',
@@ -320,7 +321,7 @@ require 'nvim-treesitter.configs'.setup {
     },
     highlight = {
         enable = true, -- false will disable the whole extension
-        additional_vim_regex_highlighting = { 'org', 'markdown' }
+        additional_vim_regex_highlighting = { 'org', 'markdown', 'ssh_config' }
     },
     indent = {
         enable = true
