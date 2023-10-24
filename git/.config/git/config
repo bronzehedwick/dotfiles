@@ -35,6 +35,8 @@
 	stat = "!git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")"
 	list = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit
 	branches = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]'
+	hide = update-index --assume-unchanged
+	unhide = update-index --no-assume-unchanged
 [color]
 	ui = auto
 [credential]
