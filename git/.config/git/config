@@ -33,7 +33,7 @@
 	envar = "!echo \"$REVIEW_BASE\""
 	files = "!git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")"
 	stat = "!git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")"
-	list = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit
+	list = "!git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit"
 	branches = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]'
 	hide = update-index --assume-unchanged
 	unhide = update-index --no-assume-unchanged
@@ -51,16 +51,16 @@
 	tool = diffview
 	keepBackup = false
 [mergetool "fugitive"]
-	cmd = nvr -s -c \"Gdiffsplit!\" \"$MERGED\"
+	cmd = "nvr -s -c \"Gdiffsplit!\" \"$MERGED\""
 [mergetool "diffview"]
-	cmd = nvr -s -c \"DiffviewOpen\"
+	cmd = "nvr -s -c \"DiffviewOpen\""
 [diff]
 	tool = diffview
 	colorMoved = default
 [difftool "nvr"]
-	cmd = nvr -s -d \"$LOCAL\" \"$REMOTE\"
+	cmd = "nvr -s -d \"$LOCAL\" \"$REMOTE\""
 [difftool "diffview"]
-	cmd = nvr -s -c \"DiffviewOpen\"
+	cmd = "nvr -s -c \"DiffviewOpen\""
 [mergetool]
 	keepBackup = false
 	prompt = false
