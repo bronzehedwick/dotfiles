@@ -48,7 +48,7 @@
 	linenumber = true
 [merge]
 	conflictstyle = zdiff3
-	tool = diffview
+	tool = p4mergetool
 	keepBackup = false
 [mergetool "fugitive"]
 	cmd = "nvr -s -c \"Gdiffsplit!\" \"$MERGED\""
@@ -92,3 +92,6 @@
 	prune = true
 [includeIf "gitdir:~/Sites/Lullabot/"]
 	path = config-lullabot
+[mergetool "p4mergetool"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
+	trustExitCode = false
