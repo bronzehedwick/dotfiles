@@ -3,10 +3,10 @@ set -euo pipefail
 IFS=$'\n\t'
 
 if [ "$1" == "dark" ]; then
-  sed -i.bak 's/colors: \*light/colors: \*dark/g' ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml
-  rm ~/.dotfiles/alacritty/.config/alacritty/alacritty.yml.bak
+  sed -i.bak 's/colors-light/colors-dark/g' ~/.dotfiles/alacritty/.config/alacritty/alacritty.toml
+  rm ~/.dotfiles/alacritty/.config/alacritty/alacritty.toml.bak
   fish_config theme choose tokyonight_night
 else
-  git -C ~/.dotfiles checkout --quiet alacritty/.config/alacritty/alacritty.yml
+  git -C ~/.dotfiles checkout --quiet alacritty/.config/alacritty/alacritty.toml
   fish_config theme choose tokyonight_day
 fi

@@ -1,0 +1,30 @@
+import = ["~/.config/alacritty/colors-light.toml"]
+
+window.option_as_alt = "OnlyLeft"
+
+[window.dimensions]
+columns = 85
+lines = 40
+
+[window.padding]
+x = 5
+y = 5
+
+[font]
+size = 18.0
+
+[font.bold]
+family = "SF Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "SF Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "SF Mono"
+style = "Regular Italic"
+
+[font.normal]
+family = "SF Mono"
+style = "Regular"
