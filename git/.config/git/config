@@ -1,7 +1,7 @@
 [user]
 	name = Chris DeLuca
 	email = code@chrisdeluca.me
-	signingkey = 461C015E032EF9CB
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILFdJgpL7QMPRedMGX0/UdyZ4Tph0PGbCPSAb3YepDUo
 [alias]
 	co = checkout
 	cm = commit
@@ -90,8 +90,12 @@
 	defaultBranch = main
 [fetch]
 	prune = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+	allowedSignersFile = /Users/chris/.config/git/allowed_signers
+[commit]
+	gpgsign = true
 [includeIf "gitdir:~/Sites/Lullabot/"]
 	path = config-lullabot
-[mergetool "p4mergetool"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
-	trustExitCode = false
