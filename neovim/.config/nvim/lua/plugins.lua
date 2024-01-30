@@ -2,6 +2,7 @@ require 'paq' {
     'savq/paq-nvim', -- Let Paq manage itself
 
     -- Utilities {{{
+    'nvim-lua/plenary.nvim',
     {
         'nvim-treesitter/nvim-treesitter',
         build = function() vim.cmd 'TSUpdate' end
@@ -46,6 +47,7 @@ require 'paq' {
         build = 'make install_jsregexp'
     },
     'rafamadriz/friendly-snippets',
+    'nomnivore/ollama.nvim',
     -- }}}
 
     -- Syntax {{{

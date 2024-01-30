@@ -124,7 +124,7 @@ vim.keymap.set('n', '<leader>cc', ':edit ~/.dotfiles/neovim/.config/nvim/init.lu
 -- Org {{{
 
 -- Open org files.
-vim.keymap.set('n', '<leader>o', ':edit ~/Documents/org/index.org<CR>')
+vim.keymap.set('n', '<leader>or', ':edit ~/Documents/org/index.org<CR>')
 
 -- Search org files.
 vim.cmd [[
@@ -323,6 +323,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 
 })
+
+-- }}}
+
+-- Ollama {{{
+
+vim.keymap.set({'n', 'v'}, '<leader>ol', require'ollama'.prompt)
+vim.keymap.set({'n', 'v'}, '<leader>og', function()
+    require'ollama'.prompt('Generate_Code')
+end)
 
 -- }}}
 
