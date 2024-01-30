@@ -1,6 +1,6 @@
 # Add Drupal file type
 --type-add
-drupal:*.{theme,module,inc,php}*
+drupal:*.{theme,module,inc,php,install}*
 
 # Add JSX file type
 --type-add
