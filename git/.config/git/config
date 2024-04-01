@@ -48,19 +48,27 @@
 	linenumber = true
 [merge]
 	conflictstyle = zdiff3
-	tool = p4mergetool
+	tool = Kaleidoscope
 	keepBackup = false
 [mergetool "fugitive"]
 	cmd = "nvr -s -c \"Gdiffsplit!\" \"$MERGED\""
 [mergetool "diffview"]
 	cmd = "nvr -s -c \"DiffviewOpen\""
 [diff]
-	tool = diffview
+	tool = Kaleidoscope
 	colorMoved = default
 [difftool "nvr"]
 	cmd = "nvr -s -d \"$LOCAL\" \"$REMOTE\""
 [difftool "diffview"]
 	cmd = "nvr -s -c \"DiffviewOpen\""
+[difftool "Kaleidoscope"]
+	cmd = "ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\""
+[difftool]
+	prompt = false
+	trustExitCode = true
+[mergetool "Kaleidoscope"]
+	cmd = "ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot"
+	trustExitCode = true
 [mergetool]
 	keepBackup = false
 	prompt = false
@@ -72,8 +80,6 @@
 [advice]
 	statusHints = false
 	skippedCherryPicks = false
-[pull]
-	rebase = true
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
