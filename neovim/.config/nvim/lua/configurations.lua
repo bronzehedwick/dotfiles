@@ -267,8 +267,6 @@ vim.g.user_emmet_settings = emmet_opts
 
 -- Treesitter {{{2
 
-require('orgmode').setup_ts_grammar()
-
 require 'nvim-treesitter.configs'.setup {
     -- one of "all", "maintained" (parsers with maintainers), or a list of
     -- languages
