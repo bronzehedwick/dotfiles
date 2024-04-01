@@ -10,6 +10,7 @@ vim.g.xcode_match_paren_style = 1
 vim.g.xcode_match_paren_style = 0
 
 vim.cmd('colorscheme xcode')
+vim.cmd('hi link @org.hyperlink helpURL')
 
 require('dark_notify').run()
 
