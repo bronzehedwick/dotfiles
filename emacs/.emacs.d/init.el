@@ -116,6 +116,14 @@
         (org-mode)
         (show-all)))))
 
+(setq org-directory "~/Documents/org")
+(setq org-default-notes-file (concat org-directory "/refile.org"))
+
+(setq org-capture-templates
+      '(("t" "Todo" entry (file org-default-notes-file)
+         "* TODO %?\n%u")
+        ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
+         "* %<%X>\n%?")))
 
 ;; Orgmode mappings
 (global-set-key (kbd "C-c l") #'org-store-link)
