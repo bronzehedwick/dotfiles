@@ -129,3 +129,8 @@
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
+
+;; Auto dark mode package
+(add-to-list 'load-path "~/.emacs.d/auto-dark/")
+(require 'auto-dark)
+(auto-dark-mode t)
