@@ -48,3 +48,5 @@ abbr --add la ls -Ga
 abbr --add ll ls -lhcFG
 abbr --add ls ls -G
 abbr --add mergeclean "git status -s | grep orig | awk -F ' ' '{print $2}' | xargs rm"
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
