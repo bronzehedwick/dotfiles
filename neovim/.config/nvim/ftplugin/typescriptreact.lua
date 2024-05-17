@@ -1,9 +1,9 @@
 -- Basic JS from/require include config.
-vim.opt.include = '^\\s*[^/]+(from|require([\'"])'
-vim.opt.suffixesadd = '.jsx'
+vim.opt.include = [[^\\s*[^\/]\\+\\(from\\\|require(['"]\\)]]
+vim.opt.suffixesadd = '.js'
 
 -- Use eslint linter.
-vim.cmd('compiler eslint')
+vim.fn.execute('compiler eslint')
 
 -- LSP.
 local lsp_path = '/opt/homebrew/bin/tsserver'
