@@ -10,8 +10,8 @@ vim.g.xcode_match_paren_style = 1
 vim.g.xcode_match_paren_style = 0
 
 vim.cmd('colorscheme xcode')
-vim.cmd('hi link @org.hyperlink helpURL')
-vim.cmd('hi link @markup.heading.gitcommit gitcommitSummary')
+vim.cmd('hi! link @org.hyperlink helpURL')
+vim.cmd('hi! link @markup.heading.gitcommit gitcommitSummary')
 
 require('dark_notify').run()
 
