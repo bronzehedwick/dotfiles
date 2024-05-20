@@ -44,6 +44,11 @@ vim.o.fillchars = 'msgsep:◌'
 -- Make the jump-list behave like the tag list or a web browser.
 vim.opt.jumpoptions = 'stack'
 
+-- Use ripgrep as external grep tool, if available.
+if vim.fn.executable('rg') == 1 then
+    vim.opt.grepprg = 'rg --no-heading --vimgrep'
+end
+
 -- Automatically open, but do not go to (if there are errors) the quickfix /
 -- location list window, or close it when is has become empty.
 --
