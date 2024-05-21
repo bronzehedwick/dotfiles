@@ -40,7 +40,6 @@ require 'paq' {
     'rstacruz/vim-closer',
     'tpope/vim-surround',
     { 'mattn/emmet-vim', opt = true },
-    'nvim-orgmode/orgmode',
     {
         'L3MON4D3/LuaSnip',
         build = 'make install_jsregexp'
