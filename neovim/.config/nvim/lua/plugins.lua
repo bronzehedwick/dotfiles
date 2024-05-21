@@ -41,7 +41,6 @@ require 'paq' {
     'tpope/vim-surround',
     { 'mattn/emmet-vim', opt = true },
     'nvim-orgmode/orgmode',
-    'numToStr/Comment.nvim',
     {
         'L3MON4D3/LuaSnip',
         build = 'make install_jsregexp'

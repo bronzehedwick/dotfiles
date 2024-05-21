@@ -191,8 +191,6 @@ vim.api.nvim_create_autocmd('TermOpen', {
 
 vim.g.undotree_SetFocusWhenToggle = true
 
-require('Comment').setup()
-
 -- Gitsigns {{{2
 require('gitsigns').setup {
     on_attach = function(bufnr)
