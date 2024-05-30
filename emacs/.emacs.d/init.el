@@ -116,6 +116,8 @@
         (org-mode)
         (show-all)))))
 
+(setq org-src-fontify-natively t)
+
 (setq org-directory "~/Documents/org")
 (setq org-default-notes-file (concat org-directory "/refile.org"))
 
