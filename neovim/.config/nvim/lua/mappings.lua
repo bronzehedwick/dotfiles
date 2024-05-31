@@ -121,19 +121,6 @@ vim.keymap.set('n', '<leader>cc', ':edit ~/.dotfiles/neovim/.config/nvim/init.lu
 
 -- }}}
 
--- Org {{{
-
--- Open org files.
-vim.keymap.set('n', '<leader>or', ':edit ~/Documents/org/index.org<CR>')
-
--- Search org files.
-vim.cmd [[
-  command! -nargs=+ Ogrep execute 'silent grep! <args> ~/Documents/org/'
-  command! -nargs=+ Orgrep execute 'silent grep! <args> --no-ignore ~/Documents/org/'
-]]
-
--- }}}
-
 -- UrlView {{{
 if vim.fn.executable('urlview') == 1 then
     vim.keymap.set('n', '<leader>u', function()
