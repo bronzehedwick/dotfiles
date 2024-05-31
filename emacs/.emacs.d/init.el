@@ -1,6 +1,9 @@
 (add-to-list 'default-frame-alist '(font . "SF Mono-18"))
 (set-face-attribute 'default t :font "SF Mono-18")
 
+;; Re-open any previously opened files when launching Emacs.
+ (desktop-save-mode 1)
+
 ;; Show stray whitespace.
 (setq-default show-trailing-whitespace t)
 (setq-default indicate-empty-lines t)
