@@ -127,6 +127,8 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file org-default-notes-file)
          "* TODO %?\n%u")
+        ("n" "Note" entry (file org-default-notes-file)
+         "* %?\n%u")
         ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
          "* %<%X>\n%?")))
 
