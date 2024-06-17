@@ -5,7 +5,7 @@ end
 
 -- xcode color theme.
 vim.g.xcode_green_comments = 1
-vim.g.xcode_match_paren_style = 0
+vim.g.xcode_match_paren_style = 1
 
 vim.cmd('colorscheme xcode')
 
