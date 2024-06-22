@@ -8,9 +8,6 @@
 (add-to-list 'default-frame-alist '(font . "SF Mono-18"))
 (set-face-attribute 'default t :font "SF Mono-18")
 
-;; Re-open any previously opened files when launching Emacs.
- (desktop-save-mode 1)
-
 ;; Show stray whitespace.
 (setq-default show-trailing-whitespace t)
 (setq-default indicate-empty-lines t)
@@ -69,7 +66,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("~/Documents/org/random.org" "~/Documents/org/journal.org" "~/Documents/org/projects.org" "~/Documents/org/index.org" "~/Documents/org/books.org" "~/Documents/org/bits.org" "~/Documents/org/refile.org")))
+   '("~/Documents/org/random.org" "~/Documents/org/journal.org" "~/Documents/org/projects.org" "~/Documents/org/bits.org" "~/Documents/org/refile.org")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
