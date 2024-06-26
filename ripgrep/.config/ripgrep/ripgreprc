@@ -6,6 +6,10 @@ drupal:*.{theme,module,inc,php,install}*
 --type-add
 jsx:*.jsx*
 
+# Add TSX file type (.ts grabs this, but for completeness)
+--type-add
+tsx:*.tsx*
+
 # Add Svelte file type
 --type-add
 svelte:*.svelte
