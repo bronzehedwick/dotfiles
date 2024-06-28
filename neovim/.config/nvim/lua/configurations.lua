@@ -18,8 +18,8 @@ vim.opt.expandtab = true
 -- Indent 2 spaces by default.
 vim.opt.shiftwidth = 2
 
--- No spell checking.
-vim.o.spell = false
+-- Spell checking.
+vim.o.spell = true
 
 -- Prevents inserting two spaces after punctuation on a join (J).
 vim.o.joinspaces = false
@@ -179,10 +179,10 @@ if vim.fn.executable(brew_path() .. '/fish') then
     vim.o.shell = brew_path() .. '/fish'
 end
 
--- Set the statusline to the process name set by the terminal.
+-- Set the status line to the process name set by the terminal.
 vim.api.nvim_create_autocmd('TermOpen', {
     pattern = { '*' },
-    command = [[setlocal statusline=%{b:term_title} nonumber norelativenumber]]
+    command = [[setlocal statusline=%{b:term_title} nonumber norelativenumber nospell]]
 })
 
 -- }}}
@@ -409,6 +409,15 @@ smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' 
 require("luasnip.loaders.from_vscode")
     .lazy_load({ paths = "~/.local/share/nvim/drupal-smart-snippets/" })
 require("luasnip.loaders.from_vscode").lazy_load()
+-- }}}
+
+-- Color Code Creator {{{2
+require'ccc'.setup({
+    highlighter = {
+        auto_enable = true,
+        lsp = true,
+    },
+})
 -- }}}
 
 -- }}}
