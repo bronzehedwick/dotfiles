@@ -34,6 +34,7 @@ require 'paq' {
     'tpope/vim-abolish',
     'justinmk/vim-dirvish',
     'mbbill/undotree',
+    'NvChad/nvim-colorizer.lua',
     -- }}}
 
     -- Text {{{

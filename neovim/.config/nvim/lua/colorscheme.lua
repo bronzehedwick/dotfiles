@@ -3,6 +3,8 @@ if vim.env.TERM_PROGRAM ~= 'Apple_Terminal' then
   vim.o.termguicolors = true
 end
 
+require 'colorizer'.setup()
+
 -- xcode color theme.
 vim.g.xcode_green_comments = 1
 vim.g.xcode_match_paren_style = 1

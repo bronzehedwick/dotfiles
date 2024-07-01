@@ -411,15 +411,6 @@ require("luasnip.loaders.from_vscode")
 require("luasnip.loaders.from_vscode").lazy_load()
 -- }}}
 
--- Color Code Creator {{{2
-require'ccc'.setup({
-    highlighter = {
-        auto_enable = true,
-        lsp = true,
-    },
-})
--- }}}
-
 -- }}}
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4
