@@ -411,6 +411,15 @@ require("luasnip.loaders.from_vscode")
 require("luasnip.loaders.from_vscode").lazy_load()
 -- }}}
 
+-- LSP Lines {{{2
+-- Disable virtual_text since it's redundant due to lsp_lines.
+vim.diagnostic.config({
+  virtual_text = false,
+})
+-- Do the init.
+require("lsp_lines").setup()
+-- }}}
+
 -- }}}
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4
