@@ -420,6 +420,10 @@ vim.diagnostic.config({
 require("lsp_lines").setup()
 -- }}}
 
+-- Surround {{{2
+require'nvim-surround'.setup()
+-- }}}
+
 -- }}}
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4

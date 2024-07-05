@@ -40,7 +40,7 @@ require 'paq' {
 
     -- Text {{{
     'rstacruz/vim-closer',
-    'tpope/vim-surround',
+    'kylechui/nvim-surround',
     { 'mattn/emmet-vim', opt = true },
     {
         'L3MON4D3/LuaSnip',
