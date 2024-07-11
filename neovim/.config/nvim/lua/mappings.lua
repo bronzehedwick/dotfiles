@@ -82,7 +82,7 @@ end)
 
 -- Display date and time.
 vim.keymap.set('n', '<F2>', function()
-    print("It is " .. vim.fn.strftime("%a %b %e %I:%M %p"))
+    print("It is " .. vim.fn.strftime("%A %B %e %I:%M %p"))
 end)
 
 -- Insert time into a document.
