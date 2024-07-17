@@ -424,6 +424,15 @@ require("lsp_lines").setup()
 require'nvim-surround'.setup()
 -- }}}
 
+--- Highlight colors {{{2
+require('nvim-highlight-colors').setup({
+    render = 'virtual',
+    virtual_symbol_position = 'eow',
+    virtual_symbol_prefix = ' ',
+    virtual_symbol_suffix = '',
+})
+-- }}}
+
 -- }}}
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4

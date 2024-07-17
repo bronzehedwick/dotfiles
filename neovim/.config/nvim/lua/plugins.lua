@@ -34,7 +34,7 @@ require 'paq' {
     'tpope/vim-abolish',
     'justinmk/vim-dirvish',
     'mbbill/undotree',
-    'NvChad/nvim-colorizer.lua',
+    'brenoprata10/nvim-highlight-colors',
     'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
     -- }}}
 
