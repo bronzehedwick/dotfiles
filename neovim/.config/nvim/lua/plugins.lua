@@ -35,7 +35,6 @@ require 'paq' {
     'justinmk/vim-dirvish',
     'mbbill/undotree',
     'brenoprata10/nvim-highlight-colors',
-    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
     -- }}}
 
     -- Text {{{

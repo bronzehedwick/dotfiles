@@ -412,13 +412,16 @@ require("luasnip.loaders.from_vscode").lazy_load()
 -- }}}
 
 -- LSP Lines {{{2
--- Disable virtual_text since it's redundant due to lsp_lines.
 vim.diagnostic.config({
-  virtual_text = false,
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = '☠',
+            [vim.diagnostic.severity.WARN] = '⚠︎',
+            [vim.diagnostic.severity.INFO] = 'ℹ︎',
+            [vim.diagnostic.severity.HINT] = '☞',
+        }
+    },
 })
--- Do the init.
-require("lsp_lines").setup()
--- }}}
 
 -- Surround {{{2
 require'nvim-surround'.setup()
