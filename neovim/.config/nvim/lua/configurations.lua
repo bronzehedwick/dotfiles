@@ -422,12 +422,13 @@ vim.diagnostic.config({
         }
     },
 })
+-- }}}
 
 -- Surround {{{2
 require'nvim-surround'.setup()
 -- }}}
 
---- Highlight colors {{{2
+-- Highlight colors {{{2
 require('nvim-highlight-colors').setup({
     render = 'virtual',
     virtual_symbol_position = 'eow',
