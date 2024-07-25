@@ -12,6 +12,15 @@ if vim.fn.filereadable(lsp_path) == 1 then
         name = 'intelephense',
         cmd = { 'intelephense', '--stdio' },
         root_dir = vim.fs.dirname(vim.fs.find({'composer.json', 'index.php', '.git'})[1]),
+        init_options = {
+            environment = {
+                includePaths = {
+                    'core/',
+                    'core/includes',
+                    '../vendor',
+                }
+            }
+        }
     })
     -- The settings only work by putting the licence key in
     -- ~/intelephense/licence.txt. Note the UK spelling.
