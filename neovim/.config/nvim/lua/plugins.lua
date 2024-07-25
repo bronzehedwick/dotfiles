@@ -46,7 +46,6 @@ require 'paq' {
         build = 'make install_jsregexp'
     },
     'rafamadriz/friendly-snippets',
-    'nomnivore/ollama.nvim',
     -- }}}
 
     -- Syntax {{{

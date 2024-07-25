@@ -312,13 +312,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- }}}
 
--- Ollama {{{
-
-vim.keymap.set({'n', 'v'}, '<leader>ol', require'ollama'.prompt)
-vim.keymap.set({'n', 'v'}, '<leader>og', function()
-    require'ollama'.prompt('Generate_Code')
-end)
-
--- }}}
-
 -- vim:fdm=marker ft=lua et sts=4 sw=4
