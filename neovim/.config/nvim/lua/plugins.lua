@@ -25,12 +25,10 @@ require 'paq' {
     'tommcdo/vim-fubitive',
     'tpope/vim-rhubarb',
     'lewis6991/gitsigns.nvim',
-    'sindrets/diffview.nvim',
     -- }}}
 
     -- Buffers {{{
     'tpope/vim-eunuch',
-    'tpope/vim-sleuth',
     'tpope/vim-abolish',
     'justinmk/vim-dirvish',
     'mbbill/undotree',

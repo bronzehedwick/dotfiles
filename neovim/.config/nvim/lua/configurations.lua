@@ -228,12 +228,6 @@ require('gitsigns').setup {
 }
 -- }}}
 
--- Diffview {{{2
-require('diffview').setup({
-    use_icons = false,
-})
--- }}}
-
 -- Emmet {{{2
 
 -- Add responsive meta tag to html5 emmet snippet.

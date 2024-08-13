@@ -5,7 +5,7 @@ M.make_modal = function(opts)
         opts = {}
     end
     local width = vim.o.columns - 4
-    local height = 11
+    local height = 19
     local winid = vim.fn.win_getid()
 
     if opts.max_width then
