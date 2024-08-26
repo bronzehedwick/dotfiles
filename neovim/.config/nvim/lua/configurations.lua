@@ -175,10 +175,6 @@ vim.opt.statusline:append('%l')
 
 -- Terminal {{{
 
-if vim.fn.executable(brew_path() .. '/fish') then
-    vim.o.shell = brew_path() .. '/fish'
-end
-
 -- Set the status line to the process name set by the terminal.
 vim.api.nvim_create_autocmd('TermOpen', {
     pattern = { '*' },
