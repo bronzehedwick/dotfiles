@@ -1,37 +1,71 @@
-[colors.bright]
-black = "#555555"
-blue = "#002f88"
-cyan = "#12506f"
-green = "#104410"
-magenta = "#752f50"
-red = "#7f1010"
-white = "#ffffff"
-yellow = "#5f4400"
+# Colors (Gruvbox light)
 
-[colors.cursor]
-background = "#777777"
-text = "#ffffff"
-
-[colors.dim]
-black = "#222222"
-blue = "#1111ee"
-cyan = "#205b93"
-green = "#006800"
-magenta = "#7000e0"
-red = "#b60000"
-white = "#dddddd"
-yellow = "#904200"
-
-[colors.normal]
-black = "#000000"
-blue = "#0030a6"
-cyan = "#00538b"
-green = "#006800"
-magenta = "#721045"
-red = "#a60000"
-white = "#eeeeee"
-yellow = "#813e00"
-
+# Default colors
 [colors.primary]
-background = "#ffffff"
-foreground = "#000000"
+# hard contrast background = '#f9f5d7'
+# normal background = '#fbf1c7'
+background = '#fff8e3'
+# soft contrast background = = '#f2e5bc'
+foreground = '#3c3836'
+
+# Normal colors
+[colors.normal]
+black   = '#fbf1c7'
+red     = '#cc241d'
+green   = '#98971a'
+yellow  = '#d79921'
+blue    = '#458588'
+magenta = '#b16286'
+cyan    = '#689d6a'
+white   = '#7c6f64'
+
+# Bright colors
+[colors.bright]
+black   = '#928374'
+red     = '#9d0006'
+green   = '#79740e'
+yellow  = '#b57614'
+blue    = '#076678'
+magenta = '#8f3f71'
+cyan    = '#427b58'
+white   = '#3c3836'
+
+# Colors (Xcode light)
+
+# [colors.bright]
+# black = "#555555"
+# blue = "#002f88"
+# cyan = "#12506f"
+# green = "#104410"
+# magenta = "#752f50"
+# red = "#7f1010"
+# white = "#ffffff"
+# yellow = "#5f4400"
+#
+# [colors.cursor]
+# background = "#777777"
+# text = "#ffffff"
+#
+# [colors.dim]
+# black = "#222222"
+# blue = "#1111ee"
+# cyan = "#205b93"
+# green = "#006800"
+# magenta = "#7000e0"
+# red = "#b60000"
+# white = "#dddddd"
+# yellow = "#904200"
+#
+# [colors.normal]
+# black = "#000000"
+# blue = "#0030a6"
+# cyan = "#00538b"
+# green = "#006800"
+# magenta = "#721045"
+# red = "#a60000"
+# white = "#eeeeee"
+# yellow = "#813e00"
+#
+# [colors.primary]
+# background = "#ffffff"
+# foreground = "#000000"

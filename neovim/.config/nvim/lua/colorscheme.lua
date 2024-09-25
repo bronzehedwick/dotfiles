@@ -7,7 +7,20 @@ end
 vim.g.xcode_green_comments = 1
 vim.g.xcode_match_paren_style = 1
 
-vim.cmd('colorscheme xcode')
+require('gruvbox').setup({
+    contrast = 'hard',
+    italic = {
+        strings = false,
+        comments = false,
+        operators = false,
+    },
+    palette_overrides = {
+        light0_hard = '#fff8e3',
+    },
+})
+
+-- vim.cmd('colorscheme xcode')
+vim.cmd('colorscheme gruvbox')
 
 require('dark_notify').run()
 
