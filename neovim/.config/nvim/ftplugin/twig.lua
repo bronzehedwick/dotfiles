@@ -1,6 +1,4 @@
 -- Add twig pattern files to path to be able to configure below.
--- Enables `gf` on include to jump to that file. Bloom specific.
-vim.opt.path = '/Users/chris/Sites/Lullabot/dsga_d8/docroot/themes/custom/ga_bloom/components'
 
 -- Use twig commenting instead of HTML.
 vim.opt.commentstring = "{# %s #}"

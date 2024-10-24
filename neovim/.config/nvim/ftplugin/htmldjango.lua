@@ -12,6 +12,14 @@ ft.set('htmldjango', '{#%s#}')
 -- Use twiglint linter.
 vim.cmd('compiler twiglint')
 
+-- Auto complete quotes for HTML attributes.
+vim.keymap.set(
+  'i',
+  '=',
+  require('utilities').autocomplete_html_attribute,
+  { expr = true, buffer = true }
+)
+
 -- LSP.
 local lsp_path = '/opt/homebrew/bin/vscode-html-language-server'
 if vim.fn.filereadable(lsp_path) == 1 then
