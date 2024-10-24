@@ -199,11 +199,7 @@ vim.keymap.set('n', '<M-o>', ':only<CR>')
 -- Lua-based primary terminal.
 vim.keymap.set({'n', 't'}, '<C-j>', function()
     if term_buf_id == nil then
-        if vim.fn.winwidth(0) > 120 then
-            vim.cmd('vertical split')
-        else
-            vim.cmd('split')
-        end
+        vim.cmd('split')
         vim.cmd('terminal')
         term_buf_id = vim.fn.bufnr('%')
         term_win_id = vim.fn.bufwinid('%')
@@ -211,11 +207,7 @@ vim.keymap.set({'n', 't'}, '<C-j>', function()
         return
     end
     if vim.fn.bufwinnr(term_buf_id) == -1 then
-        if vim.fn.winwidth(0) > 120 then
-            vim.cmd('vertical sbuffer ' .. term_buf_id)
-        else
-            vim.cmd { cmd = 'sbuffer', args = { term_buf_id } }
-        end
+        vim.cmd { cmd = 'sbuffer', args = { term_buf_id } }
         term_win_id = vim.fn.bufwinid('%')
         if vim.fn.line('.') == vim.fn.line('$') then
             vim.cmd('startinsert')
