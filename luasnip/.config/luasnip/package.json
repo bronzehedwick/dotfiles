@@ -1,0 +1,15 @@
+{
+  "name": "custom_luasnip",
+  "version": "1.0.0",
+  "description": "My custom luasnip VSCode-style expansions.",
+  "author": "Chris DeLuca",
+  "license": "ISC",
+  "contributes": {
+    "snippets": [
+      {
+        "language": ["twig"],
+        "path": "./snippets/twig.json"
+      }
+    ]
+  }
+}

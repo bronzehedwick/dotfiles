@@ -1,0 +1,1263 @@
+{
+  "doctype": {
+    "prefix": "doctype",
+    "body": ["<!DOCTYPE>", "$1"],
+    "description": "HTML - Defines the document type",
+    "scope": "text.twig"
+  },
+  "a": {
+    "prefix": "a",
+    "body": "<a href=\"$1\">$2</a>$3",
+    "description": "HTML - Defines a hyperlink",
+    "scope": "text.twig"
+  },
+  "abbr": {
+    "prefix": "abbr",
+    "body": "<abbr title=\"$1\">$2</abbr>$3",
+    "description": "HTML - Defines an abbreviation",
+    "scope": "text.twig"
+  },
+  "address": {
+    "prefix": "address",
+    "body": ["<address>", "$1", "</address>"],
+    "description": "HTML - Defines an address element",
+    "scope": "text.twig"
+  },
+  "area": {
+    "prefix": "area",
+    "body": "<area shape=\"$1\" coords=\"$2\" href=\"$3\" alt=\"$4\">$5",
+    "description": "HTML - Defines an area inside an image map",
+    "scope": "text.twig"
+  },
+  "article": {
+    "prefix": "article",
+    "body": ["<article>", "\t$1", "</article>"],
+    "description": "HTML - Defines an article",
+    "scope": "text.twig"
+  },
+  "aside": {
+    "prefix": "aside",
+    "body": ["<aside>", "\t$1", "</aside>$2"],
+    "description": "HTML - Defines content aside from the page content",
+    "scope": "text.twig"
+  },
+  "audio": {
+    "prefix": "audio",
+    "body": ["<audio controls>", "\t$1", "</audio>"],
+    "description": "HTML - Defines sounds content",
+    "scope": "text.twig"
+  },
+  "b": {
+    "prefix": "b",
+    "body": "<b>$1</b>$2",
+    "description": "HTML - Defines bold text",
+    "scope": "text.twig"
+  },
+  "base": {
+    "prefix": "base",
+    "body": "<base href=\"$1\" target=\"$2\">$3",
+    "description": "HTML - Defines a base URL for all the links in a page",
+    "scope": "text.twig"
+  },
+  "bdi": {
+    "prefix": "bdi",
+    "body": "<bdi>$1</bdi>$2",
+    "description": "HTML - Used to isolate text that is of unknown directionality",
+    "scope": "text.twig"
+  },
+  "bdo": {
+    "prefix": "bdo",
+    "body": ["<bdo dir=\"$1\">", "$2", "</bdo>"],
+    "description": "HTML - Defines the direction of text display",
+    "scope": "text.twig"
+  },
+  "big": {
+    "prefix": "big",
+    "body": "<big>$1</big>$2",
+    "description": "HTML - Used to make text bigger",
+    "scope": "text.twig"
+  },
+  "blockquote": {
+    "prefix": "blockquote",
+    "body": ["<blockquote cite=\"$2\">", "\t$1", "</blockquote>"],
+    "description": "HTML - Defines a long quotation",
+    "scope": "text.twig"
+  },
+  "body": {
+    "prefix": "body",
+    "body": ["<body>", "\t$0", "</body>"],
+    "description": "HTML - Defines the body element",
+    "scope": "text.twig"
+  },
+  "br": {
+    "prefix": "br",
+    "body": "<br>",
+    "description": "HTML - Inserts a single line break",
+    "scope": "text.twig"
+  },
+  "button": {
+    "prefix": "button",
+    "body": "<button type=\"$1\">$2</button>$3",
+    "description": "HTML - Defines a push button",
+    "scope": "text.twig"
+  },
+  "canvas": {
+    "prefix": "canvas",
+    "body": "<canvas id=\"$1\">$2</canvas>$3",
+    "description": "HTML - Defines graphics",
+    "scope": "text.twig"
+  },
+  "caption": {
+    "prefix": "caption",
+    "body": "<caption>$1</caption>$2",
+    "description": "HTML - Defines a table caption",
+    "scope": "text.twig"
+  },
+  "cite": {
+    "prefix": "cite",
+    "body": "<cite>$1</cite>$2",
+    "description": "HTML - Defines a citation",
+    "scope": "text.twig"
+  },
+  "code": {
+    "prefix": "code",
+    "body": "<code>$1</code>$2",
+    "description": "HTML - Defines computer code text",
+    "scope": "text.twig"
+  },
+  "col": {
+    "prefix": "col",
+    "body": "<col>$2",
+    "description": "HTML - Defines attributes for table columns",
+    "scope": "text.twig"
+  },
+  "colgroup": {
+    "prefix": "colgroup",
+    "body": ["<colgroup>", "\t$1", "</colgroup>"],
+    "description": "HTML - Defines group of table columns",
+    "scope": "text.twig"
+  },
+  "command": {
+    "prefix": "command",
+    "body": "<command>$1</command>$2",
+    "description": "HTML - Defines a command button [not supported]",
+    "scope": "text.twig"
+  },
+  "datalist": {
+    "prefix": "datalist",
+    "body": ["<datalist>", "\t$1", "</datalist>"],
+    "description": "HTML - Defines a dropdown list",
+    "scope": "text.twig"
+  },
+  "dd": {
+    "prefix": "dd",
+    "body": "<dd>$1</dd>$2",
+    "description": "HTML - Defines a definition description",
+    "scope": "text.twig"
+  },
+  "del": {
+    "prefix": "del",
+    "body": "<del>$1</del>$2",
+    "description": "HTML - Defines deleted text",
+    "scope": "text.twig"
+  },
+  "details": {
+    "prefix": "details",
+    "body": ["<details>", "\t$1", "</details>"],
+    "description": "HTML - Defines details of an element",
+    "scope": "text.twig"
+  },
+  "dialog": {
+    "prefix": "dialog",
+    "body": "<dialog>$1</dialog>$2",
+    "description": "HTML - Defines a dialog (conversation)",
+    "scope": "text.twig"
+  },
+  "dfn": {
+    "prefix": "dfn",
+    "body": "<dfn>$1</dfn>$2",
+    "description": "HTML - Defines a definition term",
+    "scope": "text.twig"
+  },
+  "div": {
+    "prefix": "div",
+    "body": ["<div>", "\t$1", "</div>"],
+    "description": "HTML - Defines a section in a document",
+    "scope": "text.twig"
+  },
+  "dl": {
+    "prefix": "dl",
+    "body": ["<dl>", "\t$1", "</dl>"],
+    "description": "HTML - Defines a definition list",
+    "scope": "text.twig"
+  },
+  "dt": {
+    "prefix": "dt",
+    "body": "<dt>$1</dt>$2",
+    "description": "HTML - Defines a definition term",
+    "scope": "text.twig"
+  },
+  "em": {
+    "prefix": "em",
+    "body": "<em>$1</em>$2",
+    "description": "HTML - Defines emphasized text",
+    "scope": "text.twig"
+  },
+  "fieldset": {
+    "prefix": "fieldset",
+    "body": ["<fieldset>", "\t$1", "</fieldset>"],
+    "description": "HTML - Defines a fieldset",
+    "scope": "text.twig"
+  },
+  "figcaption": {
+    "prefix": "figcaption",
+    "body": "<figcaption>$1</figcaption>$2",
+    "description": "HTML - Defines a caption for a figure",
+    "scope": "text.twig"
+  },
+  "figure": {
+    "prefix": "figure",
+    "body": ["<figure>", "\t$1", "</figure>"],
+    "description": "HTML - Defines a group of media content, and their caption",
+    "scope": "text.twig"
+  },
+  "footer": {
+    "prefix": "footer",
+    "body": ["<footer>", "\t$1", "</footer>"],
+    "description": "HTML - Defines a footer for a section or page",
+    "scope": "text.twig"
+  },
+  "form": {
+    "prefix": "form",
+    "body": ["<form>", "\t$1", "</form>"],
+    "description": "HTML - Defines a form",
+    "scope": "text.twig"
+  },
+  "h1": {
+    "prefix": "h1",
+    "body": "<h1>$1</h1>$2",
+    "description": "HTML - Defines header 1",
+    "scope": "text.twig"
+  },
+  "h2": {
+    "prefix": "h2",
+    "body": "<h2>$1</h2>$2",
+    "description": "HTML - Defines header 2",
+    "scope": "text.twig"
+  },
+  "h3": {
+    "prefix": "h3",
+    "body": "<h3>$1</h3>$2",
+    "description": "HTML - Defines header 3",
+    "scope": "text.twig"
+  },
+  "h4": {
+    "prefix": "h4",
+    "body": "<h4>$1</h4>$2",
+    "description": "HTML - Defines header 4",
+    "scope": "text.twig"
+  },
+  "h5": {
+    "prefix": "h5",
+    "body": "<h5>$1</h5>$2",
+    "description": "HTML - Defines header 5",
+    "scope": "text.twig"
+  },
+  "h6": {
+    "prefix": "h6",
+    "body": "<h6>$1</h6>$2",
+    "description": "HTML - Defines header 6",
+    "scope": "text.twig"
+  },
+  "head": {
+    "prefix": "head",
+    "body": ["<head>", "\t$1", "</head>"],
+    "description": "HTML - Defines information about the document",
+    "scope": "text.twig"
+  },
+  "header": {
+    "prefix": "header",
+    "body": ["<header>", "\t$1", "</header>"],
+    "description": "HTML - Defines a header for a section of page",
+    "scope": "text.twig"
+  },
+  "hgroup": {
+    "prefix": "hgroup",
+    "body": ["<hgroup>", "\t$1", "</hgroup>"],
+    "description": "HTML - Defines information about a section in a document",
+    "scope": "text.twig"
+  },
+  "hr": {
+    "prefix": "hr",
+    "body": "<hr>",
+    "description": "HTML - Defines a horizontal rule",
+    "scope": "text.twig"
+  },
+  "html": {
+    "prefix": "html",
+    "body": ["<html>", "\t$0", "</html>"],
+    "description": "HTML - Defines an html document",
+    "scope": "text.twig"
+  },
+  "html5": {
+    "prefix": "html5",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"$1en\">",
+      "\t<head>",
+      "\t\t<meta charset=\"UTF-8\">",
+      "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "\t\t<title>$2</title>",
+      "\t\t<link href=\"$3css/style.css\" rel=\"stylesheet\">",
+      "\t</head>",
+      "\t<body>",
+      "\t$0",
+      "\t</body>",
+      "</html>"
+    ],
+    "description": "HTML - Defines a template for a html5 document",
+    "scope": "text.twig"
+  },
+  "i": {
+    "prefix": "i",
+    "body": "<i>$1</i>$2",
+    "description": "HTML - Defines italic text",
+    "scope": "text.twig"
+  },
+  "iframe": {
+    "prefix": "iframe",
+    "body": "<iframe src=\"$1\">$2</iframe>$3",
+    "description": "HTML - Defines an inline sub window",
+    "scope": "text.twig"
+  },
+  "img": {
+    "prefix": "img",
+    "body": "<img src=\"$1\" alt=\"$2\">$3",
+    "description": "HTML - Defines an image",
+    "scope": "text.twig"
+  },
+  "input": {
+    "prefix": "input",
+    "body": "<input type=\"$1\" name=\"$2\" value=\"$3\">$4",
+    "description": "HTML - Defines an input field",
+    "scope": "text.twig"
+  },
+  "ins": {
+    "prefix": "ins",
+    "body": "<ins>$1</ins>$2",
+    "description": "HTML - Defines inserted text",
+    "scope": "text.twig"
+  },
+  "keygen": {
+    "prefix": "keygen",
+    "body": "<keygen name=\"$1\">$2",
+    "description": "HTML - Defines a generated key in a form",
+    "scope": "text.twig"
+  },
+  "kbd": {
+    "prefix": "kbd",
+    "body": "<kbd>$1</kbd>$2",
+    "description": "HTML - Defines keyboard text",
+    "scope": "text.twig"
+  },
+  "label": {
+    "prefix": "label",
+    "body": "<label for=\"$1\">$2</label>$3",
+    "description": "HTML - Defines an inline window",
+    "scope": "text.twig"
+  },
+  "legend": {
+    "prefix": "legend",
+    "body": "<legend>$1</legend>$2",
+    "description": "HTML - Defines a title in a fieldset",
+    "scope": "text.twig"
+  },
+  "li": {
+    "prefix": "li",
+    "body": "<li>$1</li>$2",
+    "description": "HTML - Defines a list item",
+    "scope": "text.twig"
+  },
+  "link": {
+    "prefix": "link",
+    "body": "<link rel=\"$1\" type=\"$2\" href=\"$3\">$4",
+    "description": "HTML - Defines a resource reference",
+    "scope": "text.twig"
+  },
+  "main": {
+    "prefix": "main",
+    "body": ["<main>", "\t$1", "</main>"],
+    "description": "HTML - Defines an image map",
+    "scope": "text.twig"
+  },
+  "map": {
+    "prefix": "map",
+    "body": ["<map name=\"$1\">", "\t$2", "</map>"],
+    "description": "HTML - Defines an image map",
+    "scope": "text.twig"
+  },
+  "mark": {
+    "prefix": "mark",
+    "body": "<mark>$1</mark>$2",
+    "description": "HTML - Defines marked text",
+    "scope": "text.twig"
+  },
+  "menu": {
+    "prefix": "menu",
+    "body": ["<menu>", "\t$1", "</menu>"],
+    "description": "HTML - Defines a menu list",
+    "scope": "text.twig"
+  },
+  "menuitem": {
+    "prefix": "menuitem",
+    "body": "<menuitem>$1</menuitem>$2",
+    "description": "HTML - Defines a menu item [firefox only]",
+    "scope": "text.twig"
+  },
+  "meta": {
+    "prefix": "meta",
+    "body": "<meta name=\"$1\" content=\"$2\">$3",
+    "description": "HTML - Defines meta information",
+    "scope": "text.twig"
+  },
+  "meter": {
+    "prefix": "meter",
+    "body": "<meter value=\"$1\">$2</meter>$3",
+    "description": "HTML - Defines measurement within a predefined range",
+    "scope": "text.twig"
+  },
+  "nav": {
+    "prefix": "nav",
+    "body": ["<nav>", "\t$1", "</nav>"],
+    "description": "HTML - Defines navigation links",
+    "scope": "text.twig"
+  },
+  "noscript": {
+    "prefix": "noscript",
+    "body": ["<noscript>", "$1", "</noscript>"],
+    "description": "HTML - Defines a noscript section",
+    "scope": "text.twig"
+  },
+  "object": {
+    "prefix": "object",
+    "body": "<object width=\"$1\" height=\"$2\" data=\"$3\">$4</object>$5",
+    "description": "HTML - Defines an embedded object",
+    "scope": "text.twig"
+  },
+  "ol": {
+    "prefix": "ol",
+    "body": ["<ol>", "\t$1", "</ol>"],
+    "description": "HTML - Defines an ordered list",
+    "scope": "text.twig"
+  },
+  "optgroup": {
+    "prefix": "optgroup",
+    "body": ["<optgroup>", "\t$1", "</optgroup>"],
+    "description": "HTML - Defines an option group",
+    "scope": "text.twig"
+  },
+  "option": {
+    "prefix": "option",
+    "body": "<option value=\"$1\">$2</option>$3",
+    "description": "HTML - Defines an option in a drop-down list",
+    "scope": "text.twig"
+  },
+  "output": {
+    "prefix": "output",
+    "body": "<output name=\"$1\" for=\"$2\">$3</output>$4",
+    "description": "HTML - Defines some types of output",
+    "scope": "text.twig"
+  },
+  "p": {
+    "prefix": "p",
+    "body": "<p>$1</p>$2",
+    "description": "HTML - Defines a paragraph",
+    "scope": "text.twig"
+  },
+  "param": {
+    "prefix": "param",
+    "body": "<param name=\"$1\" value=\"$2\">$3",
+    "description": "HTML - Defines a parameter for an object",
+    "scope": "text.twig"
+  },
+  "pre": {
+    "prefix": "pre",
+    "body": ["<pre>$1</pre>"],
+    "description": "HTML - Defines preformatted text",
+    "scope": "text.twig"
+  },
+  "progress": {
+    "prefix": "progress",
+    "body": "<progress value=\"$1\" max=\"$2\">$3</progress>$4",
+    "description": "HTML - Defines progress of a task of any kind",
+    "scope": "text.twig"
+  },
+  "q": {
+    "prefix": "q",
+    "body": "<q>$1</q>$2",
+    "description": "HTML - Defines a short quotation",
+    "scope": "text.twig"
+  },
+  "rp": {
+    "prefix": "rp",
+    "body": "<rp>$1</rp>$2",
+    "description": "HTML - Used in ruby annotations to define what to show browsers that do not support the ruby element",
+    "scope": "text.twig"
+  },
+  "rt": {
+    "prefix": "rt",
+    "body": "<rt>$1</rt>$2",
+    "description": "HTML - Defines explanation to ruby annotations",
+    "scope": "text.twig"
+  },
+  "ruby": {
+    "prefix": "ruby",
+    "body": ["<ruby>", "$1", "</ruby>"],
+    "description": "HTML - Defines ruby annotations",
+    "scope": "text.twig"
+  },
+  "s": {
+    "prefix": "s",
+    "body": "<s>$1</s>$2",
+    "description": "HTML - Used to define strikethrough text",
+    "scope": "text.twig"
+  },
+  "samp": {
+    "prefix": "samp",
+    "body": "<samp>$1</samp>$2",
+    "description": "HTML - Defines sample computer code",
+    "scope": "text.twig"
+  },
+  "script": {
+    "prefix": "script",
+    "body": ["<script>", "\t$1", "</script>"],
+    "description": "HTML - Defines a script",
+    "scope": "text.twig"
+  },
+  "section": {
+    "prefix": "section",
+    "body": ["<section>", "\t$1", "</section>"],
+    "description": "HTML - Defines a section",
+    "scope": "text.twig"
+  },
+  "select": {
+    "prefix": "select",
+    "body": ["<select>", "\t$1", "</select>"],
+    "description": "HTML - Defines a selectable list",
+    "scope": "text.twig"
+  },
+  "small": {
+    "prefix": "small",
+    "body": "<small>$1</small>$2",
+    "description": "HTML - Defines small text",
+    "scope": "text.twig"
+  },
+  "source": {
+    "prefix": "source",
+    "body": "<source src=\"$1\" type=\"$2\">$3",
+    "description": "HTML - Defines media resource",
+    "scope": "text.twig"
+  },
+  "span": {
+    "prefix": "span",
+    "body": "<span>$1</span>$2",
+    "description": "HTML - Defines a section in a document",
+    "scope": "text.twig"
+  },
+  "strong": {
+    "prefix": "strong",
+    "body": "<strong>$1</strong>$2",
+    "description": "HTML - Defines strong text",
+    "scope": "text.twig"
+  },
+  "style": {
+    "prefix": "style",
+    "body": ["<style>", "$1", "</style>"],
+    "description": "HTML - Defines a style definition",
+    "scope": "text.twig"
+  },
+  "sub": {
+    "prefix": "sub",
+    "body": "<sub>$1</sub>$2",
+    "description": "HTML - Defines sub-scripted text",
+    "scope": "text.twig"
+  },
+  "sup": {
+    "prefix": "sup",
+    "body": "<sup>$1</sup>$2",
+    "description": "HTML - Defines super-scripted text",
+    "scope": "text.twig"
+  },
+  "summary": {
+    "prefix": "summary",
+    "body": "<summary>$1</summary>$2",
+    "description": "HTML - Defines a visible heading for the detail element [limited support]",
+    "scope": "text.twig"
+  },
+  "table": {
+    "prefix": "table",
+    "body": ["<table>", "\t$1", "</table>"],
+    "description": "HTML - Defines a table",
+    "scope": "text.twig"
+  },
+  "tbody": {
+    "prefix": "tbody",
+    "body": ["<tbody>", "\t$1", "</tbody>"],
+    "description": "HTML - Defines a table body",
+    "scope": "text.twig"
+  },
+  "td": {
+    "prefix": "td",
+    "body": "<td>$1</td>$2",
+    "description": "HTML - Defines a table cell",
+    "scope": "text.twig"
+  },
+  "textarea": {
+    "prefix": "textarea",
+    "body": "<textarea rows=\"$1\" cols=\"$2\">$3</textarea>$4",
+    "description": "HTML - Defines a text area",
+    "scope": "text.twig"
+  },
+  "tfoot": {
+    "prefix": "tfoot",
+    "body": ["<tfoot>", "\t$1", "</tfoot>"],
+    "description": "HTML - Defines a table footer",
+    "scope": "text.twig"
+  },
+  "thead": {
+    "prefix": "thead",
+    "body": ["<thead>", "$1", "</thead>"],
+    "description": "HTML - Defines a table head",
+    "scope": "text.twig"
+  },
+  "th": {
+    "prefix": "th",
+    "body": "<th>$1</th>$2",
+    "description": "HTML - Defines a table header",
+    "scope": "text.twig"
+  },
+  "time": {
+    "prefix": "time",
+    "body": "<time datetime=\"$1\">$2</time>$3",
+    "description": "HTML - Defines a date/time",
+    "scope": "text.twig"
+  },
+  "title": {
+    "prefix": "title",
+    "body": "<title>$1</title>$2",
+    "description": "HTML - Defines the document title",
+    "scope": "text.twig"
+  },
+  "tr": {
+    "prefix": "tr",
+    "body": "<tr>$1</tr>$2",
+    "description": "HTML - Defines a table row",
+    "scope": "text.twig"
+  },
+  "track": {
+    "prefix": "track",
+    "body": "<track src=\"$1\" kind=\"$2\" srclang=\"$3\" label=\"$4\">$5",
+    "description": "HTML - Defines a table row",
+    "scope": "text.twig"
+  },
+  "u": {
+    "prefix": "u",
+    "body": "<u>$1</u>$2",
+    "description": "HTML - Used to define underlined text",
+    "scope": "text.twig"
+  },
+  "ul": {
+    "prefix": "ul",
+    "body": ["<ul>", "\t$1", "</ul>"],
+    "description": "HTML - Defines an unordered list",
+    "scope": "text.twig"
+  },
+  "var": {
+    "prefix": "var",
+    "body": "<var>$1</var>$2",
+    "description": "HTML - Defines a variable",
+    "scope": "text.twig"
+  },
+  "video": {
+    "prefix": "video",
+    "body": [
+      "<video width=\"$1\" height=\"$2\" controls>",
+      "\t$3",
+      "</video>"
+    ],
+    "description": "HTML - Defines a video",
+    "scope": "text.twig"
+  },
+  "div.": {
+    "prefix": "div.",
+    "body": ["<div class=\"$1\">", "\t$2", "</div>"],
+    "description": "HTML - Defines a section in a document",
+    "scope": "text.twig"
+  },
+  "div#": {
+    "prefix": "div#",
+    "body": ["<div id=\"$1\">", "\t$2", "</div>"],
+    "description": "HTML - Defines a section in a document",
+    "scope": "text.twig"
+  },
+  "div.#": {
+    "prefix": "div.#",
+    "body": ["<div class=\"$1\" id=\"$2\">", "\t$3", "</div>"],
+    "description": "HTML - Defines a section in a document",
+    "scope": "text.twig"
+  },
+  "p.": {
+    "prefix": "p.",
+    "body": ["<p class=\"$1\">$2</p>"],
+    "description": "HTML - Defines a paragraph",
+    "scope": "text.twig"
+  },
+  "p#": {
+    "prefix": "p#",
+    "body": ["<p id=\"$1\">$2</p>"],
+    "description": "HTML - Defines a paragraph",
+    "scope": "text.twig"
+  },
+  "p.#": {
+    "prefix": "p.#",
+    "body": ["<p class=\"$1\" id=\"$2\">$3</p>"],
+    "description": "HTML - Defines a paragraph",
+    "scope": "text.twig"
+  },
+  "ul.": {
+    "prefix": "ul.",
+    "body": ["<ul class=\"$1\">", "\t$2", "</ul>"],
+    "description": "HTML - Defines an unordered list",
+    "scope": "text.twig"
+  },
+  "ul#": {
+    "prefix": "ul#",
+    "body": ["<ul id=\"$1\">", "\t$2", "</ul>"],
+    "description": "HTML - Defines an unordered list",
+    "scope": "text.twig"
+  },
+  "ul.#": {
+    "prefix": "ul.#",
+    "body": ["<ul class=\"$1\" id=\"$2\">", "\t$3", "</ul>"],
+    "description": "HTML - Defines an unordered list",
+    "scope": "text.twig"
+  },
+  "ol.": {
+    "prefix": "ol.",
+    "body": ["<ol class=\"$1\">", "\t$2", "</ol>"],
+    "description": "HTML - Defines an ordered list",
+    "scope": "text.twig"
+  },
+  "ol#": {
+    "prefix": "ol#",
+    "body": ["<ol id=\"$1\">", "\t$2", "</ol>"],
+    "description": "HTML - Defines an ordered list",
+    "scope": "text.twig"
+  },
+  "ol.#": {
+    "prefix": "ol.#",
+    "body": ["<ol class=\"$1\" id=\"$2\">", "\t$3", "</ol>"],
+    "description": "HTML - Defines an ordered list",
+    "scope": "text.twig"
+  },
+  "asset": {
+    "prefix": "asset",
+    "body": "{% set asset = ${1:entry.assetFieldHandle}.one() %}\n\n{% if asset %}\n\t<img src=\"{{ asset.getUrl(\"${2:thumb}\") }}\" width=\"{{ asset.getWidth(\"${2:thumb}\") }}\" height=\"{{ asset.getHeight(\"${2:thumb}\") }}\" alt=\"{{ asset.title }}\">\n{% endif %}",
+    "description": "asset"
+  },
+  "assets": {
+    "prefix": "assets",
+    "body": "{% for image in craft.assets.\n\t.sourceId(\"${1:1}\")\n\t.kind(\"${2:image}\")\n\t.limit(${3:10})\n}).all() %}\n\t<img src=\"{{ image.url${4:(\"${5:thumb}\")} }}\" width=\"${6:200}\" height=\"${7:200}\" alt=\"{{ image.title }}\">\n{% endfor %}\n$0",
+    "description": "craft.assets"
+  },
+  "autoescape": {
+    "prefix": "autoescape",
+    "body": "{% autoescape \"${1:type}\" %}\n\t$0\n{% endautoescape %}",
+    "description": "autoescape"
+  },
+  "blockb": {
+    "prefix": "blockb",
+    "body": "{% block ${1:name} %}\n\t$0\n{% endblock %}",
+    "description": "block (block)"
+  },
+  "block": {
+    "prefix": "block",
+    "body": "{% block ${1:name} %}$0{% endblock %}",
+    "description": "block"
+  },
+  "blockf": {
+    "prefix": "blockf",
+    "body": "{{ block(\"${1:name}\") }}$0",
+    "description": "blockf"
+  },
+  "cache": {
+    "prefix": "cache",
+    "body": "{% cache %}\n\t$1\n{% endcache %}\n$0",
+    "description": "cache"
+  },
+  "case": {
+    "prefix": "case",
+    "body": "{% case \"${1:value}\" %}\n\t$0",
+    "description": "case"
+  },
+  "children": {
+    "prefix": "children",
+    "body": "{% children %}$0",
+    "description": "children"
+  },
+  "ceil": {
+    "prefix": "ceil",
+    "body": "ceil($1)$0",
+    "description": "ceil"
+  },
+  "assetso": {
+    "prefix": "assetso",
+    "body": "{% set assets = craft.assets({\n\tsourceId: \"${1:1}\",\n\tkind: \"${2:image}\",\n\tlimit: ${3:10}\n}).all() %}\n\n{% for image in assets %}\n\t<img src=\"{{ image.url${4:(\"${5:thumb}\")} }}\" width=\"${6:200}\" height=\"${7:200}\" alt=\"{{ image.title }}\">\n{% endfor %}\n$0",
+    "description": "craft.assets - object syntax"
+  },
+  "categorieso": {
+    "prefix": "categorieso",
+    "body": "{% set categories = craft.categories({\n\tgroup: \"${1:categoryGroupHandle}\",\n\tlimit: \"${2:11}\"\n}).all() %}\n\n<ul>\n\t{% nav category in categories %}\n\t\t<li>\n\t\t\t<a href=\"{{ category.url }}\">{{ category.title }}</a>\n\t\t\t{% ifchildren %}\n\t\t\t\t<ul>\n\t\t\t\t\t{% children %}\n\t\t\t\t</ul>\n\t\t\t{% endifchildren %}\n\t\t</li>\n\t{% endnav %}\n</ul>",
+    "description": "craft.categories - object syntax"
+  },
+  "categories": {
+    "prefix": "categories",
+    "body": "<ul>\n\t{% nav category in craft.categories\n\t\t.group(\"${1:categoryGroupHandle}\")\n\t\t.limit(${2:11})\n\t\t.all()\n\t%}\n\t\t<li>\n\t\t\t<a href=\"{{ category.url }}\">{{ category.title }}</a>\n\t\t\t{% ifchildren %}\n\t\t\t\t<ul>\n\t\t\t\t\t{% children %}\n\t\t\t\t</ul>\n\t\t\t{% endifchildren %}\n\t\t</li>\n\t{% endnav %}\n</ul>",
+    "description": "craft.categories"
+  },
+  "entrieso": {
+    "prefix": "entrieso",
+    "body": "{% set entries = craft.entries({\n\tsection: \"${1:sectionName}\",\n\tlimit: \"${2:10}\"\n}).all() %}\n\n{% for entry in entries %}\n\t<a href=\"{{ entry.url }}\">{{ entry.title }}</a>\n{% endfor %}\n$0",
+    "description": "craft.entries - object syntax"
+  },
+  "entries": {
+    "prefix": "entries",
+    "body": "{% for entry in craft.entries\n\t.section(\"${1:sectionName}\")\n\t.limit(${2:10})\n\t.all()\n%}\n\t<a href=\"{{ entry.url }}\">{{ entry.title }}</a>\n{% endfor %}\n$0",
+    "description": "craft.entries"
+  },
+  "t": {
+    "prefix": "t",
+    "body": "{{ $1 | t }}$0",
+    "description": "translate with | t"
+  },
+  "replace": {
+    "prefix": "replace",
+    "body": "{{ ${1:$TM_SELECTED_TEXT} | replace(\"search\", \"replace\") }}$0",
+    "description": "replace with | replace(\"search\", \"replace\")"
+  },
+  "replacex": {
+    "prefix": "replacex",
+    "body": "{{ ${1:$TM_SELECTED_TEXT} | replace(\"/(search)/i\", \"replace\") }}$0",
+    "description": "replace regex with | replace(\"/(search)/i\", \"replace\")"
+  },
+  "split": {
+    "prefix": "split",
+    "body": "{{ ${1:$TM_SELECTED_TEXT} | split(\"\\n\") }}$0",
+    "description": "split on | split (\"\\n\")"
+  },
+  "tagso": {
+    "prefix": "tagso",
+    "body": "{% set tags = craft.tags({\n\tgroup: \"${1:tagGroupHandle}\"\n}).all() %}\n\n<ul>\n\t{% for tag in tags %}\n\t\t<li>{{ tag }}</a></li>\n\t{% endfor %}\n</ul>\n$0",
+    "description": "craft.tags - object syntax"
+  },
+  "tags": {
+    "prefix": "tags",
+    "body": "<ul>\n\t{% for tag in craft.tags.group(\"${1:tagGroupHandle}\").all() %}\n\t\t<li>{{ tag }}</li>\n\t{% endfor %}\n</ul>\n$0",
+    "description": "craft.tags"
+  },
+  "userso": {
+    "prefix": "userso",
+    "body": "{% set users = craft.users({\n\tgroup: \"${1:userGroupHandle}\"\n}).all() %}\n\n{% for user in users %}\n\t{{ user.firstName }} {{ user.lastName }}\n{% endfor %}\n$0",
+    "description": "craft.users - object syntax"
+  },
+  "users": {
+    "prefix": "users",
+    "body": "{% for user in craft.users.group(\"${1:userGroupHandle}\").all() %}\n\t{{ user.firstName }} {{ user.lastName }}\n{% endfor %}\n$0",
+    "description": "craft.users"
+  },
+  "csrf": {
+    "prefix": "csrf",
+    "body": "{{ csrfInput() }}\n$0",
+    "description": "csrf"
+  },
+  "do": {
+    "prefix": "do",
+    "body": "{% do $1 %}$0",
+    "description": "do"
+  },
+  "dojs": {
+    "prefix": "dojs",
+    "body": "{% do view.registerJsFile \"${1:url}\" %}$0",
+    "description": "do js"
+  },
+  "docss": {
+    "prefix": "docss",
+    "body": "{% do view.registerCssFile \"${1:url}\" %}$0",
+    "description": "do css"
+  },
+  "dump": {
+    "prefix": "dump",
+    "body": "<pre>\n\t{{ dump($1) }}\n</pre>",
+    "description": "dump"
+  },
+  "else": {
+    "prefix": "else",
+    "body": "{% else %}\n\t$0",
+    "description": "else"
+  },
+  "embed": {
+    "prefix": "embed",
+    "body": "{% embed \"${1:template}\" %}\n\t$0\n{% endembed %}",
+    "description": "embed"
+  },
+  "endautoescape": {
+    "prefix": "endautoescape",
+    "body": "{% endautoescape %}$0",
+    "description": "endautoescape"
+  },
+  "endblock": {
+    "prefix": "endblock",
+    "body": "{% endblock %}$0",
+    "description": "endblock"
+  },
+  "endcache": {
+    "prefix": "endcache",
+    "body": "{% endcache %}$0",
+    "description": "endcache"
+  },
+  "endembed": {
+    "prefix": "endembed",
+    "body": "{% endembed %}$0",
+    "description": "endembed"
+  },
+  "endfilter": {
+    "prefix": "endfilter",
+    "body": "{% endfilter %}$0",
+    "description": "endfilter"
+  },
+  "endfor": {
+    "prefix": "endfor",
+    "body": "{% endfor %}$0",
+    "description": "endfor"
+  },
+  "endif": {
+    "prefix": "endif",
+    "body": "{% endif %}$0",
+    "description": "endif"
+  },
+  "endifchildren": {
+    "prefix": "endifchildren",
+    "body": "{% endifchildren %}$0",
+    "description": "endifchildren"
+  },
+  "endcss": {
+    "prefix": "endcss",
+    "body": "{% endcss %}$0",
+    "description": "endcss"
+  },
+  "endjs": {
+    "prefix": "endjs",
+    "body": "{% endjs %}$0",
+    "description": "endjs"
+  },
+  "endmacro": {
+    "prefix": "endmacro",
+    "body": "{% endmacro %}$0",
+    "description": "endmacro"
+  },
+  "endnav": {
+    "prefix": "endnav",
+    "body": "{% endnav %}$0",
+    "description": "endnav"
+  },
+  "endset": {
+    "prefix": "endset",
+    "body": "{% endset %}$0",
+    "description": "endset"
+  },
+  "endspaceless": {
+    "prefix": "endspaceless",
+    "body": "{% endspaceless %}$0",
+    "description": "endspaceless"
+  },
+  "endswitch": {
+    "prefix": "endswitch",
+    "body": "{% endswitch %}$0",
+    "description": "endswitch"
+  },
+  "endtrans": {
+    "prefix": "endtrans",
+    "body": "{% endtrans %}$0",
+    "description": "endtrans"
+  },
+  "endverbatim": {
+    "prefix": "endverbatim",
+    "body": "{% endverbatim %}$0",
+    "description": "endverbatim"
+  },
+  "exit": {
+    "prefix": "exit",
+    "body": "{% exit ${1:404} %}",
+    "description": "exit"
+  },
+  "extends": {
+    "prefix": "extends",
+    "body": "{% extends \"${1:template}\" %}$0",
+    "description": "extends"
+  },
+  "filterb": {
+    "prefix": "filterb",
+    "body": "{% filter ${1:name} %}\n\t$0\n{% endfilter %}",
+    "description": "filter (block)"
+  },
+  "filter": {
+    "prefix": "filter",
+    "body": "{% filter ${1:name} %}$0{% endfilter %}",
+    "description": "filter"
+  },
+  "floor": {
+    "prefix": "floor",
+    "body": "floor($1)$0",
+    "description": "floor"
+  },
+  "fore": {
+    "prefix": "fore",
+    "body": "{% for ${1:item} in ${2:items} %}\n\t$3\n{% else %}\n\t$0\n{% endfor %}",
+    "description": "for ... else"
+  },
+  "for": {
+    "prefix": "for",
+    "body": "{% for ${1:item} in ${2:items} %}\n\t$0\n{% endfor %}",
+    "description": "for"
+  },
+  "from": {
+    "prefix": "from",
+    "body": "{% from \"${1:template}\" import \"${2:macro}\" %}$0",
+    "description": "from"
+  },
+  "endbody": {
+    "prefix": "endbody",
+    "body": "{{ endBody() }}\n$0",
+    "description": "endBody"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "{% if ${1:condition} %}$2{% endif %}\n$0",
+    "description": "if"
+  },
+  "ifb": {
+    "prefix": "ifb",
+    "body": "{% if ${1:condition} %}\n\t$0\n{% endif %}",
+    "description": "if (block)"
+  },
+  "ife": {
+    "prefix": "ife",
+    "body": "{% if ${1:condition} %}\n\t$2\n{% else %}\n\t$0\n{% endif %}",
+    "description": "if ... else"
+  },
+  "if1": {
+    "prefix": "if",
+    "body": "{% if ${1:condition} %}$0{% endif %}",
+    "description": "if"
+  },
+  "ifchildren": {
+    "prefix": "ifchildren",
+    "body": "{% ifchildren %}\n\t$1\n{% endifchildren %}\n$0",
+    "description": "ifchildren"
+  },
+  "import": {
+    "prefix": "import",
+    "body": "{% import \"${1:template}\" as ${2:name} %}$0",
+    "description": "import"
+  },
+  "importself": {
+    "prefix": "importself",
+    "body": "{% import _self as ${1:name} %}$0",
+    "description": "importself"
+  },
+  "inckv": {
+    "prefix": "inckv",
+    "body": "{% include \"${1:template}\" with {\n\t${2:key}: ${3:\"${4:value}\"}\n} %}\n$0",
+    "description": "include w/ key/value"
+  },
+  "include": {
+    "prefix": "include",
+    "body": "{% include \"${1:template}\" %}$0",
+    "description": "include"
+  },
+  "inc": {
+    "prefix": "inc",
+    "body": "{% include \"${1:template}\" %}$0",
+    "description": "inc"
+  },
+  "incp": {
+    "prefix": "incp",
+    "body": "{% include \"${1:template}\"${2: with ${3:params} }%}$0",
+    "description": "include w/ params"
+  },
+  "css1": {
+    "prefix": "css",
+    "body": "{% do view.registerCssFile(\"${1:/resources/css/global.css}\") %}\n$0",
+    "description": "registerCssFile"
+  },
+  "js": {
+    "prefix": "js",
+    "body": "{% js %}\n\t$1\n{% endjs %}\n$0",
+    "description": "js"
+  },
+  "js1": {
+    "prefix": "js",
+    "body": "{% do view.registerJsFile(\"${1:/resources/js/global.js}\") %}\n$0",
+    "description": "registerJsFile"
+  },
+  "css": {
+    "prefix": "css",
+    "body": "{% css %}\n\t$1\n{% endcss %}\n$0",
+    "description": "css"
+  },
+  "macro": {
+    "prefix": "macro",
+    "body": "{% macro ${1:name}(${2:params}) %}\n\t$0\n{% endmacro %}",
+    "description": "macro"
+  },
+  "matrix": {
+    "prefix": "matrix",
+    "body": "{% for block in ${1:entry.matrixFieldHandle}.all() %}\n\n\t{% if block.type == \"${2:blockHandle}\" %}\n\t\t{{ block.${3:fieldHandle} }}\n\t{% endif %}\n\n\t{% if block.type == \"${4:blockHandle}\" %}\n\t\t{{ block.${5:fieldHandle} }}\n\t{% endif %}\n\n{% endfor %}\n$0",
+    "description": "matrix"
+  },
+  "matrixif": {
+    "prefix": "matrixif",
+    "body": "{% for block in ${1:entry.matrixFieldHandle}.all() %}\n\n\t{% if block.type == \"${2:blockHandle}\" %}\n\t\t{{ block.${3:fieldHandle} }}\n\t{% endif %}\n\n\t{% if block.type == \"${4:blockHandle}\" %}\n\t\t{{ block.${5:fieldHandle} }}\n\t{% endif %}\n\n{% endfor %}\n$0",
+    "description": "matrixif"
+  },
+  "matrixifelse": {
+    "prefix": "matrixifelse",
+    "body": "{% for block in ${1:entry.matrixFieldHandle}.all() %}\n\n\t{% if block.type == \"${2:blockHandle}\" %}\n\n\t\t{{ block.${3:fieldHandle} }}\n\n\t{% elseif block.type == \"${4:blockHandle}\" %}\n\n\t\t$0\n\t\n\t{% endif %}\n\n{% endfor %}",
+    "description": "matrixifelse"
+  },
+  "matrixswitch": {
+    "prefix": "matrixswitch",
+    "body": "{% for block in ${1:entry.matrixFieldHandle}.all() %}\n\n\t{% switch block.type %}\n\n\t\t{% case \"${2:blockHandle}\" %}\n\n\t\t\t{{ block.${3:fieldHandle} }}\n\n\t\t{% case \"${4:blockHandle}\" %}\n\n\t\t\t$0\n\n\t{% endswitch %}\n\n{% endfor %}",
+    "description": "matrixswitch"
+  },
+  "max": {
+    "prefix": "max",
+    "body": "max(${1:$2, $3})$0",
+    "description": "max"
+  },
+  "min": {
+    "prefix": "min",
+    "body": "min(${1:$2, $3})$0",
+    "description": "min"
+  },
+  "tnav": {
+    "prefix": "tnav",
+    "body": "{% nav ${1:item} in ${2:items} %}\n\t$3\n{% endnav %}\n$0",
+    "description": "twig nav"
+  },
+  "paginate": {
+    "prefix": "paginate",
+    "body": "{% paginate ${1:elements} as ${2:pageInfo}, ${3:pageEntries} %}\n\n{% for item in ${3:pageEntries} %}\n\t$0\n{% endfor %}\n\n{% if ${2:pageInfo}.prevUrl %}<a href=\"{{ ${2:pageInfo}.prevUrl }}\">Previous Page</a>{% endif %}\n{% if ${2:pageInfo}.nextUrl %}<a href=\"{{ ${2:pageInfo}.nextUrl }}\">Next Page</a>{% endif %}",
+    "description": "paginate simple"
+  },
+  "paginate1": {
+    "prefix": "paginate",
+    "body": "{# PAGINATION\n\t\t\nFor this pagination to work properly, we need to be sure to set\nthe paginateBase variable in the template we are including the \npagination in.\n\n{% set paginateBase = \"/blog/p\" %}\n#}\n\n{% if pageInfo.totalPages > 1 %}\n<ul>\n\t{% if pageInfo.currentPage != \"1\" %}\n\t\t<li><a href=\"{{ paginateBase ~ \"1\" }}\">First Page</a></li>\n\t{% endif %}\n\n\t{% if pageInfo.prevUrl %}\n\t\t<li><a href=\"{{ pageInfo.prevUrl }}\">Previous Page</a></li>\n\t{% endif %}\n\n\t{% for pageNumber in 1..pageInfo.totalPages %}\n\t\t<li {% if pageInfo.currentPage == pageNumber %}class=\"active-page\"{% endif %}>\n\t\t\t<a href=\"{{ paginateBase ~ pageNumber }}\">{{ pageNumber }}</a>\n\t\t</li>\n\t{% endfor %}\n\n\t{% if pageInfo.nextUrl %}\n\t\t<li><a href=\"{{ pageInfo.nextUrl }}\">Next Page</a></li>\n\t{% endif %}\n\n\t{% if pageInfo.currentPage != pageInfo.total %}\n\t\t<li><a href=\"{{ paginateBase ~ pageInfo.total }}\">Last Page</a></li>\n\t{% endif %}\n</ul>\n{% endif %}\n$0",
+    "description": "paginate advanced"
+  },
+  "redirect": {
+    "prefix": "redirect",
+    "body": "{% redirect \"${1:template/path or http://straightupcraft.com}\" %}\n$0",
+    "description": "redirect"
+  },
+  "getparam": {
+    "prefix": "getparam",
+    "body": "craft.app.request.getParam(${1:\"Query String or Post Variable Name\"})\n$0",
+    "description": "request getParam"
+  },
+  "getbodyparam": {
+    "prefix": "getbodyparam",
+    "body": "craft.app.request.getBodyParam(${1:\"postVariableName\"})\n$0",
+    "description": "request getBodyParam"
+  },
+  "getqueryparam": {
+    "prefix": "getqueryparam",
+    "body": "craft.app.request.getQueryParam(${1:\"queryStringName\"})\n$0",
+    "description": "request getQueryParam"
+  },
+  "getsegment": {
+    "prefix": "getsegment",
+    "body": "craft.app.request.getSegment(${1:2})\n$0",
+    "description": "request getSegment"
+  },
+  "requirelogin": {
+    "prefix": "requirelogin",
+    "body": "{% requireLogin %}\n$0",
+    "description": "requireLogin"
+  },
+  "requirepermission": {
+    "prefix": "requirepermission",
+    "body": "{% requirePermission \"${1:spendTheNight}\" %}\n$0",
+    "description": "requirePermission"
+  },
+  "round": {
+    "prefix": "round",
+    "body": "{{ $1 | round(1, 'floor') }}$0",
+    "description": "round"
+  },
+  "setb": {
+    "prefix": "setb",
+    "body": "{% set ${1:var} %}\n\t$0\n{% endset %}",
+    "description": "set (block)"
+  },
+  "set": {
+    "prefix": "set",
+    "body": "{% set ${1:var} = ${2:value} %}$0",
+    "description": "set"
+  },
+  "shuffle": {
+    "prefix": "shuffle",
+    "body": "shuffle($1)$0",
+    "description": "shuffle"
+  },
+  "random": {
+    "prefix": "random",
+    "body": "random($1)$0",
+    "description": "random"
+  },
+  "spaceless": {
+    "prefix": "spaceless",
+    "body": "{% spaceless %}\n\t$0\n{% endspaceless %}",
+    "description": "spaceless"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": "{% switch ${1:variable} %}\n\n\t{% case \"${2:value1}\" %}\n\t\n\n\t{% case \"${3:value2}\" %}\n\t\n\n\t{% default %}\n\t\n\n{% endswitch %}\n$0",
+    "description": "switch"
+  },
+  "trans": {
+    "prefix": "trans",
+    "body": "{% trans %}$0{% endtrans %}",
+    "description": "trans"
+  },
+  "urla": {
+    "prefix": "urla",
+    "body": "url(\"${1:path}\", ${2:{foo:\"1\", bar:\"2\"\\}}, ${3:\"http\"}, ${4:false})$0",
+    "description": "url w/ arguments"
+  },
+  "url": {
+    "prefix": "url",
+    "body": "url(\"${1:path}\")$0",
+    "description": "url"
+  },
+  "use": {
+    "prefix": "use",
+    "body": "{% use \"${1:template}\" %}$0",
+    "description": "use"
+  },
+  "verbatim": {
+    "prefix": "verbatim",
+    "body": "{% verbatim %}\n\t$0\n{% endverbatim %}",
+    "description": "verbatim"
+  }
+}

@@ -272,7 +272,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- }}}
 
--- DAP {{{
+-- Plugins {{{1
+
+-- LuaSnip {{{2
+local ls = require("luasnip")
+
+vim.keymap.set({"i"}, "<Tab>", function() ls.expand() end, {silent = true})
+vim.keymap.set({"i", "s"}, "<S-Tab>", function() ls.jump(-1) end, {silent = true})
+
+vim.keymap.set({"i", "s"}, "<C-L>", function()
+    if ls.choice_active() then
+        ls.change_choice(1)
+    end
+end, {silent = true})
+-- }}}
+
+-- DAP {{{2
 
 local dap = require'dap'
 
@@ -281,6 +296,8 @@ vim.keymap.set('n', 'gdc', dap.continue)
 vim.keymap.set('n', 'gdo', dap.step_over)
 vim.keymap.set('n', 'gdi', dap.step_into)
 vim.keymap.set('n', 'gdr', dap.repl.open)
+
+-- }}}
 
 -- }}}
 
