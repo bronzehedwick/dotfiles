@@ -2,6 +2,10 @@
 --type-add
 drupal:*.{theme,module,inc,php,install}*
 
+# Add minified file type
+--type-add
+min:*.min.*
+
 # Add JSX file type
 --type-add
 jsx:*.jsx*
