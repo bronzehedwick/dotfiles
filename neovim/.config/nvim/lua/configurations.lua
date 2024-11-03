@@ -191,35 +191,30 @@ vim.g.undotree_SetFocusWhenToggle = true
 require('gitsigns').setup {
     on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
-        local function map(mode, l, r, opts)
-            opts = opts or {}
-            opts.buffer = bufnr
-            vim.keymap.set(mode, l, r, opts)
-        end
         -- Navigation
-        map('n', ']c', function()
+        vim.keymap.set('n', ']c', function()
             if vim.wo.diff then return ']c' end
             vim.schedule(function() gs.next_hunk() end)
             return '<Ignore>'
-        end, { expr = true })
-        map('n', '[c', function()
+        end, { expr = true, buffer = bufnr })
+        vim.keymap.set('n', '[c', function()
             if vim.wo.diff then return '[c' end
             vim.schedule(function() gs.prev_hunk() end)
             return '<Ignore>'
-        end, { expr = true })
+        end, { expr = true, buffer = bufnr })
         -- Actions
-        map({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<CR>')
-        map({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>')
-        map('n', '<leader>hS', gs.stage_buffer)
-        map('n', '<leader>hu', gs.undo_stage_hunk)
-        map('n', '<leader>hp', gs.preview_hunk)
-        map('n', '<leader>hb', function() gs.blame_line { full = true } end)
-        map('n', '<leader>tb', gs.toggle_current_line_blame)
-        map('n', '<leader>hd', gs.diffthis)
-        map('n', '<leader>hD', function() gs.diffthis('~') end)
-        map('n', '<leader>td', gs.toggle_deleted)
+        vim.keymap.set({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<CR>')
+        vim.keymap.set({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>')
+        vim.keymap.set('n', '<leader>hS', gs.stage_buffer)
+        vim.keymap.set('n', '<leader>hu', gs.undo_stage_hunk)
+        vim.keymap.set('n', '<leader>hp', gs.preview_hunk)
+        vim.keymap.set('n', '<leader>hb', function() gs.blame_line { full = true } end)
+        vim.keymap.set('n', '<leader>tb', gs.toggle_current_line_blame)
+        vim.keymap.set('n', '<leader>hd', gs.diffthis)
+        vim.keymap.set('n', '<leader>hD', function() gs.diffthis('~') end)
+        vim.keymap.set('n', '<leader>td', gs.toggle_deleted)
         -- Text object
-        map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+        vim.keymap.set({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
     end
 }
 -- }}}
