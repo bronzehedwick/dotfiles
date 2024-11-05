@@ -277,16 +277,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- LuaSnip {{{2
 local luasnip = require("luasnip")
 
-vim.keymap.set({"i"}, "<Tab>", function()
+vim.keymap.set({"i"}, "<C-l>", function()
     if luasnip.expandable() then
         luasnip.expand()
     else
         luasnip.jump(1)
     end
 end, {silent = true})
-vim.keymap.set({"i", "s"}, "<S-Tab>", function() luasnip.jump(-1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<M-l>", function() luasnip.jump(-1) end, {silent = true})
 
-vim.keymap.set({"i", "s"}, "<C-L>", function()
+vim.keymap.set({"i", "s"}, "<C-s>", function()
     if luasnip.choice_active() then
         luasnip.change_choice(1)
     end
