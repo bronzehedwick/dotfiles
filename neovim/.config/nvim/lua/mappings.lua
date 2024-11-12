@@ -38,6 +38,8 @@ vim.keymap.set('n', '<C-w>u', ':cclose<CR>', { silent = true })
 vim.keymap.set('n', '<C-w>l', ':lclose<CR>', { silent = true })
 
 -- Open links under the cursor.
+-- TODO Make this work outside treesitter.
+-- TODO Treesitter to grab URL object.
 vim.keymap.set('n', 'gx', function()
     local bufnr = vim.fn.bufnr()
     if not bufnr or not vim.api.nvim_buf_is_valid(bufnr) then
