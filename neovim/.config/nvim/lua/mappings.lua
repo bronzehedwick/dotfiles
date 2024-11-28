@@ -37,47 +37,6 @@ vim.keymap.set('c', '<C-p>', '<up>')
 vim.keymap.set('n', '<C-w>u', ':cclose<CR>', { silent = true })
 vim.keymap.set('n', '<C-w>l', ':lclose<CR>', { silent = true })
 
--- Open links under the cursor.
--- TODO Make this work outside treesitter.
--- TODO Treesitter to grab URL object.
-vim.keymap.set('n', 'gx', function()
-    local bufnr = vim.fn.bufnr()
-    if not bufnr or not vim.api.nvim_buf_is_valid(bufnr) then
-        return
-    end
-
-    local node = vim.treesitter.get_node()
-    if not node then
-        return
-    end
-    local text = vim.treesitter.get_node_text(node, bufnr)
-    local link = require'utilities'.find_url(text)
-
-    if not link then
-        return
-    end
-
-    local cmd
-
-    if vim.fn.has('mac') == 1 then
-        cmd = '!open'
-    elseif vim.fn.has('win32') == 1 then
-        cmd = '!explorer'
-    elseif vim.fn.executable('wslview') == 1 then
-        cmd = '!wslview'
-    elseif vim.fn.executable('xdg-open') == 1 then
-        cmd = '!xdg-open'
-    else
-        return
-    end
-
-    if link:find('file://') then
-        vim.cmd.edit(vim.uri_to_fname(link))
-    else
-        vim.fn.execute(cmd .. ' ' .. vim.fn.escape(link, '#'))
-    end
-end)
-
 -- }}}
 
 -- Time {{{
