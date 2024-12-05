@@ -76,9 +76,6 @@ vim.api.nvim_create_autocmd({ 'QuickFixCmdPost' }, {
 
 -- Display {{{
 
--- Use 24-bit color.
-vim.opt.termguicolors = true
-
 -- Don't redraw while typing macros.
 vim.o.lazyredraw = true
 
@@ -107,7 +104,7 @@ else
     vim.o.diffopt = 'internal,filler,vertical,algorithm:patience'
 end
 
--- Show effects of comman incrementally, as you type.
+-- Show effects of command incrementally, as you type.
 vim.o.inccommand = 'nosplit'
 
 -- Make file messages even shorter and messier.
@@ -128,8 +125,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
+-- Don't open preview window when auto-completing.
+vim.opt.completeopt:remove('preview')
+
 -- Use relative line numbers. Useful for jumping.
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 -- Set timeout to lower than default. Useful for which key, plus I don't need to wait.
 vim.opt.timeoutlen = 500
