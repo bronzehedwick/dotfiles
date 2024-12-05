@@ -1,6 +1,3 @@
--- Use treesitter.
-vim.treesitter.start()
-
 -- LSP.
 local lsp_path = '/opt/homebrew/bin/lua-language-server'
 if vim.fn.filereadable(lsp_path) == 1 then
