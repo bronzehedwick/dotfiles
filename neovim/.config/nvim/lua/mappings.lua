@@ -219,12 +219,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 border = "single",
                 style = "minimal",
             }
-        ),
-        function(_, result, context)
-            print(_)
-            print(result)
-            print(context)
-        end
+        )
     end,
 
 })
