@@ -9,7 +9,7 @@ if test -z "$NVIM"
   set -x VISUAL nvim --noplugin
 end
 
-# Ripgrep
+# Rip grep
 
 set -x RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/ripgrep/ripgreprc
 
@@ -30,7 +30,10 @@ else if test -x "/opt/homebrew/opt/curl/bin"
   set -g fish_user_paths "/opt/homebrew/opt/curl/bin" $fish_user_paths
 end
 
-# Abbrivations
+# Path
+fish_add_path "$HOME/.orbstack/bin"
+
+# Abbreviations
 
 abbr --add brews brew list
 abbr --add bubu "brew update && brew upgrade && brew cleanup"
@@ -48,5 +51,3 @@ abbr --add la ls -Ga
 abbr --add ll ls -lhcFG
 abbr --add ls ls -G
 abbr --add mergeclean "git status -s | grep orig | awk -F ' ' '{print $2}' | xargs rm"
-set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH
