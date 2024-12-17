@@ -32,6 +32,7 @@ end
 
 # Path
 fish_add_path "$HOME/.orbstack/bin"
+fish_add_path "$HOME/.local/bin"
 
 # Abbreviations
 
