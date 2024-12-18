@@ -372,6 +372,12 @@ vim.diagnostic.config({
 require'nvim-surround'.setup()
 -- }}}
 
+-- Snipe {{{2
+local snipe = require('snipe')
+snipe.setup()
+vim.keymap.set('n', '<M-b>', snipe.open_buffer_menu)
+-- }}}
+
 -- Highlight colors {{{2
 require('nvim-highlight-colors').setup({
     render = 'virtual',

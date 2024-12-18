@@ -18,6 +18,7 @@ require 'paq' {
     'justinmk/vim-sneak',
     'tpope/vim-rsi',
     'tpope/vim-unimpaired',
+    'leath-dub/snipe.nvim',
     -- }}}
 
     -- Git {{{
