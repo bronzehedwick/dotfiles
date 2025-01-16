@@ -261,6 +261,7 @@ require 'nvim-treesitter.configs'.setup {
         'rst',
         'rust',
         'scss',
+        'swift',
         'sql',
         'ssh_config',
         'toml',
