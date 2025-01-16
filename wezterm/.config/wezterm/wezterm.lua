@@ -25,10 +25,17 @@ local function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
     return 'Gruvbox dark, hard (base16)'
   else
-    return 'Gruvbox (Gogh)'
+    return 'Gruvbox light, hard (base16)'
   end
 end
 
 config.color_scheme = scheme_for_appearance(get_appearance())
+
+if wezterm.gui then
+  if wezterm.gui.get_appearance():find 'Light' then
+    config.colors = {background = '#fff8e3'}
+  end
+end
+
 
 return config
