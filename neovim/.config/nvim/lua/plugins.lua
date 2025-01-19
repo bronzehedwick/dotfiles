@@ -39,6 +39,7 @@ require 'paq' {
     -- Text {{{
     'rstacruz/vim-closer',
     'kylechui/nvim-surround',
+    { 'mattn/emmet-vim', opt = true },
     {
         'L3MON4D3/LuaSnip',
         build = 'make install_jsregexp'

@@ -219,6 +219,35 @@ require('gitsigns').setup {
 }
 -- }}}
 
+-- Emmet {{{2
+
+-- Add responsive meta tag to html5 emmet snippet.
+local emmet_opts = {
+    variables = { lang = 'en-US' },
+    html = {
+        default_attributes = {
+            option = { value = nil },
+            textarea = { id = nil, name = nil, cols = 10, rows = 10 },
+        },
+        snippets = {},
+    },
+}
+emmet_opts.html.snippets['html:5'] = [[
+<!DOCTYPE html>
+<html lang="${lang}">
+  <head>
+      <meta charset="${charset}">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title></title>
+  </head>
+  <body>
+      ${child}|
+  </body>
+</html>]]
+vim.g.user_emmet_settings = emmet_opts
+
+-- }}}
+
 -- Treesitter {{{2
 
 require 'nvim-treesitter.configs'.setup {
