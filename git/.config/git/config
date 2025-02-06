@@ -6,6 +6,7 @@
 	co = checkout
 	cm = commit
 	st = status
+	sw = switch
 	br = branch
 	cl = clone
 	cp = cherry-pick
@@ -105,3 +106,5 @@
 	gpgsign = true
 [includeIf "gitdir:~/Sites/Lullabot/"]
 	path = config-lullabot
+
+# vim: shiftwidth=8 tabstop=8 noexpandtab
