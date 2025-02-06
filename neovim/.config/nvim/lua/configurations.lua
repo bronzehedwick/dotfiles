@@ -88,8 +88,10 @@ vim.o.wildmode = 'longest:full'
 -- Message popup is slightly transparent.
 vim.o.pumblend = 10
 
--- Higlight invisible whitespace.
+-- Highlight invisible whitespace.
 vim.o.list = true
+
+vim.o.listchars = 'tab:‣ ,trail:–,nbsp:˖'
 
 -- Set hard wrapping guide.
 vim.o.colorcolumn = '80'
