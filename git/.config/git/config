@@ -10,7 +10,8 @@
 	br = branch
 	cl = clone
 	cp = cherry-pick
-	hist = log --graph --oneline --no-merges
+	hist = log --oneline
+	mist = log --oneline --graph
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	filelog = log -u
 	fl = log -u
