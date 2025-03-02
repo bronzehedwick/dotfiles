@@ -109,3 +109,7 @@
 	path = config-lullabot
 
 # vim: shiftwidth=8 tabstop=8 noexpandtab
+[branch]
+	sort = -committerdate
+[column]
+	ui = auto
