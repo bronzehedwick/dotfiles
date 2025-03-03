@@ -45,6 +45,7 @@
 [push]
 	default = upstream
 	autoSetupRemote = true
+	followTags = true
 [grep]
 	linenumber = true
 [merge]
