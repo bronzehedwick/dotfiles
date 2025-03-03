@@ -100,6 +100,7 @@
 	defaultBranch = main
 [fetch]
 	prune = true
+	pruneTags = true
 [gpg]
 	format = ssh
 [gpg "ssh"]
