@@ -58,6 +58,7 @@
 [diff]
 	tool = Kaleidoscope
 	colorMoved = default
+	mnemonicPrefix = true
 [difftool "nvr"]
 	cmd = "nvr -s -d \"$LOCAL\" \"$REMOTE\""
 [difftool "diffview"]
