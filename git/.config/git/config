@@ -109,6 +109,7 @@
 	allowedSignersFile = /Users/chris/.config/git/allowed_signers
 [commit]
 	gpgsign = true
+	verbose = true
 [includeIf "gitdir:~/Sites/Lullabot/"]
 	path = config-lullabot
 
