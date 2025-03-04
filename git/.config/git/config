@@ -122,3 +122,5 @@
 	sort = version:refname
 [help]
 	autocorrect = prompt
+[rebase]
+	updateRefs = true
