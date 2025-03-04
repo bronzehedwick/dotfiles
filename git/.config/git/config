@@ -125,3 +125,4 @@
 [rebase]
 	updateRefs = true
 	autoSquash = true
+	autoStash = true
