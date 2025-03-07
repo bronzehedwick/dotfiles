@@ -191,33 +191,66 @@ vim.g.undotree_SetFocusWhenToggle = true
 
 -- Gitsigns {{{2
 require('gitsigns').setup {
-    on_attach = function(bufnr)
-        local gs = package.loaded.gitsigns
-        -- Navigation
-        vim.keymap.set('n', ']c', function()
-            if vim.wo.diff then return ']c' end
-            vim.schedule(function() gs.next_hunk() end)
-            return '<Ignore>'
-        end, { expr = true, buffer = bufnr })
-        vim.keymap.set('n', '[c', function()
-            if vim.wo.diff then return '[c' end
-            vim.schedule(function() gs.prev_hunk() end)
-            return '<Ignore>'
-        end, { expr = true, buffer = bufnr })
-        -- Actions
-        vim.keymap.set({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<CR>')
-        vim.keymap.set({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>')
-        vim.keymap.set('n', '<leader>hS', gs.stage_buffer)
-        vim.keymap.set('n', '<leader>hu', gs.undo_stage_hunk)
-        vim.keymap.set('n', '<leader>hp', gs.preview_hunk)
-        vim.keymap.set('n', '<leader>hb', function() gs.blame_line { full = true } end)
-        vim.keymap.set('n', '<leader>tb', gs.toggle_current_line_blame)
-        vim.keymap.set('n', '<leader>hd', gs.diffthis)
-        vim.keymap.set('n', '<leader>hD', function() gs.diffthis('~') end)
-        vim.keymap.set('n', '<leader>td', gs.toggle_deleted)
-        -- Text object
-        vim.keymap.set({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-    end
+  on_attach = function(bufnr)
+    local gitsigns = require('gitsigns')
+    local opts = {}
+    opts.buffer = bufnr
+
+    -- Navigation
+    vim.keymap.set('n', ']c', function()
+      if vim.wo.diff then
+        vim.cmd.normal({']c', bang = true})
+      else
+        gitsigns.nav_hunk('next')
+      end
+    end, opts)
+
+    vim.keymap.set('n', '[c', function()
+      if vim.wo.diff then
+        vim.cmd.normal({'[c', bang = true})
+      else
+        gitsigns.nav_hunk('prev')
+      end
+    end, opts)
+
+    -- Actions
+    vim.keymap.set('n', '<leader>hs', gitsigns.stage_hunk, opts)
+    vim.keymap.set('n', '<leader>hr', gitsigns.reset_hunk, opts)
+
+    vim.keymap.set('v', '<leader>hs', function()
+      gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+    end, opts)
+
+    vim.keymap.set('v', '<leader>hr', function()
+      gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+    end, opts)
+
+    vim.keymap.set('n', '<leader>hS', gitsigns.stage_buffer, opts)
+    vim.keymap.set('n', '<leader>hR', gitsigns.reset_buffer, opts)
+    vim.keymap.set('n', '<leader>hp', gitsigns.preview_hunk, opts)
+    vim.keymap.set('n', '<leader>hi', gitsigns.preview_hunk_inline, opts)
+
+    vim.keymap.set('n', '<leader>hb', function()
+      gitsigns.blame_line({ full = true })
+    end, opts)
+
+    vim.keymap.set('n', '<leader>hd', gitsigns.diffthis, opts)
+
+    vim.keymap.set('n', '<leader>hD', function()
+      gitsigns.diffthis('~')
+    end, opts)
+
+    vim.keymap.set('n', '<leader>hQ', function() gitsigns.setqflist('all') end, opts)
+    vim.keymap.set('n', '<leader>hq', gitsigns.setqflist, opts)
+
+    -- Toggles
+    vim.keymap.set('n', '<leader>tb', gitsigns.toggle_current_line_blame, opts)
+    vim.keymap.set('n', '<leader>td', gitsigns.toggle_deleted, opts)
+    vim.keymap.set('n', '<leader>tw', gitsigns.toggle_word_diff, opts)
+
+    -- Text object
+    vim.keymap.set({'o', 'x'}, 'ih', gitsigns.select_hunk, opts)
+  end
 }
 -- }}}
 
