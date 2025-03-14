@@ -50,5 +50,4 @@ abbr --add grt "cd (git rev-parse --show-toplevel || echo '.') || exit"
 abbr --add gs git status
 abbr --add la ls -Ga
 abbr --add ll ls -lhcFG
-abbr --add ls ls -G
 abbr --add mergeclean "git status -s | grep orig | awk -F ' ' '{print $2}' | xargs rm"
