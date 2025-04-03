@@ -1,15 +1,3 @@
--- Architecture detection {{{
-local arch = vim.fn.system { 'arch' }
-
-local function brew_path()
-    if arch == 'arm64' then
-        return '/opt/homebrew/bin'
-    else
-        return '/usr/local/bin'
-    end
-end
--- }}}
-
 -- Interface {{{
 
 -- Use soft tabs.
