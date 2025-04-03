@@ -181,13 +181,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.keymap.set('n', 'grf', vim.lsp.buf.format, opts)
             vim.keymap.set('i', '<C-S>', vim.lsp.buf.signature_help, opts)
         end
-
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-            vim.lsp.handlers.hover, {
-                border = "single",
-                style = "minimal",
-            }
-        )
     end,
 
 })

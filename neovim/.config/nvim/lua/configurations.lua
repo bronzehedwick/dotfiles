@@ -78,6 +78,9 @@ vim.o.wildmode = 'longest:full'
 -- Message popup is slightly transparent.
 vim.o.pumblend = 10
 
+-- Floating windows have rounded border.
+vim.o.winborder = 'rounded'
+
 -- Highlight invisible whitespace.
 vim.o.list = true
 
