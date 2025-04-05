@@ -122,6 +122,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Don't open preview window when auto-completing.
 vim.opt.completeopt:remove('preview')
+vim.opt.completeopt:append('fuzzy')
 
 -- Use relative line numbers. Useful for jumping.
 vim.opt.relativenumber = true
