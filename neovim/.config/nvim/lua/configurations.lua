@@ -2,7 +2,7 @@
 
 -- Use soft tabs.
 vim.opt.expandtab = true
-vim.tabstop = 8
+vim.opt.tabstop = 8
 
 -- Indent 2 spaces by default.
 vim.opt.shiftwidth = 2

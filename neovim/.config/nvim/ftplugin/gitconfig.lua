@@ -1,2 +1,2 @@
 -- Git config uses hard tabs.
-vim.opt.expandtab = false
+vim.opt_local.expandtab = false

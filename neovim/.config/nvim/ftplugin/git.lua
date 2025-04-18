@@ -1,2 +1,2 @@
 -- Turn off spell checking for git diffs.
-vim.opt.spell = false
+vim.opt_local.spell = false
