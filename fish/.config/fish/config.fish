@@ -41,7 +41,7 @@ abbr --add bubu "brew update && brew upgrade && brew cleanup"
 abbr --add fgb "git checkout (git branch | cut -c 3- | fzy)"
 abbr --add ga git add
 abbr --add gb git branch
-abbr --add gbt "git branch | grep \"*\" | cut -d ' ' -f 2"
+abbr --add gbt "git branch --show-current"
 abbr --add gc git commit
 abbr --add gd "git diff $argv"
 abbr --add gdelmerged "git branch --merged | grep -v -e master -e main -e develop | xargs git branch -d"
