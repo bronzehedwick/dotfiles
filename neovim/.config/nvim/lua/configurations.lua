@@ -92,6 +92,12 @@ vim.o.colorcolumn = '80'
 -- Highlight the cursor line background.
 vim.opt.cursorline = true
 
+-- Disable ruler
+vim.o.ruler = false
+
+-- Disable showing command
+vim.o.showcmd = false
+
 -- Diff options.
 if vim.fn.has('nvim-0.9') == 1 then
     vim.o.diffopt = 'internal,filler,vertical,algorithm:patience,linematch:60'
@@ -124,8 +130,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.opt.completeopt:remove('preview')
 vim.opt.completeopt:append('fuzzy')
 
--- Use relative line numbers. Useful for jumping.
-vim.opt.relativenumber = true
+-- Don't use relative line numbers.
+vim.opt.relativenumber = false
 
 -- Set timeout to lower than default. Useful for which key, plus I don't need to wait.
 vim.opt.timeoutlen = 500
@@ -150,8 +156,14 @@ vim.g.loaded_netrwPlugin = 0
 
 -- Statusline {{{
 
--- Tail of file (just the name.ext).
-vim.opt.statusline = '%< %t'
+-- Left edge padding.
+vim.opt.statusline = ''
+-- Git branch.
+vim.opt.statusline:append('%{FugitiveStatusline()}')
+-- New group.
+vim.opt.statusline:append('%=')
+-- Tail of current file.
+vim.opt.statusline:append('%t')
 -- File modified flag.
 vim.opt.statusline:append('%m')
 -- Buffer has help flag.
@@ -161,11 +173,13 @@ vim.opt.statusline:append('%< %w')
 -- New group.
 vim.opt.statusline:append('%=')
 -- Percentage through the file.
+vim.opt.statusline:append('%l:%c')
+-- New separator.
+vim.opt.statusline:append('   ')
+-- Line and column number.
 vim.opt.statusline:append('%p%%')
--- New group.
-vim.opt.statusline:append('%=')
--- Line number.
-vim.opt.statusline:append('%l')
+-- Right padding.
+vim.opt.statusline:append('%< ')
 
 -- }}}
 
