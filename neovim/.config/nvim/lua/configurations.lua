@@ -157,11 +157,7 @@ vim.g.loaded_netrwPlugin = 0
 -- Statusline {{{
 
 -- Left edge padding.
-vim.opt.statusline = ''
--- Git branch.
-vim.opt.statusline:append('%{FugitiveStatusline()}')
--- New group.
-vim.opt.statusline:append('%=')
+vim.opt.statusline = '%< '
 -- Tail of current file.
 vim.opt.statusline:append('%t')
 -- File modified flag.
@@ -170,13 +166,15 @@ vim.opt.statusline:append('%m')
 vim.opt.statusline:append('%< %h')
 -- Buffer has preview flag.
 vim.opt.statusline:append('%< %w')
+
+-- New group.
+vim.opt.statusline:append('%=')
+-- Line and column number.
+vim.opt.statusline:append('Ln %l, Col %c')
+
 -- New group.
 vim.opt.statusline:append('%=')
 -- Percentage through the file.
-vim.opt.statusline:append('%l:%c')
--- New separator.
-vim.opt.statusline:append('   ')
--- Line and column number.
 vim.opt.statusline:append('%p%%')
 -- Right padding.
 vim.opt.statusline:append('%< ')
