@@ -142,7 +142,11 @@ vim.keymap.set({'n', 't'}, '<C-j>', function()
             vim.cmd('startinsert')
         end
     else
-        vim.api.nvim_win_hide(Term_win_id)
+        if #vim.api.nvim_list_wins() > 1 then
+            vim.api.nvim_win_hide(Term_win_id)
+        else
+            vim.cmd(':edit #')
+        end
     end
 end)
 
