@@ -14,17 +14,17 @@ y = 5
 size = 18.0
 
 [font.bold]
-family = "SF Mono"
+family = "Hack"
 style = "Bold"
 
 [font.bold_italic]
-family = "SF Mono"
+family = "Hack"
 style = "Bold Italic"
 
 [font.italic]
-family = "SF Mono"
+family = "Hack"
 style = "Regular Italic"
 
 [font.normal]
-family = "SF Mono"
+family = "Hack"
 style = "Regular"
