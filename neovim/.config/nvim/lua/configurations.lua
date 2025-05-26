@@ -89,8 +89,8 @@ vim.o.listchars = 'tab:‣ ,trail:–,nbsp:˖'
 -- Set hard wrapping guide.
 vim.o.colorcolumn = '80'
 
--- Highlight the cursor line background.
-vim.opt.cursorline = true
+-- Don't highlight the cursor line background.
+vim.opt.cursorline = false
 
 -- Disable ruler
 vim.o.ruler = false
