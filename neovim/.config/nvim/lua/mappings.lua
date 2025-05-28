@@ -64,9 +64,14 @@ vim.keymap.set('n', '<F5>', ':let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><C
 -- Mapping to show the current git branch.
 vim.keymap.set('n', '<F3>', function()
     local branch = io.popen('git -C ' .. vim.fn.expand('%:h') .. ' cb')
+    if branch == nil then
+        branch = io.popen('git cb')
+    end
     if branch ~= nil then
         print(branch:read())
         branch:close()
+    else
+        print('No git repo found')
     end
 end)
 
