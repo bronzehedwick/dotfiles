@@ -1,6 +1,6 @@
-set mainfont {{Lucida Grande} 14}
-set textfont {{SF Mono} 14}
-set uifont {{Lucida Grande} 14 bold}
+set mainfont {{SF Pro Text} 14}
+set textfont {{Hack} 14}
+set uifont {{SF Pro Text} 14 bold}
 set tabstop 8
 set findmergefiles 0
 set maxgraphpct 50
@@ -11,7 +11,7 @@ set autoselect 1
 set autosellen 40
 set showneartags 1
 set maxrefs 20
-set visiblerefs {"master"}
+set visiblerefs {"main"}
 set hideremotes 0
 set showlocalchanges 1
 set datetimeformat {%Y-%m-%d %H:%M:%S}
