@@ -15,10 +15,10 @@ require 'paq' {
 
     -- Movement {{{
     'arp242/jumpy.vim',
-    'justinmk/vim-sneak',
     'tpope/vim-rsi',
     'tpope/vim-unimpaired',
     'leath-dub/snipe.nvim',
+    'ggandor/leap.nvim',
     -- }}}
 
     -- Git {{{

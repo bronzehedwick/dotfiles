@@ -486,6 +486,32 @@ dap.configurations.php = {
 
 -- }}}
 
+-- Leap {{{2
+
+local leap = require('leap')
+
+-- Set default mappings: s and S
+leap.set_default_mappings()
+
+-- Skip the middle of alphabetic words:
+--   foobar[quux]
+--   ^----^^^--^^
+leap.opts.preview_filter =
+  function (ch0, ch1, ch2)
+    return not (
+      ch1:match('%s') or
+      ch0:match('%a') and ch1:match('%a') and ch2:match('%a')
+    )
+  end
+
+-- Define characters that will match each other in searches
+leap.opts.equivalence_classes = { ' \t\r\n', '([{', ')]}', '\'"`' }
+
+-- Use the traversal keys to repeat the previous motion without explicitly invoking Leap
+require('leap.user').set_repeat_keys('<enter>', '<backspace>')
+
+-- }}}
+
 -- }}}
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4
