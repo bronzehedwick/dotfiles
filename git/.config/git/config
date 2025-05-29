@@ -112,8 +112,6 @@
 	verbose = true
 [includeIf "gitdir:~/Sites/Lullabot/"]
 	path = config-lullabot
-
-# vim: shiftwidth=8 tabstop=8 noexpandtab
 [branch]
 	sort = -committerdate
 [column]
@@ -126,3 +124,5 @@
 	updateRefs = true
 	autoSquash = true
 	autoStash = true
+
+# vim: shiftwidth=8 tabstop=8 noexpandtab
