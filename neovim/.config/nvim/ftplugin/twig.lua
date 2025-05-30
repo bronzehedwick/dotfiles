@@ -1,10 +1,10 @@
 -- Add twig pattern files to path to be able to configure below.
 
 -- Use twig commenting instead of HTML.
-vim.opt.commentstring = "{# %s #}"
+vim.opt_local.commentstring = "{# %s #}"
 
 -- Set pattern for vim to recognize twig includes.
-vim.opt.include = "^/s*{%/s*include|^/s*{%/s*embed|^/s*{%/s*extends"
+vim.opt_local.include = "^/s*{%/s*include|^/s*{%/s*embed|^/s*{%/s*extends"
 
 -- Use twiglint linter.
 vim.cmd('compiler twiglint')
@@ -28,7 +28,7 @@ if vim.fn.filereadable(lsp_path) == 1 then
     vim.lsp.start({
         name = 'html',
         cmd = { 'vscode-html-language-server', '--stdio' },
-        root_dir = vim.fs.dirname(vim.fs.find({'package.json', '.git'})[1]),
+        root_dir = vim.fs.dirname(vim.fs.find({'package.json', '.git'}, {})[1]),
         init_options = {
             provideFormatter = true,
             embeddedLanguages = { css = true, javascript = true },

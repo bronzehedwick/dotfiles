@@ -17,7 +17,7 @@ if vim.fn.filereadable(lsp_path) == 1 then
     vim.lsp.start({
         name = 'html',
         cmd = { 'vscode-html-language-server', '--stdio' },
-        root_dir = vim.fs.dirname(vim.fs.find({'package.json', '.git'})[1]),
+        root_dir = vim.fs.dirname(vim.fs.find({'package.json', '.git'}, {})[1]),
         init_options = {
             provideFormatter = true,
             embeddedLanguages = { css = true, javascript = true },
