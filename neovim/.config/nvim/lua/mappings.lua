@@ -215,18 +215,6 @@ vim.keymap.set({"i", "s"}, "<C-s>", function()
 end, {silent = true})
 -- }}}
 
--- DAP {{{2
-
-local dap = require'dap'
-
-vim.keymap.set('n', 'gdb', dap.toggle_breakpoint)
-vim.keymap.set('n', 'gdc', dap.continue)
-vim.keymap.set('n', 'gdo', dap.step_over)
-vim.keymap.set('n', 'gdi', dap.step_into)
-vim.keymap.set('n', 'gdr', dap.repl.open)
-
--- }}}
-
 -- }}}
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4
