@@ -486,9 +486,6 @@ leap.opts.preview_filter =
 -- Define characters that will match each other in searches
 leap.opts.equivalence_classes = { ' \t\r\n', '([{', ')]}', '\'"`' }
 
--- Use the traversal keys to repeat the previous motion without explicitly invoking Leap
-require('leap.user').set_repeat_keys('<enter>', '<backspace>')
-
 -- }}}
 
 -- }}}
