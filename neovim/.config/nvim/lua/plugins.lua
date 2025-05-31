@@ -10,6 +10,7 @@ require 'paq' {
     'tpope/vim-dispatch',
     'justinmk/vim-ipmotion',
     'tpope/vim-repeat',
+    'RRethy/nvim-treesitter-endwise',
     -- }}}
 
     -- Movement {{{
