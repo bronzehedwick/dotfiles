@@ -136,6 +136,8 @@ vim.opt.relativenumber = false
 -- Set timeout to lower than default. Useful for which key, plus I don't need to wait.
 vim.opt.timeoutlen = 500
 
+vim.o.guifont = "Hack:h17"
+
 -- }}}
 
 -- Buffers {{{
