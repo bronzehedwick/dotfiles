@@ -6,11 +6,12 @@ require 'paq' {
         'nvim-treesitter/nvim-treesitter',
         build = function() vim.cmd 'TSUpdate' end
     },
+    'nvim-treesitter/nvim-treesitter-context',
     'nvim-treesitter/nvim-treesitter-textobjects',
+    'RRethy/nvim-treesitter-endwise',
     'tpope/vim-dispatch',
     'justinmk/vim-ipmotion',
     'tpope/vim-repeat',
-    'RRethy/nvim-treesitter-endwise',
     -- }}}
 
     -- Movement {{{

@@ -293,7 +293,7 @@ vim.g.user_emmet_settings = emmet_opts
 
 require 'nvim-treesitter.configs'.setup {
     -- one of "all", "maintained" (parsers with maintainers), or a list of
-    -- languages
+    -- languages {{{3
     ensure_installed = {
         'awk',
         'bash',
@@ -342,7 +342,7 @@ require 'nvim-treesitter.configs'.setup {
         'vimdoc',
         'xml',
         'yaml',
-    },
+    }, -- }}}
     highlight = {
         enable = true, -- false will disable the whole extension
         additional_vim_regex_highlighting = { 'org', 'markdown', 'ssh_config' }
@@ -415,6 +415,8 @@ require 'nvim-treesitter.configs'.setup {
         }
     }
 }
+
+require'treesitter-context'.setup{ enable = true }
 
 -- }}}
 
