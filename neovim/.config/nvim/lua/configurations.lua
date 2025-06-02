@@ -139,8 +139,17 @@ vim.opt.timeoutlen = 500
 -- GUI Font setting.
 vim.o.guifont = "Hack,Noto_Color_Emoji:h17"
 
--- Let Neovide use option key maps.
-vim.g.neovide_input_macos_option_key_is_meta = 'only_left'
+-- Neovide settings {{{2
+if vim.g.neovide then
+
+    -- Let Neovide use option key maps.
+    vim.g.neovide_input_macos_option_key_is_meta = 'only_left'
+
+    -- Don't animate in insert mode. This makes everything feel slow.
+    vim.g.neovide_cursor_animate_in_insert_mode = false
+
+end
+-- }}}
 
 -- }}}
 
