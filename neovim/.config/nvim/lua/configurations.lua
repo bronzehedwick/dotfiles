@@ -136,7 +136,11 @@ vim.opt.relativenumber = false
 -- Set timeout to lower than default. Useful for which key, plus I don't need to wait.
 vim.opt.timeoutlen = 500
 
-vim.o.guifont = "Hack:h17"
+-- GUI Font setting.
+vim.o.guifont = "Hack,Noto_Color_Emoji:h17"
+
+-- Let Neovide use option key maps.
+vim.g.neovide_input_macos_option_key_is_meta = 'only_left'
 
 -- }}}
 
