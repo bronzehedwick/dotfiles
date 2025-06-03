@@ -137,7 +137,7 @@ vim.opt.relativenumber = false
 vim.opt.timeoutlen = 500
 
 -- GUI Font setting.
-vim.o.guifont = "Hack,Noto_Color_Emoji:h17"
+vim.o.guifont = "Hack:h17"
 
 -- Neovide settings {{{2
 if vim.g.neovide then
@@ -147,6 +147,12 @@ if vim.g.neovide then
 
     -- Don't animate in insert mode. This makes everything feel slow.
     vim.g.neovide_cursor_animate_in_insert_mode = false
+
+    -- Default animations speeds are slow.
+    vim.g.neovide_scroll_animation_length = 0.15
+
+    -- Hide the mouse cursor while typing.
+    vim.g.neovide_hide_mouse_when_typing = true
 
 end
 -- }}}
