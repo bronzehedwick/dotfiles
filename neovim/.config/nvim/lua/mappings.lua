@@ -135,15 +135,14 @@ vim.keymap.set('n', '<M-o>', ':only<CR>')
 -- Lua-based primary terminal.
 vim.keymap.set({'n', 't'}, '<C-j>', function()
     if Term_buf_id == nil then
-        vim.cmd('split')
-        vim.cmd('terminal')
+        vim.cmd('botright split +terminal')
         Term_buf_id = vim.fn.bufnr('%')
         Term_win_id = vim.fn.bufwinid('%')
         vim.cmd('startinsert')
         return
     end
     if vim.fn.bufwinnr(Term_buf_id) == -1 then
-        vim.cmd { cmd = 'sbuffer', args = { Term_buf_id } }
+        vim.cmd('botright sbuffer' .. Term_buf_id)
         Term_win_id = vim.fn.bufwinid('%')
         if vim.fn.line('.') == vim.fn.line('$') then
             vim.cmd('startinsert')
