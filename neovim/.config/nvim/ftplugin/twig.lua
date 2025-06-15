@@ -7,7 +7,7 @@ vim.opt_local.commentstring = "{# %s #}"
 vim.opt_local.include = "^/s*{%/s*include|^/s*{%/s*embed|^/s*{%/s*extends"
 
 -- Use twiglint linter.
-vim.cmd('compiler twiglint')
+vim.cmd('compiler twigcs')
 
 -- Use emmet.
 vim.cmd('packadd emmet-vim')
