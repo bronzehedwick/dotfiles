@@ -184,25 +184,25 @@ vim.g.loaded_netrwPlugin = 0
 -- Left edge padding.
 vim.opt.statusline = '%< '
 -- Tail of current file.
-vim.opt.statusline:append('%t')
+vim.opt.statusline = vim.opt.statusline + '%t'
 -- File modified flag.
-vim.opt.statusline:append('%m')
+vim.opt.statusline = vim.opt.statusline + '%m'
 -- Buffer has help flag.
-vim.opt.statusline:append('%< %h')
+vim.opt.statusline = vim.opt.statusline + '%< %h'
 -- Buffer has preview flag.
-vim.opt.statusline:append('%< %w')
+vim.opt.statusline = vim.opt.statusline + '%< %w'
 
 -- New group.
-vim.opt.statusline:append('%=')
+vim.opt.statusline = vim.opt.statusline + '%='
 -- Line and column number.
-vim.opt.statusline:append('Ln %l, Col %c')
+vim.opt.statusline = vim.opt.statusline + 'Ln %l, Col %c'
 
 -- New group.
-vim.opt.statusline:append('%=')
+vim.opt.statusline = vim.opt.statusline + '%='
 -- Percentage through the file.
-vim.opt.statusline:append('%p%%')
+vim.opt.statusline = vim.opt.statusline + '%p%%'
 -- Right padding.
-vim.opt.statusline:append('%< ')
+vim.opt.statusline = vim.opt.statusline + '%< '
 
 -- }}}
 
