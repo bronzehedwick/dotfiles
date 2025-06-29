@@ -1,5 +1,6 @@
 local M = {}
 
+---@param opts table
 M.make_modal = function(opts)
     if not opts then
         opts = {}
@@ -30,6 +31,8 @@ M.make_modal = function(opts)
     )
 end
 
+---@param files_command string
+---@param action string
 M.fuzzy_search = function(files_command, action)
     M.make_modal({max_width = true})
 
@@ -59,12 +62,12 @@ M.fuzzy_search = function(files_command, action)
     })
 end
 
+---@return string
 M.autocomplete_html_attribute = function()
     -- The cursor location does not give us the correct node in this case, so
     -- we need to get the node to the left of the cursor.
     local cursor = vim.api.nvim_win_get_cursor(0)
     local left_of_cursor_range = { cursor[1] - 1, cursor[2] - 1 }
-
     local node = vim.treesitter.get_node { pos = left_of_cursor_range }
     local nodes_active_in = {
         'attribute_name',
@@ -75,10 +78,10 @@ M.autocomplete_html_attribute = function()
         -- The cursor is not on an attribute node
         return '='
     end
-
     return '=""<left>'
 end
 
+---@param text_with_URLs string
 M.find_url = function(text_with_URLs)
     local domains = [[.ac.ad.ae.aero.af.ag.ai.al.am.an.ao.aq.ar.arpa.as.asia.at
     .au.aw.ax.az.ba.bb.bd.be.bf.bg.bh.bi.biz.bj.bm.bn.bo.br.bs.bt.bv.bw.by.bz
