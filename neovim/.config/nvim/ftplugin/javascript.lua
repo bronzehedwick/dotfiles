@@ -29,6 +29,7 @@ local is_inside_iterable = function()
     local nodes_active_in = {
         'object',
         'array',
+        'named_imports',
     }
     if not node or not vim.tbl_contains(nodes_active_in, node:type()) then
         return false
