@@ -95,22 +95,4 @@ vim.keymap.set(
     { buffer = true, expr = true }
 )
 
-vim.keymap.set(
-    'i',
-    '<CR>',
-    function()
-        if not is_inside_iterable() then
-            return '<CR>'
-        end
-        local line = vim.api.nvim_get_current_line()
-        local needs_comma = string.find(line, '[^,{[]$')
-        if needs_comma then
-            return '<C-o>A,<CR>'
-        else
-            return '<CR>'
-        end
-    end,
-    { buffer = true, expr = true }
-)
-
 -- vim:fdm=marker ft=lua et sts=4 sw=4
