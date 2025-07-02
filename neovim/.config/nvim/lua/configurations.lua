@@ -348,7 +348,6 @@ require 'nvim-treesitter.configs'.setup {
         'markdown',
         'markdown_inline',
         'mermaid',
-        'org',
         'php',
         'phpdoc',
         'python',
@@ -370,7 +369,7 @@ require 'nvim-treesitter.configs'.setup {
     }, -- }}}
     highlight = {
         enable = true, -- false will disable the whole extension
-        additional_vim_regex_highlighting = { 'org', 'markdown', 'ssh_config' }
+        additional_vim_regex_highlighting = { 'markdown', 'ssh_config' }
     },
     indent = {
         enable = true
