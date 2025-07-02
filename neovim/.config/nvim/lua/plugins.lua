@@ -54,7 +54,7 @@ require 'paq' {
     'vim-scripts/fountain.vim',
     -- }}}
 
-    -- Colorschemes {{{
+    -- Color schemes {{{
     'cormacrelf/dark-notify',
     'ellisonleao/gruvbox.nvim',
     'lunacookies/vim-colors-xcode',
