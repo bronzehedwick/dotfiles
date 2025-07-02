@@ -25,17 +25,24 @@ end
 
 ---@return boolean
 local is_inside_iterable = function()
-    local node = vim.treesitter.get_node { pos = vim.api.nvim_win_get_cursor(0) }
+    local node = vim.treesitter.get_node {
+        pos = vim.api.nvim_win_get_cursor(0)
+    }
     local nodes_active_in = {
         'object',
         'array',
         'named_imports',
+        'import_statement',
+        'import_specifier',
+        'import_clause',
     }
-    if not node or not vim.tbl_contains(nodes_active_in, node:type()) then
+    if not node then
         return false
     end
-    local line = vim.api.nvim_get_current_line()
-    if string.find(line, '}') or string.find(line, ']') then
+    if vim.tbl_contains(nodes_active_in, node:parent()) then
+        return true
+    end
+    if not vim.tbl_contains(nodes_active_in, node:type()) then
         return false
     end
     return true
@@ -49,6 +56,9 @@ vim.keymap.set(
             return 'o'
         end
         local line = vim.api.nvim_get_current_line()
+        if string.find(line, '}') or string.find(line, ']') then
+            return 'o'
+        end
         local needs_comma = string.find(line, '[^,{[]$')
         if needs_comma then
             return 'A,<CR>'
