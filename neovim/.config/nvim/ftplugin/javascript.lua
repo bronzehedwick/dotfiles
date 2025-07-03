@@ -1,9 +1,6 @@
--- The JS Treesitter implementation doesn't do smart spelling as far as I can tell.
-vim.opt_local.spell = false
-
 -- Basic JS from/require include config.
-vim.opt.include = [[^\\s*[^\/]\\+\\(from\\\|require(['"]\\)]]
-vim.opt.suffixesadd = '.js'
+vim.opt_local.include = [[^\\s*[^\/]\\+\\(from\\\|require(['"]\\)]]
+vim.opt_local.suffixesadd = '.js'
 
 -- Use eslint linter.
 vim.fn.execute('compiler eslint')
