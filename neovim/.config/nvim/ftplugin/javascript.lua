@@ -22,9 +22,7 @@ end
 
 ---@return boolean
 local is_inside_iterable = function()
-    local node = vim.treesitter.get_node {
-        pos = vim.api.nvim_win_get_cursor(0)
-    }
+    local node = vim.treesitter.get_node()
     local nodes_active_in = {
         'object',
         'array',
