@@ -85,7 +85,7 @@ vim.keymap.set('n', '<leader>s', ':split <C-R>=expand("%:p:h") . "/" <CR>')
 vim.keymap.set('n', '<leader>v', ':vsplit <C-R>=expand("%:p:h") . "/" <CR>')
 
 -- Shortcut to edit this file.
-vim.keymap.set('n', '<leader>cc', ':edit ~/.dotfiles/neovim/.config/nvim/init.lua<CR>')
+vim.keymap.set('n', '<leader>c', ':edit ~/.dotfiles/neovim/.config/nvim/init.lua<CR>')
 
 -- }}}
 
