@@ -121,6 +121,9 @@ if vim.fn.executable('fzy') == 1 then
     vim.keymap.set('n', '<M-/>', function()
         return require('utilities').fuzzy_search('git ls-files', 'edit')
     end)
+    vim.keymap.set('n', '<D-p>', function()
+        return require('utilities').fuzzy_search('git ls-files', 'edit')
+    end)
     -- }}}
     -- Git branches. {{{2
     vim.keymap.set('n', '<M-r>', function()
