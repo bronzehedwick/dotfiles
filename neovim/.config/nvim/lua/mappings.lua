@@ -39,6 +39,15 @@ vim.keymap.set('n', '<C-w>l', ':lclose<CR>', { silent = true })
 
 -- }}}
 
+-- macOS style mappings {{{
+-- These don't work in every terminal emulator.
+vim.keymap.set('n', '<D-]>', '>>')
+vim.keymap.set('n', '<D-[>', '<<')
+vim.keymap.set('i', '<D-]>', '<C-t>')
+vim.keymap.set('i', '<D-[>', '<C-d>')
+vim.keymap.set('n', '<D-f>', '/')
+-- }}}
+
 -- Time {{{
 
 -- Display date and time.
