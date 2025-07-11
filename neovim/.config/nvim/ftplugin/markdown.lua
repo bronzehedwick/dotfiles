@@ -31,6 +31,7 @@ vim.keymap.set('n', '<C-Space>', function()
     vim.cmd('normal `p')
 end, { silent = true })
 
+-- Smart lists.
 vim.keymap.set('i', '<CR>', function()
     local line = vim.fn.trim(vim.api.nvim_get_current_line())
     local bullet = string.match(line, '^[%*|%+|%-]')
@@ -46,5 +47,10 @@ vim.keymap.set('i', '<CR>', function()
     end
     return '<CR>' .. bullet .. ' '
 end, { buffer = true, expr = true })
+
+-- macOS style insert and visual mode mappings.
+-- These don't work in all terminal emulators.
+vim.keymap.set('i', '<D-b>', '**', { buffer = true })
+vim.keymap.set('i', '<D-i>', '*', { buffer = true })
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4
