@@ -20,7 +20,6 @@ require 'paq' {
     'tpope/vim-unimpaired',
     'leath-dub/snipe.nvim',
     'ggandor/leap.nvim',
-    'ggandor/flit.nvim',
     -- }}}
 
     -- Git {{{
