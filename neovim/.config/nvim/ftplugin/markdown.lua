@@ -36,11 +36,15 @@ vim.keymap.set('i', '<CR>', function()
     local line = vim.fn.trim(vim.api.nvim_get_current_line())
     local bullet = string.match(line, '^[%*|%+|%-]')
     local num_bullet = string.match(line, '^[%d]*%.')
-    if not bullet and not num_bullet then
+    local task_bullet = string.match(line, '^%-%s%[%s%]')
+    if not bullet and not num_bullet and not task_bullet then
         return '<CR>'
     end
-    if line == bullet or line == num_bullet then
+    if line == bullet or line == num_bullet or line == task_bullet then
         return '<Esc>0Do'
+    end
+    if task_bullet then
+        return '<CR>' .. task_bullet .. ' '
     end
     if num_bullet then
         return '<CR>' .. num_bullet .. ' <Esc>0<C-a>A'
