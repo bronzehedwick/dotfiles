@@ -1,0 +1,6 @@
+theme = light:AtomOneLight,dark:Atom
+font-family = "Hack Regular"
+font-family-bold = "Hack Bold"
+font-family-italic = "Hack Italic"
+font-family-bold-italic = "Hack Bold Italic"
+font-size = 16
