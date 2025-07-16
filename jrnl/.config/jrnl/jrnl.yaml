@@ -1,0 +1,19 @@
+colors:
+  body: none
+  date: red
+  tags: yellow
+  title: cyan
+default_hour: 9
+default_minute: 0
+editor: "open -b pro.writer.mac -Wn"
+encrypt: true
+highlight: true
+indent_character: '|'
+journals:
+  default:
+    journal: /Users/chris/Documents/jrnl/journal.txt
+linewrap: 79
+tagsymbols: '#@'
+template: false
+timeformat: '%F %r'
+version: v4.2
