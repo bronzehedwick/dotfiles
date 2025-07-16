@@ -3,25 +3,37 @@ if vim.env.TERM_PROGRAM ~= 'Apple_Terminal' then
   vim.o.termguicolors = true
 end
 
--- xcode color theme.
-vim.g.xcode_green_comments = 1
-vim.g.xcode_match_paren_style = 1
-
-require('gruvbox').setup({
-    contrast = 'hard',
-    italic = {
-        strings = false,
-        comments = false,
-        operators = false,
+require('onedarkpro').setup({
+    colors = {
+        light = {
+            bg = '#FFFFFF',
+        },
+        dark = {
+            bg = '#000000'
+        },
     },
-    palette_overrides = {
-        light0_hard = '#fff8e3',
-    },
+    highlights = {
+        diffAdded = { fg = { light = '#1da912' } },
+        diffChanged = { fg = { light = '#eea825' } },
+        diffRemoved = { fg = { light = '#e05661' } },
+        DiffAdd = { fg = { light = '#118dc3' } },
+        DiffDelete = { fg = { light = '#e05661' } }
+    }
 })
 
--- vim.cmd('colorscheme xcode')
-vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme onelight')
 
-require('dark_notify').run()
+require('dark_notify').run({
+    schemes = {
+        dark = {
+            colorscheme = 'onedark_dark',
+            background = 'dark'
+        },
+        light = {
+            colorscheme = 'onelight',
+            background = 'light'
+        }
+    }
+})
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4
