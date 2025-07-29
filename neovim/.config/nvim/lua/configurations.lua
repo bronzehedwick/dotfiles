@@ -495,8 +495,10 @@ require('nvim-highlight-colors').setup({
 
 local leap = require('leap')
 
--- Set default mappings: s and S
-leap.set_default_mappings()
+-- Use vim-sneak-style mappings.
+vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
+vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
+-- vim.keymap.set('n',             'gs', '<Plug>(leap-from-window)')
 
 -- Skip the middle of alphabetic words:
 --   foobar[quux]
