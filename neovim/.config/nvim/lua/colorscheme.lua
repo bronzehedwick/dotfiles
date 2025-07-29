@@ -3,37 +3,20 @@ if vim.env.TERM_PROGRAM ~= 'Apple_Terminal' then
   vim.o.termguicolors = true
 end
 
-require('onedarkpro').setup({
-    colors = {
-        light = {
-            bg = '#FFFFFF',
-        },
-        dark = {
-            bg = '#000000'
-        },
+require('gruvbox').setup({
+    contrast = 'hard',
+    italic = {
+        strings = false,
+        comments = false,
+        operators = false,
     },
-    highlights = {
-        diffAdded = { fg = { light = '#1da912' } },
-        diffChanged = { fg = { light = '#eea825' } },
-        diffRemoved = { fg = { light = '#e05661' } },
-        DiffAdd = { fg = { light = '#118dc3' } },
-        DiffDelete = { fg = { light = '#e05661' } }
-    }
+    palette_overrides = {
+        light0_hard = '#fff8e3',
+    },
 })
 
-vim.cmd('colorscheme onelight')
+vim.cmd('colorscheme gruvbox')
 
-require('dark_notify').run({
-    schemes = {
-        dark = {
-            colorscheme = 'onedark_dark',
-            background = 'dark'
-        },
-        light = {
-            colorscheme = 'onelight',
-            background = 'light'
-        }
-    }
-})
+require('dark_notify').run()
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4
