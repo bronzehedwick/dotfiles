@@ -133,6 +133,11 @@ vim.opt.completeopt:append('fuzzy')
 -- Don't use relative line numbers.
 vim.opt.relativenumber = false
 
+-- Use conservative treesitter folding.
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldminlines = 20
+
 -- Set timeout to lower than default. Useful for which key, plus I don't need to wait.
 vim.opt.timeoutlen = 500
 
