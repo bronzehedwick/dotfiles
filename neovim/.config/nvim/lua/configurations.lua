@@ -523,4 +523,4 @@ leap.opts.equivalence_classes = { ' \t\r\n', '([{', ')]}', '\'"`' }
 
 -- }}}
 
--- vim:fdm=marker ft=lua et sts=4 sw=4
+-- vim:fdm=marker ft=lua et sts=4 sw=4 foldminlines=1

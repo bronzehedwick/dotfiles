@@ -70,7 +70,7 @@ M.autocomplete_html_attribute = function()
     local left_of_cursor_range = { cursor[1] - 1, cursor[2] - 1 }
     local node = vim.treesitter.get_node { pos = left_of_cursor_range }
     local nodes_active_in = {
-        'attribute_name',
+        'content',
         'directive_argument',
         'directive_name',
     }
@@ -131,4 +131,4 @@ end
 
 return M
 
--- vim:fdm=marker ft=lua et sts=4 sw=4
+-- vim:ft=lua et sts=4 sw=4 foldminlines=1
