@@ -15,8 +15,19 @@ require('gruvbox').setup({
     },
 })
 
-vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme github_light')
 
-require('dark_notify').run()
+require('dark_notify').run({
+    schemes = {
+        dark = {
+            colorscheme = 'github_dark',
+            background = 'dark'
+        },
+        light = {
+            colorscheme = 'github_light',
+            background = 'light'
+        }
+    }
+})
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4
