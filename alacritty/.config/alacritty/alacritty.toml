@@ -1,5 +1,3 @@
-import = ["~/.config/alacritty/colors-light.toml"]
-
 window.option_as_alt = "OnlyLeft"
 
 [window.dimensions]
@@ -28,3 +26,6 @@ style = "Regular Italic"
 [font.normal]
 family = "Hack"
 style = "Regular"
+
+[general]
+import = ["./github_light.toml"]
