@@ -1,10 +1,13 @@
 -- Add twig pattern files to path to be able to configure below.
 
 -- Use twig commenting instead of HTML.
-vim.opt_local.commentstring = "{# %s #}"
+vim.opt_local.commentstring = '{# %s #}'
 
 -- Set pattern for vim to recognize twig includes.
-vim.opt_local.include = "^/s*{%/s*include|^/s*{%/s*embed|^/s*{%/s*extends"
+vim.opt_local.include = '^/s*{%/s*include|^/s*{%/s*embed|^/s*{%/s*extends'
+
+-- Use manual fold method, since Treesitter doesn't have one for Twig.
+vim.opt_local.foldmethod = 'manual'
 
 -- Use twiglint linter.
 vim.cmd('compiler twigcs')
