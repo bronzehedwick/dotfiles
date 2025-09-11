@@ -15,6 +15,13 @@ require('gruvbox').setup({
     },
 })
 
+require('github-theme').setup({
+    options = {
+        hide_end_of_buffer = false,
+        hide_nc_statusline = false
+    }
+})
+
 vim.cmd('colorscheme github_light')
 
 require('dark_notify').run({
