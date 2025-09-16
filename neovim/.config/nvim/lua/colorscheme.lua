@@ -18,7 +18,21 @@ require('gruvbox').setup({
 require('github-theme').setup({
     options = {
         hide_end_of_buffer = false,
-        hide_nc_statusline = false
+        hide_nc_statusline = false,
+        module_default = false,
+        modules = {
+            diagnostic = {
+                enable = true,
+                background = true
+            },
+            native_lsp = {
+                enable = true,
+                background = true
+            },
+            gitsigns = true,
+            treesitter = true,
+            treesitter_context = true
+        }
     }
 })
 
