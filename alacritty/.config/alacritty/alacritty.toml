@@ -2,7 +2,7 @@ window.option_as_alt = "OnlyLeft"
 
 [window.dimensions]
 columns = 85
-lines = 40
+lines = 30
 
 [window.padding]
 x = 5
