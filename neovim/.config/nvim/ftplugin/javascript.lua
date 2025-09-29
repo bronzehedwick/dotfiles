@@ -2,6 +2,9 @@
 vim.opt_local.include = [[^\\s*[^\/]\\+\\(from\\\|require(['"]\\)]]
 vim.opt_local.suffixesadd = '.js'
 
+-- Spell check should only be enabled for comments with treesitter; it isn't.
+vim.opt_local.spell = false
+
 -- Use eslint linter.
 vim.fn.execute('compiler eslint')
 
