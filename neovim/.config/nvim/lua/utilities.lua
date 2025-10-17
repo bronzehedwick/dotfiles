@@ -7,7 +7,6 @@ M.make_modal = function(opts)
     end
     local width = vim.o.columns - 4
     local height = 19
-    local winid = vim.fn.win_getid()
 
     if opts.max_width then
         if (vim.o.columns > 85) then
@@ -42,6 +41,7 @@ M.fuzzy_search = function(files_command, action)
         '-c',
         files_command .. ' | fzy > ' .. file
     }
+    local winid = vim.fn.win_getid()
 
     vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
 
