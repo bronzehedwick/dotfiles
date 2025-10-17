@@ -41,7 +41,7 @@ vim.cmd('colorscheme github_light')
 require('dark_notify').run({
     schemes = {
         dark = {
-            colorscheme = 'github_dark',
+            colorscheme = 'github_dark_default',
             background = 'dark'
         },
         light = {
