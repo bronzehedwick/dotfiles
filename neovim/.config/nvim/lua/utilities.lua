@@ -33,7 +33,7 @@ end
 ---@param files_command string
 ---@param action string
 M.fuzzy_search = function(files_command, action)
-    M.make_modal({max_width = true})
+    M.make_modal({ max_width = true })
 
     local file = vim.fn.tempname()
     local shell_command = {
@@ -62,23 +62,19 @@ M.fuzzy_search = function(files_command, action)
     })
 end
 
+---@param nodes_active_in table
 ---@return string
-M.autocomplete_html_attribute = function()
+M.autocomplete_html_attribute = function(nodes_active_in)
     -- The cursor location does not give us the correct node in this case, so
     -- we need to get the node to the left of the cursor.
     local cursor = vim.api.nvim_win_get_cursor(0)
     local left_of_cursor_range = { cursor[1] - 1, cursor[2] - 1 }
     local node = vim.treesitter.get_node { pos = left_of_cursor_range }
-    local nodes_active_in = {
-        'content',
-        'directive_argument',
-        'directive_name',
-    }
-    if not node or not vim.tbl_contains(nodes_active_in, node:type()) then
+    if node and vim.tbl_contains(nodes_active_in, node:type()) then
         -- The cursor is not on an attribute node
-        return '='
+        return '=""<left>'
     end
-    return '=""<left>'
+    return '='
 end
 
 return M

@@ -12,10 +12,12 @@ vim.cmd('compiler twiglint')
 
 -- Auto complete quotes for HTML attributes.
 vim.keymap.set(
-  'i',
-  '=',
-  require('utilities').autocomplete_html_attribute,
-  { expr = true, buffer = true }
+    'i',
+    '=',
+    function()
+        return require('utilities').autocomplete_html_attribute({'attribute_name'})
+    end,
+    { expr = true, buffer = true }
 )
 
 -- LSP.
