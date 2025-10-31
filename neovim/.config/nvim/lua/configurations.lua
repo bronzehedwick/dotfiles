@@ -488,12 +488,12 @@ vim.ui.select = snipe.ui_select
 -- }}}
 
 -- Highlight colors {{{2
-require('nvim-highlight-colors').setup({
-    render = 'virtual',
-    virtual_symbol_position = 'eow',
-    virtual_symbol_prefix = ' ',
-    virtual_symbol_suffix = '',
-})
+-- require('nvim-highlight-colors').setup({
+--     render = 'virtual',
+--     virtual_symbol_position = 'eow',
+--     virtual_symbol_prefix = ' ',
+--     virtual_symbol_suffix = '',
+-- })
 -- }}}
 
 -- Leap {{{2
