@@ -228,4 +228,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- }}}
 
--- vim:fdm=marker ft=lua et sts=4 sw=4 foldminlines=1
+-- vim:fdm=marker ft=lua et sts=4 sw=4 foldminlines=1 foldlevelstart=-1

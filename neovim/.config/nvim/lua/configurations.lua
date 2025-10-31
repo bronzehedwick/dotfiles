@@ -137,6 +137,7 @@ vim.opt.relativenumber = false
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldminlines = 20
+vim.opt.foldlevelstart = 1
 
 -- Set timeout to lower than default. Useful for which key, plus I don't need to wait.
 vim.opt.timeoutlen = 500
@@ -523,4 +524,4 @@ leap.opts.equivalence_classes = { ' \t\r\n', '([{', ')]}', '\'"`' }
 
 -- }}}
 
--- vim:fdm=marker ft=lua et sts=4 sw=4 foldminlines=1
+-- vim:fdm=marker ft=lua et sts=4 sw=4 foldminlines=1 foldlevelstart=-1
