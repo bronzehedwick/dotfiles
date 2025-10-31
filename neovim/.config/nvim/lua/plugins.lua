@@ -7,7 +7,7 @@ require 'paq' {
         build = function() vim.cmd 'TSUpdate' end
     },
     'nvim-treesitter/nvim-treesitter-context',
-    'nvim-treesitter/nvim-treesitter-textobjects',
+    { 'nvim-treesitter/nvim-treesitter-textobjects', branch = 'main' },
     'RRethy/nvim-treesitter-endwise',
     'tpope/vim-dispatch',
     'justinmk/vim-ipmotion',
