@@ -50,6 +50,7 @@ require 'paq' {
 
     -- Syntax {{{
     'vim-scripts/fountain.vim',
+    'JafarDakhan/vim-gml',
     -- }}}
 
     -- Color schemes {{{
