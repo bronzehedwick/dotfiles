@@ -5,5 +5,3 @@ font-family-italic = "Hack Italic"
 font-family-bold-italic = "Hack Bold Italic"
 font-size = 16
 font-feature = -calt
-font-feature = -liga
-font-feature = -dlig
