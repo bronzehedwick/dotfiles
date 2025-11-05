@@ -33,7 +33,6 @@ require 'paq' {
     'tpope/vim-abolish',
     'justinmk/vim-dirvish',
     'mbbill/undotree',
-    'brenoprata10/nvim-highlight-colors',
     -- }}}
 
     -- Text {{{
