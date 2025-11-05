@@ -451,11 +451,11 @@ require'treesitter-context'.setup{ enable = true }
 -- }}}
 
 -- LuaSnip {{{2
--- require("luasnip.loaders.from_vscode")
---     .lazy_load({ paths = "~/.local/share/nvim/drupal-smart-snippets/" })
--- require("luasnip.loaders.from_vscode")
---     .lazy_load({ paths = { "~/.config/luasnip/" } })
--- require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode")
+    .lazy_load({ paths = "~/.local/share/nvim/drupal-smart-snippets/" })
+require("luasnip.loaders.from_vscode")
+    .lazy_load({ paths = { "~/.config/luasnip/" } })
+require("luasnip.loaders.from_vscode").lazy_load()
 -- }}}
 
 -- LSP Lines {{{2
