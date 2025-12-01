@@ -12,6 +12,7 @@ require 'paq' {
     'tpope/vim-dispatch',
     'justinmk/vim-ipmotion',
     'tpope/vim-repeat',
+    'mfussenegger/nvim-dap',
     -- }}}
 
     -- Movement {{{
