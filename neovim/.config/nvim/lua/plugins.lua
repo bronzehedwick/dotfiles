@@ -45,7 +45,6 @@ require 'paq' {
         build = 'make install_jsregexp'
     },
     'rafamadriz/friendly-snippets',
-    'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
     -- }}}
 
     -- Syntax {{{
