@@ -57,6 +57,7 @@ require 'paq' {
     'ellisonleao/gruvbox.nvim',
     'lunacookies/vim-colors-xcode',
     'projekt0n/github-nvim-theme',
+    'catppuccin/nvim',
     -- }}}
 
 }

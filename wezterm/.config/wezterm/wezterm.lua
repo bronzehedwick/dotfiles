@@ -24,9 +24,9 @@ end
 
 local function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
-    return 'GitHub Dark'
+    return 'Catppuccin Mocha'
   else
-    return 'Github (base16)'
+    return 'Catppuccin Frappe'
   end
 end
 
