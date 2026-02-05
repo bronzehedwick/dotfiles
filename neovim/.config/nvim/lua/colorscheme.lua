@@ -44,6 +44,11 @@ require('catppuccin').setup({
     integrations = {
         gitsigns = true,
     },
+    color_overrides = {
+        latte = {
+            base = "#ffffff",
+        },
+    },
 })
 
 vim.cmd.colorscheme 'catppuccin'
