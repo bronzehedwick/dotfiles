@@ -3,64 +3,17 @@ if vim.env.TERM_PROGRAM ~= 'Apple_Terminal' then
   vim.o.termguicolors = true
 end
 
--- Disabled theme setups {{{
--- require('gruvbox').setup({
---     contrast = 'hard',
---     italic = {
---         strings = false,
---         comments = false,
---         operators = false,
---     },
---     palette_overrides = {
---         light0_hard = '#fff8e3',
---     },
--- })
+vim.g.xcodelight_green_comments = 1
+vim.g.xcodedarkhc_green_comments = 1
+vim.g.xcodelight_match_paren_style = 1
+vim.g.xcodedarkhc_match_paren_style = 0
 
--- require('github-theme').setup({
---     options = {
---         hide_end_of_buffer = false,
---         hide_nc_statusline = false,
---         module_default = false,
---         modules = {
---             diagnostic = {
---                 enable = true,
---                 background = true
---             },
---             native_lsp = {
---                 enable = true,
---                 background = true
---             },
---             gitsigns = true,
---             treesitter = true,
---             treesitter_context = true
---         }
---     }
--- })
--- }}}
-
-require('catppuccin').setup({
-    no_italic = true,
-    default_integrations = false,
-    integrations = {
-        gitsigns = true,
-    },
-    color_overrides = {
-        latte = {
-            base = "#ffffff",
-        },
-    },
-})
-
-vim.cmd.colorscheme 'catppuccin'
+vim.cmd.colorscheme 'xcodelight'
 
 require('dark_notify').run({
     schemes = {
-        dark = {
-            background = 'dark'
-        },
-        light = {
-            background = 'light'
-        }
+        light = 'xcodelight',
+        dark = 'xcodedarkhc'
     }
 })
 
