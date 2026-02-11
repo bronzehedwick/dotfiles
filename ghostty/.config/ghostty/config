@@ -1,4 +1,4 @@
-theme = light:catppuccin-latte.conf,dark:catppuccin-mocha.conf
+theme = light:"Apple System Colors Light",dark:"Apple System Colors Dark"
 font-family = "Hack Regular"
 font-family-bold = "Hack Bold"
 font-family-italic = "Hack Italic"

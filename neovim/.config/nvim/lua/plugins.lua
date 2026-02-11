@@ -55,7 +55,6 @@ require 'paq' {
     -- Color schemes {{{
     'cormacrelf/dark-notify',
     'lunacookies/vim-colors-xcode',
-    'catppuccin/nvim',
     -- }}}
 
 }
