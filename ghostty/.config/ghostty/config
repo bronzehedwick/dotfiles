@@ -1,4 +1,4 @@
-theme = light:"Apple System Colors Light",dark:"Apple System Colors Dark"
+theme = light:"Apple System Colors Light",dark:"Apple System Colors"
 font-family = "Hack Regular"
 font-family-bold = "Hack Bold"
 font-family-italic = "Hack Italic"
