@@ -38,7 +38,8 @@ fish_add_path "$HOME/.local/bin"
 
 abbr --add brews brew list
 abbr --add bubu "brew update && brew upgrade && brew cleanup"
-abbr --add fgb "git checkout (git branch | cut -c 3- | fzy)"
+abbr --add fgb "git switch (git branch | cut -c 3- | fzy)"
+abbr --add fwt "cd (git worktree list | awk -F' ' '{print \$1}' | fzy)"
 abbr --add ga git add
 abbr --add gb git branch
 abbr --add gbt "git branch --show-current"
