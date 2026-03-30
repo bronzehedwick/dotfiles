@@ -10,6 +10,13 @@ vim.g.xcodedarkhc_match_paren_style = 0
 
 vim.cmd.colorscheme 'xcodelight'
 
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_set_hl(0, "@todo", { link = "Todo" })
+  end,
+})
+
 require('dark_notify').run({
     schemes = {
         light = 'xcodelight',

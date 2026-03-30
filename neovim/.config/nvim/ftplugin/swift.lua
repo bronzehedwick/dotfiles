@@ -20,4 +20,7 @@ if vim.fn.filereadable(lsp_path) == 1 then
     })
 end
 
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- vim:fdm=marker ft=lua et sts=4 sw=4

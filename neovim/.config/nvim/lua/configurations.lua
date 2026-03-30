@@ -317,131 +317,54 @@ vim.g.user_emmet_settings = emmet_opts
 
 -- Treesitter {{{2
 
--- require 'nvim-treesitter.configs'.setup {
---     -- one of "all", "maintained" (parsers with maintainers), or a list of
---     -- languages {{{3
---     ensure_installed = {
---         'awk',
---         'bash',
---         'c',
---         'comment',
---         'css',
---         'diff',
---         'dockerfile',
---         'fish',
---         'git_config',
---         'git_rebase',
---         'gitattributes',
---         'gitcommit',
---         'gitignore',
---         'hjson',
---         'html',
---         'htmldjango',
---         'http',
---         'javascript',
---         'jsdoc',
---         'json',
---         'json5',
---         'jsonc',
---         'latex',
---         'lua',
---         'make',
---         'markdown',
---         'markdown_inline',
---         'mermaid',
---         'php',
---         'phpdoc',
---         'python',
---         'regex',
---         'rst',
---         'rust',
---         'scss',
---         'swift',
---         'sql',
---         'ssh_config',
---         'toml',
---         'tsx',
---         'twig',
---         'typescript',
---         'vim',
---         'vimdoc',
---         'xml',
---         'yaml',
---     }, -- }}}
---     highlight = {
---         enable = true, -- false will disable the whole extension
---         additional_vim_regex_highlighting = { 'markdown', 'ssh_config' }
---     },
---     indent = {
---         enable = true
---     },
---     incremental_selection = {
---         enable = true,
---         keymaps = {
---             init_selection = 'gnn',
---             node_incremental = 'gnr',
---             scope_incremental = 'gnc',
---             node_decremental = 'gnm',
---         },
---     },
---     textobjects = {
---         select = {
---             enable = true,
---             -- Automatically jump forward to textobj, similar to targets.vim
---             lookahead = true,
---             keymaps = {
---                 ['af'] = '@function.outer',
---                 ['if'] = '@function.inner',
---                 ['ac'] = '@comment.outer',
---                 ['al'] = '@class.outer',
---                 ['il'] = '@class.inner',
---                 ['ab'] = '@block.outer',
---                 ['ib'] = '@block.inner',
---             },
---         },
---         swap = {
---             enable = true,
---             swap_next = {
---                 ['<leader>p'] = '@parameter.inner',
---             },
---             swap_previous = {
---                 ['<leader>P'] = '@parameter.inner',
---             }
---         },
---         move = {
---             enable = true,
---             -- Set these jumps in the jump list.
---             set_jumps = true,
---             goto_next_start = {
---                 [']m'] = '@function.outer',
---                 [']]'] = '@class.outer',
---             },
---             goto_next_end = {
---                 [']M'] = '@function.outer',
---                 [']['] = '@class.outer',
---             },
---             goto_previous_start = {
---                 ['[m'] = '@function.outer',
---                 ['[['] = '@class.outer',
---             },
---             goto_previous_end = {
---                 ['[M'] = '@function.outer',
---                 ['[]'] = '@class.outer',
---             }
---         },
---         lsp_interop = {
---             enable = true,
---             border = 'none',
---             floating_preview_opts = {},
---             peek_definition_code = {
---                 ['<leader>df'] = '@function.outer',
---                 ['<leader>dF'] = '@class.outer',
---             }
---         }
---     }
--- }
-
-require'treesitter-context'.setup{ enable = true }
+local ts = require'nvim-treesitter'
+ts.install {
+    'awk',
+    'bash',
+    'c',
+    'comment',
+    'css',
+    'diff',
+    'dockerfile',
+    'fish',
+    'git_config',
+    'git_rebase',
+    'gitattributes',
+    'gitcommit',
+    'gitignore',
+    'hjson',
+    'html',
+    'htmldjango',
+    'http',
+    'javascript',
+    'jsdoc',
+    'json',
+    'json5',
+    'latex',
+    'lua',
+    'make',
+    'markdown',
+    'markdown_inline',
+    'mermaid',
+    'php',
+    'phpdoc',
+    'python',
+    'regex',
+    'rst',
+    'rust',
+    'scss',
+    'swift',
+    'sql',
+    'ssh_config',
+    'toml',
+    'tsx',
+    'twig',
+    'typescript',
+    'vim',
+    'vimdoc',
+    'xml',
+    'yaml',
+}
 
 -- }}}
 

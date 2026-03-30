@@ -1,5 +1,8 @@
 -- Add twig pattern files to path to be able to configure below.
 
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- Use twig commenting instead of HTML.
 vim.opt_local.commentstring = '{# %s #}'
 
