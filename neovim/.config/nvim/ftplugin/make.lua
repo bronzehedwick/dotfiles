@@ -1,3 +1,6 @@
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- Makefiles require hard tabs.
 vim.opt_local.expandtab = false
 

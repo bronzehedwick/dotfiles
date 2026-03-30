@@ -5,6 +5,9 @@ else
     vim.cmd('compiler jsontool')
 end
 
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- Automatically insert a comma at the end of appropriate lines.
 -- Inspiration from:
 -- https://medium.com/scoro-engineering/5-smart-mini-snippets-for-making-text-editing-more-fun-in-neovim-b55ffb96325a

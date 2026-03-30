@@ -1,3 +1,6 @@
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- Load emmet HTML quickwrite plugin.
 vim.cmd('packadd emmet-vim')
 

@@ -1,6 +1,6 @@
 local util = require 'utilities'
 
--- The Swift Treesitter implementation doesn't do smart spelling as far as I can tell.
+-- The Swift Tree Sitter implementation doesn't do smart spelling as far as I can tell.
 vim.opt_local.spell = false
 
 -- LSP.

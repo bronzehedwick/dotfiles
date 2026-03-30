@@ -1,4 +1,4 @@
--- Use treesitter.
+-- Use tree sitter.
 vim.treesitter.start()
 
 -- Turn off spell checking; I don't care about spelling errors I can't correct.

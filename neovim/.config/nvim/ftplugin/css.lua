@@ -1,6 +1,9 @@
 -- Use stylelint linter.
 vim.fn.execute('compiler stylelint')
 
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- LSP.
 local lsp_path = '/opt/homebrew/bin/vscode-css-language-server'
 if vim.fn.filereadable(lsp_path) == 1 then

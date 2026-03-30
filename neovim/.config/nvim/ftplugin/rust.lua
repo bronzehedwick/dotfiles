@@ -1,3 +1,6 @@
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- Use cargo.
 vim.fn.execute('compiler cargo')
 

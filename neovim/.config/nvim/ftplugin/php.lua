@@ -1,3 +1,6 @@
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- Use the PHP binary to lookup documentation.
 vim.opt.keywordprg = 'php --rf'
 

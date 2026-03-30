@@ -1,3 +1,6 @@
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- Mappings for built-in Vim git rebase convenience commands.
 vim.keymap.set('n', '<LocalLeader>p', ':Pick<CR>', { silent = true })
 vim.keymap.set('n', '<LocalLeader>s', ':Squash<CR>', { silent = true })

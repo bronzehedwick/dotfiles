@@ -2,6 +2,9 @@
 vim.opt.include = '^\\s*[^/]+(from|require([\'"])'
 vim.opt.suffixesadd = '.jsx'
 
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- Use eslint linter.
 vim.cmd('compiler eslint')
 

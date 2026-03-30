@@ -98,12 +98,12 @@ vim.o.ruler = false
 -- Disable showing command
 vim.o.showcmd = false
 
--- Diff options.
-if vim.fn.has('nvim-0.9') == 1 then
-    vim.o.diffopt = 'internal,filler,vertical,algorithm:patience,linematch:60'
-else
-    vim.o.diffopt = 'internal,filler,vertical,algorithm:patience'
-end
+-- -- Diff options.
+-- if vim.fn.has('nvim-0.9') == 1 then
+--     vim.o.diffopt = 'internal,filler,vertical,algorithm:patience,linematch:60'
+-- else
+--     vim.o.diffopt = 'internal,filler,vertical,algorithm:patience'
+-- end
 
 -- Show effects of command incrementally, as you type.
 vim.o.inccommand = 'nosplit'
@@ -126,9 +126,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
--- Don't open preview window when auto-completing.
-vim.opt.completeopt:remove('preview')
-vim.opt.completeopt:append('fuzzy')
+-- -- Don't open preview window when auto-completing.
+-- vim.opt.completeopt:remove('preview')
+-- vim.opt.completeopt:append('fuzzy')
 
 -- Don't use relative line numbers.
 vim.opt.relativenumber = false
@@ -179,12 +179,6 @@ end
 
 -- Buffers {{{
 
--- Allow switching buffers without saving.
-vim.o.hidden = true
-
--- Allow undo
-vim.o.undofile = true
-
 -- Enable syntax highlighting for JSDoc.
 vim.g.javascript_plugin_jsdoc = 1
 
@@ -195,28 +189,28 @@ vim.g.loaded_netrwPlugin = 0
 
 -- Statusline {{{
 
--- Left edge padding.
-vim.opt.statusline = '%< '
--- Tail of current file.
-vim.opt.statusline = vim.opt.statusline + '%t'
--- File modified flag.
-vim.opt.statusline = vim.opt.statusline + '%m'
--- Buffer has help flag.
-vim.opt.statusline = vim.opt.statusline + '%< %h'
--- Buffer has preview flag.
-vim.opt.statusline = vim.opt.statusline + '%< %w'
+-- -- Left edge padding.
+-- vim.opt.statusline = '%< '
+-- -- Tail of current file.
+-- vim.opt.statusline = vim.opt.statusline + '%t'
+-- -- File modified flag.
+-- vim.opt.statusline = vim.opt.statusline + '%m'
+-- -- Buffer has help flag.
+-- vim.opt.statusline = vim.opt.statusline + '%< %h'
+-- -- Buffer has preview flag.
+-- vim.opt.statusline = vim.opt.statusline + '%< %w'
 
--- New group.
-vim.opt.statusline = vim.opt.statusline + '%='
--- Line and column number.
-vim.opt.statusline = vim.opt.statusline + 'Ln %l, Col %c'
+-- -- New group.
+-- vim.opt.statusline = vim.opt.statusline + '%='
+-- -- Line and column number.
+-- vim.opt.statusline = vim.opt.statusline + 'Ln %l, Col %c'
 
--- New group.
-vim.opt.statusline = vim.opt.statusline + '%='
--- Percentage through the file.
-vim.opt.statusline = vim.opt.statusline + '%p%%'
--- Right padding.
-vim.opt.statusline = vim.opt.statusline + '%< '
+-- -- New group.
+-- vim.opt.statusline = vim.opt.statusline + '%='
+-- -- Percentage through the file.
+-- vim.opt.statusline = vim.opt.statusline + '%p%%'
+-- -- Right padding.
+-- vim.opt.statusline = vim.opt.statusline + '%< '
 
 -- }}}
 
@@ -330,129 +324,129 @@ vim.g.user_emmet_settings = emmet_opts
 
 -- Treesitter {{{2
 
-require 'nvim-treesitter.configs'.setup {
-    -- one of "all", "maintained" (parsers with maintainers), or a list of
-    -- languages {{{3
-    ensure_installed = {
-        'awk',
-        'bash',
-        'c',
-        'comment',
-        'css',
-        'diff',
-        'dockerfile',
-        'fish',
-        'git_config',
-        'git_rebase',
-        'gitattributes',
-        'gitcommit',
-        'gitignore',
-        'hjson',
-        'html',
-        'htmldjango',
-        'http',
-        'javascript',
-        'jsdoc',
-        'json',
-        'json5',
-        'jsonc',
-        'latex',
-        'lua',
-        'make',
-        'markdown',
-        'markdown_inline',
-        'mermaid',
-        'php',
-        'phpdoc',
-        'python',
-        'regex',
-        'rst',
-        'rust',
-        'scss',
-        'swift',
-        'sql',
-        'ssh_config',
-        'toml',
-        'tsx',
-        'twig',
-        'typescript',
-        'vim',
-        'vimdoc',
-        'xml',
-        'yaml',
-    }, -- }}}
-    highlight = {
-        enable = true, -- false will disable the whole extension
-        additional_vim_regex_highlighting = { 'markdown', 'ssh_config' }
-    },
-    indent = {
-        enable = true
-    },
-    incremental_selection = {
-        enable = true,
-        keymaps = {
-            init_selection = 'gnn',
-            node_incremental = 'gnr',
-            scope_incremental = 'gnc',
-            node_decremental = 'gnm',
-        },
-    },
-    textobjects = {
-        select = {
-            enable = true,
-            -- Automatically jump forward to textobj, similar to targets.vim
-            lookahead = true,
-            keymaps = {
-                ['af'] = '@function.outer',
-                ['if'] = '@function.inner',
-                ['ac'] = '@comment.outer',
-                ['al'] = '@class.outer',
-                ['il'] = '@class.inner',
-                ['ab'] = '@block.outer',
-                ['ib'] = '@block.inner',
-            },
-        },
-        swap = {
-            enable = true,
-            swap_next = {
-                ['<leader>p'] = '@parameter.inner',
-            },
-            swap_previous = {
-                ['<leader>P'] = '@parameter.inner',
-            }
-        },
-        move = {
-            enable = true,
-            -- Set these jumps in the jump list.
-            set_jumps = true,
-            goto_next_start = {
-                [']m'] = '@function.outer',
-                [']]'] = '@class.outer',
-            },
-            goto_next_end = {
-                [']M'] = '@function.outer',
-                [']['] = '@class.outer',
-            },
-            goto_previous_start = {
-                ['[m'] = '@function.outer',
-                ['[['] = '@class.outer',
-            },
-            goto_previous_end = {
-                ['[M'] = '@function.outer',
-                ['[]'] = '@class.outer',
-            }
-        },
-        lsp_interop = {
-            enable = true,
-            border = 'none',
-            floating_preview_opts = {},
-            peek_definition_code = {
-                ['<leader>df'] = '@function.outer',
-                ['<leader>dF'] = '@class.outer',
-            }
-        }
-    }
-}
+-- require 'nvim-treesitter.configs'.setup {
+--     -- one of "all", "maintained" (parsers with maintainers), or a list of
+--     -- languages {{{3
+--     ensure_installed = {
+--         'awk',
+--         'bash',
+--         'c',
+--         'comment',
+--         'css',
+--         'diff',
+--         'dockerfile',
+--         'fish',
+--         'git_config',
+--         'git_rebase',
+--         'gitattributes',
+--         'gitcommit',
+--         'gitignore',
+--         'hjson',
+--         'html',
+--         'htmldjango',
+--         'http',
+--         'javascript',
+--         'jsdoc',
+--         'json',
+--         'json5',
+--         'jsonc',
+--         'latex',
+--         'lua',
+--         'make',
+--         'markdown',
+--         'markdown_inline',
+--         'mermaid',
+--         'php',
+--         'phpdoc',
+--         'python',
+--         'regex',
+--         'rst',
+--         'rust',
+--         'scss',
+--         'swift',
+--         'sql',
+--         'ssh_config',
+--         'toml',
+--         'tsx',
+--         'twig',
+--         'typescript',
+--         'vim',
+--         'vimdoc',
+--         'xml',
+--         'yaml',
+--     }, -- }}}
+--     highlight = {
+--         enable = true, -- false will disable the whole extension
+--         additional_vim_regex_highlighting = { 'markdown', 'ssh_config' }
+--     },
+--     indent = {
+--         enable = true
+--     },
+--     incremental_selection = {
+--         enable = true,
+--         keymaps = {
+--             init_selection = 'gnn',
+--             node_incremental = 'gnr',
+--             scope_incremental = 'gnc',
+--             node_decremental = 'gnm',
+--         },
+--     },
+--     textobjects = {
+--         select = {
+--             enable = true,
+--             -- Automatically jump forward to textobj, similar to targets.vim
+--             lookahead = true,
+--             keymaps = {
+--                 ['af'] = '@function.outer',
+--                 ['if'] = '@function.inner',
+--                 ['ac'] = '@comment.outer',
+--                 ['al'] = '@class.outer',
+--                 ['il'] = '@class.inner',
+--                 ['ab'] = '@block.outer',
+--                 ['ib'] = '@block.inner',
+--             },
+--         },
+--         swap = {
+--             enable = true,
+--             swap_next = {
+--                 ['<leader>p'] = '@parameter.inner',
+--             },
+--             swap_previous = {
+--                 ['<leader>P'] = '@parameter.inner',
+--             }
+--         },
+--         move = {
+--             enable = true,
+--             -- Set these jumps in the jump list.
+--             set_jumps = true,
+--             goto_next_start = {
+--                 [']m'] = '@function.outer',
+--                 [']]'] = '@class.outer',
+--             },
+--             goto_next_end = {
+--                 [']M'] = '@function.outer',
+--                 [']['] = '@class.outer',
+--             },
+--             goto_previous_start = {
+--                 ['[m'] = '@function.outer',
+--                 ['[['] = '@class.outer',
+--             },
+--             goto_previous_end = {
+--                 ['[M'] = '@function.outer',
+--                 ['[]'] = '@class.outer',
+--             }
+--         },
+--         lsp_interop = {
+--             enable = true,
+--             border = 'none',
+--             floating_preview_opts = {},
+--             peek_definition_code = {
+--                 ['<leader>df'] = '@function.outer',
+--                 ['<leader>dF'] = '@class.outer',
+--             }
+--         }
+--     }
+-- }
 
 require'treesitter-context'.setup{ enable = true }
 

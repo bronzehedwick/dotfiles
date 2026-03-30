@@ -1,3 +1,6 @@
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- Turn on spell checking.
 vim.opt_local.spell = true
 

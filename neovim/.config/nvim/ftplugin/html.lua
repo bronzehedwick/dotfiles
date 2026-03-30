@@ -1,6 +1,9 @@
 -- Load emmet HTML quickwrite plugin.
 vim.cmd('packadd emmet-vim')
 
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- Auto complete quotes for HTML attributes.
 vim.keymap.set(
     'i',

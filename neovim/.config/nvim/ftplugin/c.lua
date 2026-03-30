@@ -1,4 +1,4 @@
--- Use treesitter.
+-- Use tree sitter.
 vim.treesitter.start()
 
 -- Use gcc/cc compiler.

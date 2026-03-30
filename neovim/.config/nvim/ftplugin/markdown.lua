@@ -1,6 +1,9 @@
 -- Enable spell checking.
 vim.opt_local.spell = true
 
+-- Use tree sitter.
+vim.treesitter.start()
+
 -- Support code fencing syntax highlighting for the listed languages.
 vim.g.markdown_fenced_languages = {
     'bash=sh',
