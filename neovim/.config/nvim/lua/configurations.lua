@@ -122,9 +122,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
--- -- Don't open preview window when auto-completing.
--- vim.opt.completeopt:remove('preview')
--- vim.opt.completeopt:append('fuzzy')
+-- Fuzzy match completions.
+vim.opt.completeopt:append('fuzzy')
 
 -- Don't use relative line numbers.
 vim.opt.relativenumber = false
