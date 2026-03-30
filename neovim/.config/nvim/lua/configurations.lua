@@ -99,11 +99,7 @@ vim.o.ruler = false
 vim.o.showcmd = false
 
 -- -- Diff options.
--- if vim.fn.has('nvim-0.9') == 1 then
---     vim.o.diffopt = 'internal,filler,vertical,algorithm:patience,linematch:60'
--- else
---     vim.o.diffopt = 'internal,filler,vertical,algorithm:patience'
--- end
+vim.o.diffopt = 'internal,filler,vertical,closeoff,indent-heuristic,algorithm:patience,inline:char,linematch:60'
 
 -- Show effects of command incrementally, as you type.
 vim.o.inccommand = 'nosplit'
