@@ -207,6 +207,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Plugins {{{1
 
+--- Undo tree {{{2
+vim.cmd(":packadd nvim.undotree")
+vim.keymap.set({"n"}, "<F8>", vim.cmd.Undotree)
+--- }}}
+
 -- LuaSnip {{{2
 local luasnip = require("luasnip")
 

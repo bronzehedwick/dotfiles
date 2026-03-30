@@ -221,8 +221,6 @@ vim.api.nvim_create_autocmd('TermOpen', {
 
 -- Plugins {{{1
 
-vim.g.undotree_SetFocusWhenToggle = true
-
 -- Gitsigns {{{2
 require('gitsigns').setup {
   on_attach = function(bufnr)

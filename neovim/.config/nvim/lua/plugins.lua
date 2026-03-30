@@ -54,7 +54,6 @@ vim.pack.add({
     'https://github.com/tpope/vim-eunuch',
     'https://github.com/tpope/vim-abolish',
     'https://github.com/justinmk/vim-dirvish',
-    'https://github.com/mbbill/undotree',
     -- }}}
 
     -- Text {{{
