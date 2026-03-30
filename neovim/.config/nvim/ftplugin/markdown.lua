@@ -59,5 +59,6 @@ end, { buffer = true, expr = true })
 -- These don't work in all terminal emulators.
 vim.keymap.set('i', '<D-b>', '**', { buffer = true })
 vim.keymap.set('i', '<D-i>', '*', { buffer = true })
+vim.keymap.set('i', '<D-k>', '[]()<Esc>2hi', { buffer = true })
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4
