@@ -159,6 +159,9 @@ if vim.g.neovide then
     -- Hide the mouse cursor while typing.
     vim.g.neovide_hide_mouse_when_typing = true
 
+    -- Floating window boarder radius.
+    vim.g.neovide_floating_corner_radius = 0.5
+
     -- Enable macOS copy/paste keys.
     local function save() vim.cmd.write() end
     local function copy() vim.cmd([[normal! "+y]]) end
