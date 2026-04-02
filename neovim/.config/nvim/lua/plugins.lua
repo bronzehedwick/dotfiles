@@ -30,6 +30,7 @@ vim.pack.add({
     'https://github.com/tpope/vim-dispatch',
     'https://github.com/justinmk/vim-ipmotion',
     'https://github.com/tpope/vim-repeat',
+    'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/mfussenegger/nvim-dap',
     -- }}}
 
@@ -38,7 +39,7 @@ vim.pack.add({
     'https://github.com/tpope/vim-unimpaired',
     'https://github.com/leath-dub/snipe.nvim',
     {
-        src = 'https://codeberg.org/andyg/leap.nvim.git',
+        src = 'https://git.disroot.org/andyg/leap.nvim.git',
         version = 'main'
     },
     -- }}}
