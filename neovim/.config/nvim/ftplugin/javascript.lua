@@ -1,3 +1,6 @@
+-- Start LSP server.
+vim.lsp.enable('ts_ls')
+
 -- Basic JS from/require include config.
 vim.opt_local.include = [[^\\s*[^\/]\\+\\(from\\\|require(['"]\\)]]
 vim.opt_local.suffixesadd = '.js'
@@ -10,21 +13,6 @@ vim.opt_local.spell = false
 
 -- Use eslint linter.
 vim.fn.execute('compiler eslint')
-
--- LSP.
-local lsp_path = '/opt/homebrew/bin/tsserver'
-if vim.fn.filereadable(lsp_path) == 1 then
-    vim.lsp.start({
-        name = 'typescript',
-        init_options = { hostInfo = 'neovim' },
-        cmd = { 'typescript-language-server', '--stdio' },
-        root_dir = vim.fs.dirname(vim.fs.find({
-            'package.json',
-            'jsconfig.json',
-            '.git'
-        }, { upward = true })[1]),
-    })
-end
 
 ---@return boolean
 local is_inside_iterable = function()

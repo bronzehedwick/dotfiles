@@ -1,8 +1,8 @@
+-- Start LSP server.
+vim.lsp.enable('emmet-ls')
+
 -- Use tree sitter.
 vim.treesitter.start()
-
--- Load emmet HTML quickwrite plugin.
-vim.cmd('packadd emmet-vim')
 
 -- Auto complete quotes for HTML attributes.
 vim.keymap.set(

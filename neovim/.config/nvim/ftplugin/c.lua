@@ -1,3 +1,6 @@
+-- Start LSP server.
+vim.lsp.enable('ccls')
+
 -- Use tree sitter.
 vim.treesitter.start()
 

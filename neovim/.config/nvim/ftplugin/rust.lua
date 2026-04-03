@@ -1,3 +1,6 @@
+-- Start LSP server.
+vim.lsp.enable('rust_analyzer')
+
 -- Use tree sitter.
 vim.treesitter.start()
 

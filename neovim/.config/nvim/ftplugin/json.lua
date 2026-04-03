@@ -1,3 +1,6 @@
+-- Start LSP server.
+vim.lsp.enable('jsonls')
+
 -- Use jsonlint if available, otherwise use python's built-in json linter.
 if vim.fn.executable('jsonlint') then
     vim.cmd('compiler jsonlint')
@@ -41,22 +44,5 @@ vim.keymap.set('n', 'dd', function()
         return 'dd'
     end
 end, { buffer = true, expr = true })
-
--- LSP.
-local lsp_path = '/opt/homebrew/bin/vscode-json-language-server'
-if vim.fn.filereadable(lsp_path) == 1 then
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-    vim.lsp.start({
-        name = 'jsonls',
-        cmd = { 'vscode-json-language-server', '--stdio' },
-        root_dir = vim.fs.dirname(vim.fs.find({'.git'})[1]),
-        single_file_support = true,
-        init_options = {
-            provideFormatter = true,
-        },
-        capabilities = capabilities,
-    })
-end
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4

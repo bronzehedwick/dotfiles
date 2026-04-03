@@ -60,7 +60,6 @@ vim.pack.add({
     -- Text {{{
     'https://github.com/rstacruz/vim-closer',
     'https://github.com/kylechui/nvim-surround',
-    'https://github.com/mattn/emmet-vim',
     'https://github.com/L3MON4D3/LuaSnip',
     'https://github.com/rafamadriz/friendly-snippets',
     -- }}}

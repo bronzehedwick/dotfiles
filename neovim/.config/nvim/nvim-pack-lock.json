@@ -8,10 +8,6 @@
       "rev": "65a27ed5bfadeb224a888e3897e43c840c87ce83",
       "src": "https://github.com/cormacrelf/dark-notify"
     },
-    "emmet-vim": {
-      "rev": "92ef2f74f4093edc99db5e9e4cf7e40116a85bd6",
-      "src": "https://github.com/mattn/emmet-vim"
-    },
     "fountain.vim": {
       "rev": "3a470bb39c3b5e293f30d4d80be190b9e5bb9192",
       "src": "https://github.com/vim-scripts/fountain.vim"
