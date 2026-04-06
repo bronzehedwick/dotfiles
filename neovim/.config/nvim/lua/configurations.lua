@@ -147,7 +147,7 @@ vim.opt.foldlevelstart = 1
 vim.opt.timeoutlen = 500
 
 -- GUI Font setting.
-vim.o.guifont = "Hack:h17"
+vim.o.guifont = 'Hack:h17'
 
 -- Neovide settings {{{2
 if vim.g.neovide then
@@ -327,65 +327,12 @@ vim.g.user_emmet_settings = emmet_opts
 
 -- }}}
 
--- Treesitter {{{2
-
-local ts = require'nvim-treesitter'
-ts.install {
-    'awk',
-    'bash',
-    'c',
-    'comment',
-    'css',
-    'diff',
-    'dockerfile',
-    'fish',
-    'git_config',
-    'git_rebase',
-    'gitattributes',
-    'gitcommit',
-    'gitignore',
-    'hjson',
-    'html',
-    'htmldjango',
-    'http',
-    'javascript',
-    'jsdoc',
-    'json',
-    'json5',
-    'latex',
-    'lua',
-    'make',
-    'markdown',
-    'markdown_inline',
-    'mermaid',
-    'php',
-    'phpdoc',
-    'python',
-    'regex',
-    'rst',
-    'rust',
-    'scss',
-    'swift',
-    'sql',
-    'ssh_config',
-    'toml',
-    'tsx',
-    'twig',
-    'typescript',
-    'vim',
-    'vimdoc',
-    'xml',
-    'yaml',
-}
-
--- }}}
-
 -- LuaSnip {{{2
-require("luasnip.loaders.from_vscode")
-    .lazy_load({ paths = "~/.local/share/nvim/drupal-smart-snippets/" })
-require("luasnip.loaders.from_vscode")
-    .lazy_load({ paths = { "~/.config/luasnip/" } })
-require("luasnip.loaders.from_vscode").lazy_load()
+require('luasnip.loaders.from_vscode')
+    .lazy_load({ paths = '~/.local/share/nvim/drupal-smart-snippets/' })
+require('luasnip.loaders.from_vscode')
+    .lazy_load({ paths = { '~/.config/luasnip/' } })
+require('luasnip.loaders.from_vscode').lazy_load()
 -- }}}
 
 -- LSP Lines {{{2
@@ -427,9 +374,9 @@ require'nvim-surround'.setup()
 local snipe = require('snipe')
 snipe.setup()
 vim.keymap.set('n', '<M-b>', snipe.open_buffer_menu)
-snipe.ui_select_menu = require("snipe.menu"):new { position = "center" }
+snipe.ui_select_menu = require('snipe.menu'):new { position = 'center' }
 snipe.ui_select_menu:add_new_buffer_callback(function (m)
-  vim.keymap.set("n", "<esc>", function ()
+  vim.keymap.set('n', '<esc>', function ()
     m:close()
   end, { nowait = true, buffer = m.buf })
 end)

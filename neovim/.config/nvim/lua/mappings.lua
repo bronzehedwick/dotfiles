@@ -1,6 +1,6 @@
 -- Re-mappings {{{
 
--- Set mapleader to "<space>", keeping localleader as the default "\".
+-- Set mapleader to '<space>', keeping localleader as the default '\'.
 vim.g.mapleader = ' '
 
 -- Stupid shift key fixes, lifted from spf13.
@@ -52,7 +52,7 @@ vim.keymap.set('n', '<D-f>', '/')
 
 -- Display date and time.
 vim.keymap.set('n', '<F2>', function()
-    print("It is " .. vim.fn.strftime("%A %B %e %I:%M %p"))
+    print('It is ' .. vim.fn.strftime('%A %B %e %I:%M %p'))
 end)
 
 -- Insert time into a document.
@@ -207,24 +207,66 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Plugins {{{1
 
---- Undo tree {{{2
-vim.cmd(":packadd nvim.undotree")
-vim.keymap.set({"n"}, "<F8>", vim.cmd.Undotree)
+-- Undo tree {{{2
+vim.cmd(':packadd nvim.undotree')
+vim.keymap.set({'n'}, '<F8>', vim.cmd.Undotree)
 --- }}}
 
--- LuaSnip {{{2
-local luasnip = require("luasnip")
+-- Tree sitter {{{2
 
-vim.keymap.set({"i"}, "<C-l>", function()
+vim.keymap.set({ 'n', 'x', 'o' }, ']m', function()
+  require('nvim-treesitter-textobjects.move')
+      .goto_next_start('@function.outer', 'textobjects')
+end)
+
+vim.keymap.set({ 'n', 'x', 'o' }, ']M', function()
+  require('nvim-treesitter-textobjects.move')
+    .goto_next_end('@function.outer', 'textobjects')
+end)
+
+vim.keymap.set({ 'n', 'x', 'o' }, '[m', function()
+  require('nvim-treesitter-textobjects.move')
+    .goto_previous_start('@function.outer', 'textobjects')
+end)
+
+vim.keymap.set({ 'n', 'x', 'o' }, '[M', function()
+  require('nvim-treesitter-textobjects.move')
+    .goto_previous_end('@function.outer', 'textobjects')
+end)
+
+vim.keymap.set({ 'x', 'o' }, 'am', function()
+  require 'nvim-treesitter-textobjects.select'
+    .select_textobject('@function.outer', 'textobjects')
+end)
+
+vim.keymap.set({ 'x', 'o' }, 'im', function()
+  require 'nvim-treesitter-textobjects.select'
+    .select_textobject('@function.inner', 'textobjects')
+end)
+
+vim.keymap.set('n', '<leader>a', function()
+  require('nvim-treesitter-textobjects.swap').swap_next '@parameter.inner'
+end)
+
+vim.keymap.set('n', '<leader>A', function()
+  require('nvim-treesitter-textobjects.swap').swap_previous '@parameter.outer'
+end)
+
+-- }}}
+
+-- LuaSnip {{{2
+local luasnip = require('luasnip')
+
+vim.keymap.set({'i'}, '<C-l>', function()
     if luasnip.expandable() then
         luasnip.expand()
     else
         luasnip.jump(1)
     end
 end, {silent = true})
-vim.keymap.set({"i", "s"}, "<M-l>", function() luasnip.jump(-1) end, {silent = true})
+vim.keymap.set({'i', 's'}, '<M-l>', function() luasnip.jump(-1) end, {silent = true})
 
-vim.keymap.set({"i", "s"}, "<C-s>", function()
+vim.keymap.set({'i', 's'}, '<C-s>', function()
     if luasnip.choice_active() then
         luasnip.change_choice(1)
     end
