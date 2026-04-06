@@ -62,6 +62,15 @@ vim.api.nvim_create_autocmd({ 'QuickFixCmdPost' }, {
     nested = true,
 })
 
+-- Use the experimental enhanced UI.
+vim.opt.cmdheight = 0
+require('vim._core.ui2').enable({
+    enable = true,
+    msg = {
+        targets = 'msg'
+    }
+})
+
 -- }}}
 
 -- Display {{{
