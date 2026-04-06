@@ -6,10 +6,6 @@ vim.api.nvim_create_autocmd('PackChanged', { callback = function(ev)
         if not ev.data.active then vim.cmd.packadd('nvim-treesitter') end
         vim.cmd('TSUpdate')
     end
-end })
-
-vim.api.nvim_create_autocmd('PackChanged', { callback = function(ev)
-    local name, kind = ev.data.spec.name, ev.data.kind
     if name == 'LuaSnip' and kind == 'update' then
         vim.cmd('!zsh -c \'make -C "$HOME/.local/share/${NVIM_APPNAME:-nvim}/site/pack/core/opt/LuaSnip" install_jsregexp\'')
     end
