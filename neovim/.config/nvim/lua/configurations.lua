@@ -63,11 +63,10 @@ vim.api.nvim_create_autocmd({ 'QuickFixCmdPost' }, {
 })
 
 -- Use the experimental enhanced UI.
-vim.opt.cmdheight = 0
 require('vim._core.ui2').enable({
     enable = true,
     msg = {
-        targets = 'msg'
+        targets = 'cmd'
     }
 })
 
