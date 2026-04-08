@@ -146,7 +146,7 @@ vim.opt.foldlevelstart = 1
 vim.opt.timeoutlen = 500
 
 -- GUI Font setting.
-vim.o.guifont = 'Hack:h17'
+vim.o.guifont = 'Hack:h20'
 
 -- Neovide settings {{{2
 if vim.g.neovide then
