@@ -150,6 +150,14 @@ vim.o.guifont = 'Hack:h20'
 
 -- Neovide settings {{{2
 if vim.g.neovide then
+    -- Padding around the window
+    vim.g.neovide_padding_top = 1
+    vim.g.neovide_padding_bottom = 1
+    vim.g.neovide_padding_right = 1
+    vim.g.neovide_padding_left = 1
+
+    -- Use macOS native match pair highlighting.
+    vim.g.neovide_highlight_matching_pair = true
 
     -- Let Neovide use option key maps.
     vim.g.neovide_input_macos_option_key_is_meta = 'only_left'
