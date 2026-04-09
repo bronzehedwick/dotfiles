@@ -37,7 +37,7 @@ fish_add_path "$HOME/.local/bin"
 # Abbreviations
 
 abbr --add brews brew list
-abbr --add bubu "brew update && brew upgrade && brew cleanup"
+abbr --add bubu "brew update && brew upgrade && brew cleanup && nvim --cmd 'lua vim.pack.update()'"
 abbr --add fgb "git switch (git branch | cut -c 3- | fzy)"
 abbr --add fwt "cd (git worktree list | awk -F' ' '{print \$1}' | fzy)"
 abbr --add ga git add
