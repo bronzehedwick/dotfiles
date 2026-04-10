@@ -17,7 +17,7 @@ vim.fn.execute('compiler eslint')
 ---@return boolean
 local is_inside_iterable = function()
     local node = vim.treesitter.get_node()
-    local nodes_active_in = {
+    local iterable_types = {
         'object',
         'array',
         'named_imports',
@@ -25,74 +25,25 @@ local is_inside_iterable = function()
         'import_specifier',
         'import_clause',
     }
-    if not node then
-        return false
+    while node do
+        if vim.tbl_contains(iterable_types, node:type()) then
+            return true
+        end
+        node = node:parent()
     end
-    if vim.tbl_contains(nodes_active_in, node:parent()) then
-        return true
-    end
-    if not vim.tbl_contains(nodes_active_in, node:type()) then
-        return false
-    end
-    return true
+    return false
 end
 
--- vim.keymap.set(
---     'n',
---     'o',
---     function()
---         if not is_inside_iterable() then
---             return 'o'
---         end
---         local line = vim.api.nvim_get_current_line()
---         if string.find(line, '}') or string.find(line, ']') then
---             return 'o'
---         end
---         local needs_comma = string.find(line, '[^,{[]$')
---         if needs_comma then
---             return 'A,<CR>'
---         else
---             return 'o'
---         end
---     end,
---     { buffer = true, expr = true }
--- )
+vim.keymap.set('n', 'o', function()
+    require('utilities').open_line_with_comma({ direction = 'below', guard = is_inside_iterable })
+end, { buffer = true })
 
--- vim.keymap.set(
---     'n',
---     'O',
---     function()
---         if not is_inside_iterable() then
---             return 'O'
---         end
---         local line_num = vim.fn.line('.')
---         local line_above = vim.fn.getline(line_num - 1)
---         local needs_comma = string.find(line_above, '[^,{[]$')
---         if needs_comma then
---             return '<Up>A,<CR>'
---         else
---             return 'O'
---         end
---     end,
---     { buffer = true, expr = true }
--- )
+vim.keymap.set('n', 'O', function()
+    require('utilities').open_line_with_comma({ direction = 'above', guard = is_inside_iterable })
+end, { buffer = true })
 
--- vim.keymap.set(
---     'n',
---     'dd',
---     function()
---         if not is_inside_iterable() then
---             return 'dd'
---         end
---         local line = vim.api.nvim_get_current_line()
---         local needs_comma_removed = string.find(line, '[^,{[]$')
---         if needs_comma_removed then
---             return 'dd<Up>$x'
---         else
---             return 'dd'
---         end
---     end,
---     { buffer = true, expr = true }
--- )
+vim.keymap.set('n', 'dd', function()
+    require('utilities').dd_with_comma_removal(is_inside_iterable)
+end, { buffer = true })
 
 -- vim:fdm=marker ft=lua et sts=4 sw=4

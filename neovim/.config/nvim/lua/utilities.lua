@@ -77,6 +77,69 @@ M.autocomplete_html_attribute = function(nodes_active_in)
     return '='
 end
 
+---@param line string
+---@return boolean
+M.line_needs_comma = function(line)
+    local trimmed = vim.trim(line)
+    if trimmed == '' then return false end
+    return not trimmed:match('[,{%[%]%}]$')
+end
+
+---@param opts { direction: 'above'|'below', guard: fun(): boolean|nil }
+M.open_line_with_comma = function(opts)
+    local key = opts.direction == 'above' and 'O' or 'o'
+
+    if opts.guard and not opts.guard() then
+        vim.api.nvim_feedkeys(key, 'n', false)
+        return
+    end
+
+    local target_lnum
+    if opts.direction == 'below' then
+        target_lnum = vim.fn.line('.')
+    else
+        target_lnum = vim.fn.line('.') - 1
+    end
+
+    if target_lnum >= 1 then
+        local line = vim.fn.getline(target_lnum)
+        if M.line_needs_comma(line) then
+            local with_comma = line:gsub('%s*$', '') .. ','
+            vim.fn.setline(target_lnum, with_comma)
+        end
+    end
+
+    vim.api.nvim_feedkeys(key, 'n', false)
+end
+
+---@param guard fun(): boolean|nil
+M.dd_with_comma_removal = function(guard)
+    if guard and not guard() then
+        vim.cmd('normal! dd')
+        return
+    end
+
+    local lnum = vim.fn.line('.')
+    local line = vim.api.nvim_get_current_line()
+
+    if not M.line_needs_comma(line) then
+        vim.cmd('normal! dd')
+        return
+    end
+
+    if lnum > 1 then
+        local line_above = vim.fn.getline(lnum - 1)
+        if line_above:match(',%s*$') then
+            vim.cmd('normal! dd')
+            local cleaned = line_above:gsub(',%s*$', '')
+            vim.fn.setline(lnum - 1, cleaned)
+            return
+        end
+    end
+
+    vim.cmd('normal! dd')
+end
+
 return M
 
 -- vim:ft=lua et sts=4 sw=4 foldminlines=1
