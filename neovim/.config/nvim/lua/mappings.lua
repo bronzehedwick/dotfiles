@@ -108,15 +108,18 @@ vim.keymap.set('n', '<leader>c', ':tabedit ~/.dotfiles/neovim/.config/nvim/init.
 -- UrlView {{{
 if vim.fn.executable('urlview') == 1 then
     vim.keymap.set('n', '<leader>u', function()
+        local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
         local file = vim.fn.tempname()
-        vim.api.nvim_command('write! ' .. file)
-        require('utilities').make_modal({max_width = true})
-        vim.api.nvim_command('startinsert')
+        local fd = assert(vim.uv.fs_open(file, 'w', 438))
+        vim.uv.fs_write(fd, table.concat(lines, '\n'))
+        vim.uv.fs_close(fd)
+        require('utilities').make_modal({ max_width = true })
+        vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
         vim.fn.jobstart('urlview ' .. file, {
             term = true,
             on_exit = function()
-                vim.api.nvim_command('bdelete!')
-                os.remove(file)
+                vim.api.nvim_cmd({ cmd = 'bdelete', bang = true }, { output = false })
+                vim.uv.fs_unlink(file)
             end
         })
     end, { silent = true })
