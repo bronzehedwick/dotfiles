@@ -50,4 +50,8 @@ vim.keymap.set('n', 'dd', function()
     require('utilities').dd_with_comma_removal(is_inside_iterable)
 end, { buffer = true })
 
+-- Close the last unclosed pair.
+vim.keymap.set('i', '<M-l>', require('utilities').close_last_unclosed_pair,
+    { buffer = true, expr = true })
+
 -- vim:fdm=marker ft=lua et sts=4 sw=4

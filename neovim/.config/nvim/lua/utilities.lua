@@ -239,6 +239,97 @@ M.prettier_formatexpr = function()
     return 0
 end
 
+--- Find and return the closing token for the last unclosed pair before the
+--- cursor. Handles (), [], {}, quotes, template literal interpolation, and
+--- comments. Use as an expr mapping in insert mode.
+---@return string The closing token, or '' if nothing is unclosed
+M.close_last_unclosed_pair = function()
+    local cursor = vim.api.nvim_win_get_cursor(0)
+    local row, col = cursor[1], cursor[2]
+    local lines = vim.api.nvim_buf_get_lines(0, 0, row, false)
+    lines[#lines] = lines[#lines]:sub(1, col)
+
+    local openers = { ['('] = ')', ['['] = ']', ['{'] = '}' }
+    local closers = { [')'] = true, [']'] = true, ['}'] = true }
+    local quotes = { ["'"] = true, ['"'] = true, ['`'] = true }
+    local stack = {}
+
+    for _, line in ipairs(lines) do
+        local i = 1
+        while i <= #line do
+            local ch = line:sub(i, i)
+
+            -- Skip escaped characters inside strings/template literals.
+            if ch == '\\' and #stack > 0 and quotes[stack[#stack]] then
+                i = i + 2
+            -- Template literal interpolation: ${ opens an expression.
+            elseif ch == '$' and i < #line and line:sub(i + 1, i + 1) == '{'
+                and #stack > 0 and stack[#stack] == '`' then
+                table.insert(stack, '{')
+                i = i + 2
+            elseif quotes[ch] then
+                if #stack > 0 and stack[#stack] == ch then
+                    table.remove(stack)
+                else
+                    table.insert(stack, ch)
+                end
+                i = i + 1
+            elseif #stack > 0 and quotes[stack[#stack]] then
+                -- Inside a string, skip everything else.
+                i = i + 1
+            elseif openers[ch] then
+                table.insert(stack, ch)
+                i = i + 1
+            elseif closers[ch] then
+                if #stack > 0 and openers[stack[#stack]] == ch then
+                    table.remove(stack)
+                end
+                i = i + 1
+            -- Skip single-line comments.
+            elseif ch == '/' and i < #line and line:sub(i + 1, i + 1) == '/' then
+                break
+            -- Track block comments: /* */, <!-- -->, {# #}
+            elseif ch == '/' and i < #line and line:sub(i + 1, i + 1) == '*' then
+                table.insert(stack, '/*')
+                i = i + 2
+            elseif ch == '*' and i < #line and line:sub(i + 1, i + 1) == '/'
+                and #stack > 0 and stack[#stack] == '/*' then
+                table.remove(stack)
+                i = i + 2
+            elseif ch == '<' and i + 2 < #line and line:sub(i + 1, i + 3) == '!--' then
+                table.insert(stack, '<!--')
+                i = i + 4
+            elseif ch == '-' and i + 1 < #line and line:sub(i + 1, i + 2) == '->'
+                and #stack > 0 and stack[#stack] == '<!--' then
+                table.remove(stack)
+                i = i + 3
+            elseif ch == '{' and i < #line and line:sub(i + 1, i + 1) == '#' then
+                table.insert(stack, '{#')
+                i = i + 2
+            elseif ch == '#' and i < #line and line:sub(i + 1, i + 1) == '}'
+                and #stack > 0 and stack[#stack] == '{#' then
+                table.remove(stack)
+                i = i + 2
+            elseif #stack > 0 and (stack[#stack] == '/*' or stack[#stack] == '<!--' or stack[#stack] == '{#') then
+                -- Inside a block comment, skip.
+                i = i + 1
+            else
+                i = i + 1
+            end
+        end
+    end
+
+    for i = #stack, 1, -1 do
+        local open = stack[i]
+        if openers[open] then
+            return openers[open]
+        elseif quotes[open] then
+            return open
+        end
+    end
+    return ''
+end
+
 return M
 
 -- vim:ft=lua et sts=4 sw=4 foldminlines=1
