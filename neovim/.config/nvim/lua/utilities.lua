@@ -107,6 +107,7 @@ M.closing_delimiter_needs_comma = function(line, lnum)
     if not node then return false end
 
     -- Walk up to find the object/array being closed
+    ---@type TSNode?
     local container = node
     while container and not vim.tbl_contains({ 'object', 'array' }, container:type()) do
         container = container:parent()
