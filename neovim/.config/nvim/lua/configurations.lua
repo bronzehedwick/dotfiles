@@ -27,9 +27,9 @@ vim.o.fillchars = 'msgsep:◌'
 
 -- TODO Re-enable if LSP server for buffer does not have a formatexpr.
 -- Format text (gq) with par if it exists.
--- if vim.fn.executable('par') == 1 then
---   vim.opt.formatprg = 'par'
--- end
+if vim.fn.executable('par') == 1 then
+  vim.opt.formatprg = 'par'
+end
 
 -- Make the jump-list behave like the tag list or a web browser.
 vim.opt.jumpoptions = 'stack'
