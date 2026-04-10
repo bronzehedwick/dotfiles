@@ -85,7 +85,57 @@ M.line_needs_comma = function(line)
     return not trimmed:match('[,{%[%]%}]$')
 end
 
----@param opts { direction: 'above'|'below', guard: fun(): boolean|nil }
+--- Tree-sitter-aware check for whether a closing delimiter is nested inside
+--- a parent container and therefore needs a trailing comma.
+---@param line string
+---@param lnum integer
+---@return boolean
+M.closing_delimiter_needs_comma = function(line, lnum)
+    local trimmed = vim.trim(line)
+    if not trimmed:match('[%]%}]$') then
+        return false
+    end
+
+    local ok, parser = pcall(vim.treesitter.get_parser)
+    if not ok or not parser then
+        return false
+    end
+
+    local col = #line - #line:match('%s*$') - 1
+    local node = vim.treesitter.get_node({ pos = { lnum - 1, col } })
+    if not node then return false end
+
+    -- Walk up to find the object/array being closed
+    local container = node
+    while container and not vim.tbl_contains({ 'object', 'array' }, container:type()) do
+        container = container:parent()
+    end
+    if not container then return false end
+
+    -- Check if this container is nested inside a parent container
+    local ancestor = container:parent()
+    while ancestor do
+        if vim.tbl_contains({ 'object', 'array' }, ancestor:type()) then
+            return true
+        end
+        ancestor = ancestor:parent()
+    end
+    return false
+end
+
+--- Combined check: text-based line_needs_comma, enhanced with tree-sitter
+--- for closing delimiters of nested containers.
+---@param line string
+---@param lnum integer
+---@return boolean
+M.needs_comma = function(line, lnum)
+    if M.line_needs_comma(line) then
+        return true
+    end
+    return M.closing_delimiter_needs_comma(line, lnum)
+end
+
+---@param opts { direction: 'above'|'below', guard: (fun(): boolean)? }
 M.open_line_with_comma = function(opts)
     local key = opts.direction == 'above' and 'O' or 'o'
 
@@ -103,7 +153,7 @@ M.open_line_with_comma = function(opts)
 
     if target_lnum >= 1 then
         local line = vim.fn.getline(target_lnum)
-        if M.line_needs_comma(line) then
+        if M.needs_comma(line, target_lnum) then
             local with_comma = line:gsub('%s*$', '') .. ','
             vim.fn.setline(target_lnum, with_comma)
         end
@@ -112,7 +162,7 @@ M.open_line_with_comma = function(opts)
     vim.api.nvim_feedkeys(key, 'n', false)
 end
 
----@param guard fun(): boolean|nil
+---@param guard (fun(): boolean)?
 M.dd_with_comma_removal = function(guard)
     if guard and not guard() then
         vim.cmd('normal! dd')
@@ -122,7 +172,7 @@ M.dd_with_comma_removal = function(guard)
     local lnum = vim.fn.line('.')
     local line = vim.api.nvim_get_current_line()
 
-    if not M.line_needs_comma(line) then
+    if not M.needs_comma(line, lnum) then
         vim.cmd('normal! dd')
         return
     end
