@@ -45,7 +45,8 @@ M.fuzzy_search = function(files_command, action)
 
     vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
 
-    vim.fn.termopen(shell_command, {
+    vim.fn.jobstart(shell_command, {
+        term = true,
         on_exit = function()
             vim.api.nvim_cmd(
                 { cmd = 'bdelete', bang = true },
