@@ -109,9 +109,14 @@ vim.keymap.set('n', '<leader>c', ':tabedit ~/.dotfiles/neovim/.config/nvim/init.
 if vim.fn.executable('urlview') == 1 then
     vim.keymap.set('n', '<leader>u', function()
         local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+        local text = table.concat(lines, '\n')
+        if not text:match('https?://') and not text:match('ftp://') and not text:match('www[0-9]?%.') then
+            vim.notify('No URLs found in buffer', vim.log.levels.INFO)
+            return
+        end
         local file = vim.fn.tempname()
         local fd = assert(vim.uv.fs_open(file, 'w', 438))
-        vim.uv.fs_write(fd, table.concat(lines, '\n'))
+        vim.uv.fs_write(fd, text)
         vim.uv.fs_close(fd)
         require('utilities').make_modal({ max_width = true })
         vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
