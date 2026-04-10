@@ -137,11 +137,32 @@ M.needs_comma = function(line, lnum)
     return M.closing_delimiter_needs_comma(line, lnum)
 end
 
----@param opts { direction: 'above'|'below', guard: (fun(): boolean)? }
+--- Check if the cursor is inside an iterable structure (object, array, imports).
+---@return boolean
+M.is_inside_iterable = function()
+    local node = vim.treesitter.get_node()
+    local iterable_types = {
+        'object',
+        'array',
+        'named_imports',
+        'import_statement',
+        'import_specifier',
+        'import_clause',
+    }
+    while node do
+        if vim.tbl_contains(iterable_types, node:type()) then
+            return true
+        end
+        node = node:parent()
+    end
+    return false
+end
+
+---@param opts { direction: 'above'|'below' }
 M.open_line_with_comma = function(opts)
     local key = opts.direction == 'above' and 'O' or 'o'
 
-    if opts.guard and not opts.guard() then
+    if not M.is_inside_iterable() then
         vim.api.nvim_feedkeys(key, 'n', false)
         return
     end
@@ -164,9 +185,8 @@ M.open_line_with_comma = function(opts)
     vim.api.nvim_feedkeys(key, 'n', false)
 end
 
----@param guard (fun(): boolean)?
-M.dd_with_comma_removal = function(guard)
-    if guard and not guard() then
+M.dd_with_comma_removal = function()
+    if not M.is_inside_iterable() then
         vim.cmd('normal! dd')
         return
     end
