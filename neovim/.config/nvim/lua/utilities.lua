@@ -69,7 +69,7 @@ M.autocomplete_html_attribute = function(nodes_active_in)
     -- we need to get the node to the left of the cursor.
     local cursor = vim.api.nvim_win_get_cursor(0)
     local left_of_cursor_range = { cursor[1] - 1, cursor[2] - 1 }
-    local node = vim.treesitter.get_node { pos = left_of_cursor_range }
+    local node = vim.treesitter.get_node { pos = left_of_cursor_range, ignore_injections = false }
     if node and vim.tbl_contains(nodes_active_in, node:type()) then
         -- The cursor is not on an attribute node
         return '=""<left>'
