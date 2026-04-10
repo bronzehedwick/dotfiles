@@ -1,5 +1,6 @@
 -- Start LSP server.
 vim.lsp.enable('ts_ls')
+vim.lsp.enable('eslint')
 
 -- Basic JS from/require include config.
 vim.opt_local.include = [[^\\s*[^\/]\\+\\(from\\\|require(['"]\\)]]
@@ -13,6 +14,9 @@ vim.opt_local.spell = false
 
 -- Use eslint linter.
 vim.fn.execute('compiler eslint')
+
+-- Format with prettier (range-aware).
+vim.opt_local.formatexpr = "v:lua.require'utilities'.prettier_formatexpr()"
 
 ---@return boolean
 local is_inside_iterable = function()

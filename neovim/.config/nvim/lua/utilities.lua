@@ -192,6 +192,53 @@ M.dd_with_comma_removal = function(guard)
     vim.cmd('normal! dd')
 end
 
+--- formatexpr-compatible function that runs prettier with range support.
+--- Passes the full buffer to prettier with --range-start/--range-end so
+--- prettier sees the full file context and produces correct indentation.
+---@return integer 0 on success, 1 to fall back to internal formatting
+M.prettier_formatexpr = function()
+    if vim.v.count == 0 then
+        return 1
+    end
+
+    local start_line = vim.v.lnum
+    local end_line = start_line + vim.v.count - 1
+    local bufnr = vim.api.nvim_get_current_buf()
+    local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+    local full_text = table.concat(lines, '\n') .. '\n'
+
+    -- Calculate byte offsets for the range.
+    local range_start = 0
+    for i = 1, start_line - 1 do
+        range_start = range_start + #lines[i] + 1
+    end
+
+    local range_end = range_start
+    for i = start_line, end_line do
+        range_end = range_end + #lines[i] + 1
+    end
+
+    local filepath = vim.api.nvim_buf_get_name(bufnr)
+    local result = vim.system({
+        'prettier',
+        '--stdin-filepath', filepath,
+        '--range-start', tostring(range_start),
+        '--range-end', tostring(range_end),
+    }, { stdin = full_text }):wait()
+
+    if result.code ~= 0 then
+        return 1
+    end
+
+    local formatted_lines = vim.split(result.stdout, '\n', { trimempty = false })
+    if formatted_lines[#formatted_lines] == '' then
+        table.remove(formatted_lines)
+    end
+
+    vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, formatted_lines)
+    return 0
+end
+
 return M
 
 -- vim:ft=lua et sts=4 sw=4 foldminlines=1
