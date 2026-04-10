@@ -112,7 +112,8 @@ if vim.fn.executable('urlview') == 1 then
         vim.api.nvim_command('write! ' .. file)
         require('utilities').make_modal({max_width = true})
         vim.api.nvim_command('startinsert')
-        vim.fn.termopen('urlview ' .. file, {
+        vim.fn.jobstart('urlview ' .. file, {
+            term = true,
             on_exit = function()
                 vim.api.nvim_command('bdelete!')
                 os.remove(file)
@@ -136,7 +137,10 @@ if vim.fn.executable('fzy') == 1 then
     vim.keymap.set('n', '<M-r>', function()
         require('utilities').make_modal({max_width = true})
         vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
-        vim.fn.termopen('git branch | grep -v "*" | fzy | xargs git checkout')
+        vim.fn.jobstart(
+            'git branch | grep -v "*" | fzy | xargs git checkout',
+            { term = true }
+        )
     end, { silent = true })
     -- }}}
 end
