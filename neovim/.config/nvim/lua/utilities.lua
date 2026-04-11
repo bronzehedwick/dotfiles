@@ -30,37 +30,169 @@ M.make_modal = function(opts)
     )
 end
 
----@param files_command string
----@param action string
-M.fuzzy_search = function(files_command, action)
-    M.make_modal({ max_width = true })
+--- Fuzzy finder using `matchfuzzy()`.
+---@param items string[] List of items to search through
+---@param on_select fun(item: string) Callback when an item is selected
+M.fuzzy_pick = function(items, on_select)
+    local width = vim.o.columns > 85 and 80 or (vim.o.columns - 4)
+    local height = 19
+    local col = math.floor((vim.o.columns - width) * 0.5)
+    local row = math.floor((vim.o.lines - height) * 0.5 - 1)
+    local results_height = height - 1
 
-    local file = vim.fn.tempname()
-    local shell_command = {
-        '/bin/sh',
-        '-c',
-        files_command .. ' | fzy > ' .. file
-    }
-    local winid = vim.fn.win_getid()
+    local caller_win = vim.fn.win_getid()
 
-    vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
-
-    vim.fn.jobstart(shell_command, {
-        term = true,
-        on_exit = function()
-            vim.api.nvim_cmd(
-                { cmd = 'bdelete', bang = true },
-                { output = false }
-            )
-            vim.fn.win_gotoid(winid)
-            local f = io.open(file, 'r')
-            if f == nil then return end
-            local stdout = f:read('*all')
-            f:close()
-            os.remove(file)
-            vim.api.nvim_command(table.concat({ action, stdout }, ' '))
-        end
+    local buf = vim.api.nvim_create_buf(false, true)
+    local win = vim.api.nvim_open_win(buf, true, {
+        relative = 'editor',
+        style = 'minimal',
+        border = 'shadow',
+        width = width,
+        height = height,
+        col = col,
+        row = row,
     })
+
+    vim.bo[buf].bufhidden = 'wipe'
+
+    local query = ''
+    local filtered = {}
+    local selected_idx = 1
+    local closed = false
+
+    local function update()
+        if closed then return end
+        if query == '' then
+            filtered = items
+        else
+            filtered = vim.fn.matchfuzzy(items, query)
+        end
+        selected_idx = math.min(selected_idx, math.max(#filtered, 1))
+
+        local display = {}
+        for i = 1, math.min(#filtered, results_height) do
+            local prefix = i == selected_idx and '> ' or '  '
+            display[i] = prefix .. filtered[i]
+        end
+        -- Pad with empty lines so the prompt stays at the bottom.
+        while #display < results_height do
+            table.insert(display, '')
+        end
+        table.insert(display, '> ' .. query .. ' ')
+
+        vim.api.nvim_buf_set_lines(buf, 0, -1, false, display)
+        vim.api.nvim_win_set_cursor(win, { height, #query + 2 })
+    end
+
+    local function close()
+        if closed then return end
+        closed = true
+        if vim.api.nvim_win_is_valid(win) then
+            vim.api.nvim_win_close(win, true)
+        end
+        if vim.api.nvim_buf_is_valid(buf) then
+            vim.api.nvim_buf_delete(buf, { force = true })
+        end
+        vim.fn.win_gotoid(caller_win)
+    end
+
+    local function confirm()
+        local item = filtered[selected_idx]
+        close()
+        if item then
+            on_select(item)
+        end
+    end
+
+    local kopts = { buffer = buf, nowait = true }
+
+    vim.keymap.set('i', '<CR>', function()
+        vim.cmd('stopinsert')
+        confirm()
+    end, kopts)
+
+    vim.keymap.set('i', '<Esc>', function()
+        vim.cmd('stopinsert')
+        close()
+    end, kopts)
+
+    vim.keymap.set('i', '<C-c>', function()
+        vim.cmd('stopinsert')
+        close()
+    end, kopts)
+
+    vim.keymap.set('i', '<C-n>', function()
+        selected_idx = math.min(selected_idx + 1, #filtered)
+        update()
+    end, kopts)
+
+    vim.keymap.set('i', '<C-p>', function()
+        selected_idx = math.max(selected_idx - 1, 1)
+        update()
+    end, kopts)
+
+    vim.keymap.set('i', '<Down>', function()
+        selected_idx = math.min(selected_idx + 1, #filtered)
+        update()
+    end, kopts)
+
+    vim.keymap.set('i', '<Up>', function()
+        selected_idx = math.max(selected_idx - 1, 1)
+        update()
+    end, kopts)
+
+    vim.keymap.set('i', '<C-w>', function()
+        query = query:gsub('%S+%s*$', '')
+        selected_idx = 1
+        update()
+    end, kopts)
+
+    vim.keymap.set('i', '<C-u>', function()
+        query = ''
+        selected_idx = 1
+        update()
+    end, kopts)
+
+    vim.keymap.set('i', '<BS>', function()
+        if #query > 0 then
+            query = vim.fn.strcharpart(query, 0, vim.fn.strchars(query) - 1)
+            selected_idx = 1
+            update()
+        end
+    end, kopts)
+
+    vim.api.nvim_create_autocmd('BufLeave', {
+        buffer = buf,
+        once = true,
+        callback = close,
+    })
+
+    vim.api.nvim_create_autocmd('InsertCharPre', {
+        buffer = buf,
+        callback = function()
+            if closed then return end
+            local char = vim.v.char
+            vim.v.char = ''
+            query = query .. char
+            selected_idx = 1
+            vim.schedule(update)
+        end,
+    })
+
+    update()
+    vim.cmd('startinsert')
+end
+
+--- Fuzzy search files from a shell command and open with an action.
+---@param files_command string Shell command that outputs one item per line
+---@param action string Vim command to run with the selected item (e.g. 'edit')
+M.fuzzy_search = function(files_command, action)
+    local output = vim.system({ '/bin/sh', '-c', files_command }):wait()
+    if output.code ~= 0 or not output.stdout then return end
+    local items = vim.split(output.stdout, '\n', { trimempty = true })
+    M.fuzzy_pick(items, function(item)
+        vim.api.nvim_command(action .. ' ' .. item)
+    end)
 end
 
 ---@param nodes_active_in table

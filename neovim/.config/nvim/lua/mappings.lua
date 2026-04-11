@@ -132,26 +132,27 @@ end
 -- }}}
 
 -- Fuzzy finding {{{
-if vim.fn.executable('fzy') == 1 then
-    -- Files. {{{2
-    vim.keymap.set('n', '<M-/>', function()
-        return require('utilities').fuzzy_search('git ls-files', 'edit')
+
+-- Files. {{{2
+vim.keymap.set('n', '<M-/>', function()
+    require('utilities').fuzzy_search('git ls-files', 'edit')
+end)
+vim.keymap.set('n', '<D-p>', function()
+    require('utilities').fuzzy_search('git ls-files', 'edit')
+end)
+-- }}}
+-- Git branches. {{{2
+vim.keymap.set('n', '<M-r>', function()
+    local output = vim.system({ 'git', 'branch', '--format=%(refname:short)' }):wait()
+    if output.code ~= 0 or not output.stdout then return end
+    local branches = vim.split(output.stdout, '\n', { trimempty = true })
+    require('utilities').fuzzy_pick(branches, function(branch)
+        vim.system({ 'git', 'checkout', branch }):wait()
+        vim.cmd('checktime')
     end)
-    vim.keymap.set('n', '<D-p>', function()
-        return require('utilities').fuzzy_search('git ls-files', 'edit')
-    end)
-    -- }}}
-    -- Git branches. {{{2
-    vim.keymap.set('n', '<M-r>', function()
-        require('utilities').make_modal({max_width = true})
-        vim.api.nvim_cmd({ cmd = 'startinsert' }, { output = false })
-        vim.fn.jobstart(
-            'git branch | grep -v "*" | fzy | xargs git checkout',
-            { term = true }
-        )
-    end, { silent = true })
-    -- }}}
-end
+end, { silent = true })
+-- }}}
+
 -- }}}
 
 -- Terminal {{{
