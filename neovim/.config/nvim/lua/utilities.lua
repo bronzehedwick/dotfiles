@@ -1,6 +1,8 @@
 local M = {}
 
----@param opts table
+---Create a modal window.
+---@param opts { max_width: boolean }
+---@return { buffer: integer, window: integer }
 M.make_modal = function(opts)
     if not opts then
         opts = {}
@@ -14,34 +16,6 @@ M.make_modal = function(opts)
         end
     end
 
-    vim.api.nvim_open_win(
-        vim.api.nvim_create_buf(false, true),
-        true,
-        {
-            relative = 'editor',
-            style = 'minimal',
-            border = 'shadow',
-            width = width,
-            height = height,
-            col = math.min((vim.o.columns - width) * 0.5),
-            row = math.min((vim.o.lines - height) * 0.5 - 1),
-            noautocmd = true,
-        }
-    )
-end
-
---- Fuzzy finder using `matchfuzzy()`.
----@param items string[] List of items to search through
----@param on_select fun(item: string) Callback when an item is selected
-M.fuzzy_pick = function(items, on_select)
-    local width = vim.o.columns > 85 and 80 or (vim.o.columns - 4)
-    local height = 19
-    local col = math.floor((vim.o.columns - width) * 0.5)
-    local row = math.floor((vim.o.lines - height) * 0.5 - 1)
-    local results_height = height - 1
-
-    local caller_win = vim.fn.win_getid()
-
     local buf = vim.api.nvim_create_buf(false, true)
     local win = vim.api.nvim_open_win(buf, true, {
         relative = 'editor',
@@ -49,12 +23,29 @@ M.fuzzy_pick = function(items, on_select)
         border = 'shadow',
         width = width,
         height = height,
-        col = col,
-        row = row,
+        col = math.min((vim.o.columns - width) * 0.5),
+        row = math.min((vim.o.lines - height) * 0.5 - 1),
+        noautocmd = true,
     })
 
     vim.bo[buf].bufhidden = 'wipe'
     vim.wo[win].cursorline = false
+
+    return { buffer = buf, window = win }
+end
+
+--- Fuzzy finder using `matchfuzzy()`.
+---@param items string[] List of items to search through
+---@param on_select fun(item: string) Callback when an item is selected
+M.fuzzy_pick = function(items, on_select)
+    local height = 19
+    local results_height = height - 1
+
+    local caller_win = vim.fn.win_getid()
+
+    local modal = M.make_modal({ max_width = true })
+    local buf = modal.buffer
+    local win = modal.window
 
     local ns = vim.api.nvim_create_namespace('fuzzy_pick')
     local query = ''
