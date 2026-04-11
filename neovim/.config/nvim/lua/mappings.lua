@@ -202,24 +202,13 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
-        -- Buffer local mappings.
-        -- See `:help vim.lsp.*` for documentation on any of the below functions
         local bufopts = { buffer = ev.buf }
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
         vim.keymap.set('n', 'grwa', vim.lsp.buf.add_workspace_folder, bufopts)
         vim.keymap.set('n', 'grwr', vim.lsp.buf.remove_workspace_folder, bufopts)
         vim.keymap.set('n', 'grwl', function()
             print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, bufopts)
         vim.keymap.set('n', 'grD', vim.lsp.buf.type_definition, bufopts)
-        if vim.fn.has('nvim-0.11') == 0 then
-            vim.keymap.set('n', 'grn', vim.lsp.buf.rename, bufopts)
-            vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, bufopts)
-            vim.keymap.set('n', 'grr', vim.lsp.buf.references, bufopts)
-            vim.keymap.set('n', 'grf', vim.lsp.buf.format, bufopts)
-            vim.keymap.set('i', '<C-S>', vim.lsp.buf.signature_help, bufopts)
-        end
     end,
 })
 
