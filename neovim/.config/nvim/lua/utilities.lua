@@ -1,14 +1,14 @@
 local M = {}
 
 ---Create a modal window.
----@param opts { max_width: boolean }
+---@param opts { max_width: boolean, height: integer }
 ---@return { buffer: integer, window: integer }
 M.make_modal = function(opts)
     if not opts then
         opts = {}
     end
     local width = vim.o.columns - 4
-    local height = 19
+    local height = opts.height and opts.height or 19
 
     if opts.max_width then
         if (vim.o.columns > 85) then
@@ -38,12 +38,12 @@ end
 ---@param items string[] List of items to search through
 ---@param on_select fun(item: string) Callback when an item is selected
 M.fuzzy_pick = function(items, on_select)
-    local height = 19
+    local height = 13
     local results_height = height - 1
 
     local caller_win = vim.fn.win_getid()
 
-    local modal = M.make_modal({ max_width = true })
+    local modal = M.make_modal({ max_width = true, height = height })
     local buf = modal.buffer
     local win = modal.window
 
@@ -62,25 +62,20 @@ M.fuzzy_pick = function(items, on_select)
         end
         selected_idx = math.min(selected_idx, math.max(#filtered, 1))
 
-        local display = {}
+        local display = { '> ' .. query .. ' ' }
         for i = 1, math.min(#filtered, results_height) do
-            display[i] = '  ' .. filtered[i]
+            display[#display + 1] = '  ' .. filtered[i]
         end
-        -- Pad with empty lines so the prompt stays at the bottom.
-        while #display < results_height do
-            table.insert(display, '')
-        end
-        table.insert(display, '> ' .. query .. ' ')
 
         vim.api.nvim_buf_set_lines(buf, 0, -1, false, display)
         -- Highlight the selected result line.
         vim.api.nvim_buf_clear_namespace(buf, ns, 0, -1)
         if #filtered > 0 then
-            vim.api.nvim_buf_set_extmark(buf, ns, selected_idx - 1, 0, {
+            vim.api.nvim_buf_set_extmark(buf, ns, selected_idx, 0, {
                 line_hl_group = 'CursorLine',
             })
         end
-        vim.api.nvim_win_set_cursor(win, { height, #query + 2 })
+        vim.api.nvim_win_set_cursor(win, { 1, #query + 2 })
     end
 
     local function close()
