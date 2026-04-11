@@ -54,7 +54,9 @@ M.fuzzy_pick = function(items, on_select)
     })
 
     vim.bo[buf].bufhidden = 'wipe'
+    vim.wo[win].cursorline = false
 
+    local ns = vim.api.nvim_create_namespace('fuzzy_pick')
     local query = ''
     local filtered = {}
     local selected_idx = 1
@@ -71,8 +73,7 @@ M.fuzzy_pick = function(items, on_select)
 
         local display = {}
         for i = 1, math.min(#filtered, results_height) do
-            local prefix = i == selected_idx and '> ' or '  '
-            display[i] = prefix .. filtered[i]
+            display[i] = '  ' .. filtered[i]
         end
         -- Pad with empty lines so the prompt stays at the bottom.
         while #display < results_height do
@@ -81,6 +82,13 @@ M.fuzzy_pick = function(items, on_select)
         table.insert(display, '> ' .. query .. ' ')
 
         vim.api.nvim_buf_set_lines(buf, 0, -1, false, display)
+        -- Highlight the selected result line.
+        vim.api.nvim_buf_clear_namespace(buf, ns, 0, -1)
+        if #filtered > 0 then
+            vim.api.nvim_buf_set_extmark(buf, ns, selected_idx - 1, 0, {
+                line_hl_group = 'CursorLine',
+            })
+        end
         vim.api.nvim_win_set_cursor(win, { height, #query + 2 })
     end
 
