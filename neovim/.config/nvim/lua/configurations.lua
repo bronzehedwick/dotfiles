@@ -31,7 +31,6 @@ vim.o.mouse = ''
 -- See https://github.com/neovim/neovim/pull/8088
 vim.o.fillchars = 'msgsep:◌'
 
--- TODO Re-enable if LSP server for buffer does not have a formatexpr.
 -- Format text (gq) with par if it exists.
 if vim.fn.executable('par') == 1 then
   vim.opt.formatprg = 'par'
