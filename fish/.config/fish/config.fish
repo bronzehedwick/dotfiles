@@ -13,6 +13,10 @@ end
 
 set -x RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/ripgrep/ripgreprc
 
+# mini-swe-agent
+
+set -x MSWEA_GLOBAL_CONFIG_DIR $XDG_CONFIG_HOME/mini-swe-agent
+
 # Git
 
 set -x REVIEW_BASE main
