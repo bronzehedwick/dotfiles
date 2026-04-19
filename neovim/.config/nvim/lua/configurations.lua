@@ -105,13 +105,7 @@ vim.o.colorcolumn = '80'
 -- Don't highlight the cursor line background.
 vim.opt.cursorline = false
 
--- Disable ruler
-vim.o.ruler = false
-
--- Disable showing command
-vim.o.showcmd = false
-
--- -- Diff options.
+-- Diff options.
 vim.o.diffopt = 'internal,filler,vertical,closeoff,indent-heuristic,algorithm:patience,inline:char,linematch:60'
 
 -- Show effects of command incrementally, as you type.
