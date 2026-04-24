@@ -17,26 +17,6 @@ _valid_commands() {
     done
 }
 
-mail_init() {
-    # Add the Mail directory if it doesn't already exist.
-    mkdir -p $HOME/.local/share/neomutt/mailbox/chris
-    mkdir -p $HOME/.local/share/neomutt/mailbox/lullabot
-    # Sync mail from IMAP.
-    $brew_path/mbsync --all
-    # Do initial mail indexing.
-    $brew_path/notmuch new
-}
-
-mail_sync() {
-    # Sync mail from IMAP.
-    $brew_path/mbsync --all
-    # Do indexing.
-    $brew_path/notmuch new
-    # Generate recent sent and archive folders.
-    # $brew_path/mu find --clearlinks --format=links --linksdir=~/$HOME/.local/share/neomutt/mailbox/ RArchive date:3m.. maildir:'/Archive'
-    # $brew_path/mu find --clearlinks --format=links --linksdir=~/$HOME/.local/share/neomutt/mailbox/ ReSent date:3m.. maildir:'/Sent'
-}
-
 lsp_install() {
     # CSS/SASS, HTML, JSON
     npm install --global vscode-langservers-extracted
@@ -79,8 +59,6 @@ link() {
         xargs basename | \
         xargs stow
     cd -
-    launchctl load -w ~/Library/LaunchAgents/local.mailsync.plist
-    launchctl load -w ~/Library/LaunchAgents/local.switch-theme.plist
 }
 
 unlink() {
@@ -90,13 +68,6 @@ unlink() {
         xargs basename | \
         xargs -D stow
     cd -
-    launchctl unload -w ~/Library/LaunchAgents/local.mailsync.plist
-    launchctl unload -w ~/Library/LaunchAgents/local.switch-theme.plist
-}
-
-mail_setup() {
-    mail_init
-    mail_sync
 }
 
 install() {
@@ -104,11 +75,6 @@ install() {
     tpm_install
     lsp_install
     link
-}
-
-all() {
-    install
-    mail_setup
 }
 
 # Dynamically fetch all the functions in this file.
