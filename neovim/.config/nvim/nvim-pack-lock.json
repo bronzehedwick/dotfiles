@@ -8,6 +8,10 @@
       "rev": "65a27ed5bfadeb224a888e3897e43c840c87ce83",
       "src": "https://github.com/cormacrelf/dark-notify"
     },
+    "diffs.nvim": {
+      "rev": "190fb092a1e6751ab7d3bb8d340ca601140e81ea",
+      "src": "https://github.com/barrettruth/diffs.nvim"
+    },
     "fountain.vim": {
       "rev": "3a470bb39c3b5e293f30d4d80be190b9e5bb9192",
       "src": "https://github.com/vim-scripts/fountain.vim"

@@ -23,6 +23,7 @@ vim.pack.add({
         version = 'main'
     },
     'https://github.com/RRethy/nvim-treesitter-endwise',
+    'https://github.com/barrettruth/diffs.nvim',
     'https://github.com/tpope/vim-dispatch',
     'https://github.com/justinmk/vim-ipmotion',
     'https://github.com/tpope/vim-repeat',
