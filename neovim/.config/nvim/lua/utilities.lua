@@ -72,7 +72,7 @@ M.fuzzy_pick = function(items, on_select)
         vim.api.nvim_buf_clear_namespace(buf, ns, 0, -1)
         if #filtered > 0 then
             vim.api.nvim_buf_set_extmark(buf, ns, selected_idx, 0, {
-                line_hl_group = 'CursorLine',
+                line_hl_group = 'Visual',
             })
         end
         vim.api.nvim_win_set_cursor(win, { 1, #query + 2 })
