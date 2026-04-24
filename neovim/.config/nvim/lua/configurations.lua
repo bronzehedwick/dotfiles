@@ -71,7 +71,7 @@ vim.api.nvim_create_autocmd({ 'QuickFixCmdPost' }, {
 require('vim._core.ui2').enable({
     enable = true,
     msg = {
-        targets = 'cmd'
+        targets = 'msg'
     }
 })
 
@@ -425,6 +425,17 @@ leap.opts.preview_filter =
 -- Define characters that will match each other in searches
 leap.opts.equivalence_classes = { ' \t\r\n', '([{', ')]}', '\'"`' }
 
+-- }}}
+
+-- Diffs.nvim {{{
+    vim.g.diffs = {
+        integrations = {
+            fugitive = true,
+            neogit = false,
+            neojj = false,
+            gitsigns = true,
+        }
+    }
 -- }}}
 
 -- }}}
