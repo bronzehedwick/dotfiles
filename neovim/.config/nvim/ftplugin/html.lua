@@ -1,6 +1,5 @@
 -- Start LSP server.
 vim.lsp.enable('html')
-vim.lsp.enable('emmet-ls')
 
 -- Use tree sitter.
 vim.treesitter.start()

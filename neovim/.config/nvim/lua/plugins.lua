@@ -29,6 +29,7 @@ vim.pack.add({
     'https://github.com/tpope/vim-repeat',
     'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/mfussenegger/nvim-dap',
+    'https://github.com/mattn/emmet-vim',
     -- }}}
 
     -- Movement {{{
