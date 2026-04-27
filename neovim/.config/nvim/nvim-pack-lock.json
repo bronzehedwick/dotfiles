@@ -9,7 +9,7 @@
       "src": "https://github.com/cormacrelf/dark-notify"
     },
     "diffs.nvim": {
-      "rev": "190fb092a1e6751ab7d3bb8d340ca601140e81ea",
+      "rev": "dc3289daceb25759075697efc82046ee41abf77e",
       "src": "https://github.com/barrettruth/diffs.nvim"
     },
     "emmet-vim": {
@@ -29,7 +29,7 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "leap.nvim": {
-      "rev": "ce3cf75200ae148d75563088f435389f9e4100fd",
+      "rev": "156c71aabb68d520c6269db4103c8e5580e3ea67",
       "src": "https://git.disroot.org/andyg/leap.nvim.git",
       "version": "'main'"
     },
@@ -38,7 +38,7 @@
       "src": "https://github.com/mfussenegger/nvim-dap"
     },
     "nvim-lspconfig": {
-      "rev": "81878de76c0de4ce289513734ad80c31ec7871b8",
+      "rev": "eeef061d58d759b5419c1e20c4b3a5bc3154f871",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
